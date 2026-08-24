@@ -1,22 +1,7 @@
-name: Architecture validation
+name: Quality gates
 
 on:
   pull_request:
-    paths:
-      - 'AGENTS.md'
-      - 'docs/**'
-      - 'config/architecture/**'
-      - 'schema/**'
-      - 'tests/architecture/**'
-      - 'tests/content/**'
-      - 'tests/routes/**'
-      - 'content/**'
-      - 'src/lib/content/**'
-      - 'src/lib/routing/**'
-      - 'src/lib/taxonomy/**'
-      - 'src/types/content.ts'
-      - 'package.json'
-      - '.github/workflows/architecture-validation.yml'
   push:
     branches: [main]
 
@@ -24,7 +9,18 @@ permissions:
   contents: read
 
 jobs:
-  validate:
+  architecture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable
+      - run: pnpm run validate:architecture
+      - run: pnpm run test:architecture
+
+  application:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,6 +29,40 @@ jobs:
           node-version: 24
       - run: corepack enable
       - run: pnpm install --frozen-lockfile --ignore-scripts
-      - run: pnpm run validate:architecture
+      - run: pnpm run lint
+      - run: pnpm run typecheck
+      - run: pnpm run test:routes
+      - run: pnpm run test:accessibility
+      - run: pnpm run test:performance
+      - run: pnpm run build
+
+  content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile --ignore-scripts
       - run: pnpm run validate:content
-      - run: pnpm test
+      - run: pnpm run test:content-integrity
+      - run: pnpm run test:translation
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node tests/security/secret-scan.mjs
+      - run: node --test tests/security/secret-scan.test.mjs
+
+  validate:
+    if: always()
+    needs: [architecture, application, content, security]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce blocking gates
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        run: |
+          node -e 'const needs = JSON.parse(process.env.NEEDS); const failed = Object.entries(needs).filter(([, job]) => job.result !== "success"); if (failed.length) { console.error(failed.map(([name, job]) => `${name}: ${job.result}`).join("\n")); process.exit(1); }'

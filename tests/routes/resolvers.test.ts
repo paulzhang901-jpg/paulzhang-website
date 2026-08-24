@@ -8,6 +8,7 @@ const repository = createContentRepository([
   item({slug: "zh-article"}),
   item({id: "story", canonicalId: "story", slug: "zh-story", domain: "stories"}),
   item({id: "en", slug: "english-article", language: "en-US"}),
+  item({id: "en-story", canonicalId: "en-story", slug: "english-story", domain: "stories", language: "en-US"}),
   item({id: "draft", canonicalId: "draft", slug: "draft", status: "draft"}),
 ]);
 
@@ -21,6 +22,13 @@ test("locale, draft, and invalid routes return not-found", () => {
   assert.equal(resolveLibrarySlug("english-article", "zh-CN", repository).kind, "not-found");
   assert.equal(resolveLibrarySlug("draft", "zh-CN", repository).kind, "not-found");
   assert.equal(resolveStorySlug("unknown", "en-US", repository).kind, "not-found");
+});
+
+test("localized library and story content resolve only in their own locale", () => {
+  assert.equal(resolveLibrarySlug("english-article", "en-US", repository).kind, "content");
+  assert.equal(resolveLibrarySlug("zh-article", "en-US", repository).kind, "not-found");
+  assert.equal(resolveStorySlug("english-story", "en-US", repository).kind, "content");
+  assert.equal(resolveStorySlug("zh-story", "en-US", repository).kind, "not-found");
 });
 
 test("growth accepts only canonical V1 stages", () => {

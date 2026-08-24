@@ -34,8 +34,10 @@ test("duplicate identities and broken canonical references fail validation", () 
   broken.frontmatter.canonical_id = "broken-canonical";
   broken.frontmatter.slug = "broken-reference";
   broken.frontmatter.related_content = ["does-not-exist"];
+  broken.frontmatter.next_steps = [{type: "content", target: "also-does-not-exist"}];
   const report = validateContentRecords([...records, duplicate, broken]);
   assert.ok(report.errors.some((error) => error.includes("duplicate slug within locale/domain")));
   assert.ok(report.errors.some((error) => error.includes("duplicate canonical_id + locale")));
   assert.ok(report.errors.some((error) => error.includes("broken related_content reference")));
+  assert.ok(report.errors.some((error) => error.includes("broken next_steps content reference")));
 });
