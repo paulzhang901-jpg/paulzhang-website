@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://paulzhang.org/schema/routes.schema.json",
+  "type":"object",
+  "required":["version","top_level_routes","child_routes","patterns"],
+  "properties":{
+    "version":{"const":1},
+    "top_level_routes":{"type":"array","items":{"type":"object","required":["path","domain","release"],"properties":{"path":{"type":"string","pattern":"^/(?:[a-z0-9-]+)?$"},"domain":{"type":"string"},"release":{"enum":["v1","v1.5","v2","future"]},"implementation_level":{"type":"string"},"visibility":{"type":"string"}},"additionalProperties":false}},
+    "child_routes":{"type":"object","additionalProperties":{"type":"array","uniqueItems":true,"items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"}}},
+    "patterns":{"type":"array","items":{"type":"object","required":["path","domain","release"]}}
+  },
+  "additionalProperties":false
+}

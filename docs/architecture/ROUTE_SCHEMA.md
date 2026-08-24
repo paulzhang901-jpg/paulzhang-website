@@ -1,0 +1,18 @@
+# Route Schema
+
+Machine source: [`config/architecture/routes.yaml`](../../config/architecture/routes.yaml). Decision: [ADR-0002](../adr/0002-route-architecture.md).
+
+Reserved top-level namespaces: `/`, `/start`, `/library`, `/stories`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
+
+Approved children:
+
+- Library: `/library/{bible,gospel,theology,formation,discipleship,prayer,marriage,family,grief,work-money,leadership,church,mission,culture,education,technology,research}`
+- Stories: `/stories/{my-journey,faith,ministry,suffering-grace,little-wheat,family,immigration,learning,testimonies}`
+- Companionship: `/together/{talk,faith,life,marriage-family,parenting,grief,spiritual-growth,ministry,prayer,mentor,how-it-works}`
+- Growth: `/grow/{explore,believe,abide,serve,lead,multiply}` and potential canonical `/grow/path/[slug]`
+- Community: `/community/{groups,prayer,discussions,events,cohorts,mentor-groups,serve}` (advanced functions V2)
+- About: `/about/{paul,story,calling,ministry,education,beliefs,projects,contact,support}`
+- GCCM: `/gccm/{vision,mission,disciple-making,digital-mission,leadership,church-partners,resources,serve,join}`
+- Journey: `/journey/{reading,saved,growth,reflections,rule-of-life,prayer,community,mentor,next-step}` (primarily V1.5+)
+
+Individual content uses stable canonical slugs. Navigation labels are independent of route paths. Folder/route location is never the source of truth for taxonomy. Route removal or semantic changes require redirects, versioning review, and an ADR.

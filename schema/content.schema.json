@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paulzhang.org/schema/content.schema.json",
+  "title": "Canonical ContentItem",
+  "type": "object",
+  "required": ["id", "slug", "status", "title", "content_type", "primary_language", "translations", "topics", "life_needs", "journey_stages", "audiences", "visibility", "access_level"],
+  "properties": {
+    "id": {"type":"string","minLength":1},
+    "slug": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "status": {"enum":["draft","review","scheduled","published","archived"]},
+    "title": {"type":"string","minLength":1},
+    "subtitle": {"type":"string"},
+    "summary": {"type":"string"},
+    "body": {},
+    "content_type": {"type":"string"},
+    "primary_language": {"type":"string","pattern":"^[a-z]{2}(?:-[A-Z]{2})?$"},
+    "translations": {"type":"object","additionalProperties":{"$ref":"#/$defs/translation"}},
+    "authors": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "published_at": {"type":["string","null"],"format":"date-time"},
+    "updated_at": {"type":"string","format":"date-time"},
+    "topics": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "life_needs": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "journey_stages": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "audiences": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "scripture_refs": {"type":"array"},
+    "series": {"type":"array"},
+    "collections": {"type":"array"},
+    "featured_image": {}, "media": {"type":"array"},
+    "reading_time": {"type":"number","minimum":0}, "difficulty": {"type":"string"},
+    "formation_intent": {"type":"string"}, "reflection_prompts": {"type":"array"},
+    "practices": {"type":"array"}, "discussion_questions": {"type":"array"},
+    "prayer_prompt": {"type":"string"}, "mentor_prompt": {"type":"string"},
+    "next_steps": {"type":"array"}, "visibility": {"type":"string"},
+    "access_level": {"type":"string"}, "seo": {"type":"object"},
+    "source_metadata": {"type":"object"}
+  },
+  "$defs": {
+    "translation": {
+      "type":"object",
+      "required":["status"],
+      "properties": {
+        "slug":{"type":"string"}, "title":{"type":"string"}, "summary":{"type":"string"}, "body":{},
+        "status":{"enum":["missing","draft","review","published","outdated"]}
+      },
+      "additionalProperties":false
+    }
+  },
+  "additionalProperties": false
+}

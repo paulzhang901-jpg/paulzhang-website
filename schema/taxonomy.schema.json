@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://paulzhang.org/schema/taxonomy.schema.json",
+  "type":"object",
+  "required":["version","content_types","topics","life_needs","journey_stages","audiences"],
+  "properties":{
+    "version":{"const":1},
+    "content_types":{"$ref":"#/$defs/values"}, "topics":{"$ref":"#/$defs/values"},
+    "life_needs":{"$ref":"#/$defs/values"}, "journey_stages":{"$ref":"#/$defs/values"},
+    "audiences":{"$ref":"#/$defs/values"}
+  },
+  "$defs":{"values":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^[a-z0-9]+(?:[-_][a-z0-9]+)*$"}}},
+  "additionalProperties":false
+}
