@@ -1,5 +1,14 @@
 {
   "version": 1,
+  "locale_strategy": {
+    "default_locale": "zh-CN",
+    "secondary_locales": ["en-US"],
+    "default_prefix": "",
+    "locale_prefixes": {"en-US": "/en"},
+    "forbidden_prefixes": ["/zh"],
+    "preference_order": ["explicit_user_choice", "browser_hint"],
+    "forced_browser_redirects": false
+  },
   "top_level_routes": [
     {"path":"/","domain":"home","release":"v1"},
     {"path":"/start","domain":"discovery","release":"v1"},

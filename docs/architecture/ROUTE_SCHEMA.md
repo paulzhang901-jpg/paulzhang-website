@@ -2,6 +2,8 @@
 
 Machine source: [`config/architecture/routes.yaml`](../../config/architecture/routes.yaml). Decision: [ADR-0002](../adr/0002-route-architecture.md).
 
+Locale routing follows [ADR-0011](../adr/0011-locale-url-strategy.md): `zh-CN` uses the canonical unprefixed routes, while `en-US` mirrors approved public routes beneath `/en`. `/zh` is not allowed. Locale prefixing does not create a second domain or taxonomy tree.
+
 Reserved top-level namespaces: `/`, `/start`, `/library`, `/stories`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
 
 Approved children:
