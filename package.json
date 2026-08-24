@@ -1,0 +1,12 @@
+{
+  "name": "paulzhang-org-architecture",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Architecture governance bootstrap for paulzhang.org",
+  "scripts": {
+    "test": "node --test tests/architecture/*.test.mjs",
+    "test:architecture": "node --test tests/architecture/*.test.mjs",
+    "validate:architecture": "node tests/architecture/validate.mjs"
+  },
+  "engines": {"node": ">=20.9.0"}
+}

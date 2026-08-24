@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://paulzhang.org/schema/user-journey.schema.json",
+  "type":"object",
+  "required":["version","states","transient_engagement_states","transitions"],
+  "properties":{
+    "version":{"const":1},
+    "states":{"type":"array","minItems":8,"uniqueItems":true,"items":{"type":"string","pattern":"^[a-z]+(?:_[a-z]+)*$"}},
+    "transient_engagement_states":{"type":"array","uniqueItems":true,"items":{"type":"string","pattern":"^[a-z]+(?:_[a-z]+)*$"}},
+    "transitions":{"type":"array","items":{"type":"object","required":["from","to","validation"],"properties":{"from":{"type":"string"},"to":{"type":"string"},"validation":{"enum":["behavioral","voluntary_action","pathway_start","participation","human_required"]}},"additionalProperties":false}}
+  },
+  "additionalProperties":false
+}

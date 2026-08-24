@@ -1,0 +1,28 @@
+name: Architecture validation
+
+on:
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+      - 'docs/**'
+      - 'config/architecture/**'
+      - 'schema/**'
+      - 'tests/architecture/**'
+      - 'package.json'
+      - '.github/workflows/architecture-validation.yml'
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm run validate:architecture
+      - run: npm test

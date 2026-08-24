@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://paulzhang.org/schema/events.schema.json",
+  "type":"object",
+  "required":["version","events"],
+  "properties":{
+    "version":{"const":1},
+    "events":{"type":"array","minItems":1,"items":{"type":"object","required":["name","version","domain","release","contains_sensitive_data","description"],"properties":{"name":{"type":"string","pattern":"^[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)+$"},"version":{"type":"integer","minimum":1},"domain":{"type":"string","pattern":"^[a-z][a-z0-9-]*$"},"release":{"enum":["v1","v1.5","v2","future"]},"contains_sensitive_data":{"const":false},"description":{"type":"string","minLength":1}},"additionalProperties":false}}
+  },
+  "additionalProperties":false
+}

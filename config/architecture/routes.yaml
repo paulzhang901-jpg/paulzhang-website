@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "top_level_routes": [
+    {"path":"/","domain":"home","release":"v1"},
+    {"path":"/start","domain":"discovery","release":"v1"},
+    {"path":"/library","domain":"content","release":"v1"},
+    {"path":"/stories","domain":"stories","release":"v1"},
+    {"path":"/together","domain":"companionship","release":"v1","implementation_level":"entry"},
+    {"path":"/grow","domain":"growth","release":"v1","implementation_level":"landing_only"},
+    {"path":"/community","domain":"community","release":"v1","implementation_level":"landing_only"},
+    {"path":"/about","domain":"about","release":"v1"},
+    {"path":"/gccm","domain":"gccm","release":"v1","implementation_level":"landing_only"},
+    {"path":"/search","domain":"search","release":"v1"},
+    {"path":"/ask","domain":"ai","release":"future"},
+    {"path":"/journey","domain":"journey","release":"v1.5"},
+    {"path":"/account","domain":"identity","release":"v1.5"},
+    {"path":"/auth","domain":"identity","release":"v1.5"},
+    {"path":"/api","domain":"platform","release":"v1","visibility":"internal"},
+    {"path":"/legal","domain":"legal","release":"v1"},
+    {"path":"/admin","domain":"platform","release":"future","visibility":"restricted"}
+  ],
+  "child_routes": {
+    "/library": ["bible","gospel","theology","formation","discipleship","prayer","marriage","family","grief","work-money","leadership","church","mission","culture","education","technology","research"],
+    "/stories": ["my-journey","faith","ministry","suffering-grace","little-wheat","family","immigration","learning","testimonies"],
+    "/together": ["talk","faith","life","marriage-family","parenting","grief","spiritual-growth","ministry","prayer","mentor","how-it-works"],
+    "/grow": ["explore","believe","abide","serve","lead","multiply"],
+    "/community": ["groups","prayer","discussions","events","cohorts","mentor-groups","serve"],
+    "/about": ["paul","story","calling","ministry","education","beliefs","projects","contact","support"],
+    "/gccm": ["vision","mission","disciple-making","digital-mission","leadership","church-partners","resources","serve","join"],
+    "/journey": ["reading","saved","growth","reflections","rule-of-life","prayer","community","mentor","next-step"]
+  },
+  "patterns": [{"path":"/grow/path/[slug]","domain":"growth","release":"v1.5"}]
+}

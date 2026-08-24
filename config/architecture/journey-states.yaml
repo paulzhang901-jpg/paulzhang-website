@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "states": ["visitor","reader","returning_reader","connected","growth_seeker","participant","companion","disciple_maker"],
+  "transient_engagement_states": ["new","engaged","deep_reader","returning","conversion_eligible","suppressed"],
+  "transitions": [
+    {"from":"visitor","to":"reader","validation":"behavioral"},
+    {"from":"reader","to":"returning_reader","validation":"behavioral"},
+    {"from":"returning_reader","to":"connected","validation":"voluntary_action"},
+    {"from":"connected","to":"growth_seeker","validation":"pathway_start"},
+    {"from":"growth_seeker","to":"participant","validation":"participation"},
+    {"from":"participant","to":"companion","validation":"human_required"},
+    {"from":"companion","to":"disciple_maker","validation":"human_required"}
+  ]
+}
