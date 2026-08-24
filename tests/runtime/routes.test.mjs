@@ -22,6 +22,17 @@ test("English locale uses a shared approved-route resolver", () => {
   assert.match(source, /\/en/);
 });
 
+test("all approved public routes resolve in zh-CN and under the /en projection", async () => {
+  const {localizedPath, resolveEnglishSegments, routes} = await import("../../src/lib/i18n/routing.ts");
+  for (const route of routes) {
+    assert.equal(localizedPath(route.id, "zh-CN"), route.path, `${route.id} zh-CN`);
+    const english = route.path === "/" ? "/en" : `/en${route.path}`;
+    assert.equal(localizedPath(route.id, "en-US"), english, `${route.id} en-US`);
+    const segments = route.path === "/" ? undefined : route.path.slice(1).split("/");
+    assert.equal(resolveEnglishSegments(segments), route.id, `${route.id} resolver`);
+  }
+});
+
 test("deferred application routes are absent", () => {
   for (const route of ["journey", "account", "admin", "auth", "ask"]) {
     assert.equal(fs.existsSync(path.join(root, "src/app", route)), false, `deferred route introduced: /${route}`);
