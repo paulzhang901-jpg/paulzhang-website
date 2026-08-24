@@ -8,6 +8,13 @@ on:
       - 'config/architecture/**'
       - 'schema/**'
       - 'tests/architecture/**'
+      - 'tests/content/**'
+      - 'tests/routes/**'
+      - 'content/**'
+      - 'src/lib/content/**'
+      - 'src/lib/routing/**'
+      - 'src/lib/taxonomy/**'
+      - 'src/types/content.ts'
       - 'package.json'
       - '.github/workflows/architecture-validation.yml'
   push:
@@ -27,4 +34,5 @@ jobs:
       - run: corepack enable
       - run: pnpm install --frozen-lockfile --ignore-scripts
       - run: pnpm run validate:architecture
+      - run: pnpm run validate:content
       - run: pnpm test

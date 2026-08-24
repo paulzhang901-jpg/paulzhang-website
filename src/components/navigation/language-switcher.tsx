@@ -19,7 +19,21 @@ export function LanguageSwitcher({locale}: {locale: Locale}) {
     hrefLang={targetLocale}
     lang={targetLocale}
     className="inline-flex min-h-11 items-center rounded-md border bg-surface px-3 text-sm font-medium hover:bg-muted"
-    onClick={() => window.localStorage.setItem("paulzhang.locale", targetLocale)}
+    onClick={(event) => {
+      window.localStorage.setItem("paulzhang.locale", targetLocale);
+      const canonicalAlternate = document.querySelector<HTMLAnchorElement>("[data-language-alternate]");
+      if (canonicalAlternate) {
+        event.preventDefault();
+        window.location.assign(canonicalAlternate.href);
+        return;
+      }
+      const unavailable = document.querySelector<HTMLElement>("[data-translation-unavailable]");
+      if (unavailable) {
+        event.preventDefault();
+        unavailable.tabIndex = -1;
+        unavailable.focus();
+      }
+    }}
   >
     {copy.language}
   </Link>;

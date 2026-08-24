@@ -2,6 +2,7 @@
   "name": "paulzhang-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Bilingual life-formation foundation for paulzhang.org",
   "packageManager": "pnpm@11.19.0",
   "scripts": {
@@ -10,14 +11,20 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "test": "node --test tests/architecture/*.test.mjs tests/runtime/*.test.mjs",
+    "test": "node --test tests/architecture/*.test.mjs tests/runtime/*.test.mjs && pnpm run test:content",
+    "test:content": "node --import tsx --test tests/content/*.test.ts tests/routes/*.test.ts",
     "test:architecture": "node --test tests/architecture/*.test.mjs",
-    "validate:architecture": "node tests/architecture/validate.mjs"
+    "validate:architecture": "node tests/architecture/validate.mjs",
+    "validate:content": "node --import tsx src/lib/content/validate-cli.ts"
   },
   "dependencies": {
+    "@mdx-js/mdx": "3.1.1",
+    "gray-matter": "4.0.3",
     "next": "16.3.2",
+    "next-mdx-remote": "6.0.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",
@@ -27,6 +34,7 @@
     "eslint": "9.39.2",
     "eslint-config-next": "16.3.2",
     "tailwindcss": "4.3.3",
+    "tsx": "4.23.12",
     "typescript": "5.9.3"
   },
   "engines": {"node": ">=20.9.0"}
