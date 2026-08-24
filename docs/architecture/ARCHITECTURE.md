@@ -57,3 +57,5 @@ analytics: [content.viewed]
 - Decisions: [ADR index](../adr/README.md)
 - Registries: [`config/architecture`](../../config/architecture/)
 - Bootstrap evidence: [initial repository audit](./BOOTSTRAP_AUDIT.md)
+
+The accepted public locale URL strategy is governed by [ADR-0011](../adr/0011-locale-url-strategy.md): unprefixed `zh-CN`, prefixed `/en` for `en-US`, and shared application logic.

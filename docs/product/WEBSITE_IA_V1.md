@@ -33,3 +33,5 @@ Approved top-level IA: **HOME · TRUTH LIBRARY · LIFE STORIES · COMPANIONSHIP 
 | My Journey `/journey` | Private continuity and formation | Connected+ | continuity | Growth Seeker/Participant | resume/reflect | V1.5+ |
 
 GCCM must not be the default first-time entry. Navigation labels may change without changing stable route semantics. See [Route Schema](../architecture/ROUTE_SCHEMA.md) and [routes registry](../../config/architecture/routes.yaml).
+
+Locale projection follows [ADR-0011](../adr/0011-locale-url-strategy.md): this IA is canonical at unprefixed `zh-CN` routes and is mirrored for `en-US` under `/en`; `/zh` is not part of the IA.

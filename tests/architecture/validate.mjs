@@ -16,6 +16,10 @@ export function validate() {
   for (const file of ['content','taxonomy','events','user-journey','routes']) read(`schema/${file}.schema.json`);
 
   assert(routes.version === 1, 'route registry version must be 1');
+  assert(routes.locale_strategy.default_locale === 'zh-CN', 'default locale must be zh-CN');
+  assert(routes.locale_strategy.locale_prefixes['en-US'] === '/en', 'en-US prefix must be /en');
+  assert(routes.locale_strategy.forbidden_prefixes.includes('/zh'), '/zh must remain forbidden');
+  assert(routes.locale_strategy.forced_browser_redirects === false, 'forced browser redirects must remain disabled');
   unique(routes.top_level_routes.map((route) => route.path), 'top-level routes');
   const requiredRoutes = ['/', '/start', '/library', '/stories', '/together', '/grow', '/community', '/about', '/gccm', '/search', '/ask', '/journey', '/account', '/auth', '/api', '/legal', '/admin'];
   for (const route of requiredRoutes) assert(routes.top_level_routes.some((item) => item.path === route), `missing reserved route ${route}`);
