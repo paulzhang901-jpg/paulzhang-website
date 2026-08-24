@@ -17,8 +17,8 @@ const mdxComponents = {ScriptureBlock, ReflectionBlock, PracticeBlock, PrayerBlo
 
 function TranslationStatus({item, repository}: {item: NormalizedContentItem; repository: ContentRepository}) {
   const targetLocale: ContentLanguage = item.language === "zh-CN" ? "en-US" : "zh-CN";
-  const translation = repository.resolveTranslation(item.canonicalId, targetLocale, item);
-  if (translation.status === "missing" || !["published", "outdated"].includes(translation.status) || translation.item.visibility !== "public" || translation.item.accessLevel !== "public") {
+  const translation = repository.resolvePublicTranslation(item.canonicalId, targetLocale, item);
+  if (!translation.available) {
     return <p data-translation-unavailable className="mt-5 text-sm text-muted-foreground">
       {item.language === "zh-CN" ? "此内容暂时没有可用的英文译本。" : "A Chinese translation is not currently available."}
     </p>;

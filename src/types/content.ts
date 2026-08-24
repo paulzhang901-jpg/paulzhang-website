@@ -72,3 +72,7 @@ export type SearchDocument = {
 export type TranslationResolution =
   | {status: Exclude<TranslationStatus, "missing">; item: NormalizedContentItem}
   | {status: "missing"; item: null};
+
+export type PublicTranslationResolution =
+  | {status: "published" | "outdated"; available: true; item: NormalizedContentItem}
+  | {status: TranslationStatus | "unavailable"; available: false; item: null};
