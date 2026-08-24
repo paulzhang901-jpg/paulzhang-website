@@ -53,7 +53,7 @@ analytics: [content.viewed]
 ## Architecture index
 
 - Product: [North Star](../product/PRODUCT_NORTH_STAR.md), [IA](../product/WEBSITE_IA_V1.md), [Journey](../product/USER_JOURNEY.md), [Scope](../product/VERSION_SCOPE.md)
-- Architecture: [Routes](./ROUTE_SCHEMA.md), [Content](./CONTENT_MODEL.md), [Taxonomy](./TAXONOMY.md), [User States](./USER_STATE_MACHINE.md), [Events](./EVENT_SCHEMA.md), [Privacy](./PRIVACY_MODEL.md), [AI](./AI_BOUNDARIES.md), [Internationalization](./INTERNATIONALIZATION.md), [Search](./SEARCH_ARCHITECTURE.md), [Releases](./RELEASE_BOUNDARIES.md)
+- Architecture: [Routes](./ROUTE_SCHEMA.md), [Content](./CONTENT_MODEL.md), [Taxonomy](./TAXONOMY.md), [User States](./USER_STATE_MACHINE.md), [Events](./EVENT_SCHEMA.md), [Privacy](./PRIVACY_MODEL.md), [AI](./AI_BOUNDARIES.md), [Internationalization](./INTERNATIONALIZATION.md), [Search](./SEARCH_ARCHITECTURE.md), [Releases](./RELEASE_BOUNDARIES.md), [Quality Gates](./QUALITY_GATES.md)
 - Decisions: [ADR index](../adr/README.md)
 - Registries: [`config/architecture`](../../config/architecture/)
 - Bootstrap evidence: [initial repository audit](./BOOTSTRAP_AUDIT.md)
