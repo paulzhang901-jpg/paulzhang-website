@@ -12,6 +12,7 @@ export function validate() {
   const taxonomy = read('config/architecture/taxonomy.yaml');
   const events = read('config/architecture/events.yaml');
   const journey = read('config/architecture/journey-states.yaml');
+  const productJourneys = read('config/architecture/journeys.yaml');
 
   for (const file of ['content','taxonomy','events','user-journey','routes']) read(`schema/${file}.schema.json`);
 
@@ -51,6 +52,14 @@ export function validate() {
   for (const [from, to] of [['participant','companion'],['companion','disciple_maker']]) {
     const transition = journey.transitions.find((item) => item.from === from && item.to === to);
     assert(transition?.validation === 'human_required', `${from} -> ${to} must require human validation`);
+  }
+  const journeyIds = productJourneys.journeys.map((item) => item.journey_id);
+  unique(journeyIds, 'product journey IDs');
+  assert(JSON.stringify(journeyIds) === JSON.stringify(['faith','questions','difficult-season','grow','stories','companionship']), 'approved product journeys changed');
+  const taxonomyValues = new Set([...taxonomy.topics, ...taxonomy.life_needs, ...taxonomy.journey_stages]);
+  for (const item of productJourneys.journeys) {
+    assert(routes.child_routes['/start'].includes(item.journey_id), `journey route missing ${item.journey_id}`);
+    for (const values of Object.values(item.taxonomy_mapping)) values.forEach((value) => assert(taxonomyValues.has(value), `journey ${item.journey_id} references unknown taxonomy ${value}`));
   }
   return {routes: routes.top_level_routes.length, events: events.events.length, states: journey.states.length};
 }

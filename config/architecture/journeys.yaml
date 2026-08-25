@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "journeys": [
+    {"journey_id":"faith","destination":"/start/faith","primary_experience":"truth","secondary_experience":"stories","taxonomy_mapping":{"topics":["bible"],"life_needs":["seeking-faith"],"journey_stages":["explore"]},"featured_content":["truth-foundation-001","life-story-sample-001"],"relationship_weight":"weak"},
+    {"journey_id":"questions","destination":"/start/questions","primary_experience":"truth","secondary_experience":null,"taxonomy_mapping":{"topics":["bible"],"life_needs":["bible-understanding"],"journey_stages":["explore"]},"featured_content":["truth-foundation-001"],"relationship_weight":"weak"},
+    {"journey_id":"difficult-season","destination":"/start/difficult-season","primary_experience":"stories","secondary_experience":"truth","taxonomy_mapping":{"topics":[],"life_needs":["grief-loss"],"journey_stages":["explore"]},"featured_content":["life-story-sample-001","truth-foundation-001"],"relationship_weight":"medium"},
+    {"journey_id":"grow","destination":"/start/grow","primary_experience":"grow","secondary_experience":"truth","taxonomy_mapping":{"topics":["spiritual-formation"],"life_needs":["want-to-grow"],"journey_stages":["abide"]},"featured_content":["truth-foundation-001"],"relationship_weight":"medium"},
+    {"journey_id":"stories","destination":"/start/stories","primary_experience":"stories","secondary_experience":"truth","taxonomy_mapping":{"topics":["discipleship"],"life_needs":[],"journey_stages":["abide"]},"featured_content":["life-story-sample-001","truth-foundation-001"],"relationship_weight":"weak"},
+    {"journey_id":"companionship","destination":"/start/companionship","primary_experience":"companionship","secondary_experience":"truth-stories","taxonomy_mapping":{"topics":[],"life_needs":["loneliness"],"journey_stages":["explore"]},"featured_content":["truth-foundation-001","life-story-sample-001"],"relationship_weight":"strong"}
+  ]
+}

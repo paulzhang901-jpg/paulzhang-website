@@ -17,7 +17,12 @@ test("Client Components remain explicitly reviewed and minimal", () => {
   const clientFiles = filesWithin(path.join(root, "src"))
     .filter((file) => /\.[cm]?[jt]sx?$/.test(file) && fs.readFileSync(file, "utf8").startsWith('"use client"'))
     .map((file) => path.relative(root, file));
-  assert.deepEqual(clientFiles, ["src/components/navigation/language-switcher.tsx"]);
+  assert.deepEqual(clientFiles, [
+    "src/components/navigation/language-switcher.tsx",
+    "src/components/product/engagement-prompts.tsx",
+    "src/components/product/home-view-event.tsx",
+    "src/components/product/tracked-link.tsx",
+  ]);
 });
 
 test("raw public assets stay below the V1 one-megabyte safeguard", () => {
