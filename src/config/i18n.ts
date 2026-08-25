@@ -7,6 +7,8 @@ export const messages = {
   "zh-CN": {
     skip: "跳到主要内容",
     siteName: "Paul Zhang 张崇助｜真理、生命成长与同行",
+    brandName: "Paul Zhang 张崇助",
+    brandDescriptor: "真理 · 生命成长 · 同行",
     siteDescription: "通过圣经真理、真实生命故事、成长资源与关系同行，在信仰和人生中一步一步成长。",
     start: "从这里开始",
     library: "真理资源库",
@@ -29,6 +31,8 @@ export const messages = {
   "en-US": {
     skip: "Skip to main content",
     siteName: "Paul Zhang | Truth, Life Formation, and Companionship",
+    brandName: "Paul Zhang 张崇助",
+    brandDescriptor: "Truth · Growth · Companionship",
     siteDescription: "Explore biblical truth, real-life stories, formation resources, and thoughtful companionship for growing step by step in faith and life.",
     start: "Start Here",
     library: "Truth Library",
