@@ -12,8 +12,16 @@ test("Truth Library index and collections use the canonical repository", () => {
   assert.match(zhRoute, /getContentRepository/);
   assert.match(enRoute, /routeId === "library"/);
   assert.match(library, /getLibraryItems/);
+  assert.match(library, /items\.length/);
+  assert.match(library, /earlyTitle/);
   assert.match(dynamicRoute, /LibraryCollectionPage/);
   assert.doesNotMatch(library, /zhenli-yuedu-shili|truth-reading-sample/);
+});
+
+test("technical Truth fixtures remain review-only and absent from public discovery", () => {
+  for (const file of ["content/zh-CN/library/zhenli-yuedu-shili.mdx", "content/en-US/library/truth-reading-sample.mdx"]) {
+    assert.match(read(file), /status: review/);
+  }
 });
 
 test("Truth detail preserves reading, translation, related-content, and next-step contracts", () => {

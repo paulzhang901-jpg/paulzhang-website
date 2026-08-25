@@ -53,11 +53,11 @@ export async function LibraryPage({locale, repository}: {locale: ContentLanguage
         </nav>
         <ReadingContainer className="mx-0 px-0">
           <SectionHeading eyebrow={copy.eyebrow} title={copy.title}><p>{copy.introduction}</p></SectionHeading>
-          <p className="text-sm text-muted-foreground">{items.length} {items.length === 1 ? copy.resourceSingular : copy.resource}</p>
+          {items.length ? <p className="text-sm text-muted-foreground">{items.length} {items.length === 1 ? copy.resourceSingular : copy.resource}</p> : null}
         </ReadingContainer>
       </Container>
     </Section>
-    <Section>
+    {items.length ? <Section>
       <Container>
         <div className="grid gap-10 lg:grid-cols-[17rem_minmax(0,1fr)]">
           <aside aria-labelledby="library-topics">
@@ -74,7 +74,9 @@ export async function LibraryPage({locale, repository}: {locale: ContentLanguage
           </div>
         </div>
       </Container>
-    </Section>
+    </Section> : <Section>
+      <Container><ReadingContainer className="px-0"><div className="border-y py-10 sm:py-12"><h2 className="font-serif text-3xl leading-tight">{copy.earlyTitle}</h2><p className="mt-5 text-lg leading-8 text-muted-foreground">{copy.earlyBody}</p></div></ReadingContainer></Container>
+    </Section>}
   </>;
 }
 
