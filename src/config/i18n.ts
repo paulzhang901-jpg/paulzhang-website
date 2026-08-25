@@ -6,8 +6,8 @@ export const defaultLocale: Locale = "zh-CN";
 export const messages = {
   "zh-CN": {
     skip: "跳到主要内容",
-    siteName: "Paul Zhang",
-    siteDescription: "真理、生命故事与成长同行的数字生命成长平台。",
+    siteName: "Paul Zhang 张崇助｜真理、生命成长与同行",
+    siteDescription: "通过圣经真理、真实生命故事、成长资源与关系同行，在信仰和人生中一步一步成长。",
     start: "从这里开始",
     library: "真理资源库",
     stories: "生命故事",
@@ -28,8 +28,8 @@ export const messages = {
   },
   "en-US": {
     skip: "Skip to main content",
-    siteName: "Paul Zhang",
-    siteDescription: "A digital life-formation platform for truth, life stories, and growth companionship.",
+    siteName: "Paul Zhang | Truth, Life Formation, and Companionship",
+    siteDescription: "Explore biblical truth, real-life stories, formation resources, and thoughtful companionship for growing step by step in faith and life.",
     start: "Start Here",
     library: "Truth Library",
     stories: "Life Stories",

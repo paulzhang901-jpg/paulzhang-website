@@ -29,6 +29,7 @@
     {"path":"/admin","domain":"platform","release":"future","visibility":"restricted"}
   ],
   "child_routes": {
+    "/start": ["faith","questions","difficult-season","grow","stories","companionship"],
     "/library": ["bible","gospel","theology","formation","discipleship","prayer","marriage","family","grief","work-money","leadership","church","mission","culture","education","technology","research"],
     "/stories": ["my-journey","faith","ministry","suffering-grace","little-wheat","family","immigration","learning","testimonies"],
     "/together": ["talk","faith","life","marriage-family","parenting","grief","spiritual-growth","ministry","prayer","mentor","how-it-works"],

@@ -2,6 +2,8 @@
 
 Experience journey:
 
+Home and Start Here use six experience-layer entry identifiers: `faith`, `questions`, `difficult-season`, `grow`, `stories`, and `companionship`. They are governed by [`journeys.yaml`](../../config/architecture/journeys.yaml), reference the canonical taxonomy, and do not redefine it. All six share one guided landing sequence: context, three starting points, related truth/story, reflection, next step, and optional companionship.
+
 Discover → Explore → Stay → Trust → Connect → Walk Together → Grow → Belong → Serve → Lead → Multiply
 
 Platform relationship mapping:

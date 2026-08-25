@@ -3,6 +3,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { getMessages, type Locale } from "@/config/i18n";
 import "@/styles/globals.css";
+import { EngagementPrompts } from "@/components/product/engagement-prompts";
 
 export function LocaleRootLayout({locale, children}: {locale: Locale; children: ReactNode}) {
   const copy = getMessages(locale);
@@ -12,6 +13,7 @@ export function LocaleRootLayout({locale, children}: {locale: Locale; children: 
       <SiteHeader locale={locale} />
       <main id="main-content" tabIndex={-1} className="min-h-[65vh]">{children}</main>
       <SiteFooter locale={locale} />
+      <EngagementPrompts locale={locale} />
     </body>
   </html>;
 }

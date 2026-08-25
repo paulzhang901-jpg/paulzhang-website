@@ -1,4 +1,4 @@
-import { FoundationPage } from "@/components/layout/foundation-page";
+import { StartPage } from "@/components/product/start-page";
 import { metadataForRoute } from "@/lib/seo/metadata";
 export const metadata = metadataForRoute("start", "zh-CN");
-export default function Page() { return <FoundationPage locale="zh-CN" routeId="start" />; }
+export default function Page() { return <StartPage locale="zh-CN" />; }

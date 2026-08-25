@@ -6,6 +6,8 @@ Locale routing follows [ADR-0011](../adr/0011-locale-url-strategy.md): `zh-CN` u
 
 Reserved top-level namespaces: `/`, `/start`, `/library`, `/stories`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
 
+The V1 experience-layer journeys live at `/start/{faith,questions,difficult-season,grow,stories,companionship}` and the same paths under `/en`. These identifiers guide discovery only; they are not taxonomy values or relationship-state labels. Their canonical contract is [`journeys.yaml`](../../config/architecture/journeys.yaml).
+
 Approved children:
 
 - Library: `/library/{bible,gospel,theology,formation,discipleship,prayer,marriage,family,grief,work-money,leadership,church,mission,culture,education,technology,research}`

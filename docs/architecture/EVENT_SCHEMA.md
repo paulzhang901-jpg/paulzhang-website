@@ -33,4 +33,6 @@ Not every field is required. Raw pastoral, prayer, grief, marriage, family, coun
 
 After about five minutes of **active meaningful reading**, gentle encouragement may appear without demanding email. At ten minutes, two meaningful reads, or a return visit, a relational “continue the journey” invitation may be eligible. Centralized policy must support dismissal, session suppression, frequency caps, subscription-aware suppression, and authenticated-user suppression.
 
+For the V1 public experience, engaged time accumulates only while the document is visible and recent interaction indicates activity. It is stored ephemerally for the browser tab session, never as a persistent visitor profile. Product events may carry registered generic fields such as `journey_id`, `locale`, `source`, `destination_type`, and threshold; they must not carry email, prayer text, health or family details, pastoral notes, or free-text reflections.
+
 Browser-tab-open time is not meaningful reading. Future algorithms should consider visibility, activity, scroll/read interaction, and idle state. Do not register or emit unused events merely to inflate telemetry.
