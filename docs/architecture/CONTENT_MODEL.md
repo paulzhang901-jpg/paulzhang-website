@@ -15,7 +15,7 @@ ContentItem:
   primary_language: locale
   translations: locale representations
   authors: references
-  published_at: timestamp
+  published_at: web-publication timestamp; optional/null before publication; required for published/archived content
   updated_at: timestamp
   topics: taxonomy references
   life_needs: taxonomy references
@@ -42,3 +42,5 @@ ContentItem:
 ```
 
 This is conceptual; it does not require every field in a production database. Public APIs must exclude `draft` and `review` by default. Future `private` and `restricted` states require access-control architecture. See [content schema](../../schema/content.schema.json), [Taxonomy](./TAXONOMY.md), and [Internationalization](./INTERNATIONALIZATION.md).
+
+Publication timestamps follow [ADR-0012](../adr/0012-conditional-publication-timestamp.md): `draft`, `review`, and `scheduled` items may omit `published_at`, while `published` and `archived` items require a valid offset ISO datetime. The field records actual web publication, not an editorial placeholder or a historical event date.

@@ -1,5 +1,5 @@
 import type { ParsedContentRecord } from "./discovery";
-import type { NormalizedContentItem } from "@/types/content";
+import type { NormalizedContentItem, PublishedContentItem } from "@/types/content";
 
 export function normalizeContent(record: ParsedContentRecord): NormalizedContentItem {
   const {frontmatter: item} = record;
@@ -19,7 +19,7 @@ export function normalizeContent(record: ParsedContentRecord): NormalizedContent
     journeyStages: [...item.journey_stages],
     audiences: [...item.audiences],
     authors: [...item.authors],
-    publishedAt: new Date(item.published_at),
+    publishedAt: item.published_at ? new Date(item.published_at) : undefined,
     updatedAt: item.updated_at ? new Date(item.updated_at) : undefined,
     visibility: item.visibility,
     accessLevel: item.access_level,
@@ -46,6 +46,6 @@ export function normalizeContent(record: ParsedContentRecord): NormalizedContent
   };
 }
 
-export function isPublicContent(item: NormalizedContentItem) {
-  return item.status === "published" && item.visibility === "public" && item.accessLevel === "public";
+export function isPublicContent(item: NormalizedContentItem): item is PublishedContentItem {
+  return item.status === "published" && item.visibility === "public" && item.accessLevel === "public" && item.publishedAt instanceof Date;
 }

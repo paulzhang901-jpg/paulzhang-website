@@ -45,5 +45,11 @@
       "additionalProperties":false
     }
   },
+  "allOf": [
+    {
+      "if": {"properties":{"status":{"enum":["published","archived"]}},"required":["status"]},
+      "then": {"required":["published_at"],"properties":{"published_at":{"type":"string","format":"date-time"}}}
+    }
+  ],
   "additionalProperties": false
 }

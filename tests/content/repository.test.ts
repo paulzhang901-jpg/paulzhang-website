@@ -7,12 +7,15 @@ import { item } from "./fixtures";
 
 test("private, draft, and member content never enter public queries or search documents", () => {
   const published = item();
-  const draft = item({id: "draft", canonicalId: "draft", slug: "draft", status: "draft"});
+  const draft = item({id: "draft", canonicalId: "draft", slug: "draft", status: "draft", publishedAt: undefined});
+  const review = item({id: "review", canonicalId: "review", slug: "review", status: "review", publishedAt: undefined});
   const privateItem = item({id: "private", canonicalId: "private", slug: "private", visibility: "private"});
   const member = item({id: "member", canonicalId: "member", slug: "member", accessLevel: "member"});
-  const repository = createContentRepository([published, draft, privateItem, member]);
+  const repository = createContentRepository([published, draft, review, privateItem, member]);
   assert.deepEqual(repository.getPublishedContent().map((entry) => entry.id), [published.id]);
   assert.equal(repository.getSearchDocuments().length, 1);
+  assert.equal(createSearchDocument(draft), null);
+  assert.equal(createSearchDocument(review), null);
   assert.equal(createSearchDocument(privateItem), null);
 });
 

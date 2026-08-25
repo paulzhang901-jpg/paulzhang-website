@@ -4,8 +4,8 @@ import { isPublicContent } from "./normalize";
 const overlap = (left: string[], right: string[]) => left.filter((value) => right.includes(value)).length;
 
 export function findRelatedContent(item: NormalizedContentItem, candidates: NormalizedContentItem[], limit = 4) {
-  const eligible = candidates.filter((candidate) =>
-    candidate.id !== item.id && candidate.language === item.language && isPublicContent(candidate),
+  const eligible = candidates.filter(isPublicContent).filter((candidate) =>
+    candidate.id !== item.id && candidate.language === item.language,
   );
   const byCanonical = new Map(eligible.map((candidate) => [candidate.canonicalId, candidate]));
   const explicit = item.relatedContent.flatMap((id) => byCanonical.get(id) ? [byCanonical.get(id)!] : []);

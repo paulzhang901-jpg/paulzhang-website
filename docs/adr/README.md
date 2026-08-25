@@ -37,3 +37,4 @@ None.
 - [0009 Bilingual Content Model](./0009-bilingual-content-model.md)
 - [0010 Privacy and Consent](./0010-privacy-and-consent.md)
 - [0011 Locale URL Strategy](./0011-locale-url-strategy.md)
+- [0012 Conditional Publication Timestamp](./0012-conditional-publication-timestamp.md)

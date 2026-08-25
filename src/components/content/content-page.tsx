@@ -56,8 +56,8 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
         <article>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <span className="font-semibold text-primary">{contentTypeLabel(item.language, item.contentType)}</span>
-            <span>{copy.published} {item.publishedAt.toLocaleDateString(item.language)}</span>
-            {item.updatedAt && item.updatedAt.getTime() !== item.publishedAt.getTime() ? <span>{copy.updated} {item.updatedAt.toLocaleDateString(item.language)}</span> : null}
+            {item.publishedAt ? <span>{copy.published} {item.publishedAt.toLocaleDateString(item.language)}</span> : null}
+            {item.publishedAt && item.updatedAt && item.updatedAt.getTime() !== item.publishedAt.getTime() ? <span>{copy.updated} {item.updatedAt.toLocaleDateString(item.language)}</span> : null}
           </div>
           <h1 className="mt-3 font-serif text-4xl leading-tight md:text-5xl">{item.title}</h1>
           {item.subtitle ? <p className="mt-3 text-xl text-muted-foreground">{item.subtitle}</p> : null}

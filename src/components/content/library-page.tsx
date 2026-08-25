@@ -29,7 +29,7 @@ function ResourceList({items, locale, repository}: {items: NormalizedContentItem
       <div>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
           <span className="font-medium text-primary">{contentTypeLabel(locale, item.contentType)}</span>
-          <span>{copy.published} {formatDate(item.publishedAt, locale)}</span>
+          {item.publishedAt ? <span>{copy.published} {formatDate(item.publishedAt, locale)}</span> : null}
           <span>{copy.availableIn}: {languageAvailability(item, repository)}</span>
         </div>
         <h2 className="mt-3 font-serif text-2xl leading-snug sm:text-3xl"><Link className="hover:underline" href={contentPath(item)}>{item.title}</Link></h2>
