@@ -44,7 +44,7 @@ export const contentFrontmatterSchema = z.object({
   journey_stages: z.array(identifier).default([]),
   audiences: z.array(identifier).default([]),
   authors: z.array(z.string().min(1)).default([]),
-  published_at: z.string().datetime({offset: true}),
+  published_at: z.string().datetime({offset: true}).nullish(),
   updated_at: z.string().datetime({offset: true}).optional(),
   visibility: z.enum(["public", "unlisted", "private"]),
   access_level: z.enum(["public", "member", "mentor"]),
@@ -58,6 +58,10 @@ export const contentFrontmatterSchema = z.object({
   mentor_prompt: z.string().min(1).optional(),
   next_steps: z.array(nextStepSchema).default([]),
   seo: z.object({title: z.string().min(1).optional(), description: z.string().min(1).optional()}).strict().default({}),
-}).strict();
+}).strict().superRefine((item, context) => {
+  if ((item.status === "published" || item.status === "archived") && !item.published_at) {
+    context.addIssue({code: "custom", path: ["published_at"], message: `published_at is required when status is ${item.status}`});
+  }
+});
 
 export type ContentFrontmatter = z.infer<typeof contentFrontmatterSchema>;

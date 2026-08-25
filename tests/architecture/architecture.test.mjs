@@ -8,9 +8,11 @@ test('registries and schemas are parseable and internally consistent', () => {
   assert.doesNotThrow(() => validate());
 });
 
-test('public publication statuses do not include draft or review', () => {
+test('publication lifecycle conditionally requires published_at', () => {
   const schema = read('schema/content.schema.json');
   assert.deepEqual(schema.properties.status.enum, ['draft','review','scheduled','published','archived']);
+  assert.deepEqual(schema.allOf[0].if.properties.status.enum, ['published','archived']);
+  assert.deepEqual(schema.allOf[0].then.required, ['published_at']);
 });
 
 test('architecture constitution links every major architecture document', () => {
@@ -23,7 +25,7 @@ test('architecture constitution links every major architecture document', () => 
 
 test('all accepted baseline and locale ADRs exist', () => {
   const adrDir = path.resolve('docs/adr');
-  for (let number = 1; number <= 11; number += 1) {
+  for (let number = 1; number <= 12; number += 1) {
     const prefix = String(number).padStart(4, '0');
     const file = fs.readdirSync(adrDir).find((name) => name.startsWith(`${prefix}-`));
     assert.ok(file, `missing ADR-${prefix}`);

@@ -33,7 +33,7 @@ export type NormalizedContentItem = {
   journeyStages: string[];
   audiences: string[];
   authors: string[];
-  publishedAt: Date;
+  publishedAt?: Date;
   updatedAt?: Date;
   visibility: ContentVisibility;
   accessLevel: ContentAccessLevel;
@@ -51,6 +51,13 @@ export type NormalizedContentItem = {
   seo: {title?: string; description?: string};
   body: string;
   sourcePath: string;
+};
+
+export type PublishedContentItem = NormalizedContentItem & {
+  status: "published";
+  visibility: "public";
+  accessLevel: "public";
+  publishedAt: Date;
 };
 
 export type SearchDocument = {
