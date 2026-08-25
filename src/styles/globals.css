@@ -55,6 +55,17 @@ a { text-underline-offset: 0.2em; }
 .skip-link { position: fixed; inset-block-start: 0.75rem; inset-inline-start: 0.75rem; z-index: 100; transform: translateY(-180%); border-radius: var(--radius-sm); background: var(--color-foreground); color: var(--color-background); padding: 0.75rem 1rem; }
 .skip-link:focus { transform: translateY(0); }
 
+.prose-content { color: var(--color-foreground); font-size: 1.0625rem; line-height: 1.9; }
+.prose-content > * + * { margin-block-start: 1.4em; }
+.prose-content h2 { margin-block-start: 2.25em; font-family: var(--font-serif); font-size: clamp(1.65rem, 4vw, 2rem); line-height: 1.35; }
+.prose-content h3 { margin-block-start: 1.8em; font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.4; }
+.prose-content ul, .prose-content ol { padding-inline-start: 1.5rem; }
+.prose-content ul { list-style: disc; }
+.prose-content ol { list-style: decimal; }
+.prose-content li + li { margin-block-start: 0.5rem; }
+.prose-content blockquote { border-inline-start: 3px solid var(--color-truth); padding-inline-start: 1.25rem; color: var(--color-muted-foreground); }
+.prose-content a { color: var(--color-primary); text-decoration: underline; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
