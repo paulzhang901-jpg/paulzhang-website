@@ -59,3 +59,5 @@ analytics: [content.viewed]
 - Bootstrap evidence: [initial repository audit](./BOOTSTRAP_AUDIT.md)
 
 The accepted public locale URL strategy is governed by [ADR-0011](../adr/0011-locale-url-strategy.md): unprefixed `zh-CN`, prefixed `/en` for `en-US`, and shared application logic.
+
+Multi-unit publications are governed by [ADR-0013](../adr/0013-content-work-ordered-unit-model.md): Content Works remain distinct from independent ContentItems and own an explicit, validated sequence of localized Content Units.

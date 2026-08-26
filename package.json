@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit",
     "test": "pnpm run test:architecture && pnpm run test:routes && pnpm run test:content-integrity && pnpm run test:translation && pnpm run test:product && pnpm run test:accessibility && pnpm run test:performance && pnpm run test:security",
     "test:content": "pnpm run test:content-integrity && pnpm run test:translation",
-    "test:content-integrity": "node --import tsx --test tests/content/content-model.test.ts tests/content/repository.test.ts",
+    "test:content-integrity": "node --import tsx --test tests/content/content-model.test.ts tests/content/repository.test.ts tests/content-work/*.test.ts",
     "test:translation": "node --import tsx --test tests/content/translation-integrity.test.ts",
     "test:routes": "node --test tests/runtime/*.test.mjs && node --import tsx --test tests/routes/*.test.ts",
     "test:accessibility": "node --test tests/accessibility/*.test.mjs",

@@ -39,5 +39,9 @@
     "/gccm": ["vision","mission","disciple-making","digital-mission","leadership","church-partners","resources","serve","join"],
     "/journey": ["reading","saved","growth","reflections","rule-of-life","prayer","community","mentor","next-step"]
   },
-  "patterns": [{"path":"/grow/path/[slug]","domain":"growth","release":"v1.5"}]
+  "patterns": [
+    {"path":"/stories/[work-slug]","domain":"stories","release":"v1","entity":"content_work"},
+    {"path":"/stories/[work-slug]/[unit-slug]","domain":"stories","release":"v1","entity":"content_unit"},
+    {"path":"/grow/path/[slug]","domain":"growth","release":"v1.5"}
+  ]
 }

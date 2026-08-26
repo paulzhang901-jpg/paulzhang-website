@@ -14,7 +14,7 @@ export function validate() {
   const journey = read('config/architecture/journey-states.yaml');
   const productJourneys = read('config/architecture/journeys.yaml');
 
-  for (const file of ['content','taxonomy','events','user-journey','routes']) read(`schema/${file}.schema.json`);
+  for (const file of ['content','content-work','content-unit','taxonomy','events','user-journey','routes']) read(`schema/${file}.schema.json`);
 
   assert(routes.version === 1, 'route registry version must be 1');
   assert(routes.locale_strategy.default_locale === 'zh-CN', 'default locale must be zh-CN');
@@ -29,11 +29,17 @@ export function validate() {
     unique(children, `children of ${parent}`);
     children.forEach((value) => assert(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value), `invalid child route ${parent}/${value}`));
   }
+  for (const [pathPattern, entity] of [['/stories/[work-slug]','content_work'],['/stories/[work-slug]/[unit-slug]','content_unit']]) {
+    const pattern = routes.patterns.find((item) => item.path === pathPattern);
+    assert(pattern?.entity === entity && pattern.release === 'v1', `missing content work route pattern ${pathPattern}`);
+  }
 
-  for (const key of ['content_types','topics','life_needs','journey_stages','audiences']) {
+  for (const key of ['content_types','work_types','unit_types','topics','life_needs','journey_stages','audiences']) {
     unique(taxonomy[key], key);
     taxonomy[key].forEach((value) => assert(/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(value), `invalid ${key} value ${value}`));
   }
+  assert(taxonomy.work_types.includes('story_book'), 'story_book work type missing');
+  assert(!taxonomy.content_types.includes('story_book'), 'story_book must not be an ordinary ContentItem type');
   assert(JSON.stringify(taxonomy.journey_stages) === JSON.stringify(['explore','believe','abide','serve','lead','multiply']), 'canonical journey stages changed');
 
   const eventKeys = events.events.map(({name, version}) => `${name}@${version}`);

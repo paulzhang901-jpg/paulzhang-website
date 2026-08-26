@@ -5,6 +5,8 @@ import { z } from "zod";
 const registrySchema = z.object({
   version: z.literal(1),
   content_types: z.array(z.string()).min(1),
+  work_types: z.array(z.string()).min(1),
+  unit_types: z.array(z.string()).min(1),
   topics: z.array(z.string()).min(1),
   life_needs: z.array(z.string()).min(1),
   journey_stages: z.array(z.string()).min(1),
@@ -19,6 +21,14 @@ export function getTaxonomyRegistry(): TaxonomyRegistry {
   const file = path.join(process.cwd(), "config/architecture/taxonomy.yaml");
   cachedRegistry = registrySchema.parse(JSON.parse(fs.readFileSync(file, "utf8")));
   return cachedRegistry;
+}
+
+export function validateWorkTaxonomy(workType: string, unitTypes: string[] = []) {
+  const registry = getTaxonomyRegistry();
+  const errors: string[] = [];
+  if (!registry.work_types.includes(workType)) errors.push(`unknown work_type: ${workType}`);
+  for (const unitType of unitTypes) if (!registry.unit_types.includes(unitType)) errors.push(`unknown unit_type: ${unitType}`);
+  return errors;
 }
 
 export function validateTaxonomy(frontmatter: {

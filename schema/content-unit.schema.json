@@ -1,0 +1,26 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://paulzhang.org/schema/content-unit.schema.json",
+  "title":"Localized ContentUnit",
+  "type":"object",
+  "required":["id","canonical_id","work_canonical_id","unit_type","order","slug","status","title","language","visibility","access_level"],
+  "properties":{
+    "id":{"type":"string","pattern":"^[a-z0-9]+(?:[-_][a-z0-9]+)*$"},
+    "canonical_id":{"type":"string","pattern":"^[a-z0-9]+(?:[-_][a-z0-9]+)*$"},
+    "work_canonical_id":{"type":"string","pattern":"^[a-z0-9]+(?:[-_][a-z0-9]+)*$"},
+    "unit_type":{"type":"string","pattern":"^[a-z0-9]+(?:[-_][a-z0-9]+)*$"},
+    "order":{"type":"integer","minimum":1},
+    "chapter_number":{"type":"integer","minimum":1},
+    "slug":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "status":{"enum":["draft","review","scheduled","published","archived"]},
+    "title":{"type":"string","minLength":1},
+    "language":{"enum":["zh-CN","en-US"]},
+    "published_at":{"type":["string","null"],"format":"date-time"},
+    "updated_at":{"type":"string","format":"date-time"},
+    "visibility":{"enum":["public","unlisted","private"]},
+    "access_level":{"enum":["public","member","mentor"]},
+    "seo":{"type":"object"}
+  },
+  "allOf":[{"if":{"properties":{"status":{"enum":["published","archived"]}},"required":["status"]},"then":{"required":["published_at"],"properties":{"published_at":{"type":"string","format":"date-time"}}}}],
+  "additionalProperties":false
+}

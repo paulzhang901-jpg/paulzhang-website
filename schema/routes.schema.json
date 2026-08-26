@@ -8,7 +8,7 @@
     "locale_strategy":{"type":"object","required":["default_locale","secondary_locales","default_prefix","locale_prefixes","forbidden_prefixes","preference_order","forced_browser_redirects"],"properties":{"default_locale":{"const":"zh-CN"},"secondary_locales":{"const":["en-US"]},"default_prefix":{"const":""},"locale_prefixes":{"type":"object","properties":{"en-US":{"const":"/en"}},"required":["en-US"],"additionalProperties":false},"forbidden_prefixes":{"const":["/zh"]},"preference_order":{"const":["explicit_user_choice","browser_hint"]},"forced_browser_redirects":{"const":false}},"additionalProperties":false},
     "top_level_routes":{"type":"array","items":{"type":"object","required":["path","domain","release"],"properties":{"path":{"type":"string","pattern":"^/(?:[a-z0-9-]+)?$"},"domain":{"type":"string"},"release":{"enum":["v1","v1.5","v2","future"]},"implementation_level":{"type":"string"},"visibility":{"type":"string"}},"additionalProperties":false}},
     "child_routes":{"type":"object","additionalProperties":{"type":"array","uniqueItems":true,"items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"}}},
-    "patterns":{"type":"array","items":{"type":"object","required":["path","domain","release"]}}
+    "patterns":{"type":"array","items":{"type":"object","required":["path","domain","release"],"properties":{"path":{"type":"string"},"domain":{"type":"string"},"release":{"enum":["v1","v1.5","v2","future"]},"entity":{"enum":["content_work","content_unit"]}},"additionalProperties":false}}
   },
   "additionalProperties":false
 }

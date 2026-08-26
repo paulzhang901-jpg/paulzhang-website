@@ -38,3 +38,12 @@ test("deferred application routes are absent", () => {
     assert.equal(fs.existsSync(path.join(root, "src/app", route)), false, `deferred route introduced: /${route}`);
   }
 });
+
+test("content work landing and nested unit route templates exist for both locales", () => {
+  for (const page of [
+    "src/app/(zh)/stories/[slug]/page.tsx",
+    "src/app/(zh)/stories/[slug]/[unitSlug]/page.tsx",
+    "src/app/(en)/en/stories/[slug]/page.tsx",
+    "src/app/(en)/en/stories/[slug]/[unitSlug]/page.tsx",
+  ]) assert.ok(fs.existsSync(path.join(root, page)), `missing ${page}`);
+});

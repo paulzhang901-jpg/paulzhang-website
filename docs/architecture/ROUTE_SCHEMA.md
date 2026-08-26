@@ -20,3 +20,5 @@ Approved children:
 - Journey: `/journey/{reading,saved,growth,reflections,rule-of-life,prayer,community,mentor,next-step}` (primarily V1.5+)
 
 Individual content uses stable canonical slugs. Navigation labels are independent of route paths. Folder/route location is never the source of truth for taxonomy. Route removal or semantic changes require redirects, versioning review, and an ADR.
+
+Content Works use `/stories/[work-slug]` for the localized work landing and `/stories/[work-slug]/[unit-slug]` for localized units. English mirrors both beneath `/en`. Route resolution uses canonical work/unit relationships and public publication boundaries; it never infers unit order from paths or filenames. See [ADR-0013](../adr/0013-content-work-ordered-unit-model.md).

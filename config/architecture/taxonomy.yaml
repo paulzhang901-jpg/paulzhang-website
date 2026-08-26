@@ -1,6 +1,8 @@
 {
   "version": 1,
   "content_types": ["article","story","sermon","bible_study","devotional","reflection","qa","research","book_note","guide","resource","video","audio","course","growth_path","testimony","announcement"],
+  "work_types": ["story_book"],
+  "unit_types": ["front_matter","chapter","supplement"],
   "topics": ["bible","gospel","theology","spiritual-formation","discipleship","prayer","marriage","family","parenting","grief","suffering","work","money","stewardship","leadership","church","ministry","mission","culture","education","learning","technology","ai","research"],
   "life_needs": ["seeking-faith","faith-doubt","spiritual-dryness","life-direction","decision-making","marriage-struggle","family-conflict","parenting","grief-loss","suffering","loneliness","prayer-help","bible-understanding","work-pressure","money-concerns","calling","ministry-burnout","leadership","discipleship","want-to-grow","want-to-serve","want-to-mentor"],
   "journey_stages": ["explore","believe","abide","serve","lead","multiply"],
