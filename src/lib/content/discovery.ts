@@ -18,9 +18,11 @@ const validDomains = new Set<ContentDomain>(["library", "stories", "growth", "pa
 export function discoverContentFiles(contentRoot = path.join(process.cwd(), "content")): string[] {
   if (!fs.existsSync(contentRoot)) return [];
   const files: string[] = [];
+  const resolvedContentRoot = path.resolve(contentRoot);
   const visit = (directory: string) => {
     for (const entry of fs.readdirSync(directory, {withFileTypes: true})) {
       const target = path.join(directory, entry.name);
+      if (entry.isDirectory() && path.resolve(directory) === resolvedContentRoot && entry.name === "works") continue;
       if (entry.isDirectory()) visit(target);
       else if (/\.mdx?$/.test(entry.name)) files.push(target);
     }
