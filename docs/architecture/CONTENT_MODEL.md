@@ -44,3 +44,7 @@ ContentItem:
 This is conceptual; it does not require every field in a production database. Public APIs must exclude `draft` and `review` by default. Future `private` and `restricted` states require access-control architecture. See [content schema](../../schema/content.schema.json), [Taxonomy](./TAXONOMY.md), and [Internationalization](./INTERNATIONALIZATION.md).
 
 Publication timestamps follow [ADR-0012](../adr/0012-conditional-publication-timestamp.md): `draft`, `review`, and `scheduled` items may omit `published_at`, while `published` and `archived` items require a valid offset ISO datetime. The field records actual web publication, not an editorial placeholder or a historical event date.
+
+## Multi-unit works
+
+[ADR-0013](../adr/0013-content-work-ordered-unit-model.md) adds a separate `ContentWork` aggregate for publications whose units must retain one work identity and stable sequence. A work owns localized metadata and explicit ordered unit references. Each `ContentUnit` has a stable canonical identity, exactly one parent work, registered unit type, explicit order, localized slug/body, optional chapter number, and its own publication lifecycle. Existing ContentItems are not migrated or reclassified.

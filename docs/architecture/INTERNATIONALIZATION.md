@@ -19,3 +19,5 @@ Translation status: `missing`, `draft`, `review`, `published`, `outdated`. Publi
 Shared application logic serves both locales. For canonical editorial content, `canonical_id` links translations even when localized slugs differ. The language switcher resolves an available counterpart; when unavailable it presents a translation-unavailable state. Translated equivalents support canonical URLs and `hreflang` for `zh-CN` and `en-US`.
 
 See [ADR-0009](../adr/0009-bilingual-content-model.md), [ADR-0011](../adr/0011-locale-url-strategy.md), [Content Model](./CONTENT_MODEL.md), and the [route registry](../../config/architecture/routes.yaml).
+
+Content Works and Content Units follow the same rule: canonical work and unit identities are locale-independent, localized slugs may differ, and alternate-locale resolution requires an actually available public representation. Unit translations remain attached to the same canonical work and stable order. See [ADR-0013](../adr/0013-content-work-ordered-unit-model.md).
