@@ -1,0 +1,34 @@
+schema_version: "1.0"
+quotation_policy:
+  exact_quote_requires_source: true
+  paraphrase_must_not_be_marked_as_quote: true
+  reverse_translation_as_original: false
+third_party:
+  - quotation_group_id: "pastor-john-impact"
+    author: "Pastor John"
+    canonical_zh_work_title: "影响恒远"
+    source_status:
+      chinese_translation: "PRESENT"
+      english_embedded_legacy: "PRESENT"
+      independent_original_english: "MISSING"
+    translator_zh: "张爱春教授"
+    rules:
+      english_legacy_text_as_verified_original: false
+      reverse_translate_chinese_as_original: false
+      synthetic_direct_quote: false
+      factual_summary_allowed: true
+      attribution_required: true
+father_letter:
+  author: "Paul Zhang"
+  unit: "lw-10-ch09"
+  quotation_class: "author-owned"
+  father_imagery_must_follow_claims_registry: true
+hymns:
+  public_full_lyrics_allowed: false
+  titles_allowed: true
+  brief_copyright-compliant_excerpt_only: true
+  titles:
+    - "God Will Take Care of You"
+    - "What a Friend We Have in Jesus"
+    - "Let the Weak Say I Am Strong"
+    - "Praise God, from Whom All Blessings Flow"

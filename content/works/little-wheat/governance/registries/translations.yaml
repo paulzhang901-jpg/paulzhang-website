@@ -1,0 +1,79 @@
+schema_version: "1.0"
+canonical_language:
+  primary: "zh-CN"
+translation_policy:
+  semantic_equivalence_required: true
+  literal_equivalence_required: false
+  theology_drift_allowed: false
+  fact_drift_allowed: false
+  claim_class_drift_allowed: false
+editions:
+  zh-CN:
+    status: "MATERIALIZED_LOCKED"
+    units: 15
+  en-US:
+    status: "MATERIALIZED_LOCKED"
+    units: 15
+    semantic_source: "zh-CN:v1"
+alignment:
+  - zh: "lw-00-dedication"
+    en: "lw-00-dedication"
+    status: "ALIGNED"
+  - zh: "lw-01-prologue"
+    en: "lw-01-prologue"
+    status: "ALIGNED"
+  - zh: "lw-02-ch01"
+    en: "lw-02-ch01"
+    status: "ALIGNED"
+  - zh: "lw-03-ch02"
+    en: "lw-03-ch02"
+    status: "ALIGNED"
+  - zh: "lw-04-ch03"
+    en: "lw-04-ch03"
+    status: "ALIGNED"
+  - zh: "lw-05-ch04"
+    en: "lw-05-ch04"
+    status: "ALIGNED"
+  - zh: "lw-06-ch05"
+    en: "lw-06-ch05"
+    status: "ALIGNED"
+  - zh: "lw-07-ch06"
+    en: "lw-07-ch06"
+    status: "ALIGNED"
+  - zh: "lw-08-ch07"
+    en: "lw-08-ch07"
+    status: "ALIGNED"
+  - zh: "lw-09-ch08"
+    en: "lw-09-ch08"
+    status: "ALIGNED_WITH_PROVENANCE_RESTRICTION"
+  - zh: "lw-10-ch09"
+    en: "lw-10-ch09"
+    status: "ALIGNED"
+  - zh: "lw-11-ch10"
+    en: "lw-11-ch10"
+    status: "ALIGNED"
+  - zh: "lw-12-ch11"
+    en: "lw-12-ch11"
+    status: "ALIGNED"
+  - zh: "lw-13-ch12"
+    en: "lw-13-ch12"
+    status: "ALIGNED"
+  - zh: "lw-14-family-statement"
+    en: "lw-14-family-statement"
+    status: "ALIGNED"
+chapter_08_special_rule:
+  Pastor_John_original_english:
+    status: "MISSING"
+  reverse_translation:
+    allowed: false
+  synthetic_original:
+    allowed: false
+cross_language_invariants:
+  - "John Earnest Zhang"
+  - "NICU = 42 days"
+  - "death = 2024-08-21 4:44 PM"
+  - "Norovirus = suspected_not_confirmed"
+  - "Little Wheat = witness_not_savior"
+  - "John 12:24 primary referent = Christ"
+  - "reunion = pastoral hope"
+  - "angels/heaven scenes != witnessed fact"

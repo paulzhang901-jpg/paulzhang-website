@@ -1,0 +1,65 @@
+schema_version: "1.0"
+work:
+  canonical_id: "work-little-wheat-v1"
+  slug: "little-wheat"
+  zh_title: "麦子落地：小麦子的生命见证与天国之旅"
+  en_title: "Little Wheat"
+  content_type: "story_book"
+  work_type: "family_testimony"
+  primary_author:
+    name_zh: "张崇助"
+    name_en: "Paul Zhang"
+identity:
+  child:
+    canonical_name_en: "John Earnest Zhang"
+    canonical_name_zh: "张显"
+    nickname_zh: "小麦子"
+    nickname_en: "Little Wheat"
+editions:
+  zh_CN:
+    status: "MATERIALIZED_LOCKED"
+    version: "v1"
+    semantic_authority: true
+    units: 15
+  en_US:
+    status: "MATERIALIZED_LOCKED"
+    version: "v1"
+    semantic_authority: false
+    aligned_to: "zh_CN:v1"
+    units: 15
+authority:
+  facts:
+    authority: "facts.yaml"
+  theology:
+    authority: "claims.yaml"
+  scripture:
+    authority: "scripture.yaml"
+  quotations:
+    authority: "quotations.yaml"
+  provenance:
+    authority: "provenance.yaml"
+  translations:
+    authority: "translations.yaml"
+  media:
+    authority: "media-ledger.yaml"
+  publication:
+    authority: "publication.yaml"
+editorial_lock:
+  ordinary_rewrite_allowed: false
+  allowed_change_classes:
+    - "FACT_CORRECTION"
+    - "SOURCE_CORRECTION"
+    - "THEOLOGICAL_ERRATUM"
+    - "LEGAL_PRIVACY_REQUIREMENT"
+    - "AUTHOR_APPROVED_NEW_EDITION"
+codex_authority:
+  editorial: false
+  theological: false
+  translation: false
+  factual: false
+  provenance_resolution: false
+  privacy_override: false
+  implementation_only: true
+conflict_policy:
+  action: "STOP_AND_REPORT"
+  automatic_resolution: false

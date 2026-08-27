@@ -1,0 +1,44 @@
+schema_version: "1.0"
+scripture_policy:
+  self_translation: false
+  reference_normalization: true
+  quotation_requires_approved_bible_edition: true
+primary_texts:
+  - scripture_id: "lw-scr-john-12-24"
+    reference: "John 12:24"
+    theological_role: "Christological anchor"
+    interpretation:
+      primary_referent: "Jesus Christ"
+      child_application: "secondary analogy only"
+  - scripture_id: "lw-scr-rev-21-4"
+    reference: "Revelation 21:4"
+    theological_role: "new creation / defeat of death"
+  - scripture_id: "lw-scr-1cor-15-20"
+    reference: "1 Corinthians 15:20"
+    theological_role: "Christ resurrection / firstfruits"
+  - scripture_id: "lw-scr-1cor-15-26"
+    reference: "1 Corinthians 15:26"
+    theological_role: "death as enemy"
+  - scripture_id: "lw-scr-mark-10-14"
+    reference: "Mark 10:14"
+    theological_role: "pastoral entrustment of child"
+    restriction:
+      must_not_be_used_as_detailed_intermediate_state_proof: true
+  - scripture_id: "lw-scr-job-1-21"
+    reference: "Job 1:21"
+    theological_role: "grief memory / lament context"
+  - scripture_id: "lw-scr-psalm-22-9"
+    reference: "Psalm 22:9"
+    theological_role: "NICU devotional memory"
+  - scripture_id: "lw-scr-luke-2-40"
+    reference: "Luke 2:40"
+    theological_role: "100-day family blessing memory"
+required_eschatological_sequence:
+  - "Christ_resurrection"
+  - "Parousia"
+  - "bodily_resurrection"
+  - "death_defeated"
+  - "new_creation"
+forbidden_scripture_uses:
+  - "John 12:24 as child-redemption proof"
+  - "Mark 10:14 as proof of detailed current heavenly activity"

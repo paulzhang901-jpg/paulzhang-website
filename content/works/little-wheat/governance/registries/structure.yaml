@@ -1,0 +1,119 @@
+schema_version: "1.0"
+work_id: "work-little-wheat-v1"
+units:
+  - unit_id: "lw-00-dedication"
+    order: 0
+    type: "dedication"
+    zh_path: "zh-CN/00-dedication"
+    en_path: "en-US/00-dedication"
+  - unit_id: "lw-01-prologue"
+    order: 1
+    type: "prologue"
+    zh_path: "zh-CN/01-prologue"
+    en_path: "en-US/01-prologue"
+  - unit_id: "lw-02-ch01"
+    order: 2
+    type: "chapter"
+    chapter: 1
+    zh_path: "zh-CN/02-chapter-01"
+    en_path: "en-US/02-chapter-01"
+  - unit_id: "lw-03-ch02"
+    order: 3
+    type: "chapter"
+    chapter: 2
+    zh_path: "zh-CN/03-chapter-02"
+    en_path: "en-US/03-chapter-02"
+  - unit_id: "lw-04-ch03"
+    order: 4
+    type: "chapter"
+    chapter: 3
+    zh_path: "zh-CN/04-chapter-03"
+    en_path: "en-US/04-chapter-03"
+  - unit_id: "lw-05-ch04"
+    order: 5
+    type: "chapter"
+    chapter: 4
+    zh_path: "zh-CN/05-chapter-04"
+    en_path: "en-US/05-chapter-04"
+  - unit_id: "lw-06-ch05"
+    order: 6
+    type: "chapter"
+    chapter: 5
+    zh_path: "zh-CN/06-chapter-05"
+    en_path: "en-US/06-chapter-05"
+  - unit_id: "lw-07-ch06"
+    order: 7
+    type: "chapter"
+    chapter: 6
+    zh_path: "zh-CN/07-chapter-06"
+    en_path: "en-US/07-chapter-06"
+  - unit_id: "lw-08-ch07"
+    order: 8
+    type: "chapter"
+    chapter: 7
+    zh_path: "zh-CN/08-chapter-07"
+    en_path: "en-US/08-chapter-07"
+  - unit_id: "lw-09-ch08"
+    order: 9
+    type: "guest_testimony"
+    chapter: 8
+    zh_path: "zh-CN/09-chapter-08"
+    en_path: "en-US/09-chapter-08"
+    provenance_special_case: true
+  - unit_id: "lw-10-ch09"
+    order: 10
+    type: "father_letter"
+    chapter: 9
+    zh_path: "zh-CN/10-chapter-09"
+    en_path: "en-US/10-chapter-09"
+  - unit_id: "lw-11-ch10"
+    order: 11
+    type: "digital_memory_album"
+    chapter: 10
+    zh_path: "zh-CN/11-chapter-10"
+    en_path: "en-US/11-chapter-10"
+  - unit_id: "lw-12-ch11"
+    order: 12
+    type: "theological_reflection"
+    chapter: 11
+    zh_path: "zh-CN/12-chapter-11"
+    en_path: "en-US/12-chapter-11"
+  - unit_id: "lw-13-ch12"
+    order: 13
+    type: "eschatological_reflection"
+    chapter: 12
+    zh_path: "zh-CN/13-chapter-12"
+    en_path: "en-US/13-chapter-12"
+  - unit_id: "lw-14-family-statement"
+    order: 14
+    type: "family_statement_of_faith"
+    zh_path: "zh-CN/14-family-statement"
+    en_path: "en-US/14-family-statement"
+narrative_arcs:
+  - arc_id: "arc-1"
+    label: "Arrival and Love"
+    units:
+      - "lw-00-dedication"
+      - "lw-01-prologue"
+      - "lw-02-ch01"
+      - "lw-03-ch02"
+      - "lw-04-ch03"
+      - "lw-05-ch04"
+      - "lw-06-ch05"
+  - arc_id: "arc-2"
+    label: "Suffering and Farewell"
+    units:
+      - "lw-07-ch06"
+      - "lw-08-ch07"
+  - arc_id: "arc-3"
+    label: "Witness and Memory"
+    units:
+      - "lw-09-ch08"
+      - "lw-10-ch09"
+      - "lw-11-ch10"
+  - arc_id: "arc-4"
+    label: "Christological and Eschatological Landing"
+    units:
+      - "lw-12-ch11"
+      - "lw-13-ch12"
+      - "lw-14-family-statement"

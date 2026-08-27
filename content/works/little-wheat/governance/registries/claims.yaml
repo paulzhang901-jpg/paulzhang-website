@@ -1,0 +1,81 @@
+schema_version: "1.0"
+claim_classes:
+  SCRIPTURE_SAYS:
+    authority_rank: 1
+  CHRISTIAN_TRADITION_AFFIRMS:
+    authority_rank: 2
+  WE_THEOLOGICALLY_INFER:
+    authority_rank: 3
+  WE_PASTORALLY_HOPE:
+    authority_rank: 4
+  FATHER_IMAGINES:
+    authority_rank: 5
+  WITNESSED_FACT:
+    authority_rank: factual
+  SOURCE_SUPPORTED_FACT:
+    authority_rank: factual
+doctrinal_boundaries:
+  christology:
+    christ_alone_savior: true
+    christ_death_redemptive: true
+    christ_resurrection_foundational: true
+    little_wheat:
+      savior: false
+      atoning: false
+      redemptive_death: false
+      gospel_itself: false
+      role: "witness"
+  john_12_24:
+    primary_referent: "Jesus Christ"
+    little_wheat_application: "analogical_testimonial"
+    child_as_redemptive_grain: false
+  providence:
+    divine_sovereignty: true
+    divine_goodness: true
+    exhaustive_hidden_reason_known: false
+    tragedy_caused_for_identifiable_ministry_result: false
+  grief:
+    death_is_enemy: true
+    grief_and_faith_coexist: true
+    spiritual_bypassing: false
+  child_salvation:
+    categorical_mechanism_claim: false
+    pastoral_hope: true
+    hope_basis: "grace_of_God_in_Christ"
+    child_entrusted_to_God: true
+  intermediate_state:
+    affirmed: true
+    detailed_map_available: false
+    child_current_activity_known: false
+  eschatology:
+    parousia: true
+    bodily_resurrection: true
+    death_destroyed: true
+    new_creation: true
+    reunion:
+      class: "WE_PASTORALLY_HOPE"
+      ultimate_center: false
+    communion_with_God:
+      ultimate_center: true
+classified_claims:
+  - claim_id: "lw-claim-angels"
+    text_concept: "angels carried Little Wheat to the Father's arms"
+    class: "FATHER_IMAGINES"
+    objective_fact: false
+  - claim_id: "lw-claim-waiting"
+    text_concept: "Little Wheat is waiting for his parents"
+    class: "FATHER_IMAGINES"
+    objective_fact: false
+  - claim_id: "lw-claim-heaven-garden"
+    text_concept: "heavenly garden reunion imagery"
+    class: "FATHER_IMAGINES"
+    objective_fact: false
+  - claim_id: "lw-claim-reunion"
+    text_concept: "hope of reunion"
+    class: "WE_PASTORALLY_HOPE"
+  - claim_id: "lw-claim-resurrection"
+    text_concept: "bodily resurrection"
+    class: "SCRIPTURE_SAYS"
+  - claim_id: "lw-claim-new-creation"
+    text_concept: "new creation"
+    class: "SCRIPTURE_SAYS"

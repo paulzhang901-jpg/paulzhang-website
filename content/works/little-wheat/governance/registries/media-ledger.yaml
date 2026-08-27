@@ -1,0 +1,74 @@
+schema_version: "1.0"
+privacy_levels:
+  FAMILY_PUBLIC:
+    public_default: true
+  RIGHTS_REVIEW:
+    public_default: false
+  SENSITIVE:
+    public_default: false
+  HIGHLY_SENSITIVE:
+    public_default: false
+  PRIVATE:
+    public_default: false
+  RESTRICTED_IDENTITY:
+    public_default: false
+assets:
+  - media_id: "lw-media-001"
+    category: "before_birth"
+    privacy: "FAMILY_PUBLIC"
+    publication_state: "PUBLIC_CANDIDATE"
+  - media_id: "lw-media-002"
+    category: "birth"
+    privacy: "FAMILY_PUBLIC"
+    publication_state: "PUBLIC_CANDIDATE"
+    redaction_review_required: true
+  - media_id: "lw-media-003"
+    category: "NICU"
+    privacy: "SENSITIVE"
+    publication_state: "REVIEW_REQUIRED"
+  - media_id: "lw-media-004"
+    category: "homecoming"
+    privacy: "FAMILY_PUBLIC"
+    publication_state: "PUBLIC_CANDIDATE"
+  - media_id: "lw-media-005"
+    category: "church"
+    privacy: "RIGHTS_REVIEW"
+    publication_state: "REVIEW_REQUIRED"
+  - media_id: "lw-media-006"
+    category: "music_play_smiles"
+    privacy: "FAMILY_PUBLIC"
+    publication_state: "PUBLIC_CANDIDATE"
+  - media_id: "lw-media-007"
+    category: "first_birthday"
+    privacy: "RIGHTS_REVIEW"
+    publication_state: "REVIEW_REQUIRED"
+  - media_id: "lw-media-008"
+    category: "PICU_final_hospitalization"
+    privacy: "HIGHLY_SENSITIVE"
+    publication_state: "RESTRICTED_REVIEW"
+  - media_id: "lw-media-009"
+    category: "farewell_after_death"
+    privacy: "PRIVATE"
+    publication_state: "PRIVATE_BY_DEFAULT"
+    explicit_parental_approval_required: true
+  - media_id: "lw-media-010"
+    category: "passport_visa"
+    privacy: "RESTRICTED_IDENTITY"
+    publication_state: "RAW_DO_NOT_PUBLISH"
+required_asset_metadata:
+  - "source"
+  - "date"
+  - "people"
+  - "photographer"
+  - "ownership"
+  - "consent"
+  - "privacy"
+  - "rights"
+  - "publication_state"
+  - "redaction"
+hard_rules:
+  legacy_pdf_presence_grants_public_rights: false
+  raw_passport_publication: false
+  raw_visa_publication: false
+  medical_identifier_publication: false
+  automatic_farewell_photo_publication: false

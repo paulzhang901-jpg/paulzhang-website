@@ -1,0 +1,99 @@
+{
+  "id": "work-little-wheat-v1",
+  "canonical_id": "work-little-wheat-v1",
+  "work_type": "story_book",
+  "representations": [
+    {
+      "language": "zh-CN",
+      "slug": "little-wheat",
+      "status": "review",
+      "title": "麦子落地：小麦子的生命见证与天国之旅",
+      "summary": "《麦子落地》是一部纪念小麦子短暂生命的家庭信仰见证，记录一个家庭在爱、失去、哀伤与盼望中的真实经历，并见证上帝如何在苦难中以恩典托住生命，引领人重新仰望基督与永恒的盼望。",
+      "authors": [
+        "张崇助"
+      ],
+      "published_at": null,
+      "visibility": "private",
+      "access_level": "public",
+      "seo": {
+      }
+    },
+    {
+      "language": "en-US",
+      "slug": "little-wheat",
+      "status": "review",
+      "title": "Little Wheat",
+      "summary": "Little Wheat is a family testimony remembering the brief life of Little Wheat, telling a true story of love, loss, grief, and hope, and bearing witness to God’s sustaining grace in suffering and the enduring hope found in Christ and eternity.",
+      "authors": [
+        "Paul Zhang"
+      ],
+      "published_at": null,
+      "visibility": "private",
+      "access_level": "public",
+      "seo": {
+      }
+    }
+  ],
+  "units": [
+    {
+      "canonical_id": "lw-00-dedication",
+      "order": 1
+    },
+    {
+      "canonical_id": "lw-01-prologue",
+      "order": 2
+    },
+    {
+      "canonical_id": "lw-02-ch01",
+      "order": 3
+    },
+    {
+      "canonical_id": "lw-03-ch02",
+      "order": 4
+    },
+    {
+      "canonical_id": "lw-04-ch03",
+      "order": 5
+    },
+    {
+      "canonical_id": "lw-05-ch04",
+      "order": 6
+    },
+    {
+      "canonical_id": "lw-06-ch05",
+      "order": 7
+    },
+    {
+      "canonical_id": "lw-07-ch06",
+      "order": 8
+    },
+    {
+      "canonical_id": "lw-08-ch07",
+      "order": 9
+    },
+    {
+      "canonical_id": "lw-09-ch08",
+      "order": 10
+    },
+    {
+      "canonical_id": "lw-10-ch09",
+      "order": 11
+    },
+    {
+      "canonical_id": "lw-11-ch10",
+      "order": 12
+    },
+    {
+      "canonical_id": "lw-12-ch11",
+      "order": 13
+    },
+    {
+      "canonical_id": "lw-13-ch12",
+      "order": 14
+    },
+    {
+      "canonical_id": "lw-14-family-statement",
+      "order": 15
+    }
+  ]
+}
