@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-last-cake",
+  "canonicalTitle": "最后一块饼",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "当你手里只剩最后一点东西，恐惧会告诉你抓紧它；爱却可能问你：还愿不愿意分出去？",
+    "rightsSafeIntroduction": "凌晨四点四十五分，林晓静醒来。\n\n银行账户里的余额已经不足以覆盖接下来生活最基本的需要。房租、孩子、食物、交通，每一个数字都在逼迫她计算下一步。\n\n贫穷最残酷的地方，并不只是“没有钱”。\n\n它会逐渐改变一个人看世界的方式——让每一份给予都像损失，让每一个陌生人都可能成为威胁，让“我必须先保护自己”变成唯一合理的选择。\n\n《最后一块饼》把一个古老的信心问题放进现代城市最具体的匮乏中：\n\n**当自己也不够的时候，人还能不能给予？**",
+    "themes": [
+      "匮乏",
+      "单亲母亲",
+      "恐惧",
+      "给予",
+      "尊严",
+      "信任",
+      "丰盛"
+    ],
+    "whyReadIt": "因为真正的贫穷不仅发生在钱包里。\n\n这个故事更关心的是：**匮乏会不会最终住进人的心里？**",
+    "readingExperience": [
+      "底层现实",
+      "家庭困境",
+      "温情文学",
+      "信心寓言"
+    ],
+    "biblicalCulturalNote": "标题带有明显的“最后一点面与油”“最后一块饼”式圣经文化共鸣，但故事被完全置入现代城市的经济压力与普通人的生活选择之中。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《最后一块饼》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}

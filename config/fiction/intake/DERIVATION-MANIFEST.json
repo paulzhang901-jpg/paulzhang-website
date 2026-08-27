@@ -1,0 +1,201 @@
+{
+  "status": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE",
+  "canonicalPackage": "mu-changke-fiction-canonical-package-v1",
+  "canonicalLockStatus": "FINAL_LOCKED",
+  "canonicalProtectedFiles": 34,
+  "mappingRules": {
+    "identityAndSlug": "works.yaml",
+    "editorialCopy": "editorial/*.json publicEditorial fields copied without prose rewriting; readingExperience array items retain exact text and are joined by newline separators for the repository string field",
+    "editorialVersion": "editorialVersion, falling back to the author-approved edition field",
+    "workType": "fixed repository implementation metadata: fiction",
+    "collection": "fixed repository implementation metadata: mu-changke-fiction",
+    "cover": "covers/manifest.json key equals locked editorial filename basename",
+    "coverAltText": "deterministic accessibility label from exact canonical title",
+    "rightsStatus": "publication-rights.yaml website_role",
+    "cta": "officialReadingCTA.text copied exactly; verifiedUrl must remain null"
+  },
+  "sourceMappings": [
+    {
+      "canonicalTitle": "以诺：长生纪元",
+      "slug": "enoch-longevity-era",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/01-enoch.json",
+      "sourceCover": "covers/assets/01-enoch.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "逃到旷野的人",
+      "slug": "escape-wilderness",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/02-escape-wilderness.json",
+      "sourceCover": "covers/assets/02-escape-wilderness.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "乌鸦每天都会来",
+      "slug": "ravens-every-day",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/03-ravens-every-day.json",
+      "sourceCover": "covers/assets/03-ravens-every-day.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "山洞里的声音",
+      "slug": "voice-in-the-cave",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/04-voice-in-the-cave.json",
+      "sourceCover": "covers/assets/04-voice-in-the-cave.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "最后一块饼",
+      "slug": "last-cake",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/05-last-cake.json",
+      "sourceCover": "covers/assets/05-last-cake.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "火没有降下来",
+      "slug": "fire-did-not-fall",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/06-fire-did-not-fall.json",
+      "sourceCover": "covers/assets/06-fire-did-not-fall.jpeg",
+      "canonicalVersion": "v3"
+    },
+    {
+      "canonicalTitle": "一直没有下雨",
+      "slug": "no-rain",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/07-no-rain.json",
+      "sourceCover": "covers/assets/07-no-rain.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "他一直低着头",
+      "slug": "head-bowed",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/08-head-bowed.json",
+      "sourceCover": "covers/assets/08-head-bowed.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "谁杀了先知",
+      "slug": "who-killed-prophet",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/09-who-killed-prophet.json",
+      "sourceCover": "covers/assets/09-who-killed-prophet.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "还有七千人",
+      "slug": "seven-thousand",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/10-seven-thousand.json",
+      "sourceCover": "covers/assets/10-seven-thousand.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "风过去以后",
+      "slug": "after-the-wind",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/11-after-the-wind.json",
+      "sourceCover": "covers/assets/11-after-the-wind.jpeg",
+      "canonicalVersion": null
+    },
+    {
+      "canonicalTitle": "看不见的战争·超级算法",
+      "slug": "super-algorithm",
+      "sourceWork": "works.yaml",
+      "sourceEditorial": "editorial/12-super-algorithm.json",
+      "sourceCover": "covers/assets/12-super-algorithm.jpeg",
+      "canonicalVersion": null
+    }
+  ],
+  "derivedOutputs": [
+    {
+      "path": "config/fiction/intake/canonical-registry/registry.json",
+      "bytes": 31859,
+      "sha256": "7afb5879a602d902e33fb421ef6acd7278d89179bb25488853e5b91d496ac4cd",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/01-enoch.json",
+      "bytes": 4087,
+      "sha256": "713fc47f5440669dcdf5c3d89922e6f28a8d3c134e68e1980537fc6e886e6dfb",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/02-escape-wilderness.json",
+      "bytes": 2214,
+      "sha256": "711b1558c44a88d5f580f5b335ce95fb09215ae807ab8012f2a7e9818a195d3b",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/03-ravens-every-day.json",
+      "bytes": 2534,
+      "sha256": "285c18e80dfbac7f442ac95a3654b81f86ed2471eb72a3412b8181adcbc760ae",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/04-voice-in-the-cave.json",
+      "bytes": 2247,
+      "sha256": "038e0394836ccd04db7a41433a7a09236e0d2145f27bacf4bca9e43166c6d888",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/05-last-cake.json",
+      "bytes": 2107,
+      "sha256": "e9b84baf41f4aa583d7fbcf3c18a92a34012697ace167eb4c9a919629b6cd862",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/06-fire-did-not-fall.json",
+      "bytes": 3007,
+      "sha256": "3c9bb35b65bdd91733adaf92400499d368199151316f720ae3029bf7c7ad5d36",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/07-no-rain.json",
+      "bytes": 2083,
+      "sha256": "cfde82a48f3ee19e814eb9b38d79e3e2720048ed6a83fd200df6eb8291921406",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/08-head-bowed.json",
+      "bytes": 2086,
+      "sha256": "3883cc837204a942a77e0bf12d348351995ec44c3df45b8af41e7c612a3c9537",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/09-who-killed-prophet.json",
+      "bytes": 2188,
+      "sha256": "ee9ab7f147b713427869c59029d6e1e63d7e8db134664b3c929f9765a2218d40",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/10-seven-thousand.json",
+      "bytes": 2505,
+      "sha256": "ec0ee441ff944e7bdcb4a0dc525ba0d72d721eda8452e582a838b56b5ea71233",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/11-after-the-wind.json",
+      "bytes": 2316,
+      "sha256": "9f76a687a515ee0f821c5b463ce665abeb7b12650a9e60634945202e0a990955",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/editorial-packages/12-super-algorithm.json",
+      "bytes": 3061,
+      "sha256": "594f692516aa73edd0c7e9d3579fe4a56a7293730530a2ec678376accb7767d6",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    },
+    {
+      "path": "config/fiction/intake/covers/manifest.json",
+      "bytes": 4413,
+      "sha256": "dcf2da15f1eaee66c356c4e27f71cbeaf3c9f2282007d74e5fc8e6626c2b1cc1",
+      "authority": "DERIVED_FROM_LOCKED_CANONICAL_PACKAGE"
+    }
+  ]
+}

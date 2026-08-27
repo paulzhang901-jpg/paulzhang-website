@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-voice-in-the-cave",
+  "canonicalTitle": "山洞里的声音",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "当烈风、地震和烈火都在告诉你必须马上成功，你还能听见那个微小而真实的声音吗？",
+    "rightsSafeIntroduction": "周启航生活在一个永远不会安静的时代。\n\n手机、短视频、成功学、创业故事、财富神话、算法推荐……每一个声音都在告诉他：\n\n别人已经成功了。  \n你正在落后。  \n你必须马上改变命运。\n\n当现实压力越来越大，一个看似能够“破局”的机会出现。\n\n可是，人最危险的时候，也许并不是没有路，而是太急于相信任何一条看起来能够立即出去的路。\n\n《山洞里的声音》把现代人的焦虑、财富欲望和算法时代的信息轰炸压缩进一个人的精神危机：\n\n**当世界越来越响，人怎样重新听见真实？**",
+    "themes": [
+      "焦虑",
+      "成功学",
+      "财富诱惑",
+      "信息噪音",
+      "恐惧",
+      "欲望",
+      "分辨"
+    ],
+    "whyReadIt": "如果你曾经刷着手机，突然觉得所有人都比自己成功；如果你曾经因为害怕落后而急于作出决定，这个故事可能会让你认出一种非常熟悉的声音。",
+    "readingExperience": [
+      "心理悬疑",
+      "都市焦虑",
+      "财经诱惑",
+      "圣经文化寓言"
+    ],
+    "biblicalCulturalNote": "作品明显借用了以利亚在何烈山经历烈风、地震、火与“微小声音”的文化结构，但把战场移到了手机屏幕、算法、投资焦虑和现代人的内心。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《山洞里的声音》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}

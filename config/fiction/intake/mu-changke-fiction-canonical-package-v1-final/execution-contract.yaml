@@ -1,0 +1,12 @@
+editorial_authority:
+  author_governance: true
+  codex: false
+codex:
+  implementation_only: true
+  may_rewrite_editorial_content: false
+  may_generate_missing_editorial_content: false
+  may_change_rights_classification: false
+  may_change_canonical_identity: false
+  may_invent_publication_url: false
+conflict_policy:
+  action: STOP_AND_REPORT

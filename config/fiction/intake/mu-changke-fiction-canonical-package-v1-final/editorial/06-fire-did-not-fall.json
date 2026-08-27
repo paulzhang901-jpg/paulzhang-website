@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-fire-did-not-fall",
+  "canonicalTitle": "火没有降下来",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "package": "HISTORICAL_EXACT_RECOVERED",
+    "canonicalVersionDecision": "AUTHOR_CONFIRMED_v3"
+  },
+  "publicEditorial": {
+    "editorialHook": "当所有人都在等待一场爆红证明自己的价值，他最终发现：火不一定要降下来，光仍然可以留下。",
+    "rightsSafeIntroduction": "陈烈相信内容应该有品质。\n\n三年、一千多个日夜、两百多支视频，他认真对待每一个镜头，却始终等不到算法的回应。\n\n当越来越粗糙、夸张甚至虚假的内容一次次获得掌声，他开始怀疑：坚持真实，到底还有没有意义？\n\n从渴望被看见，到试图制造“被看见”；从相信作品，到开始相信流量；一个创作者渐渐站在自己的“巴力祭坛”前，等待那场足以证明自己的火。\n\n**《火没有降下来》**写的不只是短视频时代，而是一个更普遍的困境：\n\n**如果掌声迟迟不来，我们是否仍愿意忠于那些真正有价值的事？**",
+    "themes": [
+      "流量与价值",
+      "真实与表演",
+      "成功与忠心",
+      "算法与注意力",
+      "陪伴与微光"
+    ],
+    "whyReadIt": "这不是一篇简单批判短视频和流量时代的小说。\n\n陈烈真正面对的敌人，并不只是算法，而是一个越来越熟悉的声音：\n\n**“如果没有人看见，你做的一切就没有意义。”**\n\n这也是许多创作者、工作者甚至普通人在今天面对的问题。\n\n小说最有力量的地方，不在于告诉读者怎样获得更多流量，而在于重新提出一个更难的问题：\n\n**当数字不能证明你时，你靠什么确认自己的价值？**",
+    "readingExperience": [
+      "都市现实",
+      "创作者困境",
+      "流量时代",
+      "算法文化",
+      "信仰寓言",
+      "温暖救赎"
+    ],
+    "biblicalCulturalNote": "小说以“巴力的祭坛”和“火”等圣经文化意象构成深层隐喻，但并非对圣经故事的现代复述。\n\n古老的“等待火降下来”，在作品中被重新放进算法与注意力经济的世界：当流量逐渐成为证明价值的“火”，一个人还能否在没有轰动、没有掌声的时候继续忠于真实？",
+    "authorCreativeVision": null,
+    "publicationNote": "《火没有降下来》为牧长客创作的签约小说；本网站作品介绍以作者确认的**第三版（v3）**为编辑依据。\n\n本网站仅作为作者官方作品档案，提供原创编辑介绍、作品信息与阅读指引，不提供小说正文、章节转载或下载。\n\n完整作品请通过正式授权平台阅读。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "**火没有降下来，故事却没有结束。**\n\n在番茄小说或今日头条搜索：\n\n**《火没有降下来》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  },
+  "canonicalVersion": "v3"
+}

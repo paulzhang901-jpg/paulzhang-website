@@ -4,7 +4,7 @@ Machine source: [`config/architecture/routes.yaml`](../../config/architecture/ro
 
 Locale routing follows [ADR-0011](../adr/0011-locale-url-strategy.md): `zh-CN` uses the canonical unprefixed routes, while `en-US` mirrors approved public routes beneath `/en`. `/zh` is not allowed. Locale prefixing does not create a second domain or taxonomy tree.
 
-Reserved top-level namespaces: `/`, `/start`, `/library`, `/stories`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
+Reserved top-level namespaces: `/`, `/start`, `/library`, `/stories`, `/fiction`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
 
 The V1 experience-layer journeys live at `/start/{faith,questions,difficult-season,grow,stories,companionship}` and the same paths under `/en`. These identifiers guide discovery only; they are not taxonomy values or relationship-state labels. Their canonical contract is [`journeys.yaml`](../../config/architecture/journeys.yaml).
 
@@ -22,3 +22,5 @@ Approved children:
 Individual content uses stable canonical slugs. Navigation labels are independent of route paths. Folder/route location is never the source of truth for taxonomy. Route removal or semantic changes require redirects, versioning review, and an ADR.
 
 Content Works use `/stories/[work-slug]` for the localized work landing and `/stories/[work-slug]/[unit-slug]` for localized units. English mirrors both beneath `/en`. Route resolution uses canonical work/unit relationships and public publication boundaries; it never infers unit order from paths or filenames. See [ADR-0013](../adr/0013-content-work-ordered-unit-model.md).
+
+Mu Changke Fiction uses `/fiction` for its approved author portfolio and `/fiction/[slug]` for individual work-discovery records. English mirrors these beneath `/en`. No chapter, read, manuscript, contract, or download child route is permitted. The route consumes LOCKED editorial packages and verified cover mappings only. See [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md).

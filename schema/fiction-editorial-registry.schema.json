@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paulzhang.org/schema/fiction-editorial-registry.schema.json",
+  "title": "Mu Changke Fiction Editorial Registry v1.0",
+  "type": "object",
+  "required": ["registryName", "registryVersion", "author", "works"],
+  "properties": {
+    "registryName": {"const": "Mu Changke Fiction Editorial Registry"},
+    "registryVersion": {"const": "1.0"},
+    "author": {"const": "牧长客"},
+    "works": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {"$ref": "fiction-editorial-package.schema.json"}
+    }
+  },
+  "additionalProperties": false
+}

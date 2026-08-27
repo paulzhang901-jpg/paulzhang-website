@@ -1,0 +1,11 @@
+package: mu-changke-fiction-canonical-package-v1
+author_approval: APPROVED
+enoch_recovery_edition: APPROVED
+nine_uniform_publication_notes: APPROVED
+all_public_packages: LOCKED
+reopen_conditions:
+- MANUSCRIPT_CORRECTION
+- RIGHTS_REQUIREMENT
+- FACT_CORRECTION
+- AUTHOR_APPROVED_NEW_EDITORIAL_EDITION
+- VERIFIED_LINK_ADDITION

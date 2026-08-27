@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-escape-wilderness",
+  "canonicalTitle": "逃到旷野的人",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "当所有声音都在告诉你“都是你的错”，逃离人群，究竟是逃避，还是重新听见真实的开始？",
+    "rightsSafeIntroduction": "林远是一名在烈火与死亡之间工作多年的消防救援站长。\n\n一次救援事故之后，他曾经坚信的职业、荣誉和自我认知开始崩塌。舆论的审判、失去同伴的痛苦，以及内心不断重复的一个声音，把他一步步推向人与世界的边缘。\n\n于是，他走进旷野。\n\n然而真正需要面对的，并不是山林里的孤独，而是那个已经住进心里的声音：\n\n**“都是你的错。”**\n\n《逃到旷野的人》写创伤，也写罪疚；写现代舆论如何塑造一个人的自我认识，更写人在所有外界声音沉寂以后，如何重新分辨什么是真实。",
+    "themes": [
+      "罪疚与自责",
+      "创伤与修复",
+      "舆论审判",
+      "身份认同",
+      "旷野",
+      "真理与谎言"
+    ],
+    "whyReadIt": "因为它追问一个许多人都曾经历的问题：\n\n**如果一个错误、一场失败、一次无法挽回的失去，开始定义你整个人生，你还能不能重新认识自己？**",
+    "readingExperience": [
+      "心理现实",
+      "都市创伤",
+      "属灵寓言",
+      "IWU"
+    ],
+    "biblicalCulturalNote": "作品借用了“旷野”与以利亚式的精神意象，但不是圣经故事改写。旷野在这里既是逃离，也是重新分辨声音的地方。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《逃到旷野的人》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}

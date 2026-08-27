@@ -1,0 +1,4 @@
+expected_cover_count: 12
+physical_cover_count: 12
+mapping_status: VERIFIED
+cover_manifest: covers/manifest.json

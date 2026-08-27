@@ -14,6 +14,7 @@
     {"path":"/start","domain":"discovery","release":"v1"},
     {"path":"/library","domain":"content","release":"v1"},
     {"path":"/stories","domain":"stories","release":"v1"},
+    {"path":"/fiction","domain":"fiction_discovery","release":"v1","implementation_level":"portfolio_router"},
     {"path":"/together","domain":"companionship","release":"v1","implementation_level":"entry"},
     {"path":"/grow","domain":"growth","release":"v1","implementation_level":"landing_only"},
     {"path":"/community","domain":"community","release":"v1","implementation_level":"landing_only"},
@@ -40,6 +41,7 @@
     "/journey": ["reading","saved","growth","reflections","rule-of-life","prayer","community","mentor","next-step"]
   },
   "patterns": [
+    {"path":"/fiction/[slug]","domain":"fiction_discovery","release":"v1","entity":"fiction_editorial_record"},
     {"path":"/stories/[work-slug]","domain":"stories","release":"v1","entity":"content_work"},
     {"path":"/stories/[work-slug]/[unit-slug]","domain":"stories","release":"v1","entity":"content_unit"},
     {"path":"/grow/path/[slug]","domain":"growth","release":"v1.5"}

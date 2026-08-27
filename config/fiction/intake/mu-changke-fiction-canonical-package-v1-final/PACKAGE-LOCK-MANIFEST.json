@@ -1,0 +1,145 @@
+{
+  "package": "mu-changke-fiction-canonical-package-v1",
+  "lockStatus": "FINAL_LOCKED",
+  "codexReady": true,
+  "generatedAt": "2026-08-27T21:02:35.755426+00:00",
+  "fileCount": 34,
+  "files": {
+    "PHASE-4B-FINAL-AUDIT.json": {
+      "sha256": "1a3a8dde005337bbbf36b5d8abfac8f85d967eaa7aa56a8388088212ed62d7dc",
+      "bytes": 742
+    },
+    "REGISTRY-MANIFEST.json": {
+      "sha256": "79a7c40214e053e657c89da14631972ea06204eabfc7e27b7dd20648d5d9852a",
+      "bytes": 297
+    },
+    "canonical.yaml": {
+      "sha256": "4d8c00fc107e2a93559043b71b23f976135bcc4a0b48f428226263560da576fe",
+      "bytes": 247
+    },
+    "covers/assets/01-enoch.jpeg": {
+      "sha256": "620e94f93040f6db649abc8ae921bb856e94ae3eb64697e0b1e36670de8ac456",
+      "bytes": 765809
+    },
+    "covers/assets/02-escape-wilderness.jpeg": {
+      "sha256": "24a6c09d9ac0ace0b898f2b3a72b51e468a4bdaf2d134d09062b9679cc9dac51",
+      "bytes": 575079
+    },
+    "covers/assets/03-ravens-every-day.jpeg": {
+      "sha256": "432f03a9dc0371f03b98bbee0f549808ea7e183ec6e2896155e8129235d4cb1b",
+      "bytes": 503154
+    },
+    "covers/assets/04-voice-in-the-cave.jpeg": {
+      "sha256": "cd0ad1e6cb7742a1ca93275157efbe9d303f5fb7a44e735817fd2a5e0449f271",
+      "bytes": 503917
+    },
+    "covers/assets/05-last-cake.jpeg": {
+      "sha256": "a21d3b43a5a43982bd80c08781bb0e22452a9065f5fe78bbe17c0c59c30cb0a8",
+      "bytes": 549934
+    },
+    "covers/assets/06-fire-did-not-fall.jpeg": {
+      "sha256": "606ddbe4711f05d90b6927bf7ef2d37091c35ff8c5b2e24cd36b5df9d634a306",
+      "bytes": 421480
+    },
+    "covers/assets/07-no-rain.jpeg": {
+      "sha256": "61e6df290045edd8e7cea6cc415e59e8f93be9a834f51b5d59532b2990e10423",
+      "bytes": 430755
+    },
+    "covers/assets/08-head-bowed.jpeg": {
+      "sha256": "dd76e2b3a302d602142b938fbc665b3102853bad024c562292caef1a99487b62",
+      "bytes": 376284
+    },
+    "covers/assets/09-who-killed-prophet.jpeg": {
+      "sha256": "582a9392da9f87df51929895cec6bc7c67c5ed5e926a32ccde5d8664d895e5a0",
+      "bytes": 541642
+    },
+    "covers/assets/10-seven-thousand.jpeg": {
+      "sha256": "7b5cce3bd985285b01394eea85c3f12ae73145c77787738c463c9397562d5f8b",
+      "bytes": 479448
+    },
+    "covers/assets/11-after-the-wind.jpeg": {
+      "sha256": "d90596602514968f09049a8ad48b51b2e2f81852896f92b5fc80f6f0599008f6",
+      "bytes": 583202
+    },
+    "covers/assets/12-super-algorithm.jpeg": {
+      "sha256": "9330ee42978b34941867ff41fc3cc1b185515765415cf5cd78cf74b9cd100ace",
+      "bytes": 397222
+    },
+    "covers/manifest.json": {
+      "sha256": "b32ab25ed035c3eca1deb1c648ecd1ab3905fe63353f87dd0beb645f5611a382",
+      "bytes": 2476
+    },
+    "editorial/01-enoch.json": {
+      "sha256": "6aaecd16962f58d8cc1451166371a6f11d2aee8b1ff1a8a0e9f0c878f8aa0e0b",
+      "bytes": 4571
+    },
+    "editorial/02-escape-wilderness.json": {
+      "sha256": "cb71e3a9277ece6c0e823546570421e8bfaa9532a85303392c2944915a96ca41",
+      "bytes": 2603
+    },
+    "editorial/03-ravens-every-day.json": {
+      "sha256": "5c7fd188b22fe95eddb343edace854e632e0ca0b60072afa82c9734a63c04c88",
+      "bytes": 2931
+    },
+    "editorial/04-voice-in-the-cave.json": {
+      "sha256": "fec9229f2c5a1f7571b0b31728df7f4d184437c9526bddbfc1b93e68b5d246b5",
+      "bytes": 2638
+    },
+    "editorial/05-last-cake.json": {
+      "sha256": "cafd836459f40e07d28c6ebf8f738160bedc7ce68148a47d5363c503c40ba411",
+      "bytes": 2506
+    },
+    "editorial/06-fire-did-not-fall.json": {
+      "sha256": "0e1eb23c122814b9bc875aa949680e9f6ee2d17355d5bf52641bc4b24210069a",
+      "bytes": 3444
+    },
+    "editorial/07-no-rain.json": {
+      "sha256": "9f6054b0bc97271a9f8198502c603719709858d68b32225225912f65afa8f30d",
+      "bytes": 2484
+    },
+    "editorial/08-head-bowed.json": {
+      "sha256": "dfd781b1fd6fa9e8694e6a25c0f1f2b618b30755913bf5cf8fbf13b6ba9f7f5e",
+      "bytes": 2484
+    },
+    "editorial/09-who-killed-prophet.json": {
+      "sha256": "53644a9aa4a386bc4a2e3430099fcbd2ebf9169ffdfef0e53413ef3939092c96",
+      "bytes": 2582
+    },
+    "editorial/10-seven-thousand.json": {
+      "sha256": "93882f0baccc437677f5521b1aa49449686b9ed0769a8c85f8efbc1bba69747a",
+      "bytes": 2904
+    },
+    "editorial/11-after-the-wind.json": {
+      "sha256": "59bae37119fd4d927e386896dea08a46c7a65f2a0e0e3f2a1c82aec664aafa1c",
+      "bytes": 2710
+    },
+    "editorial/12-super-algorithm.json": {
+      "sha256": "8287a88f12f39864b478b2960c88b51c90e9909932f869b122d4f90dc9af6c81",
+      "bytes": 3417
+    },
+    "editorial-approval-record.yaml": {
+      "sha256": "4beca644c4820e24e8778f8c73f5bb14324481ef0eb07479a31bd140321e6317",
+      "bytes": 324
+    },
+    "execution-contract.yaml": {
+      "sha256": "0cc5fa04d6d7a56f9bab2da929ea9161f3a714b800ba4cee8476b3a6f85904d1",
+      "bytes": 344
+    },
+    "media-ledger.yaml": {
+      "sha256": "af4ab91ff49ee71c0b588556083038e3cad1bfaf214a99b3e4b7593188ca8bd9",
+      "bytes": 112
+    },
+    "provenance.yaml": {
+      "sha256": "2812bfc35615832104b109b9e3762fd6e3c7d0a0313a17812d15f8348824b1a3",
+      "bytes": 452
+    },
+    "publication-rights.yaml": {
+      "sha256": "9e910d1b68909b23248c43dc9d4886b6754f6df22dc59df4348a38822cc3b8f6",
+      "bytes": 289
+    },
+    "works.yaml": {
+      "sha256": "6a95a6a9d020332caac09f9dc05b220061f932e1699756ee85fc9a4b59b6b8c6",
+      "bytes": 2802
+    }
+  }
+}

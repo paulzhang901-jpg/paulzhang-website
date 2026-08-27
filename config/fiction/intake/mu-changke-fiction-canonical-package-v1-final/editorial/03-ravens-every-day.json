@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-ravens-every-day",
+  "canonicalTitle": "乌鸦每天都会来",
+  "author": "牧长客",
+  "editorialVersion": "v1.1",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED_v1.1",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "当一个人只剩二十七块六毛钱，他最需要的，究竟是一场奇迹，还是明天仍然有人来敲门？",
+    "rightsSafeIntroduction": "三十五岁的陈默曾经以为，只要足够努力，就能在城市里换来一个稳定的位置。\n\n十二年以后，他被“降本增效”推出公司。房贷、车贷、父亲的医疗费用、女儿的抚养费，却没有因为失业而停止。\n\n当一个成年人所有的安全感都被数字一点点抽空，一份来源不明的食物开始每天准时出现。\n\n谁送来的？\n\n为什么帮助他？\n\n这一切背后究竟隐藏着什么？\n\n《乌鸦每天都会来》从现代都市最真实的生存焦虑出发，却没有停留在贫穷与失业。它最终追问的是：\n\n**当一个人觉得自己已经被世界遗弃时，还有没有一种供应，是他暂时看不见的？**",
+    "themes": [
+      "失业",
+      "尊严",
+      "匮乏",
+      "供应",
+      "孤独",
+      "希望",
+      "看不见的连接"
+    ],
+    "whyReadIt": "这不是一个简单的“绝境翻身”故事。\n\n小说真正关心的是：当一个人被工作、债务和生活一点点推向边缘，当他甚至开始怀疑自己是否仍值得被这个世界留下，还有什么能够重新把他与生活连接起来？\n\n《乌鸦每天都会来》把一个古老的“供应”意象放进现代都市最普通的门口，却把答案留给读者自己去发现。",
+    "readingExperience": [
+      "都市现实",
+      "温情悬疑",
+      "社会寓言",
+      "希望文学"
+    ],
+    "biblicalCulturalNote": "“乌鸦”自然让人联想到旷野中的以利亚与隐秘供应，但小说把这个古老意象重新放进现代城市、外卖、程序和人与人之间看不见的连接之中。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《乌鸦每天都会来》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}

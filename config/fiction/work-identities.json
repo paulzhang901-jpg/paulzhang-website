@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "status": "IDENTITIES_APPROVED_PACKAGES_PENDING",
+  "works": [
+    {"order": 1, "canonicalTitle": "以诺：长生纪元", "canonicalVersion": null},
+    {"order": 2, "canonicalTitle": "看不见的战争·超级算法", "canonicalVersion": null},
+    {"order": 3, "canonicalTitle": "逃到旷野的人", "canonicalVersion": null},
+    {"order": 4, "canonicalTitle": "乌鸦每天都会来", "canonicalVersion": null},
+    {"order": 5, "canonicalTitle": "山洞里的声音", "canonicalVersion": null},
+    {"order": 6, "canonicalTitle": "最后一块饼", "canonicalVersion": null},
+    {"order": 7, "canonicalTitle": "火没有降下来", "canonicalVersion": "v3"},
+    {"order": 8, "canonicalTitle": "一直没有下雨", "canonicalVersion": null},
+    {"order": 9, "canonicalTitle": "他一直低着头", "canonicalVersion": null},
+    {"order": 10, "canonicalTitle": "谁杀了先知", "canonicalVersion": null},
+    {"order": 11, "canonicalTitle": "还有七千人", "canonicalVersion": null},
+    {"order": 12, "canonicalTitle": "风过去以后", "canonicalVersion": null}
+  ],
+  "excludedTitles": ["为什么偏偏是我", "每个人都来安慰他"]
+}

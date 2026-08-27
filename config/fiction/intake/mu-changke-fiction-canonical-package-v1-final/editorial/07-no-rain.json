@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-no-rain",
+  "canonicalTitle": "一直没有下雨",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "如果六次抬头都是晴空，第七次，你还会不会继续抬头？",
+    "rightsSafeIntroduction": "陆远用了三年时间做一件越来越没有人相信的事情。\n\n员工离开，资金枯竭，投资人失去耐心，朋友劝他认输。这个崇尚速度、风口和即时回报的时代不断给出同一个结论：\n\n**没有立刻成功，就是失败。**\n\n可是，有些事情真正需要的并不是更快，而是更深。\n\n《一直没有下雨》写创业，却不是一篇创业成功学；写坚持，却拒绝把坚持浪漫化。\n\n它真正追问的是：\n\n**一个人怎样分辨，自己是在忠心等待，还是只是不肯承认失败？**",
+    "themes": [
+      "等待",
+      "创业",
+      "坚持",
+      "延迟回报",
+      "信念",
+      "成败",
+      "时间"
+    ],
+    "whyReadIt": "因为这个时代非常擅长教人开始，却不太知道怎样面对长期没有结果的日子。\n\n而人生许多真正重要的事情，都发生在那里。",
+    "readingExperience": [
+      "创业现实",
+      "长期主义",
+      "信念文学",
+      "现代寓言"
+    ],
+    "biblicalCulturalNote": "作品借用了长期干旱、不断观看天际、最终等候雨来的以利亚传统意象，但核心不是“坚持就一定成功”，而是人在长期等待中如何面对自己的动机与信念。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《一直没有下雨》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}

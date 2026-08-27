@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paulzhang.org/schema/fiction-editorial-package.schema.json",
+  "title": "Mu Changke Fiction LOCKED Editorial Package",
+  "type": "object",
+  "required": [
+    "canonicalTitle",
+    "slug",
+    "workType",
+    "collection",
+    "cover",
+    "themes",
+    "officialReadingCTA",
+    "rightsStatus",
+    "editorialVersion",
+    "editorialStatus"
+  ],
+  "properties": {
+    "canonicalTitle": {"type": "string", "minLength": 1},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "workType": {"type": "string", "minLength": 1},
+    "collection": {"type": "string", "minLength": 1},
+    "cover": {"type": ["string", "null"]},
+    "editorialHook": {"type": ["string", "null"]},
+    "rightsSafeIntroduction": {"type": ["string", "null"]},
+    "themes": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "whyRead": {"type": ["string", "null"]},
+    "readingExperience": {"type": ["string", "null"]},
+    "biblicalCulturalNote": {"type": ["string", "null"]},
+    "authorCreativeNote": {"type": ["string", "null"]},
+    "publicationNote": {"type": ["string", "null"]},
+    "officialReadingCTA": {"type": "string", "minLength": 1},
+    "rightsStatus": {"type": "string", "minLength": 1},
+    "editorialVersion": {"type": "string", "minLength": 1},
+    "editorialStatus": {"const": "LOCKED"}
+  },
+  "additionalProperties": false
+}

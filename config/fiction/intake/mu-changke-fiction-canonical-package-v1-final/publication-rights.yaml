@@ -1,0 +1,8 @@
+website_role: AUTHOR_PORTFOLIO_EDITORIAL_DISCOVERY_LAYER
+public_boundary:
+  manuscripts: false
+  chapters: false
+  contracts: false
+  internal_rights_analysis: false
+  unverified_official_urls: false
+reading_policy: Search guidance only unless a VERIFIED_LINK_ADDITION is author-approved.

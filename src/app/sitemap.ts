@@ -4,6 +4,7 @@ import { siteUrl } from "@/lib/seo/metadata";
 import { journeyIds, journeyPath } from "@/config/product";
 import { getContentWorkRepository } from "@/lib/content/works/repository";
 import { unitPath, workPath } from "@/lib/content/works/routing";
+import { fictionPath, getFictionWorks } from "@/lib/fiction/repository";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routeEntries = routes.flatMap((route) => (["zh-CN", "en-US"] as const).map((locale) => ({
@@ -19,5 +20,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {url: new URL(workPath(representation.slug, locale), siteUrl).toString()},
     ...repository.getOrderedUnits(work.canonicalId, locale).map((unit) => ({url: new URL(unitPath(representation.slug, unit.slug, locale), siteUrl).toString()})),
   ]));
-  return [...routeEntries, ...journeyEntries, ...workEntries];
+  const fictionEntries = (["zh-CN", "en-US"] as const).flatMap((locale) => getFictionWorks().map((work) => ({url: new URL(fictionPath(work.slug, locale), siteUrl).toString()})));
+  return [...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries];
 }

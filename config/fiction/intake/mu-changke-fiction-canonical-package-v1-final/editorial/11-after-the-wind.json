@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-after-the-wind",
+  "canonicalTitle": "风过去以后",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "一个救了无数人的老医生，最后必须学习的，也许不是怎样再救一个人，而是怎样把位置交给下一代。",
+    "rightsSafeIntroduction": "顾长海在急诊室工作了三十五年。\n\n在这里，他曾经是所有人最可靠的那双手。\n\n可是退休的最后一天，他第一次发现，新的设备、新的算法和年轻医生已经能够完成许多曾经只有他才能完成的事情。\n\n一个一生以“被需要”为荣的人，突然面对一个陌生的问题：\n\n**如果别人已经可以接替我，我还剩下什么价值？**\n\n《风过去以后》写退休，却不仅仅属于老年人。\n\n它写的是所有领导者迟早都必须面对的一堂课：\n\n**真正成熟的传承，不是让后来的人永远需要自己，而是有一天，他们已经可以没有自己。**",
+    "themes": [
+      "退休",
+      "医疗",
+      "传承",
+      "技术与经验",
+      "身份",
+      "放手",
+      "下一代"
+    ],
+    "whyReadIt": "因为许多人会学习怎样成为重要的人，却很少有人学习：\n\n**怎样在仍然有能力的时候，主动把位置让出来。**\n\n对于教师、牧者、医生、父母和领导者，这都是一个非常深的问题。",
+    "readingExperience": [
+      "医疗现实",
+      "代际传承",
+      "职业生命",
+      "温暖现实主义"
+    ],
+    "biblicalCulturalNote": "作品末端具有明显的“跑尽当跑的路”“交棒”式文化共鸣，但重点不是退休等于结束，而是使命如何从一个人的手中进入另一代人的生命。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《风过去以后》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}
