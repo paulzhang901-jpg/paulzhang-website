@@ -14,7 +14,7 @@ export function validate() {
   const journey = read('config/architecture/journey-states.yaml');
   const productJourneys = read('config/architecture/journeys.yaml');
 
-  for (const file of ['content','content-work','content-unit','taxonomy','events','user-journey','routes']) read(`schema/${file}.schema.json`);
+  for (const file of ['content','content-work','content-unit','taxonomy','events','user-journey','routes','fiction-editorial-package','fiction-editorial-registry','fiction-cover-manifest']) read(`schema/${file}.schema.json`);
 
   assert(routes.version === 1, 'route registry version must be 1');
   assert(routes.locale_strategy.default_locale === 'zh-CN', 'default locale must be zh-CN');
@@ -22,7 +22,7 @@ export function validate() {
   assert(routes.locale_strategy.forbidden_prefixes.includes('/zh'), '/zh must remain forbidden');
   assert(routes.locale_strategy.forced_browser_redirects === false, 'forced browser redirects must remain disabled');
   unique(routes.top_level_routes.map((route) => route.path), 'top-level routes');
-  const requiredRoutes = ['/', '/start', '/library', '/stories', '/together', '/grow', '/community', '/about', '/gccm', '/search', '/ask', '/journey', '/account', '/auth', '/api', '/legal', '/admin'];
+  const requiredRoutes = ['/', '/start', '/library', '/stories', '/fiction', '/together', '/grow', '/community', '/about', '/gccm', '/search', '/ask', '/journey', '/account', '/auth', '/api', '/legal', '/admin'];
   for (const route of requiredRoutes) assert(routes.top_level_routes.some((item) => item.path === route), `missing reserved route ${route}`);
   for (const [parent, children] of Object.entries(routes.child_routes)) {
     assert(routes.top_level_routes.some((item) => item.path === parent), `child parent ${parent} is not registered`);
@@ -33,6 +33,8 @@ export function validate() {
     const pattern = routes.patterns.find((item) => item.path === pathPattern);
     assert(pattern?.entity === entity && pattern.release === 'v1', `missing content work route pattern ${pathPattern}`);
   }
+  const fictionPattern = routes.patterns.find((item) => item.path === '/fiction/[slug]');
+  assert(fictionPattern?.entity === 'fiction_editorial_record' && fictionPattern.release === 'v1', 'missing fiction editorial route pattern');
 
   for (const key of ['content_types','work_types','unit_types','topics','life_needs','journey_stages','audiences']) {
     unique(taxonomy[key], key);

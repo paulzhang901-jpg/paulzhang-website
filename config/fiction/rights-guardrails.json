@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "productBoundary": "discovery_and_official_reading_router_only",
+  "allowedPublicFields": [
+    "canonicalTitle", "slug", "workType", "collection", "cover",
+    "editorialHook", "rightsSafeIntroduction", "themes", "whyRead",
+    "readingExperience", "biblicalCulturalNote", "authorCreativeNote",
+    "publicationNote", "officialReadingCTA", "rightsStatus",
+    "editorialVersion", "editorialStatus"
+  ],
+  "prohibitedPublicFields": [
+    "body", "content", "chapters", "chapter", "manuscript", "manuscriptPath",
+    "contract", "contractPath", "contractScreenshot", "download", "sourcePath",
+    "internalRightsAnalysis", "draftText", "supersededText"
+  ],
+  "prohibitedRouteSegments": [
+    "chapter", "chapters", "read", "download", "manuscript", "contract", "draft"
+  ],
+  "prohibitedFileExtensions": [".doc", ".docx", ".pdf"],
+  "requiredEditorialStatus": "LOCKED",
+  "excludedTitles": ["为什么偏偏是我", "每个人都来安慰他"],
+  "supersededVersions": [{"canonicalTitle": "火没有降下来", "versions": ["v1", "v2"]}]
+}

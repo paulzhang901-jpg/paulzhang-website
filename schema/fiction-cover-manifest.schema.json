@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paulzhang.org/schema/fiction-cover-manifest.schema.json",
+  "title": "Mu Changke Fiction Cover Manifest",
+  "type": "object",
+  "required": ["version", "entries"],
+  "properties": {
+    "version": {"const": 1},
+    "entries": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["canonicalTitle", "asset", "verificationStatus"],
+        "properties": {
+          "canonicalTitle": {"type": "string", "minLength": 1},
+          "asset": {"type": ["string", "null"]},
+          "verificationStatus": {"enum": ["COVER_MAPPING_BLOCKED", "VERIFIED"]},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "altText": {"type": ["string", "null"]},
+          "rightsVerified": {"type": "boolean"}
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"verificationStatus": {"const": "VERIFIED"}}, "required": ["verificationStatus"]},
+            "then": {"required": ["sha256", "altText", "rightsVerified"], "properties": {"asset": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "altText": {"type": "string", "minLength": 1}, "rightsVerified": {"const": true}}}
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

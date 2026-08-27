@@ -15,7 +15,7 @@ If code contradicts approved architecture, **the code is the defect**. Never rew
 
 ## Bounded domains and direction
 
-Domains: content, taxonomy, search, stories, engagement, subscriptions, companionship, growth, identity, journey, community, GCCM, analytics, and AI.
+Domains: content, taxonomy, search, stories, fiction discovery, engagement, subscriptions, companionship, growth, identity, journey, community, GCCM, analytics, and AI.
 
 Dependency direction: **Content → Discovery → Engagement → Relationship → Formation → Community → Mission.** Earlier domains should not require future domains.
 
@@ -61,3 +61,5 @@ analytics: [content.viewed]
 The accepted public locale URL strategy is governed by [ADR-0011](../adr/0011-locale-url-strategy.md): unprefixed `zh-CN`, prefixed `/en` for `en-US`, and shared application logic.
 
 Multi-unit publications are governed by [ADR-0013](../adr/0013-content-work-ordered-unit-model.md): Content Works remain distinct from independent ContentItems and own an explicit, validated sequence of localized Content Units.
+
+The Mu Changke Fiction portfolio route is governed by [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md): it is a LOCKED-metadata discovery and official-reading router, never a manuscript, chapter, contract, download, or fiction-distribution surface.

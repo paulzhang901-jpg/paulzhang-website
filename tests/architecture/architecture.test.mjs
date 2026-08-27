@@ -23,9 +23,9 @@ test('architecture constitution links every major architecture document', () => 
   }
 });
 
-test('all accepted baseline and locale ADRs exist', () => {
+test('all accepted architecture ADRs exist', () => {
   const adrDir = path.resolve('docs/adr');
-  for (let number = 1; number <= 13; number += 1) {
+  for (let number = 1; number <= 14; number += 1) {
     const prefix = String(number).padStart(4, '0');
     const file = fs.readdirSync(adrDir).find((name) => name.startsWith(`${prefix}-`));
     assert.ok(file, `missing ADR-${prefix}`);
