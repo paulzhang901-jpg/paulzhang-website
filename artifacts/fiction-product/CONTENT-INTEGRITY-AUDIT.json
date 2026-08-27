@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "canonicalWorks": "12/12",
+  "editorialPackages": "12/12",
+  "editorialStatus": "12/12 LOCKED",
+  "authorApproval": "12/12 APPROVED",
+  "coverMappings": "12/12",
+  "coverAssets": "12/12",
+  "fireDidNotFall": "v3 ONLY",
+  "preAdapterHashes": "34/34",
+  "postAdapterHashes": "34/34",
+  "canonicalByteChanges": 0,
+  "runtimeSource": "adapter-derived registry.json only",
+  "englishEditorialTranslationPerformed": false
+}

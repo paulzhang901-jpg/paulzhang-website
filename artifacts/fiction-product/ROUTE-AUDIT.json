@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "landingRoutes": ["/fiction", "/en/fiction"],
+  "detailTemplateRoutes": ["/fiction/[slug]", "/en/fiction/[slug]"],
+  "canonicalSlugs": [
+    "enoch-longevity-era",
+    "escape-wilderness",
+    "ravens-every-day",
+    "voice-in-the-cave",
+    "last-cake",
+    "fire-did-not-fall",
+    "no-rain",
+    "head-bowed",
+    "who-killed-prophet",
+    "seven-thousand",
+    "after-the-wind",
+    "super-algorithm"
+  ],
+  "detailPagesPerLocale": 12,
+  "unknownSlug": "NOT_FOUND",
+  "staticGeneration": "133/133 PASS"
+}
