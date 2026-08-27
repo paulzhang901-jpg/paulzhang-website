@@ -1,0 +1,10 @@
+{
+  "package": "mu-changke-fiction-canonical-package-v1",
+  "generatedAt": "2026-08-27T21:02:35.748783+00:00",
+  "status": "MATERIALIZED_VERIFIED_LOCKED_CODEX_READY",
+  "canonicalIdentities": 12,
+  "completeEditorialPackages": 12,
+  "coverAssets": 12,
+  "coverMappings": 12,
+  "codexReady": true
+}

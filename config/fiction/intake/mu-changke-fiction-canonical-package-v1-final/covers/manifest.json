@@ -1,0 +1,79 @@
+{
+  "expected": 12,
+  "physical": 12,
+  "status": "VERIFIED",
+  "mappings": [
+    {
+      "key": "01-enoch",
+      "asset": "assets/01-enoch.jpeg",
+      "sha256": "620e94f93040f6db649abc8ae921bb856e94ae3eb64697e0b1e36670de8ac456",
+      "bytes": 765809
+    },
+    {
+      "key": "02-escape-wilderness",
+      "asset": "assets/02-escape-wilderness.jpeg",
+      "sha256": "24a6c09d9ac0ace0b898f2b3a72b51e468a4bdaf2d134d09062b9679cc9dac51",
+      "bytes": 575079
+    },
+    {
+      "key": "03-ravens-every-day",
+      "asset": "assets/03-ravens-every-day.jpeg",
+      "sha256": "432f03a9dc0371f03b98bbee0f549808ea7e183ec6e2896155e8129235d4cb1b",
+      "bytes": 503154
+    },
+    {
+      "key": "04-voice-in-the-cave",
+      "asset": "assets/04-voice-in-the-cave.jpeg",
+      "sha256": "cd0ad1e6cb7742a1ca93275157efbe9d303f5fb7a44e735817fd2a5e0449f271",
+      "bytes": 503917
+    },
+    {
+      "key": "05-last-cake",
+      "asset": "assets/05-last-cake.jpeg",
+      "sha256": "a21d3b43a5a43982bd80c08781bb0e22452a9065f5fe78bbe17c0c59c30cb0a8",
+      "bytes": 549934
+    },
+    {
+      "key": "06-fire-did-not-fall",
+      "asset": "assets/06-fire-did-not-fall.jpeg",
+      "sha256": "606ddbe4711f05d90b6927bf7ef2d37091c35ff8c5b2e24cd36b5df9d634a306",
+      "bytes": 421480
+    },
+    {
+      "key": "07-no-rain",
+      "asset": "assets/07-no-rain.jpeg",
+      "sha256": "61e6df290045edd8e7cea6cc415e59e8f93be9a834f51b5d59532b2990e10423",
+      "bytes": 430755
+    },
+    {
+      "key": "08-head-bowed",
+      "asset": "assets/08-head-bowed.jpeg",
+      "sha256": "dd76e2b3a302d602142b938fbc665b3102853bad024c562292caef1a99487b62",
+      "bytes": 376284
+    },
+    {
+      "key": "09-who-killed-prophet",
+      "asset": "assets/09-who-killed-prophet.jpeg",
+      "sha256": "582a9392da9f87df51929895cec6bc7c67c5ed5e926a32ccde5d8664d895e5a0",
+      "bytes": 541642
+    },
+    {
+      "key": "10-seven-thousand",
+      "asset": "assets/10-seven-thousand.jpeg",
+      "sha256": "7b5cce3bd985285b01394eea85c3f12ae73145c77787738c463c9397562d5f8b",
+      "bytes": 479448
+    },
+    {
+      "key": "11-after-the-wind",
+      "asset": "assets/11-after-the-wind.jpeg",
+      "sha256": "d90596602514968f09049a8ad48b51b2e2f81852896f92b5fc80f6f0599008f6",
+      "bytes": 583202
+    },
+    {
+      "key": "12-super-algorithm",
+      "asset": "assets/12-super-algorithm.jpeg",
+      "sha256": "9330ee42978b34941867ff41fc3cc1b185515765415cf5cd78cf74b9cd100ace",
+      "bytes": 397222
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+package_id: mu-changke-fiction-canonical-package-v1
+brand:
+  zh: 牧长客 · 小说世界
+  en: Mu Changke Fiction
+status: LOCKED
+ordinary_rewrite_allowed: false
+codex_ready: true
+codex_hold: false
+lock_policy:
+  conflict_action: STOP_AND_REPORT

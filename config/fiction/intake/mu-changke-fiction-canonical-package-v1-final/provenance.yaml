@@ -1,0 +1,8 @@
+classes:
+  HISTORICAL_EXACT_FULL: full public editorial package recovered verbatim from prior
+    approved conversation output
+  HISTORICAL_EXACT_CORE_PLUS_APPROVED_FIELD: core public editorial fields recovered
+    verbatim; Publication Note newly canonicalized under explicit author approval
+  AUTHOR_APPROVED_RECOVERY_EDITION: historical exact full package unavailable; newly
+    established and explicitly author-approved
+false_historical_claims: 0

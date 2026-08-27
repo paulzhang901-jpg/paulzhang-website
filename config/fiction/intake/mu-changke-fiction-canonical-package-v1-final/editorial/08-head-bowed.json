@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-head-bowed",
+  "canonicalTitle": "他一直低着头",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "core": "HISTORICAL_EXACT_RECOVERED",
+    "publicationNote": "AUTHOR_APPROVED_NEW_FIELD"
+  },
+  "publicEditorial": {
+    "editorialHook": "所有人都劝他向前走，可如果爱还躺在那扇门后，“向前走”究竟意味着什么？",
+    "rightsSafeIntroduction": "凌晨四点，医院的走廊里，林远仍然坐在那里。\n\n九十八天。\n\n妻子苏晴躺在重症监护室里，而外面的世界已经开始劝他接受现实。\n\n工作不能永远停下。  \n孩子需要父亲。  \n老人需要照顾。  \n人生还很长。\n\n所有理由听起来都正确。\n\n可是林远每天仍然来到同一个地方，坐在同一条走廊，低着头等待。\n\n《他一直低着头》不急着判断这种等待究竟是执着还是爱，而是把读者带进一个非常困难的生命问题：\n\n**当希望几乎没有证据的时候，忠诚还有意义吗？**",
+    "themes": [
+      "婚姻",
+      "重病",
+      "等待",
+      "忠诚",
+      "希望",
+      "陪伴",
+      "爱"
+    ],
+    "whyReadIt": "这是一篇节奏安静，却情感重量很大的小说。\n\n它没有把陪伴写成一句漂亮的话，而是把陪伴放进一天又一天几乎没有变化的时间里。",
+    "readingExperience": [
+      "医疗现实",
+      "婚姻情感",
+      "慢叙事",
+      "希望文学"
+    ],
+    "biblicalCulturalNote": "这一篇不需要强行附加明显的圣经人物对应。它更接近一种关于“恒久忍耐”和“陪伴”的生命寓言。",
+    "authorCreativeVision": null,
+    "publicationNote": "本页为作者个人网站的作品档案与原创编辑性介绍，不提供小说正文、章节连载或下载。作品的正式阅读与发行以授权平台所提供的版本为准。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "在番茄小说或今日头条搜索：\n\n**《他一直低着头》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}

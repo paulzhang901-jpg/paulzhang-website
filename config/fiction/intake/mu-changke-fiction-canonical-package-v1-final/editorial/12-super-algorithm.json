@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0",
+  "workId": "mu-fiction-super-algorithm",
+  "canonicalTitle": "看不见的战争·超级算法",
+  "author": "牧长客",
+  "editorialVersion": "v1.0",
+  "editorialStatus": "LOCKED",
+  "authorApproval": "APPROVED",
+  "provenance": {
+    "package": "HISTORICAL_EXACT_RECOVERED"
+  },
+  "publicEditorial": {
+    "editorialHook": "当算法越来越懂得如何操纵人的欲望，一个自信能够掌控算法的人，是否也正在被另一套更隐秘的算法操纵？",
+    "rightsSafeIntroduction": "沈维曾经相信，世界上的问题大多可以被拆解、计算，然后找到最优解。\n\n直到事业、家庭与女儿的生命危机同时逼近，他第一次发现，有些问题没有漂亮的答案。\n\n一个看似能够重新夺回人生控制权的机会出现在他面前。技术开始变成财富，数据开始变成权力，而那些原本只存在于屏幕上的数字，也逐渐显露出背后真实的人。\n\n当一个父亲为了保护最爱的人不断告诉自己“这是唯一的办法”，他究竟是在驾驭系统，还是已经成为系统的一部分？\n\n**《看不见的战争·超级算法》**把算法、资本与现代人的生存焦虑放进一个家庭的道德危机中，追问一个比技术本身更古老的问题：**当结果看起来足够重要，我们还愿不愿意为自己的选择负责？**",
+    "themes": [
+      "算法与人性",
+      "控制与失控",
+      "爱与自我欺骗",
+      "人的价值与数据化",
+      "真相、责任与恩典"
+    ],
+    "whyReadIt": "如果你喜欢科技题材，却不满足于“AI失控”“算法害人”这样的表层故事，这部小说真正值得读的地方，是它把技术问题推进到了人的内心。\n\n沈维并不是一个简单的恶人。他有需要保护的家庭，有无法承受的现实，也有一次又一次看似合理的理由。\n\n正因为如此，故事最令人不安的问题不是“坏人为什么作恶”，而是：\n\n**一个普通人，要经过多少次合理化，才会成为自己曾经厌恶的那种人？**",
+    "readingExperience": [
+      "科技悬疑",
+      "都市现实",
+      "算法伦理",
+      "家庭困境",
+      "道德选择",
+      "人性寓言"
+    ],
+    "biblicalCulturalNote": "作品并非圣经故事改编，也不是反科技宣言。它借着试探、偶像、自我欺骗、认罪与恩典等具有基督教文化共鸣的母题，把“看不见的战争”放在人最日常、也最困难的道德选择之中。",
+    "authorCreativeVision": null,
+    "publicationNote": "《看不见的战争·超级算法》为牧长客创作的签约小说。本网站仅作为作者官方作品档案，提供原创编辑介绍、作品信息与阅读指引，不提供小说正文、章节转载或下载。\n\n完整作品请通过正式授权平台阅读。",
+    "officialReadingCTA": {
+      "mode": "search-guidance",
+      "text": "**进入这场看不见的战争**\n\n在番茄小说或今日头条搜索：\n\n**《看不见的战争·超级算法》**  \n**作者：牧长客**\n\n**前往官方平台阅读 →**",
+      "verifiedUrl": null
+    }
+  },
+  "rightsSafety": {
+    "fullText": false,
+    "chapterExcerpts": false,
+    "majorPlotSpoilers": false,
+    "legacyPlatformSynopsisReuse": false,
+    "syntheticAuthorQuote": false,
+    "unverifiedOfficialUrl": false
+  }
+}
