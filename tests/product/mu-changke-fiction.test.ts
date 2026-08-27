@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { filterFictionWorks } from "../../src/lib/fiction/search";
+import { filterFictionWorks, getSharedFictionThemes } from "../../src/lib/fiction/search";
 import { fictionLandingMetadata, fictionWorkMetadata } from "../../src/lib/fiction/metadata";
 import { fictionPath, getFictionCardRecords, getFictionCoverPath, getFictionWork, getFictionWorks } from "../../src/lib/fiction/repository";
 
@@ -46,6 +46,7 @@ test("fiction routes and title-theme search are deterministic", () => {
   assert.deepEqual(filterFictionWorks(cards, "超级算法").map((work) => work.slug), ["super-algorithm"]);
   assert.ok(filterFictionWorks(cards, "生命").some((work) => work.slug === "enoch-longevity-era"));
   assert.equal(filterFictionWorks(cards, "not-present").length, 0);
+  assert.deepEqual(getSharedFictionThemes(cards), ["尊严", "匮乏", "孤独", "希望", "恐惧", "等待", "忠诚"]);
 });
 
 test("fiction SEO preserves distinct canonical and locale alternate URLs", () => {
