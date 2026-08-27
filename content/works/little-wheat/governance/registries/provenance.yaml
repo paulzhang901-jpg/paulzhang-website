@@ -1,0 +1,57 @@
+schema_version: "1.0"
+source_authority_hierarchy:
+  facts:
+    order:
+      - "AUTHOR_CONFIRMED_FACT_LEDGER"
+      - "PRIMARY_DOCUMENT"
+      - "INDEPENDENT_WITNESS_SOURCE"
+      - "LEGACY_EDITION"
+      - "RETROSPECTIVE_MEMORY"
+  theology:
+    order:
+      - "LOCKED_CANONICAL_THEOLOGY"
+      - "FAMILY_STATEMENT"
+      - "LOCKED_ZH_CANONICAL_TEXT"
+      - "ALIGNED_EN_CANONICAL_TEXT"
+      - "LEGACY_TEXT"
+  translation:
+    order:
+      - "LOCKED_CANONICAL_MEANING"
+      - "VERIFIED_ORIGINAL_LANGUAGE_SOURCE"
+      - "APPROVED_TRANSLATION"
+      - "LEGACY_TRANSLATION"
+sources:
+  - source_id: "lw-src-zh-word"
+    type: "legacy_word"
+    language: "zh-CN"
+    role: "narrative_recovery_source"
+  - source_id: "lw-src-zh-pdf"
+    type: "legacy_pdf"
+    language: "zh-CN"
+    role: "publication_cross_check"
+  - source_id: "lw-src-en-pdf"
+    type: "legacy_pdf"
+    language: "en-US"
+    role: "legacy_english_recovery"
+  - source_id: "lw-src-pastor-john-zh"
+    type: "guest_testimony_translation"
+    author: "Pastor John"
+    translator: "张爱春教授"
+    language: "zh-CN"
+    title: "影响恒远"
+  - source_id: "lw-src-pastor-john-en-original"
+    type: "guest_testimony_original"
+    author: "Pastor John"
+    language: "en-US"
+    status: "MISSING"
+witness_ownership:
+  final_departure_sequence:
+    canonical_owner: "Pastor John"
+    includes:
+      - "worker_invitation_to_remain"
+      - "body_wrapping_presence"
+      - "holding_wrapped_child"
+      - "placing_child_on_worker_shoulder"
+      - "opening_curtain_and_door"
+      - "specific_PICU_departure_sequence"
+    Paul_first_person_claim_allowed: false

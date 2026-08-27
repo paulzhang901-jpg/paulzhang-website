@@ -1,0 +1,105 @@
+schema_version: '1.0'
+work_id: work-little-wheat-v1
+publication_state:
+  canonical_package: MATERIALIZED
+  editorial_state: LOCKED
+  implementation_state: NOT_YET_MATERIALIZED_IN_REPOSITORY
+public_work:
+  slug: little-wheat
+  proposed_routes:
+    zh_CN: /stories/little-wheat
+    en_US: /en/stories/little-wheat
+  chapter_routes:
+    status: ARCHITECTURE_SUPPORTED
+    authority: ADR-0013
+    automatic_creation_allowed: false
+language_status:
+  zh_CN:
+    textual_status: READY
+  en_US:
+    textual_status: READY_WITH_CH08_PROVENANCE_NOTE
+chapter_08:
+  public_provenance_notice_allowed: true
+  full_verified_original_english: false
+  synthetic_guest_testimony_allowed: false
+discovery:
+  enabled_only_when:
+  - status == published
+  - visibility == public
+  - access_level == public
+  - published_at is valid offset ISO datetime
+publication_timestamp:
+  current_value: null
+  may_remain_null_while:
+  - draft
+  - review
+  - scheduled
+  required_when:
+  - published
+  - archived
+seo:
+  required_for_materialization: false
+  required_for_publication: true
+  authority: HUMAN_EDITORIAL_ONLY
+  Codex_may_invent: false
+  missing_during_materialization: NON_BLOCKING
+  missing_at_publication: BLOCKING
+related_content:
+  materialization_default: []
+  missing_is_blocking: false
+  invented_ids_prohibited: true
+  future_entries_require_existing_canonical_ids: true
+Codex_execution_contract:
+  required_first_action:
+  - validate registries
+  - validate canonical files
+  - validate repository architecture
+  allowed:
+  - materialize approved files
+  - bind existing routes if architecture already supports them
+  - implement presentation
+  - validate
+  - generate local preview
+  - create PR
+  prohibited:
+  - rewrite text
+  - translate
+  - resolve theology
+  - resolve facts
+  - invent missing Pastor John source
+  - modify claims
+  - override privacy
+  - invent publication date
+  - change schema without architecture approval
+  - create unsupported chapter routes
+stop_conditions:
+- canonical conflict
+- schema conflict
+- route architecture conflict
+- missing required source
+- privacy ambiguity
+- translation ambiguity
+- publication lifecycle conflict
+runtime_initial_state:
+  status: review
+  published_at: null
+  visibility: private
+  access_level: public
+  public_discovery: false
+  search_indexing: false
+  sitemap_inclusion: false
+runtime_semantics:
+  access_level_public_means: unrestricted readership after publication
+  access_level_public_does_not_mean_currently_published: true
+  current_public_access: false
+publication_gate:
+  publish_transition_requires:
+  - human_approval
+  - status_published
+  - visibility_public
+  - access_level_public
+  - valid_offset_ISO_published_at
+media:
+  v1_materialization_policy: NO_MEDIA
+  media_required_for_work_materialization: false
+  include_assets: false
