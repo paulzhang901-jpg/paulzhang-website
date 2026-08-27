@@ -8,11 +8,20 @@ const zhRoot = path.join(root, "src/app/(zh)");
 
 test("approved Chinese V1 route pages exist", () => {
   const pages = [
-    "page.tsx", "start/page.tsx", "library/page.tsx", "stories/page.tsx",
+    "page.tsx", "start/page.tsx", "library/page.tsx", "stories/page.tsx", "fiction/page.tsx",
     "together/page.tsx", "grow/page.tsx", "community/page.tsx", "about/page.tsx",
     "gccm/page.tsx", "search/page.tsx", "legal/privacy/page.tsx", "legal/terms/page.tsx",
   ];
   for (const page of pages) assert.ok(fs.existsSync(path.join(zhRoot, page)), `missing ${page}`);
+});
+
+test("fiction landing and detail route templates exist for both locales", () => {
+  for (const page of [
+    "src/app/(zh)/fiction/page.tsx",
+    "src/app/(zh)/fiction/[slug]/page.tsx",
+    "src/app/(en)/en/fiction/page.tsx",
+    "src/app/(en)/en/fiction/[slug]/page.tsx",
+  ]) assert.ok(fs.existsSync(path.join(root, page)), `missing ${page}`);
 });
 
 test("English locale uses a shared approved-route resolver", () => {

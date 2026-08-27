@@ -18,6 +18,7 @@ test("Client Components remain explicitly reviewed and minimal", () => {
     .filter((file) => /\.[cm]?[jt]sx?$/.test(file) && fs.readFileSync(file, "utf8").startsWith('"use client"'))
     .map((file) => path.relative(root, file));
   assert.deepEqual(clientFiles, [
+    "src/components/fiction/fiction-discovery.tsx",
     "src/components/navigation/language-switcher.tsx",
     "src/components/product/engagement-prompts.tsx",
     "src/components/product/home-view-event.tsx",

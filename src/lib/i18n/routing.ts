@@ -2,7 +2,7 @@ import type { Route } from "next";
 import type { Locale, MessageKey } from "@/config/i18n";
 
 export const routeIds = [
-  "home", "start", "library", "stories", "together", "grow", "community",
+  "home", "start", "library", "stories", "fiction", "together", "grow", "community",
   "about", "gccm", "search", "legal-privacy", "legal-terms",
 ] as const;
 
@@ -20,6 +20,7 @@ export const routes: readonly RouteDefinition[] = [
   {id: "start", path: "/start", label: "start"},
   {id: "library", path: "/library", label: "library", navigation: true},
   {id: "stories", path: "/stories", label: "stories", navigation: true},
+  {id: "fiction", path: "/fiction", label: "fiction", navigation: true},
   {id: "grow", path: "/grow", label: "grow", navigation: true},
   {id: "together", path: "/together", label: "together", navigation: true},
   {id: "community", path: "/community", label: "community", navigation: true},
