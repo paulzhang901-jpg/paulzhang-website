@@ -3,7 +3,7 @@ import type { Locale, MessageKey } from "@/config/i18n";
 
 export const routeIds = [
   "home", "start", "library", "stories", "fiction", "together", "grow", "community",
-  "about", "gccm", "search", "legal-privacy", "legal-terms",
+  "about", "contact", "gccm", "search", "legal-privacy", "legal-terms",
 ] as const;
 
 export type RouteId = (typeof routeIds)[number];
@@ -25,6 +25,7 @@ export const routes: readonly RouteDefinition[] = [
   {id: "together", path: "/together", label: "together", navigation: true},
   {id: "community", path: "/community", label: "community", navigation: true},
   {id: "about", path: "/about", label: "about", navigation: true},
+  {id: "contact", path: "/about/contact", label: "contact"},
   {id: "gccm", path: "/gccm", label: "gccm"},
   {id: "search", path: "/search", label: "search"},
   {id: "legal-privacy", path: "/legal/privacy", label: "privacy"},
