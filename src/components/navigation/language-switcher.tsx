@@ -13,9 +13,10 @@ export function LanguageSwitcher({locale}: {locale: Locale}) {
   const targetPath = (locale === "zh-CN"
     ? pathname === "/" ? "/en" : `/en${pathname}`
     : pathname === "/en" ? "/" : pathname.replace(/^\/en/, "")) as Route;
+  const safeFallback = (targetLocale === "en-US" ? "/en" : "/") as Route;
 
   return <Link
-    href={targetPath}
+    href={safeFallback}
     hrefLang={targetLocale}
     lang={targetLocale}
     className="inline-flex min-h-11 items-center rounded-md border bg-surface px-3 text-sm font-medium hover:bg-muted"
@@ -32,7 +33,10 @@ export function LanguageSwitcher({locale}: {locale: Locale}) {
         event.preventDefault();
         unavailable.tabIndex = -1;
         unavailable.focus();
+        return;
       }
+      event.preventDefault();
+      window.location.assign(targetPath);
     }}
   >
     {copy.language}

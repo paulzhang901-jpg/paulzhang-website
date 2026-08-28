@@ -24,5 +24,6 @@ export function getWorkStaticParams(locale: ContentLanguage, repository: Content
 }
 
 export function getUnitStaticParams(locale: ContentLanguage, repository: ContentWorkRepository) {
-  return repository.getPublishedWorks(locale).flatMap(({work, representation}) => repository.getOrderedUnits(work.canonicalId, locale).map((unit) => ({workSlug: representation.slug, unitSlug: unit.slug})));
+  const params = repository.getPublishedWorks(locale).flatMap(({work, representation}) => repository.getOrderedUnits(work.canonicalId, locale).map((unit) => ({workSlug: representation.slug, unitSlug: unit.slug})));
+  return params.length > 0 || process.env.STATIC_EXPORT_BUILD !== "1" ? params : [{workSlug: "__static-export-placeholder__", unitSlug: "__not-found__"}];
 }

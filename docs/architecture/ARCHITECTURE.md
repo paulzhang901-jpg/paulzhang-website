@@ -53,7 +53,7 @@ analytics: [content.viewed]
 ## Architecture index
 
 - Product: [North Star](../product/PRODUCT_NORTH_STAR.md), [IA](../product/WEBSITE_IA_V1.md), [Journey](../product/USER_JOURNEY.md), [Scope](../product/VERSION_SCOPE.md)
-- Architecture: [Routes](./ROUTE_SCHEMA.md), [Content](./CONTENT_MODEL.md), [Taxonomy](./TAXONOMY.md), [User States](./USER_STATE_MACHINE.md), [Events](./EVENT_SCHEMA.md), [Privacy](./PRIVACY_MODEL.md), [AI](./AI_BOUNDARIES.md), [Internationalization](./INTERNATIONALIZATION.md), [Search](./SEARCH_ARCHITECTURE.md), [Releases](./RELEASE_BOUNDARIES.md), [Quality Gates](./QUALITY_GATES.md)
+- Architecture: [Routes](./ROUTE_SCHEMA.md), [Content](./CONTENT_MODEL.md), [Taxonomy](./TAXONOMY.md), [User States](./USER_STATE_MACHINE.md), [Events](./EVENT_SCHEMA.md), [Privacy](./PRIVACY_MODEL.md), [AI](./AI_BOUNDARIES.md), [Internationalization](./INTERNATIONALIZATION.md), [Search](./SEARCH_ARCHITECTURE.md), [Releases](./RELEASE_BOUNDARIES.md), [Static Production Deployment](./STATIC_PRODUCTION_DEPLOYMENT.md), [Quality Gates](./QUALITY_GATES.md)
 - Decisions: [ADR index](../adr/README.md)
 - Registries: [`config/architecture`](../../config/architecture/)
 - Bootstrap evidence: [initial repository audit](./BOOTSTRAP_AUDIT.md)
@@ -63,3 +63,5 @@ The accepted public locale URL strategy is governed by [ADR-0011](../adr/0011-lo
 Multi-unit publications are governed by [ADR-0013](../adr/0013-content-work-ordered-unit-model.md): Content Works remain distinct from independent ContentItems and own an explicit, validated sequence of localized Content Units.
 
 The Mu Changke Fiction portfolio route is governed by [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md): it is a LOCKED-metadata discovery and official-reading router, never a manuscript, chapter, contract, download, or fiction-distribution surface.
+
+Production static-export architecture and manual release promotion are governed by [ADR-0015](../adr/0015-production-hosting-static-export-strategy.md) and the [Static Production Deployment contract](./STATIC_PRODUCTION_DEPLOYMENT.md).
