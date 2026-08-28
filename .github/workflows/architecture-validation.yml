@@ -32,9 +32,11 @@ jobs:
       - run: pnpm run lint
       - run: pnpm run typecheck
       - run: pnpm run test:routes
+      - run: pnpm run test:product
       - run: pnpm run test:accessibility
       - run: pnpm run test:performance
       - run: pnpm run build
+      - run: pnpm run validate:static-export
 
   content:
     runs-on: ubuntu-latest
@@ -48,6 +50,7 @@ jobs:
       - run: pnpm run validate:content
       - run: pnpm run test:content-integrity
       - run: pnpm run test:translation
+      - run: node scripts/validate-fiction-ingestion.mjs
 
   security:
     runs-on: ubuntu-latest

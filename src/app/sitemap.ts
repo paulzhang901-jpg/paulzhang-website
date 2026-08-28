@@ -6,6 +6,8 @@ import { getContentWorkRepository } from "@/lib/content/works/repository";
 import { unitPath, workPath } from "@/lib/content/works/routing";
 import { fictionPath, getFictionWorks } from "@/lib/fiction/repository";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routeEntries = routes.flatMap((route) => (["zh-CN", "en-US"] as const).map((locale) => ({
     url: new URL(localizedPath(route.id, locale), siteUrl).toString(),
