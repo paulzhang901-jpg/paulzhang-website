@@ -13,7 +13,7 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const generatedRoutes = Object.keys(manifest.routes);
 const placeholderRoutes = generatedRoutes.filter((route) => route.includes(placeholder));
 const productionRoutes = generatedRoutes.filter((route) => !route.includes(placeholder));
-if (productionRoutes.length !== 133) fail(`expected 133 production routes, found ${productionRoutes.length}`);
+if (productionRoutes.length !== 135) fail(`expected 135 production routes, found ${productionRoutes.length}`);
 if (placeholderRoutes.length !== 2) fail(`expected two build-only empty-unit placeholders, found ${placeholderRoutes.length}`);
 
 for (const localePrefix of ["", "en/"]) {
@@ -94,4 +94,4 @@ for (const prohibited of ["config/fiction/intake", "PACKAGE-LOCK-MANIFEST", "pub
 const headers = fs.readFileSync(path.join(output, "_headers"), "utf8");
 if (!headers.includes("X-Robots-Tag: noindex") || !headers.includes("/_next/static/*")) fail("preview noindex or immutable asset cache contract missing");
 
-console.log(JSON.stringify({status: "PASS", productionRoutes: "133/133", buildOnlyPlaceholdersRemoved: "2/2", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
+console.log(JSON.stringify({status: "PASS", productionRoutes: "135/135", buildOnlyPlaceholdersRemoved: "2/2", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
