@@ -6,6 +6,7 @@ import { ContentWorkPage } from "@/components/content/content-work-page";
 import { getContentWorkRepository } from "@/lib/content/works/repository";
 import { getWorkStaticParams, resolveWorkRoute } from "@/lib/content/works/routing";
 import { metadataForWork } from "@/lib/content/works/metadata";
+import { metadataForCollectionRoute } from "@/lib/seo/metadata";
 
 type Props = {params: Promise<{slug: string}>};
 export const dynamicParams = false;
@@ -28,7 +29,8 @@ export async function generateMetadata({params}: Props) {
   if (work.kind === "work") return metadataForWork(work.work, work.representation, workRepository);
   const repository = await getContentRepository();
   const result = resolveStorySlug((await params).slug, "en-US", repository);
-  return result.kind === "content" ? metadataForContent(result.item, repository) : {};
+  if (result.kind === "content") return metadataForContent(result.item, repository);
+  return result.kind === "collection" ? metadataForCollectionRoute("stories", result.slug, "en-US") : {};
 }
 export default async function Page({params}: Props) {
   const workRepository = await getContentWorkRepository();

@@ -15,13 +15,35 @@ export function metadataForRoute(routeId: RouteId, locale: Locale): Metadata {
     title: routeId === "home" ? {absolute: title} : title,
     description: copy.siteDescription,
     alternates: {
-      canonical: new URL(path, siteUrl),
+      canonical: new URL(path, siteUrl).toString(),
       languages: {
-        "zh-CN": new URL(localizedPath(routeId, "zh-CN"), siteUrl),
-        "en-US": new URL(localizedPath(routeId, "en-US"), siteUrl),
+        "zh-CN": new URL(localizedPath(routeId, "zh-CN"), siteUrl).toString(),
+        "en-US": new URL(localizedPath(routeId, "en-US"), siteUrl).toString(),
       },
     },
     openGraph: {title, description: copy.siteDescription, locale},
+  };
+}
+
+export function metadataForCollectionRoute(
+  routeId: Extract<RouteId, "library" | "stories" | "grow">,
+  slug: string,
+  locale: Locale,
+): Metadata {
+  const metadata = metadataForRoute(routeId, locale);
+  const routePath = localizedPath(routeId, locale);
+  const zhPath = `${localizedPath(routeId, "zh-CN")}/${slug}`;
+  const enPath = `${localizedPath(routeId, "en-US")}/${slug}`;
+
+  return {
+    ...metadata,
+    alternates: {
+      canonical: new URL(`${routePath}/${slug}`, siteUrl).toString(),
+      languages: {
+        "zh-CN": new URL(zhPath, siteUrl).toString(),
+        "en-US": new URL(enPath, siteUrl).toString(),
+      },
+    },
   };
 }
 
@@ -29,7 +51,7 @@ export function metadataForJourney(journeyId: JourneyId, locale: Locale): Metada
   const copy = getProductCopy(locale);
   const path = journeyPath(journeyId, locale);
   const title = copy.journeys[journeyId];
-  return {title, description: copy.start.helper, alternates: {canonical: new URL(path, siteUrl), languages: {"zh-CN": new URL(journeyPath(journeyId, "zh-CN"), siteUrl), "en-US": new URL(journeyPath(journeyId, "en-US"), siteUrl)}}};
+  return {title, description: copy.start.helper, alternates: {canonical: new URL(path, siteUrl).toString(), languages: {"zh-CN": new URL(journeyPath(journeyId, "zh-CN"), siteUrl).toString(), "en-US": new URL(journeyPath(journeyId, "en-US"), siteUrl).toString()}}};
 }
 
 export { siteUrl };

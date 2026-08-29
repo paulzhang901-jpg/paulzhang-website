@@ -43,6 +43,32 @@ for (const file of htmlFiles) {
   if (/\/_next\/image\?/.test(html)) fail(`runtime image optimizer URL in ${path.relative(output, file)}`);
 }
 
+function routeFromHtml(file) {
+  const relative = path.relative(output, file).replaceAll(path.sep, "/");
+  if (relative === "index.html") return "/";
+  return `/${relative.replace(/\.html$/, "")}`;
+}
+
+function absoluteRoute(route) {
+  return `https://paulzhang.org${route === "/" ? "" : route}`;
+}
+
+for (const zhFile of htmlFiles.filter((file) => !path.relative(output, file).startsWith(`en${path.sep}`))) {
+  const relative = path.relative(output, zhFile);
+  if (["404.html", "_not-found.html"].includes(relative)) continue;
+  const enFile = relative === "index.html" ? path.join(output, "en.html") : path.join(output, "en", relative);
+  if (!fs.existsSync(enFile)) continue;
+
+  const zhRoute = routeFromHtml(zhFile);
+  const enRoute = routeFromHtml(enFile);
+  for (const [file, route] of [[zhFile, zhRoute], [enFile, enRoute]]) {
+    const html = fs.readFileSync(file, "utf8");
+    if (!html.includes(`<link rel="canonical" href="${absoluteRoute(route)}"`)) fail(`missing self canonical in ${path.relative(output, file)}`);
+    if (!html.includes(`<link rel="alternate" hrefLang="zh-CN" href="${absoluteRoute(zhRoute)}"`)) fail(`missing zh-CN hreflang in ${path.relative(output, file)}`);
+    if (!html.includes(`<link rel="alternate" hrefLang="en-US" href="${absoluteRoute(enRoute)}"`)) fail(`missing en-US hreflang in ${path.relative(output, file)}`);
+  }
+}
+
 for (const relative of ["404.html", "fiction.html", "en/fiction.html", "robots.txt", "sitemap.xml", "_headers"]) {
   if (!fs.existsSync(path.join(output, relative))) fail(`missing ${relative}`);
 }
