@@ -6,11 +6,11 @@ unit_type: chapter
 order: 6
 chapter_number: 4
 slug: 05-chapter-04
-status: review
+status: published
 title: 第四章：爱的围绕——教会与家庭的守望相助
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

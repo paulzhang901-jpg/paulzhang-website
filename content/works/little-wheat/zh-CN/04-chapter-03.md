@@ -6,11 +6,11 @@ unit_type: chapter
 order: 5
 chapter_number: 3
 slug: 04-chapter-03
-status: review
+status: published
 title: 第三章：病房里的时光——与生命同行的日日夜夜
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

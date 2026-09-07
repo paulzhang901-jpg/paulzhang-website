@@ -9,6 +9,10 @@ export function unitPath(workSlug: string, unitSlug: string, locale: ContentLang
   return `${workPath(workSlug, locale)}/${unitSlug}`;
 }
 
+export function isContentWorkSlug(slug: string, repository: ContentWorkRepository) {
+  return repository.allWorks().some((work) => work.representations.some((representation) => representation.slug === slug));
+}
+
 export function resolveWorkRoute(slug: string, locale: ContentLanguage, repository: ContentWorkRepository) {
   const result = repository.getPublicWorkBySlug(slug, locale);
   return result ? {kind: "work" as const, ...result} : {kind: "not-found" as const};

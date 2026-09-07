@@ -6,16 +6,18 @@
     {
       "language": "zh-CN",
       "slug": "little-wheat",
-      "status": "review",
+      "status": "published",
       "title": "麦子落地：小麦子的生命见证与天国之旅",
       "summary": "《麦子落地》是一部纪念小麦子短暂生命的家庭信仰见证，记录一个家庭在爱、失去、哀伤与盼望中的真实经历，并见证上帝如何在苦难中以恩典托住生命，引领人重新仰望基督与永恒的盼望。",
       "authors": [
         "张崇助"
       ],
-      "published_at": null,
-      "visibility": "private",
+      "published_at": "2026-09-07T00:16:23-04:00",
+      "visibility": "public",
       "access_level": "public",
       "seo": {
+        "title": "麦子落地：小麦子的生命见证与天国之旅",
+        "description": "《麦子落地》是一部纪念小麦子短暂生命的家庭信仰见证，记录一个家庭在爱、失去、哀伤与盼望中的真实经历，并见证上帝如何在苦难中以恩典托住生命，引领人重新仰望基督与永恒的盼望。"
       }
     },
     {

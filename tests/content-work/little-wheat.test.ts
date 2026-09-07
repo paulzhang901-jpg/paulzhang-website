@@ -8,7 +8,7 @@ import sitemap from "../../src/app/sitemap";
 import {getContentRepository} from "../../src/lib/content/repository";
 import {discoverAndParseContentWorks} from "../../src/lib/content/works/discovery";
 import {createContentWorkRepository} from "../../src/lib/content/works/repository";
-import {getUnitStaticParams, getWorkStaticParams, resolveUnitRoute, resolveWorkRoute, unitPath, workPath} from "../../src/lib/content/works/routing";
+import {getUnitStaticParams, getWorkStaticParams, isContentWorkSlug, resolveUnitRoute, resolveWorkRoute, unitPath, workPath} from "../../src/lib/content/works/routing";
 import {validateContentWorks} from "../../src/lib/content/works/validation";
 
 const root = path.join(process.cwd(), "content", "works", "little-wheat");
@@ -104,26 +104,40 @@ test("Chapter 8 preserves the missing-original provenance boundary without recon
   assert.match(chapter.body, /independent original English manuscript[\s\S]*has not yet been recovered or verified/);
 });
 
-test("review/private lifecycle blocks Work, Unit, sitemap, search, and related-content exposure", async () => {
+test("Human-approved zh-CN publication enables Work, Units, search, and sitemap while en-US remains private", async () => {
   const publication = parseYaml<{runtime_initial_state: {status: string; published_at: null; visibility: string; access_level: string; public_discovery: boolean; search_indexing: boolean; sitemap_inclusion: boolean}; media: {include_assets: boolean}}>(path.join(registries, "publication.yaml"));
   assert.deepEqual(publication.runtime_initial_state, {status: "review", published_at: null, visibility: "private", access_level: "public", public_discovery: false, search_indexing: false, sitemap_inclusion: false});
   assert.equal(publication.media.include_assets, false);
-  assert.ok(littleWheat.representations.every(({status, publishedAt, visibility, accessLevel}) => status === "review" && publishedAt === undefined && visibility === "private" && accessLevel === "public"));
-  assert.ok(units.every(({status, publishedAt, visibility, accessLevel}) => status === "review" && publishedAt === undefined && visibility === "private" && accessLevel === "public"));
-  for (const locale of ["zh-CN", "en-US"] as const) {
-    assert.equal(repository.getPublishedWorks(locale).length, 0);
-    assert.equal(repository.getPublicWorkBySlug("little-wheat", locale), null);
-    assert.equal(repository.getPublicUnitBySlug("little-wheat", "00-dedication", locale), null);
-    assert.equal(resolveWorkRoute("little-wheat", locale, repository).kind, "not-found");
-    assert.equal(resolveUnitRoute("little-wheat", "00-dedication", locale, repository).kind, "not-found");
-    assert.deepEqual(getWorkStaticParams(locale, repository), []);
-    assert.deepEqual(getUnitStaticParams(locale, repository), []);
-  }
+  const zh = littleWheat.representations.find(({language}) => language === "zh-CN");
+  const en = littleWheat.representations.find(({language}) => language === "en-US");
+  assert.ok(zh && zh.status === "published" && zh.publishedAt instanceof Date && zh.visibility === "public" && zh.accessLevel === "public");
+  assert.ok(en && en.status === "review" && en.publishedAt === undefined && en.visibility === "private" && en.accessLevel === "public");
+  const zhUnits = units.filter(({language}) => language === "zh-CN");
+  const enUnits = units.filter(({language}) => language === "en-US");
+  assert.ok(zhUnits.every(({status, publishedAt, visibility, accessLevel}) => status === "published" && publishedAt instanceof Date && visibility === "public" && accessLevel === "public"));
+  assert.ok(enUnits.every(({status, publishedAt, visibility, accessLevel}) => status === "review" && publishedAt === undefined && visibility === "private" && accessLevel === "public"));
+  assert.equal(repository.getPublishedWorks("zh-CN").length, 1);
+  assert.equal(repository.getPublicWorkBySlug("little-wheat", "zh-CN")?.work.canonicalId, littleWheat.canonicalId);
+  assert.equal(repository.getPublicUnitBySlug("little-wheat", "00-dedication", "zh-CN")?.unit.canonicalId, "lw-00-dedication");
+  assert.equal(resolveWorkRoute("little-wheat", "zh-CN", repository).kind, "work");
+  assert.equal(resolveUnitRoute("little-wheat", "00-dedication", "zh-CN", repository).kind, "unit");
+  assert.deepEqual(getWorkStaticParams("zh-CN", repository), [{slug: "little-wheat"}]);
+  assert.equal(getUnitStaticParams("zh-CN", repository).length, 15);
+  assert.equal(repository.getPublishedWorks("en-US").length, 0);
+  assert.equal(resolveWorkRoute("little-wheat", "en-US", repository).kind, "not-found");
+  assert.equal(resolveUnitRoute("little-wheat", "00-dedication", "en-US", repository).kind, "not-found");
+  assert.deepEqual(getWorkStaticParams("en-US", repository), []);
+  assert.deepEqual(getUnitStaticParams("en-US", repository), []);
+  assert.equal(isContentWorkSlug("little-wheat", repository), true);
+  assert.equal(repository.getSearchDocuments("zh-CN").filter(({canonical_id}) => canonical_id === littleWheat.canonicalId).length, 1);
+  assert.equal(repository.getSearchDocuments("en-US").filter(({canonical_id}) => canonical_id === littleWheat.canonicalId).length, 0);
   const publicContent = await getContentRepository();
   assert.equal(publicContent.getSearchDocuments().some(({canonical_id}) => canonical_id === littleWheat.canonicalId), false);
   assert.equal(publicContent.getPublishedContent().some(({canonicalId}) => canonicalId === littleWheat.canonicalId), false);
   assert.equal(publicContent.all().some(({canonicalId}) => canonicalId === littleWheat.canonicalId), false);
-  assert.equal((await sitemap()).some(({url}) => /\/stories\/little-wheat(?:\/|$)/.test(url)), false);
+  const littleWheatSitemap = (await sitemap()).filter(({url}) => /\/stories\/little-wheat(?:\/|$)/.test(url));
+  assert.equal(littleWheatSitemap.length, 16);
+  assert.ok(littleWheatSitemap.every(({url}) => !url.includes("/en/stories/little-wheat")));
 });
 
 test("canonical identity metadata is exact and no physical media or canonical duplicates were introduced", () => {
