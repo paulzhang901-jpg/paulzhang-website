@@ -6,11 +6,11 @@ unit_type: chapter
 order: 11
 chapter_number: 9
 slug: 10-chapter-09
-status: review
+status: published
 title: 第九章：父亲的寄语——爱中写下的告别与承诺
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

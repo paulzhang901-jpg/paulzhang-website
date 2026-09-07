@@ -6,11 +6,11 @@ unit_type: chapter
 order: 7
 chapter_number: 5
 slug: 06-chapter-05
-status: review
+status: published
 title: 第五章：成长印记——笑容、弹琴与初次的敬拜
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

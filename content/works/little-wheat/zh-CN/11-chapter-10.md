@@ -6,11 +6,11 @@ unit_type: chapter
 order: 12
 chapter_number: 10
 slug: 11-chapter-10
-status: review
+status: published
 title: 第十章：回忆的相册——十九个月的生命画卷
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

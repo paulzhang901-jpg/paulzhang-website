@@ -13,8 +13,8 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const generatedRoutes = Object.keys(manifest.routes);
 const placeholderRoutes = generatedRoutes.filter((route) => route.includes(placeholder));
 const productionRoutes = generatedRoutes.filter((route) => !route.includes(placeholder));
-if (productionRoutes.length !== 135) fail(`expected 135 production routes, found ${productionRoutes.length}`);
-if (placeholderRoutes.length !== 2) fail(`expected two build-only empty-unit placeholders, found ${placeholderRoutes.length}`);
+if (productionRoutes.length !== 148) fail(`expected 148 production routes, found ${productionRoutes.length}`);
+if (placeholderRoutes.length !== 1) fail(`expected one build-only empty-unit placeholder, found ${placeholderRoutes.length}`);
 
 for (const localePrefix of ["", "en/"]) {
   const stories = path.join(output, localePrefix, "stories");
@@ -94,6 +94,25 @@ for (const work of registry.works) {
 }
 if (!fs.readFileSync(path.join(output, "robots.txt"), "utf8").includes("https://paulzhang.org/sitemap.xml")) fail("robots sitemap URL mismatch");
 
+const littleWheatWorkRoute = "stories/little-wheat.html";
+const littleWheatWorkHtmlPath = path.join(output, littleWheatWorkRoute);
+if (!fs.existsSync(littleWheatWorkHtmlPath)) fail(`missing Little Wheat landing route ${littleWheatWorkRoute}`);
+const littleWheatWorkHtml = fs.readFileSync(littleWheatWorkHtmlPath, "utf8");
+if (!littleWheatWorkHtml.includes("麦子落地：小麦子的生命见证与天国之旅")) fail("Little Wheat canonical title missing from landing");
+if (!littleWheatWorkHtml.includes('<link rel="canonical" href="https://paulzhang.org/stories/little-wheat"')) fail("Little Wheat landing canonical URL missing");
+if (!sitemap.includes("https://paulzhang.org/stories/little-wheat")) fail("sitemap missing Little Wheat landing");
+const littleWheatUnitSlugs = fs.readdirSync(path.join(root, "content/works/little-wheat/zh-CN"))
+  .filter((name) => name.endsWith(".md"))
+  .map((name) => name.replace(/\.md$/, ""));
+if (littleWheatUnitSlugs.length !== 15) fail(`expected 15 Little Wheat zh-CN units, found ${littleWheatUnitSlugs.length}`);
+for (const slug of littleWheatUnitSlugs) {
+  const relative = `stories/little-wheat/${slug}.html`;
+  if (!fs.existsSync(path.join(output, relative))) fail(`missing Little Wheat reader route ${relative}`);
+  if (!sitemap.includes(`https://paulzhang.org/stories/little-wheat/${slug}`)) fail(`sitemap missing Little Wheat unit ${slug}`);
+}
+if (fs.existsSync(path.join(output, "en/stories/little-wheat.html")) || sitemap.includes("https://paulzhang.org/en/stories/little-wheat")) fail("unreviewed Little Wheat en-US representation leaked");
+if (fs.existsSync(path.join(output, "stories/xiaomaizi-shili.html")) || sitemap.includes("https://paulzhang.org/stories/xiaomaizi-shili")) fail("Little Wheat technical fixture leaked into public discovery");
+
 function resolvesPublicPath(urlPath) {
   if (urlPath === "/") return fs.existsSync(path.join(output, "index.html"));
   const decoded = decodeURI(urlPath.split("?")[0].split("#")[0]);
@@ -116,8 +135,11 @@ const allText = htmlFiles.map((file) => fs.readFileSync(file, "utf8")).join("\n"
 for (const prohibited of ["config/fiction/intake", "PACKAGE-LOCK-MANIFEST", "publication-rights.yaml", "internal-rights", ".docx", "contract.pdf"]) {
   if (allText.toLowerCase().includes(prohibited.toLowerCase())) fail(`private/internal token exposed: ${prohibited}`);
 }
+for (const protectedPreviewToken of ["/__preview/stories/", "1b63b32cf1eb64b9cbd8daea733084d15fb5dfc8352849c74f4e44c2ed8d7a99", "content/works/little-wheat/governance"]) {
+  if (allText.includes(protectedPreviewToken)) fail(`protected Little Wheat evidence exposed: ${protectedPreviewToken}`);
+}
 
 const headers = fs.readFileSync(path.join(output, "_headers"), "utf8");
 if (!headers.includes("X-Robots-Tag: noindex") || !headers.includes("/_next/static/*")) fail("preview noindex or immutable asset cache contract missing");
 
-console.log(JSON.stringify({status: "PASS", productionRoutes: "135/135", buildOnlyPlaceholdersRemoved: "2/2", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
+console.log(JSON.stringify({status: "PASS", productionRoutes: "148/148", littleWheatRoutes: "16/16 zh-CN", littleWheatEnglishRoutes: 0, buildOnlyPlaceholdersRemoved: "1/1", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
