@@ -5,6 +5,8 @@ import { journeyIds, journeyPath } from "@/config/product";
 import { getContentWorkRepository } from "@/lib/content/works/repository";
 import { unitPath, workPath } from "@/lib/content/works/routing";
 import { fictionPath, getFictionWorks } from "@/lib/fiction/repository";
+import { getContentRepository } from "@/lib/content/repository";
+import { contentPath } from "@/lib/content/paths";
 
 export const dynamic = "force-static";
 
@@ -23,5 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...repository.getOrderedUnits(work.canonicalId, locale).map((unit) => ({url: new URL(unitPath(representation.slug, unit.slug, locale), siteUrl).toString()})),
   ]));
   const fictionEntries = (["zh-CN", "en-US"] as const).flatMap((locale) => getFictionWorks().map((work) => ({url: new URL(fictionPath(work.slug, locale), siteUrl).toString()})));
-  return [...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries];
+  const contentRepository = await getContentRepository();
+  const contentEntries = contentRepository.getPublishedContent().map((item) => ({url: new URL(contentPath(item), siteUrl).toString()}));
+  return [...new Map([...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries, ...contentEntries].map((entry) => [entry.url, entry])).values()];
 }

@@ -21,7 +21,10 @@ const validFrontmatter = {
 test("repository samples conform to schema, taxonomy, references, and translation contracts", () => {
   const report = validateContentRecords(discoverAndParseContent());
   assert.deepEqual(report.errors, []);
-  assert.equal(report.items.length, 3);
+  for (const id of ["truth-sample-zh", "truth-sample-en", "story-sample-zh", "sermon-p7c-029-001"]) {
+    assert.ok(report.items.some((entry) => entry.id === id), `required content missing: ${id}`);
+  }
+  assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-029-001" && entry.status === "published" && entry.visibility === "public" && entry.accessLevel === "public"));
   assert.ok(report.warnings.some((warning) => warning.includes("life-story-sample-001: translation missing for en-US")));
   assert.ok(report.items.filter((entry) => entry.status === "published").every((entry) => entry.publishedAt instanceof Date));
   assert.ok(report.items.filter((entry) => entry.status === "review").every((entry) => entry.publishedAt === undefined));
