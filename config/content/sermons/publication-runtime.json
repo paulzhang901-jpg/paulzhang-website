@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "sermonId": "sermon-p7c-029-001",
+      "title": "弹琴的少年",
+      "subtitle": "一把琴，一个少年，一条神正在预备的道路",
+      "scriptureRange": "撒母耳记上 16:13–23",
+      "sermonSeries": "撒母耳记上主题式讲章",
+      "themes": [
+        "神的同在",
+        "恩赐",
+        "忠心",
+        "预备",
+        "服侍",
+        "生命见证",
+        "属灵警醒",
+        "神的主权"
+      ],
+      "canonicalEditionHash": "f01c5b34d3710e1a3531145da7764143a99588f586b35abac55185f6f5ff9444",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/tanqin-de-shaonian.mdx",
+      "publicRoute": "/library/tanqin-de-shaonian",
+      "searchEligibility": true
+    }
+  ]
+}

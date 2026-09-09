@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
+import matter from "gray-matter";
+import { validateGeneratedRouteArtifacts } from "./static-route-inventory.mjs";
 
 const root = process.cwd();
 const output = path.join(root, "out");
@@ -13,7 +15,7 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const generatedRoutes = Object.keys(manifest.routes);
 const placeholderRoutes = generatedRoutes.filter((route) => route.includes(placeholder));
 const productionRoutes = generatedRoutes.filter((route) => !route.includes(placeholder));
-if (productionRoutes.length !== 148) fail(`expected 148 production routes, found ${productionRoutes.length}`);
+validateGeneratedRouteArtifacts(productionRoutes, output);
 if (placeholderRoutes.length !== 1) fail(`expected one build-only empty-unit placeholder, found ${placeholderRoutes.length}`);
 
 for (const localePrefix of ["", "en/"]) {
@@ -89,6 +91,34 @@ for (const work of registry.works) {
 }
 
 const sitemap = fs.readFileSync(path.join(output, "sitemap.xml"), "utf8");
+for (const match of sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+  const url = new URL(match[1]);
+  if (url.origin !== "https://paulzhang.org" || !resolvesPublicPath(url.pathname)) fail(`sitemap points outside the public export: ${match[1]}`);
+}
+// Eligibility is the existing Content Repository public predicate. Coverage is
+// derived from source records, not a total that changes with every publication.
+function verifyContentRoutes(directory, locale) {
+  if (!fs.existsSync(directory)) return;
+  for (const entry of fs.readdirSync(directory, {withFileTypes: true})) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) { verifyContentRoutes(file, locale); continue; }
+    if (!/\.mdx?$/.test(entry.name)) continue;
+    const {data} = matter(fs.readFileSync(file, "utf8"));
+    const domain = path.relative(path.join(root, "content", locale), file).split(path.sep)[0];
+    const segment = domain === "growth" ? "grow" : domain === "pages" ? "" : domain;
+    const route = `${locale === "en-US" ? "/en" : ""}/${segment ? `${segment}/` : ""}${data.slug}`;
+    const eligible = data.status === "published" && data.visibility === "public" && data.access_level === "public" && Boolean(data.published_at);
+    const listed = sitemap.includes(`<loc>${absoluteRoute(route)}</loc>`);
+    if (!eligible) {
+      if (productionRoutes.includes(route) || resolvesPublicPath(route) || listed) fail(`non-public content exposed: ${route}`);
+      continue;
+    }
+    if (!productionRoutes.includes(route) || !resolvesPublicPath(route) || !listed) fail(`published content missing from route/export/sitemap: ${route}`);
+    const html = fs.readFileSync(path.join(output, `${route}.html`), "utf8");
+    if (!html.includes(`<link rel="canonical" href="${absoluteRoute(route)}"`)) fail(`published content canonical missing: ${route}`);
+  }
+}
+for (const locale of ["zh-CN", "en-US"]) verifyContentRoutes(path.join(root, "content", locale), locale);
 for (const work of registry.works) {
   for (const prefix of ["", "en/"]) if (!sitemap.includes(`https://paulzhang.org/${prefix}fiction/${work.slug}`)) fail(`sitemap missing ${prefix}fiction/${work.slug}`);
 }
@@ -138,8 +168,11 @@ for (const prohibited of ["config/fiction/intake", "PACKAGE-LOCK-MANIFEST", "pub
 for (const protectedPreviewToken of ["/__preview/stories/", "1b63b32cf1eb64b9cbd8daea733084d15fb5dfc8352849c74f4e44c2ed8d7a99", "content/works/little-wheat/governance"]) {
   if (allText.includes(protectedPreviewToken)) fail(`protected Little Wheat evidence exposed: ${protectedPreviewToken}`);
 }
+for (const token of ["/__preview/sermons/", "artifacts/intake/sermons", "sourceProvenance", "Website Canonical Edition"]) {
+  if (allText.includes(token)) fail(`protected sermon data exposed: ${token}`);
+}
 
 const headers = fs.readFileSync(path.join(output, "_headers"), "utf8");
 if (!headers.includes("X-Robots-Tag: noindex") || !headers.includes("/_next/static/*")) fail("preview noindex or immutable asset cache contract missing");
 
-console.log(JSON.stringify({status: "PASS", productionRoutes: "148/148", littleWheatRoutes: "16/16 zh-CN", littleWheatEnglishRoutes: 0, buildOnlyPlaceholdersRemoved: "1/1", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
+console.log(JSON.stringify({status: "PASS", productionRoutes: `${productionRoutes.length}/${productionRoutes.length}`, littleWheatRoutes: "16/16 zh-CN", littleWheatEnglishRoutes: 0, buildOnlyPlaceholdersRemoved: "1/1", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
