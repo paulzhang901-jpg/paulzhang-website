@@ -47,6 +47,55 @@
       "runtimeContentPath": "content/zh-CN/library/chenshui-de-shaonian.mdx",
       "publicRoute": "/library/chenshui-de-shaonian",
       "searchEligibility": true
+    },
+    {
+      "sermonId": "sermon-p7c-010-001",
+      "title": "神印记祂的百姓",
+      "subtitle": "世界会震动，但属于羔羊的人不会被遗忘",
+      "scriptureRange": "启示录 7:1–8",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [
+        "Belonging to God",
+        "God’s Seal",
+        "Identity in Christ",
+        "Holiness",
+        "Divine Preservation",
+        "Faithfulness",
+        "The People of God"
+      ],
+      "canonicalEditionHash": "532a1a59396e20f30435f74012760e2bb3af2ef6d5570bc53ac086d9376dda15",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/god-seals-his-people.mdx",
+      "publicRoute": "/library/god-seals-his-people",
+      "searchEligibility": true
+    },
+    {
+      "sermonId": "sermon-p7c-027-001",
+      "title": "万国大敬拜",
+      "subtitle": "福音不会失败，万国都要敬拜",
+      "scriptureRange": "启示录 7:9–12",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [
+        "万国敬拜",
+        "福音",
+        "宣教",
+        "羔羊",
+        "救恩",
+        "宝血",
+        "教会",
+        "忠心",
+        "盼望",
+        "神的荣耀"
+      ],
+      "canonicalEditionHash": "210f5fbd64e74c14916af69ca048771b959de83581698b4759e333fde0f0d315",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/wanguo-da-jingbai.mdx",
+      "publicRoute": "/library/wanguo-da-jingbai",
+      "searchEligibility": true
     }
   ]
 }
