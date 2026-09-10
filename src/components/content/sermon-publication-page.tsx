@@ -34,7 +34,7 @@ export function SermonPublicationPage({sermon, preview = false}: {sermon: Publis
         ? <SermonProtectedPreviewPresentation body={sermon.body} scriptureRange={sermon.scriptureRange} />
         : preview || usesCanonicalReaderBody
           ? <SermonCanonicalTextPresentation body={sermon.body} scriptureRange={sermon.scriptureRange} />
-          : <article className="prose-content"><MDXRemote source={sermon.body} /></article>}
+          : <article className="prose-content"><MDXRemote source={sermon.body.replace(/^\*\*Website Canonical Edition v1\.0\*\*$/m, "")} /></article>}
       </ReadingContainer></Container>
     </Section>
   </>;
