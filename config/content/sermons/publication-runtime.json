@@ -23,6 +23,30 @@
       "runtimeContentPath": "content/zh-CN/library/tanqin-de-shaonian.mdx",
       "publicRoute": "/library/tanqin-de-shaonian",
       "searchEligibility": true
+    },
+    {
+      "sermonId": "sermon-p7c-028-001",
+      "title": "沉睡的少年",
+      "subtitle": "不要责备，需要体谅；不要忽略，需要谨慎；不要惊慌，需要感恩",
+      "scriptureRange": "使徒行传 20:7–12",
+      "sermonSeries": "使徒行传主题式讲章",
+      "themes": [
+        "体谅",
+        "恩典",
+        "谨慎",
+        "儆醒",
+        "软弱",
+        "危机",
+        "安慰",
+        "信靠"
+      ],
+      "canonicalEditionHash": "1181fb14da1f73332afad240f5da2d4adf4e51a813b9d11f9914a949edfb9915",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/chenshui-de-shaonian.mdx",
+      "publicRoute": "/library/chenshui-de-shaonian",
+      "searchEligibility": true
     }
   ]
 }
