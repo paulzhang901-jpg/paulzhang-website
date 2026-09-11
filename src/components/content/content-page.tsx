@@ -10,6 +10,8 @@ import { contentTopicLabel, contentTypeLabel, libraryCopy } from "@/config/libra
 import { contentPath } from "@/lib/content/paths";
 import type { ContentRepository } from "@/lib/content/repository";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
+import {SermonPublicationBody} from "./sermon-publication-page";
+import {sameSermonDisplayText, sermonDisplayText} from "@/lib/sermons/display";
 
 function RelatedContent({children}: {children: ReactNode}) {
   return <aside className="my-8 border-l-4 border-l-[var(--color-truth)] bg-surface p-6"><h2 className="font-serif text-xl">Related content</h2><div className="mt-3 leading-7 text-muted-foreground">{children}</div></aside>;
@@ -27,7 +29,7 @@ function TranslationStatus({item, repository}: {item: NormalizedContentItem; rep
     </p>;
   }
   return <div className="mt-5 text-sm"><Link data-language-alternate href={contentPath(translation.item)} hrefLang={targetLocale} className="font-medium underline underline-offset-4">
-    {copy.readEnglish}
+    {item.contentType === "sermon" ? item.language === "zh-CN" ? "阅读 English Edition" : "Read the Chinese edition" : copy.readEnglish}
   </Link>{translation.status === "outdated" ? <span className="ml-3 text-muted-foreground">{copy.translationOutdated}</span> : null}</div>;
 }
 
@@ -47,6 +49,10 @@ function formatScripture(reference: NormalizedContentItem["scriptureRefs"][numbe
 export async function ContentPage({item, repository}: {item: NormalizedContentItem; repository: ContentRepository}) {
   const copy = libraryCopy[item.language];
   const isStory = item.domain === "stories";
+  const isSermon = item.contentType === "sermon";
+  const display = (value: string) => isSermon ? sermonDisplayText(value, item.language) : value;
+  const subtitle = item.subtitle && (!isSermon || !sameSermonDisplayText(item.subtitle, item.title, item.language)) ? item.subtitle : null;
+  const showSummary = !isSermon || (!sameSermonDisplayText(item.summary, item.title, item.language) && !sameSermonDisplayText(item.summary, subtitle ?? "", item.language));
   const related = repository.getRelatedContent(item, 3);
   return <>
     <Section className="border-b bg-muted/40">
@@ -59,9 +65,9 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
             {item.publishedAt ? <span>{copy.published} {item.publishedAt.toLocaleDateString(item.language)}</span> : null}
             {item.publishedAt && item.updatedAt && item.updatedAt.getTime() !== item.publishedAt.getTime() ? <span>{copy.updated} {item.updatedAt.toLocaleDateString(item.language)}</span> : null}
           </div>
-          <h1 className="mt-3 font-serif text-4xl leading-tight md:text-5xl">{item.title}</h1>
-          {item.subtitle ? <p className="mt-3 text-xl text-muted-foreground">{item.subtitle}</p> : null}
-          <p className="mt-5 text-lg leading-8 text-muted-foreground">{item.summary}</p>
+          <h1 className="mt-3 font-serif text-4xl leading-tight md:text-5xl">{display(item.title)}</h1>
+          {subtitle ? <p className="mt-3 text-xl text-muted-foreground">{display(subtitle)}</p> : null}
+          {showSummary ? <p className="mt-5 text-lg leading-8 text-muted-foreground">{display(item.summary)}</p> : null}
           {item.authors.length ? <p className="mt-5 text-sm text-muted-foreground">{copy.by} {item.authors.join(", ")}</p> : null}
           <div className="mt-5 flex flex-wrap gap-2">{item.topics.map((topic) => <TopicBadge key={topic}>{contentTopicLabel(item.language, topic)}</TopicBadge>)}</div>
           {item.scriptureRefs.length ? <div className="mt-5 text-sm text-muted-foreground"><span className="font-medium text-foreground">{copy.scripture}: </span>{item.scriptureRefs.map(formatScripture).join("; ")}</div> : null}
@@ -71,7 +77,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
       </Container>
     </Section>
     <Section>
-      <Container><ReadingContainer className="px-0"><article className="prose-content"><MDXRemote source={item.body} components={mdxComponents} /></article></ReadingContainer></Container>
+      <Container><ReadingContainer className="px-0">{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={item.body} components={mdxComponents} /></article>}</ReadingContainer></Container>
     </Section>
     <Section className="border-t bg-muted/40">
       <Container>

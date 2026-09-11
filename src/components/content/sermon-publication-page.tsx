@@ -4,6 +4,18 @@ import {Container, ReadingContainer} from "@/components/layout/container";
 import {Section} from "@/components/layout/section";
 import {SermonCanonicalTextPresentation, SermonProtectedPreviewPresentation, supportsCanonicalReaderPresentation, supportsStructuredSermonPresentation} from "@/components/content/sermon-preview-presentation";
 import type {PublishedSermon} from "@/lib/sermons/published";
+import type {ContentLanguage} from "@/types/content";
+import {sermonDisplayMarkdown, sermonPresentationPlugin} from "@/lib/sermons/display";
+
+export function SermonPublicationBody({body, title, locale, scriptureRange}: {body: string; title: string; locale: ContentLanguage; scriptureRange: string}) {
+  // Legacy TXT editions retain their approved semantic adapters. Markdown wins
+  // over a standalone “经文” line, which previously selected the plain-text path.
+  if (locale === "zh-CN" && !/^#{1,6}\s+/m.test(body)) {
+    if (supportsStructuredSermonPresentation(body)) return <SermonProtectedPreviewPresentation body={body} scriptureRange={scriptureRange} />;
+    if (supportsCanonicalReaderPresentation(body)) return <SermonCanonicalTextPresentation body={body} scriptureRange={scriptureRange} />;
+  }
+  return <article className="prose-content"><MDXRemote source={sermonDisplayMarkdown(body, locale)} options={{mdxOptions: {remarkPlugins: [[sermonPresentationPlugin, {title, locale}]]}}} /></article>;
+}
 
 export function SermonPublicationPage({sermon, preview = false}: {sermon: PublishedSermon; preview?: boolean}) {
   const structuredPresentation = preview || supportsStructuredSermonPresentation(sermon.body) || supportsCanonicalReaderPresentation(sermon.body);

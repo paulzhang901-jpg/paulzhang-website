@@ -7,6 +7,7 @@ import { getActiveLibraryCollections, getLibraryCollectionItems, getLibraryItems
 import { contentPath } from "@/lib/content/paths";
 import type { ContentRepository } from "@/lib/content/repository";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
+import {sameSermonDisplayText, sermonDisplayText} from "@/lib/sermons/display";
 
 function libraryPath(locale: ContentLanguage, child?: string) {
   return `${locale === "en-US" ? "/en" : ""}/library${child ? `/${child}` : ""}` as Route;
@@ -32,8 +33,8 @@ function ResourceList({items, locale, repository}: {items: NormalizedContentItem
           {item.publishedAt ? <span>{copy.published} {formatDate(item.publishedAt, locale)}</span> : null}
           <span>{copy.availableIn}: {languageAvailability(item, repository)}</span>
         </div>
-        <h2 className="mt-3 font-serif text-2xl leading-snug sm:text-3xl"><Link className="hover:underline" href={contentPath(item)}>{item.title}</Link></h2>
-        <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">{item.summary}</p>
+        <h2 className="mt-3 font-serif text-2xl leading-snug sm:text-3xl"><Link className="hover:underline" href={contentPath(item)}>{item.contentType === "sermon" ? sermonDisplayText(item.title, locale) : item.title}</Link></h2>
+        {item.contentType !== "sermon" || !sameSermonDisplayText(item.subtitle ?? item.summary, item.title, locale) ? <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">{item.contentType === "sermon" ? sermonDisplayText(item.subtitle ?? item.summary, locale) : item.summary}</p> : null}
         <div className="mt-4 flex flex-wrap gap-2">{item.topics.slice(0, 3).map((topic) => <span key={topic} className="rounded-full bg-muted px-3 py-1 text-sm text-muted-foreground">{contentTopicLabel(locale, topic)}</span>)}</div>
       </div>
       <Link href={contentPath(item)} className="inline-flex min-h-11 items-center font-medium text-primary underline decoration-transparent underline-offset-4 hover:decoration-current">{copy.read} →</Link>

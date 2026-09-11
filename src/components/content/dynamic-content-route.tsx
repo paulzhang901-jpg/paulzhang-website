@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { ContentPage } from "./content-page";
-import { SermonPublicationPage } from "./sermon-publication-page";
 import { loadPublishedSermon } from "@/lib/sermons/published";
 import { LibraryCollectionPage } from "./library-page";
 import { FoundationPage } from "@/components/layout/foundation-page";
@@ -19,8 +18,7 @@ export async function DynamicContentRoute({resolution, locale, routeId, reposito
     if (resolution.item.contentType === "sermon") {
       const sermon = loadPublishedSermon(resolution.item.id, locale);
       if (!sermon) notFound();
-      if (locale === "en-US") return <ContentPage item={{...resolution.item, body: sermon.body}} repository={repository} />;
-      return <SermonPublicationPage sermon={sermon} />;
+      return <ContentPage item={{...resolution.item, body: sermon.body}} repository={repository} />;
     }
     return <ContentPage item={resolution.item} repository={repository} />;
   }
