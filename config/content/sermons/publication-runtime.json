@@ -429,7 +429,7 @@
       "scriptureRange": "启示录 6:9--11",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "37e464b6596121766f30a387e6a486b51f85416244c6f62c0436e3be5a411c7e",
+      "canonicalEditionHash": "a6c929b5124b59b4bc91d77a030cf429483d46c03bc67e92b82887239eb82d0b",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -456,7 +456,7 @@
       "searchEligibility": true,
       "sourceSha256": "afe15391def16030007a9f69838b23f5bf3f10d75845e7e8f5a68079aa3eb43e",
       "sourceSermonId": "sermon-revelation-6-9-11",
-      "sourceCanonicalEditionHash": "37e464b6596121766f30a387e6a486b51f85416244c6f62c0436e3be5a411c7e"
+      "sourceCanonicalEditionHash": "a6c929b5124b59b4bc91d77a030cf429483d46c03bc67e92b82887239eb82d0b"
     },
     {
       "sermonId": "sermon-revelation-6-12-17",
