@@ -1,17 +1,31 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import matter from "gray-matter";
 import registry from "../../../config/content/sermons/publication-runtime.json";
 
 export type PublishedSermon = {title: string; subtitle: string; scriptureRange: string; sermonSeries: string; themes: string[]; body: string};
 
 // Publication-safe field projection of the governed records. Canonical bodies
 // remain in the existing materialized content; private source/review files stay out.
-export function loadPublishedSermon(sermonId: string): PublishedSermon | null {
+export function loadPublishedSermon(sermonId: string, locale: "zh-CN" | "en-US" = "zh-CN"): PublishedSermon | null {
   const record = registry.records.find((entry) => entry.sermonId === sermonId);
-  if (!record || record.publicationStatus !== "PUBLISHED" || record.humanPreviewStatus !== "APPROVED" || record.hashVerification !== "VERIFIED" || record.searchEligibility !== true) return null;
-  if (!/^\/library\/[a-z0-9-]+$/.test(record.publicRoute) || record.runtimeContentPath !== `content/zh-CN${record.publicRoute}.mdx`) throw new Error("Invalid published sermon route binding");
+  if (!record || record.publicationStatus !== "PUBLISHED" || record.hashVerification !== "VERIFIED" || record.searchEligibility !== true) return null;
+  const directEnglishApproval = locale === "en-US" && record.humanPreviewStatus === "WAIVED_BY_AUTHOR" && "publicationApproval" in record && record.publicationApproval === "AUTHOR_DIRECT_AUTHORIZATION";
+  if (record.humanPreviewStatus !== "APPROVED" && !directEnglishApproval) return null;
+  const localRoute = locale === "en-US" ? record.publicRoute.replace(/^\/en(?=\/)/, "") : record.publicRoute;
+  if (!/^\/library\/[a-z0-9-]+$/.test(localRoute) || record.publicRoute !== `${locale === "en-US" ? "/en" : ""}${localRoute}` || record.runtimeContentPath !== `content/${locale}${localRoute}.mdx`) throw new Error("Invalid published sermon route binding");
+  if (locale === "en-US") {
+    const chinese = registry.records.find((entry) => "sourceSermonId" in record && entry.sermonId === record.sourceSermonId);
+    if (!chinese || !("sourceCanonicalEditionHash" in record) || chinese.canonicalEditionHash !== record.sourceCanonicalEditionHash) throw new Error("English sermon source binding mismatch");
+    if (!loadPublishedSermon(chinese.sermonId)) throw new Error("English sermon source is not published");
+  }
   const source = fs.readFileSync(path.join(process.cwd(), record.runtimeContentPath));
+  if (locale === "en-US") {
+    const {data} = matter(source.toString("utf8"));
+    if (data.status !== "published" || data.visibility !== "public" || data.access_level !== "public" || !data.published_at) return null;
+    if (data.id !== sermonId || data.language !== locale || !("sourceSermonId" in record) || data.canonical_id !== record.sourceSermonId || localRoute !== `/library/${data.slug}`) throw new Error("English sermon canonical identity mismatch");
+  }
   const delimiter = Buffer.from("\n---\n");
   const end = source.indexOf(delimiter, 4);
   if (!source.subarray(0, 4).equals(Buffer.from("---\n")) || end < 0) throw new Error("Invalid sermon materialization");

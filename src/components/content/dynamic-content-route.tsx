@@ -17,8 +17,9 @@ export async function DynamicContentRoute({resolution, locale, routeId, reposito
   if (resolution.kind === "not-found") notFound();
   if (resolution.kind === "content") {
     if (resolution.item.contentType === "sermon") {
-      const sermon = loadPublishedSermon(resolution.item.id);
+      const sermon = loadPublishedSermon(resolution.item.id, locale);
       if (!sermon) notFound();
+      if (locale === "en-US") return <ContentPage item={{...resolution.item, body: sermon.body}} repository={repository} />;
       return <SermonPublicationPage sermon={sermon} />;
     }
     return <ContentPage item={resolution.item} repository={repository} />;
