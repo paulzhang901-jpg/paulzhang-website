@@ -16,7 +16,12 @@ const generatedRoutes = Object.keys(manifest.routes);
 const placeholderRoutes = generatedRoutes.filter((route) => route.includes(placeholder));
 const productionRoutes = generatedRoutes.filter((route) => !route.includes(placeholder));
 validateGeneratedRouteArtifacts(productionRoutes, output);
-if (placeholderRoutes.length !== 1) fail(`expected one build-only empty-unit placeholder, found ${placeholderRoutes.length}`);
+// The existing routing fallback exists only while no English units are public.
+const littleWheatWork = JSON.parse(fs.readFileSync(path.join(root, "content/works/little-wheat/work.json"), "utf8"));
+const littleWheatEnglish = littleWheatWork.representations.find((representation) => representation.language === "en-US");
+const englishPublic = littleWheatEnglish?.status === "published" && littleWheatEnglish.visibility === "public" && littleWheatEnglish.access_level === "public" && Number.isFinite(Date.parse(littleWheatEnglish.published_at));
+const expectedPlaceholders = englishPublic ? 0 : 1;
+if (placeholderRoutes.length !== expectedPlaceholders) fail(`expected ${expectedPlaceholders} build-only empty-unit placeholders, found ${placeholderRoutes.length}`);
 
 for (const localePrefix of ["", "en/"]) {
   const stories = path.join(output, localePrefix, "stories");
@@ -140,7 +145,35 @@ for (const slug of littleWheatUnitSlugs) {
   if (!fs.existsSync(path.join(output, relative))) fail(`missing Little Wheat reader route ${relative}`);
   if (!sitemap.includes(`https://paulzhang.org/stories/little-wheat/${slug}`)) fail(`sitemap missing Little Wheat unit ${slug}`);
 }
-if (fs.existsSync(path.join(output, "en/stories/little-wheat.html")) || sitemap.includes("https://paulzhang.org/en/stories/little-wheat")) fail("unreviewed Little Wheat en-US representation leaked");
+let littleWheatEnglishRoutes = 0;
+if (englishPublic) {
+  const englishRoot = path.join(root, "content/works/little-wheat/en-US");
+  const approved = JSON.parse(fs.readFileSync(path.join(root, "content/works/little-wheat/governance/EN-FINAL-LOCK.json"), "utf8"));
+  const units = fs.readdirSync(englishRoot).filter((name) => name.endsWith(".md")).map((name) => matter(fs.readFileSync(path.join(englishRoot, name), "utf8")).data);
+  const routes = ["/en/stories/little-wheat"];
+  for (const unit of units) {
+    const route = `/en/stories/little-wheat/${unit.slug}`;
+    const eligible = unit.status === "published" && unit.visibility === "public" && unit.access_level === "public" && Number.isFinite(Date.parse(unit.published_at)) && approved.files.some((file) => file.canonicalId === unit.canonical_id);
+    if (!eligible) {
+      if (fs.existsSync(path.join(output, `${route.slice(1)}.html`)) || sitemap.includes(absoluteRoute(route))) fail(`unapproved English unit exposed: ${route}`);
+      continue;
+    }
+    routes.push(route);
+    if (littleWheatUnitSlugs.includes(unit.slug)) {
+      const zhRoute = `/stories/little-wheat/${unit.slug}`;
+      for (const [source, target, locale] of [[zhRoute, route, "en-US"], [route, zhRoute, "zh-CN"]]) {
+        const file = path.join(output, `${source.slice(1)}.html`);
+        if (!fs.existsSync(file) || !fs.readFileSync(file, "utf8").includes(`hrefLang="${locale}" href="${absoluteRoute(target)}"`)) fail(`missing Little Wheat alternate: ${source}`);
+      }
+    }
+  }
+  for (const route of routes) {
+    const file = path.join(output, `${route.slice(1)}.html`);
+    if (!fs.existsSync(file) || !sitemap.includes(absoluteRoute(route))) fail(`missing approved English route: ${route}`);
+    if (!fs.readFileSync(file, "utf8").includes(`<link rel="canonical" href="${absoluteRoute(route)}"`)) fail(`missing English canonical: ${route}`);
+  }
+  littleWheatEnglishRoutes = routes.length;
+} else if (fs.existsSync(path.join(output, "en/stories/little-wheat.html")) || sitemap.includes("https://paulzhang.org/en/stories/little-wheat")) fail("unreviewed Little Wheat en-US representation leaked");
 if (fs.existsSync(path.join(output, "stories/xiaomaizi-shili.html")) || sitemap.includes("https://paulzhang.org/stories/xiaomaizi-shili")) fail("Little Wheat technical fixture leaked into public discovery");
 
 function resolvesPublicPath(urlPath) {
@@ -175,4 +208,4 @@ for (const token of ["/__preview/sermons/", "artifacts/intake/sermons", "sourceP
 const headers = fs.readFileSync(path.join(output, "_headers"), "utf8");
 if (!headers.includes("X-Robots-Tag: noindex") || !headers.includes("/_next/static/*")) fail("preview noindex or immutable asset cache contract missing");
 
-console.log(JSON.stringify({status: "PASS", productionRoutes: `${productionRoutes.length}/${productionRoutes.length}`, littleWheatRoutes: "16/16 zh-CN", littleWheatEnglishRoutes: 0, buildOnlyPlaceholdersRemoved: "1/1", fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));
+console.log(JSON.stringify({status: "PASS", productionRoutes: `${productionRoutes.length}/${productionRoutes.length}`, littleWheatRoutes: "16/16 zh-CN", littleWheatEnglishRoutes, buildOnlyPlaceholdersRemoved: placeholderRoutes.length, fictionRoutes: "12/12 zh-CN + 12/12 en-US", runtimeImageOptimizerUrls: 0, brokenInternalLinks: 0, canonicalAndHreflang: "PASS", sitemapAndRobots: "PASS", notFoundArtifact: "PASS", previewNoindexContract: "PASS", publicPrivateBoundary: "PASS"}, null, 2));

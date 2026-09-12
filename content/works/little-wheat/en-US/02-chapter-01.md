@@ -1,101 +1,90 @@
 ---
-id: lw-02-ch01
-canonical_id: lw-02-ch01
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 3
-chapter_number: 1
-slug: 02-chapter-01
-status: review
-title: Chapter One
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-02-ch01",
+  "canonical_id": "lw-02-ch01",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 3,
+  "chapter_number": 1,
+  "slug": "02-chapter-01",
+  "status": "published",
+  "title": "Chapter One: Naming and Promise",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter One: Naming and Promise"
+  }
+}
 ---
-Chapter One
+Chapter One: Naming and Promise
 
-Naming and Promise
+The night was deep, and a gentle breeze brushed against the windowpanes in Indiana, much like the night wind in Jingshan Village more than forty years ago. Back then, clothes hung beneath the eaves swayed in the breeze; now, on this foreign land, the story of another life was quietly beginning.
 
-The night was deep, and a gentle breeze brushed against the windows of Indiana. In our home, another life was quietly beginning its journey.
+At 11:00 p.m. on January 17, 2023, a faint yet clear cry broke the silence of the delivery room. At that moment, our son was born.
 
-At 11:00 p.m. on January 17, 2023, a faint yet distinct cry broke the silence of the delivery room.
+We named him John Earnest Zhang. His Chinese name was “Zhang Xian.”
 
-Our son was born.
+The name “John” was given to him by Pastor John, his American “spiritual grandpa.” For us, the name carried the meaning “The Lord is gracious,” and it also connected a spiritual family from America with our own family.
 
-We named him John Earnest Zhang in English and Zhang Xian in Chinese.
+“Earnest” expresses sincerity, seriousness, and earnestness. It also carried our hope for him: that he would have a genuine and godly heart.
 
-“John” was the name given to him by his American spiritual grandfather, Pastor John. The name carries the meaning, “The Lord is gracious.”
+I chose his Chinese name, “Zhang Xian.” It sounds like the Chinese word for “manifest,” because I hoped that his life, however long or short, would be a life that manifested the glory of God.
 
-“Earnest” means sincere, serious, and devoted. It expressed the character we hoped he would one day grow to embody—a life marked by sincerity, faithfulness, and devotion to God.
-
-His Chinese name, Zhang Xian, was chosen by me. It carries the sound and meaning of “manifesting” or “making visible.” My prayer was that through his life, the goodness and glory of God might somehow be made visible.
-
-There was another name, however, that became the name by which we most tenderly knew him:
+There was another name, one his mother had already placed in her heart while she was carrying him—
 
 Little Wheat.
 
-His mother had carried that name in her heart.
+The name came from the words of our Lord Jesus:
 
-It came from the words of Jesus in John 12:24:
+“Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.”
+—John 12:24, KJV
 
-“Unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit.”
+At the time, we did not know that this verse would later enter our family's story in such a profound way.
 
-At that time, we did not know what the years ahead would hold.
+His mother simply hoped that this little child would grow like a grain of wheat in the life God had given him, receive a spiritual heritage in faith, and bear good fruit.
 
-The name was not a prediction of his death.
+A few months before he was born, after a Sunday worship service, we went specifically to speak with Pastor John about the baby's name.
 
-Nor do we now read his death backward into the moment when the name was chosen.
+He asked us:
 
-It was simply a name of affection, faith, and hope—a prayer that this small life would belong to God and, in whatever way God desired, bear good fruit.
+“Have you decided on a name?”
 
-A few months before his birth, after one of our Sunday worship services, we invited Pastor John to help us name the child.
+I said:
 
-He asked us, “Have you two thought of a name yet?”
+“Could we call him John, just like you?”
 
-I replied, “Would it be all right if he were named John, like you?”
+He was very happy.
 
-His face brightened.
+In this way, the name of a child connected two generations of faith, two cultural backgrounds, and two families.
 
-“That would make me so happy,” he said.
+Pastor John prayed for this child who had not yet been born. There were tears in that prayer, and there was blessing. He prayed for the child's future life, health, breathing, and spiritual journey, hoping that one day he would become someone faithful to the truth and sincere in serving God.
 
-He prayed for the child who had not yet been born—for his health, his future, his faith, and the life ahead of him.
+At that moment, I felt more and more that this was more than just a name.
 
-Later, the full English name became:
+Sometimes a name also carries a family's prayers.
 
-John Earnest Zhang.
+Later, as I stood in the delivery room holding my wife's hand and watching the doctors and nurses gathered around her, I said silently to God:
 
-For us, it represented more than a name.
+“Lord, whatever this child's life may be like, I am willing to entrust him to You.”
 
-It connected generations, cultures, friendships, churches, and years of prayer. It joined part of our Chinese story with the Christian family God had given us in America.
+It was not a religious phrase I had prepared in advance.
 
-When I stood beside Sue in the delivery room, watching the doctors and nurses move around her, I held her hand and prayed silently:
+It was the prayer of a man becoming a father for the first time, spoken in the midst of joy, nervousness, and the unknown.
 
-“Lord, whatever may come, we entrust this child to You.”
+I thought of Hannah dedicating Samuel to the Lord, and I thought of those in Scripture who entrusted what was most precious to them back into God's hands.
 
-It was not a prediction.
+At the time, I did not know how deeply that prayer would one day be tested.
 
-It was not a bargain with God.
+I knew only this:
 
-It was the prayer of a father who knew that this child was a gift we could receive and love, but never possess.
+This child was the child we dearly loved,
 
-I thought of Hannah bringing Samuel before the Lord.
+and he was also the child God had given to us.
 
-I thought of generations of parents who had prayed over children whose futures they could not see.
+Little Wheat, you were still so small then.
 
-Little Wheat, before your eyes had fully opened to this world, your name had already appeared again and again in our prayers.
+Your name had already been written into our prayers,
 
-We had waited for you.
-
-We welcomed you.
-
-We loved you.
-
-And from the beginning, we desired that the life entrusted to us would be lived beneath the grace of God.
-
-That was the promise carried in your name.
-
-Not a promise that we knew your future—
-
-but a promise that, for however long we were given you, we would receive you as a gift and seek to raise you in faith, hope, and love.
+and your story had already begun.

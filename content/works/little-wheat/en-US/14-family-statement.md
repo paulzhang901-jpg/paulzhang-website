@@ -1,206 +1,336 @@
 ---
-id: lw-14-family-statement
-canonical_id: lw-14-family-statement
-work_canonical_id: work-little-wheat-v1
-unit_type: supplement
-order: 15
-slug: 14-family-statement
-status: review
-title: A Statement of Faith from Our Family
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-14-family-statement",
+  "canonical_id": "lw-14-family-statement",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "supplement",
+  "order": 15,
+  "slug": "14-family-statement",
+  "status": "published",
+  "title": "A Statement of Faith from Our Family",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "A Statement of Faith from Our Family"
+  }
+}
 ---
 A Statement of Faith from Our Family
 
-This book is the testimony of a grieving Christian family.
+This statement of faith is not intended to explain everything we cannot explain.
 
-Throughout its pages we have spoken in several different voices: memory, lament, pastoral reflection, theological confession, and at times the imagination of a father longing for his son.
+Nor is it intended to turn one family's grief into a complete systematic theology.
 
-We therefore end by stating clearly the faith by which all those words are to be understood.
+It simply states this:
 
-We believe in Jesus Christ.
+When we tell Little Wheat's story, where exactly do we stand?
 
-We believe that the center of the Christian gospel is not Little Wheat, his suffering, his death, or our grief.
+In the preceding pages there are a father's imaginings.
 
-The center is Jesus Christ.
+There is the testimony of pastors.
 
-His incarnation, life, death, resurrection, reign, and promised return are the foundation of our salvation and our hope.
+There are a mother's tears.
 
-Little Wheat is our beloved son and a witness within our family story.
+There is literary language.
 
-He is not our Savior.
+There is hope concerning heaven and reunion.
 
-His death is not redemptive.
+All of these must be understood under the statement of faith that follows.
 
-His suffering is not atoning.
+⸻
 
-The saving work belongs to Christ alone.
+We Believe Life Comes from God
 
-We believe every human life is a gift from God.
+We believe
 
-Little Wheat’s life had dignity and worth because he was a human person created and loved by God—not because his death later produced a testimony.
+that every life possesses dignity and value given by God.
 
-His nineteen months mattered before we knew what his story would become.
+A person's worth does not depend on:
 
-We refuse to measure the value of his life by ministry outcomes, public influence, or the number of people touched by his story.
+how long that life lasts,
 
-We received him as gift.
+whether the body is strong,
 
-We remember him as son.
+whether one's abilities are complete,
 
-We believe in the providence of God.
+whether one can speak,
 
-We confess that creation and history are not outside God’s sovereign care.
+or whether one can accomplish the achievements in life that others expect.
 
-But we do not claim to know every hidden reason behind suffering.
+Little Wheat's life lasted only nineteen months.
 
-We do not say that we know God caused Little Wheat’s death in order to produce this book, revive a church, strengthen our ministry, or accomplish some identifiable result.
+Its brevity did not make his life less valuable.
 
-We do not know why his life was so short.
+He is our son.
 
-Providence gives us reason to trust God where explanation fails; it does not give us permission to invent explanations God has not revealed.
+A real person.
 
-We believe grief and faith can remain together.
+A life worthy of being loved, respected, and remembered.
 
-We mourn because we loved.
+⸻
 
-Christian hope does not require us to deny the tragedy of death.
+We Believe God Is Lord, and We Also Acknowledge That We Do Not Know Everything
 
-Jesus himself wept.
+We believe
 
-Scripture calls death an enemy.
+that God is the Creator and the Lord of life.
 
-Therefore tears are not evidence of unbelief, and lament is not the opposite of worship.
+History is ultimately under His sovereignty.
 
-We may grieve deeply and still trust Christ.
+But for that reason we do not claim to know:
 
-We entrust Little Wheat to the mercy of God.
+why every illness occurs,
 
-We do not claim knowledge Scripture has not given us about the present experience of our child.
+why a particular prayer was not answered according to our desire,
 
-We do not base our hope on visions, imagined heavenly conversations, or speculative theories about the salvation of children.
+or why a child's life was so brief.
 
-We entrust John Earnest Zhang to the God revealed in Jesus Christ—whose mercy is good, whose justice is perfect, and whose love exceeds our own.
+We do not simply explain every tragedy by saying:
 
-Our hope for him rests in the grace of God in Christ.
+“God specially arranged for it to happen precisely in order to produce some later good result.”
 
-We believe Jesus Christ rose bodily from the dead.
+We acknowledge human limitation.
 
-The resurrection is not a metaphor for remembering someone after death.
+We can trust
 
-Christ truly rose.
+even while we still do not understand.
 
-His resurrection is the foundation of Christian hope and the firstfruits of the resurrection to come.
+⸻
 
-Therefore our hope is greater than the survival of memory and greater than an undefined existence in heaven.
+We Believe Jesus Christ Is the Only Savior
 
-We await the resurrection of the dead.
+We believe
 
-We believe Jesus Christ will come again.
+that the death and resurrection of the Lord Jesus Christ are the sole foundation of our salvation and comfort.
 
-Christian hope moves toward the return of Christ.
+Little Wheat's death did not save anyone.
 
-The intermediate state is not the final destination of the biblical story.
+His story did not save anyone.
 
-We await the day when death itself is defeated and God’s redemptive purpose reaches its promised fulfillment.
+Our grief did not save anyone.
 
-We believe in the resurrection of the body and the new creation.
+Nor did this book save anyone.
 
-Our final hope is not escape from creation but its renewal.
+Christ died for sinners.
 
-We look toward the new heaven and new earth, toward God dwelling with his people, toward the removal of death, mourning, crying, and pain.
+Christ rose from the dead.
 
-We therefore understand our hope of reunion with Little Wheat within this larger hope.
+Salvation belongs to Him.
 
-We long to see our son again.
+Therefore, when we call Little Wheat “a grain of wheat,”
 
-But reunion with him is not our ultimate hope.
+it is only a secondary, testimonial metaphor for his life.
 
-God himself is.
+John 12:24 ultimately and first points to Christ Himself.
 
-We believe John 12:24 belongs first to Christ.
+⸻
 
-The grain of wheat that falls into the earth and dies points, in its primary redemptive meaning, to Jesus Christ and his approaching death.
+We Believe Death Is a Real Enemy
 
-Little Wheat’s name allows that biblical image to become part of our family’s testimony.
+We will not call death a friend.
 
-But we do not equate his death with Christ’s.
+Nor, because Little Wheat's story later produced some beautiful influence, will we say:
 
-Little Wheat did not die for our sins.
+“Therefore death itself is good.”
 
-He did not accomplish redemption.
+Scripture says:
 
-He did not become the gospel.
+“The last enemy that shall be destroyed is death.”
+—1 Corinthians 15:26, KJV
 
-If his story bears fruit, that fruit grows only within the saving story of Jesus Christ.
+We can discover grace in grief,
 
-We believe memory must serve truth.
+but that does not mean tragedy itself becomes grace.
 
-We will preserve Little Wheat’s story with tenderness.
+We can grow after loss,
 
-We will also distinguish:
+but that does not mean the loss ceases to be real loss.
 
-what we witnessed,
+⸻
 
-what others witnessed,
+We Believe Christ Has Risen from the Dead
 
-what we interpreted,
+This is the most important hope in the whole book.
 
-what we hoped,
+If Christ has not risen,
 
-and what we imagined.
+our remembering is only remembering.
 
-A father’s imagery may remain beautiful without becoming doctrine.
+Our reunion is only a wish.
 
-A pastoral word may bring comfort without becoming revelation.
+Our comfort ultimately has no foundation.
 
-A memory may remain precious without becoming historical certainty.
+But we believe:
 
-Love does not require us to confuse these things.
+Christ has risen.
 
-Love calls us to tell the truth.
+Therefore, death does not have the final word.
 
-We believe love continues in faithful living.
+⸻
 
-Little Wheat’s death does not call us away from the life God has given us.
+We Believe the Lord Will Surely Come Again, and the Dead Will Surely Be Raised
 
-It calls us to live that life faithfully.
+Our ultimate hope is not merely:
 
-We will continue to love.
+“After the soul leaves the body, it goes to heaven.”
 
-To worship.
+We hope for:
 
-To preach Christ.
+Christ's return.
 
-To serve the church.
+The resurrection of the dead.
 
-To comfort those who suffer.
+The redemption of the body.
 
-To treasure the people entrusted to us.
+The destruction of death.
 
-To remember our son without making him the center of our faith.
+God's renewal of all things.
 
-And to wait with the church for the day when Christ makes all things new.
+Therefore, we hold the hope of resurrection.
 
-Until that day,
+And for this reason, we hope that in Christ's final renewal we will again see the child we deeply love.
 
-we grieve,
+Regarding the specific manner of that day, we remain humble.
 
-we remember,
+But because of that, we do not lose hope.
 
-we hope,
+⸻
 
-and we confess:
+We Entrust Little Wheat to God
 
-Jesus Christ is Lord.
+Regarding the salvation of infants and young children, the state after death, and things we cannot observe,
 
-Christ has died.
-Christ is risen.
-Christ will come again.
+we do not wish to speak beyond the range of what Scripture reveals.
 
-And in him, we wait for the resurrection of the dead and the life of the world to come.
+We will not elevate a father's imagination into theological fact.
 
-Amen.
+We will not claim to know what Little Wheat is doing now.
+
+But we are willing to entrust him to:
+
+the God who is holy,
+
+righteous,
+
+loving,
+
+and who has revealed Himself to us in Jesus Christ.
+
+Therefore, we have hope concerning him.
+
+This hope does not come from his own ability.
+
+It comes from God's grace and character.
+
+⸻
+
+We Believe in the New Heaven and the New Earth
+
+Our final hope is not merely to leave the earth and go to some distant place.
+
+We hope for God to renew His creation.
+
+As Revelation says:
+
+“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”
+—Revelation 21:4, KJV
+
+This is the future toward which we can still look when facing hospitals, graves, and loss.
+
+⸻
+
+We Believe Grief and Faith Can Exist at the Same Time
+
+Crying is not unbelief.
+
+Missing someone is not unbelief.
+
+Having questions is not unbelief.
+
+Not knowing the answers is not unbelief.
+
+We believe
+
+that Christians can worship in grief.
+
+Pray amid questions.
+
+Trust in weakness.
+
+Continue to love after loss.
+
+⸻
+
+We Believe the Purpose of Testimony Is to Point to Christ
+
+Little Wheat's story is worth telling.
+
+But the final purpose of this book is not to leave people focused on a child.
+
+We hope
+
+that when people finish reading these stories,
+
+they will treasure life more,
+
+understand grieving people more deeply,
+
+face death more honestly,
+
+and think more seriously about:
+
+Who is Jesus Christ?
+
+If this book ultimately turns people's eyes toward Christ,
+
+then this testimony has truly fulfilled the direction it ought to have.
+
+⸻
+
+Therefore,
+
+we are willing to continue telling how God sustained us amid our tears, love, and weakness.
+
+To continue remembering our son.
+
+To continue loving the people around us.
+
+To continue shepherding.
+
+To continue serving.
+
+To continue sharing the gospel.
+
+To continue, in this world where death still exists,
+
+waiting for the Lord who has risen from the dead and who will surely come again.
+
+⸻
+
+We believe death will not triumph.
+
+We believe Jesus Christ has risen.
+
+We believe He will surely come again.
+
+We believe the dead will surely be raised.
+
+We believe God will surely renew all things.
+
+So we still mourn,
+
+and we still hope.
+
+We still miss him,
+
+and we still move forward.
+
+⸻
+
+Paul Zhang & Sue Zhang
+
+Written in Indianapolis
+In memory of our son
+John Earnest Zhang (Zhang Xian)—“Little Wheat”
