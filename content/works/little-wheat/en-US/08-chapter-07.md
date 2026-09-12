@@ -1,123 +1,157 @@
 ---
-id: lw-08-ch07
-canonical_id: lw-08-ch07
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 9
-chapter_number: 7
-slug: '08-chapter-07'
-status: review
-title: Chapter Seven
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-08-ch07",
+  "canonical_id": "lw-08-ch07",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 9,
+  "chapter_number": 7,
+  "slug": "08-chapter-07",
+  "status": "published",
+  "title": "Chapter Seven: The Final Embrace—Entrusting in Grief, Hoping in Resurrection",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Seven: The Final Embrace—Entrusting in Grief, Hoping in Resurrection"
+  }
+}
 ---
-Chapter Seven
-
-The Final Embrace — Grief, Entrustment, and the Hope of Resurrection
+Chapter Seven: The Final Embrace—Entrusting in Grief, Hoping in Resurrection
 
 Wednesday, August 21, 2024.
 
-This was the final day of Little Wheat’s earthly life.
+This was the final day of Little Wheat's earthly life.
 
-We were still at Riley Children’s Hospital.
+That day, we were still keeping watch in his room at Riley Children's Hospital.
 
-The room still contained the medical equipment that had become painfully familiar over the previous thirteen days.
+The equipment that had become so familiar over the previous thirteen days was still there.
 
-Doctors and nurses were still doing their work.
+The medical staff were still working.
 
-We were still his father and mother.
+We still had to put on isolation gowns.
 
-But by then we understood that we might be approaching the moment no parent wants to face.
+And we were still the father and mother beside that hospital bed.
+
+Only now, we understood more and more clearly:
+
+we might have to face the moment we least wanted to face.
 
 ⸻
 
 Hymns in the Hospital Room
 
-We sang.
+That day, we continued to sing hymns.
 
-Songs that had been familiar in church suddenly carried a different weight beside our son’s bed.
+We had sung these songs many times before in church.
 
-Among the hymns remembered in the family narrative were:
+But beside the hospital bed, every line became different.
 
-“God Will Take Care of You”
+We sang:
 
-“What a Friend We Have in Jesus”
+“God Will Take Care of You.”
 
-“Let the Weak Say I Am Strong”
+We also sang:
 
-and
+“What a Friend We Have in Jesus.”
+
+We sang:
+
+“Let the Weak Say I Am Strong.”
+
+And we sang:
 
 “Praise God, from Whom All Blessings Flow.”
 
-The legacy English manuscript preserves these songs, as does the Chinese source.
+We sang not because we had no sorrow.
 
-We were not singing because we were no longer grieving.
+Quite the opposite.
 
-We were singing while grieving.
+We were singing in the midst of sorrow.
 
-Sometimes voices broke.
+Sometimes our voices choked.
 
-Sometimes tears interrupted the words.
+Sometimes we reached one line and began to cry.
 
-Sometimes others carried the hymn when we could not.
+Sometimes the people beside us carried the song forward.
 
-Christian worship does not require sorrow to disappear first.
+⸻
 
-The Psalms themselves give believers language for lament, confusion, fear, trust, and praise.
+Christian worship does not happen only when things are going well.
 
-So our tears did not cancel our faith.
+That day, we came to understand more deeply:
+
+Sometimes worship is not the triumphant song of a victor.
+
+Sometimes it is simply a father and a mother who, when they no longer have the power to change their circumstances, still say to God:
+
+“Lord, we are here.”
+
+We did not have to hide our heartache in order to worship.
+
+The Psalms themselves are filled with lament, questions, and tears.
+
+So that day, our tears did not cancel our faith.
 
 And our faith did not cancel our tears.
 
-Both were present.
+Both were present at the same time.
 
 ⸻
 
 4:44 p.m.
 
-During the afternoon, Little Wheat entered the final moments of his earthly life.
+By afternoon, Little Wheat's life entered its final moments.
 
-At 4:44 p.m. on Wednesday, August 21, 2024, Little Wheat died.
+We stayed beside him.
 
-This time is author-confirmed and governs the canonical edition.
+At 4:44 p.m. on August 21, 2024,
 
-The older English manuscript is therefore superseded wherever it says:
+Little Wheat's earthly life came to an end.
 
-“On the morning of August 21…”
+Nineteen months.
 
-That wording remains useful as legacy evidence of the old version, but it is no longer authoritative for the time of death. The legacy manuscript indeed contains the old “morning” wording.
+From 11:00 p.m. on January 17, 2023, to 4:44 p.m. on August 21, 2024.
+
+These are the times we have confirmed and now locked.
 
 ⸻
+
+This moment cannot be turned into a literary device.
+
+Nor can we make death seem no longer frightening simply because we believe in resurrection.
 
 A child died.
 
 Our son died.
 
-That sentence must be allowed to remain as difficult as it is.
+Daddy and Mommy could no longer hope, as we had the day before, that we would carry him home.
 
-Christian hope does not require us to soften death into something harmless.
+His body would no longer respond to us as it once had.
 
-Paul calls death an enemy:
+Nineteen months of earthly life came to an end that afternoon.
 
-“The last enemy to be destroyed is death.”
-— 1 Corinthians 15:26
+This is the real face of death.
 
-So we do not call death beautiful.
+Christians do not need to deny it.
 
-We do not say that faith made this moment painless.
+Scripture calls death an enemy.
 
-It did not.
+Paul says:
 
-At 4:44 p.m., our family experienced an irreversible loss.
+“The last enemy that shall be destroyed is death.”
+—1 Corinthians 15:26, KJV
 
-We could no longer expect to carry Little Wheat home as we had hoped.
+Therefore, we do not need to call death itself good.
 
-We could no longer imagine tomorrow in the same way.
+Nor do we need to say:
 
-The world had changed.
+“Because we have faith, this moment was not really sad.”
+
+No.
+
+This moment was deeply sad.
 
 ⸻
 
@@ -125,313 +159,304 @@ The Final Embrace
 
 I held Little Wheat.
 
-I had held him many times during his nineteen months.
+Just as I had held him countless times during the previous nineteen months.
 
-But this embrace was different.
+Only this time was completely different.
 
 I looked at his face.
 
-I touched him.
+I touched his body.
 
-I kissed him.
+I kissed his forehead.
 
-And I said goodbye to my son.
+These are things a father truly did.
 
-There are moments a father never expects to live through.
+On many nights afterward, I would return to this scene again and again in my memory.
 
-This was one of them.
-
-In later grief, I would speak inwardly to him:
+As his daddy, I would also say to him in my heart:
 
 “Little Wheat, Daddy loves you.”
 
 “Thank you for coming into our lives.”
 
-“I miss you.”
+“Daddy does not want to let you go.”
 
-These are the words of a grieving father.
+In the earlier manuscript, I once used language such as “Daddy will go to heaven to find you someday” to express my grief and hope at the time.
 
-They do not require theological explanation before they are allowed to be true.
+In this public canonical edition, I want to say it more precisely:
+
+I hope to meet again the child I love in the resurrection and renewal of all things promised by Christ.
+
+I do not know every detail of how that day will unfold.
+
+Nor does Scripture permit me to describe specifically what Little Wheat is doing now in the unseen world.
+
+But I know that Christ has risen.
+
+Therefore, my hope is not built on my own imagination.
+
+It is built on the risen Lord.
 
 ⸻
 
 What We Saw, and What We Hope
 
-The legacy English manuscript describes the moment with beautiful but stronger language:
+In a loss like this, people naturally use tender images.
 
-he “was carried by angels into the Father’s arms,”
-and seemed to say,
-“I’ll be waiting for you—in glory.”
+We may say:
 
-Those words preserve an important part of a father’s grief imagination.
+“Angels came to receive him.”
 
-They are therefore not erased from the history of the work.
+“He went home to heaven.”
 
-But they are not classified as witnessed events in the canonical edition.
+“He must be waiting for us now.”
 
-We did not see angels.
+“He must already be singing there.”
 
-We did not hear Little Wheat speak from heaven.
+Such language can be very precious in the grief of parents.
 
-We did not observe what happened in the unseen world.
+I too have imagined such things.
 
-What we witnessed was:
+These images can express love, longing, and hope.
 
-our child’s final hours,
+But here I want to make an honest distinction:
 
-the hymns,
+These are not things we saw in the hospital.
 
-the medical care,
+What we saw was:
 
-our tears,
+a child reaching the end of his earthly life in a hospital room.
 
-our prayers,
+Daddy and Mommy were beside him.
 
-his death,
+People wept.
 
-and our farewell.
+Some prayed.
 
-What lies beyond death belongs to another category.
+Some sang hymns.
 
-⸻
+Doctors and nurses completed the work they had to do.
 
-As Christians, we do have hope.
+These are witnessed events.
 
-But Christian hope is stronger when it does not pretend to know what Scripture has not revealed.
+As for the unseen state after death, we can speak only within the boundaries of what Scripture reveals, leaving details beyond revelation to God.
 
-I can say:
+This does not weaken our hope.
 
-I hope to see my son again.
+It makes our hope more secure.
 
-I can say:
-
-I entrust him to God.
-
-I can say:
+Because we do not need to know what Little Wheat is “doing” at this moment in order to believe:
 
 Christ has risen.
-
-I can say:
-
-Christ will come again.
-
-I can say:
-
-the dead will be raised.
-
-I can say:
-
-death will not have the final word.
-
-Those affirmations do not depend upon my being able to describe what Little Wheat is doing at this moment.
-
-They depend upon Jesus Christ.
+The dead will be raised.
+Death will finally be destroyed.
+God will make all things new.
 
 ⸻
 
 A Farewell Prayer
 
-After Little Wheat died, people remained with us.
+After Little Wheat died, we remained in the hospital room.
 
-There were physicians.
+Doctors.
 
 Nurses.
 
 Pastors.
 
-Family and friends.
+Some family members and friends.
+
+Everyone gathered together.
 
 We prayed.
 
 We cried.
 
-Later I would describe this as one of the most sacred gatherings of my life.
+It was not a gathering to celebrate death.
 
-By “sacred,” I do not mean that death itself became holy.
+It was a family that had lost a child entrusting ourselves to God in the deepest grief.
 
-I mean that in a place where we had lost all power to change the outcome, people still prayed.
+Later, I often described that moment as a very sacred experience in my life.
 
-People still held one another.
+By “sacred,” I do not mean that death itself was sacred.
 
-People still stood together.
+I mean:
 
-There are moments when words cannot repair anything.
+At our most powerless, we could still pray.
 
-But presence still matters.
+At our deepest pain, people could still support one another.
+
+When words were almost useless, a group of people could still gather around us.
 
 ⸻
 
 A Small Casket
 
-We soon had to confront another reality no parent expects:
+Later, we had to face a reality that parents can scarcely imagine:
 
-arranging a funeral for a nineteen-month-old child.
+making funeral arrangements for a nineteen-month-old child.
 
-The family narrative remembers that obtaining a suitably sized casket became difficult.
+We contacted a funeral service provider.
 
-Little Wheat’s American spiritual grandfather ultimately made a small wooden casket by hand.
+In our earlier records, we noted that because there was no child-sized casket that fit, other possibilities were discussed for a time.
 
-This became one of the acts of love surrounding our son’s farewell.
+It was very difficult for me to hear those words.
 
-We do not call the casket a sign that death was beautiful.
+So Little Wheat's American spiritual grandpa made a small casket for him with his own hands.
 
-It was something more human.
+This later became one of our deepest memories.
 
-When people can no longer save the person they love, they still ask:
+An older man, with his own hands,
 
-“What can I do for him now?”
+doing the last thing he could do
 
-Sometimes grief takes the form of labor.
+for a child he deeply loved.
 
-Wood.
+That casket was not a symbol of “glorifying death.”
 
-Hands.
+It was more like a labor of love.
 
-Tears.
+When you cannot bring a child back to life, you still ask:
 
-Prayer.
+What can I still do for him?
 
-Care.
+Sometimes the last thing love can do is this concrete and this heavy.
 
 ⸻
 
-Leaving the Hospital
+Leaving the Hospital Room
 
-After Little Wheat’s death, the hospital staff completed the necessary procedures.
+After Little Wheat died, we remained at the hospital for some time.
 
-Eventually, arrangements were made for his body to leave the PICU.
+The medical staff completed the procedures they needed to complete, and the funeral service provider began taking over the arrangements that followed.
 
-The older English manuscript places a very specific sequence in Paul’s first-person voice: a staff member asking him to remain, helping wrap the child, holding the wrapped body, and placing him on the staff member’s shoulder.
-
-However, the separately preserved Pastor John witness assigns this specific sequence to Pastor John himself.
-
-Under the already locked rule:
-
-Witness owns witness
-
-this canonical Chapter Seven does not claim those details as Paul’s first-person experience.
-
-That detailed sequence belongs to Chapter Eight, where Pastor John’s witness is preserved under his own provenance.
-
-What belongs here is what I can say as Little Wheat’s father:
+Much of that period remains fragmented in my memory.
 
 I remember the room.
 
-I remember the grief.
+I remember people coming and going.
 
-I remember knowing that my son’s body would leave the hospital while Sue and I would eventually return home without him.
+I remember us crying.
 
-That reality alone was more than enough.
+I remember looking at my son for the last time.
 
-⸻
+And I remember that we had to face the fact no parent wants to face:
 
-“Let the Children Come to Me”
+Little Wheat would eventually leave that room, and we could not carry him home with us as we normally would.
 
-In the grief surrounding that farewell, the words of Jesus came to mind:
+As for the specific process by which his body was finally prepared, wrapped, and taken from the PICU by staff, the next chapter of this book preserves Pastor John's own first-person witness.
 
-“Let the little children come to me; do not hinder them…”
-— Mark 10:14
+That experience belongs to him.
 
-I keep that memory.
+I do not need to turn someone else's memory into my own in order to show how heavy this moment was for our family.
 
-But I use the verse carefully.
+For Daddy and Mommy, what could not be changed was this:
 
-It was not a revelation telling me that I had just seen exactly what happened to Little Wheat after death.
+that day, we had to say goodbye to our son's body.
 
-It was Scripture becoming a place where a grieving father could turn.
-
-When I could no longer protect my child,
-
-I could still entrust him to the Lord who welcomed children.
+When he finally left the hospital, we knew that from then on, the way we went home would never be the same.
 
 ⸻
 
-His Death Is Not the Gospel
+“Let the Little Children Come unto Me”
 
-There is another sentence that must be stated clearly:
+At that moment, I thought of Jesus' words about children:
 
-Little Wheat’s death is not the gospel.
+“Suffer the little children to come unto me, and forbid them not.”
+—cf. Mark 10:14, KJV
 
-The gospel is Jesus Christ—
+This verse became an association of faith for me in the original story.
 
-His incarnation,
+I am still willing to preserve it today.
 
-His death for sinners,
+But not as though it meant:
 
-His burial,
+“I therefore saw with my own eyes exactly what had just happened after death.”
 
-His resurrection,
+Rather, I preserve it as the way a father in overwhelming grief reached for Christ.
 
-His lordship,
+Facing a child I could no longer protect,
 
-and the hope He gives.
+I could only entrust him, and entrust myself, to the Lord who said:
 
-Little Wheat may be a witness.
-
-His life may cause people to think about eternity.
-
-His story may awaken love, grief, compassion, repentance, or faith.
-
-But he is not another Savior.
-
-He does not redeem us.
-
-He did not bear our sins.
-
-His suffering does not save.
-
-The center remains Christ.
+“Suffer the little children to come unto me.”
 
 ⸻
 
-What “Goodbye” Means for a Christian Father
+Death Is Not the Gospel
 
-After the death of a child, the word “goodbye” feels almost impossible.
+There is something I need to say more clearly now than I did then.
 
-I do not want it to mean:
+Little Wheat's death is not the gospel.
 
-“forever.”
+The death and resurrection of Jesus Christ is the gospel.
 
-And yet Christian hope is not simply the belief that souls continue somewhere after death.
+Little Wheat's story can become a testimony.
 
-The New Testament directs our hope toward something larger:
+His life can cause others to think about eternity.
 
-the return of Christ,
+His smile can cause people to remember love.
 
-the resurrection of the dead,
+His departure may also cause people to ask questions again in the midst of pain.
 
-the redemption of the body,
+But he cannot redeem anyone.
 
-the destruction of death,
+Nor does he need to become another “Christ.”
 
-and ultimately
+Salvation has only one center:
 
-the renewal of creation.
+Jesus Christ.
+
+Therefore, when we remember Little Wheat, we are not making a child sacred.
+
+Rather, through his life and death, we turn our eyes once again toward the Lord who has truly conquered death.
+
+⸻
+
+What Does “Goodbye” Mean?
+
+For parents who have lost a child, saying “goodbye” is hard.
+
+Because of course we hope:
+
+this is not goodbye forever.
+
+But true Christian hope is not merely that “the soul continues to exist after death.”
+
+Scripture directs our eyes farther:
+
+Christ will return.
+
+The dead will be raised.
+
+The body will be redeemed.
+
+There will be a new heaven and a new earth.
 
 So when I say:
 
 “Little Wheat, I hope to see you again,”
 
-I am not offering a map of heaven.
+I am not describing a scene I have already seen.
 
-I am confessing resurrection hope.
+I am confessing the hope of resurrection.
 
 Paul writes:
 
-“If in Christ we have hope in this life only, we are of all people most to be pitied. But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.”
-— 1 Corinthians 15:19–20
+“If in this life only we have hope in Christ, we are of all men most miserable. But now is Christ risen from the dead, and become the firstfruits of them that slept.”
+—1 Corinthians 15:19–20, KJV
 
-That is the ground beneath my hope.
+This is the ground beneath my hope.
 
 ⸻
 
-When we eventually left the hospital, home was no longer the same place we had left thirteen days earlier.
+When we finally left the hospital, home was no longer the same place we had left thirteen days earlier.
 
 The rooms were still there.
 
 His things were still there.
 
-The memories were everywhere.
+Memories were everywhere.
 
 But Little Wheat did not come home with us.
 
@@ -445,13 +470,13 @@ to live with grief,
 
 and still to believe.
 
-Death took something from us that cannot be replaced.
+Death took from us something that cannot be replaced.
 
 But death cannot make Christ unrisen.
 
 It cannot cancel the promise of resurrection.
 
-It cannot overturn God’s final renewal of creation.
+It cannot overturn God's final renewal of all things.
 
 So Chapter Seven does not end with grief resolved.
 

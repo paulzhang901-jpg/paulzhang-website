@@ -1,173 +1,227 @@
 ---
-id: lw-10-ch09
-canonical_id: lw-10-ch09
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 11
-chapter_number: 9
-slug: 10-chapter-09
-status: review
-title: Chapter Nine
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-10-ch09",
+  "canonical_id": "lw-10-ch09",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 11,
+  "chapter_number": 9,
+  "slug": "10-chapter-09",
+  "status": "published",
+  "title": "Chapter Nine: A Father's Message—A Farewell and a Promise Written in Love",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Nine: A Father's Message—A Farewell and a Promise Written in Love"
+  }
+}
 ---
-Chapter Nine
+Chapter Nine: A Father's Message—A Farewell and a Promise Written in Love
 
-A Father’s Message — A Farewell and a Promise Written in Love
+I do not want to write this chapter as a theological essay.
+
+This is a letter from Daddy to you.
+
+So I want, as much as possible, to preserve the voice in which I wrote these words in October 2024.
+
+At that time, your departure from us was still very recent.
+
+There were many things I still could not explain.
+
+And there were still many tears I had not finished shedding.
+
+⸻
 
 My dear Little Wheat,
 
-When I first wrote this letter, you had been gone for forty-seven days.
+As I write this letter, it is the forty-seventh day since you left us.
 
-Autumn had begun to enter the air outside.
+There is already a touch of autumn in the wind outside.
 
-But my heart was still near that August afternoon.
+But Daddy's heart still seems to be stopped in that August afternoon.
 
-I still remembered holding you.
+I still remember holding you.
 
-I remembered the hymns.
+I remember us singing hymns.
 
-I remembered the tears.
+I remember everyone weeping.
 
-I remembered kissing you goodbye.
+I remember kissing you for the last time.
 
-Some memories remain not because we choose to preserve them, but because love makes them impossible to forget.
+Some memories stay with us not because we try to remember them,
 
-⸻
-
-Your life lasted only nineteen months.
-
-Yet in those nineteen months, you took your father into places I had never fully entered before.
-
-You never stood behind a pulpit, yet your life made me reconsider sermons I had preached.
-
-You never walked very far, yet loving and losing you carried me into the deepest and most painful places of faith.
-
-You never grew into adulthood, yet you taught me something about fatherhood:
-
-To be a father is not to possess a child.
-
-It is to receive him, love him, remain with him, and finally acknowledge that his life was never mine to control.
+but because we loved too deeply ever to forget.
 
 ⸻
 
-On the night you were born, I prayed:
+Do you know?
 
-“Lord, this child is Yours. I entrust his life to You.”
+Your whole life was only nineteen months.
 
-At the time, I did not understand what that prayer might one day mean.
+Yet Daddy often feels that you took me into places I had never truly entered in all the decades before.
 
-I imagined dedication in ordinary ways:
+You never opened your mouth to preach a sermon,
+
+yet you made me rethink every sermon I had preached.
+
+You did not walk a very long road,
+
+yet you took Daddy into the deepest and most painful places of faith.
+
+You did not grow to adulthood,
+
+yet for the first time you made me truly understand:
+
+Being a father is not possessing a child.
+
+It is loving him, walking beside him, and finally acknowledging:
+
+his life never truly belonged to me.
+
+⸻
+
+When you were born, Daddy once prayed to God:
+
+“Lord, this child is Yours. I am willing to dedicate him to You.”
+
+At that time, I did not know what those words would mean.
+
+I thought dedication might mean:
+
+one day watching you grow up,
 
 teaching you to pray,
 
-bringing you to church,
+taking you to church,
 
-reading Scripture with you,
+reading the Bible with you,
 
-watching you grow,
+watching you come to know Jesus,
 
-and perhaps one day seeing you discover the path God had prepared for your life.
+and perhaps one day watching you walk the path God had prepared for you.
 
-I did not imagine that nineteen months later I would have to learn the word entrust in a completely different way.
+I never imagined
 
-⸻
+that nineteen months later,
 
-During your illness, Daddy prayed again and again for healing.
-
-I truly wanted a miracle.
-
-I wanted the doctors to tell us you were improving.
-
-I wanted you to open your eyes.
-
-I wanted to carry you home again.
-
-I wanted to stand in church one day and testify that God had answered us exactly as we had asked.
-
-But that was not what happened.
-
-I still cannot reduce that reality to a simple explanation.
-
-And I no longer want to invent one for God.
+I would have to face the word “entrust” again in a completely different sense.
 
 ⸻
 
-Little Wheat, in the deepest parts of grief, Daddy has imagined what reunion might be like.
+When you were sick,
 
-I have imagined seeing you again.
+Daddy asked God again and again to heal you.
 
-I have imagined your hand in mine.
+I truly hoped for a miracle.
 
-I have imagined a place without a PICU, without tubes, without monitors, without the afternoon when I had to let you go.
+I hoped that one day the doctors would tell us:
 
-Those images remain precious to me.
+“His condition is improving.”
 
-The legacy English letter spoke very concretely of a “garden of heaven,” of you sitting on the Father’s lap, and of you speaking to me again.
+I hoped you would open your eyes.
 
-I do not need to erase those images from the history of my grief.
+I hoped to carry you home again.
 
-But I do need to say clearly what they are:
+I even imagined in my heart:
 
-They are the imagination of a grieving father, not an eyewitness description of the unseen world.
+If you recovered,
 
-My Christian hope rests somewhere firmer.
+Daddy would stand in the pulpit and tell everyone
 
-⸻
+how God had heard our prayers.
 
-Paul writes:
+But things did not unfold in the direction Daddy asked for.
 
-“But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.”
-— 1 Corinthians 15:20
+Even today, this is something I cannot easily explain.
 
-So I still hope.
-
-I hope to see you again.
-
-Not because I know every detail of heaven.
-
-Not because I have received a message from you.
-
-But because Jesus Christ has risen from the dead.
-
-That is stronger than my imagination.
+Nor am I willing to manufacture a simple answer for God.
 
 ⸻
 
 Little Wheat,
 
-you remain one of the deepest loves of my life.
+in my deepest grief, Daddy once imagined:
 
-You are one of the truest sermons I have ever received.
+perhaps one day,
 
-You are one of the deepest sighs in my prayers.
+when Daddy has finished his earthly journey,
 
-You are one of the most unforgettable songs in my worship.
+you will come and take my hand;
 
-Thank you for coming into our lives.
+perhaps we will meet again in God's renewed world;
 
-Thank you for allowing Daddy and Mommy to love you.
+perhaps then,
 
-Thank you for teaching us how deeply human love can reach.
+there will be no more PICU,
 
-Through you, we learned again how to cry,
+no machines,
 
-how to pray,
+no farewell,
 
-how to remain,
+no afternoon when Daddy had to let you go.
 
-how to entrust,
+These are pictures in the heart of a father who misses his child.
 
-and how to keep looking toward Christ when we do not have every answer.
+Daddy cannot say that every detail of what I imagine is a fact Scripture has already told us.
+
+But Daddy can tell you:
+
+I hope to see you again.
+
+Because in the end, my hope is not built on my own imagination,
+
+but on the resurrection of Jesus Christ.
 
 ⸻
 
-Daddy must continue living the life that remains before him.
+Paul writes:
 
-I will continue shepherding.
+“But now is Christ risen from the dead, and become the firstfruits of them that slept.”
+—1 Corinthians 15:20, KJV
+
+So Daddy still waits in hope.
+
+Not because I know every detail of heaven.
+
+But because I know:
+
+Jesus has risen.
+
+⸻
+
+Little Wheat,
+
+you are the pride of Daddy's life.
+
+You are the truest sermon I have ever preached,
+
+the deepest sigh in my prayers,
+
+and the most unforgettable song in my worship.
+
+Thank you for coming into our lives.
+
+Thank you for letting Daddy know
+
+that it is possible to love someone this deeply.
+
+Thank you for letting our family learn again:
+
+how to cry,
+
+how to pray,
+
+how to stay with one another,
+
+how to hold on to Christ when there are no answers.
+
+⸻
+
+Daddy still has to keep walking the road ahead.
+
+Continue shepherding.
 
 Continue preaching.
 
@@ -175,62 +229,75 @@ Continue loving Mommy.
 
 Continue serving the church.
 
-Continue telling people about Jesus.
+Continue telling people the gospel.
 
-Continue learning faithfulness.
+Continue learning how to be faithful.
 
 I will not forget you.
 
-But neither will I make remembering you the whole purpose of the life God has still given me.
+But neither will I stop living the life God has still entrusted to me because I miss you.
 
-If your nineteen months planted anything in my heart, then I want the fruit to appear in the way I now live:
+If your nineteen months truly left a seed in Daddy's life,
 
-to love sooner,
+then Daddy is willing to let that seed continue to bear fruit.
 
-to listen more carefully,
+Not to turn you into another Savior.
 
-to take fewer days for granted,
+We have only one Savior: Jesus.
 
-to remain close to those who suffer,
+But to let your brief life continually remind Daddy:
 
-and to preach Christ more faithfully.
+Time is short.
 
-⸻
+Love people while there is time.
 
-The older form of this letter said:
+The gospel is true.
 
-“When I finish the mission God has entrusted to me on earth, I will come find you.”
-
-And then imagined you taking my hand and leading me into the garden of heaven.
-
-That image still belongs to Daddy’s love.
-
-I will keep it.
-
-But beside it I now write:
-
-This is a father’s picture of reunion. The foundation of my hope is not the picture itself, but Jesus Christ and the resurrection.
+Death does not have the final word.
 
 ⸻
 
-Thank you for having been part of our life.
+In the original letter, I once wrote:
 
-Thank you for allowing us to know you for nineteen months.
+“When I finish the mission God has entrusted to me on earth, I will come find you. Then you must take my hand and lead me into the garden of heaven...”
 
-Daddy still loves you.
+That is still a picture Daddy treasures deeply. The original manuscript does indeed preserve these words.
 
-Daddy still misses you.
+Today, I am willing to leave it here.
 
-And Daddy continues forward with tears and hope together.
+But beside it, I also gently write one sentence:
 
-Until the day when Christ makes all things new,
+This is a picture born of a father's longing, not an eyewitness report about the unseen world.
 
-I entrust you to God,
+I do not need to erase this imagination.
 
-and I wait in hope.
+I only need to know honestly what it is.
+
+⸻
+
+Thank you for coming into our lives.
+
+Thank you for letting Daddy love you.
+
+Thank you for staying for nineteen months,
+
+so that through all the years that remain to me,
+
+I will know that I was once changed so deeply by such a small life.
+
+Until the day Christ makes all things new,
+
+Daddy will keep walking
+
+with love,
+
+with tears,
+
+and also with hope.
 
 Your forever Daddy,
+
 Paul Zhang
 
-Indianapolis
+Written in Indianapolis
 October 2024

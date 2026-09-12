@@ -1,0 +1,149 @@
+{
+  "package": "Little-Wheat-English-Publication-Batch-FINAL.zip",
+  "packageSha256": "d2335b76f5880ca86fa232d7befa346bbae22fbcfd658643f38c0c1699f61a71",
+  "authority": "Author-approved FINAL locked English publication handoff",
+  "publicationAuthorized": true,
+  "recordedAt": "2026-09-12T07:45:37-04:00",
+  "supersedes": "Historical LOCK.yaml English runtime bodies only; Chinese and historical governance remain unchanged.",
+  "wrapperAdaptation": "Published/public runtime state; JSON-compatible YAML quoting; existing supplement type for independent external original; canonical_id equals its supplied stable id. Bodies unchanged.",
+  "externalOriginal": {
+    "canonicalId": "lw-john-van-valin-lasting-influence",
+    "author": "John Van Valin",
+    "date": "August 2024",
+    "sourceStatus": "AUTHORITATIVE_ENGLISH_ORIGINAL",
+    "rightsStatus": "USED_WITH_AUTHOR_PERMISSION",
+    "notice": "Published here with the author’s permission.",
+    "chineseCounterpart": null,
+    "mediaIncluded": false
+  },
+  "files": [
+    {
+      "path": "en-US/00-dedication.md",
+      "packagePath": "en-US/00-dedication.en-US.md",
+      "canonicalId": "lw-00-dedication",
+      "bodySha256": "8fa8639eb2dad04e0d41078f769fc7b666ffa964b888d28006dace7dc4e1111c",
+      "bodyBytes": 1645,
+      "sourceSha256": "d298f5d86d1a74d9df6e55578af9392e8aa5c6200799accfdf41413cd52c31a8"
+    },
+    {
+      "path": "en-US/01-prologue.md",
+      "packagePath": "en-US/01-prologue.en-US.md",
+      "canonicalId": "lw-01-prologue",
+      "bodySha256": "f3708a3cfa29009de414418dc046bfce93d9fb1181686d422b50eda09e146d5d",
+      "bodyBytes": 9868,
+      "sourceSha256": "c1c7e5b9603b4cde8f13fbbdc964d46673a35a4a6b8997026558feea2940924a"
+    },
+    {
+      "path": "en-US/02-chapter-01.md",
+      "packagePath": "en-US/02-chapter-01.en-US.md",
+      "canonicalId": "lw-02-ch01",
+      "bodySha256": "05ba1815c411e4687cbbf6e4eee78bb06b7e6e3886804f465d71af2e094a747a",
+      "bodyBytes": 3386,
+      "sourceSha256": "bdb2d798d154ca2c09bc4f5ef6c260b6dcbbf0a91b868b99108f6ffe978bbad4"
+    },
+    {
+      "path": "en-US/03-chapter-02.md",
+      "packagePath": "en-US/03-chapter-02.en-US.md",
+      "canonicalId": "lw-03-ch02",
+      "bodySha256": "1579893f5f941c72f8f471e52db1b8aa8e2c50b7252afb93cdb85c5bf8e152e7",
+      "bodyBytes": 4112,
+      "sourceSha256": "939eee83e69cf91bc045508d40300895c76c871c9c51ccbfc214fa896214d54d"
+    },
+    {
+      "path": "en-US/04-chapter-03.md",
+      "packagePath": "en-US/04-chapter-03.en-US.md",
+      "canonicalId": "lw-04-ch03",
+      "bodySha256": "10f453f6647c6a3bb6e921185bf8d7fca20d8a7e5f0f6cec11074fbe2897492b",
+      "bodyBytes": 4835,
+      "sourceSha256": "4efa2adcd41e5654460a13d92aa03efed44414a5723d3fbf92a2f6610cfd2987"
+    },
+    {
+      "path": "en-US/05-chapter-04.md",
+      "packagePath": "en-US/05-chapter-04.en-US.md",
+      "canonicalId": "lw-05-ch04",
+      "bodySha256": "e7f0bf2209a6ca7a8d4370d39b60cdee34079b55ef3f9ad5c7f529b939be3e7d",
+      "bodyBytes": 4261,
+      "sourceSha256": "837d7fe42b3ec7b6af7f877f28dddbec22946c501f72878042270636e7695bf5"
+    },
+    {
+      "path": "en-US/06-chapter-05.md",
+      "packagePath": "en-US/06-chapter-05.en-US.md",
+      "canonicalId": "lw-06-ch05",
+      "bodySha256": "bc79ea92d0f4b0884ffd42ab635a83d41562d8fd96ad4722e67fc8552b627c2a",
+      "bodyBytes": 7156,
+      "sourceSha256": "af121d0d71660ec67d1111aa5badda2a64d678ca3353e83f89257c5bc032f801"
+    },
+    {
+      "path": "en-US/07-chapter-06.md",
+      "packagePath": "en-US/07-chapter-06.en-US.md",
+      "canonicalId": "lw-07-ch06",
+      "bodySha256": "429a710502be6a5457822c9b977f09aaaa5868f3be7b6289f89e4675c2372cea",
+      "bodyBytes": 8610,
+      "sourceSha256": "15b5a1ca190f78a5ba0bac2719b73eaf4a95972caa6bf281962a86bc7b6346ce"
+    },
+    {
+      "path": "en-US/08-chapter-07.md",
+      "packagePath": "en-US/08-chapter-07.en-US.md",
+      "canonicalId": "lw-08-ch07",
+      "bodySha256": "ef1c3e5637f1d70c0c7d0b6594b0809ef2f9748c12048741176e53b1b2b19b9a",
+      "bodyBytes": 11077,
+      "sourceSha256": "de3246a8b2cadd1ab41f7ed26da0fcbcbbfb4e149bd546ec882f30861fd87b64"
+    },
+    {
+      "path": "en-US/09-chapter-08.md",
+      "packagePath": "en-US/09-chapter-08.en-US.md",
+      "canonicalId": "lw-09-ch08",
+      "bodySha256": "c923a43412b22d23f30017142216128edeb131e2747722e9cb47d4a181c35dc7",
+      "bodyBytes": 7793,
+      "sourceSha256": "58ebeb7ac6c51f403e9a1565a9d6bde8d4add52630672fad8ed2cc44d9c35fce"
+    },
+    {
+      "path": "en-US/10-chapter-09.md",
+      "packagePath": "en-US/10-chapter-09.en-US.md",
+      "canonicalId": "lw-10-ch09",
+      "bodySha256": "63ffc1e30b168c56f6d71c594c92d1b202b82148511da66c3be7d5d5bde182d4",
+      "bodyBytes": 5734,
+      "sourceSha256": "f382d68dc1509f54c25d692a8a59895d457881ee4f9032de18a3dc90d5eaa35f"
+    },
+    {
+      "path": "en-US/11-chapter-10.md",
+      "packagePath": "en-US/11-chapter-10.en-US.md",
+      "canonicalId": "lw-11-ch10",
+      "bodySha256": "8e7af6ff809a2c49e2e31397dcc4554d663d2e86952ef98ea7efebbb267fa669",
+      "bodyBytes": 9134,
+      "sourceSha256": "c2e441f1fed458478b7ca2ee8cab7f7873a884109ba8df9a645b431d33c67c57"
+    },
+    {
+      "path": "en-US/12-chapter-11.md",
+      "packagePath": "en-US/12-chapter-11.en-US.md",
+      "canonicalId": "lw-12-ch11",
+      "bodySha256": "dc37d3516046b6862187c5c6c4e85bae9a123a1e9acfe1e694937370eaeb8c62",
+      "bodyBytes": 8683,
+      "sourceSha256": "b02188daa001e2e602a13431f10ee7e8014d050be7616f671e8b6d30ff16ce6f"
+    },
+    {
+      "path": "en-US/13-chapter-12.md",
+      "packagePath": "en-US/13-chapter-12.en-US.md",
+      "canonicalId": "lw-13-ch12",
+      "bodySha256": "f51b50c9c0053ad59d9d560999335ff1f6e5ba75a153161f0c1aa27a22f33c61",
+      "bodyBytes": 8206,
+      "sourceSha256": "46f469d30c46de1bb05605a55e090bba933e405d0bef78024ac2e2f98c8b03cb"
+    },
+    {
+      "path": "en-US/14-family-statement.md",
+      "packagePath": "en-US/14-family-statement.en-US.md",
+      "canonicalId": "lw-14-family-statement",
+      "bodySha256": "b19969a3fb1bd58cd8c3c0b4dec57022c48d59e9b5da2a7caf742576ac1b5f08",
+      "bodyBytes": 6431,
+      "sourceSha256": "08b1e8eae0c76c77d09234bd4d7b5f725107a149e5587d470c82b462b2f3a3e8"
+    },
+    {
+      "path": "en-US/15-a-lasting-influence.md",
+      "packagePath": "en-US/15-a-lasting-influence.john-van-valin.en-US.md",
+      "canonicalId": "lw-john-van-valin-lasting-influence",
+      "bodySha256": "d68a9eb76d088b8a0cfeadf5ebc2650d99c5b007dfd9dec953a1a000d6533a91",
+      "bodyBytes": 24546,
+      "sourceSha256": "bdd357d37cb01a30bc156581aface2d7137691854396cf1af2a2b5059f4b65bb"
+    }
+  ]
+}

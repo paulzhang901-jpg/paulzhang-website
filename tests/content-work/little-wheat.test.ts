@@ -16,6 +16,7 @@ const lockPath = path.join(root, "governance", "LOCK.yaml");
 const registries = path.join(root, "governance", "registries");
 const lockSha256 = "1b63b32cf1eb64b9cbd8daea733084d15fb5dfc8352849c74f4e44c2ed8d7a99";
 const registryNames = ["canonical", "facts", "structure", "claims", "scripture", "quotations", "provenance", "translations", "media-ledger", "publication"];
+const englishLock = JSON.parse(fs.readFileSync(path.join(root, "governance", "EN-FINAL-LOCK.json"), "utf8")) as {files: Array<{path: string; canonicalId: string; bodySha256: string; bodyBytes: number}>; externalOriginal: {canonicalId: string; author: string; notice: string}};
 
 function sha256(value: Buffer | string) {
   return createHash("sha256").update(value).digest("hex");
@@ -39,19 +40,19 @@ assert.ok(littleWheat);
 const units = discovered.units.filter((unit) => unit.workCanonicalId === littleWheat.canonicalId);
 const repository = createContentWorkRepository([littleWheat], units);
 
-test("Little Wheat Work and Unit schemas preserve one bilingual work and 15 canonical identities", () => {
+test("Little Wheat preserves 15 bilingual book identities and the independent English original", () => {
   const report = validateContentWorks([littleWheat], units);
-  assert.deepEqual(report, {errors: [], warnings: []});
+  assert.deepEqual(report, {errors: [], warnings: [`${englishLock.externalOriginal.canonicalId}: translation missing for zh-CN`]});
   assert.equal(littleWheat.id, "work-little-wheat-v1");
   assert.equal(littleWheat.workType, "story_book");
   assert.deepEqual(littleWheat.representations.map(({language}) => language).sort(), ["en-US", "zh-CN"]);
-  assert.equal(littleWheat.units.length, 15);
-  assert.equal(new Set(littleWheat.units.map(({canonicalId}) => canonicalId)).size, 15);
-  assert.equal(units.length, 30);
+  assert.equal(littleWheat.units.length, englishLock.files.length);
+  assert.equal(new Set(littleWheat.units.map(({canonicalId}) => canonicalId)).size, littleWheat.units.length);
+  assert.equal(units.length, 15 + englishLock.files.length);
   assert.equal(units.filter(({language}) => language === "zh-CN").length, 15);
-  assert.equal(units.filter(({language}) => language === "en-US").length, 15);
-  assert.equal(new Set(units.map(({canonicalId}) => canonicalId)).size, 15);
-  assert.equal(new Set(units.map(({canonicalId, language}) => `${canonicalId}:${language}`)).size, 30);
+  assert.equal(units.filter(({language}) => language === "en-US").length, englishLock.files.length);
+  assert.equal(new Set(units.map(({canonicalId}) => canonicalId)).size, littleWheat.units.length);
+  assert.equal(new Set(units.map(({canonicalId, language}) => `${canonicalId}:${language}`)).size, units.length);
 });
 
 test("runtime IDs, parents, order, types, slugs, and routes follow the approved mapping", () => {
@@ -68,9 +69,9 @@ test("runtime IDs, parents, order, types, slugs, and routes follow the approved 
       assert.equal(unitPath("little-wheat", unit.slug, unit.language), `${unit.language === "en-US" ? "/en" : ""}/stories/little-wheat/${unit.slug}`);
     }
   }
-  assert.deepEqual(littleWheat.units.map(({order}) => order), Array.from({length: 15}, (_, index) => index + 1));
+  assert.deepEqual(littleWheat.units.map(({order}) => order), Array.from({length: littleWheat.units.length}, (_, index) => index + 1));
   for (const locale of ["zh-CN", "en-US"] as const) assert.equal(workPath("little-wheat", locale), `${locale === "en-US" ? "/en" : ""}/stories/little-wheat`);
-  assert.equal(new Set(units.map(({workCanonicalId, language, slug}) => `${workCanonicalId}:${language}:${slug}`)).size, 30);
+  assert.equal(new Set(units.map(({workCanonicalId, language, slug}) => `${workCanonicalId}:${language}:${slug}`)).size, units.length);
 });
 
 test("LOCK, all registries, and all canonical manuscript bodies retain their governed hashes", () => {
@@ -86,12 +87,19 @@ test("LOCK, all registries, and all canonical manuscript bodies retain their gov
     const isRegistry = entry.path.startsWith("registries/");
     const runtimePath = isRegistry ? path.join(root, "governance", entry.path) : path.join(root, entry.path);
     const governedBytes = isRegistry ? fs.readFileSync(runtimePath) : canonicalBody(runtimePath);
-    assert.equal(governedBytes.byteLength, entry.bytes, entry.path);
-    assert.equal(sha256(governedBytes), entry.sha256, entry.path);
+    const approvedEdition = englishLock.files.find((file) => file.path === entry.path);
+    assert.equal(governedBytes.byteLength, approvedEdition?.bodyBytes ?? entry.bytes, entry.path);
+    assert.equal(sha256(governedBytes), approvedEdition?.bodySha256 ?? entry.sha256, entry.path);
+  }
+  // Include the independently attributed original, absent from the historical lock.
+  for (const entry of englishLock.files) {
+    const body = canonicalBody(path.join(root, entry.path));
+    assert.equal(body.byteLength, entry.bodyBytes, entry.path);
+    assert.equal(sha256(body), entry.bodySha256, entry.path);
   }
 });
 
-test("Chapter 8 preserves the missing-original provenance boundary without reconstruction", () => {
+test("Historical provenance is preserved; FINAL original is independently attributed without a fabricated Chinese counterpart", () => {
   const provenance = parseYaml<{sources: Array<{source_id: string; status?: string}>}>(path.join(registries, "provenance.yaml"));
   const translations = parseYaml<{alignment: Array<{zh: string; en: string; status: string}>; chapter_08_special_rule: {Pastor_John_original_english: {status: string}; reverse_translation: {allowed: boolean}; synthetic_original: {allowed: boolean}}}>(path.join(registries, "translations.yaml"));
   assert.equal(provenance.sources.find(({source_id}) => source_id === "lw-src-pastor-john-en-original")?.status, "MISSING");
@@ -101,21 +109,26 @@ test("Chapter 8 preserves the missing-original provenance boundary without recon
   assert.equal(translations.chapter_08_special_rule.synthetic_original.allowed, false);
   const chapter = units.find(({canonicalId, language}) => canonicalId === "lw-09-ch08" && language === "en-US");
   assert.ok(chapter);
-  assert.match(chapter.body, /independent original English manuscript[\s\S]*has not yet been recovered or verified/);
+  const original = units.find(({canonicalId}) => canonicalId === englishLock.externalOriginal.canonicalId);
+  assert.ok(original && original.language === "en-US" && original.unitType === "supplement");
+  assert.notEqual(original.canonicalId, chapter.canonicalId);
+  assert.ok(original.body.includes(englishLock.externalOriginal.author));
+  assert.ok(original.body.includes(englishLock.externalOriginal.notice));
+  assert.equal(repository.resolvePublicUnitTranslation(original.canonicalId, "zh-CN").available, false);
 });
 
-test("Human-approved zh-CN publication enables Work, Units, search, and sitemap while en-US remains private", async () => {
+test("Author-approved FINAL English edition enables bilingual Work, Units, search and sitemap", async () => {
   const publication = parseYaml<{runtime_initial_state: {status: string; published_at: null; visibility: string; access_level: string; public_discovery: boolean; search_indexing: boolean; sitemap_inclusion: boolean}; media: {include_assets: boolean}}>(path.join(registries, "publication.yaml"));
   assert.deepEqual(publication.runtime_initial_state, {status: "review", published_at: null, visibility: "private", access_level: "public", public_discovery: false, search_indexing: false, sitemap_inclusion: false});
   assert.equal(publication.media.include_assets, false);
   const zh = littleWheat.representations.find(({language}) => language === "zh-CN");
   const en = littleWheat.representations.find(({language}) => language === "en-US");
   assert.ok(zh && zh.status === "published" && zh.publishedAt instanceof Date && zh.visibility === "public" && zh.accessLevel === "public");
-  assert.ok(en && en.status === "review" && en.publishedAt === undefined && en.visibility === "private" && en.accessLevel === "public");
+  assert.ok(en && en.status === "published" && en.publishedAt instanceof Date && en.visibility === "public" && en.accessLevel === "public");
   const zhUnits = units.filter(({language}) => language === "zh-CN");
   const enUnits = units.filter(({language}) => language === "en-US");
   assert.ok(zhUnits.every(({status, publishedAt, visibility, accessLevel}) => status === "published" && publishedAt instanceof Date && visibility === "public" && accessLevel === "public"));
-  assert.ok(enUnits.every(({status, publishedAt, visibility, accessLevel}) => status === "review" && publishedAt === undefined && visibility === "private" && accessLevel === "public"));
+  assert.ok(enUnits.every(({status, publishedAt, visibility, accessLevel}) => status === "published" && publishedAt instanceof Date && visibility === "public" && accessLevel === "public"));
   assert.equal(repository.getPublishedWorks("zh-CN").length, 1);
   assert.equal(repository.getPublicWorkBySlug("little-wheat", "zh-CN")?.work.canonicalId, littleWheat.canonicalId);
   assert.equal(repository.getPublicUnitBySlug("little-wheat", "00-dedication", "zh-CN")?.unit.canonicalId, "lw-00-dedication");
@@ -123,21 +136,27 @@ test("Human-approved zh-CN publication enables Work, Units, search, and sitemap 
   assert.equal(resolveUnitRoute("little-wheat", "00-dedication", "zh-CN", repository).kind, "unit");
   assert.deepEqual(getWorkStaticParams("zh-CN", repository), [{slug: "little-wheat"}]);
   assert.equal(getUnitStaticParams("zh-CN", repository).length, 15);
-  assert.equal(repository.getPublishedWorks("en-US").length, 0);
-  assert.equal(resolveWorkRoute("little-wheat", "en-US", repository).kind, "not-found");
-  assert.equal(resolveUnitRoute("little-wheat", "00-dedication", "en-US", repository).kind, "not-found");
-  assert.deepEqual(getWorkStaticParams("en-US", repository), []);
-  assert.deepEqual(getUnitStaticParams("en-US", repository), []);
+  assert.equal(repository.getPublishedWorks("en-US").length, 1);
+  assert.equal(resolveWorkRoute("little-wheat", "en-US", repository).kind, "work");
+  assert.equal(resolveUnitRoute("little-wheat", "00-dedication", "en-US", repository).kind, "unit");
+  assert.deepEqual(getWorkStaticParams("en-US", repository), [{slug: "little-wheat"}]);
+  assert.equal(getUnitStaticParams("en-US", repository).length, enUnits.length);
+  for (const unit of zhUnits) {
+    const alternate = repository.resolvePublicUnitTranslation(unit.canonicalId, "en-US");
+    assert.ok(alternate.available);
+    assert.equal(alternate.unit.canonicalId, unit.canonicalId);
+    assert.equal(repository.resolvePublicUnitTranslation(alternate.unit.canonicalId, "zh-CN").available, true);
+  }
   assert.equal(isContentWorkSlug("little-wheat", repository), true);
   assert.equal(repository.getSearchDocuments("zh-CN").filter(({canonical_id}) => canonical_id === littleWheat.canonicalId).length, 1);
-  assert.equal(repository.getSearchDocuments("en-US").filter(({canonical_id}) => canonical_id === littleWheat.canonicalId).length, 0);
+  assert.equal(repository.getSearchDocuments("en-US").filter(({canonical_id}) => canonical_id === littleWheat.canonicalId).length, 1);
   const publicContent = await getContentRepository();
   assert.equal(publicContent.getSearchDocuments().some(({canonical_id}) => canonical_id === littleWheat.canonicalId), false);
   assert.equal(publicContent.getPublishedContent().some(({canonicalId}) => canonicalId === littleWheat.canonicalId), false);
   assert.equal(publicContent.all().some(({canonicalId}) => canonicalId === littleWheat.canonicalId), false);
   const littleWheatSitemap = (await sitemap()).filter(({url}) => /\/stories\/little-wheat(?:\/|$)/.test(url));
-  assert.equal(littleWheatSitemap.length, 16);
-  assert.ok(littleWheatSitemap.every(({url}) => !url.includes("/en/stories/little-wheat")));
+  assert.equal(littleWheatSitemap.length, units.length + littleWheat.representations.length);
+  assert.ok(littleWheatSitemap.some(({url}) => url.endsWith("/en/stories/little-wheat/a-lasting-influence")));
 });
 
 test("canonical identity metadata is exact and no physical media or canonical duplicates were introduced", () => {
@@ -148,5 +167,5 @@ test("canonical identity metadata is exact and no physical media or canonical du
   visit(root);
   assert.equal(files.filter((file) => /\.(?:avif|gif|jpe?g|mp3|mp4|ogg|png|svg|webm|webp|wav)$/i.test(file)).length, 0);
   assert.equal(files.filter((file) => file.endsWith("work.json")).length, 1);
-  assert.equal(files.filter((file) => /\/(?:zh-CN|en-US)\/.*\.md$/.test(file)).length, 30);
+  assert.equal(files.filter((file) => /\/(?:zh-CN|en-US)\/.*\.md$/.test(file)).length, units.length);
 });

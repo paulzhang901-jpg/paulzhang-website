@@ -23,16 +23,18 @@
     {
       "language": "en-US",
       "slug": "little-wheat",
-      "status": "review",
+      "status": "published",
       "title": "Little Wheat",
       "summary": "Little Wheat is a family testimony remembering the brief life of Little Wheat, telling a true story of love, loss, grief, and hope, and bearing witness to God’s sustaining grace in suffering and the enduring hope found in Christ and eternity.",
       "authors": [
         "Paul Zhang"
       ],
-      "published_at": null,
-      "visibility": "private",
+      "published_at": "2026-09-12T07:45:37-04:00",
+      "visibility": "public",
       "access_level": "public",
       "seo": {
+        "title": "Little Wheat",
+        "description": "Little Wheat is a family testimony remembering the brief life of Little Wheat, telling a true story of love, loss, grief, and hope, and bearing witness to God’s sustaining grace in suffering and the enduring hope found in Christ and eternity."
       }
     }
   ],
@@ -96,6 +98,10 @@
     {
       "canonical_id": "lw-14-family-statement",
       "order": 15
+    },
+    {
+      "canonical_id": "lw-john-van-valin-lasting-influence",
+      "order": 16
     }
   ]
 }

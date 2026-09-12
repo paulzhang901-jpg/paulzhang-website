@@ -1,145 +1,202 @@
 ---
-id: lw-04-ch03
-canonical_id: lw-04-ch03
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 5
-chapter_number: 3
-slug: 04-chapter-03
-status: review
-title: Chapter Three
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-04-ch03",
+  "canonical_id": "lw-04-ch03",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 5,
+  "chapter_number": 3,
+  "slug": "04-chapter-03",
+  "status": "published",
+  "title": "Chapter Three: Days in the Hospital—Day and Night, Walking Alongside a Life",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Three: Days in the Hospital—Day and Night, Walking Alongside a Life"
+  }
+}
 ---
-Chapter Three
-
-Forty-Two Days — Walking Daily with Life
+Chapter Three: Days in the Hospital—Day and Night, Walking Alongside a Life
 
 Forty-two days.
 
-That was how long Little Wheat remained in the NICU after his birth.
+That was how long Little Wheat spent in the Neonatal Intensive Care Unit after he was born.
 
-Six weeks on a calendar.
+Six weeks.
 
-For us, they became a world of their own.
+Written on a calendar, it does not seem very long.
 
-Our days began to organize themselves around the hospital.
+But for us at the time, every day moved slowly.
 
-Little Wheat lay surrounded by the equipment necessary for his care. Monitors tracked his condition. Feeding and breathing required close attention. Nurses recorded numbers that we gradually learned to read with the concentration of parents whose hearts had become attached to every change.
+Incubator, oxygen saturation monitoring, feeding tube, cardiac monitor—terms that had once belonged only to hospitals quickly became part of our everyday life.
 
-Weight.
+His little hand was connected to monitoring equipment,
 
-Oxygen.
+and his tiny chest rose and fell with each breath.
 
-Feeding.
+As parents, we suddenly discovered that something we had never paid attention to before—
 
-Breathing.
+a child's normal breathing—is itself something worthy of gratitude.
 
-To someone else they might have been clinical measurements.
+The care board recorded his condition every day.
 
-To us, they were information about our son.
+Weight, oxygen, feeding volume, care plan.
 
-Every morning I returned to the NICU.
+For the medical staff, these numbers were part of clinical work; for us, they became the first things we cared about when we woke each day.
 
-I put on the required gown, cleaned my hands, passed through the hospital procedures, and entered the place where Little Wheat was spending the first weeks of his life.
+If one number went up a little, we were happy.
 
-The nurses came to know us.
+If it went down a little, we worried.
 
-I would sit beside him and watch.
+Only later did I understand:
 
-A movement of his hand could hold my attention.
+When a person truly loves another life, even numbers that once seemed cold begin to carry warmth.
 
-An opened eye could become the most important event of the morning.
+Every morning, I went to the NICU.
 
-A quiet breath could make me grateful.
+Only after cleaning, sanitizing, and going through the required procedures could I come to his side.
 
-Sometimes I read Scripture beside him.
+The nurses gradually came to know me.
 
-One verse that accompanied us was Psalm 22:9:
+Sometimes someone would call me:
 
-“Yet you are he who took me from the womb; you made me trust you at my mother’s breasts.”
+“Pastor Dad.”
 
-Sometimes Sue and I sang.
+I would smile when I heard it.
 
-Sometimes we prayed.
+But standing beside the incubator, I did not really feel like a pastor who knew all the answers.
 
-Sometimes there was nothing to say.
+I was simply a father.
 
-We simply stayed.
+I looked at my child and prayed silently again and again:
+
+“Lord, give him a little more strength today.”
+
+When he slept peacefully, I would sit there and watch him.
+
+I watched his breathing,
+
+his fingers,
+
+and the occasional slight movement of his body.
+
+Sometimes I read Scripture to him.
+
+One verse from the Psalms often came into my heart during those days:
+
+“But thou art he that took me out of the womb: thou didst make me hope when I was upon my mother's breasts.”
+—Psalm 22:9, KJV
+
+In the afternoon, I would usually go again.
+
+Sometimes I went alone,
+
+and sometimes Sue came with me.
+
+We sang “Jehovah Is Love,” and we also sang “Give Thanks.”
+
+We did not know how much he could understand.
+
+But parents do not wait until a child understands before they begin speaking words of love.
+
+So we told him again and again:
 
 “Little Wheat, Daddy and Mommy are here.”
 
-At home, we watched the NICU video monitor whenever it was available to us.
+When we returned home, our hearts were still in the hospital room.
 
-One night, while a nurse was changing his diaper, Little Wheat opened his eyes. I captured the image and sent it to Sue.
+The NICU video monitor was often open on our computer.
 
-Such a small moment.
+Late one night, I saw on the screen a nurse caring for him, and suddenly he opened his eyes.
 
-Yet in those days, small moments carried enormous weight.
+It was only a very small movement.
 
-During the hospitalization his weight fluctuated. We watched every change with concern.
+I immediately took a screenshot and sent it to Sue.
 
-Sue prayed.
+We actually cried because those eyes had opened.
 
-I wrote.
+Later, we knelt down and prayed.
 
-Some of my devotional notes from those weeks recorded fear; others recorded gratitude, repentance, hope, or simply the exhaustion of trying to remain faithful when we did not know what the next day would bring.
+There were many moments like that during those forty-two days.
 
-The nurses also came to know Little Wheat’s quiet temperament.
+Sometimes we had great faith.
 
-He often rested peacefully and looked silently at those around him.
+Sometimes, in truth, we were very afraid.
 
-We treasured those observations, because during a NICU stay parents learn to treasure almost everything.
+Sometimes our prayers felt strong.
 
-On a prayer card we wrote his full name:
+Sometimes we could not even form a complete sentence.
 
-John Earnest Zhang
+And in this back-and-forth, faith became real.
 
-and our prayer that his life would glorify God.
+During Little Wheat's hospitalization, his weight dropped at one point.
 
-But the deepest memory of those forty-two days is not a slogan.
+The nurse told us that some degree of weight change is not uncommon in newborns.
 
-It is presence.
+Intellectually, we understood.
 
-We kept coming back.
+Emotionally, it still hurt.
 
-Again and again.
+His mother prayed for him every day.
 
-Day after day.
+I also began continually writing devotional notes.
 
-We wanted him, in every way available to us, to be surrounded by the presence and love of his parents.
+Those pages did not contain only “faith.”
 
-Little Wheat, you could not remember those forty-two days.
+They also contained fear,
 
-But we remember them.
+helplessness,
 
-We remember watching you breathe.
+repentance,
 
-We remember your tiny hands.
+and hope.
 
-We remember the hospital gowns.
+Perhaps this was one of the important lessons those forty-two days taught me:
 
-We remember the monitor.
+True faith does not mean that fear disappears forever; it means that when we are afraid, we still return to God again and again.
 
-We remember the prayers.
+The nurses also gradually became familiar with this quiet child.
 
-We remember the fear.
+He did not cry or fuss very much. Much of the time he simply slept quietly, occasionally opening his eyes to look around.
 
-And we remember love.
+One nurse joked:
 
-Those forty-two days became one of the first lessons parenthood taught us:
+“He's like a little monk, as if he's meditating on something.”
 
-Love cannot always remove suffering.
+We all laughed.
 
-Sometimes love remains beside the bed.
+There was a prayer card in the NICU.
 
-Sometimes love watches.
+On it we wrote:
 
-Sometimes love waits.
+John Earnest Zhang—may your whole life glorify the name of the Lord.
 
-Sometimes love prays.
+During those forty-two days, we never stopped going to see him.
 
-And sometimes simply being there is itself an act of love.
+We did not know what would happen in the future.
+
+At the time, all we knew was this:
+
+If we could go today, we went.
+
+If we could hold him today, we held him.
+
+If we could still sing today, we sang.
+
+If we could still see him breathing today, we gave thanks.
+
+Looking back now, what those forty-two days left behind was not only a medical record.
+
+More than that, it was the memory of two parents learning, little by little, how to walk alongside their child.
+
+Little Wheat,
+
+you may not remember those days.
+
+But Daddy and Mommy remember.
+
+When you were at your most fragile,
+
+we were there.

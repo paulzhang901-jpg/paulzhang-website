@@ -1,342 +1,409 @@
 ---
-id: lw-13-ch12
-canonical_id: lw-13-ch12
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 14
-chapter_number: 12
-slug: 13-chapter-12
-status: review
-title: Chapter Twelve
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-13-ch12",
+  "canonical_id": "lw-13-ch12",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 14,
+  "chapter_number": 12,
+  "slug": "13-chapter-12",
+  "status": "published",
+  "title": "Chapter Twelve: The Hope of Glory—Resurrection, Reunion, and the Renewal of All Things",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Twelve: The Hope of Glory—Resurrection, Reunion, and the Renewal of All Things"
+  }
+}
 ---
-Chapter Twelve
+Chapter Twelve: The Hope of Glory—Resurrection, Reunion, and the Renewal of All Things
 
-The Hope of Glory — Resurrection, Reunion, and the New Creation
+“And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.”
+—Revelation 21:4, KJV
 
-“He will wipe every tear from their eyes. Death will be no more; mourning and crying and pain will be no more.”
-— Revelation 21:4
+We have written about your birth.
 
-We have remembered your birth.
+We have written about forty-two days in the NICU.
 
-Your forty-two days in the NICU.
+We have written about the love of the church and family.
 
-Your life at home.
+We have written about your smile.
 
-Your smiles.
+We have written about the sound of the piano.
 
-Your worship.
+We have written about your birthday.
 
-Your final illness.
+We have written about thirteen days in the PICU.
 
-Our farewell.
+We have written about 4:44 p.m. on August 21, 2024.
 
-And the ways your nineteen months continue to shape those who loved you.
+We have written about the final embrace.
 
-Now this book must end where Christian hope itself finally points:
+And we have written about the traces you left in the lives of others.
 
-not merely toward our memories,
+Having come this far, a father naturally lifts his head and asks:
 
-not merely toward an invisible heaven,
-
-and not even merely toward reunion with someone we love,
-
-but toward Jesus Christ, his return, the resurrection of the dead, and God’s new creation.
+What, ultimately, is our hope?
 
 ⸻
 
-Our Hope Is Not a Map of Heaven
+We Do Not Overcome Death by Imagination
 
-Grief naturally imagines.
+After losing someone we deeply love, it is natural to imagine heaven.
 
-I have imagined you free from tubes and machines.
+We wonder:
 
-I have imagined you running.
+Where is he now?
 
-I have imagined hearing your voice.
+What is he doing?
 
-I have imagined you saying, “Daddy.”
+Is he free from pain?
 
-I have imagined Mommy and me embracing you again.
+Is he singing?
 
-Those images matter to me.
+Is he waiting for us?
 
-They are expressions of a father’s love.
+I have imagined these things too.
 
-But they are not revelations.
+In the earlier “A Father's Message,” I preserved these images that genuinely belong to a father's heart.
 
-Scripture does not give us a detailed description of Little Wheat’s present experience.
+But now, as we come to the final theological resting place of this whole book, I want to distinguish more clearly:
 
-We therefore refuse to turn imagination into certainty.
+Imagination can comfort us, but imagination cannot become the foundation of faith.
 
-The old English edition spoke much more concretely: it said Little Wheat was sitting on the Father’s lap, singing familiar songs, and would one day run to his parents and tell them he had been waiting for them.
+Scripture has not given us a documentary about the details of Little Wheat's life at this moment.
 
-Those words may remain part of the history of a grieving father’s imagination.
+Therefore, we will not say:
 
-They do not function as canonical descriptions of the unseen world.
+“We know he is now sitting on the Father's lap singing a particular song.”
 
-⸻
+We will not say:
 
-We Grieve in Hope
+“We know he is now waiting in heaven for Daddy and Mommy.”
 
-Christian hope does not require us to pretend that death is beautiful.
+We will not say:
 
-Death separated us from our son.
+“We know how he is now watching us.”
 
-Death emptied his room of his physical presence.
+These can be tender imaginings in a father's heart.
 
-Death changed the shape of our family.
-
-Death made us weep.
-
-The New Testament does not call death our friend.
-
-It calls death an enemy.
-
-But it also declares that this enemy will not reign forever.
-
-Jesus Christ has risen.
-
-That is where our hope begins.
-
-Not with what I imagine Little Wheat is doing.
-
-Not with a dream.
-
-Not with a feeling.
-
-Not with our ability to explain Providence.
-
-With an event:
-
-Christ is risen.
-
-And because Christ is risen, Christian grief is real grief held within a larger promise.
+But they are not revelations we have the right to claim.
 
 ⸻
 
-The Child We Entrust to God
+What We Truly Know Is This: Christ Has Risen
 
-What, then, do we say about Little Wheat?
+Christian hope was not created after we lost Little Wheat.
 
-We say what faith allows us to say without pretending to know what has not been revealed.
+It had already been written into the gospel long before we were born.
 
-We entrust him to the God whose character has been made known in Jesus Christ.
+Jesus died.
 
-We remember the tenderness of Jesus toward little children.
+Jesus was buried.
 
-We trust the mercy and justice of God.
+Jesus rose on the third day.
 
-We do not build our hope on an imagined conversation, an angelic scene, or a speculative mechanism of infant salvation.
+Therefore Paul says:
 
-Our hope for our child rests in the grace of God in Jesus Christ.
+“But now is Christ risen from the dead, and become the firstfruits of them that slept.”
+—1 Corinthians 15:20, KJV
 
-There are mysteries here.
+This is where we can truly stand when we face death.
 
-We do not solve them by pretending they are not mysteries.
+Not:
 
-We place them in the hands of the One who said:
+“I can imagine a very beautiful place.”
 
-“Let the little children come to me.”
+But:
 
-And there we rest.
+Christ's tomb is empty.
 
-⸻
+Christian hope, therefore, is not a denial of death.
 
-The Christian Hope Is Bodily
+It is the declaration:
 
-Christian hope is not ultimately the escape of souls from earth.
-
-It is resurrection.
-
-Paul writes of Christ as the firstfruits of those who have died.
-
-The resurrection of Jesus is not merely evidence that there is “life after death.”
-
-It is the beginning of God’s victory over death itself.
-
-Therefore our hope reaches beyond the intermediate state.
-
-It reaches toward the day when Christ returns.
-
-Toward resurrection.
-
-Toward restored embodied life.
-
-Toward creation liberated from corruption.
-
-Toward the holy city.
-
-Toward the river of life.
-
-Toward the tree of life.
-
-Toward God dwelling with his people.
-
-Toward the world made new.
+Death is real, but it does not have the final authority.
 
 ⸻
 
-Intermediate Hope Is Not the Final Hope
+Our Hope Is Not Merely That “The Soul Went to Heaven”
 
-Between death and resurrection there remain realities that Christians throughout history have described in different ways.
+The original manuscript had already expressed a very important direction:
 
-This book does not attempt to map them.
+“We believe not only that the soul goes to heaven, but also in the future resurrection of the body.”
 
-Nor does it need to.
+This direction must become central to the canonical edition.
 
-Whatever language we use for being with Christ after death, the intermediate state is not the final chapter of Christian hope.
+Because the Bible's final hope is not merely:
 
-The final horizon is resurrection and new creation.
+“After death, a person leaves the body and goes somewhere else.”
 
-That distinction matters deeply to our family.
+The final hope is:
 
-If we speak only of Little Wheat “going to heaven,” we may unintentionally make the Christian story end too early.
+Christ returns.
 
-Scripture carries us farther:
+The dead are raised.
 
-Christ will return.
+The body is redeemed.
 
-The dead will be raised.
+Death is destroyed.
 
-Death will be defeated.
+All things are renewed.
 
-God will make all things new.
+Therefore, we will not write heaven as the place where the whole story finally stops.
 
-⸻
-
-Our Hope of Reunion
-
-Do I hope to see you again, Little Wheat?
-
-Yes.
-
-Deeply.
-
-Do I know exactly what that moment will look like?
-
-No.
-
-I do not know whether you will run toward me.
-
-I do not know the first words we will speak.
-
-I do not know how age, memory, recognition, and relationship will operate in resurrected life.
-
-Scripture has not given me those details.
-
-So I will not turn my longing into doctrine.
-
-But I can place my longing inside the larger Christian confession:
-
-If our hope is grounded in Christ, then death does not possess the final word.
-
-Our hope of reunion therefore belongs inside our hope of resurrection—not above it and not apart from it.
-
-And even reunion itself is not the center.
-
-Jesus is.
-
-The greatest promise of the age to come is not simply:
-
-“I will get my son back.”
-
-It is:
-
-God will dwell with his people.
-
-And in that restored communion, every other redeemed relationship finds its proper place.
+Our eyes must continue looking forward.
 
 ⸻
 
-New Creation
+Intermediate State: Remaining Quiet Where We Do Not Know
 
-The Bible ends not with humanity abandoning creation forever, but with heaven and earth brought into God’s final renewal.
+Concerning the state after death and before bodily resurrection, the Christian tradition possesses a real hope of faith.
 
-The holy city descends.
+We entrust Little Wheat to the love and justice of God.
 
-God dwells with his people.
+But we do not need to go beyond Scripture and fill in every detail.
 
-Death is no more.
+Some things we can believe.
 
-Mourning is no more.
+Some things we can only infer.
 
-Crying is no more.
+Some things we can only hope.
 
-Pain is no more.
+Some things we do not know.
 
-This is larger than our private family tragedy.
+This is not a failure of faith.
 
-And that is precisely why it can hold our tragedy.
-
-The gospel promises more than personal consolation.
-
-It announces God’s victory over sin and death and the renewal of his creation through Christ.
-
-Our tears therefore belong to a story whose final chapter has not yet arrived.
+It is the humility proper to creatures.
 
 ⸻
 
-Until That Day
+Concerning Our Child
+
+One of the deepest questions for parents who have lost a child is naturally:
+
+What about my child?
+
+This book will not pretend to solve every theological question concerning the salvation of infants and young children through a simple formula.
+
+What we truly can do is:
+
+entrust Little Wheat to the God who has revealed Himself to us in Jesus Christ.
+
+We know Him to be holy.
+
+He is righteous.
+
+He is loving.
+
+He is not a God more indifferent than parents.
+
+Therefore, our hope concerning Little Wheat is not built on what cognitive understanding, behavior, or religious performance the child himself completed.
+
+It is built on:
+
+the character of God and the grace of Christ.
+
+This is our pastoral hope.
+
+We do not package inferences beyond the range of revelation as absolute knowledge.
+
+But with faith, we can entrust our child to God.
+
+⸻
+
+I Hope to Meet You Again
+
+So, Little Wheat,
+
+Daddy is still willing to say:
+
+I hope to see you again.
+
+Not because I have already received a map from heaven.
+
+Nor because I know every detail of what reunion will be like.
+
+But because Christian resurrection hope allows a father, when facing death, still to look forward.
+
+Of course I imagine:
+
+Perhaps one day I will see your face again.
+
+Perhaps I will hear your voice.
+
+Perhaps I will truly hold you.
+
+These are still pictures in Daddy's heart.
+
+But now I know:
+
+What truly matters is not whether these pictures happen exactly as I imagine them.
+
+What truly matters is:
+
+On that day, we will all belong to Christ.
+
+We will all be in His renewed creation.
+
+There will be no more death.
+
+That is enough.
+
+⸻
+
+“New Heaven and New Earth” Is Not an Escape from the Created World
+
+The final hope in Revelation is beautiful.
+
+It is not that human beings escape the world forever.
+
+Rather:
+
+God renews creation.
+
+The holy city comes down.
+
+God dwells with humanity.
+
+Death passes away.
+
+Crying passes away.
+
+Pain passes away.
+
+Therefore Revelation 21:4 does not merely tell grieving people:
+
+“One day you will feel a little better.”
+
+It declares a reality far greater than personal psychological comfort:
+
+God will finally say “No” to death itself.
+
+That is why we can weep before a grave without despair.
+
+⸻
+
+We Still Live in the “Not Yet”
+
+But today is not yet that day.
+
+Hospitals still exist today.
+
+Death still exists.
+
+Parents still lose children.
+
+People still cry.
+
+We still miss Little Wheat.
+
+So this book does not end in a tone that pretends we have already entered Revelation 21.
+
+We are still waiting.
+
+Christ has risen—this is the “already.”
+
+Death has not yet been completely destroyed—this is the “not yet.”
+
+The Christian life is lived between the two.
+
+⸻
+
+Therefore, We Continue Living with Hope
+
+The original manuscript said:
+
+“We preach, sing hymns, comfort people, help people, and continue to ‘bear fruit’...”
+
+I am willing to preserve this.
+
+But our goal is not to live forever inside remembrance.
+
+It is to continue carrying today's responsibilities in hope.
+
+We still preach.
+
+We still sing.
+
+We still love people.
+
+We still accompany those who are suffering.
+
+We still serve the church.
+
+We still eat, work, sleep, laugh, and we still cry.
+
+Because resurrection hope does not cause us to stop living our earthly lives.
+
+Quite the opposite:
+
+It gives today direction.
+
+⸻
 
 Little Wheat,
 
-Daddy still misses you.
+we will not forget you.
 
-Mommy still misses you.
+But neither will we make you the center of our faith.
 
-We still speak your name.
+Jesus is the center.
 
-We still remember.
+You are not our Savior.
 
-We still sometimes imagine what reunion may be like.
+You are our son.
 
-And we still cry.
+Our “Little Wheat.”
 
-Faith has not removed grief.
+A child who was deeply loved, is remembered, and has made us long more deeply for resurrection.
 
-But grief no longer has to carry the impossible burden of telling us what is ultimately true.
+⸻
 
-Jesus Christ tells us what is ultimately true.
+So, as this book comes to its end, we do not leave our eyes fixed on a grave.
 
-He died.
+Nor do we leave them fixed on a heavenly garden imagined by a father.
 
-He rose.
+We lift our eyes and wait for:
 
-He reigns.
+the return of the Lord Jesus Christ.
 
-He will come again.
+the resurrection of the dead.
 
-The dead will be raised.
+the complete destruction of death.
 
-Creation will be renewed.
+God to wipe away tears.
 
-And God will dwell with his people.
+the new heaven and new earth.
 
-So we continue.
+the true renewal of creation.
 
-We preach.
+⸻
 
-We sing.
+What will that day be like?
 
-We serve.
+I do not know every detail.
 
-We love.
+But Scripture has already told us enough:
 
-We remember you.
+Death will not win.
 
-And we wait.
+Christ will.
 
-Not for an imagined heaven of our own construction,
+Therefore, *Little Wheat* is not a book declaring, “We have moved beyond grief.”
 
-but for the fulfillment of the promise of God.
+It is a book that still carries tears, yet walks toward resurrection.
 
-Until then, Little Wheat, we entrust you to God.
+⸻
 
-And together with the whole church, we pray:
+Because our hope is not in death.
 
-Come, Lord Jesus.
+Not in our imagination.
+
+Not in Little Wheat.
+
+Our hope is in Jesus Christ.
+
+Amen.
