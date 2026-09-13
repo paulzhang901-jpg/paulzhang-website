@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { FoundationPage } from "@/components/layout/foundation-page";
 import { HomePage } from "@/components/product/home-page";
+import { SupportPage } from "@/components/product/support-page";
 import { LibraryPage } from "@/components/content/library-page";
 import { SocialContactPage } from "@/components/product/social-contact-page";
 import { getContentRepository } from "@/lib/content/repository";
@@ -15,13 +16,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: Props) {
   const routeId = resolveEnglishSegments((await params).segments);
-  return routeId ? metadataForRoute(routeId, "en-US") : {};
+  return routeId ? {...metadataForRoute(routeId, "en-US"), ...(routeId === "support" ? {title: "Support This Work"} : {})} : {};
 }
 
 export default async function Page({params}: Props) {
   const routeId = resolveEnglishSegments((await params).segments);
   if (!routeId) notFound();
   if (routeId === "home") return <HomePage locale="en-US" />;
+  if (routeId === "support") return <SupportPage locale="en-US" />;
   if (routeId === "library") return <LibraryPage locale="en-US" repository={await getContentRepository()} />;
   if (routeId === "contact") return <SocialContactPage locale="en-US" />;
   return <FoundationPage locale="en-US" routeId={routeId} />;
