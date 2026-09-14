@@ -565,6 +565,42 @@
       "publicRoute": "/library/zuidade-anwei",
       "searchEligibility": true,
       "sourceSha256": "2476a2592e604cf87c11fd8083ff9e6ca7a30d6c5d5bf1b3c50eef5e8683342d"
+    },
+    {
+      "sermonId": "sermon-revelation-8-7-12",
+      "title": "当世界被震动",
+      "subtitle": "",
+      "scriptureRange": "启示录 8:7--12",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [],
+      "canonicalEditionHash": "2e6e63ada5d1e1d966cc888638afe95476fe5d97f1aba1577415e84a62dee127",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/dang-shijie-bei-zhendong.mdx",
+      "publicRoute": "/library/dang-shijie-bei-zhendong",
+      "searchEligibility": true,
+      "sourceSha256": "d4677bb2766a8e94b094c2bf6f38cb86fff398adc9982276d0bab898ba3ecd95"
+    },
+    {
+      "sermonId": "sermon-revelation-8-7-12-en",
+      "title": "When the World Is Shaken",
+      "subtitle": "",
+      "scriptureRange": "Revelation 8:7--12",
+      "sermonSeries": "Expository Sermons on Revelation",
+      "themes": [],
+      "canonicalEditionHash": "46698459f91f15e0104477844a0086524be0e08322810dfcd3c8490cae0eb60d",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/dang-shijie-bei-zhendong.mdx",
+      "publicRoute": "/en/library/dang-shijie-bei-zhendong",
+      "searchEligibility": true,
+      "sourceSha256": "a7863415f2f68fc754ac229a547fb3aa3aa6b94b77a818a902522e491651b8e2",
+      "sourceSermonId": "sermon-revelation-8-7-12",
+      "sourceCanonicalEditionHash": "2e6e63ada5d1e1d966cc888638afe95476fe5d97f1aba1577415e84a62dee127"
     }
   ]
 }
