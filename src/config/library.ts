@@ -121,7 +121,8 @@ export function libraryTopicLabel(locale: ContentLanguage, slug: string) {
   return libraryTopicLabels[locale][slug] ?? slug;
 }
 
-export function contentTypeLabel(locale: ContentLanguage, type: string) {
+export function contentTypeLabel(locale: ContentLanguage, type: string, topics: readonly string[] = []) {
+  if (type === "article" && topics.includes("gospel")) return locale === "zh-CN" ? "传福音文集" : "Evangelistic Essays";
   return contentTypeLabels[locale][type] ?? type.replaceAll("_", " ");
 }
 

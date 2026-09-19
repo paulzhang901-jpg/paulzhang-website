@@ -29,7 +29,7 @@ function ResourceList({items, locale, repository}: {items: NormalizedContentItem
     {items.map((item) => <article key={item.id} className="grid gap-5 py-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
       <div>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-          <span className="font-medium text-primary">{contentTypeLabel(locale, item.contentType)}</span>
+          <span className="font-medium text-primary">{contentTypeLabel(locale, item.contentType, item.topics)}</span>
           {item.publishedAt ? <span>{copy.published} {formatDate(item.publishedAt, locale)}</span> : null}
           <span>{copy.availableIn}: {languageAvailability(item, repository)}</span>
         </div>
