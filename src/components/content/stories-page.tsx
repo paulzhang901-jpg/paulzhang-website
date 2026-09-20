@@ -31,10 +31,16 @@ export function StoriesPage({locale, contentRepository, workRepository}: {
       </ReadingContainer></Container>
     </Section>
     <Section>
-      <Container><ReadingContainer className="px-0">
-        <nav aria-label={locale === "zh-CN" ? "生命故事分类" : "My Story categories"} className="mb-10 flex flex-wrap gap-2">
-          {categories.map((category) => <Link key={category} href={`${locale === "en-US" ? "/en" : ""}/stories/${category}` as Route} className="rounded-full border bg-surface px-4 py-2 text-sm hover:bg-muted">{myStoryTopicLabel(locale, category)}</Link>)}
-        </nav>
+      <Container>
+        <div className="grid gap-10 lg:grid-cols-[17rem_minmax(0,1fr)]">
+          <aside aria-labelledby="story-topics">
+            <h2 id="story-topics" className="font-serif text-2xl">{locale === "zh-CN" ? "按主题开始探索" : "Explore by Topic"}</h2>
+            <p className="mt-3 leading-7 text-muted-foreground">{locale === "zh-CN" ? "从生命见证的不同主题进入这些真实故事。" : "Explore these true stories through different themes of life and faith."}</p>
+            <nav aria-label={locale === "zh-CN" ? "生命故事分类" : "My Story categories"} className="mt-6 flex flex-wrap gap-2 lg:flex-col lg:items-start">
+              {categories.map((category) => <Link key={category} href={`${locale === "en-US" ? "/en" : ""}/stories/${category}` as Route} className="rounded-full border bg-surface px-4 py-2 text-sm hover:bg-muted lg:w-full lg:rounded-md">{myStoryTopicLabel(locale, category)}</Link>)}
+            </nav>
+          </aside>
+          <div>
         {!hasContent ? <p className="rounded-lg border border-dashed p-8 text-muted-foreground">{copy.foundationNote}</p> : <div className="space-y-6">
           {works.map(({work, representation}) => <article key={`${work.canonicalId}:${representation.language}`} className="rounded-[var(--radius-lg)] border bg-surface p-6 shadow-[var(--shadow-soft)] sm:p-8">
             <p className="text-sm font-semibold text-primary">{work.canonicalId === "work-little-wheat-v1" ? (locale === "zh-CN" ? "小麦子生命故事" : "Little Wheat Life Story") : (locale === "zh-CN" ? "完整作品" : "Complete work")}</p>
@@ -48,7 +54,9 @@ export function StoriesPage({locale, contentRepository, workRepository}: {
             <p className="mt-4 leading-7 text-muted-foreground">{item.summary}</p>
           </article>)}
         </div>}
-      </ReadingContainer></Container>
+          </div>
+        </div>
+      </Container>
     </Section>
   </>;
 }

@@ -1,3 +1,10 @@
+## 2026-09-20 — My Story Desktop Sidebar Layout — READY FOR PR
+- Scope: presentation-only refinement of `/stories` and `/en/stories`; reuse Truth Library responsive sidebar convention without changing My Story taxonomy, content, routes, or Truth Library.
+- Base: latest `origin/main`; isolated worktree `/private/tmp/paulzhang-stories-sidebar`, branch `codex/my-story-sidebar-layout`. Original dirty worktree untouched.
+- Implementation: below the existing introduction, desktop uses `17rem + content` two-column grid; seven category links are vertically stacked in the left sidebar under `按主题开始探索 / Explore by Topic`; below `lg`, navigation remains a wrapping horizontal/stacked control area above content. Story cards/content remain on the right.
+- Validation PASS: seven exact labels/order in both generated locales; category links retained; Little Wheat title/link retained; responsive class contract; focused My Story tests; architecture; ESLint; TypeScript; full tests; content validation; fiction ingestion; production build; static export 209/209. Taxonomy and all content unchanged.
+- Next Exact Action: commit scoped layout/test/checkpoint changes, push, create one PR, then STOP. No merge/deployment.
+
 ## 2026-09-20 — My Story Seven Permanent Categories — READY FOR PR
 - Scope: establish seven permanent bilingual My Story navigation/filter categories over existing canonical content topics; preserve Markdown-first article discovery, existing story/work routes, and the separate Truth Library taxonomy.
 - Authorization: owner requested architecture completion, isolated branch/worktree, validation, commit/push/PR; no merge/deployment.
