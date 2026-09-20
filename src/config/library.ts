@@ -71,55 +71,14 @@ export const libraryCopy = {
   },
 } as const satisfies Record<ContentLanguage, object>;
 
-export const libraryTopicLabels: Record<ContentLanguage, Record<string, string>> = {
-  "zh-CN": {
-    bible: "圣经",
-    gospel: "福音",
-    theology: "神学",
-    formation: "生命塑造",
-    discipleship: "门徒训练",
-    prayer: "祷告",
-    marriage: "婚姻家庭",
-    family: "家庭",
-    grief: "哀伤",
-    "work-money": "工作与金钱",
-    leadership: "领导力",
-    church: "教会",
-    mission: "宣教",
-    culture: "文化",
-    education: "教育",
-    technology: "科技",
-    research: "研究",
-  },
-  "en-US": {
-    bible: "Bible",
-    gospel: "Gospel",
-    theology: "Theology",
-    formation: "Spiritual formation",
-    discipleship: "Discipleship",
-    prayer: "Prayer",
-    marriage: "Marriage & Family",
-    family: "Family",
-    grief: "Grief",
-    "work-money": "Work and money",
-    leadership: "Leadership",
-    church: "Church",
-    mission: "Mission",
-    culture: "Culture",
-    education: "Education",
-    technology: "Technology",
-    research: "Research",
-  },
-};
+import {truthLibraryTopicLabel} from "@/lib/content/library-topics";
 
 export const contentTypeLabels: Record<ContentLanguage, Record<string, string>> = {
   "zh-CN": {article: "文章", story: "生命故事", bible_study: "查经", devotional: "灵修", qa: "问答", research: "研究", guide: "指南", resource: "资源", sermon: "讲章"},
   "en-US": {article: "Article", story: "Life story", bible_study: "Bible study", devotional: "Devotional", qa: "Q&A", research: "Research", guide: "Guide", resource: "Resource", sermon: "Sermon"},
 };
 
-export function libraryTopicLabel(locale: ContentLanguage, slug: string) {
-  return libraryTopicLabels[locale][slug] ?? slug;
-}
+export const libraryTopicLabel = truthLibraryTopicLabel;
 
 export function contentTypeLabel(locale: ContentLanguage, type: string, topics: readonly string[] = []) {
   if (type === "article" && topics.includes("gospel")) return locale === "zh-CN" ? "传福音文集" : "Evangelistic Essays";
@@ -129,5 +88,5 @@ export function contentTypeLabel(locale: ContentLanguage, type: string, topics: 
 export function contentTopicLabel(locale: ContentLanguage, topic: string) {
   if (topic === "marriage") return locale === "zh-CN" ? "婚姻" : "Marriage";
   const collection = topic === "spiritual-formation" ? "formation" : topic;
-  return libraryTopicLabels[locale][collection] ?? topic.replaceAll("-", " ");
+  return truthLibraryTopicLabel(locale, collection) === collection ? topic.replaceAll("-", " ") : truthLibraryTopicLabel(locale, collection);
 }

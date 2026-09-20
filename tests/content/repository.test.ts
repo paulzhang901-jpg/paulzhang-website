@@ -37,5 +37,5 @@ test("Truth Library discovery consumes public repository content and canonical t
   assert.deepEqual(getLibraryItems(repository, "zh-CN").map((entry) => entry.id), [bible.id, formation.id]);
   assert.deepEqual(getLibraryCollectionItems(repository, "zh-CN", "bible").map((entry) => entry.id), [bible.id]);
   assert.deepEqual(getLibraryCollectionItems(repository, "zh-CN", "formation").map((entry) => entry.id), [formation.id]);
-  assert.deepEqual(getActiveLibraryCollections([bible, formation]), ["bible", "formation"]);
+  assert.deepEqual(getActiveLibraryCollections([bible, formation]), ["bible", "gospel", "theology", "formation", "marriage", "life-values", "work-money", "church"]);
 });
