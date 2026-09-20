@@ -55,7 +55,7 @@
       "path": "/grow",
       "domain": "growth",
       "release": "v1",
-      "implementation_level": "landing_only"
+      "implementation_level": "content_driven"
     },
     {
       "path": "/community",

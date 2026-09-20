@@ -1,3 +1,11 @@
+## 2026-09-20 — Growth Pathway Six Permanent Stages — READY FOR PR
+- Scope: replace `/grow` V1 placeholder presentation with permanent six-stage bilingual, content-driven Growth Pathway while reusing canonical `journey_stages`.
+- Base: latest `origin/main` `0040c4d7cf95a4c9c5272c5cceb87330c19b9171`; isolated worktree `/private/tmp/paulzhang-growth-six-stages`, branch `codex/growth-pathway-six-stages`. Original dirty worktree untouched.
+- Canonical IDs/order: `explore`, `believe`, `abide`, `serve`, `lead`, `multiply` (already present in canonical taxonomy registry). Labels: 探索基督/Explore, 相信基督/Believe, 住在基督里/Abide, 与基督服事/Serve, 像基督带领/Lead, 为基督倍增/Multiply.
+- Architecture: content is discovered from existing Markdown `journey_stages` metadata through ContentRepository; no second taxonomy. Desktop uses `17rem + content` left-stage navigation; mobile wraps navigation above content. Empty stages remain visible.
+- Validation PASS: focused Growth tests; architecture; ESLint; TypeScript; full tests; content validation; fiction ingestion; production build; static export 209/209; exact bilingual navigation order; all 12 stage routes. Truth Library/My Story taxonomy and content unchanged.
+- Next Exact Action: commit scoped Growth architecture/UI/tests/checkpoint changes, push, create one PR, then STOP. No merge/deployment.
+
 ## 2026-09-20 — My Story Desktop Sidebar Layout — READY FOR PR
 - Scope: presentation-only refinement of `/stories` and `/en/stories`; reuse Truth Library responsive sidebar convention without changing My Story taxonomy, content, routes, or Truth Library.
 - Base: latest `origin/main`; isolated worktree `/private/tmp/paulzhang-stories-sidebar`, branch `codex/my-story-sidebar-layout`. Original dirty worktree untouched.
