@@ -43,5 +43,5 @@ export default async function Page({params}: Props) {
   if (work.kind === "work") return <ContentWorkPage {...work} units={workRepository.getOrderedUnits(work.work.canonicalId, "en-US")} repository={workRepository} />;
   if (isContentWorkSlug(slug, workRepository)) notFound();
   const repository = await getContentRepository();
-  return <DynamicContentRoute resolution={resolveStorySlug(slug, "en-US", repository)} locale="en-US" routeId="stories" repository={repository} />;
+  return <DynamicContentRoute resolution={resolveStorySlug(slug, "en-US", repository)} locale="en-US" routeId="stories" repository={repository} workRepository={workRepository} />;
 }

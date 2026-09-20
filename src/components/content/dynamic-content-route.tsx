@@ -5,14 +5,16 @@ import { LibraryCollectionPage } from "./library-page";
 import { FoundationPage } from "@/components/layout/foundation-page";
 import { StoryCollectionPage } from "./story-collection-page";
 import type { ContentRepository } from "@/lib/content/repository";
+import type { ContentWorkRepository } from "@/lib/content/works/repository";
 import type { DynamicRouteResolution } from "@/lib/routing/resolvers";
 import type { ContentLanguage } from "@/types/content";
 
-export async function DynamicContentRoute({resolution, locale, routeId, repository}: {
+export async function DynamicContentRoute({resolution, locale, routeId, repository, workRepository}: {
   resolution: DynamicRouteResolution;
   locale: ContentLanguage;
   routeId: "library" | "stories" | "grow";
   repository: ContentRepository;
+  workRepository?: ContentWorkRepository;
 }) {
   if (resolution.kind === "not-found") notFound();
   if (resolution.kind === "content") {
@@ -24,6 +26,6 @@ export async function DynamicContentRoute({resolution, locale, routeId, reposito
     return <ContentPage item={resolution.item} repository={repository} />;
   }
   if (routeId === "library") return <LibraryCollectionPage locale={locale} collection={resolution.slug} repository={repository} />;
-  if (routeId === "stories") return <StoryCollectionPage locale={locale} collection={resolution.slug} repository={repository} />;
+  if (routeId === "stories" && workRepository) return <StoryCollectionPage locale={locale} collection={resolution.slug} repository={repository} workRepository={workRepository} />;
   return <FoundationPage locale={locale} routeId={routeId} />;
 }
