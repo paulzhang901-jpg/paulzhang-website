@@ -25,7 +25,7 @@ test("paired marriage articles are discoverable with reciprocal public translati
     assert.ok(getLibraryCollectionItems(repository, article.language, "marriage").some((entry) => entry.id === article.id));
     assert.ok(getLibraryCollectionItems(repository, article.language, "family").some((entry) => entry.id === article.id));
     assert.ok(!getLibraryCollectionItems(repository, article.language, "work-money").some((entry) => entry.id === article.id));
-    assert.deepEqual(getActiveLibraryCollections(getLibraryItems(repository, article.language)), ["bible", "gospel", "marriage", "work-money"]);
+    assert.deepEqual(getActiveLibraryCollections(getLibraryItems(repository, article.language)), ["bible", "gospel", "theology", "formation", "marriage", "life-values", "work-money", "church"]);
     const other = repository.resolvePublicTranslation(slug, article.language === "zh-CN" ? "en-US" : "zh-CN", article);
     assert.equal(other.available, true);
     assert.equal(other.status, "published");
@@ -45,7 +45,7 @@ test("combined collection finds each existing topic without admitting private or
   records.push(item({id: "private-marriage", canonicalId: "private-marriage", slug: "private-marriage", topics: ["marriage"], visibility: "private"}));
   const repository = createContentRepository(records);
   assert.deepEqual(getLibraryCollectionItems(repository, "zh-CN", "marriage").map((entry) => entry.id), ["marriage", "family", "parenting"]);
-  for (const topic of ["family", "parenting"]) assert.deepEqual(getActiveLibraryCollections([item({topics: [topic]})]), ["marriage"]);
+  for (const topic of ["family", "parenting"]) assert.deepEqual(getActiveLibraryCollections([item({topics: [topic]})]), ["bible", "gospel", "theology", "formation", "marriage", "life-values", "work-money", "church"]);
   assert.deepEqual(getLibraryCollectionItems(repository, "zh-CN", "family").map((entry) => entry.id), ["family", "parenting"]);
 });
 

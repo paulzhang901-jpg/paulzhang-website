@@ -1,3 +1,11 @@
+## 2026-09-20 — Truth Library Eight Permanent Topics — READY FOR PR
+- Scope: make eight permanent bilingual Truth Library navigation topics first-class filters over the existing canonical taxonomy; preserve all existing content/URLs and Markdown-first publishing.
+- Authorization: owner explicitly requested architecture/taxonomy completion, isolated branch/worktree, validation, commit/push/PR; no merge or deployment.
+- Base: latest `origin/main` `9f54f57c34bd18dccc00d2b4515f4b8bec9e5699`; isolated worktree `/private/tmp/paulzhang-truth-taxonomy-eight`, branch `codex/truth-library-eight-topics`. Original dirty worktree fingerprint preserved.
+- Implementation: permanent collection identities are `bible`, `gospel`, `theology`, `formation`, `marriage`, `life-values`, `work-money`, `church`; each maps to existing canonical topic IDs. Historical child collection routes remain supported; only `life-values` route was added. No article files changed.
+- Validation PASS: focused taxonomy/marriage tests; architecture; ESLint; TypeScript; full repository tests; content/frontmatter validation (optional existing warnings only); fiction ingestion; production build; static export 205/205; bilingual eight-route existence; exact zh/en UI order.
+- Next Exact Action: commit only scoped taxonomy/config/tests/checkpoint changes, push branch, create one PR to main, then STOP. No merge/deployment.
+
 # CURRENT CHECKPOINT
 
 ## Marriage & Family bilingual article — 2026-09-20
