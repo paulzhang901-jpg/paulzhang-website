@@ -16,6 +16,7 @@ function AlternateWork({work, representation, repository}: {work: ContentWork; r
 
 export function ContentWorkPage({work, representation, units, repository}: {work: ContentWork; representation: PublicWorkRepresentation; units: ContentUnit[]; repository: ContentWorkRepository}) {
   const storiesPath = `${representation.language === "en-US" ? "/en" : ""}/stories` as Route;
+  const firstUnit = units[0];
   return <>
     <Section className="border-b bg-muted/40"><Container><ReadingContainer className="px-0">
       <nav aria-label={representation.language === "zh-CN" ? "面包屑" : "Breadcrumbs"} className="mb-8 text-sm text-muted-foreground"><Link href={storiesPath}>{representation.language === "zh-CN" ? "生命故事" : "Life Stories"}</Link></nav>
@@ -24,6 +25,7 @@ export function ContentWorkPage({work, representation, units, repository}: {work
       {representation.subtitle ? <p className="mt-3 text-xl text-muted-foreground">{representation.subtitle}</p> : null}
       <p className="mt-5 text-lg leading-8 text-muted-foreground">{representation.summary}</p>
       {representation.authors.length ? <p className="mt-5 text-sm text-muted-foreground">{representation.language === "zh-CN" ? "作者" : "By"} {representation.authors.join(", ")}</p> : null}
+      {firstUnit ? <Link href={unitPath(representation.slug, firstUnit.slug, representation.language) as Route} className="mt-7 inline-flex min-h-11 items-center rounded-md bg-primary px-5 font-medium text-primary-foreground hover:opacity-90">{representation.language === "zh-CN" ? "开始阅读《麦子落地》" : "Begin reading"} →</Link> : null}
       <AlternateWork work={work} representation={representation} repository={repository} />
     </ReadingContainer></Container></Section>
     <Section><Container><ReadingContainer className="px-0">

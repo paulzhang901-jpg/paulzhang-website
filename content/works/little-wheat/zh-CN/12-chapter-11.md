@@ -6,11 +6,11 @@ unit_type: chapter
 order: 13
 chapter_number: 11
 slug: 12-chapter-11
-status: review
+status: published
 title: 第十一章：落地的麦子——短暂生命留下的果子
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

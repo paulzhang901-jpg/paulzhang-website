@@ -6,31 +6,35 @@
     {
       "language": "zh-CN",
       "slug": "little-wheat",
-      "status": "review",
+      "status": "published",
       "title": "麦子落地：小麦子的生命见证与天国之旅",
       "summary": "《麦子落地》是一部纪念小麦子短暂生命的家庭信仰见证，记录一个家庭在爱、失去、哀伤与盼望中的真实经历，并见证上帝如何在苦难中以恩典托住生命，引领人重新仰望基督与永恒的盼望。",
       "authors": [
         "张崇助"
       ],
-      "published_at": null,
-      "visibility": "private",
+      "published_at": "2026-09-07T00:16:23-04:00",
+      "visibility": "public",
       "access_level": "public",
       "seo": {
+        "title": "麦子落地：小麦子的生命见证与天国之旅",
+        "description": "《麦子落地》是一部纪念小麦子短暂生命的家庭信仰见证，记录一个家庭在爱、失去、哀伤与盼望中的真实经历，并见证上帝如何在苦难中以恩典托住生命，引领人重新仰望基督与永恒的盼望。"
       }
     },
     {
       "language": "en-US",
       "slug": "little-wheat",
-      "status": "review",
+      "status": "published",
       "title": "Little Wheat",
       "summary": "Little Wheat is a family testimony remembering the brief life of Little Wheat, telling a true story of love, loss, grief, and hope, and bearing witness to God’s sustaining grace in suffering and the enduring hope found in Christ and eternity.",
       "authors": [
         "Paul Zhang"
       ],
-      "published_at": null,
-      "visibility": "private",
+      "published_at": "2026-09-12T07:45:37-04:00",
+      "visibility": "public",
       "access_level": "public",
       "seo": {
+        "title": "Little Wheat",
+        "description": "Little Wheat is a family testimony remembering the brief life of Little Wheat, telling a true story of love, loss, grief, and hope, and bearing witness to God’s sustaining grace in suffering and the enduring hope found in Christ and eternity."
       }
     }
   ],
@@ -94,6 +98,10 @@
     {
       "canonical_id": "lw-14-family-statement",
       "order": 15
+    },
+    {
+      "canonical_id": "lw-john-van-valin-lasting-influence",
+      "order": 16
     }
   ]
 }

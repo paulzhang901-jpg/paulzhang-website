@@ -1,239 +1,384 @@
 ---
-id: lw-12-ch11
-canonical_id: lw-12-ch11
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 13
-chapter_number: 11
-slug: 12-chapter-11
-status: review
-title: Chapter Eleven
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-12-ch11",
+  "canonical_id": "lw-12-ch11",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 13,
+  "chapter_number": 11,
+  "slug": "12-chapter-11",
+  "status": "published",
+  "title": "Chapter Eleven: The Fallen Grain of Wheat—The Fruit Left by a Brief Life",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Eleven: The Fallen Grain of Wheat—The Fruit Left by a Brief Life"
+  }
+}
 ---
-Chapter Eleven
+Chapter Eleven: The Fallen Grain of Wheat—The Fruit Left by a Brief Life
 
-Unless a Grain of Wheat Falls — The Fruit of a Life Remembered in Christ
+“Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.”
+—John 12:24, KJV
 
-“Unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit.”
-— John 12:24
+This verse is where the name “Little Wheat” began.
 
-Little Wheat.
+Later, it also became a verse our family could not avoid whenever we looked back again and again on his nineteen months of life.
 
-Your mother gave you that name before you were born.
+But now, as this book approaches its conclusion, I must say one thing more clearly than before.
 
-At that time, John 12:24 sounded to us like a beautiful image of growth, promise, and fruitfulness. We could not have known how deeply those words would later enter our family story.
+A Grain of Wheat Points First to Christ
 
-After your death, the image of the grain of wheat became even more precious to us.
+John 12:24 is not, first of all, an explanation of why a child died.
 
-But grief has also taught me to read these words more carefully.
+Nor does it first tell us that every death will automatically produce something beautiful.
 
-Jesus was not first speaking about you.
+The Lord Jesus spoke these words as He was going toward the cross.
 
-He was speaking about himself.
+The true grain of wheat who fell into the ground, gave Himself for the world, and thereby brought salvation and life is Jesus Christ Himself.
 
-The grain of wheat that falls into the earth and dies is, in its primary and redemptive meaning, Jesus Christ—the Son who goes willingly toward the cross and whose death bears the fruit of salvation.
+His death has a unique redemptive meaning.
 
-That distinction matters.
+He gave His life for sinners.
 
-Your death does not save us.
+He bore human sin.
 
-Your suffering does not atone for sin.
+He rose from the dead.
 
-Your nineteen months do not add anything to the finished work of Jesus Christ.
+His death and resurrection are the foundation of our salvation and our hope of resurrection.
 
-There is only one Savior.
+Therefore, Little Wheat's death cannot be placed alongside the death of Christ.
 
-There is only one Lamb of God.
+Little Wheat did not atone for anyone's sin.
 
-There is only one death through which sinners are reconciled to God.
+His death cannot save anyone.
 
-And that death is Christ’s.
+Nor is his suffering a sacrifice that needs to be romanticized.
 
-⸻
-
-A Witness, Not a Savior
-
-So what does it mean for us still to call you “Little Wheat”?
-
-It means that your life has become, for us, a witness under the greater story of Christ.
-
-You are not the gospel.
-
-But your life has caused us to listen to the gospel again.
-
-You are not the Redeemer.
-
-But through loving you and grieving you, we have been driven again toward the Redeemer.
-
-Your death did not create resurrection.
-
-But your death made us ask with new urgency whether we truly believe in the resurrection of Jesus Christ.
-
-Your life therefore belongs not at the center of the Christian story, but within it.
-
-Christ is the center.
-
-And your story bears witness to him.
-
-The earlier Chinese source already moved toward this distinction when it described Little Wheat as “not for redemption, but for witness; not for atonement,” although some surrounding language still blurred the boundary by making the child himself the grain of John 12:24.
-
-The canonical edition makes the hierarchy explicit:
-
-Christ fulfills John 12:24 redemptively.
-Little Wheat participates in its imagery only analogically and testimonially.
+There is only one source of salvation: Jesus Christ.
 
 ⸻
 
-The Fruit We Have Seen
+Why, Then, Do We Still Call Him “Little Wheat”?
 
-What, then, is the “fruit” we speak of?
+Because this name already existed in our family before he was born.
 
-Not salvation accomplished by your death.
+At that time, we did not know what would later happen.
 
-Not some hidden spiritual power belonging to you.
+Mommy gave him this nickname simply because she hoped that a tiny life might be like a seed:
 
-Not proof that God caused your death in order to produce a particular ministry result.
+growing,
 
-The fruit is what we have seen God bring forth in and around our grief.
+taking root,
 
-You taught Daddy to understand fatherhood differently.
+bearing fruit.
 
-I had preached many times about the love of the heavenly Father. But holding you taught me something about the tenderness of remaining beside a child who cannot repay your love.
+Later, when his life stopped at only nineteen months, we looked back at the name and it naturally took on a deeper meaning.
 
-Your mother learned the costly meaning of entrusting someone she loved to God.
+But that meaning is not:
 
-Together we learned that worship and tears are not opposites.
+“God caused this child to die so that other people could be saved.”
 
-During your final hospitalization we sang hymns, not because we did not grieve, but because grief did not remove God from our lives.
+That is not something we have the right to say.
 
-People prayed.
+What we truly can say is:
 
-People returned to worship.
+Even an extremely brief life may still leave fruit in the lives of those who come after.
 
-Some began to reconsider their understanding of suffering, life, faith, and God.
+This is a testimonial application, not a redemptive application.
 
-Some wrote.
+The original manuscript had already written:
 
-Some served.
+“Not for redemption, but for witness; not for atonement...”
 
-Some learned to sit beside grieving people without trying to explain everything.
-
-These are not accomplishments that make your death good.
-
-Death remains an enemy.
-
-But death does not have the authority to determine what God may yet bring forth from a life of love and faithfulness.
+In the canonical edition, this boundary must become the most important theological boundary of the whole of Chapter Eleven.
 
 ⸻
 
-Providence Without Pretending to Know
+The Fruit You Left Behind
 
-There was a time when I wanted to explain every detail of your story by saying:
+Little Wheat, your life first changed Daddy.
 
-“This was God’s plan.”
+I have been a pastor for many years.
 
-Sometimes Christians say those words because we want to protect our confidence in God.
+I have preached about the heavenly Father.
 
-But there is a difference between confessing God’s providence and claiming to know the hidden reasons for a particular tragedy.
+I have preached about faith.
 
-I do not know why you lived only nineteen months.
+I have preached about suffering.
 
-I do not know why our prayers for healing were not answered in the way we desired.
+I have preached about entrusting.
 
-I do not know what might have happened had one medical circumstance been different.
+But after holding my own child, many words that had once remained in the pulpit and in books suddenly entered flesh and blood.
 
-Christian faith does not require me to invent those answers.
+I began to understand again:
 
-What I can confess is this:
+what it means to be a father.
 
-God was not absent.
+what weakness means.
 
-God did not cease to be good.
+what presence means.
 
-Our suffering did not place us outside his care.
+what loss means.
 
-And the death of our child did not overthrow the resurrection of Jesus Christ.
-
-Providence, therefore, does not mean that I can trace every event to a secret divine explanation.
-
-It means that even where my understanding ends, I entrust myself to the God revealed in Jesus Christ.
+and why Scripture's calling God “Father” carries such profound weight.
 
 ⸻
 
-We Will Continue to Bear Fruit
+You also led Mommy to experience “entrusting” more deeply.
 
-Little Wheat, your story has changed us.
+She held you.
 
-But the responsibility for what happens next belongs to the living.
+Fed you.
 
-Daddy must continue preaching Christ.
+Sang to you.
 
-Mommy must continue singing.
+Stayed beside your bed.
 
-We must continue loving people.
+When you were critically ill, of course she did not want to let go.
 
-The church must continue proclaiming the gospel.
+So “entrusting” is certainly not a mother lightly saying:
 
-We must become more compassionate toward families who suffer.
+“It doesn't matter. I give him to God.”
 
-We must learn to remain beside those whose prayers do not receive easy answers.
+True entrusting sometimes means that at the very moment when we most want to hold on, we acknowledge that we do not have the power to control the outcome.
 
-We must treasure ordinary days.
+There are tears in it.
 
-We must tell the truth about grief.
+Resistance.
 
-We must refuse both despair and sentimental certainty.
+Prayer.
 
-And we must keep our eyes on Jesus.
-
-That is how the memory of your life can continue bearing fruit.
-
-Not because you have become our mediator.
-
-Not because you guide us from heaven.
-
-Not because your death possesses saving power.
-
-But because the love we received through your life continues to call us toward faithfulness.
+And love.
 
 ⸻
 
-The Grain and the Harvest
+You also changed the way we as husband and wife understand worship.
 
-One grain fell into the earth for the salvation of the world:
+We once sang hymns through tears in the hospital.
 
-Jesus Christ.
+Not because the pain had become unreal.
 
-He died.
+But because we discovered:
 
-He rose.
+A person can grieve and still pray to God at the same time.
 
-And because he lives, death will not have the final word over those who belong to him.
+Faith is not:
 
-Within that greater story, we remember another little “grain”—our Little Wheat.
+“I no longer hurt.”
 
-Not as Savior.
+Sometimes faith is simply:
 
-Not as sacrifice.
+“Lord, I hurt deeply, but I am still here.”
 
-But as beloved son.
+⸻
 
-As gift.
+Fruit Also Appeared in the Lives of Others
 
-As memory.
+After Little Wheat passed away, we heard some people's responses.
 
-As witness.
+Some treasured their own children more.
 
-As a life through which we learned again to love, to grieve, to pray, and to hope.
+Some began praying again.
 
-Little Wheat, you are no longer physically with us.
+Some began thinking again about how brief life is.
 
-But your life remains part of ours.
+Some came to church.
 
-And whatever good fruit grows from this story, we offer it not to your glory, but to the glory of the One to whom John 12:24 first and finally points:
+Some began caring more for people who were grieving.
+
+Some, because of this story, began facing their own relationship with God again.
+
+Pastor John also recorded, from the perspective of another witness, how the church community learned more deeply through this experience to love one another, weep together, pray, and serve.
+
+These responses are precious.
+
+But we still need to remain humble.
+
+We cannot say:
+
+“Every good thing that happened afterward happened because Little Wheat had to die.”
+
+Still less can we say:
+
+“Since there has been this fruit, losing our child was therefore worth it.”
+
+No.
+
+If we could choose, we would still want to watch him grow up.
+
+We would want to hear him speak.
+
+We would want to hold his hand.
+
+We would want to send him to school.
+
+We would want to walk with him through a longer life.
+
+The fruit that came later cannot cancel the original loss.
+
+Grace does not require us to call tragedy beautiful.
+
+⸻
+
+Providence: What We Know, and What We Do Not Know
+
+In grief, people deeply want to know:
+
+“Why?”
+
+Why this child?
+
+Why at this time?
+
+Why were our prayers not answered in the way we asked?
+
+This book has not received a detailed explanation from heaven.
+
+Nor can we say:
+
+“Now we finally understand completely why God did this.”
+
+We do not understand.
+
+We believe God is Lord.
+
+We believe He is holy, righteous, and loving.
+
+We believe that history will not ultimately escape His rule.
+
+But this does not mean that we know the hidden reason behind every particular suffering.
+
+Therefore, regarding Little Wheat's illness and death, we are willing to hold two things together:
+
+First, we still trust God.
+
+Second, we acknowledge that we do not know all the answers.
+
+These two statements do not contradict one another.
+
+Rather, together they are a more truthful faith.
+
+⸻
+
+“Though He Is Dead, He Still Speaks”
+
+In the original manuscript, I once wrote:
+
+“Though you are dead, you still speak.”
+
+I am willing to preserve that sentence.
+
+But it does not mean that Little Wheat is now sending messages to us from the unseen world.
+
+It is testimonial language.
+
+It means:
+
+After a person's life has ended, the fact that he once existed, the love he left behind, and the people he influenced may continue to have a voice in this world.
+
+His photographs still remind us.
+
+His story still reminds us.
+
+Everything we experienced because of him still reminds us:
+
+Life is short.
+
+Love must not be delayed.
+
+Human strength is limited.
+
+Death is real.
+
+The gospel must be about Jesus.
+
+The hope of resurrection must be stronger than our imagination.
+
+⸻
+
+How We Continue to “Bear Fruit”
+
+The ones who truly need to continue bearing fruit are those of us who are still alive.
+
+Daddy is still on earth.
+
+Mommy is still on earth.
+
+The church is still on earth.
+
+So the responsibility for “bearing fruit” next should not be placed on a child who has already passed away.
+
+It falls on us.
+
+Daddy must continue preaching.
+
+But not by turning every sermon into Little Wheat's story.
+
+Rather, this experience should make me preach Christ more faithfully.
+
+Mommy continues singing.
+
+Not to remain forever in grief, but so that someone who has known pain can accompany others more gently.
+
+The church continues serving.
+
+Not by turning a child into a religious symbol, but by loving one another more genuinely.
+
+If Little Wheat's life truly left a seed, then its real fruit should be seen in whether:
+
+we love God more.
+
+we love people more.
+
+we treasure life more.
+
+we face suffering more honestly.
+
+we proclaim Jesus Christ more faithfully.
+
+⸻
+
+So, Little Wheat,
+
+you are still “Little Wheat” in Daddy and Mommy's hearts.
+
+That name will not change.
+
+But now, we finally understand more clearly than we did at first:
+
+You are not the grain of wheat who redeemed the world.
+
+Christ is.
+
+You are simply a child we deeply love.
+
+A child whose life was very short.
+
+A child who truly came, was loved, and left a testimony.
+
+And if your story can ultimately turn anyone's eyes toward Christ,
+
+that is the fruit we most desire to see.
+
+⸻
+
+You no longer live within the earthly daily life we can touch.
+
+But your nineteen months have entered the history of our lives.
+
+We still remember you.
+
+We still love you.
+
+We are still learning, because of you, how to live.
+
+And we continue to wait:
+
+not for you to become the end point of the story,
+
+but for the Lord who truly fell into the ground and rose again from the dead—
 
 Jesus Christ.

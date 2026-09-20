@@ -1,362 +1,360 @@
 ---
-id: lw-07-ch06
-canonical_id: lw-07-ch06
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 8
-chapter_number: 6
-slug: 07-chapter-06
-status: review
-title: Chapter Six
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-07-ch06",
+  "canonical_id": "lw-07-ch06",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 8,
+  "chapter_number": 6,
+  "slug": "07-chapter-06",
+  "status": "published",
+  "title": "Chapter Six: Strength in Sickness—Sudden Darkness and the Long Vigil",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Six: Strength in Sickness—Sudden Darkness and the Long Vigil"
+  }
+}
 ---
-Chapter Six
+Chapter Six: Strength in Sickness—Sudden Darkness and the Long Vigil
 
-Strength in Sickness — A Sudden Darkness and the Long Vigil
+No parent prepares for a summer like this for their nineteen-month-old child.
 
-No parent prepares for the possibility that a nineteen-month-old child may suddenly become critically ill.
+August 9, 2024.
 
-August 9, 2024 began as an ordinary morning.
+That day had begun as an ordinary morning.
 
-The day before, Little Wheat had vomited, and we had taken him to his family doctor. At that time, we were not told that his condition appeared immediately life-threatening.
-
-Later that evening, he developed diarrhea.
+The day before, Little Wheat had vomited, and we had taken him to his family doctor. At the time, the doctor did not consider his condition serious and provided appropriate treatment. Later that evening, he began having diarrhea.
 
 The next morning, we were already planning to take him to the hospital.
 
-Sue was holding him and trying to give him something to eat.
+His mother held him and had intended to give him something to eat.
 
-He seemed tired and wanted to sleep.
+Then he seemed very tired and wanted to sleep.
 
-She lay beside him and briefly dozed off.
+His mother lay beside him and also slept briefly.
 
-When she awoke, something was clearly wrong.
+When she woke, she realized that something was clearly wrong with Little Wheat.
 
-Little Wheat had become limp.
+His body had gone limp, his response was weak, and his face was pale.
 
-His face looked pale.
+At that moment, we knew we could not wait any longer.
 
-His responsiveness had changed.
+What happened next moved very quickly.
 
-We knew we could not wait.
+Calling 911.
 
-What followed happened quickly:
+Emergency responders arriving.
 
-a call to 911,
+The ambulance.
 
-emergency responders,
+The hospital.
 
-an ambulance,
+Prayer.
 
-prayer,
+Waiting.
 
-fear,
-
-and the sudden realization that an ordinary morning had become an emergency.
+A familiar morning quickly became an emergency unlike anything our family had ever experienced.
 
 ⸻
 
 Into the PICU
 
-Little Wheat was taken to Riley Children’s Hospital in Indianapolis and admitted to the Pediatric Intensive Care Unit—the PICU.
+Little Wheat was taken to Riley Children's Hospital for further treatment and admitted to the Pediatric Intensive Care Unit—the PICU.
 
-One number remains fixed in our memory:
+In our original records, we remember the doctors telling us that at one point his blood pressure had fallen to approximately:
 
 44/22.
 
-We were told that his blood pressure had fallen dangerously low.
+For us at the time, that number alone was frightening enough.
 
-The legacy English manuscript records this number, as does Pastor John’s translated witness account. Both sources also remember prolonged EEG monitoring and the seriousness with which the medical team responded.
+At the hospital, the doctors began looking for the cause of his sudden deterioration.
 
-The doctors began trying to understand what had caused such a severe and sudden decline.
+One possibility they considered was a viral infection, including Norovirus.
 
-Among the possibilities discussed was a viral infection, including Norovirus.
+Here, the language of later recollection must be precise:
 
-Here the wording must remain precise.
+The doctors suspected or considered Norovirus, but in the materials we can currently confirm, we do not have sufficient basis to write that it was the final confirmed cause of his illness.
 
-The older English manuscript says:
+Therefore, this book will not say:
 
-“The doctors suspected a viral infection—Norovirus.”
+“Little Wheat became critically ill because of Norovirus.”
 
-That is useful evidence because even the legacy wording used suspected, not confirmed.
+We can only say honestly:
 
-Therefore, this canonical edition does not say that Norovirus was definitively the cause of Little Wheat’s illness or death.
-
-It says only:
-
-Norovirus was among the possible viral causes considered during his treatment.
-
-Unless stronger medical documentation becomes available, that distinction must remain.
+During his treatment, a viral infection, including Norovirus, was among the possible causes considered by the medical team.
 
 ⸻
 
-In the days that followed, Little Wheat underwent extensive monitoring and treatment.
+In the days that followed, he underwent many examinations and treatments.
 
-The legacy record describes:
+EEG monitoring.
 
-EEG monitoring,
+Blood draws.
 
-blood draws,
+IV therapy.
 
-IV therapy,
+Respiratory support.
 
-intubation,
+Intubation.
 
-gastrointestinal procedures,
+Gastrointestinal-related treatment.
 
-infection-control measures,
+Infection-control and isolation measures.
 
-and isolation.
+Specific medical diagnoses, treatment decisions, and disease mechanisms belong to the professional medical record; as parents, we do not attempt here to make medical conclusions in place of the doctors.
 
-As parents, we do not attempt here to reconstruct a diagnosis beyond what our sources can support.
+What we can write down is what we saw with our own eyes.
 
-We are not writing a medical case report.
+A child who had been smiling, touching piano keys, and going to church with Daddy and Mommy was suddenly lying in a PICU bed.
 
-What we can describe with confidence is what we saw.
+Various pieces of equipment surrounded his body.
 
-A child who only days earlier had smiled, touched piano keys, gone to church with us, and lived an ordinary family life was now lying in a PICU bed surrounded by medical equipment.
+Medical staff moved in and out constantly.
 
-Doctors and nurses moved in and out.
+We put on isolation gowns to enter the room.
 
-We put on isolation gowns.
+We washed our hands again and again.
 
-We washed and sanitized our hands again and again.
+Again and again, we waited for the doctors to explain the latest situation.
 
-We waited for updates.
+Again and again, we asked:
 
-And we kept asking variations of the same questions:
+“How is he now?”
 
-“What is happening?”
-
-“What can still be done?”
-
-“Is there still hope?”
+“What else can be done?”
 
 ⸻
 
 Thirteen Days
 
-From August 9 to August 21, thirteen days passed.
+From August 9 to August 21, those thirteen days later became one of the most unforgettable periods of our lives.
 
-The old English manuscript calls them “the longest of our lives.” That language still feels true.
+Time seemed to behave strangely in the PICU.
 
-Time behaves strangely in intensive care.
+An hour could feel very long.
 
-An hour can feel endless.
+And then an entire day would suddenly be gone.
 
-Then an entire day disappears.
+We practically moved our whole lives into the hospital.
 
-Our ordinary life became organized around the hospital.
-
-Church members came.
+Brothers and sisters from church came.
 
 Pastors came.
 
 Friends came.
 
-People brought meals.
+Some brought food.
 
-They prayed.
+Some sat with us.
 
-They cried.
+Some stood beside the hospital bed and prayed.
 
-They stood beside Little Wheat’s bed.
+Some sang hymns.
 
-Some sang quietly.
+Some said nothing and simply stayed beside us.
 
-Some spoke words of encouragement.
-
-Some simply stayed.
-
-Pastor John’s witness independently remembers the repeated pattern of people putting on isolation gowns, sanitizing their hands, entering the room, praying, and leaving—again and again over those thirteen days.
-
-That matters.
-
-Because suffering often isolates people.
-
-One of the deepest ministries the church offered us was simply this:
-
-we did not have to endure those days entirely alone.
+All of these things mattered deeply at the time.
 
 ⸻
 
-Faith Inside Uncertainty
+Many people held Little Wheat's hand.
 
-The older manuscript sometimes describes these thirteen days as a “spiritual battle.”
+Some whispered to him:
 
-That language reflects how we experienced them as Christians.
+“Little Wheat, we are here.”
 
-But it should not be used to imply that medical illness can be reduced to a spiritual contest whose outcome depends upon whether people pray hard enough.
+Some prayed for him:
 
-We prayed intensely.
+“Lord Jesus, have mercy.”
 
-We also depended upon physicians, nurses, testing, treatment, and medical judgment.
+Some sang “Jehovah Is Love.”
 
-Faith and medicine were not competitors in that room.
+In a hospital room like that, many familiar words of faith suddenly carried a completely different weight.
 
-We prayed because we loved our child.
+Before, we had sung:
 
-The medical team worked because they were caring for a critically ill patient.
+“God will take care of us.”
 
-Both realities were present.
+Now we were singing without knowing the outcome.
 
-⸻
+Before, we had spoken about:
 
-One night, around three o’clock in the morning, I sat beside Little Wheat and read from the book of Job.
+“Entrusting.”
 
-I came to the words:
+Now we were learning to entrust at the very moment when we least wanted to let go.
 
-“The Lord gave, and the Lord has taken away; blessed be the name of the Lord.”
-— Job 1:21
+Before, I had preached about suffering from the pulpit.
 
-The legacy manuscript preserves this memory clearly.
+Now suffering was no longer a sermon topic.
 
-I held my son’s hand.
-
-I cried.
-
-I could barely continue reading.
-
-I had preached about suffering before.
-
-I had taught people about trust.
-
-But in that room, theological language was no longer abstract.
-
-I wanted healing.
-
-I wanted a miracle.
-
-I wanted Little Wheat to wake up.
-
-I wanted the doctors to say that something had changed.
-
-I wanted to bring him home.
-
-Faith did not require me to pretend otherwise.
+It was lying right in front of me.
 
 ⸻
 
-Prayer Without Control
+The Medical Staff
 
-During those days I increasingly faced a difficult truth:
+During those thirteen days, we also saw many medical professionals caring for Little Wheat with great diligence.
 
-I could ask God.
+The nurses continually watched his condition.
 
-I could plead with God.
+The doctors evaluated him again and again.
 
-I could lament before God.
+Some, in the midst of their work, would say a few words of comfort to us.
 
-But I could not control God.
+The original manuscript recorded some of the nurses' impressions of this quiet child.
 
-Prayer was not a mechanism by which I could force the future I wanted.
+Some said he was very quiet.
 
-Nor did the absence of the outcome I desperately desired prove that we had prayed inadequately.
+Some, because they had grown fond of him, described him with very tender words.
 
-There were things about Little Wheat’s illness that we did not understand then.
+Those words became part of his parents' memories.
 
-There are things we still do not understand now.
+But we do not want to turn other people's gentle praise into unverifiable spiritual judgments.
 
-This book will not pretend that grief eventually gave us a hidden explanation for every event.
+At the time, Little Wheat was a very sick child.
 
-It did not.
+And the doctors, nurses, and others who cared for him did their best to help him within their responsibilities.
 
-We believe God remains God.
-
-We believe His character is trustworthy.
-
-But belief in providence is not the same thing as possessing secret knowledge of why every tragedy occurs.
-
-Sometimes faith includes the sentence:
-
-“Lord, I do not understand.”
+That alone is worth remembering with gratitude.
 
 ⸻
 
-A Mother Beside Her Child
+The Book of Job at Midnight
 
-Sue remained near Little Wheat day after day.
+Late one night, I sat beside the hospital bed.
+
+It was very quiet around me, and I opened the Book of Job.
+
+I read:
+
+“The LORD gave, and the LORD hath taken away; blessed be the name of the LORD.”
+—Job 1:21, KJV
+
+I had read this verse many times before.
+
+That day, I could hardly continue reading it.
+
+I held my son's hand.
+
+My tears fell.
+
+As his father, of course I wanted to ask God to heal him.
+
+And I did pray that way.
+
+I hoped for a turn in his condition that we could call a miracle.
+
+I hoped Little Wheat would open his eyes.
+
+I hoped that one day I could carry him home again.
+
+I hoped he would sit at the piano again.
+
+I hoped these days would eventually become only a frightening episode our family would remember in the future.
+
+All of these desires were real.
+
+Faith does not require parents to pretend that they do not want their child to be saved.
+
+⸻
+
+Yet in prayer, I also became increasingly aware of another exceedingly difficult truth:
+
+I could plead, but I could not command God to act according to my wishes.
+
+This does not mean that we can explain why a child would suffer such an illness.
+
+We cannot.
+
+Nor will this book explain every medical event as “a particular step deliberately arranged by God.”
+
+There is much within suffering that we do not know.
+
+Faith has not given us a hidden manual explaining every chain of cause and effect.
+
+What we can hold on to is this:
+
+Even when we do not know why, Christ is still the Lord to whom we can cry out.
+
+⸻
+
+Sue stayed beside our child almost constantly.
 
 She sang to him.
 
-She prayed softly.
+She spoke softly to him.
 
-She touched him.
+She touched his hand.
 
-She held him when she could.
+Sometimes she held him.
 
-The older English manuscript says that even when he could no longer open his eyes, she continued speaking and singing near him.
+We do not know how much he could hear when his consciousness was severely affected, nor do we know how much he could understand.
 
-We do not know precisely what Little Wheat could hear or understand during every stage of his critical illness.
+So we cannot say:
 
-Therefore, the canonical edition does not say:
+“He definitely heard us.”
 
-“He definitely heard everything.”
+But for a mother, that is not the most important question.
 
-or:
+A mother does not sing because she has already proved that her child can understand.
 
-“His spirit knew exactly what we were saying.”
+She sings because:
 
-Those statements exceed what we can verify.
+This is her child.
 
-But a mother does not need proof of comprehension before speaking love to her child.
+Love continues to speak even when the outcome is uncertain.
 
-Sue sang because he was her son.
-
-She prayed because he was her son.
-
-She stayed because he was her son.
-
-That is enough.
+Presence still has meaning when there are no answers.
 
 ⸻
 
-Approaching the Final Day
+Before the Final Day
 
-As the days passed, the conversations became heavier.
+As the days passed, the doctors' conversations with us became heavier and heavier.
 
-Hope did not disappear all at once.
+The distance between hope and reality also became increasingly difficult to bear.
 
-Neither did grief arrive only after death.
+We kept praying.
 
-Parents can begin grieving while still praying for recovery.
+And we kept crying.
 
-We lived inside both realities.
+Sometimes we worshiped together.
 
-We wanted a miracle.
+Sometimes we were silent.
 
-We were also becoming aware that we might have to face the outcome we feared most.
+Sometimes one of us did not begin to cry until after stepping out of the room.
 
-We continued to pray.
+We did not make it through those thirteen days by holding on to a belief that “everything will develop in the direction we want.”
 
-We continued to cry.
+What sustained us was a more difficult faith:
 
-We continued to worship.
+Even if in the end we did not receive the outcome we wanted most,
 
-Sometimes together.
+Jesus was still Lord.
 
-Sometimes in silence.
+Even if we did not understand today,
 
-Sometimes only after stepping outside the room.
+we could still cry out to Him.
 
-What sustained us was not a guarantee that everything would end the way we wanted.
+Even if death truly drew near,
 
-It was something more difficult:
-
-Jesus Christ was still Lord even when we did not know what the next hour would bring.
+death was not where the Christian's final hope rested.
 
 ⸻
-
-Then came:
 
 Wednesday, August 21, 2024.
 
-The old English manuscript correctly remembers the weekday in Chapter Seven, and Pastor John’s witness independently identifies August 21 as a Wednesday.
+The thirteen days reached their final day.
 
-It would become the final day of Little Wheat’s earthly life.
+That day is not a date in this story that can be hurried past with dramatic language.
 
-The next chapter tells what happened when prayer, love, grief, worship, and farewell converged in one hospital room.
+It was a day we truly lived through.
+
+It was also the day that divided our family's life forever into “before” and “after.”
+
+In the next chapter, I must write down what we least want to write, yet cannot leave unwritten:
+
+how we said goodbye to our son.

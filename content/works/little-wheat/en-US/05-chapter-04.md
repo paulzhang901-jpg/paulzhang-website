@@ -1,113 +1,161 @@
 ---
-id: lw-05-ch04
-canonical_id: lw-05-ch04
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 6
-chapter_number: 4
-slug: 05-chapter-04
-status: review
-title: Chapter Four
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-05-ch04",
+  "canonical_id": "lw-05-ch04",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 6,
+  "chapter_number": 4,
+  "slug": "05-chapter-04",
+  "status": "published",
+  "title": "Chapter Four: Surrounded by Love—Church and Family Watching Over One Another",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Four: Surrounded by Love—Church and Family Watching Over One Another"
+  }
+}
 ---
-Chapter Four
+Chapter Four: Surrounded by Love—Church and Family Watching Over One Another
 
-Surrounded by Love — Church and Family
+Before Little Wheat came into this world, love was already there waiting for him.
 
-Little Wheat was loved before he was born.
+In the fall of 2022, we experienced two special baby showers.
 
-During Sue’s pregnancy, friends and churches celebrated the child for whom we had waited so long.
+One was at a Chinese church in Springfield, Illinois,
 
-In the fall of 2022, two baby showers were held for us—one in Springfield, Illinois, and another through the First Chinese Free Methodist Church in Indianapolis.
+and the other was at the church where we served in Indianapolis.
 
-People brought gifts.
+They were ordinary days in many ways, yet later they became especially precious to us.
 
-They wrote cards.
+There were refreshments on the tables,
 
-They prayed.
+gifts,
 
-They celebrated.
+tiny baby socks,
 
-For Sue and me, these gatherings carried particular meaning because they came after years of waiting for a child.
+and cards filled with words of blessing.
 
-What others may have experienced simply as a joyful baby shower, we experienced as a community entering into a prayer that had occupied a large part of our married life.
+Brothers and sisters in Christ sat together. Some sang hymns, some prayed, and some simply smiled as they looked at Sue's growing belly.
 
-In Indianapolis, members of the congregation surrounded us with affection.
+Sue stood there with weariness on her face, but also with a kind of joy that had come only after many years of waiting.
 
-Little Wheat was already becoming part of a family larger than our household.
+I looked at her, and there was only one sentence in my heart:
 
-That mattered because our blood relatives were far away.
+“Lord, thank You.”
 
-We were immigrants living far from much of our extended family, but God had given us brothers and sisters in Christ who shared our joy.
+So many years of waiting,
 
-Friends traveled to visit.
+so many prayers in the night,
 
-Others sent clothes, blankets, cards, messages, and prayers.
+so many disappointments and tears that others could never fully know,
 
-Across the distance, our family in China waited too.
+seemed, for a moment, to find a gentle response in all that laughter.
 
-I remember my mother seeing Sue’s pregnant belly over a video call. Her eyes filled with tears.
+In Indianapolis, it was also the first time our church had held a baby shower like this for a pastor's family.
 
-Our family had prayed for this child for years.
+Someone said:
 
-We hoped that when Little Wheat was old enough, we would take him to China so that he could meet grandparents, great-grandparents, and relatives who already loved him from afar.
+“This is the child we prayed for together.”
 
-His passport and Chinese visa were prepared.
+I have always remembered those words.
 
-Those documents represented a journey we hoped one day to make.
+Because they reminded us that Little Wheat was never only our child.
 
-After his birth, during the forty-two days in the NICU, the same network of love continued.
+In a certain spiritual sense, even before he was born, he was already surrounded by a larger family.
 
-People brought food.
+We did not have many blood relatives near us in America.
 
-People prayed.
+But over those years, the church gradually became our family.
 
-People sent messages.
+Some traveled from other places to visit us;
 
-Church members stood beside us.
+some brought baby supplies;
 
-Friends from other places joined them.
+some kept sending messages to tell us they were praying for the baby;
 
-The care did not eliminate our anxiety, but it kept us from carrying it alone.
+and others, from different places in China and the United States, told us:
 
-That distinction matters.
+“We are praying for baby John.”
 
-Faith did not mean we were never afraid.
+Little Wheat's maternal grandmother, paternal grandmother, and other family members also waited for his birth through a screen.
 
-Christian community did not mean the hospital suddenly became easy.
+I remember the first time my mother saw Sue pregnant on a video call. Her eyes turned red.
 
-Rather, people entered the difficulty with us.
+She said:
 
-They helped us eat when we were tired.
+“After all these years, we have finally waited for this.”
 
-They prayed when our own words were exhausted.
+We had even begun planning to take Little Wheat back to China one day.
 
-They reminded us that Little Wheat belonged not only to the private world of a father and mother but had already been welcomed into a community of love.
+His passport was ready,
 
-That is one of the gifts the church gave our family.
+and so was his Chinese visa.
 
-In Christ, family can extend beyond bloodlines.
+We imagined him meeting his paternal grandmother, his maternal grandfather and grandmother, and many more relatives.
 
-People who were not Little Wheat’s biological relatives learned his name, prayed for him, held him, blessed him, and loved his parents.
+At the time, no one knew that those plans would later not unfold in the way we imagined.
 
-Little Wheat became part of their memories, too.
+But then, what that passport and that visa carried was a very simple family wish:
 
-When I look back now, I do not remember only the hospital.
+We wanted to take this child home and let everyone who loved him see him.
 
-I remember the people who came.
+After Little Wheat was born and entered the NICU, this network of love did not stop.
 
-I remember meals.
+Sisters from the church took turns preparing meals to help Sue as she recovered.
 
-I remember messages.
+Some organized prayer.
 
-I remember prayer.
+Some came to the hospital.
 
-I remember the faces of those who stood with us.
+Some kept watch from far away.
 
-Before Little Wheat could understand any of it, he was surrounded by love.
+Pastors, friends, mission partners, and brothers and sisters in Christ continued sending messages.
 
-And when our own strength was limited, that love helped carry us.
+Those messages could not carry all our worries for us.
+
+But they let us know:
+
+We were not facing all of this alone.
+
+This is also one reason I came to treasure the church more and more.
+
+The church is most real not only when everyone sits in the same sanctuary.
+
+It is also when a family is weak,
+
+and someone cooks a meal,
+
+someone sends a word of care,
+
+someone drives to the hospital,
+
+and someone continues praying in a place no one can see.
+
+None of these things may seem very great.
+
+But in the hearts of parents who are worried about their child, they carry great weight.
+
+We had shed many tears during the long years when we had no child.
+
+And when Little Wheat came, many people rejoiced with us.
+
+That joy helped us understand family in a new way:
+
+There is a kind of family that is not defined entirely by blood.
+
+There is a kind of love that slowly takes shape when people in Christ bear one another's burdens and walk alongside one another.
+
+From the very beginning, Little Wheat's life was surrounded by this kind of love.
+
+He connected China and America,
+
+family and church,
+
+and many people who otherwise did not know one another.
+
+When we later looked back on his brief nineteen months of life, this became especially clear:
+
+He was always loved.

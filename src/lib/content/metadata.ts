@@ -7,9 +7,9 @@ import type { NormalizedContentItem } from "@/types/content";
 export function metadataForContent(item: NormalizedContentItem, repository: ContentRepository): Metadata {
   const zh = repository.resolvePublicTranslation(item.canonicalId, "zh-CN", item);
   const en = repository.resolvePublicTranslation(item.canonicalId, "en-US", item);
-  const languages: Record<string, URL> = {};
-  if (zh.available) languages["zh-CN"] = new URL(contentPath(zh.item), siteUrl);
-  if (en.available) languages["en-US"] = new URL(contentPath(en.item), siteUrl);
+  const languages: Record<string, string> = {};
+  if (zh.available) languages["zh-CN"] = new URL(contentPath(zh.item), siteUrl).toString();
+  if (en.available) languages["en-US"] = new URL(contentPath(en.item), siteUrl).toString();
   return {
     title: item.seo.title ?? item.title,
     description: item.seo.description ?? item.summary,

@@ -1,80 +1,65 @@
 ---
-id: lw-00-dedication
-canonical_id: lw-00-dedication
-work_canonical_id: work-little-wheat-v1
-unit_type: front_matter
-order: 1
-slug: 00-dedication
-status: review
-title: Dedication
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-00-dedication",
+  "canonical_id": "lw-00-dedication",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "front_matter",
+  "order": 1,
+  "slug": "00-dedication",
+  "status": "published",
+  "title": "Dedication",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Dedication"
+  }
+}
 ---
 Dedication
 
-This book is lovingly dedicated
+I dedicate this book
 to my son,
-
-John Earnest Zhang (Zhang Xian),
+Zhang Xian (John Earnest Zhang),
 our beloved “Little Wheat.”
 
-You walked this earth for only nineteen brief months,
-yet you planted seeds in human hearts that will not easily fade.
+You walked this earth for only nineteen short months,
+yet you planted seeds in people's hearts that will not soon be forgotten.
 
 Your smile once brightened hospital rooms.
-Your quiet presence brought comfort to wounded hearts.
-Your gaze often spoke more deeply than words could say.
-Your life was a precious gift of God’s grace.
+Your quiet presence comforted many who stayed by your side.
+Your eyes often spoke more than many words could say.
+Your life, to Mommy and Daddy, was a precious gift from God.
 
-You fell to the ground, not to be forgotten.
-You were held in love, and through your life, fruit continues to grow.
+You fell into the ground, not so that we would forget you.
+Your story remains in love, and it continues to bear fruit in many lives.
 
-Though your lips never formed a sentence,
-your life preached the deepest sermon I have ever heard.
+You never preached a sermon with words,
+yet you made me think again about life, suffering, faith, and eternity.
+Though your life was brief,
+it left a profound mark on ours.
 
-Though your days were few,
-the love we received through you reaches far beyond the number of those days.
+With this book, I want to record your smile,
+your breathing, our tears, and our prayers.
+I also want to record the faith, worship, and struggle along this journey,
+and the hope we still hold in Christ—the hope of resurrection and reunion.
 
-In these pages, I want to remember
-every tear,
-every laugh,
-every breath,
-every whispered prayer—
+Today, I cannot write about what my eyes have not seen as though I have already seen it.
+But in faith, I can entrust you into the hands of the God who is just, loving, and faithful.
 
-and with them,
-our faith,
-our worship,
-our grief,
-and our hope of reunion.
+I also look forward to that day
+when Christ makes all things new and raises the dead,
+when sorrow, crying, and death will all have passed away.
 
-You are no longer here for us to hold.
+Then, what we hope for will not merely be the restoration of what was lost,
+but to be with the Lord forever.
 
-That absence is real,
-and the sorrow remains real.
-
-Yet we entrust you to the God who gave you life,
-and we wait in hope for the day when Christ will make all things new.
-
-Our hope is not built upon what we can imagine about heaven,
-but upon Jesus Christ,
-who died and rose again,
-who will come again,
-and who has promised the resurrection of the dead.
-
-Until that day,
-Daddy will remember you,
-love you,
-and continue telling the story of the grace we received through your life.
-
-To Jesus Christ—
-our Savior, our resurrection, and our hope—
-be all the glory.
+May glory be to God the Father, the giver of life,
+and to our Lord Jesus Christ, who died for us and rose again.
 
 Your forever Daddy,
-Paul Zhang
+Paul Zhang (Zhang Chongzhu)
 
-Indianapolis
+Written in Indianapolis
 Spring 2025

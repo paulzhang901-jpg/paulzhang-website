@@ -9,6 +9,7 @@ import { Container } from "@/components/layout/container";
 import { ContentTeaser } from "./content-teaser";
 import { TrackedLink } from "./tracked-link";
 import { HomeViewEvent } from "./home-view-event";
+import { supportCopy } from "@/data/support-methods";
 
 const linkButton = "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-2.5 font-medium";
 const section = "py-[var(--space-section)]";
@@ -39,5 +40,6 @@ export async function HomePage({locale}: {locale: Locale}) {
     <section data-home-section="about" className={`${section} bg-muted/60`}><Container><div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_16rem]"><div className="max-w-3xl"><h2 className="font-serif text-3xl sm:text-4xl">{c.about.title}</h2><p className="mt-5 text-lg leading-8 text-muted-foreground">{c.about.body}</p><TrackedLink className={`${linkButton} mt-7 border bg-surface`} href={localizedPath("about", locale)} event={event} payload={{locale, source: "about", destination_type: "about"}}>{c.about.cta}</TrackedLink></div><div className="mx-auto w-full max-w-56 lg:max-w-64"><Image src="/brand/paul-zhang/paul-zhang-seal-A-primary.png" alt={c.about.sealAlt} width={431} height={392} sizes="(max-width: 1024px) 14rem, 16rem" className="h-auto w-full rounded-[1.25rem] mix-blend-multiply drop-shadow-[0_10px_18px_rgba(29,45,36,0.08)]" /></div></div></Container></section>
 
     <section id="stay-connected" data-home-section="stay-connected" className={section}><Container><div className="max-w-3xl rounded-lg border bg-surface p-6 sm:p-8"><h2 className="font-serif text-3xl sm:text-4xl">{c.connect.title}</h2><p className="mt-4 leading-7 text-muted-foreground">{c.connect.body}</p><TrackedLink className={`${linkButton} mt-6 bg-primary text-primary-foreground`} href={localizedPath("contact", locale)} event={event} payload={{locale, source: "home", destination_type: "stay_connected"}}>{c.connect.action}</TrackedLink></div></Container></section>
+    <aside className="border-t py-7"><Container><p className="text-sm leading-7 text-muted-foreground">{supportCopy[locale].home}</p><Link href={localizedPath("support", locale)} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4">{supportCopy[locale].homeLink}</Link></Container></aside>
   </>;
 }

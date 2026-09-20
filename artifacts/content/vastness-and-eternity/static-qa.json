@@ -1,0 +1,26 @@
+[
+  {
+    "locale": "zh-CN",
+    "route": "/library/vastness-and-eternity",
+    "singleH1": true,
+    "completeRenderedBody": true,
+    "category": "传福音文集",
+    "reciprocalLink": true,
+    "canonicalHreflang": true,
+    "internalLinks": 28,
+    "libraryAndGospelDiscovery": true,
+    "sitemap": true
+  },
+  {
+    "locale": "en-US",
+    "route": "/en/library/vastness-and-eternity",
+    "singleH1": true,
+    "completeRenderedBody": true,
+    "category": "Evangelistic Essays",
+    "reciprocalLink": true,
+    "canonicalHreflang": true,
+    "internalLinks": 28,
+    "libraryAndGospelDiscovery": true,
+    "sitemap": true
+  }
+]

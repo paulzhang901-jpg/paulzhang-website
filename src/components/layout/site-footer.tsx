@@ -11,6 +11,7 @@ export function SiteFooter({locale}: {locale: Locale}) {
       <p className="max-w-xl text-sm leading-6 text-muted-foreground">{copy.footer}</p>
       <nav aria-label={locale === "zh-CN" ? "页尾导航" : "Footer navigation"} className="flex flex-wrap gap-4 text-sm">
         <Link href={localizedPath("contact", locale)}>{copy.contact}</Link>
+        <Link href={localizedPath("support", locale)}>{copy.support}</Link>
         <Link href={socialProfiles.personalYoutube.url} target="_blank" rel="noreferrer">YouTube</Link>
         <Link href={socialProfiles.churchWebsite.url} target="_blank" rel="noreferrer">FCFM Church</Link>
         <Link href={localizedPath("legal-privacy", locale)}>{copy.privacy}</Link>

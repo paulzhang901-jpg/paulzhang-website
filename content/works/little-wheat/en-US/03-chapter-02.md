@@ -1,113 +1,148 @@
 ---
-id: lw-03-ch02
-canonical_id: lw-03-ch02
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 4
-chapter_number: 2
-slug: 03-chapter-02
-status: review
-title: Chapter Two
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-03-ch02",
+  "canonical_id": "lw-03-ch02",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 4,
+  "chapter_number": 2,
+  "slug": "03-chapter-02",
+  "status": "published",
+  "title": "Chapter Two: The Night of Arrival—Life's First Cry and a Welcome of Love",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Two: The Night of Arrival—Life's First Cry and a Welcome of Love"
+  }
+}
 ---
-Chapter Two
+Chapter Two: The Night of Arrival—Life's First Cry and a Welcome of Love
 
-The Night of Arrival — A Cry of Life, a Welcome of Love
+At 11:00 p.m. on January 17, 2023, Little Wheat was born at a hospital in Indianapolis.
 
-At 11:00 p.m. on January 17, 2023, Little Wheat was born in Indianapolis.
+That was not his original due date.
 
-He arrived earlier than expected.
+He came to us several weeks earlier than expected. The doctors called it a premature birth. For us as first-time parents, everything happened suddenly, catching us somewhat unprepared.
 
-The sudden onset of labor caught us by surprise. Within hours, the ordinary rhythm of our lives had been replaced by hospital lights, medical voices, hurried footsteps, prayer, and anticipation.
+The lights in the delivery room were bright.
 
-Sue lay on the hospital bed, exhausted but determined.
+Doctors and nurses kept coming and going.
 
-I stood beside her, holding her hand.
+Sue lay on the hospital bed, weariness on her face, but also a quiet determination.
 
-For years we had prayed for a child.
-
-Now the child for whom we had waited was about to enter the world.
-
-When he was delivered, he did not immediately give the strong cry we had imagined.
-
-The medical team moved quickly.
-
-For a moment, my heart seemed suspended between fear and hope.
-
-Then we heard him.
-
-A small cry.
-
-Faint, but unmistakably alive.
-
-Tears filled my eyes.
-
-After so many years of waiting, our son was here.
+I held her hand. As I prayed, I kept repeating silently the name we had already spoken so many times:
 
 John Earnest Zhang.
 
-Our Little Wheat.
+Zhang Xian.
 
-He weighed approximately 3,115 grams at birth. He was small and needed medical attention, yet every feature of his face seemed astonishing to us.
+May your life be lived in the grace of God.
 
-We looked at him with the wonder familiar to new parents and yet entirely new to us.
+When the baby was lifted from his mother's womb, he did not immediately let out a loud cry.
 
-This was the child we had prayed for.
+The doctors quickly carried him aside to care for him.
 
-The child we had spoken about late at night.
+Those few minutes felt especially long to me.
 
-The child whose name had already filled our prayers.
+Only when I finally heard a cry—not loud, but clear and real—did the tension in my heart begin to ease.
 
-There was no grand ceremony in that hospital room.
+Then the tears came.
 
-Only gratitude.
+It was Little Wheat's first cry in this world.
 
-And a prayer:
+We had waited many years before we finally heard it.
 
-“Lord, this child is Your gift. Give us wisdom and love to care faithfully for the life You have entrusted to us.”
+He weighed about 3,115 grams at birth.
 
-Soon the doctors transferred him to the Neonatal Intensive Care Unit—the NICU—for observation and treatment.
+Though his body was small, his features were already distinct. He was not a baby who liked to cry loudly or make a fuss. A nurse looked at him and said:
 
-That changed everything.
+“He is a very quiet baby.”
 
-The joy of birth was now joined by uncertainty.
+We stood there looking at him, still feeling almost unable to believe it.
 
-We were parents, but we could not simply carry our newborn son home.
+The child who had once existed only in our prayers, in ultrasound pictures, and in his mother's womb was now truly before us.
 
-Machines, monitors, nurses, physicians, feeding plans, oxygen readings, and hospital routines suddenly became part of the first chapter of our life together.
+We had no grand welcome ceremony.
 
-His name appeared on the NICU board:
+Nor did we have a carefully designed birth announcement.
 
-John Earnest Zhang — 1/17/23
+That night, what we had was simply gratitude.
 
-Beneath it came the changing details of his care—weight, breathing, feeding, and the medical plan for the day.
+I prayed silently:
 
-I began photographing the board.
+“Lord, this is the child You have given us.
+Please give us wisdom and love, and teach us how to be his parents.”
 
-Those numbers mattered because he mattered.
+For us, Little Wheat's birth was both the fulfillment of a promise and the beginning of a completely new and unknown journey.
 
-Again and again I went to the hospital.
+Very soon, the doctors decided to admit him to the Neonatal Intensive Care Unit (NICU) for continued observation and care.
 
-I stood beside him, watched him sleep, prayed over him, sang quietly, and waited for those moments when his eyes opened.
+And so concern immediately became mixed with joy.
 
-At home, the NICU monitor remained close.
+But we had no time to separate those two emotions.
 
-Our attention was constantly divided between the ordinary world outside and the tiny hospital room where our son was learning to live.
+Perhaps this is what becoming parents for the first time is like:
 
-His name became one of the most repeated words in my prayers.
+You are giving thanks
 
-The night of January 17 changed our family forever.
+while also being afraid;
 
-Joy had arrived.
+you are filled with hope
 
-So had vulnerability.
+while realizing that there is so much you cannot control.
 
-And almost immediately, parenthood began teaching us that love includes both receiving what is beautiful and remaining present when what is beautiful is fragile.
+In that state of heart, we began learning something that would later become increasingly important:
 
-Little Wheat had entered the world.
+Loving a child does not mean being able to control everything in his life.
 
-And we had begun learning how deeply a father and mother can love.
+Many times, love means being present, and it also means entrusting.
+
+Little Wheat's first photograph after birth showed a nurse placing him on the equipment to measure his weight.
+
+His tiny body looked especially fragile beside all the medical equipment.
+
+On the care board were his name, his date of birth, and the constantly changing records of his weight, breathing, feeding, and daily care.
+
+We began to make a habit of photographing those boards.
+
+Others saw numbers.
+
+What we saw was that this child was still here, day after day.
+
+Beginning with the first night after his birth, I traveled back and forth to the hospital every day.
+
+Once during the day,
+
+and again at night.
+
+I stood beside the incubator, watching him sleep and breathe, and occasionally open his eyes.
+
+Sometimes I would softly sing hymns to him.
+
+When we returned home, we still kept watching the hospital's video monitor.
+
+The sound of a machine,
+
+a nurse's movement,
+
+even the slightest shift of Little Wheat's body
+
+was enough to make us sit upright again.
+
+We had waited for him for many years.
+
+Now he had finally come.
+
+But his arrival also made us understand for the first time in a very real way:
+
+Life is a gift, but it is never something over which we possess absolute sovereignty.
+
+That night changed our family.
+
+Because from that day forward, we were no longer only husband and wife.
+
+We became Daddy and Mommy.
+
+And that quiet little life became, from then on, the name that appeared most often in our prayers.

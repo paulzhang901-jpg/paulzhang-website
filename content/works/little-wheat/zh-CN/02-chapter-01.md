@@ -6,11 +6,11 @@ unit_type: chapter
 order: 3
 chapter_number: 1
 slug: 02-chapter-01
-status: review
+status: published
 title: 第一章：起名与应许
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

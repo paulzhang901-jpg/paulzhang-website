@@ -1,321 +1,418 @@
 ---
-id: lw-11-ch10
-canonical_id: lw-11-ch10
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 12
-chapter_number: 10
-slug: 11-chapter-10
-status: review
-title: Chapter Ten
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-11-ch10",
+  "canonical_id": "lw-11-ch10",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 12,
+  "chapter_number": 10,
+  "slug": "11-chapter-10",
+  "status": "published",
+  "title": "Chapter Ten: The Memory Album—Nineteen Months in Images",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Ten: The Memory Album—Nineteen Months in Images"
+  }
+}
 ---
-Chapter Ten
-
-The Memory Album — Nineteen Months in Images
+Chapter Ten: The Memory Album—Nineteen Months in Images
 
 Some memories live in words.
 
-Some live in sound.
+Some memories live in sound.
 
-Others return the moment we see a photograph.
+And there are other memories for which a single photograph can suddenly bring the whole world back.
 
-Little Wheat’s nineteen months left us many images:
+Little Wheat's nineteen months left many photographs.
 
-before his birth,
+Birth.
 
-the delivery room,
+NICU.
 
-the NICU,
+Coming home.
 
-coming home,
+Church.
 
-church,
+Smiles.
 
-music,
+Music.
 
-smiles,
+Birthday.
 
-his first birthday,
+Hospital room.
 
-the PICU,
+Farewell.
 
-and farewell.
+They also left some materials that are not suitable for public display like ordinary family photographs:
 
-But the canonical digital edition makes an important distinction:
+medical images, identity documents, and extremely private photographs from the final stage of his life.
 
-The existence of a photograph does not automatically authorize its publication.
+The original manuscript placed all of them together in the same “memory album,” listing birth, NICU, birthday, the Riley hospital room, the final embrace, as well as a U.S. passport, Chinese visa, and other materials.
 
-Some photographs belong comfortably in a public family story.
+The new canonical edition no longer handles them this way.
 
-Others contain medical, identity, privacy, copyright, or dignity concerns.
+Remembrance does not mean making everything public.
 
-So this chapter is no longer simply a photo gallery.
+Loving someone also includes protecting his dignity and privacy.
 
-It is a Digital Memory Album governed by publication rules.
+Therefore, this chapter is formally upgraded from a “photo chapter” to a:
+
+Digital Memory Album
 
 ⸻
 
-01 — Before Birth: A Child Already Loved
+01 | Before Birth: A Child Who Was Expected
 
-Public Caption
+Caption
 
-Before Little Wheat was born, church communities in Illinois and Indiana celebrated his expected arrival through baby showers, gifts, prayer, food, and fellowship.
+Before Little Wheat was born, two church communities had already welcomed this child they had not yet met through baby showers, gifts, blessings, and prayer.
 
-These photographs remember a child who was loved before anyone had yet seen his face.
+The photographs preserve more than a gathering.
+
+They preserve this:
+
+Before a child was born, people were already waiting for his arrival.
 
 media_id: lw-media-001
 category: before_birth
 source: family_archive
-privacy: FAMILY_PUBLIC
-rights: REVIEW_IF_THIRD_PARTY_PHOTOGRAPHER
-publication_state: PUBLIC_CANDIDATE
+date: 2022
+people:
+  - Paul Zhang
+  - Sue Zhang
+  - church community
+privacy: family_public
+rights: family_owned_or_permission_required
+publication_state: candidate_public
 
 ⸻
 
-02 — January 17, 2023: Birth
+02 | January 17, 2023: Birth
 
-Public Caption
+Hospital.
 
-At 11:00 p.m. on January 17, 2023, John Earnest Zhang was born.
+Scale.
 
-Hospital photographs from that night record the beginning of his life and the first moments of a long-awaited child with his parents.
+Care equipment.
+
+First photograph.
+
+The care board bearing his name.
+
+These images record a real new life entering the world.
+
+The canonical identity is fixed here as:
+
+John Earnest Zhang
+
+The form John Ernest Zhang used in an older manuscript is no longer used.
 
 media_id: lw-media-002
 category: birth
 date: 2023-01-17
-subject: John Earnest Zhang
-privacy: FAMILY_PUBLIC
-rights: FAMILY_CONTROLLED
-publication_state: PUBLIC_CANDIDATE
-
-Any hospital label or visible identifier must be reviewed before publication.
+source: family_archive
+people:
+  - John Earnest Zhang
+privacy: family_public
+rights: family_owned
+publication_state: candidate_public
 
 ⸻
 
-03 — Forty-Two Days in the NICU
+03 | NICU: Forty-Two Days
 
-Public Caption
+The equipment, incubator, and care environment in these photographs record Little Wheat's forty-two days in the NICU after birth.
 
-Little Wheat spent forty-two days in the NICU.
+These photographs are family memories first and publication assets second.
 
-Family photographs preserve the incubator, care environment, hospital board, parental visits, and the long rhythm of watching, praying, waiting, and loving.
+If an image exposes a medical record number, medical label, patient-identifying information, staff privacy, or information about another patient, it must be addressed before public release.
 
 media_id: lw-media-003
-category: NICU
-duration_days: 42
-privacy: SENSITIVE_MEDICAL_CONTEXT
-publication_state: REVIEW_REQUIRED
+category: nicu
+source: family_archive
+date_range: 2023-01-17/2023-02
+people:
+  - John Earnest Zhang
+  - Paul Zhang
+  - Sue Zhang
+privacy: sensitive_medical_context
+rights: family_owned
+publication_state: review_required
+redaction_required: conditional
 
-Before any NICU image becomes public, check for:
-
-* medical record numbers;
-* patient identifiers;
-* room or chart labels;
-* other patients;
-* staff members whose publication rights are unclear;
-* screens containing medical information.
+The Chinese canonical text has already established forty-two days as the actual length of the NICU hospitalization.
 
 ⸻
 
-04 — Coming Home
+04 | Coming Home
 
-Public Caption
+This is a very important group of photographs in the story of his life.
 
-After forty-two days in the NICU, Little Wheat came home.
+No equipment is at the center.
 
-These photographs preserve something wonderfully ordinary: a father, a mother, and their child beginning daily life together.
+No hospital room is the background.
+
+It is simply Daddy, Mommy, and their child beginning to become a family in everyday life.
+
+Being held.
+
+Sleeping.
+
+Feeding.
+
+Smiling.
+
+Living together.
 
 media_id: lw-media-004
 category: homecoming
-privacy: FAMILY_PUBLIC
-publication_state: PUBLIC_CANDIDATE
+source: family_archive
+people:
+  - John Earnest Zhang
+  - Paul Zhang
+  - Sue Zhang
+privacy: family_public
+rights: family_owned
+publication_state: candidate_public
 
 ⸻
 
-05 — Church Life
+05 | Little Wheat at Church
 
-Public Caption
+The church did not begin praying for him only after he became critically ill.
 
-Little Wheat grew within the life of the church—worship, baby dedication, visits, prayer, familiar faces, and people who knew his name.
+The church was also one of the places where he lived.
+
+Being held.
+
+Listening to hymns.
+
+Attending gatherings.
+
+Growing among familiar people.
+
+These photographs record:
+
+belonging.
 
 media_id: lw-media-005
 category: church_life
-privacy: MIXED_GROUP
-publication_state: RIGHTS_REVIEW_REQUIRED
+source: family_and_church_archive
+people:
+  - John Earnest Zhang
+  - congregation_members
+privacy: mixed_group
+rights: permission_review
+publication_state: review_required
 
-Photographs containing other minors require particular caution.
-
-Family possession of the image is not automatically equivalent to unrestricted publication permission for every person visible in it.
+Special caution: when other children appear, the fact that Little Wheat's family possesses the photograph must not be treated as automatic ownership of public portrait-publication rights for those other children.
 
 ⸻
 
-06 — Music, Play, and Smiles
+06 | Music, Toys, and Smiles
 
-Public Caption
+The original manuscript especially preserved images of Little Wheat sitting at an electronic keyboard, playing with toys, and smiling.
 
-Some of the most precious photographs contain no crisis at all.
+These photographs are closest to the everyday Little Wheat his parents remember.
 
-They show Little Wheat at a keyboard, surrounded by toys, smiling, watching, and simply being a child.
+Not a “symbol.”
 
-These images are important precisely because his life should not be remembered only through illness and death.
+Not “theological material.”
+
+Just a child living his life.
+
+And that alone is worth remembering.
 
 media_id: lw-media-006
 category: ordinary_life
-privacy: FAMILY_PUBLIC
-publication_state: PUBLIC_CANDIDATE
+source: family_archive
+people:
+  - John Earnest Zhang
+privacy: family_public
+rights: family_owned
+publication_state: approved_candidate
 
 ⸻
 
-07 — His First Birthday
+07 | First Birthday
 
-Public Caption
+January 17, 2024.
 
-On January 17, 2024, we celebrated Little Wheat’s first birthday.
+Cake.
 
-Family and friends gathered around a child who had now been with us for one full year.
+Decorations.
+
+Family and friends.
+
+The child who was now one year old.
+
+The original manuscript also explicitly records this family birthday gathering.
 
 media_id: lw-media-007
-category: first_birthday
+category: birthday
 date: 2024-01-17
-privacy: MIXED_GROUP
-publication_state: RIGHTS_REVIEW_REQUIRED
+source: family_archive
+people:
+  - John Earnest Zhang
+  - family_and_friends
+privacy: mixed_group
+rights: permission_review
+publication_state: review_required
 
 ⸻
 
-08 — The Final Hospitalization
+08 | The Final Thirteen Days: Riley Children's Hospital
 
-The legacy photo album explicitly includes the Riley hospital room, medical equipment, and photographs from the final thirteen days. The Chinese source likewise lists “Riley医院病房、小麦子病中照片、医疗设备、父母守夜.”
+This group of photographs must be classified differently from ordinary growth photographs.
 
-These photographs require a different standard.
+They may include:
 
-Canonical Caption
+hospital bed.
 
-From August 9 through August 21, 2024, Little Wheat was critically ill at Riley Children’s Hospital.
+medical equipment.
 
-These images belong first to the private record of a family living through medical crisis.
+parents keeping vigil.
+
+PICU environment.
+
+Little Wheat while critically ill.
+
+These images have very high memorial value, but they also carry very high risks to privacy and dignity.
 
 media_id: lw-media-008
-category: final_hospitalization
+category: final_hospital_days
 date_range: 2024-08-09/2024-08-21
-privacy: HIGHLY_SENSITIVE
-publication_state: RESTRICTED_REVIEW
-default_publication: false
+location: Riley Children's Hospital
+source: family_archive
+people:
+  - John Earnest Zhang
+  - Paul Zhang
+  - Sue Zhang
+privacy: highly_sensitive
+rights: family_owned_with_context_review
+publication_state: restricted_review
 
-No image enters the public edition merely because it appeared in a legacy PDF.
+Default rule: NOT PUBLIC unless the parents explicitly approve each image individually.
 
 ⸻
 
-09 — Farewell
+09 | The Final Embrace
 
-Photographs from after death or during final physical farewell are not ordinary memorial assets.
+The original manuscript planned to use images such as “the father's final photograph holding him” and “farewell at the casket.”
 
-They involve the dignity of a deceased child and the deepest private grief of his parents.
+The new canonical policy must change this:
+
+These are not ordinary memorial photographs.
+
+They belong to a family's most private record after the death of a child.
 
 media_id: lw-media-009
 category: farewell
 date: 2024-08-21
-privacy: SACRED_PRIVATE
-publication_state: PRIVATE_BY_DEFAULT
+source: family_archive
+privacy: sacred_private
+rights: family_owned
+publication_state: private_by_default
 explicit_parental_approval_required: true
-automated_publication: PROHIBITED
 
-A future public edition may use one only after an explicit human decision.
+Codex has no authority to decide on its own to make them public.
 
-Silence is not permission.
-
-File availability is not permission.
-
-Prior appearance in a PDF is not permission.
+The technical existence of a file does not equal publication authority.
 
 ⸻
 
-10 — The Journey We Planned
+10 | The Visa for a Journey That Never Happened
 
-The older English album contains a section called:
+The original manuscript placed the U.S. passport page and Chinese visa page under “the continuation in heaven” and wrote about the family's plan to take the child back to China to visit relatives.
 
-“A Journey Toward Heaven – Passport and Visa”
+That story is worth preserving.
 
-and says that a Chinese visa had been prepared for the hoped-for journey to visit family.
+But the passport and visa originals themselves should not be published as ordinary public photographs.
 
-The story remains valuable.
+They may contain:
 
-The raw identity documents do not belong in an ordinary public gallery.
+name, date of birth, passport number, visa number, machine-readable zone, issuance information, and other identifying information.
 
-Public Canonical Caption
+Therefore, the public edition preserves only the story:
 
-We had prepared travel documents for Little Wheat because we hoped to take him to China to meet family members who had loved him from afar.
+We had prepared Little Wheat's travel documents, hoping one day to take him to China so that family members far away could hold him. That journey never happened. Looking at those documents now, they are no longer merely preparations for travel; they have also become a testimony to the future that parents once planned for their child.
 
-That journey never happened.
+The phrase:
 
-Today those documents remain part of our private family archive—a reminder that parents naturally imagine a future for their children.
+“heaven requires no visa, only faith”
+
+is no longer used.
+
+Although it has literary appeal, it can create an unnecessary analogy between salvation and “faith as a visa to heaven.”
 
 media_id: lw-media-010
-category: travel_identity_documents
-privacy: RESTRICTED_IDENTITY
-publication_state: RAW_DO_NOT_PUBLISH
+category: identity_and_travel_documents
+source: family_archive
+privacy: identity_document
+rights: family_controlled
+publication_state: DO_NOT_PUBLISH_RAW
 public_derivative:
-  permitted: CONDITIONAL
+  allowed: true
   requirements:
-    - remove passport number
-    - remove visa number
-    - remove machine-readable zone
-    - remove barcodes
-    - remove identifying document codes
-    - remove unnecessary personal data
-
-The legacy phrase:
-
-“where no visa is required, only faith”
-
-is not retained as canonical caption because it unnecessarily turns a government identity document into a salvation analogy.
+    - full_redaction
+    - no_document_number
+    - no_machine_readable_zone
+    - no_barcode_or_identifier
+    - no_sensitive_identity_fields
 
 ⸻
 
 The Last Page of the Album
 
-Nineteen months is short when measured against a normal lifespan.
+Nineteen months.
 
-But memory is not measured only in months.
+Placed within the span of a human life, it is very short.
 
-These photographs tell us something simple and important:
+Placed within Daddy and Mommy's memory, it can stretch without end.
 
-this child really lived.
+These photographs do not prove a complete theological system.
+
+Nor do they need to carry that responsibility.
+
+They simply tell us:
+
+This child truly came.
 
 He was born.
 
 He was held.
 
-He slept.
+He cried.
 
 He smiled.
 
-He touched piano keys.
+He stayed in a hospital.
 
-He went to church.
+He came home.
+
+He heard Daddy and Mommy sing.
+
+He sat at an electronic keyboard.
 
 He celebrated a birthday.
 
-He was sick.
+He was deeply loved by a family.
 
-He was cared for.
+And he was remembered by a community.
 
-He was deeply loved.
+So we preserve these images not to display grief to the world,
 
-Some of these memories can be shared.
+but to preserve one person's life faithfully.
 
-Some should remain within the family.
+Some photographs are suitable for public sharing.
 
-Some require careful review.
+Some belong only to the family.
 
-Some may never need to become public at all.
+Some must remain permanently protected.
 
-A digital memorial should not confuse exposure with remembrance.
+Memory is worth preserving.
 
-We preserve because we love.
-
-And sometimes love preserves most faithfully by protecting what does not need to be displayed.
+Dignity is even more worth protecting.

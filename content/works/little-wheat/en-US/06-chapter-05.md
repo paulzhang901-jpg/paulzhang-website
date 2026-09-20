@@ -1,185 +1,308 @@
 ---
-id: lw-06-ch05
-canonical_id: lw-06-ch05
-work_canonical_id: work-little-wheat-v1
-unit_type: chapter
-order: 7
-chapter_number: 5
-slug: 06-chapter-05
-status: review
-title: Chapter Five
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-06-ch05",
+  "canonical_id": "lw-06-ch05",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "chapter",
+  "order": 7,
+  "chapter_number": 5,
+  "slug": "06-chapter-05",
+  "status": "published",
+  "title": "Chapter Five: Marks of Growth—Smiles, Playing the Piano, and His First Worship Service",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Chapter Five: Marks of Growth—Smiles, Playing the Piano, and His First Worship Service"
+  }
+}
 ---
-Chapter Five
+Chapter Five: Marks of Growth—Smiles, Playing the Piano, and His First Worship Service
 
-Marks of Growth — Smiles, Music, and Worship
+Every child seems to have a way of his own of telling the world:
 
-When Little Wheat finally came home after forty-two days in the NICU, a different chapter of our life began.
+“I am here.”
 
-During his first days at home, he slept often.
+Little Wheat's way was his smile.
 
-Gradually, he became more alert.
+During the first days after he came home from the hospital, he still slept most of the time.
 
-He opened his eyes and watched us.
+After forty-two days in the NICU, he seemed to need time to adjust slowly to this new place without the sounds of machines and the footsteps of nurses.
 
-He responded to voices.
+This was his home.
 
-And then came his smile.
+Gradually, he began opening his eyes and looking at us.
 
-I still remember seeing that smile spread across his face.
+Especially when he heard his mother's voice, he would become very quiet.
 
-For other people it might have seemed like one of the countless ordinary moments of infancy.
+Then one morning, for the first time, we truly saw him smile.
 
-For us it was extraordinary.
+He lay there looking upward. We did not know what he had suddenly noticed, but the corners of his mouth began to rise little by little.
 
-After weeks of watching monitors and measurements, we could simply watch our son smile.
+Very gently.
 
-Every Sunday, when circumstances allowed, Little Wheat became part of the worshiping life of the church.
+But more and more clearly.
 
-Soon after coming home, we brought him to worship.
+For a moment, the room really did seem a little brighter.
 
-He rested in his mother’s arms, looking around at a world of people, music, prayer, and voices he could not yet understand.
+To someone who has never gone through a long season of waiting, a baby's smile may be just an ordinary moment of growth.
 
-We do not know what an infant understood in those moments.
+For us, it was not.
 
-What we do know is that from the beginning we wanted him to grow within a community that worshiped Jesus Christ.
+We had waited so long for this child.
 
-On his second Sunday home, the church held his baby dedication.
+So even one smile felt like a gift.
 
-Sue and I carried him forward.
+⸻
 
-Pastor John, his spiritual American grandfather, participated in that moment of dedication.
+His First Time at Church
 
-Before the congregation, we entrusted the life of our child to God and committed ourselves to raise him within the faith of the church.
+After he was discharged from the hospital, we began taking him to church.
 
-His certificate bore his full name:
+He was still very small when he attended Sunday worship for the first time.
+
+Sitting in his mother's arms, he looked at the people around him and toward the pulpit, and he listened to hymns and prayers that, of course, he could not yet understand.
+
+We certainly did not know how much an infant could understand.
+
+But that was not the point.
+
+What mattered was this:
+
+From the beginning of his life, we wanted him to know that he belonged to a family that worshiped God and also to a community of faith that loved him.
+
+On the second Sunday after he came home, we held a baby dedication for him.
+
+That day, the brothers and sisters in Christ gathered around us.
+
+We carried Little Wheat to the front.
+
+His American “spiritual grandpa,” Pastor John, took him in his arms and prayed for this child together with the whole congregation.
+
+Once again, we spoke the words that had already been in our hearts before he was born:
+
+“This child belongs to God.
+May the Lord help us to love him and raise him faithfully, and to entrust his whole life into the Lord's hands.”
+
+The dedication certificate bore the name:
 
 John Earnest Zhang.
 
-The congregation celebrated with us.
+Looking back at that certificate now, it carries a weight that is hard to put into words.
 
-Some wept.
+But at the time, that day held only joy.
 
-Some spoke affectionately about how peaceful he looked.
+⸻
 
-These words belonged to people who loved him; we preserve them as memories and testimony, not as claims that Little Wheat possessed some supernatural status.
+Quiet Moments Between Father and Son
 
-At home, ordinary life continued.
+One evening, I lay on my stomach on a soft mat, looking at this little fellow who had only recently entered our lives.
 
-One evening I knelt on the floor near him.
+He looked at me too.
 
-He looked back at me.
+Neither of us said anything.
 
-There were no words between us.
+A grown man,
 
-There did not need to be.
+and a child who could not yet speak.
 
-A father was looking at his son, and his son was looking back.
+Yet I felt as though we had just had a complete conversation between father and son.
 
-After twenty-two years of marriage, such moments still felt astonishing.
+Later, I wrote on Facebook:
 
-On his hundredth day, I recorded Luke 2:40:
+“I will praise the LORD, for he has done wonderful things.”
 
-“And the child grew and became strong, filled with wisdom. And the favor of God was upon him.”
+By then, we had already been married for many years and had also gone through many years of waiting.
 
-We celebrated his growth.
+Little Wheat's arrival made me understand something for the first time in a very real way:
 
-We took photographs.
+Some theology is not first understood in books.
 
-We thanked God.
+Sometimes it suddenly becomes warm in the midst of life.
 
-Often I held Little Wheat while reading or preparing sermons.
+Before, I preached about “grace.”
 
-I would turn pages while he rested against me.
+Now grace had weight.
 
-Those moments changed something in the way I thought about theology.
+It could yawn in my arms
 
-Theology was not merely an idea on a page.
+and fall asleep against my chest.
 
-Christian truth was being confessed in the middle of ordinary embodied life—in feeding, holding, waiting, sleeping, praying, worshiping, and loving.
+⸻
 
-Music also became part of Little Wheat’s world.
+One Hundred Days
 
-Sue often played music, and he responded to sound and rhythm.
+When Little Wheat was one hundred days old, we took photographs to remember the occasion.
 
-We sometimes placed him near a keyboard.
+The letters “JOHN” hung on the wall.
 
-His small hands touched the keys, producing the unpredictable sounds of a child discovering an instrument.
+I wrote:
 
-He enjoyed it.
+“It's a miracle!”
 
-We enjoyed watching him.
+I also thought of a sentence in Luke describing the childhood of Jesus:
 
-Music, laughter, and worship became intertwined in our memories of him.
+“And the child grew, and waxed strong in spirit, filled with wisdom: and the grace of God was upon him.”
+—Luke 2:40, KJV
 
-Little Wheat also accompanied us at times when we visited people from church.
+This verse does not need to be understood here as though “Little Wheat was the direct fulfillment of this verse.”
 
-He sat with us while we prayed.
+For us, it was simply a parent's prayer:
 
-His quiet presence often brought joy to those we visited.
+May our child grow,
 
-People said affectionate things about him, sometimes describing how peaceful the room felt when he was there.
+and may the grace of God be with him.
 
-I received those words as expressions of love.
+⸻
 
-They were not evidence that our son possessed extraordinary spiritual powers.
+He Loved the Piano
 
-He was a child.
+Little Wheat responded to music from an early age.
 
-A deeply loved child.
+Perhaps it was because his mother often sang and often played the piano.
 
-And sometimes the presence of a child is enough to soften a room.
+Once, we held him in front of an electronic keyboard.
 
-On January 17, 2024, we celebrated his first birthday.
+He reached out his hand and pressed the keys.
 
-The house filled with decorations, gifts, balloons, music, cards, prayers, and people who loved him.
+Of course, there was no melody.
 
-Little Wheat sat before his cake and looked at the world around him.
+Just a few jumbled sounds.
 
-We celebrated one year of life.
+But he laughed with delight, as though he had just completed a formal performance.
 
-One year of grace.
+Later, the keyboard truly became one of the things he most liked to be near.
 
-One year we had not been promised but had been given.
+He would press the keys with his little hands,
 
-Looking back, I treasure these ordinary memories more than I once knew I would.
+lie there beside it,
 
-His smile.
+and move his body as he listened to the sounds.
 
-His hands on the keyboard.
+We often laughed and said:
 
-His place in his mother’s arms.
+“Little Wheat is playing the piano again.”
 
-His presence at worship.
+Thinking back now, those sounds are especially precious.
 
-His first birthday.
+⸻
 
-His quiet gaze.
+A Little “Visitor”
 
-These memories do not need to be made miraculous in order to matter.
+When we went to visit brothers and sisters from church who were sick or elderly, sometimes we took him with us.
 
-They matter because they belonged to him.
+He was usually very quiet.
 
-They matter because we were his parents.
+Some people held him,
 
-They matter because love makes ordinary moments precious.
+some tried to make him smile,
 
-Little Wheat could not preach.
+and some simply looked at him quietly.
 
-He could not explain faith.
+The child did not know that he was “ministering.”
 
-He could not tell us what his life meant.
+He was simply there.
 
-But his life gave us countless occasions to love, to give thanks, to worship, and to receive each day as a gift.
+But sometimes, a child sitting quietly in a room can itself bring a little tenderness.
 
-That is how I remember this season.
+One older person held him and said:
 
-Not yet through the shadow of what came later.
+“This child is very comforting.”
 
-But as it was then:
+Over time, I came to understand words like these more and more.
 
-a father and mother watching their little boy grow.
+Not because a child possesses some special power,
+
+but because life itself can sometimes remind us:
+
+Vulnerability is worthy of love,
+
+and presence itself has meaning.
+
+⸻
+
+His First Birthday
+
+January 17, 2024.
+
+Little Wheat turned one year old.
+
+A “Happy Birthday!” banner hung in the house.
+
+There were balloons,
+
+a cake,
+
+gifts,
+
+and blessings from brothers and sisters in Christ.
+
+Someone played the piano,
+
+someone sang,
+
+and someone brought a Little Wheat puzzle prepared especially for him.
+
+He sat in front of the cake, his eyes bright.
+
+Everyone gathered around him and smiled.
+
+That day, no one imagined what would happen seven months later.
+
+And I am very grateful that we did not know.
+
+Because some days, when God gives them to us, are simply meant to be received and lived.
+
+That day,
+
+we did not rehearse grief.
+
+We simply celebrated.
+
+We celebrated that this child was one year old.
+
+We celebrated his smile,
+
+his eyes,
+
+the sounds he made at the piano,
+
+his quietness,
+
+and we celebrated that over the past year we had truly become a family of three.
+
+Looking back now, I do not want what happened later to swallow up all these earlier memories.
+
+Little Wheat must not be remembered only as “the child who later became sick and passed away.”
+
+Before the darkness came,
+
+he had truly lived.
+
+He had smiled,
+
+been held,
+
+gone to church,
+
+touched piano keys,
+
+celebrated a birthday,
+
+and been loved by many people.
+
+This was his life.
+
+It was not defined only by the final thirteen days,
+
+and still less was it defined only by death.
+
+Before entering the next chapter, I want to let the story pause here.
+
+Let it pause on the smile of a one-year-old child.
+
+Because this too is something we must remember if we are to know Little Wheat:
+
+He did not first become a story about loss.
+He was first our son—a child who truly lived and was deeply loved.

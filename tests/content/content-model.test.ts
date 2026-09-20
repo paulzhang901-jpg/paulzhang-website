@@ -48,6 +48,9 @@ test("repository samples conform to schema, taxonomy, references, and translatio
   const report = validateContentRecords(discoverLegacyFixture());
   assert.deepEqual(report.errors, []);
   assert.equal(report.items.length, 6);
+  for (const id of ["truth-sample-zh", "truth-sample-en", "story-sample-zh"]) {
+    assert.ok(report.items.some((entry) => entry.id === id), `required content missing: ${id}`);
+  }
   assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-010-001" && entry.status === "published"));
   assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-027-001" && entry.status === "published"));
   assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-028-001" && entry.status === "published"));

@@ -1,6 +1,7 @@
 import { discoverAndParseContentWorks } from "./discovery";
 import { isPublicContentUnit, isPublicWorkRepresentation } from "./normalize";
 import { ContentWorkValidationError, validateContentWorks } from "./validation";
+import { createContentWorkSearchDocument } from "./search-document";
 import type { ContentLanguage, TranslationStatus } from "@/types/content";
 import type { ContentUnit, ContentWork, ContentWorkRepresentation, UnitTranslationResolution, WorkTranslationResolution } from "@/types/content-work";
 
@@ -67,6 +68,10 @@ export function createContentWorkRepository(works: ContentWork[], units: Content
       const representation = findRepresentation(work, locale);
       return representation && isPublicWorkRepresentation(representation) ? [{work, representation}] : [];
     }),
+    getSearchDocuments: (locale?: ContentLanguage) => works.flatMap((work) => work.representations.flatMap((representation) => {
+      if ((locale && representation.language !== locale) || !isPublicWorkRepresentation(representation)) return [];
+      return [createContentWorkSearchDocument(work, representation)];
+    })),
     getPublicWorkBySlug,
     getPublicWorkByCanonicalId,
     getOrderedUnits,

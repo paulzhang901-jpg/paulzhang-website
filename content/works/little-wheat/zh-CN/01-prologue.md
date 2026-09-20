@@ -5,11 +5,11 @@ work_canonical_id: work-little-wheat-v1
 unit_type: front_matter
 order: 2
 slug: 01-prologue
-status: review
+status: published
 title: 前言 / 序章
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---

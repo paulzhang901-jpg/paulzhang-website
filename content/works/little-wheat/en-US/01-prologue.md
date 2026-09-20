@@ -1,219 +1,317 @@
 ---
-id: lw-01-prologue
-canonical_id: lw-01-prologue
-work_canonical_id: work-little-wheat-v1
-unit_type: front_matter
-order: 2
-slug: 01-prologue
-status: review
-title: Prologue
-language: en-US
-published_at: null
-visibility: private
-access_level: public
-seo: {}
+{
+  "id": "lw-01-prologue",
+  "canonical_id": "lw-01-prologue",
+  "work_canonical_id": "work-little-wheat-v1",
+  "unit_type": "front_matter",
+  "order": 2,
+  "slug": "01-prologue",
+  "status": "published",
+  "title": "Prologue",
+  "language": "en-US",
+  "published_at": "2026-09-12T07:45:37-04:00",
+  "visibility": "public",
+  "access_level": "public",
+  "seo": {
+    "title": "Prologue"
+  }
+}
 ---
 Prologue
 
 When the Grain of Wheat Fell
 
-As I write these words, my heart is both tender and trembling.
+As I write these words, my heart is still tender, and it still trembles.
 
-Tender—because I remember my son, Little Wheat, whom I once held in my arms.
+Tender, because I think of the child I once held in my arms—Little Wheat.
 
-Trembling—because I know that these pages are more than a collection of memories. They are the testimony of a father and a family who have known love, fear, prayer, grief, worship, and the sustaining grace of God.
+Trembling, because what I am about to write is more than nineteen months of memories. These pages hold the joy of his birth, the long watches in the hospital, an irreversible loss, and the true story of how our family continued to hold on to faith in the midst of grief.
 
-This book was born out of the loss of a life.
+This book grew out of the life of a child, and also out of a loss we are still learning how to bear.
 
-Yet even in our loss, we have seen seeds take root in the lives of others.
+At 11:00 p.m. on January 17, 2023, our son, Zhang Xian—John Earnest Zhang—was born.
 
-At 11:00 p.m. on January 17, 2023, our son, John Earnest Zhang (Zhang Xian), was born.
+He was our first child, the child we welcomed after many years of prayer and waiting.
 
-He was our first child, a gift for whom we had prayed for many years.
+His arrival was never an ordinary family event for us.
 
-His life was like the light of dawn—gentle yet real, brief yet deeply precious.
+He was our deeply loved son, a gift of life entrusted to us.
 
-Nineteen months later, on Wednesday, August 21, 2024, at 4:44 p.m., Little Wheat died.
+His life was like the light of early morning—gentle, quiet, and real. Nineteen months is so brief in the span of a human life, yet for a father and mother, those nineteen months were enough to change our lives forever.
 
-We were there.
+At 4:44 p.m. on August 21, 2024, at Riley Children's Hospital, with us beside him in his final moments, Little Wheat's earthly life came to an end.
 
-We loved him.
+That day, we lost the child we could hold, kiss, and embrace in our arms.
 
-We prayed.
+This was a real death.
 
-We wept.
+It is not a fact that can be erased with beautiful words.
 
-And we had to face what no father or mother wants to face: the death of our child.
+Faith did not spare us from tears.
 
-We do not tell this story because grief has given us answers to every question.
+Even today, we still miss him. We still ask questions that have no simple answers, and we are still learning how to keep living with an absence that has left a permanent mark.
 
-It has not.
+But death is not the final sentence of the Christian story.
 
-Nor do we claim to know everything God was doing in our suffering.
+---
 
-There are questions we still carry.
+Why We Called Him “Little Wheat”
 
-There are tears we still shed.
+Before Little Wheat was born, his mother had already given him this nickname.
 
-There is an empty place in our family that later testimony cannot erase.
+The name came from the words of our Lord Jesus in John 12:24:
 
-And yet grief is not the only truth we confess.
+“Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.”
 
-We also confess Jesus Christ.
+Later, this verse took on a weight in our lives far beyond anything we could have imagined at the beginning.
 
-The title and central image of this book come from the words of Jesus:
+But we must also make something clear:
 
-“Unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit.”
-— John 12:24
+This verse points first to Jesus Christ.
 
-These words belong first and decisively to Christ.
+He is the Lord who truly gave Himself for the redemption of the world, passed through death, and rose from the dead.
 
-Jesus was speaking of His own approaching death—the death through which He would accomplish what Little Wheat, or any other human life, could never accomplish.
+Little Wheat's death was not redemptive.
 
-Christ alone is the Savior.
+He did not pay for anyone's sins, nor could he take the place of Christ's unique and unrepeatable cross.
 
-Christ alone bears the sin of the world.
+When we describe his story with the image of “a grain of wheat,” we use that image in the sense of testimony:
 
-Christ alone is the true Grain of Wheat whose death brings salvation and whose resurrection opens the way to life.
+A life that seems exceedingly brief and small may, by the grace of God, cause those around it to think again about life, love, suffering, faith, and eternity.
 
-Therefore, when I call my son “Little Wheat,” I do not mean that his death saved anyone.
+In this sense, the brevity of his life did not make it meaningless.
 
-It did not.
+We have already seen with our own eyes that his story has touched some people's hearts.
 
-His death was not an atoning sacrifice.
+Some began to reconsider faith.
+Some came to cherish their own children more deeply.
+Some began searching again for hope while facing loss.
+And some, by walking alongside our family, learned more deeply how to weep with those who weep.
 
-His suffering was not the gospel.
+These are not Little Wheat's “works of redemption.”
 
-His death did not possess redemptive power.
+Salvation is found in Jesus Christ alone.
 
-But because his life belongs within the greater story of Jesus Christ, I can speak of the fruit that has grown through his witness.
+These are simply the witness left by the life of a child under the light of Christ's grace.
 
-He never preached a sermon from a pulpit, yet his life caused people to stop and think.
+---
 
-He never traveled the world, yet people in different places prayed for him.
+Why Write All of This Down?
 
-He spoke very few words, yet through loving him, many of us learned to listen more carefully—to suffering, to one another, and to God.
+I am not writing this book because I have figured grief out.
 
-His life was not the gospel.
+Nor am I writing because I can now answer the question, “Why?”
 
-His life became a witness that pointed us again toward the gospel.
+Some questions still have no answer today.
 
-That distinction matters to me.
+I write because some things are worth remembering.
 
-It matters as a pastor.
+I want to remember the night he was born.
 
-And it matters even more as his father.
+I want to remember the long forty-two days in the NICU.
 
-I do not want to make my son’s death carry a theological weight it was never meant to bear.
+I want to remember his smile.
 
-I want instead to tell the truth about his life:
+I want to remember the first time he came to church.
 
-that he was loved;
+I want to remember his little hand reaching out as he sat at the piano.
 
-that his life possessed dignity and beauty;
+I want to remember those thirteen days in the PICU.
 
-that suffering was real;
+I want to remember how brothers and sisters in Christ, pastors, nurses, and friends walked with us.
 
-that death was terrible;
+And I want to remember that afternoon of August 21, 2024, when Mommy and Daddy said goodbye to him in the deepest pain.
 
-that grace met us in places we never wanted to enter;
+I also want to record our faith honestly.
 
-and that Jesus Christ remains our hope.
+Not a faith that makes grief disappear quickly,
+but a faith that can still cry out to God even when the tears have not stopped.
 
-That is why I write.
+Not a faith that pretends to understand everything,
+but a faith that dares to acknowledge human limitations and still holds on to Christ.
 
-Not because I have escaped grief.
+Not the claim that “everything must have a reason we can immediately explain,”
+but the act of entrusting ourselves, even when we cannot explain, to the God who has revealed His love and faithfulness to us in Jesus Christ.
 
-Not because every question has been answered.
+---
 
-And not because faith has made the loss small.
+This Is Not a Book of Answers
 
-I write because love remembers.
+If you are going through loss, I do not want to use this book to tell you:
 
-I write because grief needs truthful words.
+“Don't cry.”
 
-I write because testimony should not hide tears.
+Nor do I want to say:
 
-And I write because Christian hope does not end at the grave.
+“If you just have enough faith, it won't hurt so much.”
 
-Some may regard this book as a memorial to my son.
+Jesus wept at the tomb of Lazarus.
 
-I understand that.
+The Bible does not describe grief as the opposite of faith.
 
-But I would rather think of it as a testimony written while we wait for resurrection.
+Sometimes tears are the traces left behind by love.
 
-I write for those who walk through sorrow.
+So if you have also lost someone you deeply love, this book will not ask you to skip over grief.
 
-I write for those trying to see light in a long night.
+I only want to sit beside you and say:
 
-I write for parents who have lost.
+We have cried too.
 
-I write for people who have prayed and still received an answer they never wanted.
+Sometimes we still cry.
 
-I write for those who believe and yet sometimes feel close to breaking.
+But we have also discovered that a person can weep and pray at the same time;
+can miss someone and worship at the same time;
+can acknowledge the cruelty of death and still wait for Christ finally to overcome death.
 
-If you have wept, these pages are for you.
+I write for those who are willing to walk with pain.
 
-If you have waited, these pages are for you.
+I write for those searching for a little light in the darkness.
 
-If you have believed while carrying questions you cannot resolve, these pages are for you.
+I write for those who still believe but have grown weary.
 
-And if you have never known a loss like ours, I hope these pages may teach you to sit more gently beside those who have.
+If you have wept, may this book walk with you.
 
-This is the story our family has lived.
+If you have waited, may this book walk with you.
 
-It is not offered as a formula for explaining suffering.
+If your faith has ever shaken, may this book walk with you too.
 
-It is a witness.
+And if you have never experienced a loss like this, I hope these words will help you treat those who are grieving with greater tenderness, and cherish more deeply those you can still hold today.
 
-We believe that God remains faithful even when we cannot trace His purposes.
+---
 
-We believe that Jesus Christ entered suffering and death Himself.
+What Is the Hope We Hold?
 
-We believe that He truly rose bodily from the dead.
+We do not have hope because we know every detail about heaven.
 
-We believe that death will not have the final word.
+Scripture does not tell us what Little Wheat is doing at this moment; nor do we have the right to treat the pictures in a father's heart as reports from heaven.
 
-And we wait for what Scripture directs the church to await:
+As his father, of course I imagine.
 
-the return of Christ,
+I imagine seeing him again one day.
 
-the resurrection of the dead,
+I imagine his smile.
 
-the defeat of death,
+I imagine finally hearing him call me “Daddy.”
 
-and the renewal of God’s creation.
+These are the imaginings of a father shaped by love and longing.
 
-That is where our hope of reunion finally rests.
+They are precious.
 
-Not in our ability to describe what Little Wheat may be doing now.
+But they are not the foundation of our faith.
 
-Not in pictures our grieving hearts may imagine.
+Our hope is ultimately built on something more solid than imagination:
 
-But in the crucified and risen Jesus Christ.
+Jesus Christ has risen from the dead.
 
-So I offer this book to God.
+The Christian hope is not merely a vague idea that “when people die, they go to a better place.”
 
-I offer it in memory of our beloved son.
+We hope for the return of the Lord.
 
-And I offer it to you, the reader.
+We hope for the resurrection of the dead.
 
-May you find here neither an explanation that makes suffering easy nor a faith that asks you to stop grieving.
+We hope for the redemption of the body.
 
-May you instead find a family learning, sometimes through tears, to hold grief and hope together.
+We hope for a new heaven and a new earth.
 
-And may every seed of grace found in these pages finally point beyond Little Wheat, beyond his father, and beyond this book—
+We hope for what Revelation says:
 
-to Jesus Christ,
+“God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.” (Revelation 21:4, KJV)
 
-the One in whom we live,
+So when we say that we “hope to meet again,” we do not mean that we already know how every scene in the future will unfold.
 
-the One who has conquered death,
+We mean this:
 
-and the One for whose coming we wait.
+We entrust a deeply loved child—and ourselves—to the God who raised Jesus from the dead and has promised to make all things new.
 
-Paul Zhang
-Father of Little Wheat
+---
 
-Indianapolis, Indiana
-On the eve of Resurrection Sunday, 2025
+A Grain of Wheat, a Testimony
+
+This is not a book that romanticizes death.
+
+If we could choose, of course we would want Little Wheat still to be at home.
+
+We would want to watch him grow taller.
+
+We would want to hear him speak.
+
+We would want to take him to school.
+
+We would want to take him back to China to see his grandparents on both sides of the family.
+
+We would want to walk with him through a long, long life.
+
+Losing a child does not become something “no longer sad” simply because others were later moved by his story.
+
+When we speak of “bearing fruit,” we are not saying that suffering itself is beautiful.
+
+We are saying this:
+
+Suffering does not have the right to be the final master.
+
+Death can truly take away a person's earthly life, but it cannot nullify the resurrection God has promised in Christ.
+
+Our tears are real.
+
+Our love is real.
+
+And our hope is equally real.
+
+For this reason, this book is both a family memory and a testimony of faith.
+
+It will not prove that we were never weak.
+
+On the contrary, it will tell you:
+
+We were weak.
+
+We were afraid.
+
+We asked why.
+
+We held our child and cried.
+
+We sang hymns in the hospital room.
+
+And there were times in prayer when we almost did not know what else we could say.
+
+But in all of this, again and again, we still turned toward Christ.
+
+---
+
+This is the story my family and I have lived.
+
+It does not have to become the story of every family that has lost a child.
+
+Every person's grief is different, and every family has its own road to walk.
+
+But if you too are going through some kind of loss that cannot easily be put into words, I hope that here you will at least know this:
+
+You do not have to pretend to be strong.
+
+You may weep.
+
+You may ask questions.
+
+And even while asking, you may continue seeking God.
+
+May these words become a small seed in your life.
+
+Not to give you a simple answer to suffering,
+
+but to walk with you through the darkness as you continue seeking the Lord who was crucified and rose from the dead.
+
+Because in the end, what causes death to give way to life is not our strength, nor is it Little Wheat's story.
+
+It is Jesus Christ.
+
+May glory be to Him.
+
+And may everyone who reads this book, amid grief, love, and hope, walk step by step toward the Lord who has already conquered death.
+
+Your fellow traveler on this earthly journey,
+Little Wheat's Daddy,
+Paul Zhang (Zhang Chongzhu)
+
+Written in Indianapolis, Indiana
+On the eve of Easter 2025

@@ -6,11 +6,11 @@ unit_type: chapter
 order: 10
 chapter_number: 8
 slug: '09-chapter-08'
-status: review
+status: published
 title: 第八章：影响恒远——来自约翰牧师的见证
 language: zh-CN
-published_at: null
-visibility: private
+published_at: "2026-09-07T00:16:23-04:00"
+visibility: public
 access_level: public
 seo: {}
 ---
