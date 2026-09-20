@@ -45,15 +45,8 @@ The truly alarming part is that a wife's Archive isn't always a diary. Sometimes
 
 By the end, the husband is questioning his own existence. "Am I really this bad?"
 
-Then comes the closer. "Do you know what your biggest mistake was?"
-
-He surrenders immediately. "Everything. It's all my fault."
-
-She shakes her head. "No. You've only made one."
-
 Hope flickers, briefly. "What was it?"
-
-"Marrying you."
+She says, "Marrying me."
 
 Court adjourned. No appeal.
 
@@ -168,7 +161,8 @@ That question alone can change the whole fight. Because underneath it, the argum
 
 ## Closing
 
-The joke ends with the husband surrendering — "fine, it's all my fault" — and the wife delivering the final line: "No. You made exactly one mistake. Marrying me."
+The joke ends with the husband surrendering: "Fine, it's all my fault."
+The wife replies, "No. You made exactly one mistake — marrying the wrong person."
 
 Everyone laughs. But there's a truer version of that line hiding underneath the punchline: in a sense, we all married the "wrong" person.
 
