@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import test from "node:test";
+import {createContentRepository} from "../../src/lib/content/repository";
+import {getGrowthStageIds,getGrowthStageItems,growthStageLabel} from "../../src/lib/content/growth";
+import {item} from "../content/fixtures";
+const ids=["explore","believe","abide","serve","lead","multiply"];
+test("six permanent stages have exact canonical order and bilingual labels",()=>{assert.deepEqual(getGrowthStageIds(),ids);assert.deepEqual(ids.map(x=>growthStageLabel("zh-CN",x)),["探索基督","相信基督","住在基督里","与基督服事","像基督带领","为基督倍增"]);assert.deepEqual(ids.map(x=>growthStageLabel("en-US",x)),["Explore","Believe","Abide","Serve","Lead","Multiply"]);});
+test("future Markdown metadata automatically places content by journey stage",()=>{for(const stage of ids){const x=item({id:`growth-${stage}`,canonicalId:`growth-${stage}`,slug:`growth-${stage}`,journeyStages:[stage]});const repo=createContentRepository([x]);assert.equal(getGrowthStageItems(repo,"zh-CN",stage)[0]?.id,x.id);}});
+test("Growth UI keeps responsive left navigation and canonical registry stays six-stage",()=>{const source=fs.readFileSync("src/components/content/growth-page.tsx","utf8");assert.match(source,/lg:grid-cols-\[17rem_minmax\(0,1fr\)\]/);assert.match(source,/flex flex-wrap gap-2 lg:flex-col/);const taxonomy=JSON.parse(fs.readFileSync("config/architecture/taxonomy.yaml","utf8"));assert.deepEqual(taxonomy.journey_stages,ids);});

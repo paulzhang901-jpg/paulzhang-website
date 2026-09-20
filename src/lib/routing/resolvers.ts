@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { ContentRepository } from "@/lib/content/repository";
 import { getTaxonomyRegistry } from "@/lib/taxonomy/registry";
+import { getGrowthStageIds } from "@/lib/content/growth";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
 
 type CollectionResolution = {kind: "collection"; slug: string};
@@ -20,7 +21,7 @@ export function getCollectionSlugs(route: "/library" | "/stories") {
 }
 
 export function getGrowthStages() {
-  return [...getTaxonomyRegistry().journey_stages];
+  return getGrowthStageIds();
 }
 
 export function resolveLibrarySlug(slug: string, language: ContentLanguage, repository: ContentRepository): DynamicRouteResolution {

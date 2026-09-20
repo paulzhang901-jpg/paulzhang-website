@@ -4,6 +4,7 @@ import { loadPublishedSermon } from "@/lib/sermons/published";
 import { LibraryCollectionPage } from "./library-page";
 import { FoundationPage } from "@/components/layout/foundation-page";
 import { StoryCollectionPage } from "./story-collection-page";
+import { GrowthStagePage } from "./growth-page";
 import type { ContentRepository } from "@/lib/content/repository";
 import type { ContentWorkRepository } from "@/lib/content/works/repository";
 import type { DynamicRouteResolution } from "@/lib/routing/resolvers";
@@ -27,5 +28,6 @@ export async function DynamicContentRoute({resolution, locale, routeId, reposito
   }
   if (routeId === "library") return <LibraryCollectionPage locale={locale} collection={resolution.slug} repository={repository} />;
   if (routeId === "stories" && workRepository) return <StoryCollectionPage locale={locale} collection={resolution.slug} repository={repository} workRepository={workRepository} />;
+  if (routeId === "grow") return <GrowthStagePage locale={locale} stage={resolution.slug} repository={repository} />;
   return <FoundationPage locale={locale} routeId={routeId} />;
 }
