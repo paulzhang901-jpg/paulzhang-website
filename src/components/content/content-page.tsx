@@ -54,9 +54,9 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
   const subtitle = item.subtitle && (!isSermon || !sameSermonDisplayText(item.subtitle, item.title, item.language)) ? item.subtitle : null;
   const showSummary = !isSermon || (!sameSermonDisplayText(item.summary, item.title, item.language) && !sameSermonDisplayText(item.summary, subtitle ?? "", item.language));
   // The archived manuscript keeps its title lines; render them only once in the page header.
-  const manuscriptHeading = item.contentType === "article" && item.topics.includes("gospel") ? /^# (.+)\n### (.+)\n+/.exec(item.body) : null;
+  const manuscriptHeading = item.contentType === "article" ? /^# ([^\n]+)\n(?:### ([^\n]+)\n)?\n*/.exec(item.body) : null;
   const headingMatches = manuscriptHeading && (
-    (manuscriptHeading[1] === item.title && manuscriptHeading[2].toLowerCase() === item.subtitle?.toLowerCase()) ||
+    (manuscriptHeading[1] === item.title && (!manuscriptHeading[2] || manuscriptHeading[2].toLowerCase() === item.subtitle?.toLowerCase())) ||
     manuscriptHeading[1] + manuscriptHeading[2] === item.title
   );
   const readingBody = headingMatches ? item.body.slice(manuscriptHeading[0].length) : item.body;

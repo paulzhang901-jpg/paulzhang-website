@@ -79,7 +79,7 @@ export const libraryTopicLabels: Record<ContentLanguage, Record<string, string>>
     formation: "生命塑造",
     discipleship: "门徒训练",
     prayer: "祷告",
-    marriage: "婚姻",
+    marriage: "婚姻家庭",
     family: "家庭",
     grief: "哀伤",
     "work-money": "工作与金钱",
@@ -98,7 +98,7 @@ export const libraryTopicLabels: Record<ContentLanguage, Record<string, string>>
     formation: "Spiritual formation",
     discipleship: "Discipleship",
     prayer: "Prayer",
-    marriage: "Marriage",
+    marriage: "Marriage & Family",
     family: "Family",
     grief: "Grief",
     "work-money": "Work and money",
@@ -127,6 +127,7 @@ export function contentTypeLabel(locale: ContentLanguage, type: string, topics: 
 }
 
 export function contentTopicLabel(locale: ContentLanguage, topic: string) {
+  if (topic === "marriage") return locale === "zh-CN" ? "婚姻" : "Marriage";
   const collection = topic === "spiritual-formation" ? "formation" : topic;
   return libraryTopicLabels[locale][collection] ?? topic.replaceAll("-", " ");
 }

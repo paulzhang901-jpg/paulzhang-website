@@ -1,5 +1,19 @@
 # CURRENT CHECKPOINT
 
+## Marriage & Family bilingual article — 2026-09-20
+
+- Goal / Owner: publish the supplied bilingual marriage essay in the Truth Library; Paul owns editorial/publication decisions, Codex implements.
+- Scope / Version: V1, B — SMALL FEATURE; ARCHITECTURE-COMPLIANT IMPLEMENTATION. Reuse existing `article`, canonical `marriage` / `family` topics, existing `/library/marriage` collection and bilingual article routes. The combined navigation label groups existing taxonomy values; no taxonomy/schema/route registry change.
+- Authorization: owner approved latest remote main in an isolated worktree, commit/push/one PR, and KJV normalization. Do not merge or deploy. Original workspace changes must remain untouched.
+- Baseline: latest fetched origin/main `c2e079a`; worktree `/private/tmp/paulzhang-marriage-family`; branch `codex/publish-marriage-family-husband`. This is a new task, not a continuation of the historical checkpoint below.
+- Allowed Paths: `content/{zh-CN,en-US}/library/its-hard-out-here-for-a-husband.md`; `src/config/library.ts`; `src/lib/content/library.ts`; `src/components/content/content-page.tsx`; `tests/product/marriage-family.test.ts`; `artifacts/content/its-hard-out-here-for-a-husband/`; this checkpoint.
+- Architecture references: ADR-0003/0004/0009/0011/0012/0021; CONTENT_MODEL, TAXONOMY, INTERNATIONALIZATION, WEBSITE_IA_V1, QUALITY_GATES.
+- Acceptance / Tests: original ZH body intact; only documented KJV-related EN substitutions; existing schema and reciprocal canonical identity; UTF-8 plain Markdown; real combined collection filtering and requested navigation order; one rendered title; all requested validators/tests/typecheck/lint/static build/out checks; one PR without merge/deployment.
+- Metadata: use `topics` rather than unsupported free-form tags. No new schema fields for translation version or source metadata; KJV labels remain in English body, provenance in existing artifacts convention. Timestamp follows current article publishing convention (publication preparation date, goes live only after human merge).
+- Analytics / Privacy / ADR impact: none; no tracking/logging/AI changes; only owner-supplied public essay. Existing approved production automation remains unchanged.
+- Completed: baseline isolation; source/schema/architecture inspection; dependency install with frozen lockfile; canonical bilingual pair; combined Marriage & Family discovery/navigation; reciprocal translation presentation; focused tests; full architecture/application/content/security/test/lint/typecheck validation; production build; static export validation 203/203; generated-output checks for both topic labels, both titles, both article routes, reciprocal canonical/translation links, and requested topic order. Optional content warnings only (SEO title/reflection prompts plus pre-existing translation warning), no failures.
+- Next Exact Action: commit only the scoped allowed-path changes, push the feature branch, create one PR to main, then STOP. Merge/deployment: human owner only; feature branch must not deploy.
+
 ## Vastness and Eternity bilingual publication — 2026-09-19
 
 - Goal / Owner: publish Paul's approved Chinese and English evangelistic essay; Paul is editorial/publication owner, Codex implements.

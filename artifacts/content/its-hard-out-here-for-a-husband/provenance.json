@@ -1,0 +1,46 @@
+{
+  "canonicalId": "its-hard-out-here-for-a-husband",
+  "sourceFileSha256": {
+    "zh-CN": "6705f88a04a599b17a3978732f7866c6e147648ee1036f9231d8d19d11c3863c",
+    "en-US": "ef2622cac5936965c9b26a73a15994ab6d7b49e27b20b42d5efa92e9831a4b4c"
+  },
+  "sourceBodySha256": {
+    "zh-CN": "de162f3f2f2320d7233faa817b8b629e6e67dcf46c1d5f9bdab333304d6288de",
+    "en-US": "057a96884064934cca438c349115e92440fb5f68b695684d31e530f51df1de5d"
+  },
+  "publishedBodySha256": {
+    "zh-CN": "de162f3f2f2320d7233faa817b8b629e6e67dcf46c1d5f9bdab333304d6288de",
+    "en-US": "f8fce5c54c5f48bbf126823db52c31ae39efb0146faa1f217a4e9a015fccdffc"
+  },
+  "bibleTranslations": {
+    "zh-CN": "CUV / 和合本 (supplied source preserved)",
+    "en-US": "KJV"
+  },
+  "englishReplacements": [
+    {
+      "source": "> Love... keeps no record of wrongs.\n> — 1 Corinthians 13:5",
+      "published": "> Doth not behave itself unseemly, seeketh not her own, is not easily provoked, thinketh no evil;\n> — 1 Corinthians 13:5 (KJV)"
+    },
+    {
+      "source": "That phrase — *keeps no record* — is doing real work. It's accounting language.",
+      "published": "That phrase — *thinketh no evil* — is doing real work. The idea here is not keeping a ledger of wrongs. It's accounting language."
+    },
+    {
+      "source": "> If you, LORD, kept a record of sins, Lord, who could stand? But with you there is forgiveness.\n> — Psalm 130:3-4",
+      "published": "> If thou, LORD, shouldest mark iniquities, O Lord, who shall stand? But there is forgiveness with thee, that thou mayest be feared.\n> — Psalm 130:3-4 (KJV)"
+    },
+    {
+      "source": "> Above all, love each other deeply, because love covers over a multitude of sins.\n> — 1 Peter 4:8",
+      "published": "> And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.\n> — 1 Peter 4:8 (KJV)"
+    },
+    {
+      "source": "\"Covers\" doesn't mean excusing harm",
+      "published": "\"Cover\" doesn't mean excusing harm"
+    }
+  ],
+  "verificationSources": [
+    "https://www.biblegateway.com/passage/?search=1+Corinthians+13%3A5&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Psalm+130%3A3-4&version=KJV",
+    "https://www.biblegateway.com/passage/?search=1+Peter+4%3A8&version=KJV"
+  ]
+}
