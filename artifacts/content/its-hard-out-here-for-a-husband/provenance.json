@@ -5,11 +5,11 @@
     "en-US": "ef2622cac5936965c9b26a73a15994ab6d7b49e27b20b42d5efa92e9831a4b4c"
   },
   "sourceBodySha256": {
-    "zh-CN": "a4a748c882379da0152150ca7aa85879fd3a7cfcfd0a3bfbb945c25b722a7633",
+    "zh-CN": "61441739f107a056f50766d07253ff05740455807c17d7d06223a4a06cd1899d",
     "en-US": "b5e2cc341bcf318f2febda2782c381fc53df7e93ca1fc382d2bb0aeeaa50ea80"
   },
   "publishedBodySha256": {
-    "zh-CN": "a4a748c882379da0152150ca7aa85879fd3a7cfcfd0a3bfbb945c25b722a7633",
+    "zh-CN": "61441739f107a056f50766d07253ff05740455807c17d7d06223a4a06cd1899d",
     "en-US": "e3d5d08aa87c31beceada38d330adc0427a5c1ee2dcb426bc984a91557081a08"
   },
   "bibleTranslations": {
@@ -43,5 +43,5 @@
     "https://www.biblegateway.com/passage/?search=Psalm+130%3A3-4&version=KJV",
     "https://www.biblegateway.com/passage/?search=1+Peter+4%3A8&version=KJV"
   ],
-  "ownerCorrection": "2026-09-20: corrected the marriage-joke speaker/semantic direction in both canonical editions; no metadata or Scripture changes."
+  "ownerCorrection": "2026-09-20: restored the complete four-line Chinese joke dialogue and corrected its final sentence exactly as owner supplied; conclusion remains owner-approved exact text; no metadata or Scripture changes."
 }
