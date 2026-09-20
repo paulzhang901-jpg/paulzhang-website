@@ -8,6 +8,28 @@ import { discoverAndParseContent } from "../../src/lib/content/discovery";
 import { validateContentRecords } from "../../src/lib/content/validation";
 import { getTaxonomyRegistry, validateTaxonomy } from "../../src/lib/taxonomy/registry";
 
+const testRegistryPath = path.join(process.cwd(), "config/content/sermons/publication-registry.yaml");
+
+function withPublicationRegistry<T>(records: unknown[], run: () => T): T {
+  assert.equal(fs.existsSync(testRegistryPath), false, "hermetic test requires no production publication registry");
+  fs.mkdirSync(path.dirname(testRegistryPath), {recursive: true});
+  fs.writeFileSync(testRegistryPath, JSON.stringify({records}));
+  try {
+    return run();
+  } finally {
+    fs.rmSync(testRegistryPath, {force: true});
+  }
+}
+
+const legacySermonRegistryRecords = [
+  ["sermon-p7c-010-001", "god-seals-his-people"],
+  ["sermon-p7c-027-001", "wanguo-da-jingbai"],
+  ["sermon-p7c-028-001", "chenshui-de-shaonian"],
+].map(([sermonId, slug]) => ({
+  sermonId, publicationStatus: "PUBLISHED", humanPreviewStatus: "APPROVED", searchEligibility: true,
+  runtimeContentPath: `content/zh-CN/library/${slug}.mdx`, publicRoute: `/library/${slug}`,
+}));
+
 const validFrontmatter = {
   id: "lifecycle-item",
   canonical_id: "lifecycle-item",
@@ -38,7 +60,7 @@ function discoverLegacyFixture() {
       fs.mkdirSync(path.dirname(target), {recursive: true});
       fs.copyFileSync(path.join(process.cwd(), source), target);
     }
-    return discoverAndParseContent(root);
+    return withPublicationRegistry(legacySermonRegistryRecords, () => discoverAndParseContent(root));
   } finally {
     fs.rmSync(root, {recursive: true, force: true});
   }

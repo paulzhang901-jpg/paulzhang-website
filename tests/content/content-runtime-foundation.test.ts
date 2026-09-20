@@ -10,6 +10,19 @@ import { createContentRepository } from "../../src/lib/content/repository";
 import { getTaxonomyRegistry } from "../../src/lib/taxonomy/registry";
 import { item } from "./fixtures";
 
+const testRegistryPath = path.join(process.cwd(), "config/content/sermons/publication-registry.yaml");
+
+function withPublicationRegistry<T>(records: unknown[], run: () => T): T {
+  assert.equal(fs.existsSync(testRegistryPath), false, "hermetic test requires no production publication registry");
+  fs.mkdirSync(path.dirname(testRegistryPath), {recursive: true});
+  fs.writeFileSync(testRegistryPath, JSON.stringify({records}));
+  try {
+    return run();
+  } finally {
+    fs.rmSync(testRegistryPath, {force: true});
+  }
+}
+
 const canonicalBase = {
   schema_version: 2, id: "runtime-one", canonical_id: "runtime-one", slug: "runtime-one",
   status: "published", title: "Runtime One", summary: "Runtime summary", content_type: "article",
@@ -93,7 +106,10 @@ test("protected Sermon, Work, and Fiction boundaries cannot be bypassed by ordin
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "paul-protected-runtime-"));
   try {
     fixtureFile(root, "fake-sermon", {...canonicalBase, id: "fake-sermon", canonical_id: "fake-sermon", slug: "fake-sermon", content_type: "sermon"});
-    assert.throws(() => discoverAndParseContent(root), /protected sermon eligibility gate failed/);
+    withPublicationRegistry([{
+      sermonId: "fake-sermon", publicationStatus: "PUBLISHED", humanPreviewStatus: "PENDING", searchEligibility: false,
+      runtimeContentPath: "content/zh-CN/library/fake-sermon.mdx", publicRoute: "/library/fake-sermon",
+    }], () => assert.throws(() => discoverAndParseContent(root), /protected sermon eligibility gate failed/));
 
     fs.rmSync(path.join(root, "zh-CN"), {recursive: true, force: true});
     fs.mkdirSync(path.join(root, "works", "fake"), {recursive: true});
