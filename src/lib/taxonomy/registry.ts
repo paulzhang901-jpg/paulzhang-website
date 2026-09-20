@@ -34,14 +34,17 @@ export function validateWorkTaxonomy(workType: string, unitTypes: string[] = [])
 }
 
 export function validateTaxonomy(frontmatter: {
-  content_type: string; topics: string[]; life_needs: string[]; journey_stages: string[]; audiences: string[];
+  content_type: string; topics?: string[]; primary_topic?: string; secondary_topics?: string[];
+  life_needs: string[]; journey_stages?: string[]; growth_stages?: string[]; life_domains?: string[]; audiences: string[];
 }) {
   const registry = getTaxonomyRegistry();
   const checks = [
     ["content_type", [frontmatter.content_type], registry.content_types],
-    ["topic", frontmatter.topics, registry.topics],
+    ["primary_topic", frontmatter.primary_topic ? [frontmatter.primary_topic] : [], registry.primary_topics],
+    ["topic", frontmatter.topics ?? frontmatter.secondary_topics ?? [], registry.topics],
     ["life_need", frontmatter.life_needs, registry.life_needs],
-    ["journey_stage", frontmatter.journey_stages, registry.journey_stages],
+    ["journey_stage", frontmatter.journey_stages ?? frontmatter.growth_stages ?? [], registry.journey_stages],
+    ["life_domain", frontmatter.life_domains ?? [], registry.life_domains],
     ["audience", frontmatter.audiences, registry.audiences],
   ] as const;
   const errors: string[] = [];
