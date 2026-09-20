@@ -41,3 +41,4 @@ None.
 - [0013 Content Work and Ordered Unit Model](./0013-content-work-ordered-unit-model.md)
 - [0014 Mu Changke Fiction Portfolio Route](./0014-mu-changke-fiction-portfolio-route.md)
 - [0015 Production Hosting and Static Export Strategy](./0015-production-hosting-static-export-strategy.md)
+- [0021 Automatic Main Production Deployment](./0021-automatic-main-production-deployment.md)

@@ -14,17 +14,26 @@ test("ADR-0015 accepts static export while preserving explicit production author
   assert.match(adr, /does not authorize deployment, DNS changes/);
 });
 
-test("static production contract is fail-closed and never auto-deploys main", () => {
+test("static production contract deploys only validated main builds", () => {
   const config = read("next.config.ts");
   const deployment = read("docs/architecture/STATIC_PRODUCTION_DEPLOYMENT.md");
   const workflow = read(".github/workflows/architecture-validation.yml");
+  const adr = read("docs/adr/0021-automatic-main-production-deployment.md");
   assert.match(config, /output: "export"/);
   assert.match(config, /images: \{unoptimized: true\}/);
   assert.match(deployment, /Output directory \| `out`/);
-  assert.match(deployment, /`main` push → automatic production is prohibited/);
+  assert.match(adr, /Supersede only ADR-0015's manual-promotion policy/);
+  assert.match(workflow, /if: github\.event_name == 'push' && github\.ref == 'refs\/heads\/main'/);
+  assert.match(workflow, /needs: \[validate\]/);
+  assert.match(workflow, /group: production-deploy/);
   assert.match(workflow, /pnpm run build/);
   assert.match(workflow, /pnpm run validate:static-export/);
-  assert.doesNotMatch(workflow, /wrangler|cloudflare\/wrangler-action|pages deploy/);
+  assert.match(workflow, /pages deploy out/);
+  assert.match(workflow, /--project-name=paulzhang-website-preview/);
+  assert.match(workflow, /--branch=production/);
+  assert.match(workflow, /secrets\.CLOUDFLARE_API_TOKEN/);
+  assert.match(workflow, /secrets\.CLOUDFLARE_ACCOUNT_ID/);
+  assert.doesNotMatch(workflow, /echo .*CLOUDFLARE|printenv|set -x/);
 });
 
 test("Cloudflare response contract protects previews and immutable hashed assets", () => {
