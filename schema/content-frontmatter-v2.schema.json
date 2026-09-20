@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://paulzhang.org/schema/content-frontmatter-v2.schema.json",
+  "title": "Canonical ordinary-content frontmatter v2",
+  "type": "object",
+  "required": ["schema_version","id","canonical_id","slug","status","title","summary","content_type","primary_topic","language","visibility","access_level"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "id": {"$ref": "#/$defs/identifier"},
+    "canonical_id": {"$ref": "#/$defs/identifier"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "status": {"enum": ["draft","review","scheduled","published","archived"]},
+    "title": {"type": "string", "minLength": 1},
+    "subtitle": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "content_type": {"$ref": "#/$defs/registered_content_type"},
+    "primary_topic": {"$ref": "#/$defs/primary_topic"},
+    "secondary_topics": {"type": "array", "items": {"$ref": "#/$defs/registered_secondary_topic"}, "uniqueItems": true, "default": []},
+    "growth_stages": {"type": "array", "items": {"enum": ["explore","believe","abide","serve","lead","multiply"]}, "uniqueItems": true, "default": []},
+    "life_domains": {"type": "array", "items": {"enum": ["faith","life","family","work","ministry","mission"]}, "uniqueItems": true, "default": []},
+    "language": {"enum": ["zh-CN","en-US"]},
+    "authors": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true, "default": []},
+    "published_at": {"type": ["string","null"], "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "visibility": {"enum": ["public","unlisted","private"]},
+    "access_level": {"enum": ["public","member","mentor"]},
+    "life_needs": {"type": "array", "items": {"$ref": "#/$defs/identifier"}, "uniqueItems": true, "default": []},
+    "audiences": {"type": "array", "items": {"$ref": "#/$defs/identifier"}, "uniqueItems": true, "default": []},
+    "scripture_refs": {"type": "array", "default": []},
+    "related_content": {"type": "array", "items": {"$ref": "#/$defs/identifier"}, "uniqueItems": true, "default": []},
+    "formation_intent": {"type": "string", "minLength": 1},
+    "reflection_prompts": {"type": "array", "items": {"type": "string", "minLength": 1}, "default": []},
+    "practices": {"type": "array", "items": {"type": "string", "minLength": 1}, "default": []},
+    "discussion_questions": {"type": "array", "items": {"type": "string", "minLength": 1}, "default": []},
+    "prayer_prompt": {"type": "string", "minLength": 1},
+    "mentor_prompt": {"type": "string", "minLength": 1},
+    "next_steps": {"type": "array", "default": []},
+    "featured_image": {"type": "object"},
+    "media": {"type": "array", "default": []},
+    "seo": {"type": "object"}
+  },
+  "$defs": {
+    "identifier": {"type": "string", "pattern": "^[a-z0-9]+(?:[-_][a-z0-9]+)*$"},
+    "registered_content_type": {"enum": ["article","story","sermon","bible_study","devotional","reflection","qa","research","book_note","guide","resource","video","audio","course","growth_path","testimony","announcement"]},
+    "primary_topic": {"enum": ["bible","gospel","faith","spiritual-life","marriage-family","life-values","money-work","church-mission"]},
+    "registered_secondary_topic": {"enum": ["bible","gospel","theology","spiritual-formation","discipleship","prayer","marriage","family","parenting","grief","suffering","work","money","stewardship","leadership","church","ministry","mission","culture","education","learning","technology","ai","research"]}
+  },
+  "allOf": [{
+    "if": {"properties": {"status": {"enum": ["published","archived"]}}, "required": ["status"]},
+    "then": {"required": ["published_at"], "properties": {"published_at": {"type": "string", "format": "date-time"}}}
+  }],
+  "additionalProperties": false
+}

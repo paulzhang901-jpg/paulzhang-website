@@ -7,8 +7,10 @@ const registrySchema = z.object({
   content_types: z.array(z.string()).min(1),
   work_types: z.array(z.string()).min(1),
   unit_types: z.array(z.string()).min(1),
+  primary_topics: z.array(z.string()).min(1),
   topics: z.array(z.string()).min(1),
   life_needs: z.array(z.string()).min(1),
+  life_domains: z.array(z.string()).min(1),
   journey_stages: z.array(z.string()).min(1),
   audiences: z.array(z.string()).min(1),
 }).strict();
