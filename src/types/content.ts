@@ -18,6 +18,7 @@ export type ContentNextStep =
   | {type: "action"; action: "reflect" | "practice" | "connect"; label: string};
 
 export type NormalizedContentItem = {
+  schemaVersion: 1 | 2;
   id: string;
   canonicalId: string;
   slug: string;
@@ -25,6 +26,10 @@ export type NormalizedContentItem = {
   language: ContentLanguage;
   status: ContentStatus;
   contentType: string;
+  primaryTopic?: string;
+  secondaryTopics: string[];
+  growthStages: string[];
+  lifeDomains: string[];
   title: string;
   subtitle?: string;
   summary: string;
@@ -51,7 +56,14 @@ export type NormalizedContentItem = {
   seo: {title?: string; description?: string};
   body: string;
   sourcePath: string;
+  canonicalUrl: string;
 };
+
+export type PublicContentProjection = Pick<NormalizedContentItem,
+  "id" | "canonicalId" | "slug" | "domain" | "language" | "contentType" | "primaryTopic" |
+  "secondaryTopics" | "growthStages" | "lifeDomains" | "title" | "summary" | "topics" |
+  "lifeNeeds" | "audiences" | "publishedAt" | "updatedAt" | "scriptureRefs" | "canonicalUrl"
+>;
 
 export type PublishedContentItem = NormalizedContentItem & {
   status: "published";

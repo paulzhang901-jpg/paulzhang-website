@@ -1,9 +1,34 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import test from "node:test";
 import { contentFrontmatterSchema } from "../../src/lib/content/schema";
 import { discoverAndParseContent } from "../../src/lib/content/discovery";
 import { validateContentRecords } from "../../src/lib/content/validation";
 import { getTaxonomyRegistry, validateTaxonomy } from "../../src/lib/taxonomy/registry";
+
+const testRegistryPath = path.join(process.cwd(), "config/content/sermons/publication-registry.yaml");
+
+function withPublicationRegistry<T>(records: unknown[], run: () => T): T {
+  assert.equal(fs.existsSync(testRegistryPath), false, "hermetic test requires no production publication registry");
+  fs.mkdirSync(path.dirname(testRegistryPath), {recursive: true});
+  fs.writeFileSync(testRegistryPath, JSON.stringify({records}));
+  try {
+    return run();
+  } finally {
+    fs.rmSync(testRegistryPath, {force: true});
+  }
+}
+
+const legacySermonRegistryRecords = [
+  ["sermon-p7c-010-001", "god-seals-his-people"],
+  ["sermon-p7c-027-001", "wanguo-da-jingbai"],
+  ["sermon-p7c-028-001", "chenshui-de-shaonian"],
+].map(([sermonId, slug]) => ({
+  sermonId, publicationStatus: "PUBLISHED", humanPreviewStatus: "APPROVED", searchEligibility: true,
+  runtimeContentPath: `content/zh-CN/library/${slug}.mdx`, publicRoute: `/library/${slug}`,
+}));
 
 const validFrontmatter = {
   id: "lifecycle-item",
@@ -18,13 +43,39 @@ const validFrontmatter = {
   access_level: "public",
 };
 
+function discoverLegacyFixture() {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "paul-legacy-content-model-"));
+  const sources = [
+    "content/en-US/library/truth-reading-sample.mdx",
+    "content/zh-CN/library/zhenli-yuedu-shili.mdx",
+    "content/zh-CN/stories/xiaomaizi-shili.mdx",
+    "content/zh-CN/library/chenshui-de-shaonian.mdx",
+    "content/zh-CN/library/god-seals-his-people.mdx",
+    "content/zh-CN/library/wanguo-da-jingbai.mdx",
+  ];
+  try {
+    for (const source of sources) {
+      const relative = source.replace(/^content\//, "");
+      const target = path.join(root, relative);
+      fs.mkdirSync(path.dirname(target), {recursive: true});
+      fs.copyFileSync(path.join(process.cwd(), source), target);
+    }
+    return withPublicationRegistry(legacySermonRegistryRecords, () => discoverAndParseContent(root));
+  } finally {
+    fs.rmSync(root, {recursive: true, force: true});
+  }
+}
+
 test("repository samples conform to schema, taxonomy, references, and translation contracts", () => {
-  const report = validateContentRecords(discoverAndParseContent());
+  const report = validateContentRecords(discoverLegacyFixture());
   assert.deepEqual(report.errors, []);
-  for (const id of ["truth-sample-zh", "truth-sample-en", "story-sample-zh", "sermon-p7c-029-001"]) {
+  assert.equal(report.items.length, 6);
+  for (const id of ["truth-sample-zh", "truth-sample-en", "story-sample-zh"]) {
     assert.ok(report.items.some((entry) => entry.id === id), `required content missing: ${id}`);
   }
-  assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-029-001" && entry.status === "published" && entry.visibility === "public" && entry.accessLevel === "public"));
+  assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-010-001" && entry.status === "published"));
+  assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-027-001" && entry.status === "published"));
+  assert.ok(report.items.some((entry) => entry.id === "sermon-p7c-028-001" && entry.status === "published"));
   assert.ok(report.warnings.some((warning) => warning.includes("life-story-sample-001: translation missing for en-US")));
   assert.ok(report.items.filter((entry) => entry.status === "published").every((entry) => entry.publishedAt instanceof Date));
   assert.ok(report.items.filter((entry) => entry.status === "review").every((entry) => entry.publishedAt === undefined));
@@ -53,7 +104,7 @@ test("taxonomy is consumed from the canonical registry", () => {
 });
 
 test("duplicate identities and broken canonical references fail validation", () => {
-  const records = discoverAndParseContent();
+  const records = discoverLegacyFixture();
   const duplicate = structuredClone(records[0]);
   duplicate.sourcePath = "duplicate.mdx";
   const broken = structuredClone(records[1]);

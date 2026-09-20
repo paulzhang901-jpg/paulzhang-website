@@ -1,9 +1,20 @@
 import type { ParsedContentRecord } from "./discovery";
 import type { NormalizedContentItem, PublishedContentItem } from "@/types/content";
 
+export function canonicalContentPath(domain: NormalizedContentItem["domain"], slug: string, language: NormalizedContentItem["language"]) {
+  const prefix = language === "en-US" ? "/en" : "";
+  const segment = domain === "growth" ? "grow" : domain === "pages" ? "" : domain;
+  return `${prefix}/${segment ? `${segment}/` : ""}${slug}`;
+}
+
 export function normalizeContent(record: ParsedContentRecord): NormalizedContentItem {
   const {frontmatter: item} = record;
+  const canonical = "schema_version" in item;
+  const legacyTopics = canonical ? [] : item.topics;
+  const secondaryTopics = canonical ? item.secondary_topics : legacyTopics;
+  const growthStages = canonical ? item.growth_stages : item.journey_stages;
   return {
+    schemaVersion: canonical ? 2 : 1,
     id: item.id,
     canonicalId: item.canonical_id,
     slug: item.slug,
@@ -11,12 +22,16 @@ export function normalizeContent(record: ParsedContentRecord): NormalizedContent
     language: item.language,
     status: item.status,
     contentType: item.content_type,
+    primaryTopic: canonical ? item.primary_topic : legacyTopics.length === 1 ? legacyTopics[0] : undefined,
+    secondaryTopics: [...secondaryTopics],
+    growthStages: [...growthStages],
+    lifeDomains: canonical ? [...item.life_domains] : [],
     title: item.title,
     subtitle: item.subtitle,
     summary: item.summary,
-    topics: [...item.topics],
+    topics: [...secondaryTopics],
     lifeNeeds: [...item.life_needs],
-    journeyStages: [...item.journey_stages],
+    journeyStages: [...growthStages],
     audiences: [...item.audiences],
     authors: [...item.authors],
     publishedAt: item.published_at ? new Date(item.published_at) : undefined,
@@ -43,6 +58,7 @@ export function normalizeContent(record: ParsedContentRecord): NormalizedContent
     seo: {...item.seo},
     body: record.body,
     sourcePath: record.sourcePath,
+    canonicalUrl: canonicalContentPath(record.domain, item.slug, item.language),
   };
 }
 
