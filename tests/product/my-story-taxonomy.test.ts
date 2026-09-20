@@ -26,3 +26,12 @@ test("Little Wheat work is assigned only to the permanent little-wheat collectio
     for (const other of slugs.filter((slug) => slug !== "little-wheat")) assert.equal(getStoryCollectionWorks(works, locale, other).length, 0);
   }
 });
+
+test("My Story desktop uses a left topic sidebar with responsive stacked navigation", () => {
+  const source=fs.readFileSync("src/components/content/stories-page.tsx","utf8");
+  assert.match(source,/lg:grid-cols-\[17rem_minmax\(0,1fr\)\]/);
+  assert.match(source,/lg:flex-col lg:items-start/);
+  assert.match(source,/按主题开始探索/);
+  assert.match(source,/Explore by Topic/);
+  assert.match(source,/flex flex-wrap gap-2 lg:flex-col/);
+});
