@@ -8,7 +8,7 @@ const collectionTopics: Record<string, string[]> = {
   formation: ["spiritual-formation"],
   discipleship: ["discipleship"],
   prayer: ["prayer"],
-  marriage: ["marriage"],
+  marriage: ["marriage", "family", "parenting"],
   family: ["family", "parenting"],
   grief: ["grief", "suffering"],
   "work-money": ["work", "money", "stewardship"],
@@ -32,6 +32,8 @@ export function getLibraryCollectionItems(repository: ContentRepository, locale:
 
 export function getActiveLibraryCollections(items: NormalizedContentItem[]) {
   return Object.entries(collectionTopics)
+    // Family remains directly addressable; the combined marriage collection is its navigation entry.
+    .filter(([slug]) => slug !== "family")
     .filter(([, topics]) => items.some((item) => topics.some((topic) => item.topics.includes(topic))))
     .map(([slug]) => slug);
 }
