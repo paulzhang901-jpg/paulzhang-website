@@ -1,0 +1,98 @@
+{
+  "canonicalId": "vastness-and-eternity",
+  "approval": "Owner direct publication authorization, 2026-09-19",
+  "category": "传福音文集 / Evangelistic Essays",
+  "taxonomy": {
+    "content_type": "article",
+    "topics": [
+      "gospel"
+    ]
+  },
+  "sourceBodySha256": {
+    "zh-CN": "3b7aba1a97f98d8e23fd3b73af37998d12487ccce7111920b82f210e406aad55",
+    "en-US": "5f33f3908f5d65f9c2266322f0738d56a264115b742058c1a518e86b7f133666"
+  },
+  "publishedBodySha256": {
+    "zh-CN": "3b7aba1a97f98d8e23fd3b73af37998d12487ccce7111920b82f210e406aad55",
+    "en-US": "d6d0b20b30b3782edf986497e1fd7d8db59c34d0b219c2ed36a67e50822bc55a"
+  },
+  "ordinaryEnglishProsePreserved": true,
+  "kjvReplacements": [
+    {
+      "source": "our lives, James writes, are a mist — visible for a moment, and then simply not (James 4:14)",
+      "published": "“Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away.” (James 4:14) (KJV)"
+    },
+    {
+      "source": "*I look at your heavens, the work of your fingers, the moon and the stars you set in place — and I have to ask: who am I, that you would think of me? What is humanity, that you would care? (Psalm 8:3-4)*",
+      "published": "*“When I consider thy heavens, the work of thy fingers, the moon and the stars, which thou hast ordained; What is man, that thou art mindful of him? and the son of man, that thou visitest him?”* (Psalm 8:3-4) (KJV)"
+    },
+    {
+      "source": "— that we are dust and will return to dust, that our years add up to seventy, or eighty if we're strong, and that for all our striving, they pass quickly and we fly away (Psalm 90:3, 10)",
+      "published": ": “Thou turnest man to destruction; and sayest, Return, ye children of men.” … “The days of our years are threescore years and ten; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow; for it is soon cut off, and we fly away.” (Psalm 90:3, 10) (KJV)"
+    },
+    {
+      "source": "*teach us to number our days, that we might live with wisdom at the center of our hearts* (Psalm 90:12)",
+      "published": "*“So teach us to number our days, that we may apply our hearts unto wisdom.”* (Psalm 90:12) (KJV)"
+    },
+    {
+      "source": "*you made humanity only a little lower than the heavenly beings, and crowned us with glory and honor; you put us in charge of everything your hands have made, everything under our feet* (Psalm 8:5-6)",
+      "published": "*“For thou hast made him a little lower than the angels, and hast crowned him with glory and honour. Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet:”* (Psalm 8:5-6) (KJV)"
+    },
+    {
+      "source": "*God loved the world in this way: he gave his only Son, so that everyone who believes in him would not be lost, but would have life without end* (John 3:16)",
+      "published": "*“For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.”* (John 3:16) (KJV)"
+    },
+    {
+      "source": "*the fear of the Lord is where wisdom begins* (Proverbs 9:10)",
+      "published": "*“The fear of the LORD is the beginning of wisdom:”* (Proverbs 9:10) (KJV)"
+    },
+    {
+      "source": "we don't fix our eyes on what is seen, but on what is unseen — because what is seen is temporary, and what is unseen lasts forever (2 Corinthians 4:18)",
+      "published": "“While we look not at the things which are seen, but at the things which are not seen: for the things which are seen are temporal; but the things which are not seen are eternal.” (2 Corinthians 4:18) (KJV)"
+    },
+    {
+      "source": "*vapor*",
+      "published": "*vapour* (James 4:14) (KJV)"
+    }
+  ],
+  "punctuationBoundary": "on this subject : becomes on this subject: before the Psalm quotation",
+  "kjvSources": [
+    "https://www.biblegateway.com/passage/?search=James+4%3A14&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Psalm+8%3A3-6&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Psalm+90%3A3&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Psalm+90%3A10-12&version=KJV",
+    "https://www.biblegateway.com/passage/?search=John+3%3A16&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Proverbs+9%3A10&version=KJV",
+    "https://www.biblegateway.com/passage/?search=2+Corinthians+4%3A18&version=KJV"
+  ],
+  "duplicateCheck": [
+    {
+      "source": "渺小与永恒——写给每一个仰望星空的人.md",
+      "closest": [
+        [
+          0.0769,
+          "content/works/little-wheat/zh-CN/12-chapter-11.md"
+        ],
+        [
+          0.0711,
+          "content/works/little-wheat/zh-CN/02-chapter-01.md"
+        ]
+      ],
+      "checked": 64
+    },
+    {
+      "source": "The Weight of Being Small.md",
+      "closest": [
+        [
+          0.1719,
+          "content/works/little-wheat/en-US/05-chapter-04.md"
+        ],
+        [
+          0.1654,
+          "content/works/little-wheat/en-US/03-chapter-02.md"
+        ]
+      ],
+      "checked": 64
+    }
+  ]
+}

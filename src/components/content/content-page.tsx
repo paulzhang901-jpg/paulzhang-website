@@ -29,7 +29,7 @@ function TranslationStatus({item, repository}: {item: NormalizedContentItem; rep
     </p>;
   }
   return <div className="mt-5 text-sm"><Link data-language-alternate href={contentPath(translation.item)} hrefLang={targetLocale} className="font-medium underline underline-offset-4">
-    {item.contentType === "sermon" ? item.language === "zh-CN" ? "阅读 English Edition" : "Read the Chinese edition" : copy.readEnglish}
+    {item.contentType === "article" && item.topics.includes("gospel") ? item.language === "zh-CN" ? "English Edition" : "中文版" : item.contentType === "sermon" ? item.language === "zh-CN" ? "阅读 English Edition" : "Read the Chinese edition" : copy.readEnglish}
   </Link>{translation.status === "outdated" ? <span className="ml-3 text-muted-foreground">{copy.translationOutdated}</span> : null}</div>;
 }
 
@@ -53,6 +53,13 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
   const display = (value: string) => isSermon ? sermonDisplayText(value, item.language) : value;
   const subtitle = item.subtitle && (!isSermon || !sameSermonDisplayText(item.subtitle, item.title, item.language)) ? item.subtitle : null;
   const showSummary = !isSermon || (!sameSermonDisplayText(item.summary, item.title, item.language) && !sameSermonDisplayText(item.summary, subtitle ?? "", item.language));
+  // The archived manuscript keeps its title lines; render them only once in the page header.
+  const manuscriptHeading = item.contentType === "article" && item.topics.includes("gospel") ? /^# (.+)\n### (.+)\n+/.exec(item.body) : null;
+  const headingMatches = manuscriptHeading && (
+    (manuscriptHeading[1] === item.title && manuscriptHeading[2].toLowerCase() === item.subtitle?.toLowerCase()) ||
+    manuscriptHeading[1] + manuscriptHeading[2] === item.title
+  );
+  const readingBody = headingMatches ? item.body.slice(manuscriptHeading[0].length) : item.body;
   const related = repository.getRelatedContent(item, 3);
   return <>
     <Section className="border-b bg-muted/40">
@@ -61,7 +68,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
           <nav aria-label={item.language === "zh-CN" ? "面包屑" : "Breadcrumbs"} className="mb-8 text-sm text-muted-foreground"><Link href={contentIndexPath(item)}>{isStory ? copy.backStories : copy.back}</Link></nav>
         <article>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-muted-foreground">
-            <span className="font-semibold text-primary">{contentTypeLabel(item.language, item.contentType)}</span>
+            <span className="font-semibold text-primary">{contentTypeLabel(item.language, item.contentType, item.topics)}</span>
             {item.publishedAt ? <span>{copy.published} {item.publishedAt.toLocaleDateString(item.language)}</span> : null}
             {item.publishedAt && item.updatedAt && item.updatedAt.getTime() !== item.publishedAt.getTime() ? <span>{copy.updated} {item.updatedAt.toLocaleDateString(item.language)}</span> : null}
           </div>
@@ -77,7 +84,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
       </Container>
     </Section>
     <Section>
-      <Container><ReadingContainer className="px-0">{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={item.body} components={mdxComponents} /></article>}</ReadingContainer></Container>
+      <Container><ReadingContainer className="px-0">{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={readingBody} components={mdxComponents} /></article>}</ReadingContainer></Container>
     </Section>
     <Section className="border-t bg-muted/40">
       <Container>
