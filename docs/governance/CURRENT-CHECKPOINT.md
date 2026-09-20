@@ -1,3 +1,12 @@
+## 2026-09-20 — My Story Seven Permanent Categories — READY FOR PR
+- Scope: establish seven permanent bilingual My Story navigation/filter categories over existing canonical content topics; preserve Markdown-first article discovery, existing story/work routes, and the separate Truth Library taxonomy.
+- Authorization: owner requested architecture completion, isolated branch/worktree, validation, commit/push/PR; no merge/deployment.
+- Base: latest `origin/main` `9f54f57c34bd18dccc00d2b4515f4b8bec9e5699`; isolated worktree `/private/tmp/paulzhang-my-story-taxonomy`, branch `codex/my-story-seven-categories`. Original dirty worktree untouched.
+- Categories: `testimonies`, `turning-points`, `little-wheat`, `ministry`, `suffering-grace`, `immigration`, `letters`; mappings reuse existing canonical topic IDs. Historical collection slugs `my-journey`, `faith`, `family`, `learning` remain routable. Existing `little-wheat` content-work route remains compatible because work resolution precedes collection resolution.
+- English `/en/stories` was previously a generic FoundationPage; it now uses the same StoriesPage content architecture as zh-CN so bilingual category navigation is functional. No article/story content files changed. Truth Library files unchanged.
+- Validation PASS: focused seven-category tests; architecture; ESLint; TypeScript; full tests; content/frontmatter validation (existing optional warnings only); fiction ingestion; production build; static export 209/209; exact bilingual UI order; seven bilingual category routes; historical collection routes.
+- Next Exact Action: commit scoped architecture/config/UI/tests/checkpoint changes, push, create one PR, STOP. No merge/deployment.
+
 ## 2026-09-20 — Truth Library Eight Permanent Topics — READY FOR PR
 - Scope: make eight permanent bilingual Truth Library navigation topics first-class filters over the existing canonical taxonomy; preserve all existing content/URLs and Markdown-first publishing.
 - Authorization: owner explicitly requested architecture/taxonomy completion, isolated branch/worktree, validation, commit/push/PR; no merge or deployment.

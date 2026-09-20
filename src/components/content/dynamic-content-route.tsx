@@ -3,6 +3,7 @@ import { ContentPage } from "./content-page";
 import { loadPublishedSermon } from "@/lib/sermons/published";
 import { LibraryCollectionPage } from "./library-page";
 import { FoundationPage } from "@/components/layout/foundation-page";
+import { StoryCollectionPage } from "./story-collection-page";
 import type { ContentRepository } from "@/lib/content/repository";
 import type { DynamicRouteResolution } from "@/lib/routing/resolvers";
 import type { ContentLanguage } from "@/types/content";
@@ -23,5 +24,6 @@ export async function DynamicContentRoute({resolution, locale, routeId, reposito
     return <ContentPage item={resolution.item} repository={repository} />;
   }
   if (routeId === "library") return <LibraryCollectionPage locale={locale} collection={resolution.slug} repository={repository} />;
+  if (routeId === "stories") return <StoryCollectionPage locale={locale} collection={resolution.slug} repository={repository} />;
   return <FoundationPage locale={locale} routeId={routeId} />;
 }
