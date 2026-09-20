@@ -1,7 +1,7 @@
-# Static Production Deployment Contract v1
+# Static Production Deployment Contract v2
 
 ## Scope
-This contract implements ADR-0015 without connecting a provider or authorizing deployment. The selected target is Cloudflare Pages static hosting via prebuilt Direct Upload. Cloudflare authoritative DNS remains separately governed. Vercel native Next.js remains the fallback architecture.
+This contract implements ADR-0015's hosting decision and ADR-0021's automatic production-promotion decision. Production remains Next.js static export hosted by the existing Cloudflare Pages Direct Upload project `paulzhang-website-preview`. No dashboard Git integration, DNS change, custom-domain change, application runtime, or second hosting architecture is introduced.
 
 ## Build contract
 
@@ -16,56 +16,51 @@ This contract implements ADR-0015 without connecting a provider or authorizing d
 | Runtime | None; static files only |
 | Runtime secrets | None |
 
-CI must use the repository-standard `pnpm run build`. A webpack-only substitute does not satisfy the authoritative production gate.
+CI must use the repository-standard `pnpm run build`. The exact validated `out/` directory from that build is the only production upload artifact.
 
 ## Cloudflare Pages contract
-Use a prebuilt Direct Upload project so Git pushes do not automatically promote production. Provider connection and credentials require a later explicit authorization.
 
-Future preview command shape:
+| Setting | Required value |
+|---|---|
+| Project | `paulzhang-website-preview` |
+| Production branch | `production` |
+| Production domains | `paulzhang.org`, `www.paulzhang.org` |
+| Deployment method | Wrangler Pages Direct Upload |
+| Authentication | GitHub Actions secrets only |
+
+Production command shape:
 
 ```text
-wrangler pages deploy out --project-name=<approved-project> --branch=<feature-branch>
+wrangler pages deploy out --project-name=paulzhang-website-preview --branch=production --commit-hash=<main-sha>
 ```
 
-Future production command shape:
+The workflow must not alter DNS or custom-domain configuration.
 
-```text
-wrangler pages deploy out --project-name=<approved-project> --branch=<approved-production-branch>
-```
+## Automatic production gate
+Production deployment is authorized only for a GitHub Actions `push` event on `refs/heads/main`, after all existing architecture, application, content, security, and aggregate validation jobs succeed. Pull requests and feature branches run validation but never execute the production deployment job and never receive Cloudflare credentials.
 
-These commands are documentation only. The project name, account ID, token, production branch, custom domain, and workflow do not exist in this implementation.
+The production job rebuilds from the exact triggering `main` SHA after validation, validates static export again, then uploads that exact `out/`. This intentionally favors deterministic provenance over reusing a mutable workspace from another job.
 
-## Immutable deployments and promotion
-Each upload must be tied to an approved commit SHA and release tag. Preview uploads never promote production. Production promotion requires an approved release tag, immutable candidate deployment ID, explicit human authorization, and a smoke test. A push to `main` must not deploy automatically.
+A `production-deploy` concurrency group prevents overlapping production deployments. Production smoke checks must succeed for `https://paulzhang.org/` and `https://paulzhang.org/library` after upload.
+
+## Secrets
+Required GitHub Actions repository secrets:
+- `CLOUDFLARE_API_TOKEN`: least-privilege token with Cloudflare Pages deployment/edit permission for the account containing the approved project.
+- `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account identifier.
+
+Secrets must never be committed, echoed, copied into artifacts, exposed to pull-request jobs, or placed in repository variables or `.env` files.
 
 ## Preview security
-- Preview uses no production credentials or runtime secrets.
-- Cloudflare preview deployments must return `X-Robots-Tag: noindex`; `_headers` records the repository-side rule and provider behavior must be verified by `curl -I` before review.
-- Preview may be protected by Cloudflare Access after separate account authorization.
-- Only the validated `out/` artifact is uploaded; canonical intake/configuration directories are not part of the artifact.
-- Public/private content and canonical-hash gates run before upload.
-
-## Production behavior
-- Custom domain intent: `https://paulzhang.org`; ownership and DNS authority must be proven before configuration.
-- HTTPS certificate and HTTP-to-HTTPS behavior must be verified in provider preview/custom-domain setup.
-- Apex versus `www` canonical redirect requires a separate DNS/domain authorization.
-- Clean extensionless URLs and unknown-route `404.html` behavior must be verified on a provider preview.
-- Cloudflare Global Network does not constitute official mainland-China CDN acceleration or guarantee mainland reachability.
+- Feature branches do not deploy through this production workflow.
+- `public/_headers` is copied into `out/`; Cloudflare preview noindex behavior remains governed by the existing header contract.
+- Only validated static output is uploaded; canonical intake/configuration directories are not deployment artifacts.
 
 ## Cache and security headers
-`public/_headers` is copied into `out/`. Fingerprinted `/_next/static/*` assets receive one-year immutable browser caching. Non-fingerprinted `/images/*` receive a one-day browser cache so same-name governed updates are not permanently stranded. HTML uses Cloudflare defaults and must not receive immutable caching.
+`public/_headers` is copied into `out/`. Fingerprinted `/_next/static/*` assets receive one-year immutable browser caching. Non-fingerprinted `/images/*` receive a one-day browser cache. HTML must not receive immutable caching.
 
-Launch headers define a same-origin CSP, clickjacking protection, MIME sniffing protection, referrer policy, and a minimal permissions policy. Header behavior must be tested in preview; weakening it requires review.
+Launch headers retain same-origin CSP, clickjacking protection, MIME sniffing protection, referrer policy, and minimal permissions policy.
 
-## Rollback
-Identify every production version by release tag, commit SHA, canonical hash evidence, and Cloudflare deployment ID. Roll back using the provider's immutable deployment history when available; otherwise rebuild from the approved tag with the frozen lockfile, rerun every gate, and manually promote only with authorization. Never reset `main` to roll back production.
+## Rollback and recovery
+Identify production versions by commit SHA and Cloudflare deployment ID. Prefer rollback through Cloudflare immutable deployment history. If provider rollback is unavailable, check out an approved prior commit, install from the frozen lockfile, rerun every gate, build and validate `out/`, and explicitly deploy that validated artifact with authorized credentials. Never reset `main` merely to roll back production.
 
-## Secrets and GitHub Environment protections
-No secret is created by this task. A future integration may require `CLOUDFLARE_ACCOUNT_ID` and a least-privilege `CLOUDFLARE_API_TOKEN` with Pages deployment permission. They must live in GitHub Environment secrets, never repository variables, committed `.env`, canonical packages, logs, or preview artifacts.
-
-The future `production` GitHub Environment must require human reviewers, restrict deployment to approved release refs, prevent feature branches from reading production secrets, and retain deployment audit history. Preview should use a separate environment and token scope.
-
-## Promotion model
-Task approval → feature branch/worktree → implementation → deterministic validation → PR → automatic PR Preview when provider integration exists → Author visual review → PR approval → merge → main revalidation → approved release tag → immutable release candidate → explicit production authorization → manual promotion → production smoke test.
-
-`main` push → automatic production is prohibited.
+If an automatic deployment fails, do not bypass validation. Correct the deployment/configuration problem through a reviewed PR or perform an explicitly authorized rollback using the procedure above.

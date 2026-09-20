@@ -64,4 +64,4 @@ Multi-unit publications are governed by [ADR-0013](../adr/0013-content-work-orde
 
 The Mu Changke Fiction portfolio route is governed by [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md): it is a LOCKED-metadata discovery and official-reading router, never a manuscript, chapter, contract, download, or fiction-distribution surface.
 
-Production static-export architecture and manual release promotion are governed by [ADR-0015](../adr/0015-production-hosting-static-export-strategy.md) and the [Static Production Deployment contract](./STATIC_PRODUCTION_DEPLOYMENT.md).
+Production static-export architecture is governed by [ADR-0015](../adr/0015-production-hosting-static-export-strategy.md); automatic validated `main` production deployment is governed by [ADR-0021](../adr/0021-automatic-main-production-deployment.md) and the [Static Production Deployment contract](./STATIC_PRODUCTION_DEPLOYMENT.md).
