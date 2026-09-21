@@ -4,6 +4,7 @@ const domainSegments: Record<ContentDomain, string> = {
   library: "library",
   stories: "stories",
   growth: "grow",
+  together: "together",
   pages: "",
 };
 

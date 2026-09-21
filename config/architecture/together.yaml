@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "sections": [
+    {"id":"mentoring","labels":{"zh-CN":"个人陪伴","en-US":"Mentoring"},"participation":true},
+    {"id":"prayer-support","labels":{"zh-CN":"祷告支持","en-US":"Prayer Support"},"participation":true},
+    {"id":"growth-groups","labels":{"zh-CN":"成长小组","en-US":"Growth Groups"},"participation":true},
+    {"id":"faq","labels":{"zh-CN":"常见问题","en-US":"FAQ"},"participation":false},
+    {"id":"contact","labels":{"zh-CN":"报名 / 联系","en-US":"Sign Up / Contact"},"participation":true},
+    {"id":"testimonies","labels":{"zh-CN":"见证分享","en-US":"Share Your Story"},"participation":true},
+    {"id":"resources","labels":{"zh-CN":"资源推荐","en-US":"Recommended Resources"},"participation":false}
+  ],
+  "legacy_aliases": {
+    "talk":"contact","faith":"mentoring","life":"mentoring","marriage-family":"mentoring","parenting":"mentoring","grief":"mentoring","spiritual-growth":"mentoring","ministry":"mentoring","prayer":"prayer-support","mentor":"mentoring","how-it-works":"faq"
+  }
+}

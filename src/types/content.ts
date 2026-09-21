@@ -3,7 +3,7 @@ export type ContentStatus = "draft" | "review" | "scheduled" | "published" | "ar
 export type ContentVisibility = "public" | "unlisted" | "private";
 export type ContentAccessLevel = "public" | "member" | "mentor";
 export type TranslationStatus = "missing" | "draft" | "review" | "published" | "outdated";
-export type ContentDomain = "library" | "stories" | "growth" | "pages";
+export type ContentDomain = "library" | "stories" | "growth" | "together" | "pages";
 
 export type ScriptureReference = {
   book: string;
@@ -31,6 +31,7 @@ export type NormalizedContentItem = {
   topics: string[];
   lifeNeeds: string[];
   journeyStages: string[];
+  togetherSection?: string;
   audiences: string[];
   authors: string[];
   publishedAt?: Date;

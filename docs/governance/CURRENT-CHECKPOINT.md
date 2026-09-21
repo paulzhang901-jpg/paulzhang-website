@@ -1,3 +1,13 @@
+## 2026-09-20 — Together Seven Permanent Sections — READY FOR PR
+- Scope: convert `/together` from V1 entry placeholder into a permanent bilingual content/participation architecture under ADR-0022.
+- Base: latest `origin/main` `6d85142...`; isolated worktree `/private/tmp/paulzhang-together-architecture`, branch `codex/together-seven-sections`. Original dirty worktree untouched.
+- Permanent IDs/order: `mentoring`, `prayer-support`, `growth-groups`, `faq`, `contact`, `testimonies`, `resources`. Chinese labels: 个人陪伴, 祷告支持, 成长小组, 常见问题, 报名 / 联系, 见证分享, 资源推荐. English: Mentoring, Prayer Support, Growth Groups, FAQ, Sign Up / Contact, Share Your Story, Recommended Resources.
+- Content architecture: new `together` content domain plus exactly-one `together_section` metadata for Together Markdown. Repository discovery/rendering is section-driven; no page-code edits are required for future content assigned to an existing section.
+- Participation/privacy: no secure first-party submission backend exists. V1 action sections use the existing `/about/contact` human-handoff surface and Personal WeChat delivery. The website does not collect/store prayer, testimony, mentoring, group-interest, or contact message text. No new third-party dependency was added. A secure web form remains deferred pending provider/consent/access/retention/deletion/abuse/ownership architecture under ADR-0010/0022.
+- Compatibility: former Together child slugs remain generated legacy aliases; no redirects required. Truth Library, My Story, Growth taxonomy, and all content files unchanged.
+- Validation PASS: Together tests 6/6; architecture; ESLint; TypeScript; full tests; content validation; fiction ingestion; production build; static export 245/245; exact bilingual seven-section navigation order; permanent + legacy route generation; participation handoff/no-form checks.
+- Next Exact Action: commit implementation, push, create one PR, then STOP. No merge/deployment.
+
 ## 2026-09-20 — Growth Pathway Six Permanent Stages — READY FOR PR
 - Scope: replace `/grow` V1 placeholder presentation with permanent six-stage bilingual, content-driven Growth Pathway while reusing canonical `journey_stages`.
 - Base: latest `origin/main` `0040c4d7cf95a4c9c5272c5cceb87330c19b9171`; isolated worktree `/private/tmp/paulzhang-growth-six-stages`, branch `codex/growth-pathway-six-stages`. Original dirty worktree untouched.

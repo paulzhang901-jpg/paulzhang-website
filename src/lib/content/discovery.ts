@@ -13,7 +13,7 @@ export type ParsedContentRecord = {
   domain: ContentDomain;
 };
 
-const validDomains = new Set<ContentDomain>(["library", "stories", "growth", "pages"]);
+const validDomains = new Set<ContentDomain>(["library", "stories", "growth", "together", "pages"]);
 
 export function discoverContentFiles(contentRoot = path.join(process.cwd(), "content")): string[] {
   if (!fs.existsSync(contentRoot)) return [];
