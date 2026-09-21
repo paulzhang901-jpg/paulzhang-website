@@ -76,3 +76,11 @@
 - Browser QA PASS: actual ZH → English Edition → 中文版 navigation; readable narrow/desktop layout, no horizontal overflow at 438px / 390px / 1280px; no broken images on inspected page.
 - Live deployment baseline verified: Cloudflare existing Production branch is now `production` (historical `production-not-authorized` value is stale); project `paulzhang-website-preview`, current deployment `5ce168ab-a995-4ecf-ad4a-2847c8063351`, source `eb92a73`, recorded as rollback reference. No settings/DNS changes.
 - Next Exact Action: commit this scoped change, open one PR, await required CI, review final diff, merge authorized PR, revalidate main, tag/upload the validated artifact to existing production, then check affected live routes. No PR / merge / upload performed yet.
+
+## 2026-09-20 — Together secure visitor submissions — BLOCKED ON OWNER CLOUDFLARE CONFIG
+- Scope: continue PR #38 without changing the seven Together section identities or Markdown publishing architecture.
+- Architecture: static Next.js export remains the content site; a separate Cloudflare Worker is narrowly routed to `/api/together*` for the five private submission workflows. Fixed recipient: `paulzhang901@gmail.com`.
+- Privacy/security: server validation, strict origin/content/length checks, Turnstile Siteverify, fixed recipient, no user input in mail headers, no application logging/storage, conservative permission defaults, no auto-publication.
+- Production prerequisite: owner must configure Cloudflare Turnstile + Email Service (verified destination and onboarded sender domain, Email Preview disabled), provide Worker runtime secret/vars, and authorize a dedicated Worker deployment credential/route. Do not reuse the Pages deployment token implicitly.
+- Next Exact Action: validate code/build/tests and commit/push the scoped PR #38 update; do not merge/deploy. Real production delivery remains unverified until owner completes the Cloudflare prerequisite and authorizes deployment.
+- Validation PASS after implementation: focused Together architecture + Worker tests (10/10); Wrangler 4.131.1 Worker dry-run with fixed Email binding; architecture validation; ESLint; TypeScript; full repository tests; content validation (pre-existing optional warnings only); fiction ingestion; production static build; static-export validation 245/245 with zero broken internal links.
