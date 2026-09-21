@@ -52,6 +52,9 @@ export function validate() {
   const communityIds = ['church','sunday','groups','choir','youth','care','join'];
   assert(JSON.stringify(routes.child_routes['/community']) === JSON.stringify(communityIds), 'canonical Community sections changed');
 
+  const lightJourneyIds = ['travel','reflections','culture','faith','society','stories','churches'];
+  assert(JSON.stringify(routes.child_routes['/journey']) === JSON.stringify(lightJourneyIds), 'canonical Light Journey sections changed');
+
   const aboutIds = ['profile','calling','education-ministry','writing-preaching','publishing-media','contact','support'];
   assert(JSON.stringify(routes.child_routes['/about']) === JSON.stringify(aboutIds), 'canonical About sections changed');
 

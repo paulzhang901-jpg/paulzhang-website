@@ -88,7 +88,8 @@
     {
       "path": "/journey",
       "domain": "journey",
-      "release": "v1.5"
+      "release": "v1",
+      "implementation_level": "section"
     },
     {
       "path": "/account",
@@ -207,15 +208,13 @@
       "join"
     ],
     "/journey": [
-      "reading",
-      "saved",
-      "growth",
+      "travel",
       "reflections",
-      "rule-of-life",
-      "prayer",
-      "community",
-      "mentor",
-      "next-step"
+      "culture",
+      "faith",
+      "society",
+      "stories",
+      "churches"
     ]
   },
   "patterns": [

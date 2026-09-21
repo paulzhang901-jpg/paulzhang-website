@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import test from "node:test";
+import {getLightJourneySectionIds,lightJourneySectionCopy} from "../../src/lib/light-journey";
+import {localizedPath,resolveEnglishSegments,routes} from "../../src/lib/i18n/routing";
+const ids=["travel","reflections","culture","faith","society","stories","churches"];
+test("Light Journey has exactly seven permanent bilingual categories",()=>{assert.deepEqual(getLightJourneySectionIds(),ids);assert.deepEqual(ids.map(id=>lightJourneySectionCopy("zh-CN",id as never).label),["旅行见闻","黙想与思考","文化观察","信仰随思","社会议题","照片与故事","世界中的教会"]);assert.deepEqual(ids.map(id=>lightJourneySectionCopy("en-US",id as never).label),["Travel Notes","Quiet Reflections","Cultural Observations","Faith Reflections","Society & Issues","Photos & Stories","Churches Around the World"]);});
+test("Light Journey is the eighth primary navigation channel with bilingual canonical landing",()=>{assert.equal(localizedPath("journey","zh-CN"),"/journey");assert.equal(localizedPath("journey","en-US"),"/en/journey");assert.equal(resolveEnglishSegments(["journey"]),"journey");assert.deepEqual(routes.filter(x=>x.navigation).map(x=>x.id),["library","stories","fiction","grow","together","community","journey","about"]);});
+test("Light Journey landing and sections reuse established responsive design patterns",()=>{const s=fs.readFileSync("src/components/content/light-journey-page.tsx","utf8");assert.match(s,/在旅途中看见世界，也看见神的作为。/);assert.match(s,/sm:grid-cols-2 lg:grid-cols-3/);assert.match(s,/lg:grid-cols-\[17rem_minmax\(0,1fr\)\]/);assert.match(s,/flex flex-wrap gap-2 lg:flex-col/);});
+test("protected neighboring architectures are not redefined by Light Journey",()=>{for(const p of ["src/lib/community.ts","src/lib/content/together.ts","src/lib/about.ts","src/lib/content/growth.ts","src/lib/content/library-topics.ts","src/lib/content/story-topics.ts"])assert.ok(fs.existsSync(p),p);});

@@ -7,6 +7,7 @@ import { StoriesPage } from "@/components/content/stories-page";
 import { GrowthPage } from "@/components/content/growth-page";
 import { TogetherPage } from "@/components/content/together-page";
 import { CommunityPage } from "@/components/content/community-page";
+import { LightJourneyPage } from "@/components/content/light-journey-page";
 import { AboutPage, AboutIntegratedPage } from "@/components/content/about-page";
 import { getContentWorkRepository } from "@/lib/content/works/repository";
 import { SocialContactPage } from "@/components/product/social-contact-page";
@@ -35,6 +36,7 @@ export default async function Page({params}: Props) {
   if (routeId === "grow") return <GrowthPage locale="en-US" repository={await getContentRepository()} />;
   if (routeId === "together") return <TogetherPage locale="en-US" repository={await getContentRepository()} />;
   if (routeId === "community") return <CommunityPage locale="en-US" />;
+  if (routeId === "journey") return <LightJourneyPage locale="en-US" />;
   if (routeId === "about") return <AboutPage locale="en-US" />;
   if (routeId === "contact") return <AboutIntegratedPage locale="en-US" section="contact"><SocialContactPage locale="en-US" /></AboutIntegratedPage>;
   return <FoundationPage locale="en-US" routeId={routeId} />;
