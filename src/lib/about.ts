@@ -14,8 +14,8 @@ const copy:Record<Locale,Record<AboutSectionId,Copy>>={
     support:{label:"支持这份工作",summary:"了解支持这份工作的方式，以及相关说明。"},
   },
   "en-US":{
-    profile:{label:"Profile",summary:"Meet Paul and the life and ministry direction represented by this website."},
-    calling:{label:"Calling",summary:"Explore the calling and mission that shape the direction of this work."},
+    profile:{label:"Personal Profile",summary:"Meet Paul and the life and ministry direction represented by this website."},
+    calling:{label:"My Calling",summary:"Explore the calling and mission that shape the direction of this work."},
     "education-ministry":{label:"Education & Ministry",summary:"Find verified information related to learning, formation, and ministry."},
     "writing-preaching":{label:"Writing & Preaching",summary:"Explore Paul's work in writing, preaching, and sharing biblical truth."},
     "publishing-media":{label:"Publishing & Media",summary:"Enter the public work related to publishing, content, and media."},
