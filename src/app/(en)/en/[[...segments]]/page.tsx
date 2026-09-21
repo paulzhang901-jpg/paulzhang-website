@@ -7,6 +7,7 @@ import { StoriesPage } from "@/components/content/stories-page";
 import { GrowthPage } from "@/components/content/growth-page";
 import { TogetherPage } from "@/components/content/together-page";
 import { CommunityPage } from "@/components/content/community-page";
+import { AboutPage, AboutIntegratedPage } from "@/components/content/about-page";
 import { getContentWorkRepository } from "@/lib/content/works/repository";
 import { SocialContactPage } from "@/components/product/social-contact-page";
 import { getContentRepository } from "@/lib/content/repository";
@@ -28,12 +29,13 @@ export default async function Page({params}: Props) {
   const routeId = resolveEnglishSegments((await params).segments);
   if (!routeId) notFound();
   if (routeId === "home") return <HomePage locale="en-US" />;
-  if (routeId === "support") return <SupportPage locale="en-US" />;
+  if (routeId === "support") return <AboutIntegratedPage locale="en-US" section="support"><SupportPage locale="en-US" /></AboutIntegratedPage>;
   if (routeId === "library") return <LibraryPage locale="en-US" repository={await getContentRepository()} />;
   if (routeId === "stories") return <StoriesPage locale="en-US" contentRepository={await getContentRepository()} workRepository={await getContentWorkRepository()} />;
   if (routeId === "grow") return <GrowthPage locale="en-US" repository={await getContentRepository()} />;
   if (routeId === "together") return <TogetherPage locale="en-US" repository={await getContentRepository()} />;
   if (routeId === "community") return <CommunityPage locale="en-US" />;
-  if (routeId === "contact") return <SocialContactPage locale="en-US" />;
+  if (routeId === "about") return <AboutPage locale="en-US" />;
+  if (routeId === "contact") return <AboutIntegratedPage locale="en-US" section="contact"><SocialContactPage locale="en-US" /></AboutIntegratedPage>;
   return <FoundationPage locale="en-US" routeId={routeId} />;
 }
