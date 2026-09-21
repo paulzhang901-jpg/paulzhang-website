@@ -3,24 +3,17 @@ Status: Accepted
 Date: 2026-09-20
 
 ## Context
-ADR-0022 deliberately stopped at a human handoff because no secure submission backend or verified recipient existed. The owner has now confirmed `paulzhang901@gmail.com` as the canonical recipient for Mentoring, Prayer Support, Growth Groups, Contact, and Testimony Sharing. The public site must remain a Next.js static export on Cloudflare Pages; prayer, mentoring, and testimony text must not enter GitHub, analytics, or public logs.
+ADR-0022 deliberately separated Together participation from content publication. The owner has now verified a production Cloudflare Worker at `https://paulzhang-together.paulzhang901.workers.dev/`: a real JSON POST returned HTTP 200 and delivered a real email from `together@paulzhang.org` to the verified destination `paulzhang901@gmail.com`. The deployed Worker accepts `name`, `email`, `phone`, `subject`, `message`, `language`, and `page`. Cloudflare Email Service binding `EMAIL` and `TOGETHER_FROM_EMAIL=together@paulzhang.org` are configured in production.
 
 ## Decision
-Keep the existing static Pages application unchanged as the content origin. Add one narrowly routed Cloudflare Worker at `/api/together*`; it does not serve or proxy any other site URL. The five forms share one client component and one Worker validation/delivery pipeline.
+Keep the Next.js site as a static export. The five participation forms POST JSON directly to the verified Cloudflare Worker endpoint. Section-specific details and conservative sharing/publication permissions are serialized into the private email message while the seven-field Worker contract remains unchanged. Success is shown only after the Worker returns an HTTP success status.
 
-The Worker validates origin, content type, request/body lengths, section/locale enums, required fields, email shape, permission booleans, and Cloudflare Turnstile server-side before delivery. It sends directly to the fixed recipient through a Cloudflare Email Service `send_email` binding restricted to `paulzhang901@gmail.com`. User-supplied fields are message-body data, not email headers. Application code does not persist or log submission bodies.
+The deployed Worker, not this static repository, owns server-side email delivery and validation. No mail/API secret is present in browser code. No submission is converted into Markdown, committed to GitHub, or automatically published. Prayer-team sharing, public prayer sharing, testimony follow-up, and testimony publication remain unchecked by default.
 
-Turnstile keys and the sender address are runtime Worker configuration. The Turnstile secret is encrypted. Production must use a real hostname-restricted Turnstile widget; Cloudflare testing credentials are test-only. Email Service must have a verified destination and an onboarded sender domain. Email Preview must be disabled for this sensitive-intake sender/domain so message bodies are not retained in Cloudflare's email preview feature.
+Turnstile is not part of the verified production Worker contract supplied by the owner, so the static client does not invent a Turnstile dependency or keys. If bot protection is later added to the deployed Worker, its client contract must first be verified and this ADR updated.
 
-The browser first reads `/api/together` for readiness and the public Turnstile site key. If runtime delivery is not configured, the UI truthfully reports that online submission is unavailable. POST success is displayed only after Turnstile validation and `EMAIL.send()` resolve successfully.
-
-Prayer-team sharing, public prayer sharing, testimony follow-up, and testimony publication are explicit booleans and default to false. A visitor submission is private intake only: it is never converted to Markdown and never automatically published.
-
-## Alternatives Considered
-Converting Next.js away from static export, a client-side mail service, a fake form, GitHub-backed intake, Pages Functions plus a second service, and reusing the Pages deployment API token were rejected. A narrowly routed Worker preserves the static site, keeps secrets server-side, and uses the existing Cloudflare platform without adding an unrelated vendor.
-
-## Operational prerequisite
-No production Worker is deployed by this ADR. The owner must complete Cloudflare Email Service/Turnstile configuration and authorize a dedicated Worker deployment credential/route before end-to-end production delivery can be verified.
+## CORS requirement
+Because the browser posts cross-origin to the `workers.dev` endpoint, the deployed Worker must allow `POST`/`OPTIONS`, `Content-Type`, and the origins `https://paulzhang.org` and `https://www.paulzhang.org`. This is a production Worker configuration/runtime requirement and cannot be guaranteed by static-site repository code. Live verification on 2026-09-20 confirmed the apex origin works; the www request currently receives `Access-Control-Allow-Origin: https://paulzhang.org`, so www remains an owner-side Worker fix.
 
 ## Supersedes
-ADR-0022's temporary human-handoff participation mechanism only. ADR-0022's seven-section content taxonomy and Markdown publishing architecture remain unchanged.
+This updates ADR-0023's earlier proposed same-origin `/api/together` Worker/Turnstile design to match the owner-verified deployed Worker. ADR-0022's seven-section taxonomy and Markdown publishing architecture remain unchanged.

@@ -84,3 +84,10 @@
 - Production prerequisite: owner must configure Cloudflare Turnstile + Email Service (verified destination and onboarded sender domain, Email Preview disabled), provide Worker runtime secret/vars, and authorize a dedicated Worker deployment credential/route. Do not reuse the Pages deployment token implicitly.
 - Next Exact Action: validate code/build/tests and commit/push the scoped PR #38 update; do not merge/deploy. Real production delivery remains unverified until owner completes the Cloudflare prerequisite and authorizes deployment.
 - Validation PASS after implementation: focused Together architecture + Worker tests (10/10); Wrangler 4.131.1 Worker dry-run with fixed Email binding; architecture validation; ESLint; TypeScript; full repository tests; content validation (pre-existing optional warnings only); fiction ingestion; production static build; static-export validation 245/245 with zero broken internal links.
+
+## 2026-09-20 — Together verified Worker reconciliation
+- Owner verified production Worker: `https://paulzhang-together.paulzhang901.workers.dev/`; real JSON POST returned HTTP 200 and real mail reached `paulzhang901@gmail.com` from `together@paulzhang.org`.
+- The prior speculative same-origin `/api/together` + Turnstile Worker implementation did not match that deployed contract. It is removed rather than creating a second Worker implementation.
+- Static forms now post the deployed seven-field JSON contract directly to the verified Worker. Section-specific fields and all sharing/publication permissions are retained inside the private `message`; permission defaults remain NO.
+- No Together taxonomy/content/publication architecture changed. No submission becomes Markdown or auto-publishes.
+- Live CORS check: `https://paulzhang.org` OPTIONS/POST is compatible. `https://www.paulzhang.org` is NOT browser-compatible yet: Worker returns `Access-Control-Allow-Origin: https://paulzhang.org` instead of the requesting www origin. Owner must update deployed Worker CORS allowlist/echo behavior for www, then re-verify.
