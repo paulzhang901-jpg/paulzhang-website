@@ -61,7 +61,7 @@
       "path": "/community",
       "domain": "community",
       "release": "v1",
-      "implementation_level": "landing_only"
+      "implementation_level": "section"
     },
     {
       "path": "/about",
@@ -177,13 +177,13 @@
       "multiply"
     ],
     "/community": [
+      "church",
+      "sunday",
       "groups",
-      "prayer",
-      "discussions",
-      "events",
-      "cohorts",
-      "mentor-groups",
-      "serve"
+      "choir",
+      "youth",
+      "care",
+      "join"
     ],
     "/about": [
       "paul",
