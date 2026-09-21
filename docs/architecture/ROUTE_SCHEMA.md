@@ -12,7 +12,7 @@ Approved children:
 
 - Library: `/library/{bible,gospel,theology,formation,discipleship,prayer,marriage,family,grief,work-money,leadership,church,mission,culture,education,technology,research}`
 - Stories: `/stories/{my-journey,faith,ministry,suffering-grace,little-wheat,family,immigration,learning,testimonies}`
-- Companionship: `/together/{talk,faith,life,marriage-family,parenting,grief,spiritual-growth,ministry,prayer,mentor,how-it-works}`
+- Together: `/together/{mentoring,prayer-support,growth-groups,faq,contact,testimonies,resources}`. Former companionship slugs remain legacy aliases for URL compatibility but are not permanent section identities. See [ADR-0022](../adr/0022-together-content-and-participation-architecture.md).
 - Growth: `/grow/{explore,believe,abide,serve,lead,multiply}` and potential canonical `/grow/path/[slug]`
 - Community: `/community/{groups,prayer,discussions,events,cohorts,mentor-groups,serve}` (advanced functions V2)
 - About: `/about/{paul,story,calling,ministry,education,beliefs,projects,contact,support}`
