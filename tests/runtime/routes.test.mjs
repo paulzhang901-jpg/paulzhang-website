@@ -9,7 +9,7 @@ const zhRoot = path.join(root, "src/app/(zh)");
 test("approved Chinese V1 route pages exist", () => {
   const pages = [
     "page.tsx", "start/page.tsx", "library/page.tsx", "stories/page.tsx", "fiction/page.tsx",
-    "together/page.tsx", "grow/page.tsx", "community/page.tsx", "about/page.tsx",
+    "together/page.tsx", "grow/page.tsx", "community/page.tsx", "journey/page.tsx", "about/page.tsx",
     "gccm/page.tsx", "search/page.tsx", "legal/privacy/page.tsx", "legal/terms/page.tsx",
   ];
   for (const page of pages) assert.ok(fs.existsSync(path.join(zhRoot, page)), `missing ${page}`);
@@ -43,7 +43,7 @@ test("all approved public routes resolve in zh-CN and under the /en projection",
 });
 
 test("deferred application routes are absent", () => {
-  for (const route of ["journey", "account", "admin", "auth", "ask"]) {
+  for (const route of ["account", "admin", "auth", "ask"]) {
     assert.equal(fs.existsSync(path.join(root, "src/app", route)), false, `deferred route introduced: /${route}`);
   }
 });

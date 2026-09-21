@@ -17,7 +17,7 @@ Approved children:
 - Community: `/community/{church,sunday,groups,choir,youth,care,join}`. These seven bilingual navigation categories are permanent V1 architecture; future verified content belongs inside them. See [ADR-0024](../adr/0024-community-permanent-v1-architecture.md).
 - About: `/about/{profile,calling,education-ministry,writing-preaching,publishing-media,contact,support}`. Contact and Support retain their existing canonical content and functionality as permanent sections 06–07. See [ADR-0025](../adr/0025-about-permanent-v1-architecture.md).
 - GCCM: `/gccm/{vision,mission,disciple-making,digital-mission,leadership,church-partners,resources,serve,join}`
-- Journey: `/journey/{reading,saved,growth,reflections,rule-of-life,prayer,community,mentor,next-step}` (primarily V1.5+)
+- Light Journey: `/journey/{travel,reflections,culture,faith,society,stories,churches}`. These seven bilingual editorial categories are permanent V1 architecture. The former future application-route concept at `/journey` is superseded; private journey/product capabilities remain deferred and require a new route decision. See [ADR-0026](../adr/0026-light-journey-permanent-v1-architecture.md).
 
 Individual content uses stable canonical slugs. Navigation labels are independent of route paths. Folder/route location is never the source of truth for taxonomy. Route removal or semantic changes require redirects, versioning review, and an ADR.
 

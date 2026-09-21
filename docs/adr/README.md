@@ -46,3 +46,4 @@ None.
 - [0023 Together Secure Submission Delivery](./0023-together-secure-submission-delivery.md)
 - [0024 Community Permanent V1 Architecture](./0024-community-permanent-v1-architecture.md)
 - [0025 About Permanent V1 Architecture](./0025-about-permanent-v1-architecture.md)
+- [0026 Light Journey Permanent V1 Architecture](./0026-light-journey-permanent-v1-architecture.md)
