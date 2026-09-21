@@ -13,6 +13,7 @@ export function validate() {
   const events = read('config/architecture/events.yaml');
   const journey = read('config/architecture/journey-states.yaml');
   const productJourneys = read('config/architecture/journeys.yaml');
+  const together = read('config/architecture/together.yaml');
 
   for (const file of ['content','content-work','content-unit','taxonomy','events','user-journey','routes','fiction-editorial-package','fiction-editorial-registry','fiction-cover-manifest']) read(`schema/${file}.schema.json`);
 
@@ -43,6 +44,10 @@ export function validate() {
   assert(taxonomy.work_types.includes('story_book'), 'story_book work type missing');
   assert(!taxonomy.content_types.includes('story_book'), 'story_book must not be an ordinary ContentItem type');
   assert(JSON.stringify(taxonomy.journey_stages) === JSON.stringify(['explore','believe','abide','serve','lead','multiply']), 'canonical journey stages changed');
+  const togetherIds = together.sections.map((section) => section.id);
+  assert(JSON.stringify(togetherIds) === JSON.stringify(['mentoring','prayer-support','growth-groups','faq','contact','testimonies','resources']), 'canonical Together sections changed');
+  unique(togetherIds, 'Together section IDs');
+  assert(JSON.stringify(routes.child_routes['/together']) === JSON.stringify(togetherIds), 'Together routes must match permanent section order');
 
   const eventKeys = events.events.map(({name, version}) => `${name}@${version}`);
   unique(eventKeys, 'event name/version pairs');

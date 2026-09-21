@@ -21,6 +21,7 @@
     "topics": {"type":"array","items":{"type":"string"},"uniqueItems":true},
     "life_needs": {"type":"array","items":{"type":"string"},"uniqueItems":true},
     "journey_stages": {"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "together_section": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "audiences": {"type":"array","items":{"type":"string"},"uniqueItems":true},
     "scripture_refs": {"type":"array"},
     "series": {"type":"array"},

@@ -1,3 +1,13 @@
+## 2026-09-20 — Together Seven Permanent Sections — READY FOR PR
+- Scope: convert `/together` from V1 entry placeholder into a permanent bilingual content/participation architecture under ADR-0022.
+- Base: latest `origin/main` `6d85142...`; isolated worktree `/private/tmp/paulzhang-together-architecture`, branch `codex/together-seven-sections`. Original dirty worktree untouched.
+- Permanent IDs/order: `mentoring`, `prayer-support`, `growth-groups`, `faq`, `contact`, `testimonies`, `resources`. Chinese labels: 个人陪伴, 祷告支持, 成长小组, 常见问题, 报名 / 联系, 见证分享, 资源推荐. English: Mentoring, Prayer Support, Growth Groups, FAQ, Sign Up / Contact, Share Your Story, Recommended Resources.
+- Content architecture: new `together` content domain plus exactly-one `together_section` metadata for Together Markdown. Repository discovery/rendering is section-driven; no page-code edits are required for future content assigned to an existing section.
+- Participation/privacy: no secure first-party submission backend exists. V1 action sections use the existing `/about/contact` human-handoff surface and Personal WeChat delivery. The website does not collect/store prayer, testimony, mentoring, group-interest, or contact message text. No new third-party dependency was added. A secure web form remains deferred pending provider/consent/access/retention/deletion/abuse/ownership architecture under ADR-0010/0022.
+- Compatibility: former Together child slugs remain generated legacy aliases; no redirects required. Truth Library, My Story, Growth taxonomy, and all content files unchanged.
+- Validation PASS: Together tests 6/6; architecture; ESLint; TypeScript; full tests; content validation; fiction ingestion; production build; static export 245/245; exact bilingual seven-section navigation order; permanent + legacy route generation; participation handoff/no-form checks.
+- Next Exact Action: commit implementation, push, create one PR, then STOP. No merge/deployment.
+
 ## 2026-09-20 — Growth Pathway Six Permanent Stages — READY FOR PR
 - Scope: replace `/grow` V1 placeholder presentation with permanent six-stage bilingual, content-driven Growth Pathway while reusing canonical `journey_stages`.
 - Base: latest `origin/main` `0040c4d7cf95a4c9c5272c5cceb87330c19b9171`; isolated worktree `/private/tmp/paulzhang-growth-six-stages`, branch `codex/growth-pathway-six-stages`. Original dirty worktree untouched.
@@ -66,3 +76,18 @@
 - Browser QA PASS: actual ZH → English Edition → 中文版 navigation; readable narrow/desktop layout, no horizontal overflow at 438px / 390px / 1280px; no broken images on inspected page.
 - Live deployment baseline verified: Cloudflare existing Production branch is now `production` (historical `production-not-authorized` value is stale); project `paulzhang-website-preview`, current deployment `5ce168ab-a995-4ecf-ad4a-2847c8063351`, source `eb92a73`, recorded as rollback reference. No settings/DNS changes.
 - Next Exact Action: commit this scoped change, open one PR, await required CI, review final diff, merge authorized PR, revalidate main, tag/upload the validated artifact to existing production, then check affected live routes. No PR / merge / upload performed yet.
+
+## 2026-09-20 — Together secure visitor submissions — BLOCKED ON OWNER CLOUDFLARE CONFIG
+- Scope: continue PR #38 without changing the seven Together section identities or Markdown publishing architecture.
+- Architecture: static Next.js export remains the content site; a separate Cloudflare Worker is narrowly routed to `/api/together*` for the five private submission workflows. Fixed recipient: `paulzhang901@gmail.com`.
+- Privacy/security: server validation, strict origin/content/length checks, Turnstile Siteverify, fixed recipient, no user input in mail headers, no application logging/storage, conservative permission defaults, no auto-publication.
+- Production prerequisite: owner must configure Cloudflare Turnstile + Email Service (verified destination and onboarded sender domain, Email Preview disabled), provide Worker runtime secret/vars, and authorize a dedicated Worker deployment credential/route. Do not reuse the Pages deployment token implicitly.
+- Next Exact Action: validate code/build/tests and commit/push the scoped PR #38 update; do not merge/deploy. Real production delivery remains unverified until owner completes the Cloudflare prerequisite and authorizes deployment.
+- Validation PASS after implementation: focused Together architecture + Worker tests (10/10); Wrangler 4.131.1 Worker dry-run with fixed Email binding; architecture validation; ESLint; TypeScript; full repository tests; content validation (pre-existing optional warnings only); fiction ingestion; production static build; static-export validation 245/245 with zero broken internal links.
+
+## 2026-09-20 — Together verified Worker reconciliation
+- Owner verified production Worker: `https://paulzhang-together.paulzhang901.workers.dev/`; real JSON POST returned HTTP 200 and real mail reached `paulzhang901@gmail.com` from `together@paulzhang.org`.
+- The prior speculative same-origin `/api/together` + Turnstile Worker implementation did not match that deployed contract. It is removed rather than creating a second Worker implementation.
+- Static forms now post the deployed seven-field JSON contract directly to the verified Worker. Section-specific fields and all sharing/publication permissions are retained inside the private `message`; permission defaults remain NO.
+- No Together taxonomy/content/publication architecture changed. No submission becomes Markdown or auto-publishes.
+- Live CORS check: `https://paulzhang.org` OPTIONS/POST is compatible. `https://www.paulzhang.org` is NOT browser-compatible yet: Worker returns `Access-Control-Allow-Origin: https://paulzhang.org` instead of the requesting www origin. Owner must update deployed Worker CORS allowlist/echo behavior for www, then re-verify.

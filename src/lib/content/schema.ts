@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { getTogetherSectionIds } from "./together";
 
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "must be a stable kebab-case slug");
 const identifier = z.string().regex(/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/, "must be a stable machine identifier");
@@ -42,6 +43,7 @@ export const contentFrontmatterSchema = z.object({
   topics: z.array(identifier).min(1),
   life_needs: z.array(identifier).default([]),
   journey_stages: z.array(identifier).default([]),
+  together_section: identifier.refine((value) => getTogetherSectionIds().includes(value), "unknown Together section").optional(),
   audiences: z.array(identifier).default([]),
   authors: z.array(z.string().min(1)).default([]),
   published_at: z.string().datetime({offset: true}).nullish(),

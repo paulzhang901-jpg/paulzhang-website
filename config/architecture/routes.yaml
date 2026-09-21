@@ -49,7 +49,7 @@
       "path": "/together",
       "domain": "companionship",
       "release": "v1",
-      "implementation_level": "entry"
+      "implementation_level": "content_driven"
     },
     {
       "path": "/grow",
@@ -160,17 +160,13 @@
       "learning"
     ],
     "/together": [
-      "talk",
-      "faith",
-      "life",
-      "marriage-family",
-      "parenting",
-      "grief",
-      "spiritual-growth",
-      "ministry",
-      "prayer",
-      "mentor",
-      "how-it-works"
+      "mentoring",
+      "prayer-support",
+      "growth-groups",
+      "faq",
+      "contact",
+      "testimonies",
+      "resources"
     ],
     "/grow": [
       "explore",

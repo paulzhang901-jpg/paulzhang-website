@@ -17,6 +17,7 @@ export function normalizeContent(record: ParsedContentRecord): NormalizedContent
     topics: [...item.topics],
     lifeNeeds: [...item.life_needs],
     journeyStages: [...item.journey_stages],
+    togetherSection: item.together_section,
     audiences: [...item.audiences],
     authors: [...item.authors],
     publishedAt: item.published_at ? new Date(item.published_at) : undefined,
