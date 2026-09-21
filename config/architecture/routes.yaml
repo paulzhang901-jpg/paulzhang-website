@@ -66,7 +66,8 @@
     {
       "path": "/about",
       "domain": "about",
-      "release": "v1"
+      "release": "v1",
+      "implementation_level": "section"
     },
     {
       "path": "/gccm",
@@ -186,13 +187,11 @@
       "join"
     ],
     "/about": [
-      "paul",
-      "story",
+      "profile",
       "calling",
-      "ministry",
-      "education",
-      "beliefs",
-      "projects",
+      "education-ministry",
+      "writing-preaching",
+      "publishing-media",
       "contact",
       "support"
     ],
