@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/navigation/site-header";
 import { getMessages, type Locale } from "@/config/i18n";
 import "@/styles/globals.css";
 import { EngagementPrompts } from "@/components/product/engagement-prompts";
+import { GoogleAnalyticsConsent } from "@/components/analytics/google-analytics-consent";
 
 export function LocaleRootLayout({locale, children}: {locale: Locale; children: ReactNode}) {
   const copy = getMessages(locale);
@@ -14,6 +15,7 @@ export function LocaleRootLayout({locale, children}: {locale: Locale; children: 
       <main id="main-content" tabIndex={-1} className="min-h-[65vh]">{children}</main>
       <SiteFooter locale={locale} />
       <EngagementPrompts locale={locale} />
+      <GoogleAnalyticsConsent locale={locale} />
     </body>
   </html>;
 }

@@ -18,6 +18,7 @@ test("Client Components remain explicitly reviewed and minimal", () => {
     .filter((file) => /\.[cm]?[jt]sx?$/.test(file) && fs.readFileSync(file, "utf8").startsWith('"use client"'))
     .map((file) => path.relative(root, file));
   assert.deepEqual(clientFiles, [
+    "src/components/analytics/google-analytics-consent.tsx",
     "src/components/content/together-submission-form.tsx",
     "src/components/fiction/fiction-discovery.tsx",
     "src/components/navigation/language-switcher.tsx",

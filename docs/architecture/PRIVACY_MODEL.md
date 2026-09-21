@@ -16,4 +16,6 @@ Email requires a voluntarily supplied address and appropriate opt-in. A ten-minu
 
 Prayer, grief, marriage, family, faith, and accompaniment submissions may be sensitive. Restrict access, minimize logging, exclude raw text from analytics/client logs, never automatically send it to AI, and define retention before scale. AI processing requires a reviewed architecture decision and explicit lawful/ethical handling.
 
-No vendor, retention duration, or storage provider is selected here. See [ADR-0010](../adr/0010-privacy-and-consent.md), [Events](./EVENT_SCHEMA.md), and [AI Boundaries](./AI_BOUNDARIES.md).
+GA4 is the selected V1 provider for anonymous website analytics only, and it loads only after explicit analytics consent. The consent decision is scoped to analytics and stored first-party; raw sensitive text and identity fields remain excluded. Provider-specific custom events require review against the canonical event registry. See [ADR-0027](../adr/0027-consent-gated-ga4-analytics.md).
+
+No retention duration is selected here. See [ADR-0010](../adr/0010-privacy-and-consent.md), [Events](./EVENT_SCHEMA.md), and [AI Boundaries](./AI_BOUNDARIES.md).
