@@ -26,7 +26,7 @@ export function metadataForRoute(routeId: RouteId, locale: Locale): Metadata {
 }
 
 export function metadataForCollectionRoute(
-  routeId: Extract<RouteId, "library" | "stories" | "grow" | "together">,
+  routeId: Extract<RouteId, "library" | "stories" | "grow" | "together" | "community">,
   slug: string,
   locale: Locale,
 ): Metadata {

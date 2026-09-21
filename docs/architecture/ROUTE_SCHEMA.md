@@ -14,7 +14,7 @@ Approved children:
 - Stories: `/stories/{my-journey,faith,ministry,suffering-grace,little-wheat,family,immigration,learning,testimonies}`
 - Together: `/together/{mentoring,prayer-support,growth-groups,faq,contact,testimonies,resources}`. Former companionship slugs remain legacy aliases for URL compatibility but are not permanent section identities. See [ADR-0022](../adr/0022-together-content-and-participation-architecture.md).
 - Growth: `/grow/{explore,believe,abide,serve,lead,multiply}` and potential canonical `/grow/path/[slug]`
-- Community: `/community/{groups,prayer,discussions,events,cohorts,mentor-groups,serve}` (advanced functions V2)
+- Community: `/community/{church,sunday,groups,choir,youth,care,join}`. These seven bilingual navigation categories are permanent V1 architecture; future verified content belongs inside them. See [ADR-0024](../adr/0024-community-permanent-v1-architecture.md).
 - About: `/about/{paul,story,calling,ministry,education,beliefs,projects,contact,support}`
 - GCCM: `/gccm/{vision,mission,disciple-making,digital-mission,leadership,church-partners,resources,serve,join}`
 - Journey: `/journey/{reading,saved,growth,reflections,rule-of-life,prayer,community,mentor,next-step}` (primarily V1.5+)

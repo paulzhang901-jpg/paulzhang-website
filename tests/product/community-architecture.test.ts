@@ -1,0 +1,10 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import test from "node:test";
+import {communitySectionCopy,getCommunitySectionIds,isCommunitySection} from "../../src/lib/community";
+const ids=["church","sunday","groups","choir","youth","care","join"];
+test("Community has exactly seven permanent sections in canonical order",()=>{assert.deepEqual(getCommunitySectionIds(),ids);assert.deepEqual(ids.map(id=>communitySectionCopy("zh-CN",id as never).label),["教会介绍（FCFMC）","主日信息与活动","小组与团契","诗班与服事","青年与下一代","社区关怀","加入我们"]);assert.deepEqual(ids.map(id=>communitySectionCopy("en-US",id as never).label),["Church Introduction","Sunday Worship & Events","Groups & Fellowship","Choir & Serving","Youth & Next Generation","Community Care","Join Us"]);});
+test("Community section resolver accepts only permanent identities",()=>{for(const id of ids)assert.equal(isCommunitySection(id),true);for(const old of ["prayer","discussions","events","cohorts","mentor-groups","serve"])assert.equal(isCommunitySection(old),false);});
+test("Community landing is production content, bilingual, and links all sections",()=>{const page=fs.readFileSync("src/components/content/community-page.tsx","utf8");assert.match(page,/在真实的群体中一起成长、彼此建立。/);assert.match(page,/Growing together and building one another up in real community\./);assert.match(page,/了解我们的群体 →/);assert.doesNotMatch(page,/V1 Runtime Foundation|正式内容将在后续任务中加入/);assert.match(page,/sm:grid-cols-2 lg:grid-cols-3/);});
+test("Community routing and architecture registry share the permanent identities",()=>{const routes=JSON.parse(fs.readFileSync("config/architecture/routes.yaml","utf8"));assert.deepEqual(routes.child_routes["/community"],ids);assert.match(fs.readFileSync("src/app/(zh)/community/[slug]/page.tsx","utf8"),/getCommunitySectionIds/);assert.match(fs.readFileSync("src/app/(en)/en/community/[slug]/page.tsx","utf8"),/getCommunitySectionIds/);});
+test("Together implementation remains outside Community changes",()=>{assert.equal(fs.existsSync("src/components/content/together-page.tsx"),true);assert.equal(fs.existsSync("src/components/content/together-submission-form.tsx"),true);});
