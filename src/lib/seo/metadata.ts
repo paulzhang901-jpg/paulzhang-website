@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getMessages, type Locale } from "@/config/i18n";
 import { getRoute, localizedPath, type RouteId } from "@/lib/i18n/routing";
 import { getProductCopy, journeyPath, type JourneyId } from "@/config/product";
+import { aboutSectionCopy, type AboutSectionId } from "@/lib/about";
 
 const siteUrl = new URL("https://paulzhang.org");
 
@@ -44,6 +45,18 @@ export function metadataForCollectionRoute(
         "en-US": new URL(enPath, siteUrl).toString(),
       },
     },
+  };
+}
+
+export function metadataForAboutSection(section: AboutSectionId, locale: Locale): Metadata {
+  const metadata = metadataForCollectionRoute("about", section, locale);
+  const copy = aboutSectionCopy(locale, section);
+  if (!copy.seoDescription) return metadata;
+  return {
+    ...metadata,
+    title: copy.label,
+    description: copy.seoDescription,
+    openGraph: {...metadata.openGraph, title: copy.label, description: copy.seoDescription},
   };
 }
 
