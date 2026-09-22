@@ -8,7 +8,7 @@ ADR-0025 fixes `writing-preaching` as permanent About section 04 and explicitly 
 The repository already provides one canonical MDX content system, bilingual translation identity through `canonical_id`, and public content validation. Creating a second prose store for About essays would duplicate canonical content.
 
 ## Decision
-Core essays beneath About → Writing & Preaching use the existing canonical MDX content contract under the `pages` content domain and are rendered through a nested bilingual About route:
+Core essays beneath About → Writing & Preaching use the existing canonical MDX content contract under the dedicated `about` content domain and are rendered through a nested bilingual About route:
 
 - `/about/writing-preaching/[essaySlug]`
 - `/en/about/writing-preaching/[essaySlug]`
