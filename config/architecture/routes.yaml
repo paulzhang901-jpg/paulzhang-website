@@ -240,6 +240,12 @@
       "path": "/grow/path/[slug]",
       "domain": "growth",
       "release": "v1.5"
+    },
+    {
+      "path": "/about/writing-preaching/[essay-slug]",
+      "domain": "about",
+      "release": "v1",
+      "entity": "about_core_essay"
     }
   ]
 }
