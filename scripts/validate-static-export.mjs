@@ -110,7 +110,7 @@ function verifyContentRoutes(directory, locale) {
     if (!/\.mdx?$/.test(entry.name)) continue;
     const {data} = matter(fs.readFileSync(file, "utf8"));
     const domain = path.relative(path.join(root, "content", locale), file).split(path.sep)[0];
-    const segment = domain === "growth" ? "grow" : domain === "pages" ? "" : domain;
+    const segment = domain === "growth" ? "grow" : domain === "about" ? "about/writing-preaching" : domain === "pages" ? "" : domain;
     const route = `${locale === "en-US" ? "/en" : ""}/${segment ? `${segment}/` : ""}${data.slug}`;
     const eligible = data.status === "published" && data.visibility === "public" && data.access_level === "public" && Boolean(data.published_at);
     const listed = sitemap.includes(`<loc>${absoluteRoute(route)}</loc>`);

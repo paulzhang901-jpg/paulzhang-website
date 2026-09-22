@@ -5,6 +5,7 @@ const domainSegments: Record<ContentDomain, string> = {
   stories: "stories",
   growth: "grow",
   together: "together",
+  about: "about/writing-preaching",
   pages: "",
 };
 

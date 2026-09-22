@@ -3,6 +3,7 @@ import { getMessages, type Locale } from "@/config/i18n";
 import { getRoute, localizedPath, type RouteId } from "@/lib/i18n/routing";
 import { getProductCopy, journeyPath, type JourneyId } from "@/config/product";
 import { aboutSectionCopy, type AboutSectionId } from "@/lib/about";
+import type {NormalizedContentItem} from "@/types/content";
 
 const siteUrl = new URL("https://paulzhang.org");
 
@@ -57,6 +58,16 @@ export function metadataForAboutSection(section: AboutSectionId, locale: Locale)
     title: copy.label,
     description: copy.seoDescription,
     openGraph: {...metadata.openGraph, title: copy.label, description: copy.seoDescription},
+  };
+}
+
+export function metadataForAboutWritingEssay(item: NormalizedContentItem, canonicalPath: string, alternatePath: string): Metadata {
+  const targetLocale = item.language === "zh-CN" ? "en-US" : "zh-CN";
+  return {
+    title: item.seo.title ?? item.title,
+    description: item.seo.description ?? item.summary,
+    alternates: {canonical: new URL(canonicalPath, siteUrl).toString(), languages: {[item.language]: new URL(canonicalPath, siteUrl).toString(), [targetLocale]: new URL(alternatePath, siteUrl).toString()}},
+    openGraph: {title: item.seo.title ?? item.title, description: item.seo.description ?? item.summary, locale: item.language},
   };
 }
 
