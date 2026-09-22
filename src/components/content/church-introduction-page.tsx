@@ -5,9 +5,9 @@ import {churchProfile} from "@/data/church";
 
 const copy={
   "zh-CN":{
-    title:"印城第一华人循理会", subtitle:"First Chinese Free Methodist Church of Indianapolis", abbreviation:"FCFMC",
+    title:"印城第一华人循理会", subtitle:"The First Chinese Free Methodist Church of Indianapolis", abbreviation:"FCFMC",
     who:"我们是谁",
-    whoBody:["印城第一华人循理会（First Chinese Free Methodist Church of Indianapolis，FCFMC）是一间服事印第安纳波利斯地区华人及家庭的基督教会，属于 Free Methodist Church（循理会）传统。","我们盼望借着敬拜、圣经教导、门徒训练、团契生活、祷告和社区服事，帮助人认识耶稣基督，在恩典中成长，并在日常生活中活出信仰。"],
+    whoBody:["印城第一华人循理会（The First Chinese Free Methodist Church of Indianapolis，FCFMC）是一间服事印第安纳波利斯地区华人及家庭的基督教会，属于 Free Methodist Church（循理会）传统。","我们盼望借着敬拜、圣经教导、门徒训练、团契生活、祷告和社区服事，帮助人认识耶稣基督，在恩典中成长，并在日常生活中活出信仰。"],
     heritage:"我们的宗派传统",
     heritageBody:["我们属于 Free Methodist Church。循理会源自卫斯理宗（Wesleyan）传统，并于 1860 年在美国正式成立。","这一传统持守圣经的权威，宣讲因恩典、借着信心得救，并强调成圣与圣洁生活。循理会也珍视圣灵引导下敬拜的自由，重视每个人的尊严、对社会需要的关怀，以及把福音带向社区和世界的使命。"],
     conference:"我们的属灵归属",
@@ -22,13 +22,13 @@ const copy={
     ctaCommunity:"了解我们的群体", ctaContact:"联系我们", ctaSunday:"主日信息与活动",
   },
   "en-US":{
-    title:"First Chinese Free Methodist Church of Indianapolis", subtitle:"FCFMC", abbreviation:"FCFMC",
+    title:"The First Chinese Free Methodist Church of Indianapolis", subtitle:"FCFMC", abbreviation:"FCFMC",
     who:"Who We Are",
-    whoBody:["First Chinese Free Methodist Church of Indianapolis (FCFMC) is a Christian congregation serving Chinese-speaking people and families in the greater Indianapolis area within the Free Methodist tradition.","Through worship, biblical teaching, discipleship, fellowship, prayer, and community ministry, we seek to help people know Jesus Christ, grow in grace, and live out their faith in everyday life."],
+    whoBody:["The First Chinese Free Methodist Church of Indianapolis (FCFMC) is a Christian congregation serving Chinese-speaking people and families in the greater Indianapolis area within the Free Methodist tradition.","Through worship, biblical teaching, discipleship, fellowship, prayer, and community ministry, we seek to help people know Jesus Christ, grow in grace, and live out their faith in everyday life."],
     heritage:"Our Free Methodist Heritage",
     heritageBody:["We belong to the Free Methodist Church, a denomination rooted in the Wesleyan tradition and formally organized in the United States in 1860.","This tradition affirms the authority of Scripture, salvation by grace through faith, and entire sanctification expressed in holy living. Free Methodists also value freedom in Spirit-led worship, the dignity of every person, compassionate engagement with social needs, and the mission of carrying the gospel into our communities and the world."],
     conference:"Our Conference",
-    conferenceBody:["First Chinese Free Methodist Church is part of the Free Methodist Church and is connected with the Crossroads Conference.","Crossroads Conference is our current conference structure. Older website wording that presented Wabash Conference and New South Conference as two current conferences is outdated and is not carried forward here."],
+    conferenceBody:["The First Chinese Free Methodist Church of Indianapolis is part of the Free Methodist Church and is connected with the Crossroads Conference.","Crossroads Conference is our current conference structure. Older website wording that presented Wabash Conference and New South Conference as two current conferences is outdated and is not carried forward here."],
     where:"Where We Gather Today",
     whereBody1:"We currently do not own a church building. During this season, we gather for Sunday worship and other ministries in space graciously shared with us by another church community.",
     location:"Current gathering location:",

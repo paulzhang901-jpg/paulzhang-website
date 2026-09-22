@@ -1,7 +1,7 @@
 import {socialProfiles} from "@/data/social-links";
 
 export const churchProfile = {
-  name: "First Chinese Free Methodist Church of Indianapolis",
+  name: "The First Chinese Free Methodist Church of Indianapolis",
   abbreviation: "FCFMC",
   conference: "Crossroads Conference",
   gatheringLocation: {
