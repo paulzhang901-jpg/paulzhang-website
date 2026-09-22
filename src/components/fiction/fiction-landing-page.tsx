@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type {Route} from "next";
 import { Container } from "@/components/layout/container";
 import { FictionDiscovery } from "./fiction-discovery";
 import { fictionPath, getFictionCardRecords } from "@/lib/fiction/repository";
@@ -8,8 +9,8 @@ export function FictionLandingPage({locale}: {locale: "zh-CN" | "en-US"}) {
   const works = getFictionCardRecords();
   const featured = works[0];
   const copy = locale === "zh-CN"
-    ? {eyebrow: "作者官方作品档案", title: "牧长客 · 小说世界", subtitle: "Mu Changke Fiction", lead: "小说，是另一种寻找人的方式。", explore: "探索全部作品", featured: "旗舰作品", featuredCta: "进入作品档案", boundaryTitle: "作品发现，而非全文阅读", boundary: "这里是作者作品档案与官方阅读指引入口，不提供小说正文、章节连载或下载。正式阅读与发行以授权平台为准。"}
-    : {eyebrow: "Author Portfolio · Editorial Discovery Layer", title: "Mu Changke Fiction", subtitle: "牧长客 · 小说世界", lead: "小说，是另一种寻找人的方式。", explore: "Explore all works", featured: "Featured work", featuredCta: "View work profile", boundaryTitle: "Discovery, not full-text distribution", boundary: "This is the author’s official work archive and reading guide. It does not provide full manuscripts, serialized chapters, or downloads. Literary editorial content remains in its approved Chinese source language."};
+    ? {eyebrow: "作者官方作品档案", title: "牧长客 · 小说世界", subtitle: "Mu Changke Fiction", lead: "小说，是另一种寻找人的方式。", explore: "探索全部作品", featured: "旗舰作品", featuredCta: "进入作品档案", boundaryTitle: "作品发现，而非全文阅读", boundary: "这里是作者作品档案与官方阅读指引入口，不提供小说正文、章节连载或下载。正式阅读与发行以授权平台为准。", publishing: "出版与媒体", publishingDetail: "在哪里阅读与关注"}
+    : {eyebrow: "Author Portfolio · Editorial Discovery Layer", title: "Mu Changke Fiction", subtitle: "牧长客 · 小说世界", lead: "小说，是另一种寻找人的方式。", explore: "Explore all works", featured: "Featured work", featuredCta: "View work profile", boundaryTitle: "Discovery, not full-text distribution", boundary: "This is the author’s official work archive and reading guide. It does not provide full manuscripts, serialized chapters, or downloads. Literary editorial content remains in its approved Chinese source language.", publishing: "Publishing & Media", publishingDetail: "Where to read and follow"};
 
   return <>
     <section className="relative overflow-hidden border-b bg-[#18251f] text-[#f7f0df]">
@@ -22,6 +23,6 @@ export function FictionLandingPage({locale}: {locale: "zh-CN" | "en-US"}) {
     <section className="border-b bg-muted/45 py-[var(--space-section)]">
       <Container className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center"><div><p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">{copy.featured}</p><h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">《{featured.canonicalTitle}》</h2><p className="mt-5 text-lg leading-8 text-muted-foreground">{featured.editorialHook}</p><Link href={fictionPath(featured.slug, locale)} className="mt-7 inline-flex min-h-12 items-center rounded-full bg-primary px-6 font-medium text-primary-foreground">{copy.featuredCta}<span className="ml-2" aria-hidden="true">→</span></Link></div><div className="rounded-[1.25rem] border bg-surface p-7 shadow-[var(--shadow-soft)]"><h2 className="font-serif text-2xl">{copy.boundaryTitle}</h2><p className="mt-4 leading-8 text-muted-foreground">{copy.boundary}</p></div></Container>
     </section>
-    <Container><FictionDiscovery works={works} locale={locale} /></Container>
+    <Container><FictionDiscovery works={works} locale={locale} /><aside className="mb-[var(--space-section)] border-t pt-8"><Link href={(locale === "zh-CN" ? "/about/publishing-media" : "/en/about/publishing-media") as Route} className="group inline-flex min-h-12 items-center gap-4 rounded-lg border bg-surface px-5 py-3 shadow-[var(--shadow-soft)] hover:bg-muted"><span><strong className="block font-serif text-xl">{copy.publishing}</strong><span className="mt-1 block text-sm text-muted-foreground">{copy.publishingDetail}</span></span><span aria-hidden="true">→</span></Link></aside></Container>
   </>;
 }
