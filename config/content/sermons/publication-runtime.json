@@ -601,6 +601,40 @@
       "sourceSha256": "a7863415f2f68fc754ac229a547fb3aa3aa6b94b77a818a902522e491651b8e2",
       "sourceSermonId": "sermon-revelation-8-7-12",
       "sourceCanonicalEditionHash": "2e6e63ada5d1e1d966cc888638afe95476fe5d97f1aba1577415e84a62dee127"
+    },
+    {
+      "sermonId": "sermon-revelation-8-13",
+      "title": "严重的警告",
+      "subtitle": "",
+      "scriptureRange": "启示录 8:13",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [],
+      "canonicalEditionHash": "7f408825699c963a791e4bb11fe5be6884453675c0af85fd53589937d7d28953",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/yanzhong-de-jinggao.mdx",
+      "publicRoute": "/library/yanzhong-de-jinggao",
+      "searchEligibility": true,
+      "sourceSha256": "fb1d6daa2bf71d18c2798a383ca10255084c4efccaf0a9be2e254aa56a943a90"
+    },
+    {
+      "sermonId": "sermon-revelation-8-13-en",
+      "title": "A Serious Warning",
+      "subtitle": "",
+      "scriptureRange": "Revelation 8:13",
+      "sermonSeries": "Expository Sermons on Revelation",
+      "themes": [],
+      "canonicalEditionHash": "8cecdae0a534caac040e55d69fba321476adebbbe089119fb5d00ddba1c93b4d",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/yanzhong-de-jinggao.mdx",
+      "publicRoute": "/en/library/yanzhong-de-jinggao",
+      "searchEligibility": true,
+      "sourceSha256": "4e264564aea9bd7696205a053ac0d693a579ca667ac455a0dc860bef96e0d64b",
+      "sourceSermonId": "sermon-revelation-8-13",
+      "sourceCanonicalEditionHash": "7f408825699c963a791e4bb11fe5be6884453675c0af85fd53589937d7d28953"
     }
   ]
 }

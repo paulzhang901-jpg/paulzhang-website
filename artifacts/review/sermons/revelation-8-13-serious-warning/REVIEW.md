@@ -1,6 +1,6 @@
 # Human Review — Revelation 8:13 — A Serious Warning
 
-Status: READY FOR REVIEW — NOT APPROVED — NOT PUBLISHED
+Status: APPROVED — AUTHORIZED FOR PUBLICATION
 
 - Chinese canonical review content: `content/zh-CN/library/yanzhong-de-jinggao.mdx`
 - English canonical review edition: `content/en-US/library/yanzhong-de-jinggao.mdx`
@@ -9,9 +9,10 @@ Status: READY FOR REVIEW — NOT APPROVED — NOT PUBLISHED
 - Preached date supplied by author: 2026-09-20
 - Speaker/author: Pastor Paul Zhang / 张崇助牧师
 - Series: Expository Sermons on Revelation / 启示录释经学讲道
-- Review lifecycle: both MDX files remain `status: review`; no publication-runtime record; no public route; no Community sermonUrl.
+- Human Review: APPROVED by the author after full bilingual review.
+- Publication authorization: APPROVED for both Chinese and English canonical editions.
 - Chinese body authority: exact author-supplied manuscript for this task.
 - English edition: complete translation prepared for Human review; Scripture quotations use KJV.
 - Revelation 8:13 textual difference: Chinese authoritative manuscript retains “鹰”; English KJV quotation retains “angel”; a restrained note records the difference without expanding into textual criticism.
 
-Human review approval has NOT been granted or recorded.
+Human Review APPROVED by Paul Zhang in the PR #50 review workflow. Publication may proceed through the current origin/main sermon architecture.
