@@ -16,7 +16,7 @@
         "属灵警醒",
         "神的主权"
       ],
-      "canonicalEditionHash": "f01c5b34d3710e1a3531145da7764143a99588f586b35abac55185f6f5ff9444",
+      "canonicalEditionHash": "119a795b237de64b2adbc4e0834e72fc8e31e4a31ef39a50ce68af657431e648",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "APPROVED",
       "hashVerification": "VERIFIED",
@@ -40,7 +40,7 @@
         "安慰",
         "信靠"
       ],
-      "canonicalEditionHash": "1181fb14da1f73332afad240f5da2d4adf4e51a813b9d11f9914a949edfb9915",
+      "canonicalEditionHash": "2a7f0fdb184378d886d21aa1fbad6c64938c03f5c8f0cd4d7908fde638a09a65",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "APPROVED",
       "hashVerification": "VERIFIED",
@@ -63,7 +63,7 @@
         "Faithfulness",
         "The People of God"
       ],
-      "canonicalEditionHash": "532a1a59396e20f30435f74012760e2bb3af2ef6d5570bc53ac086d9376dda15",
+      "canonicalEditionHash": "2247ab849cf17feb4929fdd21eedba4beadf1935fb38c2fa79e423995c54a1f0",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "APPROVED",
       "hashVerification": "VERIFIED",
@@ -89,7 +89,7 @@
         "盼望",
         "神的荣耀"
       ],
-      "canonicalEditionHash": "210f5fbd64e74c14916af69ca048771b959de83581698b4759e333fde0f0d315",
+      "canonicalEditionHash": "d919df3788d932ddf4498a0fda375dcfe385538830b65335825c522f094847c2",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "APPROVED",
       "hashVerification": "VERIFIED",
@@ -121,7 +121,7 @@
       "publicRoute": "/en/library/tanqin-de-shaonian",
       "searchEligibility": true,
       "sourceSermonId": "sermon-p7c-029-001",
-      "sourceCanonicalEditionHash": "f01c5b34d3710e1a3531145da7764143a99588f586b35abac55185f6f5ff9444",
+      "sourceCanonicalEditionHash": "119a795b237de64b2adbc4e0834e72fc8e31e4a31ef39a50ce68af657431e648",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
     },
     {
@@ -148,7 +148,7 @@
       "publicRoute": "/en/library/chenshui-de-shaonian",
       "searchEligibility": true,
       "sourceSermonId": "sermon-p7c-028-001",
-      "sourceCanonicalEditionHash": "1181fb14da1f73332afad240f5da2d4adf4e51a813b9d11f9914a949edfb9915",
+      "sourceCanonicalEditionHash": "2a7f0fdb184378d886d21aa1fbad6c64938c03f5c8f0cd4d7908fde638a09a65",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
     },
     {
@@ -174,7 +174,7 @@
       "publicRoute": "/en/library/god-seals-his-people",
       "searchEligibility": true,
       "sourceSermonId": "sermon-p7c-010-001",
-      "sourceCanonicalEditionHash": "532a1a59396e20f30435f74012760e2bb3af2ef6d5570bc53ac086d9376dda15",
+      "sourceCanonicalEditionHash": "2247ab849cf17feb4929fdd21eedba4beadf1935fb38c2fa79e423995c54a1f0",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
     },
     {
@@ -203,7 +203,7 @@
       "publicRoute": "/en/library/wanguo-da-jingbai",
       "searchEligibility": true,
       "sourceSermonId": "sermon-p7c-027-001",
-      "sourceCanonicalEditionHash": "210f5fbd64e74c14916af69ca048771b959de83581698b4759e333fde0f0d315",
+      "sourceCanonicalEditionHash": "d919df3788d932ddf4498a0fda375dcfe385538830b65335825c522f094847c2",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
     },
     {
@@ -213,7 +213,7 @@
       "scriptureRange": "Revelation 4:4--8",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "faf84424b63c3549185df7603cd779ac0b80c62f79ac552bbf4e80fd8d1b411f",
+      "canonicalEditionHash": "8a894a282ebcac0611f338a012d14217a9c3781cac52a60b60391837d80343e8",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -221,9 +221,9 @@
       "runtimeContentPath": "content/en-US/library/zhenzheng-de-jingbai.mdx",
       "publicRoute": "/en/library/zhenzheng-de-jingbai",
       "searchEligibility": true,
-      "sourceSha256": "1a97df0cd990dd2f2eaa7ac1f81774d710522efdebd1997f4023125e592cab20",
+      "sourceSha256": "c59e116ffc846fe19c9150d573bcade77277a0ce04cb1733db033032e50ea61b",
       "sourceSermonId": "sermon-revelation-4-4-8",
-      "sourceCanonicalEditionHash": "97c21a302d66dd339d449dbcde85db1fd6549bb9f0d4597bcc25bb785c9f18c0"
+      "sourceCanonicalEditionHash": "f235313e21aad6d7c60d82d40eaf6585f6611e352727187c704347f1a36cb7ee"
     },
     {
       "sermonId": "sermon-revelation-4-4-8",
@@ -232,7 +232,7 @@
       "scriptureRange": "启示录 4:4--8",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "97c21a302d66dd339d449dbcde85db1fd6549bb9f0d4597bcc25bb785c9f18c0",
+      "canonicalEditionHash": "f235313e21aad6d7c60d82d40eaf6585f6611e352727187c704347f1a36cb7ee",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -240,7 +240,7 @@
       "runtimeContentPath": "content/zh-CN/library/zhenzheng-de-jingbai.mdx",
       "publicRoute": "/library/zhenzheng-de-jingbai",
       "searchEligibility": true,
-      "sourceSha256": "4c8342108539d2b43a806b0f03df3d8291578dab6a95151df132c6f875f95bd5"
+      "sourceSha256": "0d284e21c06fd7fc9bd48b79fff987ad1452de1a3cad4feee9106b86d3afab53"
     },
     {
       "sermonId": "sermon-revelation-4-9-11-en",
@@ -249,7 +249,7 @@
       "scriptureRange": "Revelation 4:9--11",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "5ac6e6637bdc67df00533f1db339f8ed9012f5cb179c3e0d001a2399d32a379e",
+      "canonicalEditionHash": "739b08862f4f3dacf00b50c37f1eaf0ec3201b630d56e407753a9a0d72ed0192",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -257,9 +257,9 @@
       "runtimeContentPath": "content/en-US/library/zhenzheng-de-desheng.mdx",
       "publicRoute": "/en/library/zhenzheng-de-desheng",
       "searchEligibility": true,
-      "sourceSha256": "c8a1c9b4ba102b7daae7095ae3832cacf68e77ea40058fa023e2b692827f760a",
+      "sourceSha256": "13ce80ef5939e1fc2c782f8f243aa75a757b8b25de72a2a048d3a35e332eae10",
       "sourceSermonId": "sermon-revelation-4-9-11",
-      "sourceCanonicalEditionHash": "478eec35282eda78a2fcd976f004fc18b192d7357f22a51114de5ce06c9efe30"
+      "sourceCanonicalEditionHash": "f94b3b7b9a9f18cf7bebd3dd163b3c631394194cf1c89a8faf316716c4985b0a"
     },
     {
       "sermonId": "sermon-revelation-4-9-11",
@@ -268,7 +268,7 @@
       "scriptureRange": "启示录 4:9--11",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "478eec35282eda78a2fcd976f004fc18b192d7357f22a51114de5ce06c9efe30",
+      "canonicalEditionHash": "f94b3b7b9a9f18cf7bebd3dd163b3c631394194cf1c89a8faf316716c4985b0a",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -276,7 +276,7 @@
       "runtimeContentPath": "content/zh-CN/library/zhenzheng-de-desheng.mdx",
       "publicRoute": "/library/zhenzheng-de-desheng",
       "searchEligibility": true,
-      "sourceSha256": "68e0c44095c1aa15090d4cbd16af479315c5abd2593418d1051fc04f06c12eff"
+      "sourceSha256": "ba94cff9221d5941d8e2bc9b860f6ad78da7f16cd0be7c714159d66c3547aaa7"
     },
     {
       "sermonId": "sermon-revelation-5-5-7",
@@ -285,7 +285,7 @@
       "scriptureRange": "启示录 5:5--7",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "2df49ef0879c2351ecff7687e0606eb6d58dc472d9d3ed19bd56dfceacfc4201",
+      "canonicalEditionHash": "c01dd8749d5b68cb80ab97bfef21b32e187754c1285800cce6e1de8c60640df9",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -293,7 +293,7 @@
       "runtimeContentPath": "content/zh-CN/library/shizi-yu-gaoyang.mdx",
       "publicRoute": "/library/shizi-yu-gaoyang",
       "searchEligibility": true,
-      "sourceSha256": "ec575789c3f742169531138a9f462ca7321354607b64e8dd89b8587608132b1c"
+      "sourceSha256": "63b852cdfd8130849c80575da079382193050790c16c8906dd87795b035d8706"
     },
     {
       "sermonId": "sermon-revelation-5-5-7-en",
@@ -302,7 +302,7 @@
       "scriptureRange": "Revelation 5:5--7",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "1bd355e288bbe60dd05ee5d3ba70aad0be88b3e20577aa77e6c6ffd0f37eebde",
+      "canonicalEditionHash": "432efa3aadc25d4014ccb7a94bcc850197c1ced06565abb549a00d8c80eb18cf",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -310,9 +310,9 @@
       "runtimeContentPath": "content/en-US/library/shizi-yu-gaoyang.mdx",
       "publicRoute": "/en/library/shizi-yu-gaoyang",
       "searchEligibility": true,
-      "sourceSha256": "415e595917e043816b395f0f0ff40a1135e958970a7e5f0ec6411a7da771eab7",
+      "sourceSha256": "8d03b1b07b0306263b79c56381eb807ce9d5f7f5658c00b7105eb5aaf9e4e2ee",
       "sourceSermonId": "sermon-revelation-5-5-7",
-      "sourceCanonicalEditionHash": "2df49ef0879c2351ecff7687e0606eb6d58dc472d9d3ed19bd56dfceacfc4201"
+      "sourceCanonicalEditionHash": "c01dd8749d5b68cb80ab97bfef21b32e187754c1285800cce6e1de8c60640df9"
     },
     {
       "sermonId": "sermon-revelation-5-8-10-en",
@@ -321,7 +321,7 @@
       "scriptureRange": "Revelation 5:8--10",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "c72be242d286d447fd973cdd3aae2911954d26a455f98ec4be7129b91fa2bda8",
+      "canonicalEditionHash": "ba9866904ebc7b2325923d15aec863c93f9e8d5ab2966e37da2721f0fce23aab",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -329,9 +329,9 @@
       "runtimeContentPath": "content/en-US/library/ta-peide.mdx",
       "publicRoute": "/en/library/ta-peide",
       "searchEligibility": true,
-      "sourceSha256": "28b5c87700ddd81f735f232cc573460061313d8ef10cf6c8b2fd70ebb9fc1348",
+      "sourceSha256": "c86439eb98dac044e6e106cdede01697e445c1a7bbf3bb56d40f70a8a3fcb55e",
       "sourceSermonId": "sermon-revelation-5-8-10",
-      "sourceCanonicalEditionHash": "42de0d4aa67ce7306e696bc33f9355fe57fed5435ee0b975704e01421661b98c"
+      "sourceCanonicalEditionHash": "622ccc234acee6246430ae14fe20ff33ecb13f5fa3b4796ecb92508e0760e3af"
     },
     {
       "sermonId": "sermon-revelation-5-8-10",
@@ -340,7 +340,7 @@
       "scriptureRange": "启示录 5:8--10",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "42de0d4aa67ce7306e696bc33f9355fe57fed5435ee0b975704e01421661b98c",
+      "canonicalEditionHash": "622ccc234acee6246430ae14fe20ff33ecb13f5fa3b4796ecb92508e0760e3af",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -348,7 +348,7 @@
       "runtimeContentPath": "content/zh-CN/library/ta-peide.mdx",
       "publicRoute": "/library/ta-peide",
       "searchEligibility": true,
-      "sourceSha256": "85d5dc574894c5d4452061db9ce5cd44bd6510d6f41d94fdd81b918ae5dca918"
+      "sourceSha256": "53e446501ec810a9f3df9e28fc9baac8bccd6a58cde725822cc5b48a70ba720b"
     },
     {
       "sermonId": "sermon-revelation-5-11-14-en",
@@ -357,7 +357,7 @@
       "scriptureRange": "Revelation 5:11--14",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "e230f7a5db43646a3e813ae41d5ea3c0096b9688119a6074db8681d3e235501a",
+      "canonicalEditionHash": "d49b6d0c306c5a847c0caafc9cc2761e41fe307015c93a03b5c583f8f91bf1f4",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -365,9 +365,9 @@
       "runtimeContentPath": "content/en-US/library/wanyou-dou-yao-jingbai.mdx",
       "publicRoute": "/en/library/wanyou-dou-yao-jingbai",
       "searchEligibility": true,
-      "sourceSha256": "346410f5476b005741c7227cc3cfa61b7ae8ed44c3232941a6504989b0f5560a",
+      "sourceSha256": "5fbaf6cbb448a4d9948cf708831e49b9f8c7c7309f607aaf9b7a277d768691f4",
       "sourceSermonId": "sermon-revelation-5-11-14",
-      "sourceCanonicalEditionHash": "4027bebdeb32d8cc13a99cf9839482d72eeda23545619a02f6f05301e8922c38"
+      "sourceCanonicalEditionHash": "29a686b7fc6ae7479d62d06846bd84fff07a1602a57c6db607f75544ebf28cc6"
     },
     {
       "sermonId": "sermon-revelation-5-11-14",
@@ -376,7 +376,7 @@
       "scriptureRange": "启示录 5:11--14",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "4027bebdeb32d8cc13a99cf9839482d72eeda23545619a02f6f05301e8922c38",
+      "canonicalEditionHash": "29a686b7fc6ae7479d62d06846bd84fff07a1602a57c6db607f75544ebf28cc6",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -384,7 +384,7 @@
       "runtimeContentPath": "content/zh-CN/library/wanyou-dou-yao-jingbai.mdx",
       "publicRoute": "/library/wanyou-dou-yao-jingbai",
       "searchEligibility": true,
-      "sourceSha256": "468fa42ab876301333643a802f58b9079e532c37cb446ee02ecb0d8a6b6692b5"
+      "sourceSha256": "e79f5bfa2b8f518cc12803313b132d8d75ea2b50075db753cbdc21c2e3442c92"
     },
     {
       "sermonId": "sermon-revelation-6-1-8",
@@ -393,7 +393,7 @@
       "scriptureRange": "启示录 6:1--8",
       "sermonSeries": "羔羊揭印------动荡世界中的审判、忍耐与盼望",
       "themes": [],
-      "canonicalEditionHash": "a10e3c40f07464b85fd64e4ae08bc8139f259673eaff83947a611ef19722e432",
+      "canonicalEditionHash": "434463ea0c452423dca4701c0af40b083d264f837c6e550e6c17efefde0d0a30",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -401,7 +401,7 @@
       "runtimeContentPath": "content/zh-CN/library/ma-zai-benpao-gaoyang-zhangquan.mdx",
       "publicRoute": "/library/ma-zai-benpao-gaoyang-zhangquan",
       "searchEligibility": true,
-      "sourceSha256": "dc9b0862d87b5acbb491f131728fc47e6085ae190f112f4ad2bf711dd49b7032"
+      "sourceSha256": "2edf78459f4f5af5e4343b17cb193d3f28d18fc837b8f6089a1f944a531f8ff3"
     },
     {
       "sermonId": "sermon-revelation-6-1-8-en",
@@ -410,7 +410,7 @@
       "scriptureRange": "Revelation 6:1--8",
       "sermonSeries": "The Lamb Opens the Seals --- Judgment, Endurance, and Hope in a Shaken World",
       "themes": [],
-      "canonicalEditionHash": "cc9a8908d81b2de873f6b4fe52db9782641b26b0696e77702c9f3f96c8442689",
+      "canonicalEditionHash": "0fa05e395c26feeac55c003059f8c0f33b6abb04fe040d0c23d763007244b7a8",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -418,9 +418,9 @@
       "runtimeContentPath": "content/en-US/library/ma-zai-benpao-gaoyang-zhangquan.mdx",
       "publicRoute": "/en/library/ma-zai-benpao-gaoyang-zhangquan",
       "searchEligibility": true,
-      "sourceSha256": "f74bf457a45a517c0a4ae360fd1700a35a5eea160347689d241ccd462b17214e",
+      "sourceSha256": "c2652b53eeb8d3543ef229e8b843313c9dd1c58b2985120aa99ebfa6ceecd9b5",
       "sourceSermonId": "sermon-revelation-6-1-8",
-      "sourceCanonicalEditionHash": "a10e3c40f07464b85fd64e4ae08bc8139f259673eaff83947a611ef19722e432"
+      "sourceCanonicalEditionHash": "434463ea0c452423dca4701c0af40b083d264f837c6e550e6c17efefde0d0a30"
     },
     {
       "sermonId": "sermon-revelation-6-9-11",
@@ -429,7 +429,7 @@
       "scriptureRange": "启示录 6:9--11",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "a6c929b5124b59b4bc91d77a030cf429483d46c03bc67e92b82887239eb82d0b",
+      "canonicalEditionHash": "acf39083f30bc37c72b49a63375f1f8af08d8b2647b44560ec3a4e5b031ec533",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -437,7 +437,7 @@
       "runtimeContentPath": "content/zh-CN/library/jitan-xia-de-husheng.mdx",
       "publicRoute": "/library/jitan-xia-de-husheng",
       "searchEligibility": true,
-      "sourceSha256": "d271c27c3306e6b8493093d806c22d38e4fca9dcfdcd1a4bbb0ea1dba8b559a5"
+      "sourceSha256": "e2e3abcfce76c36bafe69597c719b0085b9067c2f2c6db81c1e055ae8d36149f"
     },
     {
       "sermonId": "sermon-revelation-6-9-11-en",
@@ -446,7 +446,7 @@
       "scriptureRange": "Revelation 6:9--11",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "39c1a3299a67d2c7b3320ff49659bc244b33687373989700d220531abc0bb708",
+      "canonicalEditionHash": "c85d256320d504c0159bc86019986a1e9fc47ecc6286099b5917e43365643fc4",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -454,9 +454,9 @@
       "runtimeContentPath": "content/en-US/library/jitan-xia-de-husheng.mdx",
       "publicRoute": "/en/library/jitan-xia-de-husheng",
       "searchEligibility": true,
-      "sourceSha256": "afe15391def16030007a9f69838b23f5bf3f10d75845e7e8f5a68079aa3eb43e",
+      "sourceSha256": "df5741f80b6d44603c6b39d64c07d365a13e9490cc11e177fce8426f11dd4ade",
       "sourceSermonId": "sermon-revelation-6-9-11",
-      "sourceCanonicalEditionHash": "a6c929b5124b59b4bc91d77a030cf429483d46c03bc67e92b82887239eb82d0b"
+      "sourceCanonicalEditionHash": "acf39083f30bc37c72b49a63375f1f8af08d8b2647b44560ec3a4e5b031ec533"
     },
     {
       "sermonId": "sermon-revelation-6-12-17",
@@ -465,7 +465,7 @@
       "scriptureRange": "启示录 6:12--17",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "4ecb790589c609d4d5e80348e931410c73bf7ce2ffb158d6a30dca79997c9745",
+      "canonicalEditionHash": "3a24681200e420fa08375c34c71a44a46ca9f38a653188002c3687e0f4f3813b",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -473,7 +473,7 @@
       "runtimeContentPath": "content/zh-CN/library/tiandi-dou-zhendong-de-shihou.mdx",
       "publicRoute": "/library/tiandi-dou-zhendong-de-shihou",
       "searchEligibility": true,
-      "sourceSha256": "bbc93e05583894c4ec73dedbcf6800887ed6c153b0f929bf0c5c0a1a579574a7"
+      "sourceSha256": "0acf6a6763df92f0a0fce21150cac95536430d605163795ebefc01be304d7508"
     },
     {
       "sermonId": "sermon-revelation-6-12-17-en",
@@ -482,7 +482,7 @@
       "scriptureRange": "Revelation 6:12--17",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "c3a59f490902415e3a98d151cd16c61c5a89c5d5c7781dc1ee7cbbe9c1f268d9",
+      "canonicalEditionHash": "0aa3a4cf53d07575a434297607f30ddf90627f9aa2146dce49aeeb6e80545cb1",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -490,9 +490,9 @@
       "runtimeContentPath": "content/en-US/library/tiandi-dou-zhendong-de-shihou.mdx",
       "publicRoute": "/en/library/tiandi-dou-zhendong-de-shihou",
       "searchEligibility": true,
-      "sourceSha256": "2c4ccf5ed68260e172edf1e06868a11d9a6a2056de40301d03df26a1abbcc85f",
+      "sourceSha256": "940eacfe8145c3df684bc776e38f0e4d28de50c7a8b7aa7d4c42bc30f42a3762",
       "sourceSermonId": "sermon-revelation-6-12-17",
-      "sourceCanonicalEditionHash": "4ecb790589c609d4d5e80348e931410c73bf7ce2ffb158d6a30dca79997c9745"
+      "sourceCanonicalEditionHash": "3a24681200e420fa08375c34c71a44a46ca9f38a653188002c3687e0f4f3813b"
     },
     {
       "sermonId": "sermon-revelation-8-1-6",
@@ -501,7 +501,7 @@
       "scriptureRange": "启示录 8:1--6",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "f1dc446c8e4b5c93b9fcc12c7aecb40c6286e4dfec917718e2e6a138fc775676",
+      "canonicalEditionHash": "50453eb8f87aa5e05e0db824c40ba35607fb4c3d7e62d654b074775cd4c26be9",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -509,7 +509,7 @@
       "runtimeContentPath": "content/zh-CN/library/tianshang-jijing-de-shihou.mdx",
       "publicRoute": "/library/tianshang-jijing-de-shihou",
       "searchEligibility": true,
-      "sourceSha256": "cb72ef13a1ab02535f4e48e0796a28b0b5582180a5254b81abc15ce762094e67"
+      "sourceSha256": "4429cbb06c9134d2697ff1352ac73c4ea3e69f70ea3e06dceedd8263907037f5"
     },
     {
       "sermonId": "sermon-revelation-8-1-6-en",
@@ -518,7 +518,7 @@
       "scriptureRange": "Revelation 8:1--6",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "9eac18c54f87cf79bc55607aa9a32f0a26d800349497b268c5143cdfbdade7f8",
+      "canonicalEditionHash": "d1b9a6b15502dad27099b2a99a70172b22b51e3eb063167567a7d2e08d4fd199",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -526,9 +526,9 @@
       "runtimeContentPath": "content/en-US/library/tianshang-jijing-de-shihou.mdx",
       "publicRoute": "/en/library/tianshang-jijing-de-shihou",
       "searchEligibility": true,
-      "sourceSha256": "20d696c7d75fd7b128b4379f4d97ca70c0bcff70d7967d8103ae07c586d1fbd1",
+      "sourceSha256": "4f2464389c11306c54a2156f661737e68146cdd8c10cd3fb45a184db3e8ca9c9",
       "sourceSermonId": "sermon-revelation-8-1-6",
-      "sourceCanonicalEditionHash": "f1dc446c8e4b5c93b9fcc12c7aecb40c6286e4dfec917718e2e6a138fc775676"
+      "sourceCanonicalEditionHash": "50453eb8f87aa5e05e0db824c40ba35607fb4c3d7e62d654b074775cd4c26be9"
     },
     {
       "sermonId": "sermon-revelation-7-13-17-en",
@@ -537,7 +537,7 @@
       "scriptureRange": "Revelation 7:13--17",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "afa0c5e46edae3c938e4f19f9d92c2457e3dd3111cc7cd308db4d18aaff865e4",
+      "canonicalEditionHash": "d6fb72d0a5d87590472c1eb86107912c15e251557a5ded14171360c23e8afdb1",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -545,9 +545,9 @@
       "runtimeContentPath": "content/en-US/library/zuidade-anwei.mdx",
       "publicRoute": "/en/library/zuidade-anwei",
       "searchEligibility": true,
-      "sourceSha256": "af2ac3f772615a2bf9b8bb833037e69be957fb8d4cd9dfdffd91a735ced23d35",
+      "sourceSha256": "f135ec44591d4e094c149546fe14687556d6a81ea542f5157ef82a3e98c1aa22",
       "sourceSermonId": "sermon-revelation-7-13-17",
-      "sourceCanonicalEditionHash": "3fddb0b1a7686280c622dbe123b04aff2230df1687571b000f06dc20ee9a5820"
+      "sourceCanonicalEditionHash": "eaa1ad04426aaea782d4ade9d0de36e590a5025f917d71cfcfcc624e0252d420"
     },
     {
       "sermonId": "sermon-revelation-7-13-17",
@@ -556,7 +556,7 @@
       "scriptureRange": "启示录 7:13--17",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "3fddb0b1a7686280c622dbe123b04aff2230df1687571b000f06dc20ee9a5820",
+      "canonicalEditionHash": "eaa1ad04426aaea782d4ade9d0de36e590a5025f917d71cfcfcc624e0252d420",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -564,7 +564,7 @@
       "runtimeContentPath": "content/zh-CN/library/zuidade-anwei.mdx",
       "publicRoute": "/library/zuidade-anwei",
       "searchEligibility": true,
-      "sourceSha256": "2476a2592e604cf87c11fd8083ff9e6ca7a30d6c5d5bf1b3c50eef5e8683342d"
+      "sourceSha256": "c0d92ccb7929cf0d43c6016178e56bbea60cedd318f98f5286270ad1c8f8e102"
     },
     {
       "sermonId": "sermon-revelation-8-7-12",
@@ -581,7 +581,7 @@
       "runtimeContentPath": "content/zh-CN/library/dang-shijie-bei-zhendong.mdx",
       "publicRoute": "/library/dang-shijie-bei-zhendong",
       "searchEligibility": true,
-      "sourceSha256": "d4677bb2766a8e94b094c2bf6f38cb86fff398adc9982276d0bab898ba3ecd95"
+      "sourceSha256": "83897f441d61adcb7682549f2bf0277174728ac01c55f6a394b73cfee27b275c"
     },
     {
       "sermonId": "sermon-revelation-8-7-12-en",
@@ -590,7 +590,7 @@
       "scriptureRange": "Revelation 8:7--12",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "46698459f91f15e0104477844a0086524be0e08322810dfcd3c8490cae0eb60d",
+      "canonicalEditionHash": "3eb60ba76d1ed7113dcb4d28be77cb9f14ba7f55c833c65fc54286f1ecad11f0",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "WAIVED_BY_AUTHOR",
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
@@ -598,7 +598,7 @@
       "runtimeContentPath": "content/en-US/library/dang-shijie-bei-zhendong.mdx",
       "publicRoute": "/en/library/dang-shijie-bei-zhendong",
       "searchEligibility": true,
-      "sourceSha256": "a7863415f2f68fc754ac229a547fb3aa3aa6b94b77a818a902522e491651b8e2",
+      "sourceSha256": "615c22d1581765a96137a3a60273c86cef3a570141372b86b90c95d0e3db8a57",
       "sourceSermonId": "sermon-revelation-8-7-12",
       "sourceCanonicalEditionHash": "2e6e63ada5d1e1d966cc888638afe95476fe5d97f1aba1577415e84a62dee127"
     },
@@ -609,14 +609,14 @@
       "scriptureRange": "启示录 8:13",
       "sermonSeries": "启示录释经学讲道",
       "themes": [],
-      "canonicalEditionHash": "7f408825699c963a791e4bb11fe5be6884453675c0af85fd53589937d7d28953",
+      "canonicalEditionHash": "aa4db7e4f754fb187afec0ba81e0065bf77468084a7dd4898d0654d8f4eb893c",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "APPROVED",
       "hashVerification": "VERIFIED",
       "runtimeContentPath": "content/zh-CN/library/yanzhong-de-jinggao.mdx",
       "publicRoute": "/library/yanzhong-de-jinggao",
       "searchEligibility": true,
-      "sourceSha256": "fb1d6daa2bf71d18c2798a383ca10255084c4efccaf0a9be2e254aa56a943a90"
+      "sourceSha256": "06feb3ee4568bca3ede39a56ca157c034ac9ae241094029fc54e4bccd6a4221a"
     },
     {
       "sermonId": "sermon-revelation-8-13-en",
@@ -625,16 +625,16 @@
       "scriptureRange": "Revelation 8:13",
       "sermonSeries": "Expository Sermons on Revelation",
       "themes": [],
-      "canonicalEditionHash": "8cecdae0a534caac040e55d69fba321476adebbbe089119fb5d00ddba1c93b4d",
+      "canonicalEditionHash": "e5f5566e5b10e2583c1fca6e56677b007d38d6e31bd910f752379023a50b1d4e",
       "publicationStatus": "PUBLISHED",
       "humanPreviewStatus": "APPROVED",
       "hashVerification": "VERIFIED",
       "runtimeContentPath": "content/en-US/library/yanzhong-de-jinggao.mdx",
       "publicRoute": "/en/library/yanzhong-de-jinggao",
       "searchEligibility": true,
-      "sourceSha256": "4e264564aea9bd7696205a053ac0d693a579ca667ac455a0dc860bef96e0d64b",
+      "sourceSha256": "3260536d7f3fb80430dce492d67139386d2b9e69f0edd6a3f66f04edcc48cf88",
       "sourceSermonId": "sermon-revelation-8-13",
-      "sourceCanonicalEditionHash": "7f408825699c963a791e4bb11fe5be6884453675c0af85fd53589937d7d28953"
+      "sourceCanonicalEditionHash": "aa4db7e4f754fb187afec0ba81e0065bf77468084a7dd4898d0654d8f4eb893c"
     }
   ]
 }

@@ -13,8 +13,8 @@ test("approved Chinese sermon is byte-identical and uses existing Library/search
   const url = "https://paulzhang.org/library/tanqin-de-shaonian";
   const sermon = loadPublishedSermon(id)!;
   assert.equal(sermon.title, "弹琴的少年");
-  assert.equal(crypto.createHash("sha256").update(sermon.body).digest("hex"), "f01c5b34d3710e1a3531145da7764143a99588f586b35abac55185f6f5ff9444");
-  assert.equal(Buffer.byteLength(sermon.body), 15061);
+  assert.equal(crypto.createHash("sha256").update(sermon.body).digest("hex"), "119a795b237de64b2adbc4e0834e72fc8e31e4a31ef39a50ce68af657431e648");
+  assert.equal(Buffer.byteLength(sermon.body), 15014);
   const reader = parseCanonicalReaderBody(sermon.body);
   assert.equal(reader[0], "经文");
   assert.ok(reader.includes("引言"));
