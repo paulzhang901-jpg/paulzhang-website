@@ -8,7 +8,7 @@ import {ContentPage} from "../../src/components/content/content-page";
 import {LibraryPage} from "../../src/components/content/library-page";
 import {SermonPublicationBody} from "../../src/components/content/sermon-publication-page";
 import {getContentRepository} from "../../src/lib/content/repository";
-import {sameSermonDisplayText, sermonDisplayMarkdown, sermonDisplayText} from "../../src/lib/sermons/display";
+import {findDuplicateSermonTitleInOpening, sameSermonDisplayText, sermonDisplayMarkdown, sermonDisplayText} from "../../src/lib/sermons/display";
 import type {ContentLanguage} from "../../src/types/content";
 
 Object.assign(globalThis, {React});
@@ -38,6 +38,19 @@ test("sermon presentation preserves source while rendering Markdown structure an
   assert.equal(sermonDisplayText("Revelation 6:9–11", "en-US"), "Revelation 6:9–11");
 });
 
+test("published sermon bodies never repeat the page-owned sermon title", () => {
+  const registry = JSON.parse(fs.readFileSync("config/content/sermons/publication-runtime.json", "utf8"));
+  for (const record of registry.records) {
+    const locale: ContentLanguage = record.publicRoute.startsWith("/en/") ? "en-US" : "zh-CN";
+    const source = fs.readFileSync(record.runtimeContentPath, "utf8");
+    const body = source.slice(source.indexOf("\n---\n", 4) + 5);
+    assert.equal(findDuplicateSermonTitleInOpening(body, record.title, locale), null, record.sermonId);
+  }
+  assert.ok(findDuplicateSermonTitleInOpening("题目：严重的警告：经文：启示录 8:13\n正文", "严重的警告", "zh-CN"));
+  assert.ok(findDuplicateSermonTitleInOpening("# A Serious Warning\n\n## Scripture", "A Serious Warning", "en-US"));
+  assert.equal(findDuplicateSermonTitleInOpening("## Scripture: Revelation 8:13\n\n## Big Idea\nTruth", "A Serious Warning", "en-US"), null);
+});
+
 test("all published sermon editions share one Hero and retain registered canonical bytes", async () => {
   const repository = await getContentRepository();
   const registry = JSON.parse(fs.readFileSync("config/content/sermons/publication-runtime.json", "utf8"));
@@ -53,6 +66,7 @@ test("all published sermon editions share one Hero and retain registered canonic
     assert.ok(!html.includes("Website Canonical Edition"), record.sermonId);
     assert.ok(html.includes("<h2"), record.sermonId);
     assert.ok(html.includes("data-language-alternate"), record.sermonId);
+    assert.ok(html.includes(record.sermonSeries), record.sermonId);
     assert.ok(html.includes(locale === "zh-CN" ? "阅读 English Edition" : "Read the Chinese edition"));
     assert.ok(bytes.equals(fs.readFileSync(record.runtimeContentPath)));
   }

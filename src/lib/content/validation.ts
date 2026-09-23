@@ -1,6 +1,7 @@
 import type { ParsedContentRecord } from "./discovery";
 import { normalizeContent } from "./normalize";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
+import {findDuplicateSermonTitleInOpening} from "@/lib/sermons/display";
 
 export type ContentValidationReport = {items: NormalizedContentItem[]; errors: string[]; warnings: string[]};
 
@@ -24,6 +25,10 @@ export function validateContentRecords(records: ParsedContentRecord[]): ContentV
     for (const target of item.relatedContent) if (!canonicalIds.has(target)) errors.push(`${item.sourcePath}: broken related_content reference ${target}`);
     for (const step of item.formation.nextSteps) {
       if (step.type === "content" && !canonicalIds.has(step.target)) errors.push(`${item.sourcePath}: broken next_steps content reference ${step.target}`);
+    }
+    if (item.contentType === "sermon" && item.status === "published") {
+      const duplicateTitle = findDuplicateSermonTitleInOpening(item.body, item.title, item.language);
+      if (duplicateTitle) errors.push(`${item.sourcePath}: published sermon body repeats page title at body line ${duplicateTitle.line}: ${duplicateTitle.value}`);
     }
     if (!item.seo.title) warnings.push(`${item.sourcePath}: optional SEO title missing`);
     if (!item.formation.reflectionPrompts.length) warnings.push(`${item.sourcePath}: optional reflection prompts missing`);

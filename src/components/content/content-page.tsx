@@ -12,6 +12,7 @@ import type { ContentRepository } from "@/lib/content/repository";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
 import {SermonPublicationBody} from "./sermon-publication-page";
 import {sameSermonDisplayText, sermonDisplayText} from "@/lib/sermons/display";
+import {loadPublishedSermon} from "@/lib/sermons/published";
 
 function RelatedContent({children}: {children: ReactNode}) {
   return <aside className="my-8 border-l-4 border-l-[var(--color-truth)] bg-surface p-6"><h2 className="font-serif text-xl">Related content</h2><div className="mt-3 leading-7 text-muted-foreground">{children}</div></aside>;
@@ -51,6 +52,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
   const isStory = item.domain === "stories";
   const isSermon = item.contentType === "sermon";
   const display = (value: string) => isSermon ? sermonDisplayText(value, item.language) : value;
+  const publishedSermon = isSermon ? loadPublishedSermon(item.id, item.language) : null;
   const subtitle = item.subtitle && (!isSermon || !sameSermonDisplayText(item.subtitle, item.title, item.language)) ? item.subtitle : null;
   const showSummary = !isSermon || (!sameSermonDisplayText(item.summary, item.title, item.language) && !sameSermonDisplayText(item.summary, subtitle ?? "", item.language));
   // The archived manuscript keeps its title lines; render them only once in the page header.
@@ -77,6 +79,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
           {showSummary ? <p className="mt-5 text-lg leading-8 text-muted-foreground">{display(item.summary)}</p> : null}
           {item.authors.length ? <p className="mt-5 text-sm text-muted-foreground">{copy.by} {item.authors.join(", ")}</p> : null}
           <div className="mt-5 flex flex-wrap gap-2">{item.topics.map((topic) => <TopicBadge key={topic}>{contentTopicLabel(item.language, topic)}</TopicBadge>)}</div>
+          {publishedSermon?.sermonSeries ? <div className="mt-5 text-sm text-muted-foreground"><span className="font-medium text-foreground">{item.language === "zh-CN" ? "系列" : "Series"}: </span>{publishedSermon.sermonSeries}</div> : null}
           {item.scriptureRefs.length ? <div className="mt-5 text-sm text-muted-foreground"><span className="font-medium text-foreground">{copy.scripture}: </span>{item.scriptureRefs.map(formatScripture).join("; ")}</div> : null}
           <TranslationStatus item={item} repository={repository} />
         </article>
