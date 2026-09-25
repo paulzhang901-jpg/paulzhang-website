@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Route } from "next";
 import { Container, ReadingContainer } from "@/components/layout/container";
 import { Section, SectionHeading } from "@/components/layout/section";
@@ -43,7 +42,9 @@ function FreeEbooks({locale}: {locale: ContentLanguage}) {
           const url = `/ebooks/the-light-they-could-not-erase-vol-${book.volume}.pdf`;
           return <article key={book.volume} className="flex h-full flex-col overflow-hidden rounded-lg border bg-surface">
             <div className="flex justify-center bg-muted/50 p-6">
-              <Image src={`/images/ebooks/the-light-they-could-not-erase-vol-${book.volume}.png`} alt={chinese ? `${book.zhTitle}封面` : `Cover of ${book.enTitle}`} width={300} height={400} className="h-64 w-auto max-w-full object-contain shadow-sm sm:h-72" />
+              {/* Static public cover: keep this renderable in the Node route tests. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/images/ebooks/the-light-they-could-not-erase-vol-${book.volume}.png`} alt={chinese ? `${book.zhTitle}封面` : `Cover of ${book.enTitle}`} width={300} height={400} className="h-64 w-auto max-w-full object-contain shadow-sm sm:h-72" />
             </div>
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm font-semibold text-primary">{chinese ? `第 ${book.volume} 册` : `Volume ${book.volume}`}</p>

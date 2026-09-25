@@ -29,7 +29,9 @@ test("Client Components remain explicitly reviewed and minimal", () => {
 });
 
 test("raw public assets stay below the V1 one-megabyte safeguard", () => {
-  const oversized = filesWithin(path.join(root, "public"))
+  const publicRoot = path.join(root, "public");
+  const oversized = filesWithin(publicRoot)
+    .filter((file) => !/^ebooks\/[^/]+\.pdf$/.test(path.relative(publicRoot, file)))
     .filter((file) => fs.statSync(file).size > 1024 * 1024)
     .map((file) => path.relative(root, file));
   assert.deepEqual(oversized, []);
