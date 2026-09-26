@@ -5,6 +5,7 @@ import { Section, SectionHeading } from "@/components/layout/section";
 import { libraryCopy, contentTopicLabel, contentTypeLabel, libraryTopicLabel } from "@/config/library";
 import { getActiveLibraryCollections, getLibraryCollectionItems, getLibraryItems } from "@/lib/content/library";
 import { contentPath } from "@/lib/content/paths";
+import {ebooks, ebookPdfUrl, ebookCoverUrl} from "@/lib/content/ebooks";
 import type { ContentRepository } from "@/lib/content/repository";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
 import {sameSermonDisplayText, sermonDisplayText} from "@/lib/sermons/display";
@@ -22,12 +23,6 @@ function languageAvailability(item: NormalizedContentItem, repository: ContentRe
   return other.available ? "中文 · English" : item.language === "zh-CN" ? "中文" : "English";
 }
 
-const ebooks = [
-  {volume: 1, zhTitle: "删不掉的光 I：日子里的恩典", enTitle: "The Light They Could Not Erase, Vol. 1: Grace in Ordinary Days", zhDescription: "在平凡日子、信仰、家庭、服事、苦难与生活经历中寻找恩典的文字合集。", enDescription: "A collection of reflections on grace discovered in ordinary life, faith, family, ministry, suffering, and everyday experience."},
-  {volume: 2, zhTitle: "删不掉的光 II：在新时代中守住灵魂", enTitle: "The Light They Could Not Erase, Vol. 2: Keeping the Soul in a Restless Age", zhDescription: "在快速变化、令人不安的时代中，思想如何以信仰、真理、智慧与属灵分辨守住灵魂。", enDescription: "Reflections on keeping the soul grounded in faith, truth, wisdom, and spiritual discernment amid a restless and rapidly changing age."},
-  {volume: 3, zhTitle: "删不掉的光 III：在破碎中仍然相爱", enTitle: "The Light They Could Not Erase, Vol. 3: Loving Through Brokenness", zhDescription: "关于文字、良知、失去、婚姻、破碎、爱与盼望的思考，在外在世界不再稳固时追问什么仍然值得持守。", enDescription: "Reflections on words, conscience, loss, marriage, brokenness, love, and hope—asking what remains when the outward world is no longer secure."},
-] as const;
-
 function FreeEbooks({locale}: {locale: ContentLanguage}) {
   const chinese = locale === "zh-CN";
   return <Section className="border-t bg-muted/30">
@@ -39,12 +34,12 @@ function FreeEbooks({locale}: {locale: ContentLanguage}) {
       </header>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {ebooks.map((book) => {
-          const url = `/ebooks/the-light-they-could-not-erase-vol-${book.volume}.pdf`;
+          const url = ebookPdfUrl(book.volume);
           return <article key={book.volume} className="flex h-full flex-col overflow-hidden rounded-lg border bg-surface">
             <div className="flex justify-center bg-muted/50 p-6">
               {/* Static public cover: keep this renderable in the Node route tests. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/images/ebooks/the-light-they-could-not-erase-vol-${book.volume}.png`} alt={chinese ? `${book.zhTitle}封面` : `Cover of ${book.enTitle}`} width={300} height={400} className="h-64 w-auto max-w-full object-contain shadow-sm sm:h-72" />
+              <img src={ebookCoverUrl(book.volume)} alt={chinese ? `${book.zhTitle}封面` : `Cover of ${book.enTitle}`} width={300} height={400} className="h-64 w-auto max-w-full object-contain shadow-sm sm:h-72" />
             </div>
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm font-semibold text-primary">{chinese ? `第 ${book.volume} 册` : `Volume ${book.volume}`}</p>
