@@ -1,0 +1,27 @@
+{
+  "canonical_id": "sermon-revelation-9-1-12",
+  "sermon_date": "2026-09-27",
+  "series": "Revelation",
+  "sermon_type": "Expository",
+  "author": "Paul Zhang",
+  "source_conversation": "https://chatgpt.com/c/695f2764-2dd4-8326-aa6f-81c7d5f88584",
+  "source_message_id": "4852cd33-e483-497b-938b-3de74882514d",
+  "source_document_id": "74163",
+  "source_body_sha256": "f96a7ff95dea02f81333d444a0b38bde1aced10639e9dc2ab18cef3a1c13cd53",
+  "source_body_bytes": 13051,
+  "archive_path": "04 Sermons/Expository/无底坑打开的时候.md",
+  "archive_base": "7f90e71c6b8d8627be99350161ecd735671ca94a",
+  "archive_branch": "codex/sermon-2026-09-27",
+  "website_base": "84bafb09adf77dfe4513514acbab05a9437c326e",
+  "website_paths": [
+    "content/zh-CN/library/wu-di-keng-da-kai-de-shi-hou.mdx",
+    "content/en-US/library/wu-di-keng-da-kai-de-shi-hou.mdx"
+  ],
+  "website_body_sha256": {
+    "zh-CN": "d97076626cfb5b325933e67f5e488c466e10da21db51bc7aa0a827193e7cea01",
+    "en-US": "71645b479fa0ae25f1b1efeda1c469a257e52435e2d554eaa3498197f9bb951f"
+  },
+  "human_review": "PENDING",
+  "publication_authorization": "PENDING",
+  "publication_timestamp": null
+}
