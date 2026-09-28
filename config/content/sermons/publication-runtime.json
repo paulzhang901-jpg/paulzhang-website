@@ -635,6 +635,38 @@
       "sourceSha256": "3260536d7f3fb80430dce492d67139386d2b9e69f0edd6a3f66f04edcc48cf88",
       "sourceSermonId": "sermon-revelation-8-13",
       "sourceCanonicalEditionHash": "aa4db7e4f754fb187afec0ba81e0065bf77468084a7dd4898d0654d8f4eb893c"
+    },
+    {
+      "sermonId": "sermon-revelation-9-1-12",
+      "title": "无底坑打开的时候",
+      "subtitle": "",
+      "scriptureRange": "启示录 9:1–12",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [],
+      "canonicalEditionHash": "d97076626cfb5b325933e67f5e488c466e10da21db51bc7aa0a827193e7cea01",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/wu-di-keng-da-kai-de-shi-hou.mdx",
+      "publicRoute": "/library/wu-di-keng-da-kai-de-shi-hou",
+      "searchEligibility": true
+    },
+    {
+      "sermonId": "sermon-revelation-9-1-12-en",
+      "title": "When the Bottomless Pit Is Opened",
+      "subtitle": "",
+      "scriptureRange": "Revelation 9:1–12",
+      "sermonSeries": "Expository Sermons on Revelation",
+      "themes": [],
+      "canonicalEditionHash": "71645b479fa0ae25f1b1efeda1c469a257e52435e2d554eaa3498197f9bb951f",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/wu-di-keng-da-kai-de-shi-hou.mdx",
+      "publicRoute": "/en/library/wu-di-keng-da-kai-de-shi-hou",
+      "searchEligibility": true,
+      "sourceSermonId": "sermon-revelation-9-1-12",
+      "sourceCanonicalEditionHash": "d97076626cfb5b325933e67f5e488c466e10da21db51bc7aa0a827193e7cea01"
     }
   ]
 }
