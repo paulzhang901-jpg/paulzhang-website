@@ -63,3 +63,16 @@ When the owner says **“按网站文章发布流程处理这篇文章。”**, 
 8. Never deploy production from a feature branch or Pull Request.
 9. After the owner merges the PR to `main`, the GitHub Actions production job automatically reruns blocking validation, builds and validates `out/`, and deploys that exact static export to the approved Cloudflare Pages production project under ADR-0021.
 10. Confirm the GitHub Actions deployment succeeds and verify the published route on `https://paulzhang.org` before reporting publication complete.
+
+
+## Published Original Content Invariant
+
+Every original editorial article successfully published on paulzhang.org must have a corresponding canonical archive entry in Paul AI Brain / Obsidian. Publication is complete only after both the production website and Obsidian archive have been verified.
+
+After production verification, archive or synchronize the final approved Chinese and English bodies into the existing appropriate vault location (`/Users/chongzhuzhang/Documents/Paul AI Brain`) using its `AGENTS.md` and conventions. This applies to testimonies, My Story writing, sermons, Bible studies, theological and reflection articles, essays, and other original writing by Paul Zhang. Exclude technical, navigation, generated-index, redirect, and system pages.
+
+For each article, record its canonical website ID and slug, source file paths and commit, public locale URLs, publication date and status, content type, author, and available languages according to the vault's existing metadata conventions. The website Git repository remains the source of the published bytes; the vault holds the long-term canonical personal archive. Compare archived bodies with the exact published website source. Do not independently edit one copy and silently let the other drift.
+
+Before creating an archive record, search by canonical ID, slug, titles, and URLs. If a record exists, compare it with the published source; preserve local notes and meaningful metadata, update only safe publication metadata, and stop on body conflicts. Never create a duplicate or overwrite a distinct local revision. On subsequent runs, an unchanged record is a no-op. Use existing archive tools when applicable; do not introduce a parallel archive structure.
+
+Completion sequence: approved body → website integration and validation → publish → verify production and bilingual routes → archive/sync to Paul AI Brain → verify body integrity, canonical relationship and links → DONE. If the vault is unavailable or an archive conflict remains, report `WEBSITE PUBLISHED / OBSIDIAN ARCHIVE INCOMPLETE` and the exact blocker. Do not claim full publication completion.
