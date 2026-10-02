@@ -2,6 +2,7 @@ import type { ParsedContentRecord } from "./discovery";
 import { normalizeContent } from "./normalize";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
 import {findDuplicateSermonTitleInOpening} from "@/lib/sermons/display";
+import {getTogetherReferenceRegistry,getTogetherSectionIds} from "./together";
 
 export type ContentValidationReport = {items: NormalizedContentItem[]; errors: string[]; warnings: string[]};
 
@@ -32,6 +33,14 @@ export function validateContentRecords(records: ParsedContentRecord[]): ContentV
     }
     if (!item.seo.title) warnings.push(`${item.sourcePath}: optional SEO title missing`);
     if (!item.formation.reflectionPrompts.length) warnings.push(`${item.sourcePath}: optional reflection prompts missing`);
+  }
+
+  for (const reference of getTogetherReferenceRegistry().references) {
+    if (!getTogetherSectionIds().includes(reference.section)) errors.push("Together reference uses unknown section " + reference.section);
+    const targets=items.filter(item=>item.canonicalId===reference.canonical_id);
+    if (!targets.length) errors.push("Together reference has broken canonical_id " + reference.canonical_id);
+    for (const target of targets) if (target.domain!==reference.target_domain) errors.push("Together reference target domain mismatch for " + reference.canonical_id);
+    for (const locale of ["zh-CN","en-US"] as ContentLanguage[]) if (!targets.some(target=>target.language===locale)) errors.push("Together reference missing " + locale + " target for " + reference.canonical_id);
   }
 
   const locales: ContentLanguage[] = ["zh-CN", "en-US"];

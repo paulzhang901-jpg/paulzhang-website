@@ -10,6 +10,8 @@ Together remains the canonical `/together` domain and gains seven permanent sect
 
 Canonical Markdown may live in the `together` content domain and assign exactly one registered `together_section`. Published content is discovered by the normal content repository; adding content to an existing section does not require page or taxonomy-code changes.
 
+Together sections may also surface a canonical public article owned by another approved content domain through the governed cross-domain reference registry. A reference stores only the Together section, canonical content ID, and expected target domain; it does not copy body text or create another content route. Rendering resolves the target in the visitor's locale and links directly to the target's canonical route. The target domain remains responsible for canonical URL, SEO, hreflang, sitemap, translation pairing, and article ownership.
+
 The landing and section pages use the established responsive left-navigation/right-content pattern. Empty permanent sections remain navigable.
 
 V1 participation is a truthful human-handoff interface, not a data-collection form. Mentoring, prayer support, growth groups, contact, and testimony sections link visitors to the already-approved contact surface and identify Personal WeChat as the current delivery channel. No prayer text, testimony, counseling narrative, email address, or other sensitive submission is collected by this website until a separately approved backend defines provider, consent, access, retention, deletion, abuse controls, and operational ownership under ADR-0010. FAQ and resources remain publisher-managed content.
@@ -20,7 +22,7 @@ Previously approved Together child slugs remain as legacy route aliases so valid
 A client-only fake form, mailto submission, generic analytics storage, and a new third-party form provider were rejected. Reusing Truth Library, My Story, or Growth taxonomy was also rejected because Together is a distinct participation/content domain.
 
 ## Consequences
-The content model adds an optional, Together-only `together_section` field and a `together` content domain. Route/schema documentation and static route generation must cover the seven permanent sections plus legacy aliases. A future secure submission backend requires a separate architecture/privacy decision before enabling form submission.
+The content model adds an optional, Together-only `together_section` field and a `together` content domain. A small cross-domain reference registry may surface existing canonical public content without changing its domain or duplicating its body. References are validated for registered Together sections, canonical target existence, expected domain, and both supported locales. Route/schema documentation and static route generation must cover the seven permanent sections plus legacy aliases. A future secure submission backend requires a separate architecture/privacy decision before enabling form submission.
 
 ## Supersedes
 The Companionship child-route list in ROUTE_SCHEMA.md is replaced by the seven permanent sections while preserving the former slugs as legacy aliases.
