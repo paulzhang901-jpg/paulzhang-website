@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { AppPrivacyPolicyPage } from "@/components/product/app-privacy-policy-page";
 import { FoundationPage } from "@/components/layout/foundation-page";
 import { HomePage } from "@/components/product/home-page";
 import { SupportPage } from "@/components/product/support-page";
@@ -23,12 +24,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: Props) {
   const routeId = resolveEnglishSegments((await params).segments);
-  return routeId ? {...metadataForRoute(routeId, "en-US"), ...(routeId === "support" ? {title: "Support This Work"} : {})} : {};
+  return routeId ? {...metadataForRoute(routeId, "en-US"), ...(routeId === "legal-privacy" ? {title: "Privacy Policy"} : {}), ...(routeId === "support" ? {title: "Support This Work"} : {})} : {};
 }
 
 export default async function Page({params}: Props) {
   const routeId = resolveEnglishSegments((await params).segments);
   if (!routeId) notFound();
+  if (routeId === "legal-privacy") return <AppPrivacyPolicyPage locale="en-US" />;
   if (routeId === "home") return <HomePage locale="en-US" />;
   if (routeId === "support") return <AboutIntegratedPage locale="en-US" section="support"><SupportPage locale="en-US" /></AboutIntegratedPage>;
   if (routeId === "library") return <LibraryPage locale="en-US" repository={await getContentRepository()} />;
