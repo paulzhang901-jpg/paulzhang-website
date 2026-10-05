@@ -667,6 +667,38 @@
       "searchEligibility": true,
       "sourceSermonId": "sermon-revelation-9-1-12",
       "sourceCanonicalEditionHash": "d97076626cfb5b325933e67f5e488c466e10da21db51bc7aa0a827193e7cea01"
+    },
+    {
+      "sermonId": "sermon-revelation-9-13-19",
+      "title": "死亡仍然有限",
+      "subtitle": "",
+      "scriptureRange": "启示录 9:13–19",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [],
+      "canonicalEditionHash": "5eb52a5fba62c4a8bb0221dc49dd040a3ffc52cd4480f275ac627ac490d95a39",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/death-is-still-limited.mdx",
+      "publicRoute": "/library/death-is-still-limited",
+      "searchEligibility": true
+    },
+    {
+      "sermonId": "sermon-revelation-9-13-19-en",
+      "title": "Death Is Still Limited",
+      "subtitle": "",
+      "scriptureRange": "Revelation 9:13–19",
+      "sermonSeries": "Expository Sermons on Revelation",
+      "themes": [],
+      "canonicalEditionHash": "756ada6b23976f464608378a41343be74b5be1d1a08f4b6e914b203324a38615",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/death-is-still-limited.mdx",
+      "publicRoute": "/en/library/death-is-still-limited",
+      "searchEligibility": true,
+      "sourceSermonId": "sermon-revelation-9-13-19",
+      "sourceCanonicalEditionHash": "5eb52a5fba62c4a8bb0221dc49dd040a3ffc52cd4480f275ac627ac490d95a39"
     }
   ]
 }
