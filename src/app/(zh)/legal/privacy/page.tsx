@@ -1,4 +1,4 @@
-import { FoundationPage } from "@/components/layout/foundation-page";
+import { AppPrivacyPolicyPage } from "@/components/product/app-privacy-policy-page";
 import { metadataForRoute } from "@/lib/seo/metadata";
-export const metadata = metadataForRoute("legal-privacy", "zh-CN");
-export default function Page() { return <FoundationPage locale="zh-CN" routeId="legal-privacy" />; }
+export const metadata = {...metadataForRoute("legal-privacy", "zh-CN"), title: "隐私政策"};
+export default function Page() { return <AppPrivacyPolicyPage locale="zh-CN" />; }
