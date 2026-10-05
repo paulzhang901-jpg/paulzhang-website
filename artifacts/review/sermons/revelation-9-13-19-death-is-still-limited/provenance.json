@@ -1,0 +1,22 @@
+{
+  "canonical_id": "sermon-revelation-9-13-19",
+  "sermon_date": "2026-10-04",
+  "series": "Revelation",
+  "sermon_type": "Expository",
+  "author": "Paul Zhang",
+  "source_filename": "死亡仍然有限_Death_Is_Still_Limited_2026-10-04_Bilingual(1).md",
+  "source_body_sha256": "367c4071216e12f54031b4d87a432d4845ab4408683fad23ed1cebd56e898cf1",
+  "source_body_bytes": 35292,
+  "website_base": "aa48b0e5878bb292b0b49891db5d36e229f5fcb0",
+  "website_paths": [
+    "content/zh-CN/library/death-is-still-limited.mdx",
+    "content/en-US/library/death-is-still-limited.mdx"
+  ],
+  "website_body_sha256": {
+    "zh-CN": "045b77248be2f0e3fe735dda3b37e743bb3223daa73867519aa46709e4b2c3d5",
+    "en-US": "65bcb4444bd72ee1742f4f27bc6b5e993bf55b74658711da13c64aa72751ddc4"
+  },
+  "human_review": "PENDING",
+  "publication_authorization": "PENDING",
+  "publication_timestamp": null
+}
