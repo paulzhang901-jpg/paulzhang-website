@@ -11,6 +11,7 @@ import { contentPath } from "@/lib/content/paths";
 import type { ContentRepository } from "@/lib/content/repository";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
 import {SermonPublicationBody} from "./sermon-publication-page";
+import {ReadAloudPlayer} from "./read-aloud-player";
 import {sameSermonDisplayText, sermonDisplayText} from "@/lib/sermons/display";
 import {loadPublishedSermon} from "@/lib/sermons/published";
 
@@ -87,7 +88,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
       </Container>
     </Section>
     <Section>
-      <Container><ReadingContainer className="px-0">{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={readingBody} components={mdxComponents} /></article>}</ReadingContainer></Container>
+      <Container><ReadingContainer className="px-0"><ReadAloudPlayer locale={item.language} title={display(item.title)} contentId={"read-aloud-body-" + item.id} /><div id={"read-aloud-body-" + item.id} data-read-aloud-content>{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={readingBody} components={mdxComponents} /></article>}</div></ReadingContainer></Container>
     </Section>
     <Section className="border-t bg-muted/40">
       <Container>
