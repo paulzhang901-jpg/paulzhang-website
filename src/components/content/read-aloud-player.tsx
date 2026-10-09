@@ -2,6 +2,7 @@
 
 import {useCallback, useEffect, useRef, useState} from "react";
 import type {ContentLanguage} from "@/types/content";
+import {chooseEnglishVoice, ENGLISH_VOICE_STORAGE_KEY, rankEnglishVoices} from "./english-voice-ranking";
 
 type PlaybackState = "idle" | "playing" | "paused";
 type Rate = 1 | 1.5 | 2;
@@ -56,6 +57,9 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   const active = useRef(false);
   const rateRef = useRef<Rate>(1);
   const voice = useRef<SpeechSynthesisVoice | null>(null);
+  const [englishVoices, setEnglishVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [englishVoiceURI, setEnglishVoiceURI] = useState("");
+  const preferredEnglishVoiceURI = useRef<string | null>(null);
   const speakRef = useRef<(token: number) => void>(() => {});
   const labels = translations[locale];
 
@@ -83,11 +87,26 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
 
   useEffect(() => {
     if (!supported) return;
+    if (locale === "en-US") {
+      try { preferredEnglishVoiceURI.current = localStorage.getItem(ENGLISH_VOICE_STORAGE_KEY); }
+      catch { preferredEnglishVoiceURI.current = null; }
+    }
     const updateVoices = () => {
       const voices = window.speechSynthesis.getVoices();
-      voice.current = voices.find((v) => v.lang.toLowerCase() === locale.toLowerCase())
-        ?? voices.find((v) => v.lang.toLowerCase().split("-")[0] === locale.slice(0, 2))
-        ?? null;
+      if (locale === "en-US") {
+        const ranked = rankEnglishVoices(voices);
+        const selected = chooseEnglishVoice(ranked, preferredEnglishVoiceURI.current);
+        voice.current = voices.find((v) => v.voiceURI === selected?.voiceURI) ?? null;
+        queueMicrotask(() => {
+          setEnglishVoices(ranked as SpeechSynthesisVoice[]);
+          setEnglishVoiceURI(selected?.voiceURI ?? "");
+        });
+      } else {
+        // Preserve the existing, user-verified Chinese voice selection unchanged.
+        voice.current = voices.find((v) => v.lang.toLowerCase() === locale.toLowerCase())
+          ?? voices.find((v) => v.lang.toLowerCase().split("-")[0] === locale.slice(0, 2))
+          ?? null;
+      }
     };
     updateVoices();
     window.speechSynthesis.addEventListener("voiceschanged", updateVoices);
@@ -105,6 +124,8 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = locale;
     utterance.rate = rateRef.current;
+    utterance.pitch = 1;
+    utterance.volume = 1;
     if (voice.current) utterance.voice = voice.current;
     utterance.onend = () => {
       if (token !== epoch.current || !active.current) return;
@@ -140,6 +161,26 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     } else {
       window.speechSynthesis.resume();
       setState("playing");
+    }
+  };
+
+  const selectEnglishVoice = (uri: string) => {
+    const selected = englishVoices.find((v) => v.voiceURI === uri);
+    if (!selected) return;
+    preferredEnglishVoiceURI.current = uri;
+    voice.current = selected;
+    setEnglishVoiceURI(uri);
+    try { localStorage.setItem(ENGLISH_VOICE_STORAGE_KEY, uri); } catch { /* Storage may be unavailable. */ }
+    if (state === "idle") return;
+    const paused = state === "paused";
+    epoch.current++;
+    window.speechSynthesis.cancel();
+    active.current = true;
+    setState("playing");
+    speakChunk(epoch.current);
+    if (paused) {
+      window.speechSynthesis.pause();
+      setState("paused");
     }
   };
 
@@ -183,6 +224,12 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
       {state === "playing" ? "⏸ " : "▶ "}{actionLabel}
     </button>
     {state !== "idle" ? <button type="button" onClick={playFromStart} aria-label={labels.restart} className="min-h-11 rounded-md border px-3 focus-visible:outline-2 focus-visible:outline-primary">↻ {labels.restart}</button> : null}
+    {locale === "en-US" && englishVoices.length > 0 ? <label className="flex min-w-0 flex-wrap items-center gap-2">
+      <span>Voice</span>
+      <select aria-label="English reading voice" value={englishVoiceURI} onChange={(event) => selectEnglishVoice(event.target.value)} className="min-h-11 max-w-full rounded-md border bg-surface px-2 text-foreground focus-visible:outline-2 focus-visible:outline-primary">
+        {englishVoices.map((available) => <option key={available.voiceURI} value={available.voiceURI}>{available.name} ({available.lang})</option>)}
+      </select>
+    </label> : null}
     <div role="group" aria-label={labels.speed} className="flex flex-wrap gap-1">
       {speeds.map((speed) => <button key={speed} type="button" aria-pressed={rate === speed} onClick={() => setSpeed(speed)} className={"min-h-11 min-w-11 rounded-md px-2 focus-visible:outline-2 focus-visible:outline-primary " + (rate === speed ? "border border-primary font-semibold text-primary" : "border border-transparent text-muted-foreground hover:border-border")}>{speed}×</button>)}
     </div>
