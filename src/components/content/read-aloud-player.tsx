@@ -3,8 +3,8 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import type {ContentLanguage} from "@/types/content";
 import {chooseEnglishVoice, ENGLISH_VOICE_STORAGE_KEY, rankEnglishVoices} from "./english-voice-ranking";
+import {chooseChineseVoice, compatibleVoice, needsSpeechQueueReset, nextSpeechState, speechErrorMessage, type SpeechPlaybackState} from "./mobile-speech";
 
-type PlaybackState = "idle" | "playing" | "paused";
 type Rate = 1 | 1.5 | 2;
 const speeds: Rate[] = [1, 1.5, 2];
 const translations = {
@@ -48,8 +48,9 @@ export function extractArticleChunks(root: Element, title: string): string[] {
 
 export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLanguage; title: string; contentId: string}) {
   const [supported, setSupported] = useState(false);
-  const [state, setState] = useState<PlaybackState>("idle");
+  const [state, setState] = useState<SpeechPlaybackState>("idle");
   const [rate, setRate] = useState<Rate>(1);
+  const [errorMessage, setErrorMessage] = useState("");
   const [currentChunkIndex, setCurrentChunkIndex] = useState(0);
   const queue = useRef<string[]>([]);
   const index = useRef(0);
@@ -61,11 +62,15 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   const [englishVoiceURI, setEnglishVoiceURI] = useState("");
   const preferredEnglishVoiceURI = useRef<string | null>(null);
   const speakRef = useRef<(token: number) => void>(() => {});
+  const watchdog = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const clearWatchdog = () => { if (watchdog.current !== null) { clearTimeout(watchdog.current); watchdog.current = null; } };
   const labels = translations[locale];
 
   const cancel = useCallback(() => {
     epoch.current++;
     active.current = false;
+    clearWatchdog();
+    setErrorMessage("");
     if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel();
     queue.current = [];
     index.current = 0;
@@ -96,16 +101,14 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
       if (locale === "en-US") {
         const ranked = rankEnglishVoices(voices);
         const selected = chooseEnglishVoice(ranked, preferredEnglishVoiceURI.current);
-        voice.current = voices.find((v) => v.voiceURI === selected?.voiceURI) ?? null;
+        voice.current = compatibleVoice(voices.find((v) => v.voiceURI === selected?.voiceURI) ?? null, locale);
         queueMicrotask(() => {
           setEnglishVoices(ranked as SpeechSynthesisVoice[]);
           setEnglishVoiceURI(selected?.voiceURI ?? "");
         });
       } else {
         // Preserve the existing, user-verified Chinese voice selection unchanged.
-        voice.current = voices.find((v) => v.lang.toLowerCase() === locale.toLowerCase())
-          ?? voices.find((v) => v.lang.toLowerCase().split("-")[0] === locale.slice(0, 2))
-          ?? null;
+        voice.current = chooseChineseVoice(voices, locale);
       }
     };
     updateVoices();
@@ -118,43 +121,87 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     const text = queue.current[index.current];
     if (!text) {
       active.current = false;
-      setState("idle");
+      clearWatchdog();
+      setState("completed");
       return;
     }
     const utterance = new SpeechSynthesisUtterance(text);
+    let receivedSpeechEvent = false;
     utterance.lang = locale;
     utterance.rate = rateRef.current;
     utterance.pitch = 1;
     utterance.volume = 1;
-    if (voice.current) utterance.voice = voice.current;
-    utterance.onend = () => {
+    // Mobile browsers can return an empty or delayed voice list; omit voice to use the native default.
+    const selectedVoice = compatibleVoice(voice.current, locale);
+    if (selectedVoice) utterance.voice = selectedVoice;
+    utterance.onstart = () => {
+      receivedSpeechEvent = true;
       if (token !== epoch.current || !active.current) return;
+      clearWatchdog();
+      setState((previous) => nextSpeechState(previous, "start"));
+    };
+    utterance.onend = () => {
+      receivedSpeechEvent = true;
+      if (token !== epoch.current || !active.current) return;
+      clearWatchdog();
       index.current++;
       setCurrentChunkIndex(index.current);
       speakRef.current(token);
     };
     utterance.onerror = (event) => {
-      if (token !== epoch.current || event.error === "canceled" || event.error === "interrupted") return;
+      receivedSpeechEvent = true;
+      if (token !== epoch.current || !active.current) return;
+      clearWatchdog();
       active.current = false;
-      setState("idle");
+      setErrorMessage(speechErrorMessage(locale, event.error));
+      setState("error");
     };
-    window.speechSynthesis.speak(utterance);
+    try {
+      window.speechSynthesis.speak(utterance);
+      // A missing onstart/onerror is possible on mobile; avoid an indefinite loading indicator.
+      clearWatchdog();
+      if (!receivedSpeechEvent) watchdog.current = setTimeout(() => {
+        if (token !== epoch.current || !active.current) return;
+        active.current = false;
+        window.speechSynthesis.cancel();
+        setErrorMessage(speechErrorMessage(locale));
+        setState("error");
+      }, 10000);
+    } catch {
+      clearWatchdog();
+      active.current = false;
+      setErrorMessage(speechErrorMessage(locale));
+      setState("error");
+    }
   }, [locale]);
   useEffect(() => { speakRef.current = speakChunk; }, [speakChunk]);
 
   const playFromStart = () => {
-    cancel();
+    // Keep the first speak() synchronous with the user click for iOS user activation.
+    // Avoid cancel() on an idle iOS WebKit engine immediately before speak().
+    // Invalidate old callbacks without touching the engine unless a queue is active.
+    const synth = window.speechSynthesis;
+    const shouldReset = needsSpeechQueueReset(active.current, synth.speaking, synth.pending, synth.paused);
+    epoch.current++;
+    active.current = false;
+    clearWatchdog();
+    setErrorMessage("");
+    if (shouldReset) synth.cancel();
+    queue.current = [];
+    index.current = 0;
+    setCurrentChunkIndex(0);
     const root = document.getElementById(contentId);
     if (!root) return;
     queue.current = extractArticleChunks(root, title);
     if (!queue.current.length) return;
     active.current = true;
-    setState("playing");
+    setState("loading");
     speakChunk(epoch.current);
   };
 
   const toggle = () => {
-    if (state === "idle") { playFromStart(); return; }
+    if (state === "idle" || state === "completed" || state === "error") { playFromStart(); return; }
+    if (state === "loading") return;
     if (state === "playing") {
       window.speechSynthesis.pause();
       setState("paused");
@@ -171,12 +218,13 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     voice.current = selected;
     setEnglishVoiceURI(uri);
     try { localStorage.setItem(ENGLISH_VOICE_STORAGE_KEY, uri); } catch { /* Storage may be unavailable. */ }
-    if (state === "idle") return;
+    if (state === "idle" || state === "completed" || state === "error") return;
     const paused = state === "paused";
     epoch.current++;
+    clearWatchdog();
     window.speechSynthesis.cancel();
     active.current = true;
-    setState("playing");
+    setState("loading");
     speakChunk(epoch.current);
     if (paused) {
       window.speechSynthesis.pause();
@@ -188,12 +236,13 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     rateRef.current = speed;
     setRate(speed);
     try { localStorage.setItem("readAloudPlaybackRate", String(speed)); } catch { /* Optional setting. */ }
-    if (state === "idle") return;
+    if (state === "idle" || state === "completed" || state === "error") return;
     const paused = state === "paused";
     epoch.current++;
+    clearWatchdog();
     window.speechSynthesis.cancel();
     active.current = true;
-    setState("playing");
+    setState("loading");
     speakChunk(epoch.current);
     if (paused) {
       window.speechSynthesis.pause();
@@ -204,6 +253,7 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   useEffect(() => () => {
     epoch.current++;
     active.current = false;
+    clearWatchdog();
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   }, [contentId, locale]);
 
@@ -220,10 +270,10 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   if (!supported) return null;
   const actionLabel = state === "playing" ? labels.pause : state === "paused" ? labels.resume : labels.play;
   return <div data-read-aloud-exclude className="mb-7 flex flex-wrap items-center gap-2 rounded-lg border bg-surface p-3 text-sm">
-    <button type="button" onClick={toggle} aria-label={actionLabel} className="min-h-11 rounded-md bg-primary px-4 font-medium text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-      {state === "playing" ? "⏸ " : "▶ "}{actionLabel}
+    <button type="button" onClick={toggle} disabled={state === "loading"} aria-label={actionLabel} className="min-h-11 rounded-md bg-primary px-4 font-medium text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+      {state === "playing" ? "⏸ " : "▶ "}{state === "loading" ? (locale === "zh-CN" ? "正在启动…" : "Starting…") : actionLabel}
     </button>
-    {state !== "idle" ? <button type="button" onClick={playFromStart} aria-label={labels.restart} className="min-h-11 rounded-md border px-3 focus-visible:outline-2 focus-visible:outline-primary">↻ {labels.restart}</button> : null}
+    {(state === "playing" || state === "paused" || state === "loading") ? <button type="button" onClick={playFromStart} aria-label={labels.restart} className="min-h-11 rounded-md border px-3 focus-visible:outline-2 focus-visible:outline-primary">↻ {labels.restart}</button> : null}
     {locale === "en-US" && englishVoices.length > 0 ? <label className="flex min-w-0 flex-wrap items-center gap-2">
       <span>Voice</span>
       <select aria-label="English reading voice" value={englishVoiceURI} onChange={(event) => selectEnglishVoice(event.target.value)} className="min-h-11 max-w-full rounded-md border bg-surface px-2 text-foreground focus-visible:outline-2 focus-visible:outline-primary">
@@ -233,6 +283,7 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     <div role="group" aria-label={labels.speed} className="flex flex-wrap gap-1">
       {speeds.map((speed) => <button key={speed} type="button" aria-pressed={rate === speed} onClick={() => setSpeed(speed)} className={"min-h-11 min-w-11 rounded-md px-2 focus-visible:outline-2 focus-visible:outline-primary " + (rate === speed ? "border border-primary font-semibold text-primary" : "border border-transparent text-muted-foreground hover:border-border")}>{speed}×</button>)}
     </div>
-    <span className="sr-only" aria-live="polite">{state} {currentChunkIndex + 1}</span>
+    <span role="status" aria-live="polite" className="text-muted-foreground">{errorMessage || (state === "loading" ? (locale === "zh-CN" ? "正在启动朗读" : "Starting speech") : state === "playing" ? (locale === "zh-CN" ? "正在朗读" : "Reading") : state === "paused" ? (locale === "zh-CN" ? "已暂停" : "Paused") : state === "completed" ? (locale === "zh-CN" ? "朗读完成" : "Finished") : "")}</span>
+    <span className="sr-only">{currentChunkIndex + 1}</span>
   </div>;
 }
