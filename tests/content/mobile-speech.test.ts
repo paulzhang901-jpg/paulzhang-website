@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {test} from "node:test";
-import {chooseChineseVoice, compatibleVoice, nextSpeechState, speechErrorMessage} from "../../src/components/content/mobile-speech";
+import {chooseChineseVoice, compatibleVoice, needsSpeechQueueReset, nextSpeechState, speechErrorMessage} from "../../src/components/content/mobile-speech";
 import {chooseEnglishVoice, rankEnglishVoices} from "../../src/components/content/english-voice-ranking";
 
 const voice = (lang: string, name = "System") => ({lang, name, voiceURI: name + lang, localService: true, default: false});
@@ -50,4 +50,15 @@ test("unmount cleanup resets playback state", () => {
 });
 test("desktop natural voice preference remains available", () => {
   assert.equal(chooseEnglishVoice([voice("en-US", "Zarvox"), voice("en-US", "Samantha")], null)?.name, "Samantha");
+});
+
+
+test("iOS Chrome: idle tap starts speech without preceding cancel", () => {
+  assert.equal(needsSpeechQueueReset(false, false, false, false), false);
+});
+test("active or stale speech queues are cleared before explicit restart", () => {
+  assert.equal(needsSpeechQueueReset(true, false, false, false), true);
+  assert.equal(needsSpeechQueueReset(false, true, false, false), true);
+  assert.equal(needsSpeechQueueReset(false, false, true, false), true);
+  assert.equal(needsSpeechQueueReset(false, false, false, true), true);
 });

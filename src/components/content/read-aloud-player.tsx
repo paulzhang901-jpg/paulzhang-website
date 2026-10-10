@@ -3,7 +3,7 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import type {ContentLanguage} from "@/types/content";
 import {chooseEnglishVoice, ENGLISH_VOICE_STORAGE_KEY, rankEnglishVoices} from "./english-voice-ranking";
-import {chooseChineseVoice, compatibleVoice, nextSpeechState, speechErrorMessage, type SpeechPlaybackState} from "./mobile-speech";
+import {chooseChineseVoice, compatibleVoice, needsSpeechQueueReset, nextSpeechState, speechErrorMessage, type SpeechPlaybackState} from "./mobile-speech";
 
 type Rate = 1 | 1.5 | 2;
 const speeds: Rate[] = [1, 1.5, 2];
@@ -178,7 +178,18 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
 
   const playFromStart = () => {
     // Keep the first speak() synchronous with the user click for iOS user activation.
-    cancel();
+    // Avoid cancel() on an idle iOS WebKit engine immediately before speak().
+    // Invalidate old callbacks without touching the engine unless a queue is active.
+    const synth = window.speechSynthesis;
+    const shouldReset = needsSpeechQueueReset(active.current, synth.speaking, synth.pending, synth.paused);
+    epoch.current++;
+    active.current = false;
+    clearWatchdog();
+    setErrorMessage("");
+    if (shouldReset) synth.cancel();
+    queue.current = [];
+    index.current = 0;
+    setCurrentChunkIndex(0);
     const root = document.getElementById(contentId);
     if (!root) return;
     queue.current = extractArticleChunks(root, title);

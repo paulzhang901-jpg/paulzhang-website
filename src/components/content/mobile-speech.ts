@@ -38,3 +38,8 @@ export function speechErrorMessage(locale: string, error?: string): string {
   return locale === "zh-CN"
     ? "朗读未能启动，请重试并检查手机音量或音频输出设备。" : "Speech could not start. Retry and check volume or audio output.";
 }
+
+/** On iOS WebKit, avoid cancel() immediately before a fresh, idle speak() call. */
+export function needsSpeechQueueReset(active: boolean, speaking: boolean, pending: boolean, paused: boolean): boolean {
+  return active || speaking || pending || paused;
+}
