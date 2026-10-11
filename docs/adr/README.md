@@ -50,3 +50,5 @@ None.
 - [0027 Consent-Gated Google Analytics 4](./0027-consent-gated-ga4-analytics.md)
 
 - [0029 Temporary Isolated iPhone Audio Diagnostics](./0029-isolated-iphone-audio-diagnostics.md) — Proposed.
+
+- [0030 Controlled Bilingual AI Audio and Video Publishing](./0030-ai-audio-video-publishing.md) — Proposed.

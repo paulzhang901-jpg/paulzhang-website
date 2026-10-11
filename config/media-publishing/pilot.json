@@ -1,0 +1,12 @@
+{
+  "provider": "mock",
+  "model": "offline-test-tone-v1",
+  "voice": "synthetic-test-tone",
+  "format": "wav",
+  "language": "zh-CN",
+  "instructions": "TEST ONLY: not AI narration",
+  "costAuthorized": false,
+  "maxSpendUsd": 0,
+  "storageBaseUrl": null,
+  "video": {"width": 1920, "height": 1080, "fps": 30, "videoCodec": "libx264", "audioCodec": "aac"}
+}

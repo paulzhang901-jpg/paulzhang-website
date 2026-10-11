@@ -19,6 +19,7 @@ test("Client Components remain explicitly reviewed and minimal", () => {
     .map((file) => path.relative(root, file));
   assert.deepEqual(clientFiles, [
     "src/components/analytics/google-analytics-consent.tsx",
+    "src/components/content/ai-audio-player.tsx",
     "src/components/content/read-aloud-player.tsx",
     "src/components/content/together-submission-form.tsx",
     "src/components/diagnostics/iphone-audio-diagnostics.tsx",

@@ -1,0 +1,196 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,mkdtemp,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {writeFile} from 'node:fs/promises';
+import {extractNarration,sha256,cacheKey,voiceConfigHash,validateManifest,assertPaidGenerationAuthorized,runMockGeneration,MockToneProvider,verifyMockWav} from '../../src/lib/media-publishing/core.mjs';
+import {safeSubtitleFilterPath,inspectProbeData,validateRenderedVideo} from '../../src/lib/media-publishing/video-validation.mjs';
+import {validateSubtitles} from '../../src/lib/media-publishing/subtitles.mjs';
+import {createAudioProvider} from '../../src/lib/media-publishing/providers.mjs';
+import {validateTestOutput,validateTestProvenance,withReservedTestOutput,TEST_VIDEO_OUTPUT_ROOT} from '../../src/lib/media-publishing/render-safety.mjs';
+import {symlink} from 'node:fs/promises';
+const config={provider:'mock',model:'offline-test-tone-v1',voice:'synthetic-test-tone',language:'zh-CN',format:'wav',costAuthorized:false,maxSpendUsd:0};
+const articlePath='content/zh-CN/library/true-freedom.mdx';
+
+test('approved bilingual MDX sources preserve titles, order, biblical references and stable hashes',async()=>{
+ for(const locale of ['zh-CN','en-US']) {
+  const source=await readFile(`content/${locale}/library/true-freedom.mdx`,'utf8');
+  const a=extractNarration(source);
+  assert.equal(a.canonical_id,'article-true-freedom-2026-10-02');
+  assert.equal(a.language,locale);
+  assert.equal(a.paragraphs[0],locale==='zh-CN'?'真正的自由':'True Freedom');
+  assert.ok(a.paragraphs.length>50);
+  assert.equal(a.article_content_hash,sha256(a.text));
+  assert.deepEqual(extractNarration(source),a);
+ }
+});
+test('content or voice configuration changes invalidate cache',async()=>{
+ const article=extractNarration(await readFile(articlePath,'utf8'));
+ assert.notEqual(cacheKey(article,config),cacheKey({...article,article_content_hash:sha256('different')},config));
+ assert.notEqual(cacheKey(article,config),cacheKey(article,{...config,voice:'other'}));
+ assert.equal(voiceConfigHash(config),voiceConfigHash({...config}));
+ assert.throws(()=>cacheKey(article,{...config,language:'en-US'}),/Locale mismatch/);
+});
+test('paid provider blocked even with cost authorization or environment credentials',()=>{
+ assert.throws(()=>assertPaidGenerationAuthorized({...config,provider:'openai'}),/PAID GENERATION BLOCKED/);
+ assert.throws(()=>assertPaidGenerationAuthorized({...config,costAuthorized:true}),/\$0/);
+ assert.throws(()=>assertPaidGenerationAuthorized({...config,maxSpendUsd:2}),/\$0/);
+});
+test('mock provider emits labeled non-silent WAV, never MP3 or AI narration; cache reuse and retry',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-media-test-'));
+ try {
+  let count=0;
+  const mock=new MockToneProvider();
+  const provider={async generate(args){count++;return mock.generate(args);}};
+  const params={sourcePath:articlePath,config,outputDirectory:dir,provider};
+  const first=await runMockGeneration(params);
+  assert.equal(first.cacheHit,false);
+  assert.equal(first.manifest.generation_status,'mock');
+  assert.match(first.manifest.mock_warning,/NOT AI SPEECH/);
+  const bytes=await readFile(first.manifest.audio_file_path);
+  assert.equal(bytes.toString('ascii',0,4),'RIFF');
+  assert.equal(bytes.toString('ascii',8,12),'WAVE');
+  assert.notEqual(bytes.readInt16LE(44+300*2),0);
+  assert.equal((await runMockGeneration(params)).cacheHit,true);
+  assert.equal(count,1);
+  assert.equal(validateManifest(first.manifest),first.manifest);
+  assert.throws(()=>validateManifest({...first.manifest,article_content_hash:'bad'}),/identity/);
+  const failedProvider={async generate(){throw new Error('mock failure');}};
+  await assert.rejects(()=>runMockGeneration({...params,config:{...config,voice:'failure'},provider:failedProvider}),/mock failure/);
+  const retried=await runMockGeneration({...params,config:{...config,voice:'failure'}});
+  assert.equal(retried.cacheHit,false);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('subtitle validation rejects fabricated or invalid ordering/duration and supports SRT/VTT',()=>{
+ const srt='1\n00:00:00,000 --> 00:00:01,500\nHello.\n\n2\n00:00:01,500 --> 00:00:03,000\nWorld.';
+ assert.equal(validateSubtitles(srt,{format:'srt',durationSeconds:3,expectedText:'Hello. World.'}).cueCount,2);
+ const vtt='WEBVTT\n\n00:00:00.000 --> 00:00:01.500\nHello.\n\n00:00:01.500 --> 00:00:03.000\nWorld.';
+ assert.equal(validateSubtitles(vtt,{format:'vtt',durationSeconds:3}).lastEndSeconds,3);
+ assert.throws(()=>validateSubtitles(srt,{format:'srt',durationSeconds:2}),/overlong/);
+ assert.throws(()=>validateSubtitles(srt.replace('00:00:01,500 --> 00:00:03,000','00:00:01,000 --> 00:00:03,000'),{format:'srt',durationSeconds:3}),/Overlapping/);
+ assert.throws(()=>validateSubtitles(srt,{format:'srt',durationSeconds:3,expectedText:'different'}),/differs/);
+});
+
+test('OpenAI provider is a disabled offline boundary; no network calls or secrets',async()=>{
+  const provider=createAudioProvider({provider:'openai'});
+  await assert.rejects(()=>provider.generate(),/DISABLED/);
+  assert.ok(createAudioProvider({provider:'mock'}) instanceof MockToneProvider);
+  assert.throws(()=>createAudioProvider({provider:'unrecognized'}),/Unsupported/);
+});
+
+test('video rendering refuses jobs without measured alignment, before FFmpeg invocation',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-video-test-'));
+ try {
+  const job=path.join(dir,'job.json');
+  await writeFile(job,JSON.stringify({audio:'x.mp3',background:'b.png',subtitles:'s.srt',output:'out.mp4',title:'Test',author:'Paul Zhang',alignmentEvidence:{verified:false,measuredDurationSeconds:1}}));
+  const result=spawnSync(process.execPath,['scripts/media-publishing/render-video.mjs',job,'--render'],{encoding:'utf8'});
+  assert.notEqual(result.status,0);
+  assert.match(result.stderr,/Missing approved video job field|Refusing unaligned video/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('mock format, corrupt cache, incomplete generation, and recovery',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-media-corrupt-'));
+ try {
+  const params={sourcePath:articlePath,config,outputDirectory:dir,provider:new MockToneProvider()};
+  const first=await runMockGeneration(params);
+  assert.equal(first.manifest.audio_format,'wav');
+  assert.equal(verifyMockWav(await readFile(first.manifest.audio_file_path)),first.manifest.audio_sha256);
+  assert.throws(()=>verifyMockWav(Buffer.alloc(48)),/Invalid/);
+  assert.throws(()=>validateManifest({...first.manifest,generation_status:'generated'}),/production/);
+  await writeFile(first.manifest.audio_file_path,Buffer.alloc(44));
+  const recovered=await runMockGeneration(params);
+  assert.equal(recovered.cacheHit,false);
+  assert.equal((await runMockGeneration(params)).cacheHit,true);
+  await assert.rejects(()=>runMockGeneration({...params,config:{...config,format:'mp3'}}),/WAV/);
+  const collision=await runMockGeneration({...params,config:{...config,voice:'collision'}});
+  assert.notEqual(collision.manifest.audio_file_path,first.manifest.audio_file_path);
+  const lock=path.join(dir,cacheKey(extractNarration(await readFile(articlePath,'utf8')),config)+'.lock');
+  await writeFile(lock,'busy');
+  await assert.rejects(()=>runMockGeneration(params),/already in progress/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('subtitle injection rejected and valid paths accepted',()=>{
+ assert.match(safeSubtitleFilterPath('/tmp/subtitles/test.srt'),/test\.srt$/);
+ for(const p of ['/tmp/evil;movie.srt','/tmp/a:movie.srt','/tmp/a[0].srt','/tmp/a\\movie.srt',"/tmp/a'movie.srt"]) assert.throws(()=>safeSubtitleFilterPath(p),/Unsafe/);
+});
+test('invalid video metadata, missing ffprobe and missing ffmpeg fail closed',async()=>{
+ const data={format:{duration:'3',size:'200000'},streams:[{codec_type:'video',codec_name:'h264',width:1920,height:1080,avg_frame_rate:'30/1'},{codec_type:'audio',codec_name:'aac'}]};
+ assert.equal(inspectProbeData(data,{durationSeconds:3}),true);
+ assert.throws(()=>inspectProbeData({...data,streams:[{...data.streams[0],codec_name:'vp9'},data.streams[1]]}),/encoding/);
+ assert.throws(()=>inspectProbeData(data,{durationSeconds:7}),/duration/);
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-invalid-video-'));
+ try {
+  const file=path.join(dir,'invalid.mp4');await writeFile(file,Buffer.alloc(2000));
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({error:new Error('ENOENT'),status:null})}),/ffprobe unavailable/);
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({status:0,stdout:'invalid json'})}),/Invalid ffprobe JSON/);
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({status:0,stdout:JSON.stringify({...data,streams:[]})})}),/encoding/);
+  let calls=0;
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>{calls++;return calls===1?{status:0,stdout:JSON.stringify(data)}:{error:new Error('ENOENT'),status:null};}}),/ffmpeg unavailable/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('video output allowlist rejects traversal, absolute paths, symlinks, overwrites and malformed filenames',async()=>{
+ const rootInfo=await (await import('node:fs/promises')).lstat(TEST_VIDEO_OUTPUT_ROOT);
+ assert.ok(rootInfo.isDirectory());
+ assert.equal(rootInfo.mode & 0o077,0,'render output directory must be private');
+ assert.match(path.basename(TEST_VIDEO_OUTPUT_ROOT),/^paul-media-render-[A-Za-z0-9]+$/);
+ for(const value of ['../content/a.mp4','/tmp/escape.mp4','src/a.mp4','../../.git/a.mp4','package.json','a.mov','a b.mp4','../.env.mp4']) await assert.rejects(()=>validateTestOutput(value),/Unsafe/);
+ const name='phase6b4b-'+process.pid+'.mp4';
+ const target=await validateTestOutput(name);
+ assert.equal(target,path.join(await (await import('node:fs/promises')).realpath(TEST_VIDEO_OUTPUT_ROOT),name));
+ const escape=path.join(TEST_VIDEO_OUTPUT_ROOT,'phase6b4b-symlink-'+process.pid+'.mp4');
+ await symlink('/tmp/forbidden.mp4',escape);
+ try {await assert.rejects(()=>validateTestOutput(path.basename(escape)),/already exists/);} finally {await rm(escape,{force:true});}
+ await withReservedTestOutput(name,async(staged)=>writeFile(staged,'synthetic'));
+ try {await assert.rejects(()=>validateTestOutput(name),/already exists/);await assert.rejects(()=>withReservedTestOutput(name,async()=>{}),/already exists/);} finally {await rm(target,{force:true});}
+});
+test('concurrent publication never overwrites an existing output',async()=>{
+ const name='phase6b4d-race-'+process.pid+'.mp4';
+ let release;
+ const wait=new Promise(resolve=>{release=resolve;});
+ let ready;
+ const started=new Promise(resolve=>{ready=resolve;});
+ const first=withReservedTestOutput(name,async(staged)=>{
+   await writeFile(staged,'first');ready();await wait;
+ });
+ await started;
+ const second=withReservedTestOutput(name,async(staged)=>writeFile(staged,'second'));
+ release();
+ const outcomes=await Promise.allSettled([first,second]);
+ assert.equal(outcomes.filter(x=>x.status==='fulfilled').length,1);
+ assert.equal(outcomes.filter(x=>x.status==='rejected').length,1);
+ const target=path.join(await (await import('node:fs/promises')).realpath(TEST_VIDEO_OUTPUT_ROOT),name);
+ try {assert.ok(['first','second'].includes(await readFile(target,'utf8')));} finally {await rm(target,{force:true});}
+});
+test('render root permissions are enforced',async()=>{
+ const {chmod}=await import('node:fs/promises');
+ const name='phase6b4d-permission-'+process.pid+'.mp4';
+ await chmod(TEST_VIDEO_OUTPUT_ROOT,0o755);
+ try {await assert.rejects(()=>validateTestOutput(name),/private directory/);} finally {await chmod(TEST_VIDEO_OUTPUT_ROOT,0o700);}
+ assert.ok(await validateTestOutput(name));
+});
+test('test-only provenance validates real mock WAV and MP3 hashes; production remains unauthorized',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-provenance-'));
+ try {
+  const result=await runMockGeneration({sourcePath:articlePath,config,outputDirectory:dir,provider:new MockToneProvider()});
+  const audio=path.join(dir,'test.mp3');await writeFile(audio,Buffer.from('synthetic test mp3 fixture'));
+  const audioManifest=path.join(dir,'manifest.json');await writeFile(audioManifest,JSON.stringify(result.manifest));
+  const job={testOnly:true,mock:true,audio,audioManifest,audioSha256:sha256(await readFile(audio))};
+  await validateTestProvenance(job);
+  await assert.rejects(()=>validateTestProvenance({...job,production:true}),/not authorized/);
+  const productionMetadata={...result.manifest,audio_provider:'openai',audio_format:'mp3',audio_file_path:audio,generation_status:'generated',mock_warning:undefined,audio_sha256:job.audioSha256};
+  assert.equal(validateManifest(productionMetadata).generation_status,'generated'); // Structurally valid is not authorization.
+  await writeFile(audioManifest,JSON.stringify(productionMetadata));
+  await assert.rejects(()=>validateTestProvenance(job),/mock provenance/);
+  await writeFile(audioManifest,JSON.stringify(result.manifest));
+  await assert.rejects(()=>validateTestProvenance({...job,mock:false}),/not authorized/);
+  await assert.rejects(()=>validateTestProvenance({...job,audioManifest:null}),/Missing/);
+  await assert.rejects(()=>validateTestProvenance({...job,audioSha256:sha256('forged')}),/hash mismatch/);
+  await writeFile(audioManifest,JSON.stringify({...result.manifest,audio_provider:'openai'}));
+  await assert.rejects(()=>validateTestProvenance(job),/mock provenance|Mock audio/);
+  await writeFile(audioManifest,JSON.stringify(result.manifest));
+  await writeFile(result.manifest.audio_file_path,Buffer.alloc(44));
+  await assert.rejects(()=>validateTestProvenance(job),/Invalid|mismatch/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
