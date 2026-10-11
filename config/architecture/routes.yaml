@@ -248,4 +248,8 @@
       "entity": "about_core_essay"
     }
   ]
+,
+  "temporary_diagnostic_routes": [
+    {"path": "/internal/audio-diagnostics", "release": "v1", "domain": "diagnostics", "navigation": false, "indexable": false, "adr": "ADR-0029"}
+  ]
 }

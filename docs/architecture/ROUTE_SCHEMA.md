@@ -24,3 +24,5 @@ Individual content uses stable canonical slugs. Navigation labels are independen
 Content Works use `/stories/[work-slug]` for the localized work landing and `/stories/[work-slug]/[unit-slug]` for localized units. English mirrors both beneath `/en`. Route resolution uses canonical work/unit relationships and public publication boundaries; it never infers unit order from paths or filenames. See [ADR-0013](../adr/0013-content-work-ordered-unit-model.md).
 
 Mu Changke Fiction uses `/fiction` for its approved author portfolio and `/fiction/[slug]` for individual work-discovery records. English mirrors these beneath `/en`. No chapter, read, manuscript, contract, or download child route is permitted. The route consumes LOCKED editorial packages and verified cover mappings only. See [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md).
+
+Proposed temporary, unlinked diagnostic utility /internal/audio-diagnostics is documented by ADR-0029; it is not a navigation or bilingual content route, and must remain outside the sitemap and search index.
