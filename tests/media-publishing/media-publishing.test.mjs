@@ -5,10 +5,11 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {writeFile} from 'node:fs/promises';
-import {extractNarration,sha256,cacheKey,voiceConfigHash,validateManifest,assertPaidGenerationAuthorized,runMockGeneration,MockToneProvider} from '../../src/lib/media-publishing/core.mjs';
+import {extractNarration,sha256,cacheKey,voiceConfigHash,validateManifest,assertPaidGenerationAuthorized,runMockGeneration,MockToneProvider,verifyMockWav} from '../../src/lib/media-publishing/core.mjs';
+import {safeSubtitleFilterPath,inspectProbeData,validateRenderedVideo} from '../../src/lib/media-publishing/video-validation.mjs';
 import {validateSubtitles} from '../../src/lib/media-publishing/subtitles.mjs';
 import {createAudioProvider} from '../../src/lib/media-publishing/providers.mjs';
-const config={provider:'mock',model:'offline-test-tone-v1',voice:'synthetic-test-tone',language:'zh-CN',format:'mp3',costAuthorized:false,maxSpendUsd:0};
+const config={provider:'mock',model:'offline-test-tone-v1',voice:'synthetic-test-tone',language:'zh-CN',format:'wav',costAuthorized:false,maxSpendUsd:0};
 const articlePath='content/zh-CN/library/true-freedom.mdx';
 
 test('approved bilingual MDX sources preserve titles, order, biblical references and stable hashes',async()=>{
@@ -85,5 +86,45 @@ test('video rendering refuses jobs without measured alignment, before FFmpeg inv
   const result=spawnSync(process.execPath,['scripts/media-publishing/render-video.mjs',job,'--render'],{encoding:'utf8'});
   assert.notEqual(result.status,0);
   assert.match(result.stderr,/Missing approved video job field|Refusing production\/mock\/unaligned video/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('mock format, corrupt cache, incomplete generation, and recovery',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-media-corrupt-'));
+ try {
+  const params={sourcePath:articlePath,config,outputDirectory:dir,provider:new MockToneProvider()};
+  const first=await runMockGeneration(params);
+  assert.equal(first.manifest.audio_format,'wav');
+  assert.equal(verifyMockWav(await readFile(first.manifest.audio_file_path)),first.manifest.audio_sha256);
+  assert.throws(()=>verifyMockWav(Buffer.alloc(48)),/Invalid/);
+  assert.throws(()=>validateManifest({...first.manifest,generation_status:'generated'}),/production/);
+  await writeFile(first.manifest.audio_file_path,Buffer.alloc(44));
+  const recovered=await runMockGeneration(params);
+  assert.equal(recovered.cacheHit,false);
+  assert.equal((await runMockGeneration(params)).cacheHit,true);
+  await assert.rejects(()=>runMockGeneration({...params,config:{...config,format:'mp3'}}),/WAV/);
+  const collision=await runMockGeneration({...params,config:{...config,voice:'collision'}});
+  assert.notEqual(collision.manifest.audio_file_path,first.manifest.audio_file_path);
+  const lock=path.join(dir,cacheKey(extractNarration(await readFile(articlePath,'utf8')),config)+'.lock');
+  await writeFile(lock,'busy');
+  await assert.rejects(()=>runMockGeneration(params),/already in progress/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('subtitle injection rejected and valid paths accepted',()=>{
+ assert.match(safeSubtitleFilterPath('/tmp/subtitles/test.srt'),/test\.srt$/);
+ for(const p of ['/tmp/evil;movie.srt','/tmp/a:movie.srt','/tmp/a[0].srt','/tmp/a\\movie.srt',"/tmp/a'movie.srt"]) assert.throws(()=>safeSubtitleFilterPath(p),/Unsafe/);
+});
+test('invalid video metadata, missing ffprobe and missing ffmpeg fail closed',async()=>{
+ const data={format:{duration:'3',size:'200000'},streams:[{codec_type:'video',codec_name:'h264',width:1920,height:1080,avg_frame_rate:'30/1'},{codec_type:'audio',codec_name:'aac'}]};
+ assert.equal(inspectProbeData(data,{durationSeconds:3}),true);
+ assert.throws(()=>inspectProbeData({...data,streams:[{...data.streams[0],codec_name:'vp9'},data.streams[1]]}),/encoding/);
+ assert.throws(()=>inspectProbeData(data,{durationSeconds:7}),/duration/);
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-invalid-video-'));
+ try {
+  const file=path.join(dir,'invalid.mp4');await writeFile(file,Buffer.alloc(2000));
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({error:new Error('ENOENT'),status:null})}),/ffprobe unavailable/);
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({status:0,stdout:'invalid json'})}),/Invalid ffprobe JSON/);
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({status:0,stdout:JSON.stringify({...data,streams:[]})})}),/encoding/);
+  let calls=0;
+  await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>{calls++;return calls===1?{status:0,stdout:JSON.stringify(data)}:{error:new Error('ENOENT'),status:null};}}),/ffmpeg unavailable/);
  } finally {await rm(dir,{recursive:true,force:true});}
 });

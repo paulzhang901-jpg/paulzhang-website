@@ -2,7 +2,7 @@
   "provider": "mock",
   "model": "offline-test-tone-v1",
   "voice": "synthetic-test-tone",
-  "format": "mp3",
+  "format": "wav",
   "language": "zh-CN",
   "instructions": "TEST ONLY: not AI narration",
   "costAuthorized": false,
