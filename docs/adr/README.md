@@ -48,3 +48,5 @@ None.
 - [0025 About Permanent V1 Architecture](./0025-about-permanent-v1-architecture.md)
 - [0026 Light Journey Permanent V1 Architecture](./0026-light-journey-permanent-v1-architecture.md)
 - [0027 Consent-Gated Google Analytics 4](./0027-consent-gated-ga4-analytics.md)
+
+- [0029 Temporary Isolated iPhone Audio Diagnostics](./0029-isolated-iphone-audio-diagnostics.md) — Proposed.

@@ -21,6 +21,7 @@ test("Client Components remain explicitly reviewed and minimal", () => {
     "src/components/analytics/google-analytics-consent.tsx",
     "src/components/content/read-aloud-player.tsx",
     "src/components/content/together-submission-form.tsx",
+    "src/components/diagnostics/iphone-audio-diagnostics.tsx",
     "src/components/fiction/fiction-discovery.tsx",
     "src/components/navigation/language-switcher.tsx",
     "src/components/product/engagement-prompts.tsx",
