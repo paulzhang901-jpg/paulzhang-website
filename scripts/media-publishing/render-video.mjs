@@ -28,8 +28,9 @@ const filter=`[0:v]scale=1920:1080,format=yuv420p,subtitles=${subPath}[base];[2:
 const args=['-hide_banner','-n','-loop','1','-framerate','30','-i',c.background,'-i',c.audio,'-loop','1','-i',c.titleCard,'-loop','1','-i',c.closingCard,'-filter_complex',filter,'-map','[v]','-map','1:a:0','-c:v','libx264','-r','30','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-t',String(duration),'-movflags','+faststart'];
 if(flag!=='--render') {console.log('DRY RUN ONLY. Rendering not performed.');console.log(JSON.stringify({title:c.title,author:c.author,website:'paulzhang.org',duration,output:c.output,ffmpegArgs:args}));process.exit(0);}
 // Production generation is separately prohibited in Phase 6B. Test-only jobs may render locally.
-await withReservedTestOutput(c.output,async(staged)=>{
+const renderedOutput=await withReservedTestOutput(c.output,async(staged)=>{
   const result=spawnSync('ffmpeg',[...args,staged],{stdio:'inherit'});
   if(result.status!==0) throw new Error('FFmpeg rendering failed');
   await validateRenderedVideo(staged,duration);
 });
+console.log('NON-PRODUCTION TEST VIDEO:',renderedOutput);

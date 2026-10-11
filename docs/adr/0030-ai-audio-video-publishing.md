@@ -19,6 +19,11 @@ Media storage and delivery URLs remain configurable; no new paid storage or prod
 ## Implementation Notes
 This PR provides the ADR, mock pipeline, manifest/cache validation, subtitle validation, FFmpeg command preparation and standalone player. A real TTS adapter, verified forced aligner, approved storage, generated production audio/video and page integration require later explicit authorization. The generation command refuses any non-mock provider, even if an API key is present. No secrets in logs/manifests. Roll back by reverting this isolated PR; existing article pages remain untouched. Production media publication must use a separate reviewed change.
 
+### Phase 6B local trust and output boundary
+The offline video CLI accepts **only local, trusted operator-supplied test jobs**. It does not accept untrusted uploads, multi-user requests, or externally submitted manifests. Mock WAV structure, manifest consistency, and SHA-256 comparisons establish file integrity and internal metadata consistency, **not independent authenticity**: the job author can control the manifest and expected hashes. These checks must never be interpreted as approval to publish. Production media rendering is rejected, and a separately reviewed authorization/provenance mechanism is required before accepting untrusted media or production assets.
+
+Each CLI process allocates an unpredictable, owner-only (`0700`) temporary output directory. Output names are constrained to simple MP4 basenames, rendering occurs in a private staging subdirectory, and final publication uses an exclusive hard link rather than overwriting an existing file. The temporary directory is not durable production storage. Processes sharing the same OS user identity are trusted; this runtime does **not** claim protection against a hostile process with that identity, administrator privileges, or replacement of trusted input files during rendering. Run only in a single-user trusted local environment. The CLI never uploads or publishes generated files.
+
 ## Supersedes
 None.
 

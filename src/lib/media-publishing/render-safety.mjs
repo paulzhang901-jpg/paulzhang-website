@@ -1,16 +1,27 @@
 import os from 'node:os';
 import path from 'node:path';
-import {lstat, mkdir, realpath, readFile, link, mkdtemp, rm} from 'node:fs/promises';
+import {mkdtempSync, chmodSync} from 'node:fs';
+import {lstat, realpath, readFile, link, mkdtemp, rm} from 'node:fs/promises';
 import {sha256, validateManifest, verifyMockWav} from './core.mjs';
 
-// A fixed OS temporary subtree, never an arbitrary caller-selected directory.
-export const TEST_VIDEO_OUTPUT_ROOT = path.join(os.tmpdir(), 'paul-media-render-output');
+// One private, unpredictable directory per process. The CLI is a trusted local,
+// non-production tool; other processes running as the same OS user are in scope
+// of that user's trust, not an adversarial multi-tenant security boundary.
+export const TEST_VIDEO_OUTPUT_ROOT = mkdtempSync(path.join(os.tmpdir(), 'paul-media-render-'));
+chmodSync(TEST_VIDEO_OUTPUT_ROOT, 0o700);
+
+async function trustedRoot() {
+  const root = await lstat(TEST_VIDEO_OUTPUT_ROOT);
+  if (!root.isDirectory() || root.isSymbolicLink() || (root.mode & 0o077) !== 0 ||
+      (typeof process.getuid === 'function' && root.uid !== process.getuid())) {
+    throw new Error('Output root must be a private directory owned by this process user');
+  }
+  return realpath(TEST_VIDEO_OUTPUT_ROOT);
+}
 
 export async function validateTestOutput(output) {
   if (typeof output !== 'string' || !/^[a-zA-Z0-9_-]+\.mp4$/.test(output)) throw new Error('Unsafe output filename: relative MP4 basename required');
-  await mkdir(TEST_VIDEO_OUTPUT_ROOT, {recursive:true});
-  if ((await lstat(TEST_VIDEO_OUTPUT_ROOT)).isSymbolicLink()) throw new Error('Output root is not a trusted directory');
-  const canonicalRoot=await realpath(TEST_VIDEO_OUTPUT_ROOT);
+  const canonicalRoot=await trustedRoot();
   const target=path.join(canonicalRoot,output);
   try {await lstat(target);throw new Error('Output already exists: overwrite forbidden');} catch(e) {if(e.code!=='ENOENT') throw e;}
   return target;
@@ -18,12 +29,12 @@ export async function validateTestOutput(output) {
 
 export async function withReservedTestOutput(output, render) {
   const target=await validateTestOutput(output);
-  const staging=await mkdtemp(path.join(TEST_VIDEO_OUTPUT_ROOT,'.staging-'));
+  const staging=await mkdtemp(path.join(await trustedRoot(),'.staging-'));
   const staged=path.join(staging,'video.mp4');
   try {
     await render(staged);
     // Hard-link creation is exclusive: an existing destination is never overwritten.
-    await validateTestOutput(output);
+    if (path.dirname(target) !== await trustedRoot()) throw new Error('Output directory changed during rendering');
     await link(staged,target);
     return target;
   } finally {await rm(staging,{recursive:true,force:true});}

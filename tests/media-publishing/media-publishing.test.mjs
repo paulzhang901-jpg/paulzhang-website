@@ -131,6 +131,10 @@ test('invalid video metadata, missing ffprobe and missing ffmpeg fail closed',as
  } finally {await rm(dir,{recursive:true,force:true});}
 });
 test('video output allowlist rejects traversal, absolute paths, symlinks, overwrites and malformed filenames',async()=>{
+ const rootInfo=await (await import('node:fs/promises')).lstat(TEST_VIDEO_OUTPUT_ROOT);
+ assert.ok(rootInfo.isDirectory());
+ assert.equal(rootInfo.mode & 0o077,0,'render output directory must be private');
+ assert.match(path.basename(TEST_VIDEO_OUTPUT_ROOT),/^paul-media-render-[A-Za-z0-9]+$/);
  for(const value of ['../content/a.mp4','/tmp/escape.mp4','src/a.mp4','../../.git/a.mp4','package.json','a.mov','a b.mp4','../.env.mp4']) await assert.rejects(()=>validateTestOutput(value),/Unsafe/);
  const name='phase6b4b-'+process.pid+'.mp4';
  const target=await validateTestOutput(name);
@@ -140,6 +144,31 @@ test('video output allowlist rejects traversal, absolute paths, symlinks, overwr
  try {await assert.rejects(()=>validateTestOutput(path.basename(escape)),/already exists/);} finally {await rm(escape,{force:true});}
  await withReservedTestOutput(name,async(staged)=>writeFile(staged,'synthetic'));
  try {await assert.rejects(()=>validateTestOutput(name),/already exists/);await assert.rejects(()=>withReservedTestOutput(name,async()=>{}),/already exists/);} finally {await rm(target,{force:true});}
+});
+test('concurrent publication never overwrites an existing output',async()=>{
+ const name='phase6b4d-race-'+process.pid+'.mp4';
+ let release;
+ const wait=new Promise(resolve=>{release=resolve;});
+ let ready;
+ const started=new Promise(resolve=>{ready=resolve;});
+ const first=withReservedTestOutput(name,async(staged)=>{
+   await writeFile(staged,'first');ready();await wait;
+ });
+ await started;
+ const second=withReservedTestOutput(name,async(staged)=>writeFile(staged,'second'));
+ release();
+ const outcomes=await Promise.allSettled([first,second]);
+ assert.equal(outcomes.filter(x=>x.status==='fulfilled').length,1);
+ assert.equal(outcomes.filter(x=>x.status==='rejected').length,1);
+ const target=path.join(await (await import('node:fs/promises')).realpath(TEST_VIDEO_OUTPUT_ROOT),name);
+ try {assert.ok(['first','second'].includes(await readFile(target,'utf8')));} finally {await rm(target,{force:true});}
+});
+test('render root permissions are enforced',async()=>{
+ const {chmod}=await import('node:fs/promises');
+ const name='phase6b4d-permission-'+process.pid+'.mp4';
+ await chmod(TEST_VIDEO_OUTPUT_ROOT,0o755);
+ try {await assert.rejects(()=>validateTestOutput(name),/private directory/);} finally {await chmod(TEST_VIDEO_OUTPUT_ROOT,0o700);}
+ assert.ok(await validateTestOutput(name));
 });
 test('test-only provenance validates real mock WAV and MP3 hashes; production remains unauthorized',async()=>{
  const dir=await mkdtemp(path.join(os.tmpdir(),'paul-provenance-'));
