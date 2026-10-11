@@ -9,6 +9,8 @@ import {extractNarration,sha256,cacheKey,voiceConfigHash,validateManifest,assert
 import {safeSubtitleFilterPath,inspectProbeData,validateRenderedVideo} from '../../src/lib/media-publishing/video-validation.mjs';
 import {validateSubtitles} from '../../src/lib/media-publishing/subtitles.mjs';
 import {createAudioProvider} from '../../src/lib/media-publishing/providers.mjs';
+import {validateTestOutput,validateTestProvenance,withReservedTestOutput,TEST_VIDEO_OUTPUT_ROOT} from '../../src/lib/media-publishing/render-safety.mjs';
+import {symlink} from 'node:fs/promises';
 const config={provider:'mock',model:'offline-test-tone-v1',voice:'synthetic-test-tone',language:'zh-CN',format:'wav',costAuthorized:false,maxSpendUsd:0};
 const articlePath='content/zh-CN/library/true-freedom.mdx';
 
@@ -85,7 +87,7 @@ test('video rendering refuses jobs without measured alignment, before FFmpeg inv
   await writeFile(job,JSON.stringify({audio:'x.mp3',background:'b.png',subtitles:'s.srt',output:'out.mp4',title:'Test',author:'Paul Zhang',alignmentEvidence:{verified:false,measuredDurationSeconds:1}}));
   const result=spawnSync(process.execPath,['scripts/media-publishing/render-video.mjs',job,'--render'],{encoding:'utf8'});
   assert.notEqual(result.status,0);
-  assert.match(result.stderr,/Missing approved video job field|Refusing production\/mock\/unaligned video/);
+  assert.match(result.stderr,/Missing approved video job field|Refusing unaligned video/);
  } finally {await rm(dir,{recursive:true,force:true});}
 });
 test('mock format, corrupt cache, incomplete generation, and recovery',async()=>{
@@ -126,5 +128,40 @@ test('invalid video metadata, missing ffprobe and missing ffmpeg fail closed',as
   await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>({status:0,stdout:JSON.stringify({...data,streams:[]})})}),/encoding/);
   let calls=0;
   await assert.rejects(()=>validateRenderedVideo(file,3,{spawn:()=>{calls++;return calls===1?{status:0,stdout:JSON.stringify(data)}:{error:new Error('ENOENT'),status:null};}}),/ffmpeg unavailable/);
+ } finally {await rm(dir,{recursive:true,force:true});}
+});
+test('video output allowlist rejects traversal, absolute paths, symlinks, overwrites and malformed filenames',async()=>{
+ for(const value of ['../content/a.mp4','/tmp/escape.mp4','src/a.mp4','../../.git/a.mp4','package.json','a.mov','a b.mp4','../.env.mp4']) await assert.rejects(()=>validateTestOutput(value),/Unsafe/);
+ const name='phase6b4b-'+process.pid+'.mp4';
+ const target=await validateTestOutput(name);
+ assert.equal(target,path.join(await (await import('node:fs/promises')).realpath(TEST_VIDEO_OUTPUT_ROOT),name));
+ const escape=path.join(TEST_VIDEO_OUTPUT_ROOT,'phase6b4b-symlink-'+process.pid+'.mp4');
+ await symlink('/tmp/forbidden.mp4',escape);
+ try {await assert.rejects(()=>validateTestOutput(path.basename(escape)),/already exists/);} finally {await rm(escape,{force:true});}
+ await withReservedTestOutput(name,async(staged)=>writeFile(staged,'synthetic'));
+ try {await assert.rejects(()=>validateTestOutput(name),/already exists/);await assert.rejects(()=>withReservedTestOutput(name,async()=>{}),/already exists/);} finally {await rm(target,{force:true});}
+});
+test('test-only provenance validates real mock WAV and MP3 hashes; production remains unauthorized',async()=>{
+ const dir=await mkdtemp(path.join(os.tmpdir(),'paul-provenance-'));
+ try {
+  const result=await runMockGeneration({sourcePath:articlePath,config,outputDirectory:dir,provider:new MockToneProvider()});
+  const audio=path.join(dir,'test.mp3');await writeFile(audio,Buffer.from('synthetic test mp3 fixture'));
+  const audioManifest=path.join(dir,'manifest.json');await writeFile(audioManifest,JSON.stringify(result.manifest));
+  const job={testOnly:true,mock:true,audio,audioManifest,audioSha256:sha256(await readFile(audio))};
+  await validateTestProvenance(job);
+  await assert.rejects(()=>validateTestProvenance({...job,production:true}),/not authorized/);
+  const productionMetadata={...result.manifest,audio_provider:'openai',audio_format:'mp3',audio_file_path:audio,generation_status:'generated',mock_warning:undefined,audio_sha256:job.audioSha256};
+  assert.equal(validateManifest(productionMetadata).generation_status,'generated'); // Structurally valid is not authorization.
+  await writeFile(audioManifest,JSON.stringify(productionMetadata));
+  await assert.rejects(()=>validateTestProvenance(job),/mock provenance/);
+  await writeFile(audioManifest,JSON.stringify(result.manifest));
+  await assert.rejects(()=>validateTestProvenance({...job,mock:false}),/not authorized/);
+  await assert.rejects(()=>validateTestProvenance({...job,audioManifest:null}),/Missing/);
+  await assert.rejects(()=>validateTestProvenance({...job,audioSha256:sha256('forged')}),/hash mismatch/);
+  await writeFile(audioManifest,JSON.stringify({...result.manifest,audio_provider:'openai'}));
+  await assert.rejects(()=>validateTestProvenance(job),/mock provenance|Mock audio/);
+  await writeFile(audioManifest,JSON.stringify(result.manifest));
+  await writeFile(result.manifest.audio_file_path,Buffer.alloc(44));
+  await assert.rejects(()=>validateTestProvenance(job),/Invalid|mismatch/);
  } finally {await rm(dir,{recursive:true,force:true});}
 });
