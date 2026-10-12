@@ -65,3 +65,7 @@ Multi-unit publications are governed by [ADR-0013](../adr/0013-content-work-orde
 The Mu Changke Fiction portfolio route is governed by [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md): it is a LOCKED-metadata discovery and official-reading router, never a manuscript, chapter, contract, download, or fiction-distribution surface.
 
 Production static-export architecture is governed by [ADR-0015](../adr/0015-production-hosting-static-export-strategy.md); automatic validated `main` production deployment is governed by [ADR-0021](../adr/0021-automatic-main-production-deployment.md) and the [Static Production Deployment contract](./STATIC_PRODUCTION_DEPLOYMENT.md).
+
+## Proposed narration integration — pending owner decision
+
+[ADR-0033](../adr/0033-production-narration-service-integration.md) and the [Phase 6E production architecture proposal](./PHASE_6E_PRODUCTION_ARCHITECTURE_PROPOSAL.md) describe a candidate separate governance backend. They are Proposed, not part of the accepted runtime architecture. Static export, canonical bilingual content and ADR-0021 deployment remain unchanged. Acceptance, scoped implementation, provisioning, spending and final activation require distinct owner decisions.

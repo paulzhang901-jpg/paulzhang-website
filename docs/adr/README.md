@@ -52,3 +52,7 @@ None.
 - [0029 Temporary Isolated iPhone Audio Diagnostics](./0029-isolated-iphone-audio-diagnostics.md) — Proposed.
 
 - [0030 Controlled Bilingual AI Audio and Video Publishing](./0030-ai-audio-video-publishing.md) — Proposed.
+
+- [0031 Offline Production Narration Foundation](./0031-offline-production-narration-foundation.md) — Proposed (existing source status).
+- [0032 Production Narration Governance](./0032-production-narration-governance.md) — Accepted.
+- [0033 Production Narration Service Integration](./0033-production-narration-service-integration.md) — Proposed; no implementation, provisioning, spending or activation authorization.
