@@ -8,6 +8,7 @@ const Command=z.discriminatedUnion('action',[
   z.object({action:z.literal('review'),request:identifier,job:identifier,decision:z.enum(['approve','reject']),human_listening:z.boolean()}).strict(),
   z.object({action:z.literal('publish'),request:identifier,job:identifier}).strict(),
   z.object({action:z.literal('revoke'),request:identifier,job:identifier}).strict(),
+  z.object({action:z.literal('reconcile'),request:identifier,job:identifier}).strict(),
   z.object({action:z.literal('invalidate'),request:identifier,job:identifier}).strict()
 ]);
 /** Framework-neutral server entry point for the separately protected admin runtime; never mounted by Next.js. */
@@ -21,6 +22,7 @@ export class AdminBoundary {
       case 'review':return this.service.review(actor,c.request,c.job,c.decision,c.human_listening);
       case 'publish':return this.service.publish(actor,c.request,c.job);
       case 'revoke':return this.service.revoke(actor,c.request,c.job);
+      case 'reconcile':return this.service.reconcile(actor,c.request,c.job);
       case 'invalidate':return this.service.invalidate(actor,c.request,c.job);
     }
   }

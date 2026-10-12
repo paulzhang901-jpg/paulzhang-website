@@ -1,5 +1,6 @@
 import {randomUUID} from 'node:crypto';
-import {AssetSchema,SourceSchema,VoiceSchema,canonical,digest,GovernanceError,identifier,POLICY_VERSION,SAFETY,transition,type AuditEvent,type Job,type Ledger,type PrivateObjects,type Role,type SourceAuthority,type VoiceAuthority} from './contracts';
+import {ZodError} from 'zod';
+import {AssetSchema,SourceSchema,VoiceSchema,canonical,digest,GovernanceError,identifier,POLICY_VERSION,SAFETY,transition,type AuditEvent,type DenialReason,type Job,type Ledger,type PrivateObjects,type Role,type SourceAuthority,type VoiceAuthority} from './contracts';
 import {IdentityVerifier,type VerifiedIdentity} from './identity';
 import {SqliteGovernanceStore} from './store';
 
@@ -13,29 +14,39 @@ export function settle(ledger:Ledger,job:Job,actual:number) {
 }
 export class NarrationGovernance {
   constructor(private store:SqliteGovernanceStore,private identity:IdentityVerifier,private sources:SourceAuthority,private voices:VoiceAuthority,private objects:PrivateObjects,private now:()=>number=Date.now) {}
-  private event(l:Ledger,actor:string,action:string,request:string,job:Job|undefined,from:Job['state']|null,outcome:AuditEvent['outcome']) {
-    const body={sequence:l.events.length+1,actor,action,request_id:request,job_id:job?.id??null,at:this.now(),from,to:job?.state??null,outcome,policy_version:POLICY_VERSION,binding:job?digest(canonical({source:job.source,voice:job.voice,asset:job.asset??null})):null,previous:l.events.at(-1)?.hash??digest('ADR-0032/audit/v1')};
+  private event(l:Ledger,actor:string,action:string,request:string,job:Job|undefined,from:Job['state']|null,outcome:AuditEvent['outcome'],denialReason?:DenialReason) {
+    const body={sequence:l.events.length+1,actor,action,request_id:request,job_id:job?.id??null,at:this.now(),from,to:job?.state??null,outcome,policy_version:POLICY_VERSION,binding:job?digest(canonical({source:job.source,voice:job.voice,asset:job.asset??null})):null,previous:l.events.at(-1)?.hash??digest('ADR-0032/audit/v1'),...(job?{source:structuredClone(job.source)}:{}),...(denialReason?{denial_reason:denialReason}:{})};
     l.events.push({...body,hash:digest(canonical(body))});
   }
-  private act<T>(actor:VerifiedIdentity,role:Role,action:string,request:string,id:string|undefined,operation:(l:Ledger,j:Job|undefined)=>T):T {
+  private act<T>(actor:VerifiedIdentity,role:Role,action:string,request:string,id:string|undefined,operation:(l:Ledger,j:Job|undefined)=>T,resultJobId?:(result:T)=>string):T {
     identifier.parse(request);if(id) identifier.parse(id);
     let failure:unknown;let result:T|undefined;
     this.store.transaction(l=>{
       const j=id && Object.hasOwn(l.jobs,id)?l.jobs[id]:undefined;const from=j?.state??null;
       // Savepoint semantics: failed operations keep denial evidence, never partial state.
       const before=structuredClone(l);
+      let auditActor='unverified';
+      let denialReason:DenialReason|undefined='AUTHENTICATION_DENIED';
       try {
+        this.identity.assertAuthenticated(actor);auditActor=actor.subject;
+        denialReason='AUTHORIZATION_DENIED';
         this.identity.authorize(actor,role);
+        denialReason=undefined;
         if(Object.hasOwn(l.requests,request)) throw new GovernanceError('REPLAY');
         if(id && !j) throw new GovernanceError('INVALID');
-        result=operation(l,j);l.requests[request]=true;
-        this.event(l,actor.subject,action,request,j,from,'allowed');
+        const value=operation(l,j);result=value;l.requests[request]=true;
+        const auditId=id??resultJobId?.(value);
+        const auditJob=auditId && Object.hasOwn(l.jobs,auditId)?l.jobs[auditId]:undefined;
+        if(resultJobId && !auditJob) throw new GovernanceError('INTEGRITY');
+        const auditFrom=auditJob && Object.hasOwn(before.jobs,auditJob.id)?before.jobs[auditJob.id].state:from;
+        this.event(l,auditActor,action,request,auditJob,auditFrom,'allowed');
       } catch(error) {
         Object.assign(l,before);failure=error;
         if(error instanceof GovernanceError && error.code==='STALE' && id && Object.hasOwn(l.jobs,id) && l.jobs[id].state!=='STALE') {
           const stale=l.jobs[id];transition(stale.state,'STALE');stale.state='STALE';stale.lease=null;stale.fence++;settle(l,stale,0);delete stale.approval;
         }
-        this.event(l,'unverified',action,request,id && Object.hasOwn(l.jobs,id)?l.jobs[id]:undefined,from,'denied');
+        denialReason??=error instanceof GovernanceError?error.code:error instanceof ZodError?'VALIDATION_FAILED':'INTERNAL_ERROR';
+        this.event(l,auditActor,action,request,id && Object.hasOwn(l.jobs,id)?l.jobs[id]:undefined,from,'denied',denialReason);
       }
     });
     if(failure) throw failure;return result as T;
@@ -56,7 +67,7 @@ export class NarrationGovernance {
       if(existing) return structuredClone(existing);
       const j:Job={id:randomUUID(),key,source,voice,version:1,creator:actor.subject,state:'DRAFT',attempt:0,fence:0,lease:null,reservation:0,actual:0};
       l.jobs[j.id]=j;return structuredClone(j);
-    });
+    },j=>j.id);
   }
   claim(actor:VerifiedIdentity,request:string,id:string):Job {
     return this.act(actor,'Generator','claim',request,id,(l,j)=>{
@@ -83,6 +94,20 @@ export class NarrationGovernance {
   }
   fail(actor:VerifiedIdentity,request:string,id:string,fence:number) {
     return this.act(actor,'Generator','fail',request,id,(l,j)=>{j=this.leased(j,actor,fence);settle(l,j,0);j.lease=null;transition(j.state,'FAILED');j.state='FAILED';});
+  }
+  /** Authorized operator/scheduler reconciliation. Repeated cleanup is a no-op; paid attempts remain disabled. */
+  reconcile(actor:VerifiedIdentity,request:string,id:string):Job {
+    return this.act(actor,'Generator','reconcile',request,id,(l,j)=>{
+      if(!j) throw new GovernanceError('INVALID');
+      if(!j.lease) return structuredClone(j);
+      if(j.state!=='DRAFT') throw new GovernanceError('STATE');
+      if(j.lease.until>this.now()) throw new GovernanceError('LEASE');
+      if(j.voice.provider!=='mock' || SAFETY.productionTtsEnabled || SAFETY.costAuthorized || SAFETY.maxSpendUsd!==0) throw new GovernanceError('DISABLED');
+      // Mock attempts incur no provider usage: atomically release, fence and clear ownership.
+      settle(l,j,0);j.fence++;j.lease=null;
+      if(j.attempt>=3) {transition(j.state,'FAILED');j.state='FAILED';}
+      return structuredClone(j);
+    });
   }
   recover(actor:VerifiedIdentity,request:string,id:string) {
     return this.act(actor,'Generator','recover',request,id,(_l,j)=>{if(!j || j.attempt>=3) throw new GovernanceError('STATE');this.fresh(j);transition(j.state,'DRAFT');j.state='DRAFT';});

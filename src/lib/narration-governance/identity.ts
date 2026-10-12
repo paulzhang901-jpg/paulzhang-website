@@ -34,7 +34,13 @@ export class IdentityVerifier {
       const identity=VerifiedIdentity.issue(c.sub,c.sid,c.exp*1000);this.issued.add(identity);Object.freeze(identity);return identity;
     } catch {throw new GovernanceError('DENIED');}
   }
+  assertAuthenticated(identity:unknown):asserts identity is VerifiedIdentity {
+    if(typeof identity!=='object' || identity===null || !this.issued.has(identity as VerifiedIdentity)) throw new GovernanceError('DENIED');
+    const verified=identity as VerifiedIdentity;
+    if(verified.expires<=this.now() || this.directory.sessionActive(verified.subject,verified.session)!==true) throw new GovernanceError('DENIED');
+  }
   authorize(identity:VerifiedIdentity,role:Role) {
-    if(!this.issued.has(identity) || identity.expires<=this.now() || this.directory.sessionActive(identity.subject,identity.session)!==true || !this.directory.roles(identity.subject).includes(role)) throw new GovernanceError('DENIED');
+    this.assertAuthenticated(identity);
+    if(!this.directory.roles(identity.subject).includes(role)) throw new GovernanceError('DENIED');
   }
 }

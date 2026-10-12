@@ -33,11 +33,20 @@ export class SqliteGovernanceStore {
     }
   }
   snapshot():Ledger {
-    const row=this.db.prepare('SELECT body FROM governance WHERE id=1').get() as {body:string};
-    const value=LedgerSchema.parse(JSON.parse(row.body)) as Ledger;this.verify(value);
-    const audit=this.db.prepare('SELECT body FROM audit ORDER BY sequence').all() as {body:string}[];
-    if(canonical(audit.map(r=>JSON.parse(r.body)))!==canonical(value.events)) throw new GovernanceError('INTEGRITY');
-    return value;
+    // Both tables must come from one SQLite snapshot, including reads outside a write transaction.
+    const ownsReadTransaction=!this.db.isTransaction;
+    if(ownsReadTransaction) this.db.exec('BEGIN');
+    try {
+      const row=this.db.prepare('SELECT body FROM governance WHERE id=1').get() as {body:string};
+      const value=LedgerSchema.parse(JSON.parse(row.body)) as Ledger;this.verify(value);
+      const audit=this.db.prepare('SELECT body FROM audit ORDER BY sequence').all() as {body:string}[];
+      if(canonical(audit.map(r=>JSON.parse(r.body)))!==canonical(value.events)) throw new GovernanceError('INTEGRITY');
+      if(ownsReadTransaction) this.db.exec('COMMIT');
+      return value;
+    } catch(error) {
+      if(ownsReadTransaction) this.db.exec('ROLLBACK');
+      throw error;
+    }
   }
   transaction<T>(operation:(ledger:Ledger)=>T):T {
     this.db.exec('BEGIN IMMEDIATE');
