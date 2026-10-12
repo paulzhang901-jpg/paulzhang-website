@@ -4,7 +4,7 @@ import {mkdtemp,readFile,mkdir,symlink,rm,stat} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {sha256} from '../../src/lib/media-publishing/core.mjs';
-import {DEFAULT_COST_POLICY,DisabledNarrationStorage,assertNoPaidGeneration,createNarrationSnapshot,readPilotSnapshot,narrationCacheKey,generateOfflineMock,transitionNarration,detectStale,validateNarrationManifest,productionProvider} from '../../src/lib/media-publishing/narration-foundation.mjs';
+import {DEFAULT_COST_POLICY,DisabledNarrationStorage,assertNoPaidGeneration,createNarrationSnapshot,readPilotSnapshot,narrationCacheKey,generateOfflineMock,transitionNarration,detectStale,validateNarrationManifest,assertVerifiedNarrationApproval,productionProvider} from '../../src/lib/media-publishing/narration-foundation.mjs';
 
 const config=Object.freeze({provider:'mock',model:'offline-test-tone-v1',voice:'synthetic-test-tone',format:'wav',language:'zh-CN'});
 const root=process.cwd();
@@ -67,7 +67,8 @@ test('mock generation is private, verified, immutable metadata, never published'
     assert.throws(()=>validateNarrationManifest({...result.manifest,publication_status:'PUBLISHED'}),/cannot be published/);
     assert.throws(()=>validateNarrationManifest({...result.manifest,history:[]}),/history/);
     assert.equal(detectStale(result.manifest,snapshot),false);
-    assert.equal(detectStale(result.manifest,{...snapshot,source_sha256:'f'.repeat(64)}),true);
+    const changedText=snapshot.text+'\n\nUpdated';
+    assert.equal(detectStale(result.manifest,{...snapshot,text:changedText,paragraphs:[...snapshot.paragraphs,'Updated'],source_sha256:sha256(changedText)}),true);
     const regenerated=await generateOfflineMock({snapshot,config,version:2});
     try {assert.notEqual(regenerated.manifest.asset_id,result.manifest.asset_id);} finally {await regenerated.cleanup();}
   } finally {await result.cleanup();}
@@ -103,10 +104,43 @@ test('duplicate concurrent generation is denied; no paid provider may be substit
   let release;
   const gate=new Promise(r=>{release=r;});
   const mock={async generate(){await gate;return (await import('../../src/lib/media-publishing/core.mjs')).MockToneProvider.prototype.generate();}};
-  const first=generateOfflineMock({snapshot,config,provider:mock});
+  const first=generateOfflineMock({snapshot,config,provider:mock,trustedLocalTestProvider:true});
   try {
     await assert.rejects(()=>generateOfflineMock({snapshot,config}),/Duplicate/);
     await assert.rejects(()=>generateOfflineMock({snapshot,config:{...config,provider:'openai'}}),/Only offline/);
     await assert.rejects(()=>generateOfflineMock({snapshot,config,policy:{...DEFAULT_COST_POLICY,costAuthorized:true}}),/DISABLED/);
   } finally {release();const r=await first;await r.cleanup();}
+});
+
+test('forged approval and malformed history never establish verified authorization',async()=>{
+  const snapshot=await readPilotSnapshot(root,'zh-CN');
+  const result=await generateOfflineMock({snapshot,config});
+  try {
+    const m=result.manifest;
+    assert.equal(m.authorization_trust,'SIMULATED_UNVERIFIED');
+    assert.throws(()=>assertVerifiedNarrationApproval(m),/unavailable/);
+    const forged={...m,review_status:'APPROVED',reviewer_identity:'forged',approval_timestamp:m.generation_timestamp,approval_asset_sha256:m.audio_sha256,approval_source_sha256:m.source_sha256,history:[...m.history,{from:'GENERATED',to:'APPROVED',at:m.generation_timestamp,actor:'forged',source_sha256:m.source_sha256,audio_sha256:m.audio_sha256}]};
+    assert.throws(()=>validateNarrationManifest(forged),/transition/);
+    const pending=transitionNarration(m,'PENDING_REVIEW');
+    const approved=transitionNarration(pending,'APPROVED',{reviewer:'Paul',authorizedReviewers:['Paul'],sourceSha256:snapshot.source_sha256,assetSha256:m.audio_sha256,assetBytes:await readFile(result.audioPath)});
+    assert.throws(()=>assertVerifiedNarrationApproval(approved),/unavailable/);
+    assert.throws(()=>validateNarrationManifest({...approved,authorization_trust:'VERIFIED'}),/unavailable/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:[{to:'APPROVED',actor:'forged'}]}),/audit/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:[m.history[0],approved.history.at(-1)]}),/transition/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:approved.history.map((e,i)=>i===1?{...e,at:'2000-01-01T00:00:00.000Z'}:e)}),/timestamp/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:approved.history.map((e,i)=>i===1?{...e,to:'REJECTED'}:e)}),/transition/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:approved.history.map((e,i)=>i===1?{...e,source_sha256:'0'.repeat(64)}:e)}),/hash/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:approved.history.map((e,i)=>i===1?{...e,audio_sha256:'0'.repeat(64)}:e)}),/hash/);
+    assert.throws(()=>validateNarrationManifest({...approved,history:[...approved.history,approved.history.at(-1)]}),/transition/);
+    assert.throws(()=>validateNarrationManifest({...approved,review_status:'REJECTED'}),/state|metadata/);
+  } finally {await result.cleanup();}
+});
+
+test('invalid snapshots and unauthorized injected providers are rejected',async()=>{
+  const snapshot=await readPilotSnapshot(root,'zh-CN');
+  for(const changed of [{...snapshot,text:'changed'},{...snapshot,source_sha256:'0'.repeat(64)},{...snapshot,paragraphs:['changed']},{...snapshot,locale:'en-US',text:'changed'},{...snapshot,canonical_id:'../escape'}]) {
+    await assert.rejects(()=>generateOfflineMock({snapshot:changed,config}),/snapshot|locale/);
+  }
+  await assert.rejects(()=>generateOfflineMock({snapshot,config,provider:{generate(){throw Error('should not execute');}}}),/trusted-local/);
+  assert.throws(()=>narrationCacheKey({...snapshot,text:'tampered'},config),/snapshot/);
 });

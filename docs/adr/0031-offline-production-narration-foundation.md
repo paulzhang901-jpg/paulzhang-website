@@ -18,3 +18,15 @@ State transitions are DRAFT → GENERATED → PENDING_REVIEW → APPROVED → PU
 ## Remaining production requirements
 
 Before any paid generation or production publication: separate approval of an ADR, secure service-side credential storage, authenticated reviewer identities, tamper-evident audit storage, per-article spend reservation and retry accounting, cross-process deduplication, durable content-hash-based cache, verified audio provenance, R2 object key/permissions and atomic publication, automatic STALE invalidation on article edits, real iPhone audio playback verification, and independent human review of Chinese/English pronunciation and completeness. Existing browser speech synthesis remains untouched. Future catechetical course narration may reuse the same foundation only with separate content identity and human review policy.
+
+## Phase 6C.3A security boundary clarification
+
+All serialized manifests are **untrusted metadata**. The `authorization_trust` field is fixed to `SIMULATED_UNVERIFIED`. An `APPROVED` state represents **only local simulated review**, never independently verified human authorization. `assertVerifiedNarrationApproval()` always rejects. Neither matching hashes nor structurally valid audit history prove reviewer identity, approval authenticity, or a protected audit trail. A fully fabricated but internally consistent sequence may pass structural validation and must **never** establish production authorization.
+
+History validation now checks required event fields, the complete legal transition chain from DRAFT through GENERATED, actor consistency, chronological ordering, content/asset hashes, duplicate or missing steps, final-state agreement and approval bindings. This is structural validation only, **not cryptographic authentication**. Caller-provided reviewer allowlists remain simulation inputs, not an identity service.
+
+Generation validates the caller-provided snapshot structure, canonical ID syntax, locale, exact text and SHA-256 before invoking the mock provider. Existing approved MDX extraction rules remain unchanged. Future production approval and publication must independently revalidate the latest authoritative article content. The voice configuration remains restricted to the deterministic offline mock configuration and hash.
+
+The built-in MockToneProvider is the default. Injected providers require an explicit `trustedLocalTestProvider:true` opt-in and are permitted **only in trusted local tests**. This flag is not a sandbox: arbitrary injected JavaScript can perform side effects including network calls. Never accept injected providers from untrusted inputs. No production provider exists.
+
+Local temporary file protections remain in place. Cross-process concurrency, hostile same-user processes, filesystem TOCTOU, durable cache, and production identity/authenticity remain unresolved **production-readiness blockers**. Production TTS, storage and publication remain disabled.
