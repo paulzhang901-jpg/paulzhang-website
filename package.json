@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "test": "pnpm run test:architecture && pnpm run test:routes && pnpm run test:content-integrity && pnpm run test:translation && pnpm run test:product && pnpm run test:accessibility && pnpm run test:performance && pnpm run test:security && pnpm run test:media",
+    "test": "pnpm run test:architecture && pnpm run test:routes && pnpm run test:content-integrity && pnpm run test:translation && pnpm run test:product && pnpm run test:accessibility && pnpm run test:performance && pnpm run test:security && pnpm run test:media && pnpm run test:narration-governance",
     "test:content": "pnpm run test:content-integrity && pnpm run test:translation",
     "test:content-integrity": "node --import tsx --test tests/content/content-model.test.ts tests/content/repository.test.ts tests/content-work/*.test.ts",
     "test:translation": "node --import tsx --test tests/content/translation-integrity.test.ts",
@@ -24,7 +24,8 @@
     "test:architecture": "node --test tests/architecture/*.test.mjs",
     "validate:architecture": "node tests/architecture/validate.mjs",
     "validate:content": "node --import tsx src/lib/content/validate-cli.ts",
-    "validate:static-export": "node scripts/validate-static-export.mjs"
+    "validate:static-export": "node scripts/validate-static-export.mjs",
+    "test:narration-governance": "node --import tsx --test tests/narration-governance/*.test.ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "3.1.1",
