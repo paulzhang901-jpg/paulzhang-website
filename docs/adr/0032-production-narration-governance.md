@@ -1,9 +1,10 @@
 # ADR-0032 — Production Narration Governance
 
-Status: Proposed — Awaiting Paul Approval
+Status: Accepted
 Date: 2026-10-12
 Scope: Future production narration governance (not production activation)
 Decision owner: Paul Zhang
+Approval record: Owner explicitly approved the ADR-0032 architecture direction in the Phase 6D.1C instruction dated 2026-10-12. This approval excludes production TTS, paid API calls, production credentials, Cloudflare resource creation, public audio publication and production administration deployment.
 
 ## Context
 ADR-0030 and ADR-0031 provide offline, opt-in narration infrastructure with local mock generation. The existing Next.js site is statically exported to Cloudflare Pages. No server-side authentication, production TTS, durable jobs, private production media store, or authenticated publication authority is presently provided by that foundation.
