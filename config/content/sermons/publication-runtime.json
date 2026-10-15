@@ -699,6 +699,48 @@
       "searchEligibility": true,
       "sourceSermonId": "sermon-revelation-9-13-19",
       "sourceCanonicalEditionHash": "5eb52a5fba62c4a8bb0221dc49dd040a3ffc52cd4480f275ac627ac490d95a39"
+    },
+    {
+      "sermonId": "sermon-revelation-9-20-21",
+      "title": "仍旧不悔改",
+      "subtitle": "最大的灾难，不是外面的世界被震动，而是里面的心始终不肯回转。",
+      "scriptureRange": "启示录 9:20–21",
+      "sermonSeries": "Revelation",
+      "themes": [
+        "悔改",
+        "偶像崇拜",
+        "福音"
+      ],
+      "canonicalEditionHash": "6bd231cc53093e57b558c3a1df7281bfc140dc37b428ae355e4485a13ef73955",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/still-they-did-not-repent.mdx",
+      "publicRoute": "/library/still-they-did-not-repent",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
+    },
+    {
+      "sermonId": "sermon-revelation-9-20-21-en",
+      "title": "Still They Did Not Repent",
+      "subtitle": "The greatest tragedy is not that the world around us is shaken, but that the heart within us stubbornly refuses to turn back.",
+      "scriptureRange": "Revelation 9:20–21",
+      "sermonSeries": "Revelation",
+      "themes": [
+        "repentance",
+        "idolatry",
+        "gospel"
+      ],
+      "canonicalEditionHash": "478f85142325f7f92ea4e1c0d94942ad47fad7db068517c940d5f0fd0c9d8ca2",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/still-they-did-not-repent.mdx",
+      "publicRoute": "/en/library/still-they-did-not-repent",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
+      "sourceSermonId": "sermon-revelation-9-20-21",
+      "sourceCanonicalEditionHash": "6bd231cc53093e57b558c3a1df7281bfc140dc37b428ae355e4485a13ef73955"
     }
   ]
 }

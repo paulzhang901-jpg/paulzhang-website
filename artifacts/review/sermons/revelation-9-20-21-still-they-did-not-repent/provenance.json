@@ -1,0 +1,52 @@
+{
+  "authoritativeSources": [
+    {
+      "source": "2026-10-11-Still-They-Did-Not-Repent-ZH.md",
+      "locale": "zh-CN",
+      "sourceSha256": "6e7f9cf7d5b0ca11f61a39f300c1e8a4d7a737493afb5b2337f94306b6db347c",
+      "bodySha256": "1ac787fb791243c326734060be1a62d52f291f6d624ad27cff2f1ac2754c9986",
+      "target": "content/zh-CN/library/still-they-did-not-repent.mdx",
+      "websiteBodySha256": "57b40106528d2637feb152c4606cc88594a902cfc354e6729b8268e473636a52",
+      "originalArchive": "artifacts/review/sermons/revelation-9-20-21-still-they-did-not-repent/2026-10-11-Still-They-Did-Not-Repent-ZH.md"
+    },
+    {
+      "source": "2026-10-11-Still-They-Did-Not-Repent-EN.md",
+      "locale": "en-US",
+      "sourceSha256": "8aedbda62d003529fb7e222c4605b54ec28077c66282dc3a61ed05ee30ecddb4",
+      "bodySha256": "151d5fdfdd4fb61aa29016d9f443e77b6d45e7c9c58ad5764e9f04be2d895fef",
+      "target": "content/en-US/library/still-they-did-not-repent.mdx",
+      "websiteBodySha256": "963e7f3f3771c2efac588bad01f698796538fa7e62f8c88be825ccf65444fb9a",
+      "originalArchive": "artifacts/review/sermons/revelation-9-20-21-still-they-did-not-repent/2026-10-11-Still-They-Did-Not-Repent-EN.md"
+    }
+  ],
+  "bodyPreservation": "All source paragraphs and wording retained byte-for-byte. Sole presentation adaptation: the original leading H1 is rendered by the existing metadata-driven page H1, avoiding a duplicate title as required by validation. Exact original files are retained alongside this manifest.",
+  "category": {
+    "zh-CN": "群体 → 主日信息与活动",
+    "en-US": "Community → Sunday Messages and Activities"
+  },
+  "communityEntry": "/community/sunday",
+  "archiveStatus": "PENDING: existing local Obsidian vault not mounted",
+  "audioStatus": "PENDING: existing local Voicebox unavailable",
+  "validation": {
+    "tests": 212,
+    "passed": 212,
+    "failed": 0,
+    "skipped": 0,
+    "checks": [
+      "lint",
+      "typecheck",
+      "validate:architecture",
+      "validate:content",
+      "test",
+      "secret scan",
+      "fiction ingestion",
+      "build",
+      "validate:static-export",
+      "local HTTP bilingual sermon and Sunday links",
+      "source-byte and paragraph integrity"
+    ],
+    "staticRoutes": "326/326",
+    "contentWarnings": 83,
+    "sourceWhitespace": "Original Markdown two-space hard breaks intentionally preserved; git diff --check reports those source-authored spaces."
+  }
+}
