@@ -59,3 +59,12 @@ None. ADR-0030 and ADR-0031 remain unchanged.
 
 ## Superseded By
 None.
+
+## Owner-authorized one-time static sermon release exception — 2026-10-17
+Paul Zhang explicitly authorized expedited publication of the existing approved bilingual Revelation 9:20–21 recordings and requested a documented exception instead of silent bypass. This exception applies only to canonical ID `sermon-revelation-9-20-21` and the two immutable MP3 hashes in `config/media-publishing/releases/sermon-revelation-9-20-21.json`.
+
+For these legacy recordings only, recorded owner listening/local-player acceptance and explicit publication authorization, retained in the reviewed GitHub release record, substitute for the not-yet-activated administration service and full historical generation-configuration proof. The release voice hash identifies the documented existing profile/model descriptor; it is not represented as a reconstruction of all historical generation parameters. Pre-release protected preview and real-iPhone testing are explicitly deferred under the expedited instruction; actual iPhone compatibility remains unverified until the owner tests production.
+
+Retain exact authoritative MDX hashes, language/voice mapping, audio hashes/sizes, owner subject, authorization source/date, narration version, and this exception identity. CI must verify those bindings before merge. No generation, paid calls, new infrastructure, manuscript edits, branch-protection changes or blanket approval for future audio is permitted. Existing required `validate`, independent technical review, protected PR merge, main revalidation/deployment, public delivery verification and reviewed rollback remain mandatory. No fake private-preview result or production-governance-service activation may be claimed.
+
+The owner may perform distinct listening review and publication authorization acts in the single-owner workflow. Codex may merge/deploy only under the owner's explicit release instruction after required checks pass. Details and rollback: `docs/implementation/sermon-revelation-9-20-21-audio-release.md`.

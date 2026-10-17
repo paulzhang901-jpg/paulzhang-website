@@ -2,6 +2,7 @@
 
 import {useCallback, useEffect, useRef, useState} from "react";
 import type {ContentLanguage} from "@/types/content";
+import {claimNarration, releaseNarration} from "./narration-playback";
 import {chooseEnglishVoice, ENGLISH_VOICE_STORAGE_KEY, rankEnglishVoices} from "./english-voice-ranking";
 import {chooseChineseVoice, compatibleVoice, needsSpeechQueueReset, nextSpeechState, speechErrorMessage, type SpeechPlaybackState} from "./mobile-speech";
 
@@ -56,6 +57,7 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   const index = useRef(0);
   const epoch = useRef(0);
   const active = useRef(false);
+  const narrationOwner = useRef(Symbol("browser-narration"));
   const rateRef = useRef<Rate>(1);
   const voice = useRef<SpeechSynthesisVoice | null>(null);
   const [englishVoices, setEnglishVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -67,6 +69,7 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   const labels = translations[locale];
 
   const cancel = useCallback(() => {
+    releaseNarration(narrationOwner.current);
     epoch.current++;
     active.current = false;
     clearWatchdog();
@@ -177,6 +180,7 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
   useEffect(() => { speakRef.current = speakChunk; }, [speakChunk]);
 
   const playFromStart = () => {
+    claimNarration(narrationOwner.current, cancel);
     // Keep the first speak() synchronous with the user click for iOS user activation.
     // Avoid cancel() on an idle iOS WebKit engine immediately before speak().
     // Invalidate old callbacks without touching the engine unless a queue is active.
@@ -254,6 +258,7 @@ export function ReadAloudPlayer({locale, title, contentId}: {locale: ContentLang
     epoch.current++;
     active.current = false;
     clearWatchdog();
+    releaseNarration(narrationOwner.current);
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   }, [contentId, locale]);
 
