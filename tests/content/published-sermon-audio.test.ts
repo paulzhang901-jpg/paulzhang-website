@@ -41,3 +41,25 @@ test("published bilingual sermon audio matches the owner-authorized unchanged so
   assert.equal(hash(audio),entry.audioSha256);
  }
 });
+
+test("Knowledge and Wisdom candidate players bind both approved MP3s to unchanged canonical articles", () => {
+ const release = JSON.parse(fs.readFileSync("config/media-publishing/releases/knowledge-and-wisdom.json", "utf8"));
+ const catalog = validateNarrationCatalog(JSON.parse(fs.readFileSync("config/media-publishing/published-narrations.json", "utf8")));
+ const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
+ const items = discoverAndParseContent().map(normalizeContent).filter(item => item.canonicalId === release.canonicalId);
+ assert.equal(items.length, 2);
+ assert.equal(release.adr, "ADR-0033");
+ assert.equal(release.listeningApproval, "OWNER_APPROVED_BOTH_LANGUAGES");
+ for (const item of items) {
+  const asset = release.assets.find((row: {locale: string}) => row.locale === item.language);
+  const entry = catalog.records.find(row => row.canonicalId === item.canonicalId && row.locale === item.language);
+  assert.ok(asset); assert.ok(entry);
+  assert.equal(hash(fs.readFileSync(asset.sourcePath)), entry.sourceSha256);
+  assert.equal(narrationPresentationHash(item), entry.presentationSha256);
+  assert.equal(hash(fs.readFileSync("public" + entry.src)), entry.audioSha256);
+  assert.equal(fs.statSync("public" + entry.src).size, asset.bytes);
+  assert.equal(hash(JSON.stringify(asset.voice)), entry.voiceConfigSha256);
+  assert.deepEqual(resolvePublishedNarration(item), {src: entry.src, audioSha256: entry.audioSha256});
+  assert.equal(resolvePublishedNarration({...item, body: item.body + " changed"}), undefined);
+ }
+});
