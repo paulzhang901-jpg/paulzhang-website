@@ -50,6 +50,8 @@ function formatScripture(reference: NormalizedContentItem["scriptureRefs"][numbe
 }
 
 export async function ContentPage({item, repository}: {item: NormalizedContentItem; repository: ContentRepository}) {
+  // Bind narration to canonical content before the sermon display-body projection.
+  const narrationSource = repository.getContentBySlug(item.domain, item.slug, item.language) ?? item;
   const copy = libraryCopy[item.language];
   const isStory = item.domain === "stories";
   const isSermon = item.contentType === "sermon";
@@ -89,7 +91,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
       </Container>
     </Section>
     <Section>
-      <Container><ReadingContainer className="px-0"><ArticleNarration locale={item.language} title={display(item.title)} contentId={"read-aloud-body-" + item.id} narration={resolvePublishedNarration(item)} /><div id={"read-aloud-body-" + item.id} data-read-aloud-content>{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={readingBody} components={mdxComponents} /></article>}</div></ReadingContainer></Container>
+      <Container><ReadingContainer className="px-0"><ArticleNarration locale={item.language} title={display(item.title)} contentId={"read-aloud-body-" + item.id} narration={resolvePublishedNarration(narrationSource)} /><div id={"read-aloud-body-" + item.id} data-read-aloud-content>{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={readingBody} components={mdxComponents} /></article>}</div></ReadingContainer></Container>
     </Section>
     <Section className="border-t bg-muted/40">
       <Container>
