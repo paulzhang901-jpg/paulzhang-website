@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "canonicalId": "sermon-revelation-9-20-21",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "f94c663451ba5d77ac37b2bbdf81b56c0e1ff8b1abfa47155f517c184ba68f0e",
+      "presentationSha256": "d683d7778c80a6eba56fbb909f95e05e2e355f29016056a31650cc1e2363fcc0",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "audioSha256": "051402cbabaf7f999ff367335d49eca60d731033de486a22e6b7934f5e3b4597",
+      "voiceConfigSha256": "3e0d3e99bfb3310eec3463810eee9da04c668e3fd273b9f455a4019a50ae9a3f",
+      "voiceProfileId": "244bbed5-2976-4803-9af0-55d15326bffb",
+      "narrationVersion": 1,
+      "publicationEventId": "owner-expedited-revelation-9-20-21-20261017",
+      "src": "/media/narration/051402cbabaf7f999ff367335d49eca60d731033de486a22e6b7934f5e3b4597.mp3"
+    },
+    {
+      "canonicalId": "sermon-revelation-9-20-21",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "9d2e8c92851e570f5d04a6266959402863168f7d708ff6510ee24b124039c78f",
+      "presentationSha256": "ad13b5f7a17cba3d6c74312ebe8b1366c06f59167f572ab9730879b9b883d394",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "audioSha256": "f6273a399805a30c51eb06c112a74adc412911d87c8f84769fb9169df0c3bcdf",
+      "voiceConfigSha256": "16a523d9e512359753ce96003afc041e4453e2c6d8b02bec24331ac7c2d639ac",
+      "voiceProfileId": "1ab6bf84-7d30-4983-ac6c-13a1acc296d2",
+      "narrationVersion": 1,
+      "publicationEventId": "owner-expedited-revelation-9-20-21-20261017",
+      "src": "/media/narration/f6273a399805a30c51eb06c112a74adc412911d87c8f84769fb9169df0c3bcdf.mp3"
+    }
+  ]
+}
