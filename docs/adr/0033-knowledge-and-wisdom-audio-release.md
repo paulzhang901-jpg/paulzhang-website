@@ -47,3 +47,6 @@ Owner decision recorded: the direct “OWNER APPROVAL — PR #88” instruction 
 
 ## Owner approval record — 2026-10-17
 Direct instruction: “I explicitly approve the proposed ADR-0033 GitHub release-record mechanism for the approved Chinese and English MP3 files of \"The Difference Between Knowledge and Wisdom\".” Recorded by Codex as the owner's execution agent. This is a conversation-sourced approval, not a fabricated GitHub review or protected-preview result. PR may now be marked ready for technical review; production remains blocked until the remaining gates pass.
+
+## Protected preview checkpoint
+The existing Cloudflare Pages account login is available, but the Access API returned HTTP 403 `access.api.error.not_enabled`. Access is not enabled for this account; there is no protected preview URL. Owner action: enable Access and the existing Pages project's preview access policy in Cloudflare, allowing owner access. Do not upload candidate MP3s before verifying anonymous denial on preview URLs. No production domain policy is to be changed.

@@ -46,5 +46,11 @@
     "date": "2026-10-17",
     "recordedBy": "Codex as authorized execution agent",
     "githubReviewClaimed": false
+  },
+  "protectedPreviewBlocker": {
+    "status": "ACCESS_NOT_ENABLED",
+    "apiResult": "HTTP 403: access.api.error.not_enabled",
+    "requiredOwnerAction": "Cloudflare Workers & Pages > paulzhang-website-preview > Settings > General > Enable access policy; allow owner access",
+    "candidateMediaUploaded": false
   }
 }
