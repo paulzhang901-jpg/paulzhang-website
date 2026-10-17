@@ -53,4 +53,4 @@ None.
 
 - [0030 Controlled Bilingual AI Audio and Video Publishing](./0030-ai-audio-video-publishing.md) — Proposed.
 
-- [0033 Knowledge and Wisdom Audio Release Decision](./0033-knowledge-and-wisdom-audio-release.md) — Proposed; owner approval and protected iPhone preview required.
+- [0033 Knowledge and Wisdom Audio Release Decision](./0033-knowledge-and-wisdom-audio-release.md) — Accepted; protected preview and actual iPhone acceptance required before publication.

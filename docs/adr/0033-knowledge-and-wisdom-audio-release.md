@@ -1,6 +1,6 @@
 # ADR-0033 — Knowledge and Wisdom audio release decision
 
-Status: Proposed — owner review required; not publication authorization
+Status: Accepted — owner explicitly approved the bounded mechanism on 2026-10-17; release gates remain pending
 Scope: V1 delivery of existing audio only; ARCHITECTURE CHANGE to the bounded release boundary
 Decision owner: Paul Zhang
 Architecture references: ADR-0032, ADR-0021; existing static deployment contract
@@ -22,8 +22,8 @@ Source hash policy: SHA-256 of exact repository MDX bytes. Audio hash policy: SH
 
 English technical evidence: 39 preserved ordered segments; generation inputs cover the entire approved article; full decode passed; duration 879.5605 seconds; full-article automatic transcription similarity 96.7%. Automated comparison is not human listening. No candidate audio is included in this documentation PR or exposed at a public URL.
 
-## Proposed bounded decision — NOT accepted
-For only these exact candidates and source hashes, permit a reviewed GitHub release record to serve as the owner identity/provenance and retained release-decision record instead of activating the unimplemented production administration service. This changes ADR-0032's release mechanism and therefore needs explicit owner approval of this ADR; ordinary publication instructions alone are not treated as approval of this proposal. The separate sermon exception is not reused.
+## Accepted bounded decision
+For only these exact candidates and source hashes, permit a reviewed GitHub release record to serve as the owner identity/provenance and retained release-decision record instead of activating the unimplemented production administration service. The owner explicitly approved this ADR's mechanism in the “OWNER APPROVAL — PR #88” instruction on 2026-10-17. This acceptance is limited to the exact candidates below and does not assert iPhone acceptance. The separate sermon exception is not reused.
 
 Retain separate listening and publication acts, all source/voice/audio bindings, independent technical review, the required PR validation, protected merge, main revalidation/deployment and reviewed rollback. No generic publishing function is enabled. Before implementation, after owner acceptance, update the affected architecture documents and exact-asset registry/schema constraints. Unknown historical Chinese generation settings must remain explicitly unknown.
 
@@ -35,12 +35,15 @@ Record the protected preview URL, exact source/audio hashes and reviewer identit
 After those gates: use the existing player and exact immutable MP3 bindings in one scoped release PR; run content, translation, architecture, application, security and static-export validation; obtain independent technical review; merge only after required checks and publication authorization. Let the existing main GitHub Actions job deploy. Verify both production article players, byte-identical downloads and range delivery. Verify the existing canonical Obsidian archive relationship without duplicating or editing article bodies.
 
 ## Allowed paths and impacts
-Current proposal: this ADR, ADR index, and non-runtime candidate binding evidence only. Future implementation, after acceptance: exact release provenance, exact catalog bindings, two hash-named assets, exact-asset budget checks and focused tests. Article MDX, routes, player design, analytics, privacy boundaries, hosting and workflows remain unchanged. No new analytics or private-data logging. Rollback uses a reviewed removal/revert of publication bindings while retaining original recordings.
+Approval record changes: this ADR, ADR index, release-boundary architecture note and non-runtime candidate binding evidence. Future implementation, after acceptance: exact release provenance, exact catalog bindings, two hash-named assets, exact-asset budget checks and focused tests. Article MDX, routes, player design, analytics, privacy boundaries, hosting and workflows remain unchanged. No new analytics or private-data logging. Rollback uses a reviewed removal/revert of publication bindings while retaining original recordings.
 
 ## Current blockers
-Owner acceptance of this specific proposed ADR; approved protected preview mechanism and real iPhone results; independently reviewed release provenance and required checks. Production remains NOT PUBLISHED. No preview URL exists yet. Do not invent one or mark these items complete.
+Approved protected preview mechanism and real iPhone results; independently reviewed release provenance and required checks. Production remains NOT PUBLISHED. No preview URL exists yet. Do not invent one or mark these items complete.
 
 ## Candidate audio-to-player evidence
 The owner subsequently states both completed MP3 files are approved. Exact candidate mappings, article routes, source/presentation/audio hashes, byte counts and the existing player/download path are recorded in [candidate bindings](../implementation/knowledge-and-wisdom-audio-candidate-bindings.json). These records are review evidence only; they are not loaded by the website. Both playback and download would use the same immutable locale-specific MP3 URL. No MP3 bytes have been uploaded and no runtime catalog mapping is activated.
 
-Next owner decision: explicitly approve ADR-0033's bounded GitHub release-record mechanism for these exact candidates. This is separate from approval of the audio. This proposal remains PROPOSED until that decision. Protected preview selection/authorization and actual iPhone acceptance remain pending; approving this proposal does not assert those tests passed.
+Owner decision recorded: the direct “OWNER APPROVAL — PR #88” instruction explicitly accepts the GitHub release-record mechanism for these approved Chinese and English MP3s. This is separate from the already recorded audio listening approval. Protected preview setup and actual iPhone acceptance remain pending. The owner explicitly requires branch protection and successful iPhone acceptance before merge/deploy.
+
+## Owner approval record — 2026-10-17
+Direct instruction: “I explicitly approve the proposed ADR-0033 GitHub release-record mechanism for the approved Chinese and English MP3 files of \"The Difference Between Knowledge and Wisdom\".” Recorded by Codex as the owner's execution agent. This is a conversation-sourced approval, not a fabricated GitHub review or protected-preview result. PR may now be marked ready for technical review; production remains blocked until the remaining gates pass.

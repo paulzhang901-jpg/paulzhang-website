@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "purpose": "Release review evidence only; not imported by runtime",
-  "adr": "ADR-0033 PROPOSED",
+  "adr": "ADR-0033 ACCEPTED by owner instruction 2026-10-17",
   "protectedPreviewUrl": null,
   "actualIPhoneAcceptance": "PENDING",
   "records": [
@@ -39,5 +39,12 @@
       "approval": "Owner states both existing completed MP3 files are approved; this does not accept ADR-0033",
       "state": "CANDIDATE_NOT_PUBLISHED"
     }
-  ]
+  ],
+  "ownerMechanismApproval": {
+    "status": "ACCEPTED",
+    "source": "Direct owner instruction headed OWNER APPROVAL — PR #88",
+    "date": "2026-10-17",
+    "recordedBy": "Codex as authorized execution agent",
+    "githubReviewClaimed": false
+  }
 }
