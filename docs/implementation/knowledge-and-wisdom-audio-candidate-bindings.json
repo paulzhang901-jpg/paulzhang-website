@@ -3,7 +3,7 @@
   "purpose": "Release review evidence only; not imported by runtime",
   "adr": "ADR-0033 ACCEPTED by owner instruction 2026-10-17",
   "protectedPreviewUrl": "https://efce8b6d.paulzhang-website-preview.pages.dev",
-  "actualIPhoneAcceptance": "PENDING",
+  "actualIPhoneAcceptance": "OWNER_REPORTED_PASS",
   "records": [
     {
       "canonicalId": "article-knowledge-and-wisdom-2026-10-03",
@@ -50,6 +50,7 @@
   "protectedPreviewBlocker": {
     "status": "RESOLVED",
     "evidence": "Both candidate article and direct MP3 paths redirect anonymous requests to Cloudflare Access login",
-    "actualIPhoneAcceptance": "PENDING"
-  }
+    "actualIPhoneAcceptance": "OWNER_REPORTED_PASS"
+  },
+  "ownerIPhoneAcceptanceSource": "Direct owner instruction: IPHONE ACCEPTANCE PASSED — PR #88; both languages playback and MP3 downloads verified"
 }

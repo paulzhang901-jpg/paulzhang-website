@@ -7,17 +7,17 @@
   "ownerSubject": "paulzhang901-jpg",
   "ownerAuthorizationDate": "2026-10-17",
   "adr": "ADR-0033",
-  "releaseStatus": "PROTECTED_PREVIEW_DEPLOYED_NOT_PRODUCTION",
+  "releaseStatus": "OWNER_APPROVED_FOR_PRODUCTION",
   "listeningApproval": "OWNER_APPROVED_BOTH_LANGUAGES",
   "protectedPreview": {
     "url": "https://efce8b6d.paulzhang-website-preview.pages.dev",
     "branch": "knowledge-wisdom-pr88",
     "sourceCommit": "f4f0c3a5e451c68c4fbe03177ae7a8993f5e44e5",
     "anonymousArticleAndMp3Requests": "All four return HTTP 302 to Cloudflare Access login",
-    "ownerAuthenticatedPlayback": "PENDING_IPHONE_ACCEPTANCE",
+    "ownerAuthenticatedPlayback": "OWNER_REPORTED_PASS",
     "recordedAt": "2026-10-17T17:13:51.875832+00:00"
   },
-  "actualIPhoneAcceptance": "PENDING",
+  "actualIPhoneAcceptance": "OWNER_REPORTED_PASS",
   "assets": [
     {
       "canonicalId": "article-knowledge-and-wisdom-2026-10-03",
@@ -80,8 +80,18 @@
     "staticExport": "PASS",
     "localePlayerAndDownloadBindings": "PASS for both exact hashes",
     "additionalUnconfiguredDiscoveryTest": "FAIL existing fixed count: actual 16, expected 15; article/content unchanged",
-    "githubChecksForImplementation": "NOT_RUN; implementation retained locally until protected preview",
-    "actualIPhoneAcceptance": "PENDING",
+    "githubChecksForImplementation": "REQUIRED_ON_FINAL_PR_HEAD",
+    "actualIPhoneAcceptance": "OWNER_REPORTED_PASS",
     "independentTechnicalReview": "PASS: Code Reviewer agent; no actionable scoped correctness/security findings; not human audio or device acceptance"
+  },
+  "iphoneAcceptanceEvidence": {
+    "source": "Direct owner instruction headed IPHONE ACCEPTANCE PASSED \u2014 PR #88",
+    "statement": "The owner has verified both Chinese and English audio playback and MP3 downloads on iPhone.",
+    "recordedAt": "2026-10-17T17:23:19.640740+00:00",
+    "recordedBy": "Codex as authorized execution agent",
+    "deviceModel": "NOT_PROVIDED",
+    "iosVersion": "NOT_PROVIDED",
+    "browser": "NOT_PROVIDED",
+    "inferredDeviceDetails": false
   }
 }

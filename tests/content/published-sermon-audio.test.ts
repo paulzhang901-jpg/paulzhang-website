@@ -49,6 +49,8 @@ test("Knowledge and Wisdom candidate players bind both approved MP3s to unchange
  const items = discoverAndParseContent().map(normalizeContent).filter(item => item.canonicalId === release.canonicalId);
  assert.equal(items.length, 2);
  assert.equal(release.adr, "ADR-0033");
+ assert.equal(release.actualIPhoneAcceptance, "OWNER_REPORTED_PASS");
+ assert.equal(release.protectedPreview.ownerAuthenticatedPlayback, "OWNER_REPORTED_PASS");
  assert.equal(release.listeningApproval, "OWNER_APPROVED_BOTH_LANGUAGES");
  for (const item of items) {
   const asset = release.assets.find((row: {locale: string}) => row.locale === item.language);
