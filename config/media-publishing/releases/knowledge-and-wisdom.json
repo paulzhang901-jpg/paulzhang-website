@@ -7,9 +7,16 @@
   "ownerSubject": "paulzhang901-jpg",
   "ownerAuthorizationDate": "2026-10-17",
   "adr": "ADR-0033",
-  "releaseStatus": "LOCAL_CANDIDATE_NOT_DEPLOYED",
+  "releaseStatus": "PROTECTED_PREVIEW_DEPLOYED_NOT_PRODUCTION",
   "listeningApproval": "OWNER_APPROVED_BOTH_LANGUAGES",
-  "protectedPreview": "PENDING",
+  "protectedPreview": {
+    "url": "https://efce8b6d.paulzhang-website-preview.pages.dev",
+    "branch": "knowledge-wisdom-pr88",
+    "sourceCommit": "f4f0c3a5e451c68c4fbe03177ae7a8993f5e44e5",
+    "anonymousArticleAndMp3Requests": "All four return HTTP 302 to Cloudflare Access login",
+    "ownerAuthenticatedPlayback": "PENDING_IPHONE_ACCEPTANCE",
+    "recordedAt": "2026-10-17T17:13:51.875832+00:00"
+  },
   "actualIPhoneAcceptance": "PENDING",
   "assets": [
     {

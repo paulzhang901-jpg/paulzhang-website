@@ -38,7 +38,7 @@ After those gates: use the existing player and exact immutable MP3 bindings in o
 Approval record changes: this ADR, ADR index, release-boundary architecture note and non-runtime candidate binding evidence. Future implementation, after acceptance: exact release provenance, exact catalog bindings, two hash-named assets, exact-asset budget checks and focused tests. Article MDX, routes, player design, analytics, privacy boundaries, hosting and workflows remain unchanged. No new analytics or private-data logging. Rollback uses a reviewed removal/revert of publication bindings while retaining original recordings.
 
 ## Current blockers
-Approved protected preview mechanism and real iPhone results; independently reviewed release provenance and required checks. Production remains NOT PUBLISHED. No preview URL exists yet. Do not invent one or mark these items complete.
+Real iPhone results and required GitHub checks for the final implementation remain pending. Production remains NOT PUBLISHED. The protected preview checkpoint below supersedes the earlier Access blocker.
 
 ## Candidate audio-to-player evidence
 The owner subsequently states both completed MP3 files are approved. Exact candidate mappings, article routes, source/presentation/audio hashes, byte counts and the existing player/download path are recorded in [candidate bindings](../implementation/knowledge-and-wisdom-audio-candidate-bindings.json). These records are review evidence only; they are not loaded by the website. Both playback and download would use the same immutable locale-specific MP3 URL. No MP3 bytes have been uploaded and no runtime catalog mapping is activated.
@@ -50,3 +50,6 @@ Direct instruction: “I explicitly approve the proposed ADR-0033 GitHub release
 
 ## Protected preview checkpoint
 The existing Cloudflare Pages account login is available, but the Access API returned HTTP 403 `access.api.error.not_enabled`. Access is not enabled for this account; there is no protected preview URL. Owner action: enable Access and the existing Pages project's preview access policy in Cloudflare, allowing owner access. Do not upload candidate MP3s before verifying anonymous denial on preview URLs. No production domain policy is to be changed.
+
+## Protected preview deployed — owner iPhone acceptance pending
+The existing Cloudflare Pages project now enforces Access. The existing candidate static export from local commit `f4f0c3a5e451c68c4fbe03177ae7a8993f5e44e5` was deployed only to preview branch `knowledge-wisdom-pr88`: https://efce8b6d.paulzhang-website-preview.pages.dev . Both article routes and both direct MP3 URLs return anonymous HTTP 302 to the Cloudflare Access login. No production deployment or iPhone acceptance is claimed. Independent technical review passed; actual owner iPhone playback/download testing is pending. After acceptance, push the exact release files to PR #88, require final-commit GitHub checks, and merge/deploy through the existing main workflow.
