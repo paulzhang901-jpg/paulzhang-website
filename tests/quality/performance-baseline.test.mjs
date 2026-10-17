@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import {createHash} from "node:crypto";
 import path from "node:path";
 import test from "node:test";
 
@@ -20,6 +21,7 @@ test("Client Components remain explicitly reviewed and minimal", () => {
   assert.deepEqual(clientFiles, [
     "src/components/analytics/google-analytics-consent.tsx",
     "src/components/content/ai-audio-player.tsx",
+    "src/components/content/article-narration.tsx",
     "src/components/content/read-aloud-player.tsx",
     "src/components/content/together-submission-form.tsx",
     "src/components/diagnostics/iphone-audio-diagnostics.tsx",
@@ -31,10 +33,21 @@ test("Client Components remain explicitly reviewed and minimal", () => {
   ]);
 });
 
-test("raw public assets stay below the V1 one-megabyte safeguard", () => {
+test("raw public assets retain the V1 budget except exact owner-approved sermon recordings", () => {
+  // ADR-0032's 2026-10-17 exception: exact identities only, never a directory-wide exemption.
+  const approved = {
+    "media/narration/051402cbabaf7f999ff367335d49eca60d731033de486a22e6b7934f5e3b4597.mp3": 15238296,
+    "media/narration/f6273a399805a30c51eb06c112a74adc412911d87c8f84769fb9169df0c3bcdf.mp3": 20377704,
+  };
   const publicRoot = path.join(root, "public");
+  for (const [relative, bytes] of Object.entries(approved)) {
+    const content = fs.readFileSync(path.join(publicRoot, relative));
+    assert.equal(content.length, bytes);
+    assert.equal(createHash("sha256").update(content).digest("hex"), path.basename(relative, ".mp3"));
+  }
   const oversized = filesWithin(publicRoot)
     .filter((file) => !/^ebooks\/[^/]+\.pdf$/.test(path.relative(publicRoot, file)))
+    .filter((file) => !Object.hasOwn(approved, path.relative(publicRoot, file)))
     .filter((file) => fs.statSync(file).size > 1024 * 1024)
     .map((file) => path.relative(root, file));
   assert.deepEqual(oversized, []);

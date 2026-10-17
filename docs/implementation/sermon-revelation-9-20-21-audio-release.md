@@ -11,6 +11,8 @@ For this one release the owner-directed exception defers protected preview and a
 
 Delivery: HTML5 MP3 is preferred only for a matching source/locale publication entry; existing browser synthesis remains fallback. One narration engine at a time, no autoplay, local synthetic-voice disclosure, seeking, speed and download. No route/content/metadata/SEO changes. No new analytics or private-data logging.
 
+Performance review: the minimal ArticleNarration client wrapper joins the explicit reviewed-component list. The general 1 MB public-asset safeguard remains enforced; only the two exact approved MP3 filenames, byte counts and SHA-256 hashes receive this release's explicit exception. No narration-directory exemption or global budget increase is allowed. Audio preload remains metadata-only.
+
 Before merge: verify exact transferred MP3 bytes, both canonical MDX hashes, presentation hashes and release bindings through the existing content-integrity tests; obtain independent technical review and successful GitHub Actions validate. Do not bypass rulesets. Merge and deploy only through the existing main workflow.
 
 After deployment: verify both public pages show the AI player, both MP3 URLs return the approved bytes, and seeking/range delivery works. Owner performs real-iPhone playback/download verification afterward; retain that result separately.
