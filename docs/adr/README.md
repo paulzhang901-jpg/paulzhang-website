@@ -52,3 +52,5 @@ None.
 - [0029 Temporary Isolated iPhone Audio Diagnostics](./0029-isolated-iphone-audio-diagnostics.md) — Proposed.
 
 - [0030 Controlled Bilingual AI Audio and Video Publishing](./0030-ai-audio-video-publishing.md) — Proposed.
+
+- [0033 Knowledge and Wisdom Audio Release Decision](./0033-knowledge-and-wisdom-audio-release.md) — Proposed; owner approval and protected iPhone preview required.
