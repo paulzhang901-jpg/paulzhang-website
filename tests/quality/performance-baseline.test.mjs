@@ -33,11 +33,13 @@ test("Client Components remain explicitly reviewed and minimal", () => {
   ]);
 });
 
-test("raw public assets retain the V1 budget except exact owner-approved sermon recordings", () => {
-  // ADR-0032's 2026-10-17 exception: exact identities only, never a directory-wide exemption.
+test("raw public assets retain the V1 budget except exact owner-approved narration recordings", () => {
+  // ADR-0032 sermon exception and accepted ADR-0033: exact identities only, never a directory-wide exemption.
   const approved = {
     "media/narration/051402cbabaf7f999ff367335d49eca60d731033de486a22e6b7934f5e3b4597.mp3": 15238296,
     "media/narration/f6273a399805a30c51eb06c112a74adc412911d87c8f84769fb9169df0c3bcdf.mp3": 20377704,
+    "media/narration/829c386e3dffc92194d2c020ac2a4bd3874671e15e79fa741c8f56fbfeb3edc1.mp3": 11128915,
+    "media/narration/735b3eee7cbea8f37127ea7c0eafd292d00e4a02194e1fdfdfc88ee64c74a8f6.mp3": 14074412,
   };
   const publicRoot = path.join(root, "public");
   for (const [relative, bytes] of Object.entries(approved)) {

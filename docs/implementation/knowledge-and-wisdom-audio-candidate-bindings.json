@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Release review evidence only; not imported by runtime",
+  "adr": "ADR-0033 ACCEPTED by owner instruction 2026-10-17",
+  "protectedPreviewUrl": "https://efce8b6d.paulzhang-website-preview.pages.dev",
+  "actualIPhoneAcceptance": "OWNER_REPORTED_PASS",
+  "records": [
+    {
+      "canonicalId": "article-knowledge-and-wisdom-2026-10-03",
+      "locale": "zh-CN",
+      "sourcePath": "content/zh-CN/library/knowledge-and-wisdom.mdx",
+      "articleRoute": "/library/knowledge-and-wisdom",
+      "localFileName": "narration-web.mp3",
+      "audioSha256": "829c386e3dffc92194d2c020ac2a4bd3874671e15e79fa741c8f56fbfeb3edc1",
+      "bytes": 11128915,
+      "sourceSha256": "5638b8690fdff7f2bcc3089e71f76348af50c4e127c5ae14eeec6c34b9821549",
+      "presentationSha256": "7be7d53b4628088f4568e89241f36a6d0939a0fd38a5227d5ebd1a758f4b3606",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "proposedSrc": "/media/narration/829c386e3dffc92194d2c020ac2a4bd3874671e15e79fa741c8f56fbfeb3edc1.mp3",
+      "player": "ArticleNarration -> AiAudioPlayer",
+      "download": "Existing AiAudioPlayer download link to the same proposedSrc",
+      "approval": "Owner states both existing completed MP3 files are approved; this does not accept ADR-0033",
+      "state": "CANDIDATE_NOT_PUBLISHED"
+    },
+    {
+      "canonicalId": "article-knowledge-and-wisdom-2026-10-03",
+      "locale": "en-US",
+      "sourcePath": "content/en-US/library/knowledge-and-wisdom.mdx",
+      "articleRoute": "/en/library/knowledge-and-wisdom",
+      "localFileName": "narration-en-web.mp3",
+      "audioSha256": "735b3eee7cbea8f37127ea7c0eafd292d00e4a02194e1fdfdfc88ee64c74a8f6",
+      "bytes": 14074412,
+      "sourceSha256": "09f556892b33ce51696323ac398be0657454d671284ead7d2f4f53200007c28f",
+      "presentationSha256": "4b5c7483eebb0b8a4a60c370b2384c37146c41549359def488a32f0aba378f07",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "proposedSrc": "/media/narration/735b3eee7cbea8f37127ea7c0eafd292d00e4a02194e1fdfdfc88ee64c74a8f6.mp3",
+      "player": "ArticleNarration -> AiAudioPlayer",
+      "download": "Existing AiAudioPlayer download link to the same proposedSrc",
+      "approval": "Owner states both existing completed MP3 files are approved; this does not accept ADR-0033",
+      "state": "CANDIDATE_NOT_PUBLISHED"
+    }
+  ],
+  "ownerMechanismApproval": {
+    "status": "ACCEPTED",
+    "source": "Direct owner instruction headed OWNER APPROVAL — PR #88",
+    "date": "2026-10-17",
+    "recordedBy": "Codex as authorized execution agent",
+    "githubReviewClaimed": false
+  },
+  "protectedPreviewBlocker": {
+    "status": "RESOLVED",
+    "evidence": "Both candidate article and direct MP3 paths redirect anonymous requests to Cloudflare Access login",
+    "actualIPhoneAcceptance": "OWNER_REPORTED_PASS"
+  },
+  "ownerIPhoneAcceptanceSource": "Direct owner instruction: IPHONE ACCEPTANCE PASSED — PR #88; both languages playback and MP3 downloads verified"
+}

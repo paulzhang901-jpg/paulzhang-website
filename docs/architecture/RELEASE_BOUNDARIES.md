@@ -18,3 +18,6 @@ Future scope must not enter V1 for technical convenience. See [Version Scope](..
 
 ### Bounded existing-sermon audio release
 The 2026-10-17 owner-authorized exception in ADR-0032 permits only the two approved Revelation 9:20–21 static MP3 assets and existing player integration through normal required validation and main deployment. It does not activate production generation or administration infrastructure. The release record binds the unchanged canonical sources and approved immutable assets; protected-preview/iPhone testing is deferred explicitly, not reported as completed.
+
+## Knowledge and Wisdom existing audio — ADR-0033
+The owner-approved ADR-0033 permits only the two exact existing Knowledge and Wisdom candidates to use a reviewed GitHub release record instead of activating the unimplemented narration administration service. Preserve source/voice/audio identity, separate listening and publication acts, protected candidate preview, real iPhone acceptance before production, independent technical review, required PR checks and the ADR-0021 main deployment. No general publication function or another article's exception is activated. See [ADR-0033](../adr/0033-knowledge-and-wisdom-audio-release.md).
