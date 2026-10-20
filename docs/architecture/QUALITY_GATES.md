@@ -50,3 +50,6 @@ Never commit credentials, private keys, environment files containing secrets, or
 - **Accessibility/performance safeguard failure:** fix the regression or document a reviewed exception through governance.
 
 Pull requests must include local evidence for all applicable gates. After merge, the same workflow revalidates `main`.
+
+## Proposed reusable video asset checks
+[ADR-0037](../adr/0037-repeatable-approved-video-releases.md) adds an empty non-runtime release registry and fail-closed fixture-tested validation. The existing 1-MiB default and all legacy exact media exceptions remain. Future registry MP4 exceptions require an Accepted ADR, exact hashes/sizes, complete bilingual media, source/catalog/audio consistency and recorded owner iPhone acceptance; registry claims never authenticate identity. The cumulative public/media ceiling is 256 MiB, including legacy assets. Git history growth and authenticated GitHub final-head approval remain explicit operator review gates.

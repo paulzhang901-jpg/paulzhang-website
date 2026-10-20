@@ -4,6 +4,8 @@ import {createHash} from "node:crypto";
 import path from "node:path";
 import test from "node:test";
 
+import {validateVideoReleases, VIDEO_LIMITS} from "../../src/lib/media-publishing/video-release-policy.mjs";
+
 const root = process.cwd();
 
 function filesWithin(directory) {
@@ -45,7 +47,25 @@ test("raw public assets retain the V1 budget except exact owner-approved media",
     "media/narration/01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63.mp3": 5593940,
     "media/video/50d8104f401ac7747e797f3c6013abe80204c9f4f5f2de4852caf2d44386c20e.mp4": 16908265,
   };
+  const policyAccepted = /^Status: Accepted(?:\s|$)/m.test(fs.readFileSync(path.join(root, "docs/adr/0037-repeatable-approved-video-releases.md"), "utf8"));
+  const read = relative => {
+    const target = path.join(root, relative);
+    assert.ok(!fs.lstatSync(target).isSymbolicLink(), "Media/source symlinks are not permitted");
+    assert.ok(fs.realpathSync(target).startsWith(fs.realpathSync(root) + path.sep), "File must remain inside repository");
+    return fs.readFileSync(target);
+  };
+  const governed = validateVideoReleases(JSON.parse(read("config/media-publishing/governed-video-releases.json")), {
+    policyAccepted, read,
+    catalog: JSON.parse(read("config/media-publishing/published-videos.json")).records,
+    narrations: JSON.parse(read("config/media-publishing/published-narrations.json")).records,
+  });
+  for (const [relative, bytes] of governed) {
+    assert.ok(!Object.hasOwn(approved, relative), "Governed assets cannot redefine legacy exceptions");
+    approved[relative] = bytes;
+  }
   const publicRoot = path.join(root, "public");
+  const mediaBytes = filesWithin(path.join(publicRoot, "media")).reduce((total, file) => total + fs.statSync(file).size, 0);
+  assert.ok(mediaBytes <= VIDEO_LIMITS.repositoryMediaBytes, "Cumulative public/media budget exceeded");
   for (const [relative, bytes] of Object.entries(approved)) {
     const content = fs.readFileSync(path.join(publicRoot, relative));
     assert.equal(content.length, bytes);
