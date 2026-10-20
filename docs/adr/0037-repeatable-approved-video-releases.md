@@ -1,6 +1,6 @@
 # ADR-0037 — Repeatable approved bilingual video releases
 
-Status: Proposed — owner authorized preparing and reviewing this architecture change in Phase 8A.1, not self-acceptance or merge
+Status: Accepted — owner authorized completion and normal merge of PR #90 in the final production release instruction; all per-release gates remain mandatory
 Date: 2026-10-20
 Owner: Paul Zhang
 Classification: ARCHITECTURE CHANGE
@@ -57,3 +57,7 @@ Upon acceptance/merge only: the need to create an individual architecture except
 ## Superseded By
 
 None.
+
+## Owner acceptance and merge authorization
+
+The owner’s direct FINAL PRODUCTION RELEASE instruction explicitly authorizes completing PR #90 and merging it when required checks and reviews are satisfied. Recorded by Codex as execution agent, not as an authenticated human GitHub review/comment. Independent technical review of the proposed validator was completed; two findings were corrected and re-reviewed. The active main ruleset requires a PR and validate status, has zero mandatory approval reviews and no bypass actors. This record does not fabricate a review or grant bypass. Revalidate this final head before normal merge. The owner separately authorizes final publication of both existing videos; that authorization is not evidence that the specific protected preview, iPhone Safari acceptance or human exact-head GitHub acknowledgement has occurred. Those per-release conditions remain required.

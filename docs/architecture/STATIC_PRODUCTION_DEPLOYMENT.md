@@ -65,5 +65,5 @@ Identify production versions by commit SHA and Cloudflare deployment ID. Prefer 
 
 If an automatic deployment fails, do not bypass validation. Correct the deployment/configuration problem through a reviewed PR or perform an explicitly authorized rollback using the procedure above.
 
-## Proposed governed video candidate previews
-[ADR-0037](../adr/0037-repeatable-approved-video-releases.md) proposes reuse of the existing Pages project for isolated, visibly marked/noindex candidate exports, only after anonymous Access protection is verified on HTML and direct media. This proposal does not change the main-only production workflow, authorize an upload or inherit True Faith public-test hosting exceptions. Candidate metadata must not impersonate production approval events; missing Access/authentication blocks preview.
+## Governed video candidate previews
+[ADR-0037](../adr/0037-repeatable-approved-video-releases.md) permits reuse of the existing Pages project for isolated, visibly marked/noindex candidate exports, only after anonymous Access protection is verified on HTML and direct media. This decision does not change the main-only production workflow, authorize an upload or inherit True Faith public-test hosting exceptions. Candidate metadata must not impersonate production approval events; missing Access/authentication blocks preview.
