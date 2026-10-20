@@ -1,11 +1,12 @@
 # Website Information Architecture v1
 
-Approved top-level IA: **HOME · TRUTH LIBRARY · LIFE STORIES · MU CHANGKE FICTION · COMPANIONSHIP · GROWTH PATHWAYS · COMMUNITY · ABOUT · GCCM · MY JOURNEY**.
+Approved top-level IA: **HOME · TRUTH LIBRARY · VIDEOS · LIFE STORIES · MU CHANGKE FICTION · COMPANIONSHIP · GROWTH PATHWAYS · COMMUNITY · ABOUT · GCCM · MY JOURNEY**.
 
 ```text
 /
 ├── /start
 ├── /library
+├── /videos
 ├── /stories
 ├── /fiction
 ├── /together
@@ -23,6 +24,7 @@ Approved top-level IA: **HOME · TRUTH LIBRARY · LIFE STORIES · MU CHANGKE FIC
 | Home `/` | Orient and offer a faithful next step | Visitor | clarity | Reader | start/explore | V1 |
 | Start `/start` | Intent-led entry | Visitor | relevance | Reader | selected intent | V1 |
 | Library `/library` | Trusted truth resources | Visitor/Reader | truth/learning | Returning Reader | read/save/continue | V1 |
+| Videos `/videos` | Canonical article-linked video discovery | Visitor/Reader | accessible teaching/reading | Reader/Returning Reader | related article/audio | V1 |
 | Stories `/stories` | Build trust through authentic life | Visitor/Reader | identification/hope | Returning Reader | related story/companionship | V1 |
 | Mu Changke Fiction `/fiction` | Discover approved fiction works and continue through official reading channels | Visitor/Reader | discovery/imagination | Reader | official reading guidance | V1 |
 | Together `/together` | Voluntary human connection | Reader/Returning Reader | relationship/prayer | Connected | request/contact | V1 entry |
@@ -39,3 +41,6 @@ GCCM must not be the default first-time entry. Navigation labels may change with
 Locale projection follows [ADR-0011](../adr/0011-locale-url-strategy.md): this IA is canonical at unprefixed `zh-CN` routes and is mirrored for `en-US` under `/en`; `/zh` is not part of the IA.
 
 Mu Changke Fiction is governed by [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md). It is an author portfolio, work-discovery layer, and official reading router—not a chapter, manuscript, download, or fiction-distribution platform.
+
+## Video discovery (Phase 7B)
+[ADR-0034](../adr/0034-bilingual-video-discovery.md) adds 视频讲堂 / Videos at `/videos` and `/en/videos` to V1 navigation after Library. It projects approved published media references onto public canonical articles; it is not an independent sermon archive or content source. Playback returns readers to the related article/audio and the existing formation/companionship paths.

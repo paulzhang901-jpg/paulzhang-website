@@ -60,6 +60,36 @@
       "narrationVersion": 1,
       "publicationEventId": "owner-knowledge-and-wisdom-20261017",
       "src": "/media/narration/735b3eee7cbea8f37127ea7c0eafd292d00e4a02194e1fdfdfc88ee64c74a8f6.mp3"
+    },
+    {
+      "canonicalId": "article-what-is-true-faith",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "5040eba91deba1377e99d7c25621b1105429fd10173b8654aff553a78fe1b446",
+      "presentationSha256": "1c20f272d385a20e1074a6efb22eda75d9fe3b5a8a25326a1faa4ee6cf069039",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "audioSha256": "9dcd5012f6d1bb6918e1fe341cd0c9be0431c75ad5dc1725b9516f3471765f74",
+      "voiceConfigSha256": "8063d340ea92a0ec270650d733c27d8d4d37eb469edb3747a84eee8cefae188d",
+      "voiceProfileId": "244bbed5-2976-4803-9af0-55d15326bffb",
+      "narrationVersion": 1,
+      "publicationEventId": "owner-true-faith-20261019",
+      "src": "/media/narration/9dcd5012f6d1bb6918e1fe341cd0c9be0431c75ad5dc1725b9516f3471765f74.mp3"
+    },
+    {
+      "canonicalId": "article-what-is-true-faith",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "879f4483ce25f84100f5782f3a548f541b403f5d7212c1f0468f30318ad9d4f4",
+      "presentationSha256": "58428ed4c427050e3c989a9f1cfbf94455bbe3cbe7227ffeb2e3e632d5f729ad",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "audioSha256": "01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63",
+      "voiceConfigSha256": "1f75524f48b799ff91759682c18b91308c88517711c51846e31219da2877b4b9",
+      "voiceProfileId": "1ab6bf84-7d30-4983-ac6c-13a1acc296d2",
+      "narrationVersion": 1,
+      "publicationEventId": "owner-true-faith-20261019",
+      "src": "/media/narration/01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63.mp3"
     }
   ]
 }

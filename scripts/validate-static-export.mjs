@@ -20,13 +20,18 @@ validateGeneratedRouteArtifacts(productionRoutes, output);
 const littleWheatWork = JSON.parse(fs.readFileSync(path.join(root, "content/works/little-wheat/work.json"), "utf8"));
 const littleWheatEnglish = littleWheatWork.representations.find((representation) => representation.language === "en-US");
 const englishPublic = littleWheatEnglish?.status === "published" && littleWheatEnglish.visibility === "public" && littleWheatEnglish.access_level === "public" && Number.isFinite(Date.parse(littleWheatEnglish.published_at));
-const expectedPlaceholders = englishPublic ? 0 : 1;
+const videoPlaceholderPaths = ["/videos/__static-export-placeholder__", "/en/videos/__static-export-placeholder__"];
+const videoPlaceholderCount = placeholderRoutes.filter(route => videoPlaceholderPaths.includes(route)).length;
+const expectedPlaceholders = (englishPublic ? 0 : 1) + videoPlaceholderCount;
 if (placeholderRoutes.length !== expectedPlaceholders) fail(`expected ${expectedPlaceholders} build-only empty-unit placeholders, found ${placeholderRoutes.length}`);
 
 for (const localePrefix of ["", "en/"]) {
-  const stories = path.join(output, localePrefix, "stories");
-  for (const entry of fs.readdirSync(stories)) {
-    if (entry.startsWith(`${placeholder}.`) || entry === placeholder) fs.rmSync(path.join(stories, entry), {recursive: true, force: true});
+  for (const section of ["stories", "videos"]) {
+    const directory = path.join(output, localePrefix, section);
+    if (!fs.existsSync(directory)) continue;
+    for (const entry of fs.readdirSync(directory)) {
+      if (entry.startsWith(`${placeholder}.`) || entry === placeholder) fs.rmSync(path.join(directory, entry), {recursive: true, force: true});
+    }
   }
 }
 

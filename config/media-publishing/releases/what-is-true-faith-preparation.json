@@ -1,0 +1,92 @@
+{
+  "canonicalId": "article-what-is-true-faith",
+  "slug": "what-is-true-faith",
+  "state": "APPROVED_LOCAL_PREPARATION",
+  "publicationAuthorized": false,
+  "publishedAt": null,
+  "approvalSource": "Paul Phase7E explicit audio/video-approved instruction; manuscript approval Phase7C",
+  "assets": {
+    "what-is-true-faith.zh.md": {
+      "source": "/Users/paulzhang/Documents/ChatGPT/Paul-AI-Ministry-Studio/projects/final-bilingual-publication/what-is-true-faith.zh.md",
+      "sha256": "a24bce2d32cc743a58ab2e850a06144e92737953fa1efaff04c140c394dc7fb6",
+      "bytes": 6758
+    },
+    "what-is-true-faith.zh.mp3": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/03-MP3-Final/what-is-true-faith/phase-7c-20261019/what-is-true-faith.zh.mp3",
+      "sha256": "9dcd5012f6d1bb6918e1fe341cd0c9be0431c75ad5dc1725b9516f3471765f74",
+      "bytes": 4028300
+    },
+    "what-is-true-faith.zh.mp4": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/06-MP4-Final/What-Is-True-Faith/phase-7d-20261019/what-is-true-faith.zh.mp4",
+      "sha256": "0f59573e78ce492ca6f9591eb5c8570d61b26233dee2ad2253d3572bc5f0b9e2",
+      "bytes": 12744840
+    },
+    "what-is-true-faith.zh.srt": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/05-Video-Projects/What-Is-True-Faith/phase-7d-20261019/zh/what-is-true-faith.zh.srt",
+      "sha256": "65b2d6444f5c386f2c182c039968bac1e6eec84d7457e25228a96c2e86d54a0a",
+      "bytes": 10087
+    },
+    "what-is-true-faith.zh.vtt": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/05-Video-Projects/What-Is-True-Faith/phase-7d-20261019/zh/what-is-true-faith.zh.vtt",
+      "sha256": "8ade981732a28403a250ff2ccc08192b53f283cc5c066b41a9bc469c321fe8d3",
+      "bytes": 9810
+    },
+    "what-is-true-faith.zh.poster.png": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/05-Video-Projects/What-Is-True-Faith/phase-7d-20261019/zh/what-is-true-faith.zh.poster.png",
+      "sha256": "bef6cf3459fdb9a1400753260f5f057f98e99337e433b9a474cc4ad733de30e5",
+      "bytes": 48787
+    },
+    "what-is-true-faith.en.md": {
+      "source": "/Users/paulzhang/Documents/ChatGPT/Paul-AI-Ministry-Studio/projects/final-bilingual-publication/what-is-true-faith.en.md",
+      "sha256": "44655b23f27e42d2d82b758e6fa7dae297a11ff1acc7d83015bf3fefbf3a8baf",
+      "bytes": 8301
+    },
+    "what-is-true-faith.en.mp3": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/03-MP3-Final/what-is-true-faith/phase-7c-20261019/what-is-true-faith.en.mp3",
+      "sha256": "01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63",
+      "bytes": 5593940
+    },
+    "what-is-true-faith.en.mp4": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/06-MP4-Final/What-Is-True-Faith/phase-7d-20261019/what-is-true-faith.en.mp4",
+      "sha256": "50d8104f401ac7747e797f3c6013abe80204c9f4f5f2de4852caf2d44386c20e",
+      "bytes": 16908265
+    },
+    "what-is-true-faith.en.srt": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/05-Video-Projects/What-Is-True-Faith/phase-7d-20261019/en/what-is-true-faith.en.srt",
+      "sha256": "52b7024ae6eb3964d1ad0004fa51cfe3c1c8d3df9398e712585a114bd7be7a63",
+      "bytes": 12468
+    },
+    "what-is-true-faith.en.vtt": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/05-Video-Projects/What-Is-True-Faith/phase-7d-20261019/en/what-is-true-faith.en.vtt",
+      "sha256": "7dbc7c1d19901a21bfdfdba1956ee14cb8c32ccc89e2e040c9e0eb8a214c5665",
+      "bytes": 12088
+    },
+    "what-is-true-faith.en.poster.png": {
+      "source": "/Users/paulzhang/Documents/Paul-Zhang-Media-Studio/05-Video-Projects/What-Is-True-Faith/phase-7d-20261019/en/what-is-true-faith.en.poster.png",
+      "sha256": "0d73ab361a324c24b114905ff2fb78eaa9e50f702696b976d02f168609e7ecb7",
+      "bytes": 40335
+    }
+  },
+  "localMediaRoot": "/Users/chongzhuzhang/Documents/paulzhang-website/artifacts/local-publication/what-is-true-faith",
+  "mainlandAccess": "UNVERIFIED",
+  "languages": {
+    "zh-CN": {
+      "sourcePath": "content/zh-CN/library/what-is-true-faith.mdx",
+      "approvedBodySha256": "a24bce2d32cc743a58ab2e850a06144e92737953fa1efaff04c140c394dc7fb6",
+      "mp3": "what-is-true-faith.zh.mp3",
+      "mp4": "what-is-true-faith.zh.mp4",
+      "vtt": "what-is-true-faith.zh.vtt",
+      "srt": "what-is-true-faith.zh.srt",
+      "poster": "what-is-true-faith.zh.poster.png"
+    },
+    "en-US": {
+      "sourcePath": "content/en-US/library/what-is-true-faith.mdx",
+      "approvedBodySha256": "44655b23f27e42d2d82b758e6fa7dae297a11ff1acc7d83015bf3fefbf3a8baf",
+      "mp3": "what-is-true-faith.en.mp3",
+      "mp4": "what-is-true-faith.en.mp4",
+      "vtt": "what-is-true-faith.en.vtt",
+      "srt": "what-is-true-faith.en.srt",
+      "poster": "what-is-true-faith.en.poster.png"
+    }
+  }
+}

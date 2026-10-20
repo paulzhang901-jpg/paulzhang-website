@@ -7,6 +7,7 @@ import { unitPath, workPath } from "@/lib/content/works/routing";
 import { fictionPath, getFictionWorks } from "@/lib/fiction/repository";
 import { getContentRepository } from "@/lib/content/repository";
 import { contentPath } from "@/lib/content/paths";
+import { getPublishedVideos } from "@/lib/content/published-videos";
 
 export const dynamic = "force-static";
 
@@ -27,5 +28,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const fictionEntries = (["zh-CN", "en-US"] as const).flatMap((locale) => getFictionWorks().map((work) => ({url: new URL(fictionPath(work.slug, locale), siteUrl).toString()})));
   const contentRepository = await getContentRepository();
   const contentEntries = contentRepository.getPublishedContent().map((item) => ({url: new URL(contentPath(item), siteUrl).toString()}));
-  return [...new Map([...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries, ...contentEntries].map((entry) => [entry.url, entry])).values()];
+  const videoEntries = (["zh-CN", "en-US"] as const).flatMap(locale => getPublishedVideos(contentRepository, locale).flatMap(video => video.detail ? [{url: new URL(video.detail, siteUrl).toString()}] : []));
+  return [...new Map([...videoEntries, ...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries, ...contentEntries].map((entry) => [entry.url, entry])).values()];
 }

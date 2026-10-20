@@ -54,3 +54,10 @@ None.
 - [0030 Controlled Bilingual AI Audio and Video Publishing](./0030-ai-audio-video-publishing.md) — Proposed.
 
 - [0033 Knowledge and Wisdom Audio Release Decision](./0033-knowledge-and-wisdom-audio-release.md) — Accepted; protected preview and actual iPhone acceptance required before publication.
+
+- [0034 Bilingual Video Discovery](./0034-bilingual-video-discovery.md) — Accepted for Phase 7B local integration only; no media publication or deployment.
+
+- [0035 What Is True Faith Multimedia Local Preparation](./0035-faith-multimedia-local-preparation.md) — bounded local review only, no deployment.
+
+- [0036 True Faith Production Release](./0036-true-faith-production-release.md) — Accepted by Paul in Phase 7G.2; exact existing article/media only; authenticated final-binding review, independent review and CI remain mandatory.
+

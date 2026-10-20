@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "canonicalId": "article-what-is-true-faith",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "cfa1d96ef761ef819b9d2f9a705c18a326fb2e3976e13ebaa19b1d8145d4b774",
+      "mp4": "/media/video/0f59573e78ce492ca6f9591eb5c8570d61b26233dee2ad2253d3572bc5f0b9e2.mp4",
+      "poster": "/media/video/bef6cf3459fdb9a1400753260f5f057f98e99337e433b9a474cc4ad733de30e5.png",
+      "captions": "/media/video/8ade981732a28403a250ff2ccc08192b53f283cc5c066b41a9bc469c321fe8d3.vtt",
+      "srt": "/media/video/65b2d6444f5c386f2c182c039968bac1e6eec84d7457e25228a96c2e86d54a0a.srt",
+      "publishedAt": "2026-10-19T00:00:00Z",
+      "publicationEventId": "owner-true-faith-20261019"
+    },
+    {
+      "canonicalId": "article-what-is-true-faith",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "515f6e7d2e5cc58e2c0af5d832eb843a3ce80f2744eb03e811226b66fbc7d17d",
+      "mp4": "/media/video/50d8104f401ac7747e797f3c6013abe80204c9f4f5f2de4852caf2d44386c20e.mp4",
+      "poster": "/media/video/0d73ab361a324c24b114905ff2fb78eaa9e50f702696b976d02f168609e7ecb7.png",
+      "captions": "/media/video/7dbc7c1d19901a21bfdfdba1956ee14cb8c32ccc89e2e040c9e0eb8a214c5665.vtt",
+      "srt": "/media/video/52b7024ae6eb3964d1ad0004fa51cfe3c1c8d3df9398e712585a114bd7be7a63.srt",
+      "publishedAt": "2026-10-19T00:00:00Z",
+      "publicationEventId": "owner-true-faith-20261019"
+    }
+  ]
+}
+

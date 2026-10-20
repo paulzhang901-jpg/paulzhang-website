@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "id": "owner-true-faith-20261019-candidate",
+  "canonicalId": "article-what-is-true-faith",
+  "state": "PREPARED_BLOCKED_PENDING_ADR_APPROVAL",
+  "runtimeCatalogActivated": false,
+  "deploymentAuthorized": false,
+  "ownerSubject": "paulzhang901-jpg",
+  "ownerSubjectVerification": "PENDING_AUTHENTICATED_GITHUB_REVIEW",
+  "ownerContentAndMediaApproval": {
+    "source": "Direct Paul Phase 7G.1 instruction",
+    "date": "2026-10-19",
+    "chineseEnglishContent": "APPROVED",
+    "existingMp3Mp4Subtitles": "APPROVED"
+  },
+  "mobileAcceptance": {
+    "US": "OWNER_REPORTED_PASS",
+    "mainlandChina": "OWNER_REPORTED_PASS",
+    "source": "Direct Paul Phase 7G and Phase 7G.1 instructions",
+    "independentAgentVerification": false,
+    "deviceBrowserNetworkDetails": "NOT_PROVIDED"
+  },
+  "sourceCommit": null,
+  "candidateBaseHead": "b9017fb673d06a5105554c209bc1f8412915c4ce",
+  "sourceHashPolicy": "sha256-current-mdx-bytes/v1; publication metadata requires rehash before final review",
+  "proposedAdr": "ADR-0036 (PROPOSED, NOT ACCEPTED)",
+  "proposedPublicationEventId": "owner-true-faith-20261019",
+  "assets": [
+    {
+      "file": "what-is-true-faith.zh.md",
+      "sha256": "a24bce2d32cc743a58ab2e850a06144e92737953fa1efaff04c140c394dc7fb6",
+      "bytes": 6758,
+      "kind": "approved-source",
+      "proposedPublicPath": null
+    },
+    {
+      "file": "what-is-true-faith.zh.mp3",
+      "sha256": "9dcd5012f6d1bb6918e1fe341cd0c9be0431c75ad5dc1725b9516f3471765f74",
+      "bytes": 4028300,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/narration/9dcd5012f6d1bb6918e1fe341cd0c9be0431c75ad5dc1725b9516f3471765f74.mp3"
+    },
+    {
+      "file": "what-is-true-faith.zh.mp4",
+      "sha256": "0f59573e78ce492ca6f9591eb5c8570d61b26233dee2ad2253d3572bc5f0b9e2",
+      "bytes": 12744840,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/0f59573e78ce492ca6f9591eb5c8570d61b26233dee2ad2253d3572bc5f0b9e2.mp4"
+    },
+    {
+      "file": "what-is-true-faith.zh.srt",
+      "sha256": "65b2d6444f5c386f2c182c039968bac1e6eec84d7457e25228a96c2e86d54a0a",
+      "bytes": 10087,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/65b2d6444f5c386f2c182c039968bac1e6eec84d7457e25228a96c2e86d54a0a.srt"
+    },
+    {
+      "file": "what-is-true-faith.zh.vtt",
+      "sha256": "8ade981732a28403a250ff2ccc08192b53f283cc5c066b41a9bc469c321fe8d3",
+      "bytes": 9810,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/8ade981732a28403a250ff2ccc08192b53f283cc5c066b41a9bc469c321fe8d3.vtt"
+    },
+    {
+      "file": "what-is-true-faith.zh.poster.png",
+      "sha256": "bef6cf3459fdb9a1400753260f5f057f98e99337e433b9a474cc4ad733de30e5",
+      "bytes": 48787,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/bef6cf3459fdb9a1400753260f5f057f98e99337e433b9a474cc4ad733de30e5.png"
+    },
+    {
+      "file": "what-is-true-faith.en.md",
+      "sha256": "44655b23f27e42d2d82b758e6fa7dae297a11ff1acc7d83015bf3fefbf3a8baf",
+      "bytes": 8301,
+      "kind": "approved-source",
+      "proposedPublicPath": null
+    },
+    {
+      "file": "what-is-true-faith.en.mp3",
+      "sha256": "01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63",
+      "bytes": 5593940,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/narration/01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63.mp3"
+    },
+    {
+      "file": "what-is-true-faith.en.mp4",
+      "sha256": "50d8104f401ac7747e797f3c6013abe80204c9f4f5f2de4852caf2d44386c20e",
+      "bytes": 16908265,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/50d8104f401ac7747e797f3c6013abe80204c9f4f5f2de4852caf2d44386c20e.mp4"
+    },
+    {
+      "file": "what-is-true-faith.en.srt",
+      "sha256": "52b7024ae6eb3964d1ad0004fa51cfe3c1c8d3df9398e712585a114bd7be7a63",
+      "bytes": 12468,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/52b7024ae6eb3964d1ad0004fa51cfe3c1c8d3df9398e712585a114bd7be7a63.srt"
+    },
+    {
+      "file": "what-is-true-faith.en.vtt",
+      "sha256": "7dbc7c1d19901a21bfdfdba1956ee14cb8c32ccc89e2e040c9e0eb8a214c5665",
+      "bytes": 12088,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/7dbc7c1d19901a21bfdfdba1956ee14cb8c32ccc89e2e040c9e0eb8a214c5665.vtt"
+    },
+    {
+      "file": "what-is-true-faith.en.poster.png",
+      "sha256": "0d73ab361a324c24b114905ff2fb78eaa9e50f702696b976d02f168609e7ecb7",
+      "bytes": 40335,
+      "kind": "approved-web-media",
+      "proposedPublicPath": "/media/video/0d73ab361a324c24b114905ff2fb78eaa9e50f702696b976d02f168609e7ecb7.png"
+    }
+  ],
+  "sources": [
+    {
+      "locale": "zh-CN",
+      "path": "content/zh-CN/library/what-is-true-faith.mdx",
+      "currentMdxSha256": "91440a7beff30b3a97b4e1f2efac960b87d51709965e22e1683660e445c9424f",
+      "approvedBodySha256": "a24bce2d32cc743a58ab2e850a06144e92737953fa1efaff04c140c394dc7fb6",
+      "currentStatus": "review",
+      "articleRoute": "/library/what-is-true-faith",
+      "videoRoute": "/videos/what-is-true-faith",
+      "voiceProvider": "Voicebox",
+      "voiceProfileId": "244bbed5-2976-4803-9af0-55d15326bffb",
+      "voiceConfigSha256": null
+    },
+    {
+      "locale": "en-US",
+      "path": "content/en-US/library/what-is-true-faith.mdx",
+      "currentMdxSha256": "fc92537ce244162e528452d81f0417ee78e4ecdeee70b2e0d7d5d10a0397112a",
+      "approvedBodySha256": "44655b23f27e42d2d82b758e6fa7dae297a11ff1acc7d83015bf3fefbf3a8baf",
+      "currentStatus": "review",
+      "articleRoute": "/en/library/what-is-true-faith",
+      "videoRoute": "/en/videos/what-is-true-faith",
+      "voiceProvider": "Voicebox",
+      "voiceProfileId": "1ab6bf84-7d30-4983-ac6c-13a1acc296d2",
+      "voiceConfigSha256": null
+    }
+  ],
+  "gates": {
+    "governanceDecision": "PENDING_OWNER_APPROVAL",
+    "independentTechnicalReview": "PENDING",
+    "finalPrChecks": "PENDING",
+    "finalOwnerDeploymentConfirmation": "PENDING",
+    "mainRevalidationAndDeploy": "NOT_RUN"
+  },
+  "rollbackBaseline": {
+    "project": "paulzhang-website-preview",
+    "productionDeploymentId": "c302757a-5ebe-4591-baa6-528879a5d917",
+    "productionCommitShort": "46af997",
+    "verifiedIn": "Phase 7G.1 read-only Pages list; recheck before deploy"
+  },
+  "proposedDelivery": "Exact hash-addressed approved web assets tracked in scoped Git release; normal main CI builds out; not activated",
+  "unknownHistoricalGenerationSettings": "Not reconstructed. Explicit bounded ADR decision required; voiceConfigSha256 remains null.",
+  "webAssetBytes": 39408920,
+  "largeAssetBudgetApprovalRequired": [
+    "what-is-true-faith.zh.mp3",
+    "what-is-true-faith.zh.mp4",
+    "what-is-true-faith.en.mp3",
+    "what-is-true-faith.en.mp4"
+  ]
+}

@@ -17,3 +17,6 @@ coverage/
 
 # macOS
 .DS_Store
+
+# private local publication QA (never deploy or commit media)
+/artifacts/local-publication/

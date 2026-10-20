@@ -21,3 +21,7 @@ The 2026-10-17 owner-authorized exception in ADR-0032 permits only the two appro
 
 ## Knowledge and Wisdom existing audio — ADR-0033
 The owner-approved ADR-0033 permits only the two exact existing Knowledge and Wisdom candidates to use a reviewed GitHub release record instead of activating the unimplemented narration administration service. Preserve source/voice/audio identity, separate listening and publication acts, protected candidate preview, real iPhone acceptance before production, independent technical review, required PR checks and the ADR-0021 main deployment. No general publication function or another article's exception is activated. See [ADR-0033](../adr/0033-knowledge-and-wisdom-audio-release.md).
+
+## What Is True Faith bounded multimedia release — ADR-0036
+Paul accepted ADR-0036's exact-asset release-record mechanism on 2026-10-19 in Phase 7G.2. Scope is only article-what-is-true-faith, its two unchanged approved bodies and ten pre-existing hash-addressed media files (39,408,920 bytes). A labelled limited legacy provider/profile descriptor is allowed without claiming full historical generation settings. Track only these ten web assets and four exact over-1-MiB budget exceptions. Authenticated owner final-binding review, independent technical/security review, all CI gates, final owner confirmation and normal main deployment remain mandatory. No general governance activation, generation, hosting change, new paid service, security bypass or future-article permission. See [ADR-0036](../adr/0036-true-faith-production-release.md).
+

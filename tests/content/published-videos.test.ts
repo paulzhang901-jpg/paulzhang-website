@@ -1,0 +1,56 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { createContentRepository } from "../../src/lib/content/repository";
+import { item } from "./fixtures";
+import { getPublishedVideos, videoSourceHash, validateVideoCatalog } from "../../src/lib/content/published-videos";
+import { metadataForRoute } from "../../src/lib/seo/metadata";
+import { localizedPath, routes, resolveEnglishSegments } from "../../src/lib/i18n/routing";
+
+const zh = item({title: "测试中文", scriptureRefs: [{book: "Hebrews", chapterStart: 11, verseStart: 1, chapterEnd: 11, verseEnd: 6}]});
+const en = item({id: "en", title: "English test", language: "en-US", slug: "english-test"});
+const record = {canonicalId: zh.canonicalId, locale: "zh-CN", state: "PUBLISHED", kind: "production",
+  sourceSha256: videoSourceHash(zh), mp4: "/test-only/video.mp4", poster: "/test-only/poster.jpg",
+  captions: "/test-only/captions.vtt", publishedAt: "2026-01-01T12:00:00Z", publicationEventId: "test-only-not-a-release"};
+const catalog = (...records: unknown[]) => ({schemaVersion: 1, records});
+
+test("video discovery resolves canonical metadata, translations and article path; no fabricated audio", () => {
+  const videos = getPublishedVideos(createContentRepository([zh, en]), "zh-CN", catalog(record));
+  assert.equal(videos.length, 1);
+  assert.equal(videos[0].title, zh.title);
+  assert.equal(videos[0].alternateTitle, en.title);
+  assert.equal(videos[0].article, "/library/sample");
+  assert.deepEqual(videos[0].scriptureRefs, zh.scriptureRefs);
+  assert.equal(videos[0].publishedAt, record.publishedAt);
+  assert.equal(videos[0].audio, undefined);
+});
+test("empty, missing, stale, wrong-locale, future and non-public sources do not appear", () => {
+  const repository = createContentRepository([zh]);
+  assert.deepEqual(getPublishedVideos(repository, "zh-CN"), []);
+  assert.deepEqual(getPublishedVideos(repository, "en-US", catalog(record)), []);
+  assert.deepEqual(getPublishedVideos(repository, "zh-CN", catalog({...record, canonicalId: "missing"})), []);
+  assert.deepEqual(getPublishedVideos(repository, "zh-CN", catalog({...record, sourceSha256: "0".repeat(64)})), []);
+  assert.deepEqual(getPublishedVideos(repository, "zh-CN", catalog({...record, publishedAt: "2999-01-01T00:00:00Z"})), []);
+  for (const patch of [{status: "draft"}, {visibility: "private"}, {accessLevel: "member"}] as const) {
+    assert.deepEqual(getPublishedVideos(createContentRepository([item(patch)]), "zh-CN", catalog(record)), []);
+  }
+});
+test("catalog rejects duplicate identity, unsafe/YouTube media and non-release entries", () => {
+  assert.throws(() => validateVideoCatalog(catalog(record, record)));
+  for (const mp4 of ["https://youtube.com/watch?v=test", "https://youtu.be/test", "//host/video.mp4", "javascript:alert(1)"]) {
+    assert.throws(() => validateVideoCatalog(catalog({...record, mp4})));
+  }
+  for (const patch of [{state: "DRAFT"}, {kind: "mock"}, {title: "duplicate editorial title"}]) {
+    assert.throws(() => validateVideoCatalog(catalog({...record, ...patch})));
+  }
+});
+test("video routes expose bilingual navigation and self canonical / hreflang", () => {
+  assert.equal(routes.find(route => route.id === "videos")?.navigation, true);
+  assert.equal(localizedPath("videos", "zh-CN"), "/videos");
+  assert.equal(localizedPath("videos", "en-US"), "/en/videos");
+  assert.equal(resolveEnglishSegments(["videos"]), "videos");
+  for (const locale of ["zh-CN", "en-US"] as const) {
+    const metadata = metadataForRoute("videos", locale);
+    assert.equal(metadata.alternates?.canonical, "https://paulzhang.org" + localizedPath("videos", locale));
+    assert.deepEqual(metadata.alternates?.languages, {"zh-CN": "https://paulzhang.org/videos", "en-US": "https://paulzhang.org/en/videos"});
+  }
+});
