@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "canonicalId": "article-knowledge-and-wisdom-2026-10-03",
+  "sourceCommit": "b43ca0bd7d0460be6a00aabb1b20c95e2b77bd1f",
+  "ownerProductionAuthorization": "Direct final production release instruction; not evidence of device acceptance",
+  "productionEligible": false,
+  "iphoneAcceptance": "PENDING",
+  "humanExactHeadAcknowledgement": "PENDING",
+  "previewBranch": "knowledge-wisdom-phase8a",
+  "languages": {
+    "zh-CN": {
+      "sourcePath": "content/zh-CN/library/knowledge-and-wisdom.mdx",
+      "assets": {
+        "mp4": {
+          "localSource": "/Users/chongzhuzhang/Documents/Paul-Zhang-Media-Studio/06-MP4-Final/Knowledge-and-Wisdom-Chinese-Subtitled.mp4",
+          "sha256": "7e0c05e0dd33bf4ff6d8180e1dedb8a8642c6660704c2236dec32f8f25f21102",
+          "bytes": 15331438,
+          "src": "/media/video/7e0c05e0dd33bf4ff6d8180e1dedb8a8642c6660704c2236dec32f8f25f21102.mp4"
+        },
+        "srt": {
+          "localSource": "/Users/chongzhuzhang/Documents/Paul-Zhang-Media-Studio/projects/knowledge-and-wisdom/subtitles/Knowledge-and-Wisdom-Chinese.srt",
+          "sha256": "52e9935182bbc00b2240ec54d737f93df09b978ff9fd0b2ae85a17c7471b4892",
+          "bytes": 23085,
+          "src": "/media/video/52e9935182bbc00b2240ec54d737f93df09b978ff9fd0b2ae85a17c7471b4892.srt"
+        },
+        "poster": {
+          "localSource": "/Users/chongzhuzhang/Documents/Paul-Zhang-Media-Studio/projects/knowledge-and-wisdom/slides/zh/01.png",
+          "sha256": "4e54846a7cd3c44e5ef8ccaa8e761981609b5353d61327611ff8693fdc190bf7",
+          "bytes": 264646,
+          "src": "/media/video/4e54846a7cd3c44e5ef8ccaa8e761981609b5353d61327611ff8693fdc190bf7.png"
+        },
+        "captions": {
+          "localSource": "/Users/chongzhuzhang/.codex/worktrees/knowledge-wisdom-videos/paulzhang-website/artifacts/local-publication/knowledge-and-wisdom/zh.vtt",
+          "sha256": "302f7fdd7e3da87a531f94e95d5414d3ea4a9c3de11a4b0dde490cb15d9d6fa3",
+          "bytes": 23093,
+          "src": "/media/video/302f7fdd7e3da87a531f94e95d5414d3ea4a9c3de11a4b0dde490cb15d9d6fa3.vtt"
+        }
+      },
+      "sourceFileSha256": "5638b8690fdff7f2bcc3089e71f76348af50c4e127c5ae14eeec6c34b9821549"
+    },
+    "en-US": {
+      "sourcePath": "content/en-US/library/knowledge-and-wisdom.mdx",
+      "assets": {
+        "mp4": {
+          "localSource": "/Users/chongzhuzhang/Documents/Paul-Zhang-Media-Studio/06-MP4-Final/Knowledge-and-Wisdom-English-Subtitled.mp4",
+          "sha256": "830a6bbe51515b5c7bf7f594070f1d3777677800cec68be84ee40c061bfd6720",
+          "bytes": 19963562,
+          "src": "/media/video/830a6bbe51515b5c7bf7f594070f1d3777677800cec68be84ee40c061bfd6720.mp4"
+        },
+        "srt": {
+          "localSource": "/Users/chongzhuzhang/Documents/Paul-Zhang-Media-Studio/projects/knowledge-and-wisdom/subtitles/Knowledge-and-Wisdom-English.srt",
+          "sha256": "d1efa3f95806eb51ae68764aac0590e889f16423b4b4a75b1ec86fe96c3dcdbe",
+          "bytes": 22496,
+          "src": "/media/video/d1efa3f95806eb51ae68764aac0590e889f16423b4b4a75b1ec86fe96c3dcdbe.srt"
+        },
+        "poster": {
+          "localSource": "/Users/chongzhuzhang/Documents/Paul-Zhang-Media-Studio/projects/knowledge-and-wisdom/slides/en/01.png",
+          "sha256": "9339e862a530f7429020e345419fbef3a3cfcbe54f9b7004ca3e4a84d73a34b8",
+          "bytes": 251554,
+          "src": "/media/video/9339e862a530f7429020e345419fbef3a3cfcbe54f9b7004ca3e4a84d73a34b8.png"
+        },
+        "captions": {
+          "localSource": "/Users/chongzhuzhang/.codex/worktrees/knowledge-wisdom-videos/paulzhang-website/artifacts/local-publication/knowledge-and-wisdom/en.vtt",
+          "sha256": "79edfd3902694790677cfaa7ecb33735db20d017c68eb23cfc8aff17f2bff2d6",
+          "bytes": 22504,
+          "src": "/media/video/79edfd3902694790677cfaa7ecb33735db20d017c68eb23cfc8aff17f2bff2d6.vtt"
+        }
+      },
+      "sourceFileSha256": "09f556892b33ce51696323ac398be0657454d671284ead7d2f4f53200007c28f"
+    }
+  },
+  "preview": {
+    "origin": "https://a6d13212.paulzhang-website-preview.pages.dev",
+    "branchAlias": "https://knowledge-wisdom-phase8a.paulzhang-website-preview.pages.dev",
+    "chinese": "https://a6d13212.paulzhang-website-preview.pages.dev/videos/knowledge-and-wisdom",
+    "english": "https://a6d13212.paulzhang-website-preview.pages.dev/en/videos/knowledge-and-wisdom",
+    "anonymousProtection": "PASS: both HTML pages and all eight direct assets redirect to Cloudflare Access",
+    "authenticatedPlayback": "OWNER_TEST_PENDING",
+    "staticExport": "PASS 334/334 routes; zero broken internal links"
+  }
+}
