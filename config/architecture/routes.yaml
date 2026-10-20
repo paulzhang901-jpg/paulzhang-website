@@ -35,6 +35,12 @@
       "release": "v1"
     },
     {
+      "path": "/videos",
+      "domain": "content",
+      "release": "v1",
+      "implementation_level": "canonical_media_discovery"
+    },
+    {
       "path": "/stories",
       "domain": "stories",
       "release": "v1"
@@ -218,6 +224,7 @@
     ]
   },
   "patterns": [
+    {"path": "/videos/[slug]", "domain": "content", "release": "v1"},
     {
       "path": "/fiction/[slug]",
       "domain": "fiction_discovery",

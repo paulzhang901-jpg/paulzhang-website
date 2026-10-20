@@ -4,7 +4,7 @@ Machine source: [`config/architecture/routes.yaml`](../../config/architecture/ro
 
 Locale routing follows [ADR-0011](../adr/0011-locale-url-strategy.md): `zh-CN` uses the canonical unprefixed routes, while `en-US` mirrors approved public routes beneath `/en`. `/zh` is not allowed. Locale prefixing does not create a second domain or taxonomy tree.
 
-Reserved top-level namespaces: `/`, `/start`, `/library`, `/stories`, `/fiction`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
+Reserved top-level namespaces: `/`, `/start`, `/library`, `/videos`, `/stories`, `/fiction`, `/together`, `/grow`, `/community`, `/about`, `/gccm`, `/search`, `/ask`, `/journey`, `/account`, `/auth`, `/api`, `/legal`, `/admin`.
 
 The V1 experience-layer journeys live at `/start/{faith,questions,difficult-season,grow,stories,companionship}` and the same paths under `/en`. These identifiers guide discovery only; they are not taxonomy values or relationship-state labels. Their canonical contract is [`journeys.yaml`](../../config/architecture/journeys.yaml).
 
@@ -26,3 +26,7 @@ Content Works use `/stories/[work-slug]` for the localized work landing and `/st
 Mu Changke Fiction uses `/fiction` for its approved author portfolio and `/fiction/[slug]` for individual work-discovery records. English mirrors these beneath `/en`. No chapter, read, manuscript, contract, or download child route is permitted. The route consumes LOCKED editorial packages and verified cover mappings only. See [ADR-0014](../adr/0014-mu-changke-fiction-portfolio-route.md).
 
 Proposed temporary, unlinked diagnostic utility /internal/audio-diagnostics is documented by ADR-0029; it is not a navigation or bilingual content route, and must remain outside the sitemap and search index.
+
+[ADR-0034](../adr/0034-bilingual-video-discovery.md) additionally reserves `/videos` (V1, content discovery) with `/en/videos` as its locale projection. Both are listings of canonical ContentItems with released media references, not new canonical article routes.
+
+Video detail routes `/videos/[slug]` and `/en/videos/[slug]` reference the same canonical article and media identity; no article body copy. See [ADR-0035](../adr/0035-faith-multimedia-local-preparation.md).
