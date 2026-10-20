@@ -26,3 +26,13 @@ Pages project: paulzhang-website-preview; non-production branch knowledge-wisdom
 Log in to Access and test both URLs on iPhone Safari: audible playback, pause/resume, seeking, full-screen, visible captions, SRT downloads, article/audio links and existing videos. Report explicit PASS/FAIL for both languages and device/iOS when available. Do not treat the owner's earlier production authorization as an assertion that these tests occurred.
 
 After acceptance, retain exact tested hashes, update the governed ACTIVE registry and runtime catalog, stage the same approved assets in this existing PR, run final-head checks and required review/owner acknowledgement. Do not merge this preparation-only Draft PR or deploy candidate fixture output to production. Production remains blocked until ADR-0037 per-release gates pass.
+
+## Owner acceptance update — seeking-only investigation
+
+Owner reports playback, pause/resume, full-screen, subtitles and video display PASS; seeking/scrubbing from about 1:00 to 3:00 FAIL. This is partial acceptance, not a full publication acceptance. No device/iOS details were supplied. Production eligibility remains false.
+
+Read-only checks completed: both originals have ftyp then moov at byte 32, before mdat (Chinese mdat offset 398283, English 496467); faststart already exists. Keyframes occur about every 10.416667 seconds, including around both test positions. FFmpeg input-side seeks decode video/audio successfully at 60 and 180 seconds for both originals. Player uses native controls/playsInline, no custom seeking interception. No remux or re-encoding is justified by this evidence.
+
+A read-only control against an existing published video returns actual HTTP 206 for GET Range bytes=0-1, Content-Length 2 and Content-Range bytes 0-1/12744840. Therefore a generic claim that Pages cannot serve ranges is not justified. Candidate preview requests without authentication reach Cloudflare Access, so their login-response headers cannot establish the MP4 Content-Length, Accept-Ranges or Range behavior.
+
+Remaining blocker: complete Access login in the diagnostic browser session, then inspect the candidate responses and native seekable/buffered ranges and reproduce 60→180 seconds in each language. Do not export authentication cookies/tokens, disable Access, forge range headers, change hosting or make a speculative player/media change. No fix or new preview deployment is claimed while this evidence is unavailable. Original approved media and current preview remain unchanged; this PR retains the partial acceptance and diagnosis so work can resume without repeating checks.

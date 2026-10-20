@@ -4,7 +4,7 @@
   "sourceCommit": "b43ca0bd7d0460be6a00aabb1b20c95e2b77bd1f",
   "ownerProductionAuthorization": "Direct final production release instruction; not evidence of device acceptance",
   "productionEligible": false,
-  "iphoneAcceptance": "PENDING",
+  "iphoneAcceptance": "PARTIAL_PASS_SEEKING_FAILED",
   "humanExactHeadAcknowledgement": "PENDING",
   "previewBranch": "knowledge-wisdom-phase8a",
   "languages": {
@@ -75,7 +75,28 @@
     "chinese": "https://a6d13212.paulzhang-website-preview.pages.dev/videos/knowledge-and-wisdom",
     "english": "https://a6d13212.paulzhang-website-preview.pages.dev/en/videos/knowledge-and-wisdom",
     "anonymousProtection": "PASS: both HTML pages and all eight direct assets redirect to Cloudflare Access",
-    "authenticatedPlayback": "OWNER_TEST_PENDING",
+    "authenticatedPlayback": "OWNER_REPORTED_PASS; seeking FAILED; agent authenticated HTTP diagnosis pending",
     "staticExport": "PASS 334/334 routes; zero broken internal links"
+  },
+  "ownerAcceptanceReport": {
+    "source": "Direct owner seeking-fix instruction",
+    "playback": "PASS",
+    "pauseResume": "PASS",
+    "fullscreen": "PASS",
+    "subtitles": "PASS",
+    "videoDisplay": "PASS",
+    "seekingScrubbing": "FAIL: approximately 1:00 to 3:00",
+    "deviceDetails": "NOT_PROVIDED"
+  },
+  "seekingInvestigation": {
+    "status": "AWAITING_ACCESS_LOGIN_FOR_AUTHENTICATED_RANGE_TEST",
+    "faststart": "PASS: moov offset 32 before mdat in both originals",
+    "keyframes": "Approximately 10.416667-second spacing; keyframes near 60/180 seconds present",
+    "localSeekDecode": "PASS at 60 and 180 seconds for both original MP4 files",
+    "player": "Native controls, playsInline, crossorigin anonymous, preload none; no custom seek interception",
+    "publicExistingVideoControl": "GET Range bytes=0-1 returned 206; Content-Length 2; Content-Range bytes 0-1/12744840",
+    "protectedCandidateHeaders": "Not yet observed after authentication; anonymous Access redirects are not video responses",
+    "fixApplied": false,
+    "mediaModified": false
   }
 }
