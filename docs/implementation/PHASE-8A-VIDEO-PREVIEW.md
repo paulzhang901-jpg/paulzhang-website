@@ -50,3 +50,7 @@ B. Amend architecture through a reviewed ADR for a narrowly scoped authenticated
 C. Defer to future release.
 
 No supported configuration remedy has been verified. Stop for the architecture decision rather than introduce a service or assert a fix. The existing PR remains Draft, with no new PR, merge or production deployment.
+
+## HTTP Range follow-up — policy decision pending
+
+The owner requested a compliant minimal Range fix and permits an architecture proposal only if existing policy explicitly prohibits it. ADR-0037 explicitly excludes runtime services and deployment workflow changes. Its proposed, NOT ACCEPTED preview-only Range amendment is now included in this same PR #91. No Function, routing change, corrected deployment or successful seeking test is claimed. The current protected preview and original media remain unchanged. Owner acceptance of the amendment and architecture review are required before implementation; the existing draft publication PR must not be merged merely to approve this proposal.
