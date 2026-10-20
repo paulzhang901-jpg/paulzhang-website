@@ -60,7 +60,7 @@ test("ADR-0036 binds exact approved bilingual bodies and media to the immutable 
     assert.equal(v.poster, expected("poster.png").proposedPublicPath);
     assert.equal(v.captions, expected("vtt").proposedPublicPath);
     assert.equal(v.srt, expected("srt").proposedPublicPath);
-    assert.equal(getPublishedVideos(repo, s.locale)[0]?.audio, a.src);
+    assert.equal(getPublishedVideos(repo, s.locale).find(entry => entry.canonicalId === r.canonicalId)?.audio, a.src);
     assert.ok(resolveVideoDetail("what-is-true-faith", s.locale, repo));
     assert.ok(videoStaticParams(s.locale, repo).some(e => e.slug === "what-is-true-faith"));
     assert.deepEqual(resolvePublishedNarration(item), {src:a.src, audioSha256:a.audioSha256});
