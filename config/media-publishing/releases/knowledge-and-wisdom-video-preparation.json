@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "canonicalId": "article-knowledge-and-wisdom-2026-10-03",
   "sourceCommit": "b43ca0bd7d0460be6a00aabb1b20c95e2b77bd1f",
-  "ownerProductionAuthorization": "Direct final production release instruction; not evidence of device acceptance",
+  "ownerProductionAuthorization": "PHASE 8A — PUBLISH NOW: explicit publication authorization and acceptance of current seeking limitation.",
   "productionEligible": false,
-  "iphoneAcceptance": "PARTIAL_PASS_SEEKING_FAILED",
-  "humanExactHeadAcknowledgement": "PENDING",
+  "iphoneAcceptance": "OWNER_ACCEPTED_WITH_KNOWN_SEEKING_LIMITATION",
+  "humanExactHeadAcknowledgement": "PENDING: must be authored by owner directly on GitHub after final commit",
   "previewBranch": "knowledge-wisdom-phase8a",
   "languages": {
     "zh-CN": {
@@ -85,11 +85,11 @@
     "fullscreen": "PASS",
     "subtitles": "PASS",
     "videoDisplay": "PASS",
-    "seekingScrubbing": "FAIL: approximately 1:00 to 3:00",
+    "seekingScrubbing": "KNOWN LIMITATION EXPLICITLY ACCEPTED by owner; not fixed",
     "deviceDetails": "NOT_PROVIDED"
   },
   "seekingInvestigation": {
-    "status": "BLOCKED_STATIC_PREVIEW_RANGE_DELIVERY",
+    "status": "CLOSED_OWNER_ACCEPTED_LIMITATION",
     "faststart": "PASS: moov offset 32 before mdat in both originals",
     "keyframes": "Approximately 10.416667-second spacing; keyframes near 60/180 seconds present",
     "localSeekDecode": "PASS at 60 and 180 seconds for both original MP4 files",
@@ -99,7 +99,6 @@
     "fixApplied": false,
     "mediaModified": false,
     "browserReproduction": "Both native players report seekable [[0,0]] despite buffered media; timeline clicks near 60 and 180 seconds do not seek. Chinese remained 47.638741 seconds; English continued normal playback around 14 seconds.",
-    "diagnosticPreview": "https://d6027be7.paulzhang-website-preview.pages.dev",
-    "blocker": "ADR-0037 retains static export/same-origin Pages media and prohibits runtime service/hosting/deployment workflow changes. A real Range-serving delivery remedy needs a reviewed architecture decision; header-only claims and remuxing are not justified."
+    "diagnosticPreview": "https://d6027be7.paulzhang-website-preview.pages.dev"
   }
 }
