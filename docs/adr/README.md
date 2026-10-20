@@ -60,3 +60,4 @@ None.
 - [0035 What Is True Faith Multimedia Local Preparation](./0035-faith-multimedia-local-preparation.md) — bounded local review only, no deployment.
 
 - [0036 True Faith Production Release](./0036-true-faith-production-release.md) — Accepted by Paul in Phase 7G.2; exact existing article/media only; authenticated final-binding review, independent review and CI remain mandatory.
+
