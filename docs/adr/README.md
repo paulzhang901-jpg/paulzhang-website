@@ -61,3 +61,5 @@ None.
 
 - [0036 True Faith Production Release](./0036-true-faith-production-release.md) — Accepted by Paul in Phase 7G.2; exact existing article/media only; authenticated final-binding review, independent review and CI remain mandatory.
 
+
+- [0037 Repeatable Approved Bilingual Video Releases](./0037-repeatable-approved-video-releases.md) — Accepted for the standing workflow; per-release Access preview, iPhone acceptance, human final-head acknowledgement and production gates remain.

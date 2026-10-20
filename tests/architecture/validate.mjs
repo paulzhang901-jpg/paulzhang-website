@@ -15,7 +15,7 @@ export function validate() {
   const productJourneys = read('config/architecture/journeys.yaml');
   const together = read('config/architecture/together.yaml');
 
-  for (const file of ['content','content-work','content-unit','taxonomy','events','user-journey','routes','fiction-editorial-package','fiction-editorial-registry','fiction-cover-manifest']) read(`schema/${file}.schema.json`);
+  for (const file of ['content','content-work','content-unit','taxonomy','events','user-journey','routes','fiction-editorial-package','fiction-editorial-registry','fiction-cover-manifest','governed-video-release']) read(`schema/${file}.schema.json`);
 
   assert(routes.version === 1, 'route registry version must be 1');
   assert(routes.locale_strategy.default_locale === 'zh-CN', 'default locale must be zh-CN');
