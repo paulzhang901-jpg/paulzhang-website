@@ -35,4 +35,18 @@ Read-only checks completed: both originals have ftyp then moov at byte 32, befor
 
 A read-only control against an existing published video returns actual HTTP 206 for GET Range bytes=0-1, Content-Length 2 and Content-Range bytes 0-1/12744840. Therefore a generic claim that Pages cannot serve ranges is not justified. Candidate preview requests without authentication reach Cloudflare Access, so their login-response headers cannot establish the MP4 Content-Length, Accept-Ranges or Range behavior.
 
-Remaining blocker: complete Access login in the diagnostic browser session, then inspect the candidate responses and native seekable/buffered ranges and reproduce 60→180 seconds in each language. Do not export authentication cookies/tokens, disable Access, forge range headers, change hosting or make a speculative player/media change. No fix or new preview deployment is claimed while this evidence is unavailable. Original approved media and current preview remain unchanged; this PR retains the partial acceptance and diagnosis so work can resume without repeating checks.
+Authenticated diagnosis completed after owner Access login. A protected diagnostic-only export was deployed at https://d6027be7.paulzhang-website-preview.pages.dev (same existing project/branch; media/player unchanged). Its /seek-diagnostics page issues two same-origin GET ranges per candidate, renders only response status/headers, cancels the response body and never reads/exports credentials. Both bytes=0-1 and bytes=4000000-4001023 return full-file HTTP 200 for BOTH MP4s. Chinese Content-Length 15331438; English 19963562; video/mp4; no Content-Range, Accept-Ranges or Content-Encoding observed. This establishes ignored byte ranges in this protected preview delivery path; it does not establish which internal Cloudflare layer is responsible.
+
+Both authenticated native players report seekable [[0,0]] despite buffered media. Timeline clicks near one and three minutes fail: Chinese stays at 47.638741 seconds; English continues normal playback around 14 seconds. Therefore the requested 60→180 transition remains FAILED, not verified fixed. Original approved bytes, Access configuration and player remain unchanged. Faststart/remux or adding a misleading Accept-Ranges header would not implement actual partial delivery.
+
+ARCHITECTURE CONFLICT
+Requested behavior: reliable seeking in the protected bilingual video preview.
+Conflicting architecture: the observed static preview delivery ignores Range; adding a runtime Range-serving handler or changing hosting is outside the accepted static delivery boundary.
+Relevant file / ADR: docs/adr/0037-repeatable-approved-video-releases.md, Decision proposed before activation.
+Impact: preview acceptance remains failed; no production eligibility; no media regeneration or security weakening permitted.
+Recommended resolutions:
+A. Implement within current architecture if a supported existing Pages configuration can be demonstrated to return genuine partial responses without Access changes.
+B. Amend architecture through a reviewed ADR for a narrowly scoped authenticated Range-serving delivery mechanism.
+C. Defer to future release.
+
+No supported configuration remedy has been verified. Stop for the architecture decision rather than introduce a service or assert a fix. The existing PR remains Draft, with no new PR, merge or production deployment.

@@ -75,7 +75,7 @@
     "chinese": "https://a6d13212.paulzhang-website-preview.pages.dev/videos/knowledge-and-wisdom",
     "english": "https://a6d13212.paulzhang-website-preview.pages.dev/en/videos/knowledge-and-wisdom",
     "anonymousProtection": "PASS: both HTML pages and all eight direct assets redirect to Cloudflare Access",
-    "authenticatedPlayback": "OWNER_REPORTED_PASS; seeking FAILED; agent authenticated HTTP diagnosis pending",
+    "authenticatedPlayback": "OWNER_REPORTED_PASS; agent reproduced native seeking failure in both locales; authenticated Range responses return full-file 200",
     "staticExport": "PASS 334/334 routes; zero broken internal links"
   },
   "ownerAcceptanceReport": {
@@ -89,14 +89,17 @@
     "deviceDetails": "NOT_PROVIDED"
   },
   "seekingInvestigation": {
-    "status": "AWAITING_ACCESS_LOGIN_FOR_AUTHENTICATED_RANGE_TEST",
+    "status": "BLOCKED_STATIC_PREVIEW_RANGE_DELIVERY",
     "faststart": "PASS: moov offset 32 before mdat in both originals",
     "keyframes": "Approximately 10.416667-second spacing; keyframes near 60/180 seconds present",
     "localSeekDecode": "PASS at 60 and 180 seconds for both original MP4 files",
     "player": "Native controls, playsInline, crossorigin anonymous, preload none; no custom seek interception",
     "publicExistingVideoControl": "GET Range bytes=0-1 returned 206; Content-Length 2; Content-Range bytes 0-1/12744840",
-    "protectedCandidateHeaders": "Not yet observed after authentication; anonymous Access redirects are not video responses",
+    "protectedCandidateHeaders": "Authenticated GET bytes=0-1 and bytes=4000000-4001023 both returned 200 for both MP4s. Content-Length: Chinese 15331438; English 19963562. Content-Type video/mp4. No Content-Range or Accept-Ranges. No Content-Encoding observed.",
     "fixApplied": false,
-    "mediaModified": false
+    "mediaModified": false,
+    "browserReproduction": "Both native players report seekable [[0,0]] despite buffered media; timeline clicks near 60 and 180 seconds do not seek. Chinese remained 47.638741 seconds; English continued normal playback around 14 seconds.",
+    "diagnosticPreview": "https://d6027be7.paulzhang-website-preview.pages.dev",
+    "blocker": "ADR-0037 retains static export/same-origin Pages media and prohibits runtime service/hosting/deployment workflow changes. A real Range-serving delivery remedy needs a reviewed architecture decision; header-only claims and remuxing are not justified."
   }
 }
