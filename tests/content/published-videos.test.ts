@@ -64,3 +64,20 @@ test("ADR-0038 accepts only the exact Chinese sermon YouTube identity", () => {
     assert.throws(() => validateVideoCatalog(catalog({...approved,...patch})));
   }
 });
+
+test("official hymn/biography references remain exact and do not invent articles, dates or languages", () => {
+  const acceptance={previewUrl:"https://test.paulzhang-website-preview.pages.dev/en/videos/this-is-my-story",
+    recordedAt:"2026-01-01T00:00:00Z",evidence:"TEST ONLY acceptance fixture, not a real approval"};
+  const hymn={referenceId:"official-hymn-this-is-my-story",locale:"en-US",provider:"youtube",videoId:"PkAcmwSGzkE",
+    channelId:"UCij02113c9lnl5oZeRKbE6Q",state:"PUBLISHED",kind:"production",ownerAcceptance:acceptance};
+  const repo=createContentRepository([]);
+  const videos=getPublishedVideos(repo,"en-US",catalog(hymn));
+  assert.equal(videos.length,1);
+  assert.equal(videos[0].detail,"/en/videos/this-is-my-story");
+  assert.equal(videos[0].article,undefined);
+  assert.equal(videos[0].publishedAt,undefined);
+  assert.equal(videos[0].scriptureRefs,undefined);
+  assert.deepEqual(getPublishedVideos(repo,"zh-CN",catalog(hymn)),[]);
+  for(const patch of [{videoId:"other"},{locale:"zh-CN"},{referenceId:"other"},{channelId:"other"},{ownerAcceptance:undefined},{canonicalId:"invented"}])
+    assert.throws(()=>validateVideoCatalog(catalog({...hymn,...patch})));
+});

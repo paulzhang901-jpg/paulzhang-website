@@ -31,3 +31,5 @@ None.
 ## Exact YouTube exception
 
 ADR-0038 permits only zh-CN sermon-revelation-9-20-21 / YouTube 0J44f6acTeQ using the existing layout and a visitor-activated official privacy-enhanced player. Existing independent videos and all other no-YouTube rules remain unchanged. Owner preview acceptance and final release gates remain mandatory.
+
+ADR-0038 also records the owner-authorized preview-only extension for the exact official-channel hymn and Chinese biography references, without invented canonical articles. Specific production acceptance remains pending.
