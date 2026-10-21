@@ -45,7 +45,7 @@ const youtubeRecord = z.object({
   publicationEventId: z.literal("owner-still-unrepentant-youtube-20261020"),
 }).strict();
 const officialReferenceRecord = z.object({
-  referenceId: z.enum(["official-hymn-this-is-my-story", "official-paul-zhang-biography"]),
+  referenceId: z.enum(["official-paul-zhang-testimony", "official-paul-zhang-biography"]),
   locale: z.enum(["zh-CN", "en-US"]), provider: z.literal("youtube"),
   videoId: z.enum(["PkAcmwSGzkE", "RPMMeUapK-E"]), channelId: z.literal(officialYoutubeChannel),
   state: z.literal("PUBLISHED"), kind: z.literal("production"),
@@ -84,12 +84,16 @@ export function videoSourceHash(item: NormalizedContentItem): string {
 }
 
 export function getPublishedVideos(repository: ContentRepository, locale: ContentLanguage, input: unknown = published): VideoPresentation[] {
-  return validateVideoCatalog(input).records
+  const records = validateVideoCatalog(input).records;
+  return records
     .filter(entry => entry.locale === locale && (!("publishedAt" in entry) || Date.parse(entry.publishedAt) <= Date.now()))
     .flatMap((entry): VideoPresentation[] => {
       if ("referenceId" in entry) {
         const fixed = approvedYoutubeVideos[entry.videoId];
-        return [{referenceId: fixed.referenceId, locale, title: fixed.title,
+        const alternate = records.find(other => "referenceId" in other && other.locale !== locale &&
+          approvedYoutubeVideos[other.videoId].pairId === fixed.pairId);
+        return [{referenceId: fixed.referenceId, pairId: fixed.pairId, category: fixed.category, locale, title: fixed.title,
+          alternateTitle: alternate && "referenceId" in alternate ? approvedYoutubeVideos[alternate.videoId].title : undefined,
           provider: "youtube", videoId: entry.videoId,
           detail: videoDetailPath(fixed.slug, locale),
           ...("related" in fixed ? {related: fixed.related} : {}),
@@ -110,3 +114,9 @@ export function getPublishedVideos(repository: ContentRepository, locale: Conten
 }
 
 export function videoDetailPath(slug: string, locale: ContentLanguage) { return (locale === "en-US" ? "/en" : "") + "/videos/" + slug; }
+
+export function sameVideoPair(a: VideoPresentation, b: VideoPresentation) {
+  if (a.canonicalId) return a.canonicalId === b.canonicalId;
+  if (a.pairId) return a.pairId === b.pairId;
+  return Boolean(a.referenceId && a.referenceId === b.referenceId);
+}

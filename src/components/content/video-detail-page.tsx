@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 import { Section, SectionHeading } from "@/components/layout/section";
 import { VideosSection } from "./videos-section";
-import { getPublishedVideos, videoDetailPath } from "@/lib/content/published-videos";
+import { getPublishedVideos, videoDetailPath, sameVideoPair } from "@/lib/content/published-videos";
 import { localizedPath } from "@/lib/i18n/routing";
 import { siteUrl } from "@/lib/seo/metadata";
 import type { ContentRepository } from "@/lib/content/repository";
@@ -21,7 +21,7 @@ export function videoMetadata(slug: string, locale: ContentLanguage, repository:
   if (!video?.detail) return {};
   const languages: Record<string, string> = {};
   for (const language of ["zh-CN", "en-US"] as const) {
-    const counterpart = getPublishedVideos(repository, language).find(entry => (video.canonicalId ? entry.canonicalId === video.canonicalId : entry.referenceId === video.referenceId));
+    const counterpart = getPublishedVideos(repository, language).find(entry => sameVideoPair(video, entry));
     if (counterpart?.detail) languages[language] = new URL(counterpart.detail, siteUrl).toString();
   }
   return {title: video.title, alternates: {canonical: new URL(video.detail, siteUrl).toString(), languages}, openGraph: {title: video.title, locale}};
@@ -29,7 +29,7 @@ export function videoMetadata(slug: string, locale: ContentLanguage, repository:
 export function VideoDetailPage({slug, locale, repository}: {slug: string; locale: ContentLanguage; repository: ContentRepository}) {
   const video = resolveVideoDetail(slug, locale, repository);
   if (!video) return null;
-  const alternate = getPublishedVideos(repository, locale === "zh-CN" ? "en-US" : "zh-CN").find(entry => (video.canonicalId ? entry.canonicalId === video.canonicalId : entry.referenceId === video.referenceId));
+  const alternate = getPublishedVideos(repository, locale === "zh-CN" ? "en-US" : "zh-CN").find(entry => sameVideoPair(video, entry));
   return <>
     <Section className="border-b bg-muted/40"><Container>
       <nav aria-label={locale === "zh-CN" ? "面包屑" : "Breadcrumbs"} className="mb-6"><Link href={localizedPath("videos", locale)}>{locale === "zh-CN" ? "视频讲堂" : "Videos"}</Link></nav>

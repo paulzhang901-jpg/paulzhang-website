@@ -40,7 +40,7 @@ export function validateYoutubeRelease(c, {policyAccepted=false, read}={}) {
 export function validateOfficialVideoReference(c,{policyAccepted=false}={}) {
  requireValue(policyAccepted === true, 'Accepted scoped YouTube policy required');
  keys(c,['referenceId','locale','provider','videoId','channelId','state','kind','ownerAcceptance'],'official reference');
- const identities={'PkAcmwSGzkE':['official-hymn-this-is-my-story','en-US'],'RPMMeUapK-E':['official-paul-zhang-biography','zh-CN']};
+ const identities={'PkAcmwSGzkE':['official-paul-zhang-testimony','en-US'],'RPMMeUapK-E':['official-paul-zhang-biography','zh-CN']};
  const fixed=identities[c.videoId];
  requireValue(fixed && c.referenceId === fixed[0] && c.locale === fixed[1] &&
  c.provider === 'youtube' && c.channelId === 'UCij02113c9lnl5oZeRKbE6Q' &&

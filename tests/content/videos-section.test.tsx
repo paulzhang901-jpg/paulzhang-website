@@ -58,7 +58,7 @@ test("ADR-0038 renders a private activation gate and honest fallback, not an ifr
 });
 
 test("official videos reuse the privacy gate without fabricated article/download links",()=>{
- const hymn:VideoPresentation={referenceId:"official-hymn-this-is-my-story",locale:"en-US",title:"This is my story",
+ const hymn:VideoPresentation={referenceId:"official-paul-zhang-testimony",locale:"en-US",title:"This is my story",
    provider:"youtube",videoId:"PkAcmwSGzkE"};
  const html=renderToStaticMarkup(<VideosSection locale="en-US" items={[hymn]}/>);
  assert.match(html,/Load YouTube video/);

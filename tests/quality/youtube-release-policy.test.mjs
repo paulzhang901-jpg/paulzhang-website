@@ -16,7 +16,7 @@ test('ADR-0038 requires the exact identity, accepted policy, source and preview 
 
 test('official references reject missing acceptance, unknown identities and cross-locale substitution', async()=>{
  const {validateOfficialVideoReference}=await import('../../src/lib/media-publishing/video-release-policy.mjs');
- const fixture={referenceId:'official-hymn-this-is-my-story',locale:'en-US',provider:'youtube',videoId:'PkAcmwSGzkE',
+ const fixture={referenceId:'official-paul-zhang-testimony',locale:'en-US',provider:'youtube',videoId:'PkAcmwSGzkE',
  channelId:'UCij02113c9lnl5oZeRKbE6Q',state:'PUBLISHED',kind:'production',
  ownerAcceptance:{previewUrl:'https://test.paulzhang-website-preview.pages.dev/en/videos/this-is-my-story',recordedAt:'2026-01-01T00:00:00Z',evidence:'TEST FIXTURE ONLY, not authenticated owner acceptance'}};
  assert.equal(validateOfficialVideoReference(fixture,{policyAccepted:true}),true);

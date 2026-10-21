@@ -9,6 +9,8 @@ import type { ContentLanguage, ScriptureReference } from "@/types/content";
 export type VideoPresentation = {
   canonicalId?: string;
   referenceId?: string;
+  pairId?: string;
+  category?: string;
   locale: ContentLanguage;
   title: string;
   alternateTitle?: string;
@@ -47,6 +49,7 @@ export function VideosSection({ locale, items = [], showDetails = true }: {
     {visible.length ? <div className="mt-8 grid gap-8 lg:grid-cols-2">
       {visible.map(item => <article key={item.canonicalId ?? item.referenceId} className="min-w-0 rounded-lg border bg-surface p-5">
         <h3 className="mb-4 font-serif text-2xl">{item.title}</h3>
+        {item.category ? <p className="mb-3 text-sm text-muted-foreground">{item.category}</p> : null}
         {item.alternateTitle ? <p className="mb-3 text-muted-foreground" lang={zh ? "en" : "zh"}>{item.alternateTitle}</p> : null}
         {item.scriptureRefs?.length ? <p className="mb-3 text-sm text-muted-foreground">{zh ? "经文：" : "Scripture: "}{item.scriptureRefs.map(reference => {
           const start = reference.book + " " + reference.chapterStart + (reference.verseStart ? ":" + reference.verseStart : "");
