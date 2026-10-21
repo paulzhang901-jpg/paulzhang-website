@@ -1,3 +1,4 @@
+import {approvedYoutubeVideos, officialYoutubeChannel} from "@/config/approved-youtube-videos";
 import { createHash } from "node:crypto";
 import { z } from "zod";
 import catalog from "../../../config/media-publishing/published-videos.json";
@@ -43,12 +44,28 @@ const youtubeRecord = z.object({
   publishedAt: z.string().datetime({offset: true}),
   publicationEventId: z.literal("owner-still-unrepentant-youtube-20261020"),
 }).strict();
-const record = z.union([directRecord, youtubeRecord]);
+const officialReferenceRecord = z.object({
+  referenceId: z.enum(["official-paul-zhang-testimony", "official-paul-zhang-biography"]),
+  locale: z.enum(["zh-CN", "en-US"]), provider: z.literal("youtube"),
+  videoId: z.enum(["PkAcmwSGzkE", "RPMMeUapK-E"]), channelId: z.literal(officialYoutubeChannel),
+  state: z.literal("PUBLISHED"), kind: z.literal("production"),
+  ownerAcceptance: z.object({
+    previewUrl: z.string().url().regex(/^https:\/\/[a-z0-9-]+\.paulzhang-website-preview\.pages\.dev\/.*$/),
+    recordedAt: z.string().datetime({offset:true}),
+    evidence: z.string().min(30),
+  }).strict(),
+}).strict().superRefine((entry, context) => {
+  const fixed = approvedYoutubeVideos[entry.videoId];
+  if (fixed.referenceId !== entry.referenceId || fixed.locale !== entry.locale ||
+      Date.parse(entry.ownerAcceptance.recordedAt) > Date.now())
+    context.addIssue({code:"custom", message:"Unapproved official reference binding"});
+});
+const record = z.union([directRecord, youtubeRecord, officialReferenceRecord]);
 const schema = z.object({schemaVersion: z.literal(1), records: z.array(record)}).strict()
   .superRefine((value, context) => {
     const seen = new Set<string>();
     for (const entry of value.records) {
-      const key = entry.canonicalId + ":" + entry.locale;
+      const key = ("canonicalId" in entry ? entry.canonicalId : entry.referenceId) + ":" + entry.locale;
       if (seen.has(key)) context.addIssue({code: "custom", message: "Duplicate video identity"});
       seen.add(key);
     }
@@ -67,9 +84,21 @@ export function videoSourceHash(item: NormalizedContentItem): string {
 }
 
 export function getPublishedVideos(repository: ContentRepository, locale: ContentLanguage, input: unknown = published): VideoPresentation[] {
-  return validateVideoCatalog(input).records
-    .filter(entry => entry.locale === locale && Date.parse(entry.publishedAt) <= Date.now())
-    .flatMap(entry => {
+  const records = validateVideoCatalog(input).records;
+  return records
+    .filter(entry => entry.locale === locale && (!("publishedAt" in entry) || Date.parse(entry.publishedAt) <= Date.now()))
+    .flatMap((entry): VideoPresentation[] => {
+      if ("referenceId" in entry) {
+        const fixed = approvedYoutubeVideos[entry.videoId];
+        const alternate = records.find(other => "referenceId" in other && other.locale !== locale &&
+          approvedYoutubeVideos[other.videoId].pairId === fixed.pairId);
+        return [{referenceId: fixed.referenceId, pairId: fixed.pairId, category: fixed.category, locale, title: fixed.title,
+          alternateTitle: alternate && "referenceId" in alternate ? approvedYoutubeVideos[alternate.videoId].title : undefined,
+          provider: "youtube", videoId: entry.videoId,
+          detail: videoDetailPath(fixed.slug, locale),
+          ...("related" in fixed ? {related: fixed.related} : {}),
+        }];
+      }
       const item = repository.getContentByCanonicalId(entry.canonicalId, locale)[0];
       if (!item || videoSourceHash(item) !== entry.sourceSha256) return [];
       const alternate = repository.resolvePublicTranslation(item.canonicalId, locale === "zh-CN" ? "en-US" : "zh-CN", item);
@@ -81,7 +110,13 @@ export function getPublishedVideos(repository: ContentRepository, locale: Conten
         detail: videoDetailPath(item.slug, locale),
         article: contentPath(item), audio: resolvePublishedNarration(item)?.src,
       }];
-    }).sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+    }).sort((a, b) => Date.parse(b.publishedAt ?? "1970-01-01") - Date.parse(a.publishedAt ?? "1970-01-01"));
 }
 
 export function videoDetailPath(slug: string, locale: ContentLanguage) { return (locale === "en-US" ? "/en" : "") + "/videos/" + slug; }
+
+export function sameVideoPair(a: VideoPresentation, b: VideoPresentation) {
+  if (a.canonicalId) return a.canonicalId === b.canonicalId;
+  if (a.pairId) return a.pairId === b.pairId;
+  return Boolean(a.referenceId && a.referenceId === b.referenceId);
+}

@@ -56,3 +56,15 @@ test("ADR-0038 renders a private activation gate and honest fallback, not an ifr
   assert.doesNotMatch(html,/<iframe|<video|youtube-nocookie|下载字幕|打开视频文件/);
   assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale="zh-CN" items={[{...video,canonicalId:"other"}]} />),/加载 YouTube/);
 });
+
+test("official videos reuse the privacy gate without fabricated article/download links",()=>{
+ const hymn:VideoPresentation={referenceId:"official-paul-zhang-testimony",locale:"en-US",title:"This is my story",
+   provider:"youtube",videoId:"PkAcmwSGzkE"};
+ const html=renderToStaticMarkup(<VideosSection locale="en-US" items={[hymn]}/>);
+ assert.match(html,/Load YouTube video/);
+ assert.match(html,/watch\?v=PkAcmwSGzkE/);
+ assert.doesNotMatch(html,/<iframe|Read article|Download|<track|AI-generated narration/);
+ const bio:VideoPresentation={referenceId:"official-paul-zhang-biography",locale:"zh-CN",title:"张崇助牧师的履历简介",
+   provider:"youtube",videoId:"RPMMeUapK-E",related:"/about/profile"};
+ assert.match(renderToStaticMarkup(<VideosSection locale="zh-CN" items={[bio]}/>),/href="\/about\/profile"/);
+});

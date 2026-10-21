@@ -36,6 +36,24 @@ export function validateYoutubeRelease(c, {policyAccepted=false, read}={}) {
  return true;
 }
 
+
+export function validateOfficialVideoReference(c,{policyAccepted=false}={}) {
+ requireValue(policyAccepted === true, 'Accepted scoped YouTube policy required');
+ keys(c,['referenceId','locale','provider','videoId','channelId','state','kind','ownerAcceptance'],'official reference');
+ const identities={'PkAcmwSGzkE':['official-paul-zhang-testimony','en-US'],'RPMMeUapK-E':['official-paul-zhang-biography','zh-CN']};
+ const fixed=identities[c.videoId];
+ requireValue(fixed && c.referenceId === fixed[0] && c.locale === fixed[1] &&
+ c.provider === 'youtube' && c.channelId === 'UCij02113c9lnl5oZeRKbE6Q' &&
+ c.state === 'PUBLISHED' && c.kind === 'production','Unapproved official video reference');
+ const a=c.ownerAcceptance;
+ keys(a,['previewUrl','recordedAt','evidence'],'official reference acceptance');
+ requireValue(typeof a.previewUrl === 'string' &&
+ /^https:\/\/[a-z0-9-]+\.paulzhang-website-preview\.pages\.dev\/.*$/.test(a.previewUrl) &&
+ Number.isFinite(Date.parse(a.recordedAt)) && Date.parse(a.recordedAt)<=Date.now() &&
+ typeof a.evidence === 'string' && a.evidence.trim().length>=30,'Missing official video owner acceptance');
+ return true;
+}
+
 // Validates evidence consistency, NOT owner identity or authorization. Authenticated
 // GitHub final-head approval and separate production permission remain external gates.
 export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
@@ -88,9 +106,10 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
  }
  const catalogIdentities=new Set();
  for(const c of catalog){
-  const identity=c.canonicalId+':'+c.locale;
+  const identity=(c.canonicalId??c.referenceId)+':'+c.locale;
   requireValue(!catalogIdentities.has(identity),'Duplicate runtime catalog identity');catalogIdentities.add(identity);
-  if(c.provider === 'youtube') validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
+  if(c.provider === 'youtube' && Object.hasOwn(c,'referenceId')) validateOfficialVideoReference(c,{policyAccepted:youtubePolicyAccepted});
+  else if(c.provider === 'youtube') validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
   else requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');
  }
  return approved;

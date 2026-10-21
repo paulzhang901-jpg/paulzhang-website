@@ -13,3 +13,14 @@ test('ADR-0038 requires the exact identity, accepted policy, source and preview 
  const missing={...release,ownerAcceptance:null};
  assert.throws(()=>validateYoutubeRelease(release.record,{policyAccepted:true,read:p=>p.endsWith('still-unrepentant-youtube-release.json')?Buffer.from(JSON.stringify(missing)):read(p)}));
 });
+
+test('official references reject missing acceptance, unknown identities and cross-locale substitution', async()=>{
+ const {validateOfficialVideoReference}=await import('../../src/lib/media-publishing/video-release-policy.mjs');
+ const fixture={referenceId:'official-paul-zhang-testimony',locale:'en-US',provider:'youtube',videoId:'PkAcmwSGzkE',
+ channelId:'UCij02113c9lnl5oZeRKbE6Q',state:'PUBLISHED',kind:'production',
+ ownerAcceptance:{previewUrl:'https://test.paulzhang-website-preview.pages.dev/en/videos/this-is-my-story',recordedAt:'2026-01-01T00:00:00Z',evidence:'TEST FIXTURE ONLY, not authenticated owner acceptance'}};
+ assert.equal(validateOfficialVideoReference(fixture,{policyAccepted:true}),true);
+ assert.throws(()=>validateOfficialVideoReference(fixture));
+ for(const patch of [{videoId:'other'},{locale:'zh-CN'},{channelId:'other'},{ownerAcceptance:null},{referenceId:'other'}])
+ assert.throws(()=>validateOfficialVideoReference({...fixture,...patch},{policyAccepted:true}));
+});

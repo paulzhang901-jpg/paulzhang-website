@@ -55,3 +55,19 @@ Acceptance/tests: wrong video/channel and arbitrary embed origins rejected; exis
 Confirm: “0J44f6acTeQ on @PaulZhang-j2w is my approved 《仍旧不悔改》 video. I approve this narrowly scoped YouTube policy exception and its disclosed third-party privacy behavior for implementation and protected preview. Production still requires final preview acceptance and release approvals.”
 
 The owner approved the exact scope, then explicitly accepted the protected preview playback/navigation and authorized final release in chat. This is not a human-authored GitHub exact-final-head acknowledgement; that independent record remains a mandatory external pre-merge gate.
+
+## Owner-authorized two-video preview extension (2026-10-20)
+
+The owner explicitly requests one PR and protected previews for the existing official-channel English personal testimony and Chinese biography. The English Still Unrepentant item is outside this publication scope; no search or publication is authorized in this PR.
+
+Permit preparation and protected preview ONLY for PkAcmwSGzkE (This is my story, this is my song, praising my Saviour all the day long;) and RPMMeUapK-E (张崇助牧师的履历简介), on the already verified official channel UCij02113c9lnl5oZeRKbE6Q / @PaulZhang-j2w. Production remains inactive until specific owner acceptance and all existing final-head/review/CI/release gates.
+
+These two videos do not have canonical articles. Their exact metadata-only reference identities may use the EXISTING video catalog/resolver/listing/detail layout without manufacturing ContentItems, Scripture, dates, translations, audio links or article bodies. The biography may link the existing /about/profile section. The English testimony appears in the English Video Library; the Chinese biography appears in the Chinese Video Library. No new top-level route, taxonomy, content subsystem, provider, analytics or hosting changes. Existing article-linked videos and all original bodies remain unchanged.
+
+Reuse the same visitor-activated, official privacy-enhanced iframe with a fixed three-video allowlist, accessible localized disclosure/button/fallback and no autoplay or third-party thumbnail requests before activation. Each reference must bind exact ID, channel and locale and carry real owner acceptance before production registration. No invented captions/downloads. Runtime registry metadata cannot authenticate a human; the human exact-final-head GitHub acknowledgement remains external and mandatory.
+
+Allowed paths: this ADR and references; existing video catalog/schema/resolver/components; fixed YouTube binding constants; relevant tests. Preview fixtures are ignored, labelled noindex / NOT PRODUCTION and never publication evidence. One PR for both verified videos; stop for owner preview acceptance. No media download/upload/regeneration/R2. Existing rollback and security protections remain.
+
+### Owner classification correction — PR #93
+
+The owner explicitly identifies PkAcmwSGzkE as personal testimony/life story, NOT a hymn, and as the English-language counterpart of RPMMeUapK-E. Treat both as one bilingual Personal Testimony / Biography pair. Preserve both exact YouTube titles and media IDs. Pair identity is metadata-only, not a new editorial body. Display the correct localized category, related existing profile links, reciprocal Chinese/English video links and hreflang. No English Still Unrepentant work remains in this PR. Specific preview acceptance and final production gates remain pending.

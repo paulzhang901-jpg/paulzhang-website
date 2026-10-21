@@ -25,7 +25,7 @@ test("ADR-0036 binds exact approved bilingual bodies and media to the immutable 
   const audio = validateNarrationCatalog(read("config/media-publishing/published-narrations.json"));
   const video = validateVideoCatalog(read("config/media-publishing/published-videos.json"));
   assert.equal(audio.records.filter(e => e.canonicalId === r.canonicalId).length, 2);
-  assert.equal(video.records.filter(e => e.canonicalId === r.canonicalId).length, 2);
+  assert.equal(video.records.filter(e => "canonicalId" in e && e.canonicalId === r.canonicalId).length, 2);
   const repo = await getContentRepository();
   assert.deepEqual(r.sources.map((s: {locale: string}) => s.locale).sort(), ["en-US", "zh-CN"]);
   for (const s of r.sources) {
@@ -40,8 +40,8 @@ test("ADR-0036 binds exact approved bilingual bodies and media to the immutable 
     assert.ok(item);
     assert.equal(item.status, "published");
     const a = audio.records.find(e => e.canonicalId === r.canonicalId && e.locale === s.locale);
-    const v = video.records.find(e => e.canonicalId === r.canonicalId && e.locale === s.locale);
-    assert.ok(a); assert.ok(v);
+    const v = video.records.find(e => "canonicalId" in e && e.canonicalId === r.canonicalId && e.locale === s.locale);
+    assert.ok(a); assert.ok(v); assert.ok("canonicalId" in v);
     assert.equal(a.sourceSha256, s.sourceSha256);
     assert.equal(a.presentationSha256, narrationPresentationHash(item));
     assert.equal(v.sourceSha256, videoSourceHash(item));
