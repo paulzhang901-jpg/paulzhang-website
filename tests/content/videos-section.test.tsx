@@ -17,8 +17,8 @@ test("listing page preserves primary heading, reading link and genuine empty sta
     assert.equal((html.match(/<h1/g) ?? []).length, 1);
     assert.match(html, locale === "zh-CN" ? /目前暂无已发布的视频/ : /No published videos/);
     assert.ok(html.includes(locale === "zh-CN" ? 'href="/library"' : 'href="/en/library"'));
-    if(locale === "en-US") assert.doesNotMatch(html, /<video|<iframe/);
-    else {assert.match(html,/已批准的独立视频/);assert.match(html,/href="\/about\/profile#pastor-biography-video"/);}
+    assert.match(html,locale === "zh-CN" ? /已批准的独立视频/ : /Approved Standalone Videos/);
+    assert.ok(html.includes(`href="${locale === "en-US" ? "/en" : ""}/about/profile#pastor-biography-video"`));
   }
 });
 test("video cards display alternate title, Scripture and actual media publication date", () => {

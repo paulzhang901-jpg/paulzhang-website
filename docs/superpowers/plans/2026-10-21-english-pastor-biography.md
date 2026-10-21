@@ -19,4 +19,4 @@ Measured current media156227119 + new15801232 =172028351 bytes, below256MiB. MP4
 
 Acceptance: correct English title/player/download on English Profile and English library only; Chinese binding/media unchanged; no fake captions or English counterparts; existing components and prose preserved; required checks/build/export pass; actual owner preview acceptance and human GitHub exact-head acknowledgement before merge. Rollback through reviewed removal/retirement of English binding only, preserving immutable source/assets.
 
-Status: PREPARING PROTECTED PREVIEW; owner acceptance and production pending. No media generation/modification authorized or performed.
+Status: OWNER PREVIEW ACCEPTED in FINAL RELEASE — PR #96. Exact protected preview https://5addce63.paulzhang-website-preview.pages.dev/en/about/profile#pastor-biography-video . Original MP4 and production bindings prepared in this same PR; required final-head checks, human GitHub acknowledgement and production remain pending. No media generation/modification authorized or performed.
