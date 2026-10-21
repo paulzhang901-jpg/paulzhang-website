@@ -14,9 +14,31 @@ const LEGACY_CATALOG_HASHES=new Set(['1d690baf2674ba3c4904ca7d3b736fe90fc633d2a9
 const catalogHash=c=>hash(JSON.stringify(Object.fromEntries(Object.keys(c).sort().map(k=>[k,c[k]]))));
 const digest=value=>typeof value==='string' && /^[a-f0-9]{64}$/.test(value);
 
+
+// ADR-0038 exact exception. Evidence consistency is not authenticated GitHub approval.
+export function validateYoutubeRelease(c, {policyAccepted=false, read}={}) {
+ requireValue(policyAccepted === true, 'Accepted ADR-0038 required');
+ requireValue(c.canonicalId === 'sermon-revelation-9-20-21' && c.locale === 'zh-CN' &&
+ c.provider === 'youtube' && c.videoId === '0J44f6acTeQ' &&
+ c.channelId === 'UCij02113c9lnl5oZeRKbE6Q' &&
+ c.publicationEventId === 'owner-still-unrepentant-youtube-20261020' &&
+ c.state === 'PUBLISHED' && c.kind === 'production', 'Unapproved YouTube identity');
+ const release=JSON.parse(read('config/media-publishing/still-unrepentant-youtube-release.json'));
+ requireValue(release.schemaVersion === 1 && catalogHash(release.record) === catalogHash(c), 'YouTube release binding mismatch');
+ requireValue(release.sourcePath === 'content/zh-CN/library/still-they-did-not-repent.mdx' &&
+ digest(release.sourceFileSha256) && hash(read(release.sourcePath)) === release.sourceFileSha256 &&
+ /^[a-f0-9]{40}$/.test(release.sourceCommit), 'Stale YouTube source');
+ const a=release.ownerAcceptance;
+ requireValue(a?.owner === 'Paul Zhang' &&
+ a.previewUrl === 'https://47d226e4.paulzhang-website-preview.pages.dev/videos/still-they-did-not-repent' &&
+ typeof a.evidence === 'string' && a.evidence.length >= 40 &&
+ Number.isFinite(Date.parse(a.recordedAt)) && Date.parse(a.recordedAt) <= Date.now(), 'Missing YouTube owner acceptance');
+ return true;
+}
+
 // Validates evidence consistency, NOT owner identity or authorization. Authenticated
 // GitHub final-head approval and separate production permission remain external gates.
-export function validateVideoReleases(registry,{policyAccepted=false,read,catalog=[],narrations=[]}={}){
+export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
  keys(registry,['schemaVersion','releases'],'registry');
  requireValue(registry.schemaVersion===1 && Array.isArray(registry.releases),'Invalid release registry');
  requireValue(!registry.releases.length || policyAccepted===true,'Accepted ADR-0037 required before registering releases');
@@ -68,7 +90,8 @@ export function validateVideoReleases(registry,{policyAccepted=false,read,catalo
  for(const c of catalog){
   const identity=c.canonicalId+':'+c.locale;
   requireValue(!catalogIdentities.has(identity),'Duplicate runtime catalog identity');catalogIdentities.add(identity);
-  requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');
+  if(c.provider === 'youtube') validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
+  else requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');
  }
  return approved;
 }

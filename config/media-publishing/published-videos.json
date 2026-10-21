@@ -52,6 +52,18 @@
       "srt": "/media/video/d1efa3f95806eb51ae68764aac0590e889f16423b4b4a75b1ec86fe96c3dcdbe.srt",
       "publishedAt": "2026-10-20T19:17:10.427870Z",
       "publicationEventId": "owner-knowledge-wisdom-video-20261020"
+    },
+    {
+      "canonicalId": "sermon-revelation-9-20-21",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "bb9bc6d374ce5b1b0c8f4333a8b0630f10e857f3993069d58edb4167f4a185d9",
+      "provider": "youtube",
+      "videoId": "0J44f6acTeQ",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-21T01:38:16.593654Z",
+      "publicationEventId": "owner-still-unrepentant-youtube-20261020"
     }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "record": {
+    "canonicalId": "sermon-revelation-9-20-21",
+    "locale": "zh-CN",
+    "state": "PUBLISHED",
+    "kind": "production",
+    "sourceSha256": "bb9bc6d374ce5b1b0c8f4333a8b0630f10e857f3993069d58edb4167f4a185d9",
+    "provider": "youtube",
+    "videoId": "0J44f6acTeQ",
+    "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+    "publishedAt": "2026-10-21T01:38:16.593654Z",
+    "publicationEventId": "owner-still-unrepentant-youtube-20261020"
+  },
+  "sourcePath": "content/zh-CN/library/still-they-did-not-repent.mdx",
+  "sourceFileSha256": "f94c663451ba5d77ac37b2bbdf81b56c0e1ff8b1abfa47155f517c184ba68f0e",
+  "sourceCommit": "732098d9e3a66996de63b2eeafb43c41977d9c64",
+  "ownerAcceptance": {
+    "owner": "Paul Zhang",
+    "recordedAt": "2026-10-21T01:38:16.593654Z",
+    "previewUrl": "https://47d226e4.paulzhang-website-preview.pages.dev/videos/still-they-did-not-repent",
+    "evidence": "Direct owner instruction: I have tested the protected preview; YouTube video playback and navigation are approved for production. Device/browser details not supplied.",
+    "finalHeadGithubAcknowledgement": "External mandatory gate; not asserted by this file."
+  }
+}

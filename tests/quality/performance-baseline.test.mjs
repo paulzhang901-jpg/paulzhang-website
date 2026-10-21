@@ -57,6 +57,7 @@ test("raw public assets retain the V1 budget except exact owner-approved media",
   };
   const governed = validateVideoReleases(JSON.parse(read("config/media-publishing/governed-video-releases.json")), {
     policyAccepted, read,
+    youtubePolicyAccepted: /^Status: Accepted(?:\s|$)/m.test(fs.readFileSync(path.join(root, "docs/adr/0038-still-unrepentant-youtube-exception.md"), "utf8")),
     catalog: JSON.parse(read("config/media-publishing/published-videos.json")).records,
     narrations: JSON.parse(read("config/media-publishing/published-narrations.json")).records,
   });
