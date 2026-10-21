@@ -61,3 +61,7 @@ None.
 ## Owner acceptance and merge authorization
 
 The owner’s direct FINAL PRODUCTION RELEASE instruction explicitly authorizes completing PR #90 and merging it when required checks and reviews are satisfied. Recorded by Codex as execution agent, not as an authenticated human GitHub review/comment. Independent technical review of the proposed validator was completed; two findings were corrected and re-reviewed. The active main ruleset requires a PR and validate status, has zero mandatory approval reviews and no bypass actors. This record does not fabricate a review or grant bypass. Revalidate this final head before normal merge. The owner separately authorizes final publication of both existing videos; that authorization is not evidence that the specific protected preview, iPhone Safari acceptance or human exact-head GitHub acknowledgement has occurred. Those per-release conditions remain required.
+
+## Exact external-video boundary
+
+ADR-0038 separately governs only the verified Chinese YouTube sermon 0J44f6acTeQ. It does not grant a local-media exception, alter existing release limits, or authorize other external videos. Its source binding and owner preview acceptance remain required before production registration.

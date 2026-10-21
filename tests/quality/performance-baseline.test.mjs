@@ -23,6 +23,7 @@ test("Client Components remain explicitly reviewed and minimal", () => {
   assert.deepEqual(clientFiles, [
     "src/components/analytics/google-analytics-consent.tsx",
     "src/components/content/ai-audio-player.tsx",
+    "src/components/content/approved-youtube-player.tsx",
     "src/components/content/article-narration.tsx",
     "src/components/content/read-aloud-player.tsx",
     "src/components/content/together-submission-form.tsx",
@@ -56,6 +57,7 @@ test("raw public assets retain the V1 budget except exact owner-approved media",
   };
   const governed = validateVideoReleases(JSON.parse(read("config/media-publishing/governed-video-releases.json")), {
     policyAccepted, read,
+    youtubePolicyAccepted: /^Status: Accepted(?:\s|$)/m.test(fs.readFileSync(path.join(root, "docs/adr/0038-still-unrepentant-youtube-exception.md"), "utf8")),
     catalog: JSON.parse(read("config/media-publishing/published-videos.json")).records,
     narrations: JSON.parse(read("config/media-publishing/published-narrations.json")).records,
   });

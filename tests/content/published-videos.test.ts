@@ -54,3 +54,13 @@ test("video routes expose bilingual navigation and self canonical / hreflang", (
     assert.deepEqual(metadata.alternates?.languages, {"zh-CN": "https://paulzhang.org/videos", "en-US": "https://paulzhang.org/en/videos"});
   }
 });
+
+test("ADR-0038 accepts only the exact Chinese sermon YouTube identity", () => {
+  const approved = {canonicalId:"sermon-revelation-9-20-21",locale:"zh-CN",state:"PUBLISHED",kind:"production",
+    sourceSha256:"a".repeat(64),provider:"youtube",videoId:"0J44f6acTeQ",channelId:"UCij02113c9lnl5oZeRKbE6Q",
+    publishedAt:"2026-10-20T00:00:00Z",publicationEventId:"owner-still-unrepentant-youtube-20261020"};
+  assert.equal(validateVideoCatalog(catalog(approved)).records.length, 1);
+  for (const patch of [{videoId:"wrong"},{channelId:"wrong"},{locale:"en-US"},{canonicalId:"other"},{mp4:"https://youtube.com/watch?v=0J44f6acTeQ"}]) {
+    assert.throws(() => validateVideoCatalog(catalog({...approved,...patch})));
+  }
+});

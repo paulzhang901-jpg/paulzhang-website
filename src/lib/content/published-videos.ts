@@ -20,7 +20,7 @@ function mediaUrl(extension: string) {
   }, "Expected independent HTTPS or same-origin media URL");
 }
 
-const record = z.object({
+const directRecord = z.object({
   canonicalId: z.string().regex(/^[a-z0-9][a-z0-9_-]*$/),
   locale: z.enum(["zh-CN", "en-US"]),
   state: z.literal("PUBLISHED"),
@@ -33,6 +33,17 @@ const record = z.object({
   publishedAt: z.string().datetime({offset: true}),
   publicationEventId: z.string().min(1),
 }).strict();
+// ADR-0038: a single literal binding, never an arbitrary iframe URL.
+const youtubeRecord = z.object({
+  canonicalId: z.literal("sermon-revelation-9-20-21"), locale: z.literal("zh-CN"),
+  state: z.literal("PUBLISHED"), kind: z.literal("production"),
+  sourceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  provider: z.literal("youtube"), videoId: z.literal("0J44f6acTeQ"),
+  channelId: z.literal("UCij02113c9lnl5oZeRKbE6Q"),
+  publishedAt: z.string().datetime({offset: true}),
+  publicationEventId: z.literal("owner-still-unrepentant-youtube-20261020"),
+}).strict();
+const record = z.union([directRecord, youtubeRecord]);
 const schema = z.object({schemaVersion: z.literal(1), records: z.array(record)}).strict()
   .superRefine((value, context) => {
     const seen = new Set<string>();
@@ -66,8 +77,8 @@ export function getPublishedVideos(repository: ContentRepository, locale: Conten
         canonicalId: item.canonicalId, locale, title: item.title,
         alternateTitle: alternate.available ? alternate.item.title : undefined,
         scriptureRefs: item.scriptureRefs, publishedAt: entry.publishedAt,
-        mp4: entry.mp4, poster: entry.poster, captions: entry.captions,
-        detail: videoDetailPath(item.slug, locale), srt: entry.srt,
+        ...("provider" in entry ? {provider: entry.provider, videoId: entry.videoId} : {mp4: entry.mp4, poster: entry.poster, captions: entry.captions, srt: entry.srt}),
+        detail: videoDetailPath(item.slug, locale),
         article: contentPath(item), audio: resolvePublishedNarration(item)?.src,
       }];
     }).sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
