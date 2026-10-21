@@ -78,6 +78,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "owner-pastor-biography-video-20261021",
+      "state": "ACTIVE",
+      "canonicalId": "video-pastor-biography-zhang-chongzhu",
+      "sourceKind": "standalone",
+      "sourceCommit": "53bf1aba2a8dc2d67c1568e84b839274f05b81c9",
+      "ownerAcceptance": {
+        "owner": "paulzhang901-jpg",
+        "acceptedAt": "2026-10-21T12:13:41.308481Z",
+        "previewOrigin": "https://d9d31599.paulzhang-website-preview.pages.dev",
+        "iphoneSafariEvidence": "Owner explicitly reviewed and accepted the exact protected biography preview in FINAL RELEASE — APPROVED BIOGRAPHY VIDEO: OWNER ACCEPTANCE: APPROVED. Device/browser and individual playback test details were not supplied; no specific device test is asserted. Exact unchanged MP4 hash and bytes are bound below."
+      },
+      "locales": [
+        {
+          "locale": "zh-CN",
+          "presentationSha256": "20a82b41e0cf0d0586934b93d442023ed36ac8dc71082e4cde7a17686e824e10",
+          "assets": [
+            {
+              "kind": "mp4",
+              "path": "media/video/367341d326843744a51c2f65aea6f9ea74e6ff349f2df78f9269f477792133a7.mp4",
+              "sha256": "367341d326843744a51c2f65aea6f9ea74e6ff349f2df78f9269f477792133a7",
+              "bytes": 20096494
+            }
+          ]
+        }
+      ]
     }
   ]
 }

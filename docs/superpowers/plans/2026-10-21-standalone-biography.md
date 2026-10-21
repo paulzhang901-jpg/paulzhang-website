@@ -18,26 +18,45 @@
 Missing optional files must produce no broken links/tracks. Unknown standalone fields/unsafe primary routes fail closed. Old catalog/release variants cannot inherit standalone exemptions. About anchors cannot become generated video slugs. Private candidate lookup cannot become production approval metadata.
 
 ## Task 1 — Governance decision
-- [ ] Record approval, update affected architecture notes, review, run architecture/secret/diff checks, push final documentation head.
-- [ ] Complete normal GitHub checks/reviews and merge governance-only PR #94 without activating the MP4.
+- [x] Record approval, update affected architecture notes, review, run architecture/secret/diff checks, push final documentation head.
+- [x] Complete normal GitHub checks/reviews and merge governance-only PR #94 without activating the MP4.
 
 ## Task 2 — Strict source/policy branch (TDD)
 Files: src/lib/content/published-videos.ts; src/lib/media-publishing/video-release-policy.mjs; schema/governed-video-release.schema.json; tests/quality/video-release-policy.test.mjs; tests/content/published-videos.test.ts.
-- [ ] Add failing fixtures for one-locale standalone, optional auxiliaries, stale metadata/hash, invalid category/type/routes, unknown fields, acceptance and budgets; observe red.
-- [ ] Add sourceKind=standalone metadata and versioned source fingerprint; extend existing registry with a discriminated standalone variant; preserve strict legacy validation and map returned MP4 budget paths.
-- [ ] Observe green including unchanged bilingual/external-video regression tests.
+- [x] Add failing fixtures for one-locale standalone, optional auxiliaries, stale metadata/hash, invalid category/type/routes, unknown fields, acceptance and budgets; observe red.
+- [x] Add sourceKind=standalone metadata and versioned source fingerprint; extend existing registry with a discriminated standalone variant; preserve strict legacy validation and map returned MP4 budget paths.
+- [x] Observe green including unchanged bilingual/external-video regression tests.
 
 ## Task 3 — Existing UI integration (TDD)
 Files: existing videos-section.tsx, videos-page.tsx, video-detail-page.tsx, about-page.tsx; existing component/route tests.
-- [ ] Add failing render/lookup fixtures for Chinese standalone, About resource labels, absent track/poster/English/AI assertion, unchanged English/profile prose and excluded About static params.
-- [ ] Reuse VideosSection for the exact About anchor and separate existing-library category; resolve one record and optional assets safely. No new page or player component.
-- [ ] Observe green; include new test files in configured checks only if necessary.
+- [x] Add failing render/lookup fixtures for Chinese standalone, About resource labels, absent track/poster/English/AI assertion, unchanged English/profile prose and excluded About static params.
+- [x] Reuse VideosSection for the exact About anchor and separate existing-library category; resolve one record and optional assets safely. No new page or player component.
+- [x] Observe green; include new test files in configured checks only if necessary.
 
 ## Task 4 — Required checks and protected candidate
-- [ ] Measure actual package/public-media/Git limits; run configured test/type/lint/build/export checks and independent scoped technical/security review; fix only findings in scope.
-- [ ] Use a private isolated candidate export with the exact approved MP4 and test presentation lookup, visible NOT PRODUCTION, noindex and analytics disabled. Do not create PUBLISHED production approval/owner acceptance for the candidate.
-- [ ] Verify Access protection on existing project HTML and exact media URL before upload; deploy only non-production branch and verify both protected URLs.
-- [ ] Return exact /about/profile#pastor-biography-video and /videos preview URLs; stop for owner actual-device acceptance.
+- [x] Measure actual package/public-media/Git limits; run configured test/type/lint/build/export checks and independent scoped technical/security review; fix only findings in scope.
+- [x] Use a private isolated candidate export with the exact approved MP4 and test presentation lookup, visible NOT PRODUCTION, noindex and analytics disabled. Do not create PUBLISHED production approval/owner acceptance for the candidate.
+- [x] Verify Access protection on existing project HTML and exact media URL before upload; deploy only non-production branch and verify both protected URLs.
+- [x] Return exact /about/profile#pastor-biography-video and /videos preview URLs; stop for owner actual-device acceptance.
 
 ## Later publication
 A separate publication PR is necessary only because the owner explicitly requested merging governance first and ADR-0037 forbids public candidate bytes before acceptance. Create it after acceptance with the same reviewed source/code and exact media; require final-head human GitHub acknowledgement/checks/reviews and separate production permission. Do not merge biography production now.
+
+## Resume checkpoint — 2026-10-21
+- Governance PR #94 merged normally at `02080013c25f5a411589fc0e5e6b9f810b05925f`; all five PR checks passed. Main workflow `39596291989` succeeded.
+- Standalone implementation is on `codex/standalone-biography-publication` in the same isolated worktree. Production catalogs and repository MP4 assets remain unchanged.
+- Required configured checks (architecture, content, lint, types, routes, translation, product, accessibility, performance, security, media, narration), webpack build and static-export validation passed; independent review finding about registered Profile anchors fixed and verified.
+- Media measured once: existing public/media 136130625 bytes; candidate 20096494 bytes; combined 156227119 bytes below 256 MiB. Git reported loose 132068 KiB and packed119756 KiB, below512 MiB even with candidate. Do not clean existing Git garbage warning or unrelated files.
+- Private candidate directory: `/private/tmp/paulzhang-biography-preview-20261021`; exact copied MP4 hash/size matched. Candidate-only presentation injects no production catalog or owner acceptance; disables analytics and adds noindex/NOT PRODUCTION.
+- Existing preview HTML and exact target MP4 URL both return Access302. Current preview project production-branch check and upload are pending because Cloudflare OAuth expired and refresh failed.
+- Exact deployment blocker from wrangler: `Not logged in. Your auth token has expired and could not be refreshed, and the environment is non-interactive. Run wrangler login in an interactive terminal or set a CLOUDFLARE_API_TOKEN.`
+- Owner next action: complete existing Wrangler login on this Mac. Then read the preview project production_branch, deploy the private export to a nonproduction branch using the existing project, verify Access on page/media, and return the resulting /about/profile#pastor-biography-video URL. No further design approval, media regeneration or audit required.
+
+- Private candidate webpack build and focused export verification passed: Profile player/registered anchor, library reference, download binding, no fabricated captions/English, original paragraphs preserved, MP4 exact hash/bytes, analytics disabled and robots noindex. Verification script: `/private/tmp/verify-biography-candidate.py`. No remote deployment exists yet.
+
+## Accepted preview and final release checkpoint
+- Wrangler authentication restored; preview project production branch confirmed `production`. Exact nonproduction deployment: https://d9d31599.paulzhang-website-preview.pages.dev/about/profile#pastor-biography-video . HTML, library and exact MP4 anonymously redirect to Access.
+- Owner explicitly reviewed and accepted that preview in FINAL RELEASE — APPROVED BIOGRAPHY VIDEO and requested normal production publication. No device/browser or separate specific test results supplied; registry evidence states this honestly.
+- The exact original 20,096,494-byte MP4 is now included with the same content address; production catalog and standalone release registry bind it to the approved title/Profile anchor and immutable reviewed implementation commit. No English, captions, poster or audio invented.
+- Independent final binding review found no blockers. Required checks/build are rerun for the production binding; an old article test now scopes stale-article exclusion to its own canonical ID so independent videos remain visible.
+- Remaining mandatory gate: create the focused publication PR, pass final-head CI and obtain a distinct human-authored owner acknowledgement of that exact PR head on GitHub. Chat preview acceptance does not substitute. After all approvals and separate production permission are satisfied, normal merge/main workflow only; verify public Profile/library player and unchanged MP4. Earlier expired-login notes above are historical and resolved.

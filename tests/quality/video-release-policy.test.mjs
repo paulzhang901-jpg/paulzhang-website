@@ -33,3 +33,20 @@ test('only one active release may own a canonical locale, but retired history ma
 
 test('unregistered runtime videos cannot bypass policy using small or external MP4s',()=>{for(const mp4 of ['/media/video/small.mp4','https://elsewhere.example/video.mp4']){const f=fixture();f.registry.releases=[];f.options.policyAccepted=false;f.options.catalog[0].mp4=mp4;assert.throws(()=>run(f),/lacks active governed/);}});
 test('legacy runtime grandfathering pins exact existing records only',async()=>{const {readFileSync}=await import('node:fs');const catalog=JSON.parse(readFileSync('config/media-publishing/published-videos.json')).records.filter(entry=>entry.canonicalId==='article-what-is-true-faith');assert.equal(catalog.length,2);assert.equal(validateVideoReleases({schemaVersion:1,releases:[]},{catalog}).size,0);const changed=structuredClone(catalog);changed[0].mp4='/media/video/replacement.mp4';assert.throws(()=>validateVideoReleases({schemaVersion:1,releases:[]},{catalog:changed}),/lacks active governed/);});
+
+function standaloneFixture(){
+ const f=fixture(),r=f.registry.releases[0],e=r.locales[0],c=f.options.catalog[0];
+ r.sourceKind='standalone';r.locales=[e];f.options.catalog=[c];f.options.narrations=[];
+ delete e.sourcePath; delete e.sourceFileSha256;e.assets=e.assets.filter(a=>a.kind==='mp4');
+ for(const key of ['srt','captions','poster']) delete c[key];
+ Object.assign(c,{publishedAt:'2020-01-01T00:00:00Z',sourceKind:'standalone',category:'approved-standalone-videos',videoType:'biography',title:'牧师的旅程',primaryPage:'/about/profile#pastor-biography-video'});
+ const fingerprint=hash(JSON.stringify({policy:'standalone-video-presentation/v1',canonicalId:c.canonicalId,locale:c.locale,title:c.title,videoType:c.videoType,primaryPage:c.primaryPage,mp4Sha256:e.assets[0].sha256}));
+ e.presentationSha256=c.sourceSha256=fingerprint;
+ f.options.standalonePolicyAccepted=true;return f;
+}
+test('approved standalone release requires only supplied locale and MP4 without fabricated narration',()=>{assert.equal(run(standaloneFixture()).size,1);});
+test('standalone still rejects missing approval, stale metadata, unknown fields, extra assets and unsafe category',()=>{
+ for(const change of [f=>f.options.standalonePolicyAccepted=false,f=>f.options.catalog[0].title='changed',f=>f.options.catalog[0].category='other',f=>f.options.catalog[0].primaryPage='//evil.example',f=>f.options.catalog[0].videoType='film',f=>f.options.catalog[0].approved=true,f=>f.options.catalog[0].poster='/media/video/'+ 'a'.repeat(64)+'.png',f=>delete f.registry.releases[0].ownerAcceptance]){
+ const f=standaloneFixture();change(f);assert.throws(()=>run(f));
+ }
+});

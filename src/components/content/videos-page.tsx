@@ -9,6 +9,8 @@ import type { ContentLanguage } from "@/types/content";
 
 export function VideosPage({locale, repository}: {locale: ContentLanguage; repository: ContentRepository}) {
   const zh = locale === "zh-CN";
+  const videos = getPublishedVideos(repository,locale);
+  const standalone = videos.filter(v=>v.sourceKind === "standalone");
   return <>
     <Section className="border-b bg-muted/40"><Container>
       <nav aria-label={zh ? "面包屑" : "Breadcrumbs"} className="mb-6 text-sm text-muted-foreground">
@@ -21,6 +23,7 @@ export function VideosPage({locale, repository}: {locale: ContentLanguage; repos
       </SectionHeading>
       <Link href={localizedPath("library", locale)} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "浏览真理资源库" : "Explore the Truth Library"}</Link>
     </Container></Section>
-    <VideosSection locale={locale} items={getPublishedVideos(repository, locale)} />
+    <VideosSection locale={locale} items={videos.filter(v=>v.sourceKind !== "standalone")} />
+    {standalone.length ? <VideosSection locale={locale} items={standalone} standalone /> : null}
   </>;
 }

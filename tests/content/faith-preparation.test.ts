@@ -67,7 +67,7 @@ test("ADR-0036 binds exact approved bilingual bodies and media to the immutable 
     assert.deepEqual(resolvePublishedNarration(item), {src:a.src, audioSha256:a.audioSha256});
     for (const patch of [{body:item.body + " changed"}, {status:"draft"}, {visibility:"private"}, {accessLevel:"member"}] as const) {
       assert.equal(resolvePublishedNarration({...item, ...patch}), undefined);
-      assert.deepEqual(getPublishedVideos(createContentRepository([{...item, ...patch}]), s.locale), []);
+      assert.deepEqual(getPublishedVideos(createContentRepository([{...item, ...patch}]), s.locale).filter(entry => entry.canonicalId === r.canonicalId), []);
     }
   }
   let total = 0;

@@ -38,14 +38,16 @@ export function validateYoutubeRelease(c, {policyAccepted=false, read}={}) {
 
 // Validates evidence consistency, NOT owner identity or authorization. Authenticated
 // GitHub final-head approval and separate production permission remain external gates.
-export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
+export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
  keys(registry,['schemaVersion','releases'],'registry');
  requireValue(registry.schemaVersion===1 && Array.isArray(registry.releases),'Invalid release registry');
  requireValue(!registry.releases.length || policyAccepted===true,'Accepted ADR-0037 required before registering releases');
  const active=new Set();
  const approved=new Map(),ids=new Set(),identities=new Set();
  for(const release of registry.releases){
-  keys(release,['id','state','canonicalId','sourceCommit','ownerAcceptance','locales'],'release');
+  const standalone=release.sourceKind==='standalone';
+  keys(release,['id','state','canonicalId','sourceCommit','ownerAcceptance','locales',...(standalone?['sourceKind']:[])],'release');
+  if(standalone)requireValue(standalonePolicyAccepted===true,'Accepted standalone ADR-0037 amendment required');
   requireValue(/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(release.id) && !ids.has(release.id),'Invalid or duplicate release ID');ids.add(release.id);
   requireValue(typeof release.canonicalId==='string' && /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(release.canonicalId),'Invalid canonical identity');
   requireValue(typeof release.sourceCommit==='string' && /^[a-f0-9]{40}$/.test(release.sourceCommit),'Invalid source commit');
@@ -55,22 +57,33 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
   keys(a,['owner','acceptedAt','previewOrigin','iphoneSafariEvidence'],'owner acceptance');
   requireValue(a.owner==='paulzhang901-jpg' && typeof a.acceptedAt==='string' && /^\d{4}-\d\d-\d\dT/.test(a.acceptedAt) && Number.isFinite(Date.parse(a.acceptedAt)) && Date.parse(a.acceptedAt)<=Date.now() && typeof a.iphoneSafariEvidence==='string' && a.iphoneSafariEvidence.trim().length>=20,'Invalid owner iPhone acceptance');
   requireValue(typeof a.previewOrigin==='string' && /^https:\/\/[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.paulzhang-website-preview\.pages\.dev$/.test(a.previewOrigin),'Invalid protected preview acceptance origin');
-  requireValue(Array.isArray(release.locales) && release.locales.length===2 && new Set(release.locales.map(e=>e.locale)).size===2 && release.locales.every(e=>['zh-CN','en-US'].includes(e.locale)),'Complete bilingual locales required');
+  requireValue(Array.isArray(release.locales) && (standalone ? release.locales.length>=1 && release.locales.length<=2 : release.locales.length===2) && new Set(release.locales.map(e=>e.locale)).size===release.locales.length && release.locales.every(e=>['zh-CN','en-US'].includes(e.locale)),'Complete bilingual locales required');
   let releaseBytes=0;
   for(const entry of release.locales){
-   keys(entry,['locale','sourcePath','sourceFileSha256','presentationSha256','assets'],'locale');
+   keys(entry,standalone?['locale','presentationSha256','assets']:['locale','sourcePath','sourceFileSha256','presentationSha256','assets'],'locale');
    const identity=release.canonicalId+':'+entry.locale;
    if(release.state==='ACTIVE'){requireValue(!identities.has(identity),'Duplicate canonical locale identity');identities.add(identity);active.add(identity+':'+release.id);}
-   requireValue(typeof entry.sourcePath==='string' && new RegExp('^content/'+entry.locale+'/library/[a-z0-9]+(?:-[a-z0-9]+)*\\.mdx$').test(entry.sourcePath),'Invalid source path');
-   requireValue(digest(entry.sourceFileSha256) && digest(entry.presentationSha256),'Invalid source hash');
-   requireValue(Array.isArray(entry.assets) && entry.assets.length===4 && new Set(entry.assets.map(e=>e.kind)).size===4 && entry.assets.every(e=>['mp4','srt','captions','poster'].includes(e.kind)),'Complete MP4/SRT/VTT/poster required');
+   if(!standalone)requireValue(typeof entry.sourcePath==='string' && new RegExp('^content/'+entry.locale+'/library/[a-z0-9]+(?:-[a-z0-9]+)*\\.mdx$').test(entry.sourcePath),'Invalid source path');
+   requireValue((standalone || digest(entry.sourceFileSha256)) && digest(entry.presentationSha256),'Invalid source hash');
+   requireValue(Array.isArray(entry.assets) && (standalone ? entry.assets.length>=1 && entry.assets.length<=4 && entry.assets.some(a=>a.kind==='mp4') : entry.assets.length===4) && new Set(entry.assets.map(e=>e.kind)).size===entry.assets.length && entry.assets.every(e=>['mp4','srt','captions','poster'].includes(e.kind)),'Complete MP4/SRT/VTT/poster required');
    let c;
    if(release.state==='ACTIVE'){
    const matches=catalog.filter(c=>c.canonicalId===release.canonicalId && c.locale===entry.locale);
    requireValue(matches.length===1,'Exactly one matching video catalog record required');c=matches[0];
    requireValue(c.state==='PUBLISHED' && c.kind==='production' && c.publicationEventId===release.id && c.sourceSha256===entry.presentationSha256,'Mismatched video catalog release binding');
+   if(standalone){
+    const required=['canonicalId','locale','state','kind','sourceSha256','mp4','publishedAt','publicationEventId','sourceKind','category','videoType','title','primaryPage'];
+    requireValue(required.every(k=>Object.hasOwn(c,k)) && Object.keys(c).every(k=>[...required,'poster','captions','srt'].includes(k)), 'Invalid standalone catalog fields');
+    requireValue(c.sourceKind==='standalone' && c.category==='approved-standalone-videos' && ['biography','testimony','sermon'].includes(c.videoType) && typeof c.title==='string' && c.title.trim().length>0,'Invalid standalone metadata');
+    requireValue(typeof c.primaryPage==='string' && new RegExp('^'+(c.locale==='en-US'?'/en':'')+'/about/profile#[a-z0-9]+(?:-[a-z0-9]+)*$').test(c.primaryPage),'Invalid standalone primary page');
+    const mp4=entry.assets.find(a=>a.kind==='mp4');
+    requireValue(hash(JSON.stringify({policy:'standalone-video-presentation/v1',canonicalId:c.canonicalId,locale:c.locale,title:c.title,videoType:c.videoType,primaryPage:c.primaryPage,mp4Sha256:mp4.sha256}))===entry.presentationSha256,'Stale standalone metadata');
+    requireValue(['mp4','poster','captions','srt'].every(kind=>Boolean(c[kind])===entry.assets.some(a=>a.kind===kind)),'Standalone asset coverage mismatch');
+   }else{
+   requireValue(!Object.hasOwn(c,'sourceKind'),'Article release cannot bind standalone record');
    requireValue(narrations.some(n=>n.canonicalId===release.canonicalId && n.locale===entry.locale && n.state==='PUBLISHED' && n.kind==='production' && n.sourceSha256===entry.sourceFileSha256),'Existing published narration/source binding required');
    requireValue(hash(read(entry.sourcePath))===entry.sourceFileSha256,'Stale source bytes');
+   }
    }
    for(const asset of entry.assets){
     keys(asset,['kind','path','sha256','bytes'],'asset');
@@ -86,10 +99,11 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
    }
   }
  }
- const catalogIdentities=new Set();
+ const catalogIdentities=new Set(),standaloneDestinations=new Set();
  for(const c of catalog){
   const identity=c.canonicalId+':'+c.locale;
   requireValue(!catalogIdentities.has(identity),'Duplicate runtime catalog identity');catalogIdentities.add(identity);
+  if(c.sourceKind==='standalone'){requireValue(!standaloneDestinations.has(c.primaryPage),'Duplicate standalone presentation destination');standaloneDestinations.add(c.primaryPage);}
   if(c.provider === 'youtube') validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
   else requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');
  }

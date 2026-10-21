@@ -11,13 +11,14 @@ const item: VideoPresentation = {
   captions: "/test-only/captions.vtt", article: "/en/library/test-only",
   audio: "/test-only/audio.mp3",
 }; // Render fixtures only; these paths are not catalog entries or hosted assets.
-test("listing page has one primary heading, reading link and genuine empty state in both locales", () => {
+test("listing page preserves primary heading, reading link and genuine empty states alongside approved standalone media", () => {
   for (const locale of ["zh-CN", "en-US"] as const) {
     const html = renderToStaticMarkup(<VideosPage locale={locale} repository={createContentRepository([])} />);
     assert.equal((html.match(/<h1/g) ?? []).length, 1);
     assert.match(html, locale === "zh-CN" ? /目前暂无已发布的视频/ : /No published videos/);
     assert.ok(html.includes(locale === "zh-CN" ? 'href="/library"' : 'href="/en/library"'));
-    assert.doesNotMatch(html, /<video|<iframe/);
+    if(locale === "en-US") assert.doesNotMatch(html, /<video|<iframe/);
+    else {assert.match(html,/已批准的独立视频/);assert.match(html,/href="\/about\/profile#pastor-biography-video"/);}
   }
 });
 test("video cards display alternate title, Scripture and actual media publication date", () => {
@@ -55,4 +56,12 @@ test("ADR-0038 renders a private activation gate and honest fallback, not an ifr
   assert.match(html,/watch\?v=0J44f6acTeQ/);
   assert.doesNotMatch(html,/<iframe|<video|youtube-nocookie|下载字幕|打开视频文件/);
   assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale="zh-CN" items={[{...video,canonicalId:"other"}]} />),/加载 YouTube/);
+});
+
+test("standalone player uses optional auxiliaries honestly and links to existing biography", () => {
+  const video = {...item, canonicalId:"video-pastor-biography-zhang-chongzhu", sourceKind:"standalone" as const, locale:"zh-CN" as const, title:"牧师的旅程", article:"/about/profile#pastor-biography-video", poster:undefined,captions:undefined,audio:undefined};
+  const html=renderToStaticMarkup(<VideosSection locale="zh-CN" items={[video]} />);
+  assert.match(html, /<video/); assert.match(html, /牧师简介/);
+  assert.match(html,/href="\/about\/profile#pastor-biography-video"/);
+  assert.doesNotMatch(html, /<track|poster=|AI 合成|下载字幕|收听音频/);
 });

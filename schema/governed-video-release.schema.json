@@ -16,157 +16,318 @@
     "releases": {
       "type": "array",
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "id",
-          "canonicalId",
-          "sourceCommit",
-          "ownerAcceptance",
-          "locales",
-          "state"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$"
-          },
-          "canonicalId": {
-            "type": "string",
-            "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$"
-          },
-          "sourceCommit": {
-            "type": "string",
-            "pattern": "^[a-f0-9]{40}$"
-          },
-          "ownerAcceptance": {
+        "oneOf": [
+          {
             "type": "object",
             "additionalProperties": false,
             "required": [
-              "owner",
-              "acceptedAt",
-              "previewOrigin",
-              "iphoneSafariEvidence"
+              "id",
+              "canonicalId",
+              "sourceCommit",
+              "ownerAcceptance",
+              "locales",
+              "state"
             ],
             "properties": {
-              "owner": {
-                "const": "paulzhang901-jpg"
-              },
-              "acceptedAt": {
+              "id": {
                 "type": "string",
-                "format": "date-time"
+                "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$"
               },
-              "previewOrigin": {
+              "canonicalId": {
                 "type": "string",
-                "pattern": "^https://[a-z0-9]([a-z0-9-]*[a-z0-9])?\\.paulzhang-website-preview\\.pages\\.dev$"
+                "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$"
               },
-              "iphoneSafariEvidence": {
+              "sourceCommit": {
                 "type": "string",
-                "minLength": 20
-              }
-            }
-          },
-          "locales": {
-            "type": "array",
-            "minItems": 2,
-            "maxItems": 2,
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "locale",
-                "sourcePath",
-                "sourceFileSha256",
-                "presentationSha256",
-                "assets"
-              ],
-              "properties": {
-                "locale": {
-                  "enum": [
-                    "zh-CN",
-                    "en-US"
-                  ]
-                },
-                "sourcePath": {
-                  "type": "string",
-                  "pattern": "^content/(zh-CN|en-US)/library/[a-z0-9]+(-[a-z0-9]+)*\\.mdx$"
-                },
-                "sourceFileSha256": {
-                  "type": "string",
-                  "pattern": "^[a-f0-9]{64}$"
-                },
-                "presentationSha256": {
-                  "type": "string",
-                  "pattern": "^[a-f0-9]{64}$"
-                },
-                "assets": {
-                  "type": "array",
-                  "minItems": 4,
-                  "maxItems": 4,
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "required": [
-                      "kind",
-                      "path",
-                      "sha256",
-                      "bytes"
-                    ],
-                    "properties": {
-                      "kind": {
-                        "enum": [
-                          "mp4",
-                          "srt",
-                          "captions",
-                          "poster"
-                        ]
-                      },
-                      "path": {
-                        "type": "string",
-                        "pattern": "^media/video/[a-f0-9]{64}\\.(mp4|srt|vtt|png|jpg|jpeg|webp|avif)$"
-                      },
-                      "sha256": {
-                        "type": "string",
-                        "pattern": "^[a-f0-9]{64}$"
-                      },
-                      "bytes": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "maximum": 26214400
-                      }
+                "pattern": "^[a-f0-9]{40}$"
+              },
+              "ownerAcceptance": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "owner",
+                  "acceptedAt",
+                  "previewOrigin",
+                  "iphoneSafariEvidence"
+                ],
+                "properties": {
+                  "owner": {
+                    "const": "paulzhang901-jpg"
+                  },
+                  "acceptedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "previewOrigin": {
+                    "type": "string",
+                    "pattern": "^https://[a-z0-9]([a-z0-9-]*[a-z0-9])?\\.paulzhang-website-preview\\.pages\\.dev$"
+                  },
+                  "iphoneSafariEvidence": {
+                    "type": "string",
+                    "minLength": 20
+                  }
+                }
+              },
+              "locales": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "locale",
+                    "sourcePath",
+                    "sourceFileSha256",
+                    "presentationSha256",
+                    "assets"
+                  ],
+                  "properties": {
+                    "locale": {
+                      "enum": [
+                        "zh-CN",
+                        "en-US"
+                      ]
                     },
-                    "allOf": [
-                      {
-                        "if": {
-                          "properties": {
-                            "kind": {
-                              "not": {
-                                "const": "mp4"
+                    "sourcePath": {
+                      "type": "string",
+                      "pattern": "^content/(zh-CN|en-US)/library/[a-z0-9]+(-[a-z0-9]+)*\\.mdx$"
+                    },
+                    "sourceFileSha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "presentationSha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "assets": {
+                      "type": "array",
+                      "minItems": 4,
+                      "maxItems": 4,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "kind",
+                          "path",
+                          "sha256",
+                          "bytes"
+                        ],
+                        "properties": {
+                          "kind": {
+                            "enum": [
+                              "mp4",
+                              "srt",
+                              "captions",
+                              "poster"
+                            ]
+                          },
+                          "path": {
+                            "type": "string",
+                            "pattern": "^media/video/[a-f0-9]{64}\\.(mp4|srt|vtt|png|jpg|jpeg|webp|avif)$"
+                          },
+                          "sha256": {
+                            "type": "string",
+                            "pattern": "^[a-f0-9]{64}$"
+                          },
+                          "bytes": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 26214400
+                          }
+                        },
+                        "allOf": [
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "not": {
+                                    "const": "mp4"
+                                  }
+                                }
+                              }
+                            },
+                            "then": {
+                              "properties": {
+                                "bytes": {
+                                  "maximum": 1048576
+                                }
                               }
                             }
                           }
-                        },
-                        "then": {
-                          "properties": {
-                            "bytes": {
-                              "maximum": 1048576
-                            }
-                          }
-                        }
+                        ]
                       }
-                    ]
+                    }
                   }
                 }
+              },
+              "state": {
+                "enum": [
+                  "ACTIVE",
+                  "RETIRED"
+                ]
               }
             }
           },
-          "state": {
-            "enum": [
-              "ACTIVE",
-              "RETIRED"
-            ]
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "canonicalId",
+              "sourceCommit",
+              "ownerAcceptance",
+              "locales",
+              "state",
+              "sourceKind"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$"
+              },
+              "canonicalId": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+([-_][a-z0-9]+)*$"
+              },
+              "sourceCommit": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{40}$"
+              },
+              "ownerAcceptance": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "owner",
+                  "acceptedAt",
+                  "previewOrigin",
+                  "iphoneSafariEvidence"
+                ],
+                "properties": {
+                  "owner": {
+                    "const": "paulzhang901-jpg"
+                  },
+                  "acceptedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "previewOrigin": {
+                    "type": "string",
+                    "pattern": "^https://[a-z0-9]([a-z0-9-]*[a-z0-9])?\\.paulzhang-website-preview\\.pages\\.dev$"
+                  },
+                  "iphoneSafariEvidence": {
+                    "type": "string",
+                    "minLength": 20
+                  }
+                }
+              },
+              "locales": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 2,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "locale",
+                    "presentationSha256",
+                    "assets"
+                  ],
+                  "properties": {
+                    "locale": {
+                      "enum": [
+                        "zh-CN",
+                        "en-US"
+                      ]
+                    },
+                    "presentationSha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "assets": {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 4,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "kind",
+                          "path",
+                          "sha256",
+                          "bytes"
+                        ],
+                        "properties": {
+                          "kind": {
+                            "enum": [
+                              "mp4",
+                              "srt",
+                              "captions",
+                              "poster"
+                            ]
+                          },
+                          "path": {
+                            "type": "string",
+                            "pattern": "^media/video/[a-f0-9]{64}\\.(mp4|srt|vtt|png|jpg|jpeg|webp|avif)$"
+                          },
+                          "sha256": {
+                            "type": "string",
+                            "pattern": "^[a-f0-9]{64}$"
+                          },
+                          "bytes": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 26214400
+                          }
+                        },
+                        "allOf": [
+                          {
+                            "if": {
+                              "properties": {
+                                "kind": {
+                                  "not": {
+                                    "const": "mp4"
+                                  }
+                                }
+                              }
+                            },
+                            "then": {
+                              "properties": {
+                                "bytes": {
+                                  "maximum": 1048576
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "contains": {
+                        "properties": {
+                          "kind": {
+                            "const": "mp4"
+                          }
+                        },
+                        "required": [
+                          "kind"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "state": {
+                "enum": [
+                  "ACTIVE",
+                  "RETIRED"
+                ]
+              },
+              "sourceKind": {
+                "const": "standalone"
+              }
+            }
           }
-        }
+        ]
       }
     }
   }
