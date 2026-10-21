@@ -105,6 +105,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "owner-english-pastor-biography-video-20261022",
+      "state": "ACTIVE",
+      "canonicalId": "video-pastor-biography-zhang-chongzhu",
+      "sourceKind": "standalone",
+      "sourceCommit": "d1ade61dac52a3d71a814e2aba5b50d3db1df5f8",
+      "ownerAcceptance": {
+        "owner": "paulzhang901-jpg",
+        "acceptedAt": "2026-10-21T18:39:14.939420Z",
+        "previewOrigin": "https://5addce63.paulzhang-website-preview.pages.dev",
+        "iphoneSafariEvidence": "Owner explicitly accepted the existing protected English biography preview and approved The Conviction of Pastor Zhang for publication in FINAL RELEASE — PR #96: OWNER ACCEPTANCE: APPROVED. Device/browser and individual playback details were not supplied and are not asserted. Exact unchanged MP4 hash and bytes are bound below."
+      },
+      "locales": [
+        {
+          "locale": "en-US",
+          "presentationSha256": "72effcb2559f8ee86fe682c6e9eaa9f2a699b6ce4e8e40eaf6f4708836a3d072",
+          "assets": [
+            {
+              "kind": "mp4",
+              "path": "media/video/4d7a88bf6e5e97db81e20e0b8979d2f5bd47fc1ced274dbeeb2dc8b47d85cd26.mp4",
+              "sha256": "4d7a88bf6e5e97db81e20e0b8979d2f5bd47fc1ced274dbeeb2dc8b47d85cd26",
+              "bytes": 15801232
+            }
+          ]
+        }
+      ]
     }
   ]
 }

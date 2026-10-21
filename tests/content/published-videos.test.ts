@@ -84,3 +84,19 @@ test("standalone Chinese biography resolves without a fabricated article, transl
   assert.deepEqual(getPublishedVideos(repo,"zh-CN",catalog({...entry,title:"changed"})),[]);
   for(const patch of [{videoType:"film"},{category:"other"},{primaryPage:"//evil.example"},{mp4:"https://example.org/a.mp4"},{approved:true}]) assert.throws(()=>validateVideoCatalog(catalog({...entry,...patch})));
 });
+
+test("English pastor biography uses existing locale-scoped standalone lookup and preserves Chinese binding", async () => {
+  const {standaloneVideoSourceHash}=await import("../../src/lib/content/published-videos");
+  const {default:current}=await import("../../config/media-publishing/published-videos.json");
+  const canonicalId="video-pastor-biography-zhang-chongzhu";
+  const source={canonicalId,locale:"en-US",sourceKind:"standalone",category:"approved-standalone-videos",videoType:"biography",title:"The Conviction of Pastor Zhang",primaryPage:"/en/about/profile#pastor-biography-video",mp4:"/media/video/4d7a88bf6e5e97db81e20e0b8979d2f5bd47fc1ced274dbeeb2dc8b47d85cd26.mp4"};
+  const fixture={...source,state:"PUBLISHED",kind:"production",sourceSha256:standaloneVideoSourceHash(source),publishedAt:"2020-01-01T00:00:00Z",publicationEventId:"fixture-english-biography-not-production"};
+  const repo=createContentRepository([]);
+  const input=catalog(...current.records.filter(v=>v.locale!=="en-US" || v.canonicalId!==canonicalId),fixture);
+  const zhBefore=getPublishedVideos(repo,"zh-CN",current);
+  assert.deepEqual(getPublishedVideos(repo,"zh-CN",input),zhBefore);
+  const en=getPublishedVideos(repo,"en-US",input).find(v=>v.canonicalId===canonicalId)!;
+  assert.equal(en.title,source.title);assert.equal(en.article,source.primaryPage);assert.equal(en.mp4,source.mp4);
+  assert.equal(en.captions,undefined);assert.equal(en.audio,undefined);assert.equal(en.alternateTitle,undefined);
+  assert.ok(!getPublishedVideos(repo,"zh-CN",input).some(v=>v.mp4===source.mp4));
+});
