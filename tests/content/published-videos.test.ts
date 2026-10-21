@@ -25,7 +25,7 @@ test("video discovery resolves canonical metadata, translations and article path
 });
 test("empty, missing, stale, wrong-locale, future and non-public sources do not appear", () => {
   const repository = createContentRepository([zh]);
-  assert.deepEqual(getPublishedVideos(repository, "zh-CN"), []);
+  assert.deepEqual(getPublishedVideos(repository, "zh-CN", catalog()), []);
   assert.deepEqual(getPublishedVideos(repository, "en-US", catalog(record)), []);
   assert.deepEqual(getPublishedVideos(repository, "zh-CN", catalog({...record, canonicalId: "missing"})), []);
   assert.deepEqual(getPublishedVideos(repository, "zh-CN", catalog({...record, sourceSha256: "0".repeat(64)})), []);

@@ -64,6 +64,21 @@
       "channelId": "UCij02113c9lnl5oZeRKbE6Q",
       "publishedAt": "2026-10-21T01:38:16.593654Z",
       "publicationEventId": "owner-still-unrepentant-youtube-20261020"
+    },
+    {
+      "canonicalId": "video-pastor-biography-zhang-chongzhu",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceKind": "standalone",
+      "category": "approved-standalone-videos",
+      "videoType": "biography",
+      "title": "一位牧师的旅程：张崇助的故事",
+      "primaryPage": "/about/profile#pastor-biography-video",
+      "mp4": "/media/video/367341d326843744a51c2f65aea6f9ea74e6ff349f2df78f9269f477792133a7.mp4",
+      "publishedAt": "2026-10-21T12:13:41.308481Z",
+      "publicationEventId": "owner-pastor-biography-video-20261021",
+      "sourceSha256": "20a82b41e0cf0d0586934b93d442023ed36ac8dc71082e4cde7a17686e824e10"
     }
   ]
 }

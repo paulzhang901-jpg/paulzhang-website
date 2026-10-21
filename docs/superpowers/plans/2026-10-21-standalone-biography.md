@@ -36,8 +36,8 @@ Files: existing videos-section.tsx, videos-page.tsx, video-detail-page.tsx, abou
 ## Task 4 — Required checks and protected candidate
 - [x] Measure actual package/public-media/Git limits; run configured test/type/lint/build/export checks and independent scoped technical/security review; fix only findings in scope.
 - [x] Use a private isolated candidate export with the exact approved MP4 and test presentation lookup, visible NOT PRODUCTION, noindex and analytics disabled. Do not create PUBLISHED production approval/owner acceptance for the candidate.
-- [ ] Verify Access protection on existing project HTML and exact media URL before upload; deploy only non-production branch and verify both protected URLs.
-- [ ] Return exact /about/profile#pastor-biography-video and /videos preview URLs; stop for owner actual-device acceptance.
+- [x] Verify Access protection on existing project HTML and exact media URL before upload; deploy only non-production branch and verify both protected URLs.
+- [x] Return exact /about/profile#pastor-biography-video and /videos preview URLs; stop for owner actual-device acceptance.
 
 ## Later publication
 A separate publication PR is necessary only because the owner explicitly requested merging governance first and ADR-0037 forbids public candidate bytes before acceptance. Create it after acceptance with the same reviewed source/code and exact media; require final-head human GitHub acknowledgement/checks/reviews and separate production permission. Do not merge biography production now.
@@ -53,3 +53,10 @@ A separate publication PR is necessary only because the owner explicitly request
 - Owner next action: complete existing Wrangler login on this Mac. Then read the preview project production_branch, deploy the private export to a nonproduction branch using the existing project, verify Access on page/media, and return the resulting /about/profile#pastor-biography-video URL. No further design approval, media regeneration or audit required.
 
 - Private candidate webpack build and focused export verification passed: Profile player/registered anchor, library reference, download binding, no fabricated captions/English, original paragraphs preserved, MP4 exact hash/bytes, analytics disabled and robots noindex. Verification script: `/private/tmp/verify-biography-candidate.py`. No remote deployment exists yet.
+
+## Accepted preview and final release checkpoint
+- Wrangler authentication restored; preview project production branch confirmed `production`. Exact nonproduction deployment: https://d9d31599.paulzhang-website-preview.pages.dev/about/profile#pastor-biography-video . HTML, library and exact MP4 anonymously redirect to Access.
+- Owner explicitly reviewed and accepted that preview in FINAL RELEASE — APPROVED BIOGRAPHY VIDEO and requested normal production publication. No device/browser or separate specific test results supplied; registry evidence states this honestly.
+- The exact original 20,096,494-byte MP4 is now included with the same content address; production catalog and standalone release registry bind it to the approved title/Profile anchor and immutable reviewed implementation commit. No English, captions, poster or audio invented.
+- Independent final binding review found no blockers. Required checks/build are rerun for the production binding; an old article test now scopes stale-article exclusion to its own canonical ID so independent videos remain visible.
+- Remaining mandatory gate: create the focused publication PR, pass final-head CI and obtain a distinct human-authored owner acknowledgement of that exact PR head on GitHub. Chat preview acceptance does not substitute. After all approvals and separate production permission are satisfied, normal merge/main workflow only; verify public Profile/library player and unchanged MP4. Earlier expired-login notes above are historical and resolved.

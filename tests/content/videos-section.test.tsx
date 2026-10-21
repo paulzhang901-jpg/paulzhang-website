@@ -11,13 +11,14 @@ const item: VideoPresentation = {
   captions: "/test-only/captions.vtt", article: "/en/library/test-only",
   audio: "/test-only/audio.mp3",
 }; // Render fixtures only; these paths are not catalog entries or hosted assets.
-test("listing page has one primary heading, reading link and genuine empty state in both locales", () => {
+test("listing page preserves primary heading, reading link and genuine empty states alongside approved standalone media", () => {
   for (const locale of ["zh-CN", "en-US"] as const) {
     const html = renderToStaticMarkup(<VideosPage locale={locale} repository={createContentRepository([])} />);
     assert.equal((html.match(/<h1/g) ?? []).length, 1);
     assert.match(html, locale === "zh-CN" ? /目前暂无已发布的视频/ : /No published videos/);
     assert.ok(html.includes(locale === "zh-CN" ? 'href="/library"' : 'href="/en/library"'));
-    assert.doesNotMatch(html, /<video|<iframe/);
+    if(locale === "en-US") assert.doesNotMatch(html, /<video|<iframe/);
+    else {assert.match(html,/已批准的独立视频/);assert.match(html,/href="\/about\/profile#pastor-biography-video"/);}
   }
 });
 test("video cards display alternate title, Scripture and actual media publication date", () => {
