@@ -66,4 +66,4 @@ None.
 
 - [0038 Still Unrepentant YouTube Exception](./0038-still-unrepentant-youtube-exception.md) — owner approved implementation and protected preview; publication gates pending.
 
-- ADR-0037 standalone-video amendment — [concise specification awaiting written approval](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). Existing accepted release requirements remain active.
+- ADR-0037 accepted standalone-video amendment — [owner-approved concise specification](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). Existing accepted release requirements remain active.

@@ -1,6 +1,6 @@
 # Approved Standalone Videos — concise written specification
 
-Status: Proposed written specification; owner direction and implementation plan approved, approval of this concrete written specification pending.
+Status: Approved by the owner in the direct OWNER APPROVAL — PR #94 instruction on 2026-10-21; implementation and protected preview authorized, biography production merge deferred.
 Owner: Paul Zhang. Version: V1. Classification: ARCHITECTURE CHANGE.
 Continuation checkpoint: existing standalone-biography-video worktree; the prior quota failure occurred before writing files. This document records the already selected design, not a restarted design process.
 
@@ -31,10 +31,10 @@ Use only the existing Cloudflare Pages project/non-production branch. Before any
 
 Keep independent technical/security review, owner actual-device preview acceptance for the exact candidate, final-head required GitHub checks/eligible reviews, a distinct human-authored exact-head owner GitHub acknowledgement, separate production authorization, normal protected merge and main revalidation/deployment. Metadata and agent-authored comments cannot substitute for these approvals. Stop before production merge until the owner accepts the preview.
 
-## One focused PR and allowed paths
-Use one focused PR in stages: proposed written amendment -> owner written approval -> record accepted amendment and update affected architecture notes/registries -> implement and test locally -> protected preview -> owner acceptance -> add the unchanged MP4/release evidence and complete final-head checks/review/acknowledgement in this same PR. No separate architecture PR is required by the current constitution, provided the decision is approved before implementation.
+## Owner-authorized PR sequencing and allowed paths
+The owner’s 2026-10-21 continuation explicitly requests normal merge of the governance amendment first. Complete governance-only PR #94 without activating media, then implement and test locally and deploy the protected preview. After owner acceptance, a focused publication PR may add the unchanged MP4/release evidence and complete final-head checks/review/acknowledgement. No additional design approval is required; production merge remains deferred.
 
-Current allowed paths: this specification, ADR-0037 proposed addendum and ADR index. After approval: narrow existing video catalog/registry/schema/lookup/player/static-param tests, About/Profile attachment, exact asset budget entry and related architecture/IA notes. No unrelated files, manuscript edits, new components/pages, hosting changes or media generation.
+Governance paths: this specification, ADR-0037 accepted addendum, ADR index, the execution plan and affected architecture/IA notes. Approved implementation paths: narrow existing video catalog/registry/schema/lookup/player/static-param tests, About/Profile attachment, exact asset budget entry and related architecture/IA notes. No unrelated files, manuscript edits, new components/pages, hosting changes or media generation.
 
 ## Acceptance criteria
 - Chinese-only standalone fixture succeeds without fake English/MDX/MP3/auxiliary assets; invalid, unsafe, unregistered or stale fixtures fail.
@@ -46,4 +46,4 @@ Current allowed paths: this specification, ADR-0037 proposed addendum and ADR in
 
 Rollback: reviewed retirement/removal of only the new binding and About attachment; preserve the original video and prior immutable media/evidence.
 
-Next required action: owner approves this concrete written specification once. The previously approved implementation direction remains the scope; no brainstorming restart is requested.
+Owner written approval is recorded in ADR-0037. Continue the already approved implementation plan inline; no repeated design approval is requested. Protected preview acceptance and final-head publication approval remain separate future gates.
