@@ -44,3 +44,6 @@ Mu Changke Fiction is governed by [ADR-0014](../adr/0014-mu-changke-fiction-port
 
 ## Video discovery (Phase 7B)
 [ADR-0034](../adr/0034-bilingual-video-discovery.md) adds 视频讲堂 / Videos at `/videos` and `/en/videos` to V1 navigation after Library. It projects approved published media references onto public canonical articles; it is not an independent sermon archive or content source. Playback returns readers to the related article/audio and the existing formation/companionship paths.
+
+## Approved Standalone Videos
+Approved Standalone Videos (ADR-0037 amendment) extend the existing Video Library as governed media references. The Chinese pastor biography uses existing /about/profile#pastor-biography-video as its canonical presentation; no new About category, duplicate biography route or fabricated English counterpart. Existing article-linked Videos and bilingual route semantics remain unchanged.

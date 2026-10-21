@@ -28,3 +28,6 @@ Paul accepted ADR-0036's exact-asset release-record mechanism on 2026-10-19 in P
 
 ## Repeatable bilingual video releases — ADR-0037
 [ADR-0037](../adr/0037-repeatable-approved-video-releases.md) defines a standing, bounded delivery workflow for approved bilingual video releases. The owner authorized normal acceptance/merge through PR #90; no new candidate is published or iPhone-accepted by this documentation. Existing ADR-0033/0036 decisions remain unchanged. Future activation requires reviewed acceptance/merge, exact-asset registry checks, private/Access-protected preview, per-release owner iPhone acceptance, authenticated final-head review and explicit production authorization.
+
+## Approved Standalone Videos
+ADR-0037’s accepted Approved Standalone Videos amendment permits only approved biography/testimony/sermon MP4s with supplied locales; existing optional approved auxiliary files may be referenced. Preserve every media/Git budget, private Access-protected candidate, independent review, actual-device owner acceptance, human exact-head GitHub acknowledgement, required checks/reviews and normal main deployment. A governance-only merge does not publish the biography.

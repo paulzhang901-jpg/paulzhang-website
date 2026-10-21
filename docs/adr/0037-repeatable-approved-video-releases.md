@@ -65,3 +65,16 @@ The owner’s direct FINAL PRODUCTION RELEASE instruction explicitly authorizes 
 ## Exact external-video boundary
 
 ADR-0038 separately governs only the verified Chinese YouTube sermon 0J44f6acTeQ. It does not grant a local-media exception, alter existing release limits, or authorize other external videos. Its source binding and owner preview acceptance remain required before production registration.
+
+
+## Accepted amendment — Approved Standalone Videos
+
+Status: Accepted — owner explicitly reviewed and approved the written specification in the direct OWNER APPROVAL — PR #94 instruction on 2026-10-21. Existing bilingual rules remain unchanged for article-linked releases.
+
+Permit an additive strict standalone release/catalog variant for owner-approved biography, testimony and sermon videos under `approved-standalone-videos`. Require only supplied/approved locales and the exact existing MP4; do not invent an English counterpart, article, MP3, subtitle file or poster. Optional existing approved auxiliary assets remain hash-bound. Preserve existing bilingual/external-video rules, all security/performance budgets, private Access-protected preview, owner acceptance, exact-head human GitHub acknowledgement, required checks/reviews and protected main deployment.
+
+For the verified Chinese biography, reuse the existing `/about/profile` section and existing player; add a Video Library reference to the same canonical MP4, without new routes, pages, duplicate components, manuscripts or infrastructure. This narrowly extends ADR-0034's article-only projection while preserving ADR-0025's About identities.
+
+The exact source, schema boundaries, allowed paths, impact review, acceptance criteria and owner-authorized governance-first sequencing are in the [concise written specification](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). The owner explicitly approved that concrete text before registry/schema/product implementation. This accepted amendment authorizes only the described implementation workflow; candidate uploads require verified Access protection, and publication still requires distinct preview acceptance and final-head GitHub/production approvals.
+
+Approval evidence: “I have reviewed and approve the written specification in PR #94 for the standalone biography video. 批准该书面规格，继续现有计划。” Recorded by Codex as execution agent; this is not a fabricated GitHub review or future preview acceptance. The owner separately authorizes normal merge of the governance amendment after required checks/reviews. No biography production activation is included in that governance-only merge.
