@@ -35,7 +35,7 @@ Files: existing videos-section.tsx, videos-page.tsx, video-detail-page.tsx, abou
 
 ## Task 4 — Required checks and protected candidate
 - [x] Measure actual package/public-media/Git limits; run configured test/type/lint/build/export checks and independent scoped technical/security review; fix only findings in scope.
-- [ ] Use a private isolated candidate export with the exact approved MP4 and test presentation lookup, visible NOT PRODUCTION, noindex and analytics disabled. Do not create PUBLISHED production approval/owner acceptance for the candidate.
+- [x] Use a private isolated candidate export with the exact approved MP4 and test presentation lookup, visible NOT PRODUCTION, noindex and analytics disabled. Do not create PUBLISHED production approval/owner acceptance for the candidate.
 - [ ] Verify Access protection on existing project HTML and exact media URL before upload; deploy only non-production branch and verify both protected URLs.
 - [ ] Return exact /about/profile#pastor-biography-video and /videos preview URLs; stop for owner actual-device acceptance.
 
@@ -51,3 +51,5 @@ A separate publication PR is necessary only because the owner explicitly request
 - Existing preview HTML and exact target MP4 URL both return Access302. Current preview project production-branch check and upload are pending because Cloudflare OAuth expired and refresh failed.
 - Exact deployment blocker from wrangler: `Not logged in. Your auth token has expired and could not be refreshed, and the environment is non-interactive. Run wrangler login in an interactive terminal or set a CLOUDFLARE_API_TOKEN.`
 - Owner next action: complete existing Wrangler login on this Mac. Then read the preview project production_branch, deploy the private export to a nonproduction branch using the existing project, verify Access on page/media, and return the resulting /about/profile#pastor-biography-video URL. No further design approval, media regeneration or audit required.
+
+- Private candidate webpack build and focused export verification passed: Profile player/registered anchor, library reference, download binding, no fabricated captions/English, original paragraphs preserved, MP4 exact hash/bytes, analytics disabled and robots noindex. Verification script: `/private/tmp/verify-biography-candidate.py`. No remote deployment exists yet.
