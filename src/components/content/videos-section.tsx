@@ -1,3 +1,4 @@
+import { ApprovedYoutubePlayer } from "./approved-youtube-player";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import type { ContentLanguage, ScriptureReference } from "@/types/content";
@@ -11,9 +12,11 @@ export type VideoPresentation = {
   alternateTitle?: string;
   scriptureRefs?: readonly ScriptureReference[];
   publishedAt?: string;
-  mp4: string;
-  poster: string;
-  captions: string;
+  provider?: "youtube";
+  videoId?: "0J44f6acTeQ";
+  mp4?: string;
+  poster?: string;
+  captions?: string;
   article: string;
   audio?: string;
   detail?: string;
@@ -34,7 +37,7 @@ export function VideosSection({ locale, items = [], showDetails = true }: {
 }) {
   const zh = locale === "zh-CN";
   const visible = items.filter(item => item.locale === locale &&
-    [item.mp4, item.poster, item.captions].every(url => safeUrl(url, true)) &&
+    (item.provider === "youtube" ? item.canonicalId === "sermon-revelation-9-20-21" && item.locale === "zh-CN" && item.videoId === "0J44f6acTeQ" : [item.mp4, item.poster, item.captions].every(url => typeof url === "string" && safeUrl(url, true))) &&
     safeUrl(item.article) && (!item.audio || safeUrl(item.audio, true)));
   return <Section className="border-t bg-muted/30"><Container>
     <h2 id="videos" className="font-serif text-3xl">{zh ? "视频讲堂" : "Videos"}</h2>
@@ -48,21 +51,21 @@ export function VideosSection({ locale, items = [], showDetails = true }: {
           return end ? start + "–" + end : start;
         }).join("; ")}</p> : null}
         {item.publishedAt ? <p className="mb-4 text-sm text-muted-foreground">{zh ? "视频发布：" : "Video published: "}<time dateTime={item.publishedAt}>{new Intl.DateTimeFormat(locale, {dateStyle: "medium", timeZone: "UTC"}).format(new Date(item.publishedAt))}</time></p> : null}
-        <video controls playsInline crossOrigin="anonymous" preload="none" poster={item.poster}
+        {item.provider === "youtube" ? <ApprovedYoutubePlayer /> : <video controls playsInline crossOrigin="anonymous" preload="none" poster={item.poster}
           aria-label={item.title} className="aspect-video w-full rounded-md bg-black">
           <source src={item.mp4} type="video/mp4" />
           <track kind="captions" src={item.captions} srcLang={zh ? "zh" : "en"}
             label={zh ? "中文字幕" : "English captions"} />
           <a href={item.mp4}>{zh ? "下载视频" : "Download video"}</a>
-        </video>
-        <p className="mt-3 text-sm text-muted-foreground">{zh ? "AI 合成旁白，非作者本人录音。" : "AI-generated narration; not a recording of the author."}</p>
+        </video>}
+        {item.provider === "youtube" ? null : <p className="mt-3 text-sm text-muted-foreground">{zh ? "AI 合成旁白，非作者本人录音。" : "AI-generated narration; not a recording of the author."}</p>}
         <nav aria-label={zh ? `与《${item.title}》相关的资源` : `Resources for ${item.title}`}
           className="mt-4 flex flex-wrap gap-5">
           {showDetails && item.detail ? <a href={item.detail} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "视频详情" : "Video details"}</a> : null}
           {item.srt ? <a href={item.srt} download className="inline-flex min-h-11 items-center text-primary underline">{zh ? "下载字幕" : "Download subtitles"}</a> : null}
           <a href={item.article} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "阅读原文" : "Read article"}</a>
           {item.audio ? <a href={item.audio} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "收听音频" : "Listen to audio"}</a> : null}
-          <a href={item.mp4} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "打开视频文件" : "Open video file"}</a>
+          {item.mp4 ? <a href={item.mp4} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "打开视频文件" : "Open video file"}</a> : null}
         </nav>
       </article>)}
     </div> : <p className="mt-5 leading-7 text-muted-foreground">{zh ? "目前暂无已发布的视频。" : "No published videos are available yet."}</p>}

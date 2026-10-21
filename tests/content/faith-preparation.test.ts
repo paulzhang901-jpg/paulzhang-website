@@ -56,6 +56,7 @@ test("ADR-0036 binds exact approved bilingual bodies and media to the immutable 
     const expected = (ext: string) => approved.assets.find((e: {file: string}) => e.file === "what-is-true-faith." + short + "." + ext);
     assert.equal(a.src, expected("mp3").proposedPublicPath);
     assert.equal(a.audioSha256, expected("mp3").sha256);
+  assert.ok("mp4" in v);
     assert.equal(v.mp4, expected("mp4").proposedPublicPath);
     assert.equal(v.poster, expected("poster.png").proposedPublicPath);
     assert.equal(v.captions, expected("vtt").proposedPublicPath);

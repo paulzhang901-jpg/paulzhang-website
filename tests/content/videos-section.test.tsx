@@ -44,3 +44,15 @@ test("invalid and YouTube sources are excluded", () => {
     assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale="en-US" items={[{...item, mp4}]} />), /<video/);
   }
 });
+
+test("ADR-0038 renders a private activation gate and honest fallback, not an iframe or download", () => {
+  const video: VideoPresentation = {canonicalId:"sermon-revelation-9-20-21",locale:"zh-CN",title:"仍旧不悔改",
+    provider:"youtube",videoId:"0J44f6acTeQ",article:"/library/still-they-did-not-repent"};
+  const html = renderToStaticMarkup(<VideosSection locale="zh-CN" items={[video]} />);
+  assert.match(html,/加载 YouTube 视频/);
+  assert.match(html,/YouTube，并适用其隐私政策/);
+  assert.match(html,/未提供经审核的字幕文件/);
+  assert.match(html,/watch\?v=0J44f6acTeQ/);
+  assert.doesNotMatch(html,/<iframe|<video|youtube-nocookie|下载字幕|打开视频文件/);
+  assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale="zh-CN" items={[{...video,canonicalId:"other"}]} />),/加载 YouTube/);
+});

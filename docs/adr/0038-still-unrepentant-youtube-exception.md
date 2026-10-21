@@ -1,6 +1,6 @@
 # ADR-0038 — Still Unrepentant: exact YouTube embed exception
 
-Status: Proposed — decision review required; no runtime activation or production authorization.
+Status: Accepted by owner for implementation and protected preview — final publication acceptance and release gates remain pending.
 Date: 2026-10-20
 Owner: Paul Zhang
 Classification: ARCHITECTURE CHANGE
@@ -15,7 +15,7 @@ Video ID: 0J44f6acTeQ
 Title: 《仍旧不悔改》; English reference: Still Unrepentant.
 Channel: Paul Zhang, @PaulZhang-j2w, UCij02113c9lnl5oZeRKbE6Q.
 The public channel description identifies Pastor 张崇助 / Paul Zhang and links fcfmchurch.org. The channel contains both Knowledge and Wisdom videos. The watch page displays 25:56; playback advanced to 0:06 and pause succeeded on 2026-10-20.
-The association with the supplied owner email has NOT been authenticated: the browser is signed into a different account. Owner must confirm this exact video/channel binding before activation.
+The owner directly confirmed this exact verified video and authorized PR #92 in the RESUME — PUBLISH STILL UNREPENTANT instruction. This records chat authorization, not a human-authored GitHub final-head acknowledgement.
 No iframe playback test or protected website preview has yet occurred.
 
 ## Architecture conflict and proposed resolution
@@ -54,4 +54,4 @@ Acceptance/tests: wrong video/channel and arbitrary embed origins rejected; exis
 
 Confirm: “0J44f6acTeQ on @PaulZhang-j2w is my approved 《仍旧不悔改》 video. I approve this narrowly scoped YouTube policy exception and its disclosed third-party privacy behavior for implementation and protected preview. Production still requires final preview acceptance and release approvals.”
 
-This proposed decision does not record that confirmation as already obtained.
+The owner approved this exact scope in chat. Protected-preview acceptance, final-head human GitHub acknowledgement and final production approval remain pending.
