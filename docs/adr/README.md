@@ -65,3 +65,5 @@ None.
 - [0037 Repeatable Approved Bilingual Video Releases](./0037-repeatable-approved-video-releases.md) — Accepted for the standing workflow; per-release Access preview, iPhone acceptance, human final-head acknowledgement and production gates remain.
 
 - [0038 Still Unrepentant YouTube Exception](./0038-still-unrepentant-youtube-exception.md) — owner approved implementation and protected preview; publication gates pending.
+
+- ADR-0037 standalone-video amendment — [concise specification awaiting written approval](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). Existing accepted release requirements remain active.

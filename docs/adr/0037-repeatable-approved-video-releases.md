@@ -65,3 +65,14 @@ The owner’s direct FINAL PRODUCTION RELEASE instruction explicitly authorizes 
 ## Exact external-video boundary
 
 ADR-0038 separately governs only the verified Chinese YouTube sermon 0J44f6acTeQ. It does not grant a local-media exception, alter existing release limits, or authorize other external videos. Its source binding and owner preview acceptance remain required before production registration.
+
+
+## Proposed amendment — Approved Standalone Videos
+
+Status: PROPOSED ADDENDUM ONLY — owner authorized the amendment direction and implementation plan; concrete written specification awaits review. Existing accepted bilingual rules above remain effective until this amendment is explicitly accepted.
+
+Permit an additive strict standalone release/catalog variant for owner-approved biography, testimony and sermon videos under `approved-standalone-videos`. Require only supplied/approved locales and the exact existing MP4; do not invent an English counterpart, article, MP3, subtitle file or poster. Optional existing approved auxiliary assets remain hash-bound. Preserve existing bilingual/external-video rules, all security/performance budgets, private Access-protected preview, owner acceptance, exact-head human GitHub acknowledgement, required checks/reviews and protected main deployment.
+
+For the verified Chinese biography, reuse the existing `/about/profile` section and existing player; add a Video Library reference to the same canonical MP4, without new routes, pages, duplicate components, manuscripts or infrastructure. This narrowly extends ADR-0034's article-only projection while preserving ADR-0025's About identities.
+
+The exact source, schema boundaries, allowed paths, impact review, acceptance criteria and single-PR sequencing are in the [concise written specification](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). Approve that text before marking this amendment accepted and before registry/schema/product implementation. This proposed addendum does not authorize media upload or production publication by itself.
