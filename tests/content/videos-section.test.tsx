@@ -56,3 +56,11 @@ test("ADR-0038 renders a private activation gate and honest fallback, not an ifr
   assert.doesNotMatch(html,/<iframe|<video|youtube-nocookie|下载字幕|打开视频文件/);
   assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale="zh-CN" items={[{...video,canonicalId:"other"}]} />),/加载 YouTube/);
 });
+
+test("standalone player uses optional auxiliaries honestly and links to existing biography", () => {
+  const video = {...item, canonicalId:"video-pastor-biography-zhang-chongzhu", sourceKind:"standalone" as const, locale:"zh-CN" as const, title:"牧师的旅程", article:"/about/profile#pastor-biography-video", poster:undefined,captions:undefined,audio:undefined};
+  const html=renderToStaticMarkup(<VideosSection locale="zh-CN" items={[video]} />);
+  assert.match(html, /<video/); assert.match(html, /牧师简介/);
+  assert.match(html,/href="\/about\/profile#pastor-biography-video"/);
+  assert.doesNotMatch(html, /<track|poster=|AI 合成|下载字幕|收听音频/);
+});

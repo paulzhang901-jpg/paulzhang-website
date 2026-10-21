@@ -43,14 +43,33 @@ const youtubeRecord = z.object({
   publishedAt: z.string().datetime({offset: true}),
   publicationEventId: z.literal("owner-still-unrepentant-youtube-20261020"),
 }).strict();
-const record = z.union([directRecord, youtubeRecord]);
+const standaloneRecord = directRecord.omit({poster:true,captions:true}).extend({
+  sourceKind:z.literal("standalone"), category:z.literal("approved-standalone-videos"),
+  videoType:z.enum(["biography","testimony","sermon"]),title:z.string().trim().min(1),
+  primaryPage:z.string().regex(/^\/(?:en\/)?about\/profile#[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  mp4:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.mp4$/),
+  poster:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.(?:jpg|jpeg|png|webp|avif)$/).optional(),
+  captions:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.vtt$/).optional(),
+  srt:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.srt$/).optional(),
+}).strict().refine(v=>v.primaryPage.startsWith(v.locale==="en-US"?"/en/about/":"/about/"),"Locale/page mismatch");
+const record = z.union([directRecord, youtubeRecord, standaloneRecord]);
+
+type StandaloneMetadata = {canonicalId:string;locale:string;title:string;videoType:string;primaryPage:string;mp4:string};
+export function standaloneVideoSourceHash(v:StandaloneMetadata) {
+  return createHash("sha256").update(JSON.stringify({policy:"standalone-video-presentation/v1",canonicalId:v.canonicalId,locale:v.locale,title:v.title,videoType:v.videoType,primaryPage:v.primaryPage,mp4Sha256:v.mp4.split("/").at(-1)!.slice(0,-4)})).digest("hex");
+}
 const schema = z.object({schemaVersion: z.literal(1), records: z.array(record)}).strict()
   .superRefine((value, context) => {
     const seen = new Set<string>();
+    const destinations = new Set<string>();
     for (const entry of value.records) {
       const key = entry.canonicalId + ":" + entry.locale;
       if (seen.has(key)) context.addIssue({code: "custom", message: "Duplicate video identity"});
       seen.add(key);
+      if ("sourceKind" in entry) {
+        if(destinations.has(entry.primaryPage)) context.addIssue({code:"custom",message:"Duplicate standalone presentation destination"});
+        destinations.add(entry.primaryPage);
+      }
     }
   });
 
@@ -69,7 +88,13 @@ export function videoSourceHash(item: NormalizedContentItem): string {
 export function getPublishedVideos(repository: ContentRepository, locale: ContentLanguage, input: unknown = published): VideoPresentation[] {
   return validateVideoCatalog(input).records
     .filter(entry => entry.locale === locale && Date.parse(entry.publishedAt) <= Date.now())
-    .flatMap(entry => {
+    .flatMap<VideoPresentation>(entry => {
+      if ("sourceKind" in entry) {
+        if (standaloneVideoSourceHash(entry)!==entry.sourceSha256) return [];
+        return [{canonicalId:entry.canonicalId,locale,title:entry.title,sourceKind:entry.sourceKind,
+          publishedAt:entry.publishedAt,mp4:entry.mp4,poster:entry.poster,captions:entry.captions,srt:entry.srt,
+          article:entry.primaryPage,detail:entry.primaryPage}];
+      }
       const item = repository.getContentByCanonicalId(entry.canonicalId, locale)[0];
       if (!item || videoSourceHash(item) !== entry.sourceSha256) return [];
       const alternate = repository.resolvePublicTranslation(item.canonicalId, locale === "zh-CN" ? "en-US" : "zh-CN", item);
@@ -81,7 +106,7 @@ export function getPublishedVideos(repository: ContentRepository, locale: Conten
         detail: videoDetailPath(item.slug, locale),
         article: contentPath(item), audio: resolvePublishedNarration(item)?.src,
       }];
-    }).sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+    }).sort((a, b) => Date.parse(b.publishedAt!) - Date.parse(a.publishedAt!));
 }
 
 export function videoDetailPath(slug: string, locale: ContentLanguage) { return (locale === "en-US" ? "/en" : "") + "/videos/" + slug; }

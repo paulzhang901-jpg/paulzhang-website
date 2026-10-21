@@ -64,3 +64,23 @@ test("ADR-0038 accepts only the exact Chinese sermon YouTube identity", () => {
     assert.throws(() => validateVideoCatalog(catalog({...approved,...patch})));
   }
 });
+
+test("standalone Chinese biography resolves without a fabricated article, translation or audio", async () => {
+  const {standaloneVideoSourceHash} = await import("../../src/lib/content/published-videos");
+  const metadata = {sourceKind:"standalone", canonicalId:"video-pastor-biography-zhang-chongzhu",locale:"zh-CN",category:"approved-standalone-videos",videoType:"biography",title:"一位牧师的旅程：张崇助的故事",primaryPage:"/about/profile#pastor-biography-video",mp4:"/media/video/"+"a".repeat(64)+".mp4"};
+  const entry = {...metadata,state:"PUBLISHED",kind:"production",sourceSha256:standaloneVideoSourceHash(metadata),publishedAt:"2026-01-01T00:00:00Z",publicationEventId:"fixture-only"};
+  const repo=createContentRepository([]);
+  const videos=getPublishedVideos(repo,"zh-CN",catalog(entry));
+  const {videoStaticParams} = await import("../../src/components/content/video-detail-page");
+  assert.deepEqual(videoStaticParams("zh-CN",repo,catalog(entry)),[{slug:"__static-export-placeholder__"}]);
+  assert.throws(()=>validateVideoCatalog(catalog(entry,{...entry,canonicalId:"second-video"})),/Duplicate standalone presentation/);
+  const enEntry={...entry,locale:"en-US",primaryPage:"/en/about/profile#testimony-video",videoType:"testimony"};
+  enEntry.sourceSha256=standaloneVideoSourceHash(enEntry);
+  assert.equal(getPublishedVideos(repo,"en-US",catalog(enEntry))[0].article,"/en/about/profile#testimony-video");
+  assert.equal(videos.length,1); assert.equal(videos[0].title,metadata.title);
+  assert.equal(videos[0].article,metadata.primaryPage);
+  assert.equal(videos[0].audio,undefined); assert.equal(videos[0].alternateTitle,undefined);
+  assert.deepEqual(getPublishedVideos(repo,"en-US",catalog(entry)),[]);
+  assert.deepEqual(getPublishedVideos(repo,"zh-CN",catalog({...entry,title:"changed"})),[]);
+  for(const patch of [{videoType:"film"},{category:"other"},{primaryPage:"//evil.example"},{mp4:"https://example.org/a.mp4"},{approved:true}]) assert.throws(()=>validateVideoCatalog(catalog({...entry,...patch})));
+});
