@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "PENDING_OWNER_PREVIEW_ACCEPTANCE",
+  "status": "OWNER_PREVIEW_ACCEPTED_FINAL_GITHUB_HEAD_ACKNOWLEDGEMENT_PENDING",
   "sourceCommit": "2ca13060e8aa464685eabf801bd4c0bddebc986e",
   "sourceFilename": "一个反帝国的共同体：重塑信仰与政治.mp4",
   "bytes": 18272058,
@@ -15,6 +15,11 @@
     "primaryPage": "/videos/anti-empire-community",
     "mp4": "/media/video/22159f001dc53d1d08a53ab78df249e2324d8850f307818f052c04c307b7d191.mp4"
   },
-  "ownerAcceptance": null,
-  "productionAuthorization": null
+  "ownerAcceptance": {
+    "owner": "paulzhang901-jpg",
+    "acceptedAt": "2026-10-22T02:24:54Z",
+    "previewOrigin": "https://9bfb9cbc.paulzhang-website-preview.pages.dev",
+    "iphoneSafariEvidence": "Owner stated: I have reviewed the protected preview of 《一个反帝国的共同体：重塑信仰与政治》. The video is approved for publication. Explicitly authorized adding the existing MP4 to PR #97. Device/browser and individual playback test details were not supplied and are not asserted. Exact unchanged MP4 hash and bytes are bound below."
+  },
+  "productionAuthorization": "Owner approved publication in chat; separate final-head GitHub acknowledgement and post-check merge/deployment authorization remain pending."
 }

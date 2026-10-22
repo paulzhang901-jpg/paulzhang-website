@@ -132,6 +132,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "owner-reading-notes-anti-empire-20261021",
+      "state": "ACTIVE",
+      "canonicalId": "video-reading-notes-anti-empire-community",
+      "sourceKind": "standalone",
+      "sourceCommit": "080030c1d1f8780b559ec9a9e21fd4546904f49e",
+      "ownerAcceptance": {
+        "owner": "paulzhang901-jpg",
+        "acceptedAt": "2026-10-22T02:24:54Z",
+        "previewOrigin": "https://9bfb9cbc.paulzhang-website-preview.pages.dev",
+        "iphoneSafariEvidence": "Owner stated: I have reviewed the protected preview of 《一个反帝国的共同体：重塑信仰与政治》. The video is approved for publication. Explicitly authorized adding the existing MP4 to PR #97. Device/browser and individual playback test details were not supplied and are not asserted. Exact unchanged MP4 hash and bytes are bound below."
+      },
+      "locales": [
+        {
+          "locale": "zh-CN",
+          "presentationSha256": "da17372cc6230cbfe0f333cae3ea3b4730e6dd38e18d4c9f865a86ae295e49a3",
+          "assets": [
+            {
+              "kind": "mp4",
+              "path": "media/video/22159f001dc53d1d08a53ab78df249e2324d8850f307818f052c04c307b7d191.mp4",
+              "sha256": "22159f001dc53d1d08a53ab78df249e2324d8850f307818f052c04c307b7d191",
+              "bytes": 18272058
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -94,6 +94,21 @@
       "publishedAt": "2026-10-21T18:39:14.939420Z",
       "publicationEventId": "owner-english-pastor-biography-video-20261022",
       "sourceSha256": "72effcb2559f8ee86fe682c6e9eaa9f2a699b6ce4e8e40eaf6f4708836a3d072"
+    },
+    {
+      "canonicalId": "video-reading-notes-anti-empire-community",
+      "locale": "zh-CN",
+      "sourceKind": "standalone",
+      "category": "approved-standalone-videos",
+      "videoType": "reading-notes",
+      "title": "一个反帝国的共同体：重塑信仰与政治",
+      "primaryPage": "/videos/anti-empire-community",
+      "mp4": "/media/video/22159f001dc53d1d08a53ab78df249e2324d8850f307818f052c04c307b7d191.mp4",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "da17372cc6230cbfe0f333cae3ea3b4730e6dd38e18d4c9f865a86ae295e49a3",
+      "publishedAt": "2026-10-22T02:24:54Z",
+      "publicationEventId": "owner-reading-notes-anti-empire-20261021"
     }
   ]
 }
