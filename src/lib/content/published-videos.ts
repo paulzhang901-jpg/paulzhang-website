@@ -45,13 +45,13 @@ const youtubeRecord = z.object({
 }).strict();
 const standaloneRecord = directRecord.omit({poster:true,captions:true}).extend({
   sourceKind:z.literal("standalone"), category:z.literal("approved-standalone-videos"),
-  videoType:z.enum(["biography","testimony","sermon"]),title:z.string().trim().min(1),
-  primaryPage:z.string().regex(/^\/(?:en\/)?about\/profile#[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  videoType:z.enum(["biography","testimony","sermon","reading-notes"]),title:z.string().trim().min(1),
+  primaryPage:z.string(),
   mp4:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.mp4$/),
   poster:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.(?:jpg|jpeg|png|webp|avif)$/).optional(),
   captions:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.vtt$/).optional(),
   srt:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.srt$/).optional(),
-}).strict().refine(v=>v.primaryPage.startsWith(v.locale==="en-US"?"/en/about/":"/about/"),"Locale/page mismatch");
+}).strict().refine(v=>new RegExp("^"+(v.locale==="en-US"?"/en":"")+(v.videoType==="reading-notes"?"/videos/[a-z0-9]+(?:-[a-z0-9]+)*":"/about/profile#[a-z0-9]+(?:-[a-z0-9]+)*")+"$").test(v.primaryPage),"Invalid standalone destination or locale");
 const record = z.union([directRecord, youtubeRecord, standaloneRecord]);
 
 type StandaloneMetadata = {canonicalId:string;locale:string;title:string;videoType:string;primaryPage:string;mp4:string};
@@ -86,14 +86,14 @@ export function videoSourceHash(item: NormalizedContentItem): string {
 }
 
 export function getPublishedVideos(repository: ContentRepository, locale: ContentLanguage, input: unknown = published): VideoPresentation[] {
-  return validateVideoCatalog(input).records
+  const videos = validateVideoCatalog(input).records
     .filter(entry => entry.locale === locale && Date.parse(entry.publishedAt) <= Date.now())
     .flatMap<VideoPresentation>(entry => {
       if ("sourceKind" in entry) {
         if (standaloneVideoSourceHash(entry)!==entry.sourceSha256) return [];
         return [{canonicalId:entry.canonicalId,locale,title:entry.title,sourceKind:entry.sourceKind,
           publishedAt:entry.publishedAt,mp4:entry.mp4,poster:entry.poster,captions:entry.captions,srt:entry.srt,
-          article:entry.primaryPage,detail:entry.primaryPage}];
+          article:entry.primaryPage,detail:entry.primaryPage,videoType:entry.videoType}];
       }
       const item = repository.getContentByCanonicalId(entry.canonicalId, locale)[0];
       if (!item || videoSourceHash(item) !== entry.sourceSha256) return [];
@@ -107,6 +107,12 @@ export function getPublishedVideos(repository: ContentRepository, locale: Conten
         article: contentPath(item), audio: resolvePublishedNarration(item)?.src,
       }];
     }).sort((a, b) => Date.parse(b.publishedAt!) - Date.parse(a.publishedAt!));
+  const destinations = new Set<string>();
+  for (const video of videos) {
+    if (video.detail && destinations.has(video.detail)) throw new Error("Duplicate video detail destination");
+    if (video.detail) destinations.add(video.detail);
+  }
+  return videos;
 }
 
 export function videoDetailPath(slug: string, locale: ContentLanguage) { return (locale === "en-US" ? "/en" : "") + "/videos/" + slug; }

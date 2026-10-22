@@ -74,8 +74,8 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
    if(standalone){
     const required=['canonicalId','locale','state','kind','sourceSha256','mp4','publishedAt','publicationEventId','sourceKind','category','videoType','title','primaryPage'];
     requireValue(required.every(k=>Object.hasOwn(c,k)) && Object.keys(c).every(k=>[...required,'poster','captions','srt'].includes(k)), 'Invalid standalone catalog fields');
-    requireValue(c.sourceKind==='standalone' && c.category==='approved-standalone-videos' && ['biography','testimony','sermon'].includes(c.videoType) && typeof c.title==='string' && c.title.trim().length>0,'Invalid standalone metadata');
-    requireValue(typeof c.primaryPage==='string' && new RegExp('^'+(c.locale==='en-US'?'/en':'')+'/about/profile#[a-z0-9]+(?:-[a-z0-9]+)*$').test(c.primaryPage),'Invalid standalone primary page');
+    requireValue(c.sourceKind==='standalone' && c.category==='approved-standalone-videos' && ['biography','testimony','sermon','reading-notes'].includes(c.videoType) && typeof c.title==='string' && c.title.trim().length>0,'Invalid standalone metadata');
+    requireValue(typeof c.primaryPage==='string' && new RegExp('^'+(c.locale==='en-US'?'/en':'')+(c.videoType==='reading-notes'?'/videos/[a-z0-9]+(?:-[a-z0-9]+)*$':'/about/profile#[a-z0-9]+(?:-[a-z0-9]+)*$')).test(c.primaryPage),'Invalid standalone primary page');
     const mp4=entry.assets.find(a=>a.kind==='mp4');
     requireValue(hash(JSON.stringify({policy:'standalone-video-presentation/v1',canonicalId:c.canonicalId,locale:c.locale,title:c.title,videoType:c.videoType,primaryPage:c.primaryPage,mp4Sha256:mp4.sha256}))===entry.presentationSha256,'Stale standalone metadata');
     requireValue(['mp4','poster','captions','srt'].every(kind=>Boolean(c[kind])===entry.assets.some(a=>a.kind===kind)),'Standalone asset coverage mismatch');

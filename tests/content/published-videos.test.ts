@@ -100,3 +100,22 @@ test("English pastor biography uses existing locale-scoped standalone lookup and
   assert.equal(en.captions,undefined);assert.equal(en.audio,undefined);assert.equal(en.alternateTitle,undefined);
   assert.ok(!getPublishedVideos(repo,"zh-CN",input).some(v=>v.mp4===source.mp4));
 });
+
+ test("reading notes use existing detail route and reject unrelated standalone destinations", async()=>{
+ const {standaloneVideoSourceHash}=await import("../../src/lib/content/published-videos");
+ const {videoStaticParams}=await import("../../src/components/content/video-detail-page");
+ const source={canonicalId:"video-reading-notes-anti-empire",locale:"zh-CN",sourceKind:"standalone",category:"approved-standalone-videos",videoType:"reading-notes",title:"一个反帝国的共同体：重塑信仰与政治",primaryPage:"/videos/anti-empire-community",mp4:"/media/video/"+"a".repeat(64)+".mp4"};
+ const entry={...source,state:"PUBLISHED",kind:"production",sourceSha256:standaloneVideoSourceHash(source),publishedAt:"2020-01-01T00:00:00Z",publicationEventId:"fixture-reading-notes"};
+ const repo=createContentRepository([]);const input=catalog(entry);
+ assert.equal(getPublishedVideos(repo,"zh-CN",input)[0].detail,source.primaryPage);
+ assert.deepEqual(videoStaticParams("zh-CN",repo,input),[{slug:"anti-empire-community"}]);
+ assert.deepEqual(getPublishedVideos(repo,"en-US",input),[]);
+ for(const patch of [{primaryPage:"/about/profile#reading"},{primaryPage:"/en/videos/anti-empire-community"},{primaryPage:"/videos/../about"},{videoType:"biography"}])assert.throws(()=>validateVideoCatalog(catalog({...entry,...patch})));
+ });
+
+test("reading notes cannot replace an existing article-video detail destination", async()=>{
+ const {standaloneVideoSourceHash}=await import("../../src/lib/content/published-videos");
+ const source={canonicalId:"video-reading-notes-collision",locale:"zh-CN",sourceKind:"standalone",category:"approved-standalone-videos",videoType:"reading-notes",title:"Collision fixture",primaryPage:"/videos/sample",mp4:"/media/video/"+"b".repeat(64)+".mp4"};
+ const entry={...source,state:"PUBLISHED",kind:"production",sourceSha256:standaloneVideoSourceHash(source),publishedAt:"2020-01-01T00:00:00Z",publicationEventId:"fixture-collision"};
+ assert.throws(()=>getPublishedVideos(createContentRepository([zh]),"zh-CN",catalog(record,entry)),/Duplicate video detail destination/);
+});

@@ -31,3 +31,5 @@ Paul accepted ADR-0036's exact-asset release-record mechanism on 2026-10-19 in P
 
 ## Approved Standalone Videos
 ADR-0037’s accepted Approved Standalone Videos amendment permits only approved biography/testimony/sermon MP4s with supplied locales; existing optional approved auxiliary files may be referenced. Preserve every media/Git budget, private Access-protected candidate, independent review, actual-device owner acceptance, human exact-head GitHub acknowledgement, required checks/reviews and normal main deployment. A governance-only merge does not publish the biography.
+
+ADR-0037 also permits approved standalone `reading-notes` videos on the existing localized `/videos/[slug]` detail route, with the same registry, player and all existing release gates.

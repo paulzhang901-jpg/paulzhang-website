@@ -47,3 +47,5 @@ Mu Changke Fiction is governed by [ADR-0014](../adr/0014-mu-changke-fiction-port
 
 ## Approved Standalone Videos
 Approved Standalone Videos (ADR-0037 amendment) extend the existing Video Library as governed media references. The Chinese pastor biography uses existing /about/profile#pastor-biography-video as its canonical presentation; no new About category, duplicate biography route or fabricated English counterpart. Existing article-linked Videos and bilingual route semantics remain unchanged.
+
+ADR-0037 also permits approved standalone `reading-notes` videos on the existing localized `/videos/[slug]` detail route, with the same registry, player and all existing release gates.
