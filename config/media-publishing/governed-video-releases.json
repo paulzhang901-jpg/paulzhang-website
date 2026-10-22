@@ -159,6 +159,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": "owner-reading-notes-imagined-politics-20261022",
+      "state": "ACTIVE",
+      "canonicalId": "video-reading-notes-imagined-politics",
+      "sourceKind": "standalone",
+      "sourceCommit": "6a7f5917a883b48f40cf0ab994874f77001c7e17",
+      "ownerAcceptance": {
+        "owner": "paulzhang901-jpg",
+        "acceptedAt": "2026-10-22T11:41:23Z",
+        "previewOrigin": "https://031e3ce0.paulzhang-website-preview.pages.dev",
+        "iphoneSafariEvidence": "Owner stated: PR #98 — FINAL RELEASE: OWNER ACCEPTANCE: APPROVED. I have reviewed and accepted the protected preview of 《我们想象中的政治》. Owner authorized completing the existing release workflow. Device/browser and individual playback test details were not supplied and are not asserted. Exact unchanged MP4 hash and bytes are bound below."
+      },
+      "locales": [
+        {
+          "locale": "zh-CN",
+          "presentationSha256": "7e1827be7c6f7b488db483d178750aaf4d3d82d2cc1498557250bd626630f8ff",
+          "assets": [
+            {
+              "kind": "mp4",
+              "path": "media/video/f4bf4825836ec8a9565f6267f9c0a5f3c504d5ea22e017a1c2dc2deda2314095.mp4",
+              "sha256": "f4bf4825836ec8a9565f6267f9c0a5f3c504d5ea22e017a1c2dc2deda2314095",
+              "bytes": 23873590
+            }
+          ]
+        }
+      ]
     }
   ]
 }

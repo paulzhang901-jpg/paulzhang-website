@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "PENDING_OWNER_PREVIEW_ACCEPTANCE",
+  "status": "OWNER_PREVIEW_ACCEPTED_FINAL_GITHUB_HEAD_ACKNOWLEDGEMENT_PENDING",
   "sourceCommit": "dc813f05ea14346f9a587d9d925634169a713d4b",
   "sourceFilename": "我们想象中的政治.mp4",
   "bytes": 23873590,
@@ -15,6 +15,11 @@
     "primaryPage": "/videos/imagined-politics",
     "mp4": "/media/video/f4bf4825836ec8a9565f6267f9c0a5f3c504d5ea22e017a1c2dc2deda2314095.mp4"
   },
-  "ownerAcceptance": null,
-  "productionAuthorization": null
+  "ownerAcceptance": {
+    "owner": "paulzhang901-jpg",
+    "acceptedAt": "2026-10-22T11:41:23Z",
+    "previewOrigin": "https://031e3ce0.paulzhang-website-preview.pages.dev",
+    "iphoneSafariEvidence": "Owner stated: PR #98 — FINAL RELEASE: OWNER ACCEPTANCE: APPROVED. I have reviewed and accepted the protected preview of 《我们想象中的政治》. Owner authorized completing the existing release workflow. Device/browser and individual playback test details were not supplied and are not asserted. Exact unchanged MP4 hash and bytes are bound below."
+  },
+  "productionAuthorization": "Owner approved publication in chat; separate final-head GitHub acknowledgement and post-check merge/deployment authorization remain pending."
 }

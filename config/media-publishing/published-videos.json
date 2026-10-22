@@ -109,6 +109,21 @@
       "sourceSha256": "da17372cc6230cbfe0f333cae3ea3b4730e6dd38e18d4c9f865a86ae295e49a3",
       "publishedAt": "2026-10-22T02:24:54Z",
       "publicationEventId": "owner-reading-notes-anti-empire-20261021"
+    },
+    {
+      "canonicalId": "video-reading-notes-imagined-politics",
+      "locale": "zh-CN",
+      "sourceKind": "standalone",
+      "category": "approved-standalone-videos",
+      "videoType": "reading-notes",
+      "title": "我们想象中的政治",
+      "primaryPage": "/videos/imagined-politics",
+      "mp4": "/media/video/f4bf4825836ec8a9565f6267f9c0a5f3c504d5ea22e017a1c2dc2deda2314095.mp4",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "7e1827be7c6f7b488db483d178750aaf4d3d82d2cc1498557250bd626630f8ff",
+      "publishedAt": "2026-10-22T11:41:23Z",
+      "publicationEventId": "owner-reading-notes-imagined-politics-20261022"
     }
   ]
 }
