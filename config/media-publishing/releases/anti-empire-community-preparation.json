@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "PENDING_OWNER_PREVIEW_ACCEPTANCE",
+  "sourceCommit": "2ca13060e8aa464685eabf801bd4c0bddebc986e",
+  "sourceFilename": "一个反帝国的共同体：重塑信仰与政治.mp4",
+  "bytes": 18272058,
+  "sha256": "22159f001dc53d1d08a53ab78df249e2324d8850f307818f052c04c307b7d191",
+  "presentation": {
+    "canonicalId": "video-reading-notes-anti-empire-community",
+    "locale": "zh-CN",
+    "sourceKind": "standalone",
+    "category": "approved-standalone-videos",
+    "videoType": "reading-notes",
+    "title": "一个反帝国的共同体：重塑信仰与政治",
+    "primaryPage": "/videos/anti-empire-community",
+    "mp4": "/media/video/22159f001dc53d1d08a53ab78df249e2324d8850f307818f052c04c307b7d191.mp4"
+  },
+  "ownerAcceptance": null,
+  "productionAuthorization": null
+}

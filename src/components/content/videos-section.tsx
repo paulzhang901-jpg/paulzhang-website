@@ -7,6 +7,7 @@ import type { ContentLanguage, ScriptureReference } from "@/types/content";
 // This is not a second content catalog or an authorization mechanism.
 export type VideoPresentation = {
   sourceKind?: "standalone";
+  videoType?: string;
   canonicalId: string;
   locale: ContentLanguage;
   title: string;
@@ -64,7 +65,7 @@ export function VideosSection({ locale, items = [], showDetails = true, standalo
           className="mt-4 flex flex-wrap gap-5">
           {showDetails && item.detail ? <a href={item.detail} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "视频详情" : "Video details"}</a> : null}
           {item.srt ? <a href={item.srt} download className="inline-flex min-h-11 items-center text-primary underline">{zh ? "下载字幕" : "Download subtitles"}</a> : null}
-          <a href={item.article} className="inline-flex min-h-11 items-center text-primary underline">{item.sourceKind === "standalone" ? (zh ? "牧师简介" : "Pastor biography") : (zh ? "阅读原文" : "Read article")}</a>
+          <a href={item.article} className="inline-flex min-h-11 items-center text-primary underline">{item.sourceKind === "standalone" ? (item.videoType === "reading-notes" ? (zh ? "读书笔记视频" : "Reading notes video") : (zh ? "牧师简介" : "Pastor biography")) : (zh ? "阅读原文" : "Read article")}</a>
           {item.audio ? <a href={item.audio} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "收听音频" : "Listen to audio"}</a> : null}
           {item.mp4 ? <a href={item.mp4} download={item.sourceKind === "standalone" || undefined} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "打开视频文件" : "Open video file"}</a> : null}
         </nav>

@@ -13,7 +13,7 @@ export function resolveVideoDetail(slug: string, locale: ContentLanguage, reposi
   return getPublishedVideos(repository, locale).find(video => video.detail === videoDetailPath(slug, locale));
 }
 export function videoStaticParams(locale: ContentLanguage, repository: ContentRepository, input?: unknown) {
-  const videos = getPublishedVideos(repository, locale, input).filter(v=>v.sourceKind !== "standalone");
+  const videos = getPublishedVideos(repository, locale, input).filter(v=>v.sourceKind !== "standalone" || v.videoType === "reading-notes");
   return videos.length ? videos.map(video => ({slug: video.detail!.split("/").at(-1)!})) : [{slug: "__static-export-placeholder__"}];
 }
 export function videoMetadata(slug: string, locale: ContentLanguage, repository: ContentRepository): Metadata {
