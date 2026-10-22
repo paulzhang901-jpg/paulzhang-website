@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "status": "PENDING_OWNER_PREVIEW_ACCEPTANCE",
+  "sourceCommit": "dc813f05ea14346f9a587d9d925634169a713d4b",
+  "sourceFilename": "我们想象中的政治.mp4",
+  "bytes": 23873590,
+  "sha256": "f4bf4825836ec8a9565f6267f9c0a5f3c504d5ea22e017a1c2dc2deda2314095",
+  "presentation": {
+    "canonicalId": "video-reading-notes-imagined-politics",
+    "locale": "zh-CN",
+    "sourceKind": "standalone",
+    "category": "approved-standalone-videos",
+    "videoType": "reading-notes",
+    "title": "我们想象中的政治",
+    "primaryPage": "/videos/imagined-politics",
+    "mp4": "/media/video/f4bf4825836ec8a9565f6267f9c0a5f3c504d5ea22e017a1c2dc2deda2314095.mp4"
+  },
+  "ownerAcceptance": null,
+  "productionAuthorization": null
+}
