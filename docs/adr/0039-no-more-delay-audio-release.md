@@ -1,6 +1,6 @@
 # ADR-0039 — The Day of No More Delay bounded audio release
 
-Status: Proposed — owner approved the written specification and authorized preparation of this decision; final decision/media acceptance pending
+Status: Accepted — owner approved ADR-0039 and preparation of the existing protected preview on 2026-10-26; media/release gates remain pending
 Date: 2026-10-26
 Owner: Paul Zhang
 Scope: V1; no production administration activation
@@ -8,11 +8,11 @@ Classification: ARCHITECTURE CHANGE, bounded to this audio release
 References: ADR-0032, ADR-0021; ADR-0033 is precedent only and its historical candidates remain unchanged
 
 ## Authorization and goal
-The owner approved the local written specification `no-more-delay/sources/audio-release-spec.md` with “批准该规格，继续准备最小发布决定”. That instruction authorizes preparing this decision. It does not assert listening acceptance, iPhone acceptance, final-head GitHub acknowledgement or permission to bypass any gate.
+The owner approved the local written specification `no-more-delay/sources/audio-release-spec.md` with “批准该规格，继续准备最小发布决定”. The owner subsequently reviewed PR #101 and explicitly replied “批准 ADR-0039，准备受保护预览”. This accepts the bounded decision and authorizes preparation of the existing protected preview. English listening, iPhone acceptance, final-head GitHub acknowledgement and production release remain separate gates.
 
 Deliver only the Chinese and English local Voicebox MP3s for `sermon-revelation-10-5-7`, attached to the unchanged published article at `/library/the-day-of-no-more-delay` and `/en/library/the-day-of-no-more-delay`. Preserve the existing ArticleNarration → AiAudioPlayer and download controls. No video work, manuscript edits, new service, credentials, provider, paid calls, general audio-publishing permission or voice retraining.
 
-## Proposed bounded decision
+## Accepted bounded decision
 For these two candidates only, permit a reviewed GitHub release record to retain owner identity, provenance and separate listening/publication decisions instead of activating ADR-0032's unimplemented administration service. Do not broaden or reuse the old release exceptions. The canonical website MDX remains authoritative; reconcile the immutable vault narration input with the exact published source and presentation hashes. Non-preached editorial bookkeeping and factual editorial notes are not spoken; all sermon prose, testimonies, exposition, response and both prayers must remain covered.
 
 Source publication commit: `12993a7467bd8cc998e9097d3dc8282fdfbf3a1d` (PR #100). Refresh exact source proof at review and publication; changed text makes approval stale.
@@ -40,6 +40,6 @@ Do not relax the generic 1 MiB public-file safeguard. Any exception must name on
 ## Allowed paths and rollback
 Decision preparation: this ADR, ADR index, release-boundary documentation and non-runtime evidence. Following acceptance: the two exact MP3s under public/media/narration, two entries in the existing published-narrations catalog, a release evidence record, exact-asset performance allowances and focused binding tests. No canonical MDX, player, analytics, privacy, route, workflow or unrelated file changes.
 
-Rollback uses a reviewed revert of the two narration bindings; retain original WAV/MP3/segment files. There are no new analytics or private-data logging. This Proposed ADR is not production authorization.
+Rollback uses a reviewed revert of the two narration bindings; retain original WAV/MP3/segment files. There are no new analytics or private-data logging. This accepted bounded decision does not by itself constitute media acceptance or production release authorization.
 
 English v002 technical evidence: 102 preserved ordered segments; full WAV/MP3 decode, segment/export hashes and duration reconciliation passed; master duration 2060.880125 seconds. Independent full-audio ASR similarity 98.08%; no long-difference flags or pauses of two seconds or longer. The original segment 20 omitted its final clause and showed repeated wording; only that unapproved segment was replaced. v002 reuses all other 101 segment files byte-for-byte, restores the complete final clause, and retains v001 and the original segment. Automated verification is not owner listening acceptance.

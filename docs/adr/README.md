@@ -68,4 +68,4 @@ None.
 
 - ADR-0037 accepted standalone-video amendment — [owner-approved concise specification](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). Existing accepted release requirements remain active.
 
-- [0039 The Day of No More Delay Audio Release](./0039-no-more-delay-audio-release.md) — Proposed; owner approved specification preparation; both exact candidates fixed; decision acceptance, English listening, protected preview and final release gates pending.
+- [0039 The Day of No More Delay Audio Release](./0039-no-more-delay-audio-release.md) — Accepted by the owner for these exact candidates and protected preview preparation; English listening, iPhone acceptance and final release gates pending.
