@@ -33,3 +33,7 @@ Paul accepted ADR-0036's exact-asset release-record mechanism on 2026-10-19 in P
 ADR-0037’s accepted Approved Standalone Videos amendment permits only approved biography/testimony/sermon MP4s with supplied locales; existing optional approved auxiliary files may be referenced. Preserve every media/Git budget, private Access-protected candidate, independent review, actual-device owner acceptance, human exact-head GitHub acknowledgement, required checks/reviews and normal main deployment. A governance-only merge does not publish the biography.
 
 ADR-0037 also permits approved standalone `reading-notes` videos on the existing localized `/videos/[slug]` detail route, with the same registry, player and all existing release gates.
+
+
+## Proposed No More Delay bounded audio release — ADR-0039
+The owner approved preparation of a specification for only `sermon-revelation-10-5-7`. [ADR-0039](../adr/0039-no-more-delay-audio-release.md) is Proposed; it does not activate a new runtime binding, budget exception or publication permission. Two completed local MP3 candidates are hash-bound in non-runtime review evidence. Chinese full listening is owner-approved; English listening, decision acceptance, Access-protected preview, actual iPhone acceptance, independent review, final-head human acknowledgement and normal CI/main deployment remain gates. Existing article bytes and all previous release decisions remain unchanged.
