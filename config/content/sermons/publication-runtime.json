@@ -741,6 +741,38 @@
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
       "sourceSermonId": "sermon-revelation-9-20-21",
       "sourceCanonicalEditionHash": "6bd231cc53093e57b558c3a1df7281bfc140dc37b428ae355e4485a13ef73955"
+    },
+    {
+      "sermonId": "sermon-revelation-10-5-7",
+      "title": "不再耽延的日子",
+      "subtitle": "",
+      "scriptureRange": "启示录 10:5–7",
+      "sermonSeries": "启示录释经学讲道",
+      "themes": [],
+      "canonicalEditionHash": "4192e690593bffa698329838190e1b22eb5c21d605cba3988392b17900542e78",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/the-day-of-no-more-delay.mdx",
+      "publicRoute": "/library/the-day-of-no-more-delay",
+      "searchEligibility": true
+    },
+    {
+      "sermonId": "sermon-revelation-10-5-7-en",
+      "title": "The Day of No More Delay",
+      "subtitle": "",
+      "scriptureRange": "Revelation 10:5–7",
+      "sermonSeries": "Expository Sermons on Revelation",
+      "themes": [],
+      "canonicalEditionHash": "31c8ff932f711f88b9088ce32c39dc07ff8c0bfe5720452c65ed8dd45df208c4",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "APPROVED",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/the-day-of-no-more-delay.mdx",
+      "publicRoute": "/en/library/the-day-of-no-more-delay",
+      "searchEligibility": true,
+      "sourceSermonId": "sermon-revelation-10-5-7",
+      "sourceCanonicalEditionHash": "4192e690593bffa698329838190e1b22eb5c21d605cba3988392b17900542e78"
     }
   ]
 }

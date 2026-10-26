@@ -1,0 +1,52 @@
+{
+  "goal": "Publish approved bilingual sermon text independently of unfinished audio/video",
+  "owner": "Paul Zhang",
+  "scope": "V1 / ARCHITECTURE-COMPLIANT IMPLEMENTATION",
+  "architecture": [
+    "ADR-0003",
+    "ADR-0011",
+    "ADR-0012",
+    "ADR-0021",
+    "existing sermon publication runtime"
+  ],
+  "analytics_impact": "NONE",
+  "privacy_impact": "No original recordings, private transcripts or local vault links published",
+  "adr_impact": "NONE",
+  "acceptance": "Both complete manuscripts, prayers, illustrations, Scripture and language links render through existing sermon templates; owner merges only after checks/review",
+  "approval_scope": "Owner has approved finalized manuscripts and requested text publication. Web preview acceptance and main merge remain pending; no media approval claimed.",
+  "media": "No MP3/MP4 linked or copied. Existing canonical-ID narration and video catalogs allow later approved media bindings without changing the player.",
+  "sources": {
+    "zh-CN": {
+      "source_filename": "2026-10-25-不再耽延的日子.md",
+      "source_sha256": "683a7ea3321121f0940f9ede186525d4bee86037b6d745815a318133e03afa99",
+      "website_path": "content/zh-CN/library/the-day-of-no-more-delay.mdx",
+      "website_body_sha256": "4192e690593bffa698329838190e1b22eb5c21d605cba3988392b17900542e78",
+      "sermon_body_preserved": true,
+      "notes_preserved": 3,
+      "route": "/library/the-day-of-no-more-delay"
+    },
+    "en-US": {
+      "source_filename": "2026-10-25-The-Day-of-No-More-Delay-EN.md",
+      "source_sha256": "3103b3f2791b9a65a10fe14acc7aa46925509d0e00a0c74c68d32d8d5c04258e",
+      "website_path": "content/en-US/library/the-day-of-no-more-delay.mdx",
+      "website_body_sha256": "31c8ff932f711f88b9088ce32c39dc07ff8c0bfe5720452c65ed8dd45df208c4",
+      "sermon_body_preserved": true,
+      "notes_preserved": 3,
+      "route": "/en/library/the-day-of-no-more-delay"
+    }
+  },
+  "materialization": "Preserve entire sermon and factual footnotes. Omit archive-only editorial/source block and private Obsidian wikilinks. Display footnotes as numbered linked notes using ordinary Markdown. No sermon prose changed. The template displays the title once; redundant body H1 is omitted. Footnote labels are numbered plain-text references with matching headings.",
+  "allowed_paths": [
+    "content/zh-CN/library/the-day-of-no-more-delay.mdx",
+    "content/en-US/library/the-day-of-no-more-delay.mdx",
+    "config/content/sermons/publication-runtime.json",
+    "artifacts/review/sermons/revelation-10-5-7-no-more-delay/provenance.json"
+  ],
+  "tests": [
+    "validate:content",
+    "test:translation",
+    "build",
+    "validate:static-export",
+    "all mandatory GitHub Quality gates"
+  ]
+}
