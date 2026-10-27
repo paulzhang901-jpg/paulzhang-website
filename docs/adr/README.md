@@ -69,3 +69,5 @@ None.
 - ADR-0037 accepted standalone-video amendment — [owner-approved concise specification](../superpowers/specs/2026-10-20-approved-standalone-videos-design.md). Existing accepted release requirements remain active.
 
 - [0039 The Day of No More Delay Audio Release](./0039-no-more-delay-audio-release.md) — Accepted by the owner for these exact candidates and protected preview preparation; owner English listening/iPhone acceptance passed; final GitHub approval and production gates remain.
+
+- [0040 The Day of No More Delay YouTube Release](./0040-no-more-delay-youtube-release.md) — Proposed; only two exact bilingual YouTube bindings, existing player and all protected-preview/final-head release gates preserved. Implementation awaits owner review.

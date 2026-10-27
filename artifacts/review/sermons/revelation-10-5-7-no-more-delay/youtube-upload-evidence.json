@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-27T18:34:44.996671+00:00",
+  "canonicalId": "sermon-revelation-10-5-7",
+  "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+  "channelHandle": "@PaulZhang-j2w",
+  "ownerAuthorization": "Current Phase 4 user instruction explicitly authorizes both unchanged MP4 uploads, Public visibility and website integration.",
+  "websiteIntegration": "PENDING_ADR_0040_REVIEW",
+  "ownerVideoPreviewAcceptance": "NOT_YET_RECORDED",
+  "records": [
+    {
+      "locale": "zh-CN",
+      "videoId": "KQ6jdIFjB8c",
+      "watchUrl": "https://www.youtube.com/watch?v=KQ6jdIFjB8c",
+      "visibility": "PUBLIC",
+      "publicPlaybackObservedThroughSeconds": 10,
+      "pause": "PASSED",
+      "subtitles": "No reviewed subtitle track supplied; platform availability only.",
+      "aiDisclosure": true,
+      "iPhoneVideoAcceptance": "PENDING"
+    },
+    {
+      "locale": "en-US",
+      "videoId": "q8q67bsI3t0",
+      "watchUrl": "https://www.youtube.com/watch?v=q8q67bsI3t0",
+      "visibility": "PUBLIC",
+      "publicPlaybackObservedThroughSeconds": 37,
+      "pause": "PASSED",
+      "subtitles": "No reviewed subtitle track supplied; platform availability only.",
+      "aiDisclosure": true,
+      "iPhoneVideoAcceptance": "PENDING"
+    }
+  ]
+}
