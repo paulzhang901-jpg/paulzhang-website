@@ -37,8 +37,11 @@ test("Client Components remain explicitly reviewed and minimal", () => {
 });
 
 test("raw public assets retain the V1 budget except exact owner-approved media", () => {
-  // ADR-0032 sermon, ADR-0033 and bounded ADR-0036: exact identities only; no directory exemption.
+  // ADR-0032 sermon, ADR-0033 and bounded ADR-0036/0039: exact identities only; no directory exemption.
+  assert.match(fs.readFileSync(path.join(root,"docs/adr/0039-no-more-delay-audio-release.md"),"utf8"), /^Status: Accepted/m);
   const approved = {
+    "media/narration/396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2.mp3": 21006476,
+    "media/narration/d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4.mp3": 24731756,
     "media/narration/051402cbabaf7f999ff367335d49eca60d731033de486a22e6b7934f5e3b4597.mp3": 15238296,
     "media/narration/f6273a399805a30c51eb06c112a74adc412911d87c8f84769fb9169df0c3bcdf.mp3": 20377704,
     "media/narration/829c386e3dffc92194d2c020ac2a4bd3874671e15e79fa741c8f56fbfeb3edc1.mp3": 11128915,

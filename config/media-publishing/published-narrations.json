@@ -90,6 +90,36 @@
       "narrationVersion": 1,
       "publicationEventId": "owner-true-faith-20261019",
       "src": "/media/narration/01c13d929718a954acd89a94426a7944ecd5d3b9d70c3fea5334a0c7c3e16a63.mp3"
+    },
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "4ff0fde9a6c3a881370e19e9c2cb473dc593e96e91cc8a44dbb905b4308986b0",
+      "presentationSha256": "7e70a57d8522aaa6ed1ed2c6f553cd88c0c3b8db187e518bcd5f8fa71f499ccd",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "audioSha256": "396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2",
+      "voiceConfigSha256": "ba66ed7d01104944c2bf8f5224562b23c0dea087b35eafeb8f30e7128bb1a964",
+      "voiceProfileId": "74e455be-7104-48e6-a8d4-7da35e4fa2df",
+      "narrationVersion": 1,
+      "publicationEventId": "owner-no-more-delay-20261026",
+      "src": "/media/narration/396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2.mp3"
+    },
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "0ea197578992ace6fed5ae0670318b89b0cadaf8c70c7c643a93bef832d47892",
+      "presentationSha256": "96aee72f21853e758ddea948fe215fc1ea63fccbd2660ca8cc3819cd1b4456ab",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "audioSha256": "d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4",
+      "voiceConfigSha256": "c84b269db63f3954e33f60b5bccffa7cb048cbf61a7b588090612177c2b51c50",
+      "voiceProfileId": "d8c5508c-ae50-444d-a246-462ab92a7ce5",
+      "narrationVersion": 2,
+      "publicationEventId": "owner-no-more-delay-20261026",
+      "src": "/media/narration/d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4.mp3"
     }
   ]
 }
