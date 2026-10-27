@@ -65,3 +65,15 @@ test("standalone player uses optional auxiliaries honestly and links to existing
   assert.match(html,/href="\/about\/profile#pastor-biography-video"/);
   assert.doesNotMatch(html, /<track|poster=|AI 合成|下载字幕|收听音频/);
 });
+
+test("ADR-0040 renders only the matching bilingual sermon video with localized activation and no third-party preload", () => {
+  for (const [locale, videoId] of [["zh-CN","KQ6jdIFjB8c"],["en-US","q8q67bsI3t0"]] as const) {
+    const video = {canonicalId:"sermon-revelation-10-5-7",locale,title:"The Day of No More Delay",provider:"youtube" as const,videoId,article:(locale==="en-US"?"/en":"")+"/library/the-day-of-no-more-delay"} as VideoPresentation;
+    const html=renderToStaticMarkup(<VideosSection locale={locale} items={[video]} />);
+    assert.ok(html.includes("watch?v="+videoId));
+    assert.match(html,locale==="en-US"?/Load YouTube video/:/加载 YouTube 视频/);
+    assert.doesNotMatch(html,/<iframe|youtube-nocookie|<video|打开视频文件|Download subtitles/);
+    const wrong= {...video,videoId:locale==="en-US"?"KQ6jdIFjB8c":"q8q67bsI3t0"} as VideoPresentation;
+    assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale={locale} items={[wrong]} />),/watch\?v=/);
+  }
+});

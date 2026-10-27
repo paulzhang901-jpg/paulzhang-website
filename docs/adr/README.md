@@ -70,4 +70,4 @@ None.
 
 - [0039 The Day of No More Delay Audio Release](./0039-no-more-delay-audio-release.md) — Accepted by the owner for these exact candidates and protected preview preparation; owner English listening/iPhone acceptance passed; final GitHub approval and production gates remain.
 
-- [0040 The Day of No More Delay YouTube Release](./0040-no-more-delay-youtube-release.md) — Proposed; only two exact bilingual YouTube bindings, existing player and all protected-preview/final-head release gates preserved. Implementation awaits owner review.
+- [0040 The Day of No More Delay YouTube Release](./0040-no-more-delay-youtube-release.md) — Accepted by owner for two exact bilingual YouTube bindings; existing player and all protected-preview/final-head release gates preserved.

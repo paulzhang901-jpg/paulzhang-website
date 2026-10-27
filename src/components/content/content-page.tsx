@@ -14,6 +14,8 @@ import {SermonPublicationBody} from "./sermon-publication-page";
 import {ArticleNarration} from "./article-narration";
 import {resolvePublishedNarration} from "@/lib/content/published-narrations";
 import {sameSermonDisplayText, sermonDisplayText} from "@/lib/sermons/display";
+import {getPublishedVideos} from "@/lib/content/published-videos";
+import {VideosSection} from "./videos-section";
 import {loadPublishedSermon} from "@/lib/sermons/published";
 
 function RelatedContent({children}: {children: ReactNode}) {
@@ -67,6 +69,9 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
   );
   const readingBody = headingMatches ? item.body.slice(manuscriptHeading[0].length) : item.body;
   const related = repository.getRelatedContent(item, 3);
+  // ADR-0040: only this existing sermon receives the reviewed locale-matched video.
+  const videos = item.canonicalId === "sermon-revelation-10-5-7"
+    ? getPublishedVideos(repository,item.language).filter(video=>video.canonicalId===item.canonicalId && video.provider==="youtube") : [];
   return <>
     <Section className="border-b bg-muted/40">
       <Container>
@@ -93,6 +98,7 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
     <Section>
       <Container><ReadingContainer className="px-0"><ArticleNarration locale={item.language} title={display(item.title)} contentId={"read-aloud-body-" + item.id} narration={resolvePublishedNarration(narrationSource)} /><div id={"read-aloud-body-" + item.id} data-read-aloud-content>{isSermon ? <SermonPublicationBody body={item.body} title={item.title} locale={item.language} scriptureRange={item.scriptureRefs.map(formatScripture).join("; ")} /> : <article className="prose-content"><MDXRemote source={readingBody} components={mdxComponents} /></article>}</div></ReadingContainer></Container>
     </Section>
+    {videos.length ? <VideosSection locale={item.language} items={videos} showDetails={false} /> : null}
     <Section className="border-t bg-muted/40">
       <Container>
         <ReadingContainer className="px-0">

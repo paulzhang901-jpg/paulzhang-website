@@ -1,6 +1,6 @@
 # ADR-0040 — The Day of No More Delay: exact bilingual YouTube release
 
-Status: Proposed — owner authorized public YouTube uploads and website integration in chat; this written bounded architecture decision awaits owner review before implementation.
+Status: Accepted by owner in the instruction to continue PR #102 under ADR-0040 and complete final publication. Protected video preview/iPhone acceptance and exact-final-head GitHub approval remain mandatory.
 Date: 2026-10-27
 Owner: Paul Zhang
 Classification: ARCHITECTURE CHANGE
@@ -23,9 +23,9 @@ The public watch pages resolve to Paul Zhang / @PaulZhang-j2w. Public browser pl
 
 ADR-0038 permits only the exact Chinese Still Unrepentant video. ADR-0034 excludes general YouTube embedding; ADR-0037's ordinary article-video package requires independent bilingual media. Existing code deliberately rejects additional YouTube bindings.
 
-Proposed approach: extend the existing explicit allowlist by exactly these two canonical-ID/locale/video-ID/channel tuples, keeping ADR-0038's original tuple intact. Reuse the existing visitor-activated privacy-enhanced player with localized disclosure and a descriptive title. Do not create another player, arbitrary-provider configuration, new service or route. Direct MP4 hosting is excluded by the owner's instructions and would exceed existing media budgets. A plain external link would not fulfill the requested embedded experience.
+Accepted bounded approach: extend the existing explicit allowlist by exactly these two canonical-ID/locale/video-ID/channel tuples, keeping ADR-0038's original tuple intact. Reuse the existing visitor-activated privacy-enhanced player with localized disclosure and a descriptive title. Do not create another player, arbitrary-provider configuration, new service or route. Direct MP4 hosting is excluded by the owner's instructions and would exceed existing media budgets. A plain external link would not fulfill the requested embedded experience.
 
-## Proposed bounded decision
+## Bounded decision
 
 1. Permit only the two exact tuples above on channel `UCij02113c9lnl5oZeRKbE6Q`. No general YouTube authorization, additional sermon or independent locale inference.
 2. Reuse canonical sermon identity/body/source-hash resolution and the existing video catalog, resolver and player. Add corresponding language video to each existing article using the current article media presentation point; retain existing video listing/detail projection if the established resolver exposes it. Do not duplicate or edit article content.
@@ -47,4 +47,4 @@ Analytics impact: none. Privacy impact: the same explicitly disclosed, visitor-a
 
 ## Approval state
 
-Chat authorization covers the two public YouTube uploads and requested integration. It does not fabricate approval of this subsequently written decision, protected video preview, actual-device video acceptance or exact final GitHub HEAD. Implementation is paused until the owner reviews this proposed decision. The same focused PR can then carry the scoped implementation; no second PR is required unless repository policy demands it.
+The owner authorized continuing the existing PR #102 under ADR-0040 and final publication after checks on 2026-10-27. This accepts the bounded decision and implementation preparation. No protected website video preview/iPhone acceptance or exact-final-head GitHub comment exists yet; those distinct gates remain pending. This same PR carries the scoped implementation; no additional PR is needed.

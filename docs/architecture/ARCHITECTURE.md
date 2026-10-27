@@ -67,3 +67,5 @@ The Mu Changke Fiction portfolio route is governed by [ADR-0014](../adr/0014-mu-
 Production static-export architecture is governed by [ADR-0015](../adr/0015-production-hosting-static-export-strategy.md); automatic validated `main` production deployment is governed by [ADR-0021](../adr/0021-automatic-main-production-deployment.md) and the [Static Production Deployment contract](./STATIC_PRODUCTION_DEPLOYMENT.md).
 
 The exact visitor-activated YouTube sermon exception is governed by [ADR-0038](../adr/0038-still-unrepentant-youtube-exception.md). Existing video discovery and independent-media rules are otherwise unchanged.
+
+ADR-0040 authorizes only the two fixed No More Delay YouTube bindings and locale-matched existing article presentation, using ADR-0038 visitor activation/privacy controls. Protected video preview, actual iPhone video acceptance, exact-final-head human GitHub approval and main-only deployment remain required. No manuscript, audio, storage budget or general provider change.

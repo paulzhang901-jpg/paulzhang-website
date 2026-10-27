@@ -1,0 +1,32 @@
+{
+  "state": "CANDIDATE_ONLY_NOT_PRODUCTION_AUTHORIZATION",
+  "pr": 102,
+  "ownerVideoPreviewAcceptance": "PENDING",
+  "finalHeadGithubApproval": "PENDING",
+  "records": [
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "3d6090807e050f8092d4183dec84639e3bb9f58508b4154741e6a1ff6bc12264",
+      "provider": "youtube",
+      "videoId": "KQ6jdIFjB8c",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-27T18:30:00Z",
+      "publicationEventId": "owner-no-more-delay-youtube-20261027"
+    },
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "11639b9d0be59b990e26284e8c959fe50c47cb3f69388385ffe826b1644ba7e4",
+      "provider": "youtube",
+      "videoId": "q8q67bsI3t0",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-27T18:30:00Z",
+      "publicationEventId": "owner-no-more-delay-youtube-20261027"
+    }
+  ]
+}

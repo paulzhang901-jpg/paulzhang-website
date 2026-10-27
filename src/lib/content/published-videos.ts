@@ -52,7 +52,15 @@ const standaloneRecord = directRecord.omit({poster:true,captions:true}).extend({
   captions:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.vtt$/).optional(),
   srt:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.srt$/).optional(),
 }).strict().refine(v=>new RegExp("^"+(v.locale==="en-US"?"/en":"")+(v.videoType==="reading-notes"?"/videos/[a-z0-9]+(?:-[a-z0-9]+)*":"/about/profile#[a-z0-9]+(?:-[a-z0-9]+)*")+"$").test(v.primaryPage),"Invalid standalone destination or locale");
-const record = z.union([directRecord, youtubeRecord, standaloneRecord]);
+// ADR-0040: exact additional tuples; no arbitrary provider or channel support.
+const noMoreDelayYoutubeRecord = youtubeRecord.omit({canonicalId:true,locale:true,videoId:true,publicationEventId:true}).extend({
+  canonicalId:z.literal("sermon-revelation-10-5-7"),
+  publicationEventId:z.literal("owner-no-more-delay-youtube-20261027"),
+});
+const record = z.union([directRecord, youtubeRecord, standaloneRecord,
+  noMoreDelayYoutubeRecord.extend({locale:z.literal("zh-CN"),videoId:z.literal("KQ6jdIFjB8c")}),
+  noMoreDelayYoutubeRecord.extend({locale:z.literal("en-US"),videoId:z.literal("q8q67bsI3t0")}),
+]);
 
 type StandaloneMetadata = {canonicalId:string;locale:string;title:string;videoType:string;primaryPage:string;mp4:string};
 export function standaloneVideoSourceHash(v:StandaloneMetadata) {

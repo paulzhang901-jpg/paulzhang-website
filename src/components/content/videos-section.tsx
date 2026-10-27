@@ -15,7 +15,7 @@ export type VideoPresentation = {
   scriptureRefs?: readonly ScriptureReference[];
   publishedAt?: string;
   provider?: "youtube";
-  videoId?: "0J44f6acTeQ";
+  videoId?: "0J44f6acTeQ" | "KQ6jdIFjB8c" | "q8q67bsI3t0";
   mp4?: string;
   poster?: string;
   captions?: string;
@@ -39,7 +39,7 @@ export function VideosSection({ locale, items = [], showDetails = true, standalo
 }) {
   const zh = locale === "zh-CN";
   const visible = items.filter(item => item.locale === locale &&
-    (item.provider === "youtube" ? item.canonicalId === "sermon-revelation-9-20-21" && item.locale === "zh-CN" && item.videoId === "0J44f6acTeQ" : (item.sourceKind === "standalone" ? [item.mp4] : [item.mp4, item.poster, item.captions]).every(url => typeof url === "string" && safeUrl(url, true))) &&
+    (item.provider === "youtube" ? ((item.canonicalId === "sermon-revelation-9-20-21" && item.locale === "zh-CN" && item.videoId === "0J44f6acTeQ") || (item.canonicalId === "sermon-revelation-10-5-7" && ((item.locale === "zh-CN" && item.videoId === "KQ6jdIFjB8c") || (item.locale === "en-US" && item.videoId === "q8q67bsI3t0")))) : (item.sourceKind === "standalone" ? [item.mp4] : [item.mp4, item.poster, item.captions]).every(url => typeof url === "string" && safeUrl(url, true))) &&
     (!item.poster || safeUrl(item.poster,true)) && (!item.captions || safeUrl(item.captions,true)) && (!item.srt || safeUrl(item.srt,true)) && safeUrl(item.article) && (!item.audio || safeUrl(item.audio, true)));
   return <Section className="border-t bg-muted/30"><Container>
     <h2 id={standalone ? "approved-standalone-videos" : "videos"} className="font-serif text-3xl">{standalone ? (zh ? "已批准的独立视频" : "Approved Standalone Videos") : (zh ? "视频讲堂" : "Videos")}</h2>
@@ -53,7 +53,7 @@ export function VideosSection({ locale, items = [], showDetails = true, standalo
           return end ? start + "–" + end : start;
         }).join("; ")}</p> : null}
         {item.publishedAt ? <p className="mb-4 text-sm text-muted-foreground">{zh ? "视频发布：" : "Video published: "}<time dateTime={item.publishedAt}>{new Intl.DateTimeFormat(locale, {dateStyle: "medium", timeZone: "UTC"}).format(new Date(item.publishedAt))}</time></p> : null}
-        {item.provider === "youtube" ? <ApprovedYoutubePlayer /> : <video controls playsInline crossOrigin="anonymous" preload="none" poster={item.poster}
+        {item.provider === "youtube" ? <ApprovedYoutubePlayer videoId={item.videoId!} locale={locale} /> : <video controls playsInline crossOrigin="anonymous" preload="none" poster={item.poster}
           aria-label={item.title} className="aspect-video w-full rounded-md bg-black">
           <source src={item.mp4} type="video/mp4" />
           {item.captions ? <track kind="captions" src={item.captions} srcLang={zh ? "zh" : "en"}

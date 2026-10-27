@@ -119,3 +119,11 @@ test("reading notes cannot replace an existing article-video detail destination"
  const entry={...source,state:"PUBLISHED",kind:"production",sourceSha256:standaloneVideoSourceHash(source),publishedAt:"2020-01-01T00:00:00Z",publicationEventId:"fixture-collision"};
  assert.throws(()=>getPublishedVideos(createContentRepository([zh]),"zh-CN",catalog(record,entry)),/Duplicate video detail destination/);
 });
+
+test("ADR-0040 catalog accepts exact bilingual tuples and rejects crossed locales, channels and IDs", () => {
+  for(const [locale,videoId] of [["zh-CN","KQ6jdIFjB8c"],["en-US","q8q67bsI3t0"]]){
+    const r={canonicalId:"sermon-revelation-10-5-7",locale,videoId,provider:"youtube",channelId:"UCij02113c9lnl5oZeRKbE6Q",sourceSha256:"a".repeat(64),state:"PUBLISHED",kind:"production",publishedAt:"2026-10-27T00:00:00Z",publicationEventId:"owner-no-more-delay-youtube-20261027"};
+    assert.equal(validateVideoCatalog(catalog(r)).records.length,1);
+    for(const patch of [{locale:locale==="zh-CN"?"en-US":"zh-CN"},{channelId:"wrong"},{videoId:"arbitrary"},{canonicalId:"other"},{publicationEventId:"other"}])assert.throws(()=>validateVideoCatalog(catalog({...r,...patch})));
+  }
+});
