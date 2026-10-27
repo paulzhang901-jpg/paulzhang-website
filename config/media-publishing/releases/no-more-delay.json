@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "owner-no-more-delay-20261026",
+  "canonicalId": "sermon-revelation-10-5-7",
+  "sourceCommit": "12993a7467bd8cc998e9097d3dc8282fdfbf3a1d",
+  "sourceHashPolicy": "sha256-published-mdx-bytes/v1",
+  "ownerSubject": "paulzhang901-jpg",
+  "ownerAuthorizationDate": "2026-10-26",
+  "adr": "ADR-0039",
+  "releaseStatus": "OWNER_ACCEPTED_MEDIA",
+  "listeningApproval": "OWNER_APPROVED_BOTH_LANGUAGES",
+  "actualIPhoneAcceptance": "OWNER_REPORTED_PASS",
+  "protectedPreview": {
+    "url": "https://2ae07f37.paulzhang-website-preview.pages.dev",
+    "branch": "no-more-delay-audio-pr101",
+    "sourceCommit": "0fe2207a11258b354b70060cbc795b9929186280",
+    "anonymousAccess": "Eight immutable/alias HTML and direct MP3 requests return HTTP302 to Cloudflare Access login",
+    "ownerAuthenticatedPlayback": "OWNER_REPORTED_PASS"
+  },
+  "ownerAcceptanceEvidence": {
+    "ownerStatement": "全部通过（含英文完整试听）",
+    "origin": "Direct human response to immutable 2ae07f37 preview URLs and complete English/iPhone Safari checklist",
+    "recordedAt": "2026-10-27T01:25:40.172985+00:00",
+    "deviceModel": "NOT_PROVIDED",
+    "iosVersion": "NOT_PROVIDED",
+    "browser": "Owner-reported iPhone Safari test per explicit accepted checklist; version not provided",
+    "checks": [
+      "Chinese/English audible playback",
+      "pause/resume",
+      "seeking",
+      "MP3 download",
+      "downloaded MP3 playback",
+      "complete English v002 listening"
+    ],
+    "testedAudioSha256": {
+      "zh-CN": "396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2",
+      "en-US": "d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4"
+    }
+  },
+  "finalHeadApproval": {
+    "required": true,
+    "pullRequest": 101,
+    "verification": "Verify separate human-authored acknowledgement of exact current full PR HEAD through raw GitHub API before merge; this file does not claim that verification"
+  },
+  "publicationProcess": "Only reviewed protected main merge and existing production workflow; acceptance is not a claim of deployment",
+  "assets": [
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "zh-CN",
+      "sourcePath": "content/zh-CN/library/the-day-of-no-more-delay.mdx",
+      "articleRoute": "/library/the-day-of-no-more-delay",
+      "sourceSha256": "4ff0fde9a6c3a881370e19e9c2cb473dc593e96e91cc8a44dbb905b4308986b0",
+      "presentationSha256": "7e70a57d8522aaa6ed1ed2c6f553cd88c0c3b8db187e518bcd5f8fa71f499ccd",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "narrationInputSha256": "e980b296b6b0f364a39ed2cb663acafa6bea16f7da1492f7e8d2f17f7d5025a7",
+      "segmentCount": 45,
+      "completedSegments": 45,
+      "audioSha256": "396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2",
+      "bytes": 21006476,
+      "duration": 1750.445875,
+      "voice": {
+        "engine": "qwen",
+        "modelSize": "1.7B",
+        "personality": false,
+        "profileId": "74e455be-7104-48e6-a8d4-7da35e4fa2df",
+        "language": "zh"
+      },
+      "voiceConfigSha256": "ba66ed7d01104944c2bf8f5224562b23c0dea087b35eafeb8f30e7128bb1a964",
+      "voiceHashPolicy": "sha256-sorted-json-generation-request/v1",
+      "configurationProvenance": "Known generation request parameters only; not an attestation of model weights, training data or uncaptured defaults",
+      "proposedSrc": "/media/narration/396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2.mp3",
+      "player": "Existing ArticleNarration -> AiAudioPlayer",
+      "download": "Same immutable MP3 URL via existing AiAudioPlayer download control",
+      "narrationVersion": 1,
+      "listeningApproval": {
+        "statement": "已完整试听，中文音频通过",
+        "audioSha256": "396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2",
+        "origin": "Direct owner chat acceptance retained in local project and Obsidian records"
+      },
+      "state": "OWNER_ACCEPTED_MEDIA"
+    },
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "en-US",
+      "sourcePath": "content/en-US/library/the-day-of-no-more-delay.mdx",
+      "articleRoute": "/en/library/the-day-of-no-more-delay",
+      "sourceSha256": "0ea197578992ace6fed5ae0670318b89b0cadaf8c70c7c643a93bef832d47892",
+      "presentationSha256": "96aee72f21853e758ddea948fe215fc1ea63fccbd2660ca8cc3819cd1b4456ab",
+      "presentationPolicy": "article-narration-presentation/v1",
+      "narrationInputSha256": "d985ffb444ff653cf12bb0be6efeead6437a36b99bfb909dd6a75717aee52078",
+      "segmentCount": 102,
+      "completedSegments": 102,
+      "audioSha256": "d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4",
+      "bytes": 24731756,
+      "duration": 2060.880125,
+      "voice": {
+        "engine": "qwen",
+        "modelSize": "1.7B",
+        "personality": false,
+        "profileId": "d8c5508c-ae50-444d-a246-462ab92a7ce5",
+        "language": "en"
+      },
+      "voiceConfigSha256": "c84b269db63f3954e33f60b5bccffa7cb048cbf61a7b588090612177c2b51c50",
+      "voiceHashPolicy": "sha256-sorted-json-generation-request/v1",
+      "configurationProvenance": "Known generation request parameters only; not an attestation of model weights, training data or uncaptured defaults",
+      "proposedSrc": "/media/narration/d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4.mp3",
+      "player": "Existing ArticleNarration -> AiAudioPlayer",
+      "download": "Same immutable MP3 URL via existing AiAudioPlayer download control",
+      "narrationVersion": 2,
+      "listeningApproval": {
+        "statement": "全部通过（含英文完整试听）",
+        "audioSha256": "d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4",
+        "origin": "Direct owner chat acceptance retained in local project and Obsidian records"
+      },
+      "state": "OWNER_ACCEPTED_MEDIA"
+    }
+  ]
+}

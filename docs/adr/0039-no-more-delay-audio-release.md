@@ -1,6 +1,6 @@
 # ADR-0039 — The Day of No More Delay bounded audio release
 
-Status: Accepted — owner approved ADR-0039 and preparation of the existing protected preview on 2026-10-26; media/release gates remain pending
+Status: Accepted — owner approved ADR-0039 and preparation of the existing protected preview on 2026-10-26; media listening/iPhone acceptance passed; final review/release gates remain
 Date: 2026-10-26
 Owner: Paul Zhang
 Scope: V1; no production administration activation
@@ -8,7 +8,7 @@ Classification: ARCHITECTURE CHANGE, bounded to this audio release
 References: ADR-0032, ADR-0021; ADR-0033 is precedent only and its historical candidates remain unchanged
 
 ## Authorization and goal
-The owner approved the local written specification `no-more-delay/sources/audio-release-spec.md` with “批准该规格，继续准备最小发布决定”. The owner subsequently reviewed PR #101 and explicitly replied “批准 ADR-0039，准备受保护预览”. This accepts the bounded decision and authorizes preparation of the existing protected preview. English listening, iPhone acceptance, final-head GitHub acknowledgement and production release remain separate gates.
+The owner approved the local written specification `no-more-delay/sources/audio-release-spec.md` with “批准该规格，继续准备最小发布决定”. The owner subsequently reviewed PR #101 and explicitly replied “批准 ADR-0039，准备受保护预览”. This accepts the bounded decision and authorizes preparation of the existing protected preview. English listening and iPhone acceptance have subsequently passed as recorded below; final-head GitHub acknowledgement and production release remain separate gates.
 
 Deliver only the Chinese and English local Voicebox MP3s for `sermon-revelation-10-5-7`, attached to the unchanged published article at `/library/the-day-of-no-more-delay` and `/en/library/the-day-of-no-more-delay`. Preserve the existing ArticleNarration → AiAudioPlayer and download controls. No video work, manuscript edits, new service, credentials, provider, paid calls, general audio-publishing permission or voice retraining.
 
@@ -19,8 +19,8 @@ Source publication commit: `12993a7467bd8cc998e9097d3dc8282fdfbf3a1d` (PR #100).
 
 | Locale | Candidate MP3 SHA-256 | Bytes | Status |
 |---|---|---:|---|
-| zh-CN | `396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2` | 21006476 | Local only; owner confirmed full listening acceptance in this conversation |
-| en-US | `d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4` | 24731756 | v002 local only; owner listening pending |
+| zh-CN | `396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2` | 21006476 | Owner full listening and iPhone acceptance passed |
+| en-US | `d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4` | 24731756 | v002 owner full listening and iPhone acceptance passed |
 
 Chinese owner listening: “已完整试听，中文音频通过” for the exact MP3 SHA-256 above. This is a listening act only; English listening, protected preview/iPhone acceptance and final GitHub release acknowledgement remain pending. The immutable local approval record is retained as `qa/zh-owner-listening-approval.json`.
 
@@ -43,3 +43,6 @@ Decision preparation: this ADR, ADR index, release-boundary documentation and no
 Rollback uses a reviewed revert of the two narration bindings; retain original WAV/MP3/segment files. There are no new analytics or private-data logging. This accepted bounded decision does not by itself constitute media acceptance or production release authorization.
 
 English v002 technical evidence: 102 preserved ordered segments; full WAV/MP3 decode, segment/export hashes and duration reconciliation passed; master duration 2060.880125 seconds. Independent full-audio ASR similarity 98.08%; no long-difference flags or pauses of two seconds or longer. The original segment 20 omitted its final clause and showed repeated wording; only that unapproved segment was replaced. v002 reuses all other 101 segment files byte-for-byte, restores the complete final clause, and retains v001 and the original segment. Automated verification is not owner listening acceptance.
+
+## Owner media acceptance — 2026-10-26
+The owner explicitly replied “全部通过（含英文完整试听）” to the immutable 2ae07f37 preview and the full English/iPhone Safari playback, pause/resume, seeking, download and downloaded-file checklist. This accepts both exact candidate hashes above; device model/iOS/browser version were not provided and are not invented. Keep the final-head human GitHub acknowledgement, independent review, mandatory CI and normal main production verification as separate remaining gates.

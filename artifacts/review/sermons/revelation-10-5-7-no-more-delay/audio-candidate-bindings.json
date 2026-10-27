@@ -5,37 +5,64 @@
   "sourceHashPolicy": "sha256-published-mdx-bytes/v1",
   "ownerSubject": "paulzhang901-jpg",
   "adr": "ADR-0039 ACCEPTED",
-  "releaseStatus": "PREPARING_NOT_PUBLISHED",
+  "releaseStatus": "OWNER_ACCEPTED_MEDIA_FINAL_HEAD_GATE_REQUIRED",
   "protectedPreview": {
+    "project": "paulzhang-website-preview",
+    "environment": "Preview",
     "branch": "no-more-delay-audio-pr101",
-    "state": "ACCESS_VERIFIED_LOCAL_BUILD_AND_CONTROLS_PASSED_UPLOAD_PENDING",
-    "anonymousRequests": [
+    "deployment": "2ae07f37",
+    "governanceHead": "0fe2207a11258b354b70060cbc795b9929186280",
+    "canonicalSourceCommit": "12993a7467bd8cc998e9097d3dc8282fdfbf3a1d",
+    "chineseUrl": "https://2ae07f37.paulzhang-website-preview.pages.dev/library/the-day-of-no-more-delay",
+    "englishUrl": "https://2ae07f37.paulzhang-website-preview.pages.dev/en/library/the-day-of-no-more-delay",
+    "anonymousAccess": [
+      {
+        "url": "https://2ae07f37.paulzhang-website-preview.pages.dev/library/the-day-of-no-more-delay",
+        "status": 302,
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/2ae07f37.paulzhang-website-preview.pages.dev"
+      },
+      {
+        "url": "https://2ae07f37.paulzhang-website-preview.pages.dev/en/library/the-day-of-no-more-delay",
+        "status": 302,
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/2ae07f37.paulzhang-website-preview.pages.dev"
+      },
+      {
+        "url": "https://2ae07f37.paulzhang-website-preview.pages.dev/media/narration/396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2.mp3",
+        "status": 302,
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/2ae07f37.paulzhang-website-preview.pages.dev"
+      },
+      {
+        "url": "https://2ae07f37.paulzhang-website-preview.pages.dev/media/narration/d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4.mp3",
+        "status": 302,
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/2ae07f37.paulzhang-website-preview.pages.dev"
+      },
       {
         "url": "https://no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev/library/the-day-of-no-more-delay",
         "status": 302,
-        "location": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
       },
       {
         "url": "https://no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev/en/library/the-day-of-no-more-delay",
         "status": 302,
-        "location": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
       },
       {
         "url": "https://no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev/media/narration/396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2.mp3",
         "status": 302,
-        "location": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
       },
       {
         "url": "https://no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev/media/narration/d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4.mp3",
         "status": 302,
-        "location": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
+        "redirectTo": "https://paulzhang-website-preview-pages.cloudflareaccess.com/cdn-cgi/access/login/no-more-delay-audio-pr101.paulzhang-website-preview.pages.dev"
       }
     ],
-    "ownerAuthenticatedPlayback": "PENDING",
-    "actualIPhoneAcceptance": "PENDING"
+    "ownerEnglishListening": "OWNER_APPROVED",
+    "ownerAuthenticatedPlayback": "OWNER_REPORTED_PASS",
+    "actualIPhoneAcceptance": "OWNER_REPORTED_PASS"
   },
-  "actualIPhoneAcceptance": "PENDING",
-  "finalHeadHumanAcknowledgement": "PENDING",
+  "actualIPhoneAcceptance": "OWNER_REPORTED_PASS",
+  "finalHeadHumanAcknowledgement": "REQUIRED_EXTERNALLY_AT_MERGE",
   "assets": [
     {
       "canonicalId": "sermon-revelation-10-5-7",
@@ -68,10 +95,9 @@
       "listeningApproval": {
         "statement": "已完整试听，中文音频通过",
         "audioSha256": "396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2",
-        "recordedAt": "2026-10-26T17:30:52.841213+00:00",
-        "origin": "Direct owner chat statement; not a GitHub approval review"
+        "origin": "Direct owner chat acceptance retained in local project and Obsidian records"
       },
-      "state": "LOCAL_CANDIDATE_NOT_PUBLISHED"
+      "state": "OWNER_ACCEPTED_MEDIA"
     },
     {
       "canonicalId": "sermon-revelation-10-5-7",
@@ -101,8 +127,12 @@
       "player": "Existing ArticleNarration -> AiAudioPlayer",
       "download": "Same immutable MP3 URL via existing AiAudioPlayer download control",
       "narrationVersion": 2,
-      "listeningApproval": null,
-      "state": "LOCAL_CANDIDATE_NOT_PUBLISHED"
+      "listeningApproval": {
+        "statement": "全部通过（含英文完整试听）",
+        "audioSha256": "d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4",
+        "origin": "Direct owner chat acceptance retained in local project and Obsidian records"
+      },
+      "state": "OWNER_ACCEPTED_MEDIA"
     }
   ],
   "technicalVerification": {
@@ -114,7 +144,7 @@
     "repairedSegment": 20,
     "unchangedEnglishSegments": 101,
     "allOriginalFilesPreserved": true,
-    "ownerEnglishListening": "PENDING"
+    "ownerEnglishListening": "OWNER_APPROVED"
   },
   "supersededEnglishCandidate": {
     "audioSha256": "477f1c677c88d7d234dbe99990ba30e517003ce22bb059848d3601da741db288",
@@ -169,6 +199,26 @@
       "initialPlayback": 2.7,
       "seek": 177.7,
       "resumed": 181.8
+    }
+  },
+  "ownerAcceptanceEvidence": {
+    "ownerStatement": "全部通过（含英文完整试听）",
+    "origin": "Direct human response to immutable 2ae07f37 preview URLs and complete English/iPhone Safari checklist",
+    "recordedAt": "2026-10-27T01:25:40.172985+00:00",
+    "deviceModel": "NOT_PROVIDED",
+    "iosVersion": "NOT_PROVIDED",
+    "browser": "Owner-reported iPhone Safari test per explicit accepted checklist; version not provided",
+    "checks": [
+      "Chinese/English audible playback",
+      "pause/resume",
+      "seeking",
+      "MP3 download",
+      "downloaded MP3 playback",
+      "complete English v002 listening"
+    ],
+    "testedAudioSha256": {
+      "zh-CN": "396062c2bc5208c04703ab05f9733c19c25f522760308ccb86f8efbac3875dd2",
+      "en-US": "d315feda24fe225a3bc780869e0981487f2c5fe4705212981b0ae8bbfa3c87e4"
     }
   }
 }
