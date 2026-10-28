@@ -1,0 +1,376 @@
+{
+  "id": "work-luke-journey-v1",
+  "canonical_id": "work-luke-journey-v1",
+  "work_type": "bible_study_book",
+  "representations": [
+    {
+      "language": "zh-CN",
+      "slug": "luke-journey",
+      "status": "published",
+      "title": "路加福音：跟随耶稣的生命旅程",
+      "subtitle": "从早八点灵修到生命成长的圣经默想",
+      "summary": "源于早八点灵修的80个研读单元，按《路加福音》24章次序，结合观察、解释与应用，帮助个人、小组及门徒训练学习认识并跟随耶稣。",
+      "authors": [
+        "张崇助（Paul Zhang）牧师"
+      ],
+      "published_at": "2026-10-28T13:07:11.060447+00:00",
+      "visibility": "public",
+      "access_level": "public",
+      "seo": {}
+    }
+  ],
+  "units": [
+    {
+      "canonical_id": "luke-title",
+      "order": 1
+    },
+    {
+      "canonical_id": "luke-copyright",
+      "order": 2
+    },
+    {
+      "canonical_id": "luke-preface",
+      "order": 3
+    },
+    {
+      "canonical_id": "luke-thanks",
+      "order": 4
+    },
+    {
+      "canonical_id": "luke-toc",
+      "order": 5
+    },
+    {
+      "canonical_id": "luke-guide",
+      "order": 6
+    },
+    {
+      "canonical_id": "luke-u01",
+      "order": 7
+    },
+    {
+      "canonical_id": "luke-u02",
+      "order": 8
+    },
+    {
+      "canonical_id": "luke-u03",
+      "order": 9
+    },
+    {
+      "canonical_id": "luke-u04",
+      "order": 10
+    },
+    {
+      "canonical_id": "luke-u05",
+      "order": 11
+    },
+    {
+      "canonical_id": "luke-u06",
+      "order": 12
+    },
+    {
+      "canonical_id": "luke-u07",
+      "order": 13
+    },
+    {
+      "canonical_id": "luke-u08",
+      "order": 14
+    },
+    {
+      "canonical_id": "luke-u09",
+      "order": 15
+    },
+    {
+      "canonical_id": "luke-u10",
+      "order": 16
+    },
+    {
+      "canonical_id": "luke-u11",
+      "order": 17
+    },
+    {
+      "canonical_id": "luke-u12",
+      "order": 18
+    },
+    {
+      "canonical_id": "luke-u13",
+      "order": 19
+    },
+    {
+      "canonical_id": "luke-u14",
+      "order": 20
+    },
+    {
+      "canonical_id": "luke-u15",
+      "order": 21
+    },
+    {
+      "canonical_id": "luke-u16",
+      "order": 22
+    },
+    {
+      "canonical_id": "luke-u17",
+      "order": 23
+    },
+    {
+      "canonical_id": "luke-u18",
+      "order": 24
+    },
+    {
+      "canonical_id": "luke-u19",
+      "order": 25
+    },
+    {
+      "canonical_id": "luke-u20",
+      "order": 26
+    },
+    {
+      "canonical_id": "luke-u21",
+      "order": 27
+    },
+    {
+      "canonical_id": "luke-u22",
+      "order": 28
+    },
+    {
+      "canonical_id": "luke-u23",
+      "order": 29
+    },
+    {
+      "canonical_id": "luke-u24",
+      "order": 30
+    },
+    {
+      "canonical_id": "luke-u25",
+      "order": 31
+    },
+    {
+      "canonical_id": "luke-u26",
+      "order": 32
+    },
+    {
+      "canonical_id": "luke-u27",
+      "order": 33
+    },
+    {
+      "canonical_id": "luke-u28",
+      "order": 34
+    },
+    {
+      "canonical_id": "luke-u29",
+      "order": 35
+    },
+    {
+      "canonical_id": "luke-u30",
+      "order": 36
+    },
+    {
+      "canonical_id": "luke-u31",
+      "order": 37
+    },
+    {
+      "canonical_id": "luke-u32",
+      "order": 38
+    },
+    {
+      "canonical_id": "luke-u33",
+      "order": 39
+    },
+    {
+      "canonical_id": "luke-u34",
+      "order": 40
+    },
+    {
+      "canonical_id": "luke-u35",
+      "order": 41
+    },
+    {
+      "canonical_id": "luke-u36",
+      "order": 42
+    },
+    {
+      "canonical_id": "luke-u37",
+      "order": 43
+    },
+    {
+      "canonical_id": "luke-u38",
+      "order": 44
+    },
+    {
+      "canonical_id": "luke-u39",
+      "order": 45
+    },
+    {
+      "canonical_id": "luke-u40",
+      "order": 46
+    },
+    {
+      "canonical_id": "luke-u41",
+      "order": 47
+    },
+    {
+      "canonical_id": "luke-u42",
+      "order": 48
+    },
+    {
+      "canonical_id": "luke-u43",
+      "order": 49
+    },
+    {
+      "canonical_id": "luke-u44",
+      "order": 50
+    },
+    {
+      "canonical_id": "luke-u45",
+      "order": 51
+    },
+    {
+      "canonical_id": "luke-u46",
+      "order": 52
+    },
+    {
+      "canonical_id": "luke-u47",
+      "order": 53
+    },
+    {
+      "canonical_id": "luke-u48",
+      "order": 54
+    },
+    {
+      "canonical_id": "luke-u49",
+      "order": 55
+    },
+    {
+      "canonical_id": "luke-u50",
+      "order": 56
+    },
+    {
+      "canonical_id": "luke-u51",
+      "order": 57
+    },
+    {
+      "canonical_id": "luke-u52",
+      "order": 58
+    },
+    {
+      "canonical_id": "luke-u53",
+      "order": 59
+    },
+    {
+      "canonical_id": "luke-u54",
+      "order": 60
+    },
+    {
+      "canonical_id": "luke-u55",
+      "order": 61
+    },
+    {
+      "canonical_id": "luke-u56",
+      "order": 62
+    },
+    {
+      "canonical_id": "luke-u57",
+      "order": 63
+    },
+    {
+      "canonical_id": "luke-u58",
+      "order": 64
+    },
+    {
+      "canonical_id": "luke-u59",
+      "order": 65
+    },
+    {
+      "canonical_id": "luke-u60",
+      "order": 66
+    },
+    {
+      "canonical_id": "luke-u61",
+      "order": 67
+    },
+    {
+      "canonical_id": "luke-u62",
+      "order": 68
+    },
+    {
+      "canonical_id": "luke-u63",
+      "order": 69
+    },
+    {
+      "canonical_id": "luke-u64",
+      "order": 70
+    },
+    {
+      "canonical_id": "luke-u65",
+      "order": 71
+    },
+    {
+      "canonical_id": "luke-u66",
+      "order": 72
+    },
+    {
+      "canonical_id": "luke-u67",
+      "order": 73
+    },
+    {
+      "canonical_id": "luke-u68",
+      "order": 74
+    },
+    {
+      "canonical_id": "luke-u69",
+      "order": 75
+    },
+    {
+      "canonical_id": "luke-u70",
+      "order": 76
+    },
+    {
+      "canonical_id": "luke-u71",
+      "order": 77
+    },
+    {
+      "canonical_id": "luke-u72",
+      "order": 78
+    },
+    {
+      "canonical_id": "luke-u73",
+      "order": 79
+    },
+    {
+      "canonical_id": "luke-u74",
+      "order": 80
+    },
+    {
+      "canonical_id": "luke-u75",
+      "order": 81
+    },
+    {
+      "canonical_id": "luke-u76",
+      "order": 82
+    },
+    {
+      "canonical_id": "luke-u77",
+      "order": 83
+    },
+    {
+      "canonical_id": "luke-u78",
+      "order": 84
+    },
+    {
+      "canonical_id": "luke-u79",
+      "order": 85
+    },
+    {
+      "canonical_id": "luke-u80",
+      "order": 86
+    },
+    {
+      "canonical_id": "luke-references",
+      "order": 87
+    },
+    {
+      "canonical_id": "luke-index",
+      "order": 88
+    }
+  ]
+}
