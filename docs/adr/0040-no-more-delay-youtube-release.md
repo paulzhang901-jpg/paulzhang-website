@@ -47,4 +47,4 @@ Analytics impact: none. Privacy impact: the same explicitly disclosed, visitor-a
 
 ## Approval state
 
-The owner authorized continuing the existing PR #102 under ADR-0040 and final publication after checks on 2026-10-27. This accepts the bounded decision and implementation preparation. No protected website video preview/iPhone acceptance or exact-final-head GitHub comment exists yet; those distinct gates remain pending. This same PR carries the scoped implementation; no additional PR is needed.
+The owner authorized continuing the existing PR #102 under ADR-0040 and final publication after checks on 2026-10-27. This accepts the bounded decision and implementation preparation. The owner explicitly answered “全部通过” for protected preview b2e861de on actual iPhone Safari, including bilingual video activation/playback/pause/fullscreen/locale mapping and original MP3 playback/download. The exact-final-head human GitHub approval remains pending; it is not substituted by chat authorization. This same PR carries the scoped implementation; no additional PR is needed.

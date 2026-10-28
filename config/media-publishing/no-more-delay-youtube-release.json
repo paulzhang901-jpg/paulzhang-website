@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "3d6090807e050f8092d4183dec84639e3bb9f58508b4154741e6a1ff6bc12264",
+      "provider": "youtube",
+      "videoId": "KQ6jdIFjB8c",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-27T18:30:00Z",
+      "publicationEventId": "owner-no-more-delay-youtube-20261027"
+    },
+    {
+      "canonicalId": "sermon-revelation-10-5-7",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "11639b9d0be59b990e26284e8c959fe50c47cb3f69388385ffe826b1644ba7e4",
+      "provider": "youtube",
+      "videoId": "q8q67bsI3t0",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-27T18:30:00Z",
+      "publicationEventId": "owner-no-more-delay-youtube-20261027"
+    }
+  ],
+  "sources": [
+    {
+      "locale": "zh-CN",
+      "sourcePath": "content/zh-CN/library/the-day-of-no-more-delay.mdx",
+      "sourceFileSha256": "4ff0fde9a6c3a881370e19e9c2cb473dc593e96e91cc8a44dbb905b4308986b0",
+      "sourceCommit": "b4c886e14430aa58c9c16fdb66d6e1d1badd443b"
+    },
+    {
+      "locale": "en-US",
+      "sourcePath": "content/en-US/library/the-day-of-no-more-delay.mdx",
+      "sourceFileSha256": "0ea197578992ace6fed5ae0670318b89b0cadaf8c70c7c643a93bef832d47892",
+      "sourceCommit": "b4c886e14430aa58c9c16fdb66d6e1d1badd443b"
+    }
+  ],
+  "ownerAcceptance": {
+    "owner": "Paul Zhang",
+    "recordedAt": "2026-10-27T18:43:17.362533+00:00",
+    "previewOrigin": "https://b2e861de.paulzhang-website-preview.pages.dev",
+    "iphoneSafariEvidence": "Owner answered 全部通过 to the explicit actual iPhone Safari protected bilingual video preview test, including activation, playback, pause, fullscreen, locale mapping and original MP3 playback/download.",
+    "finalHeadGithubAcknowledgement": "External mandatory gate; pending human approval of the final 40-character HEAD, not asserted by this file."
+  }
+}
