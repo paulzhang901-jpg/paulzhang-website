@@ -25,7 +25,13 @@ export function ContentWorkPage({work, representation, units, repository}: {work
       {representation.subtitle ? <p className="mt-3 text-xl text-muted-foreground">{representation.subtitle}</p> : null}
       <p className="mt-5 text-lg leading-8 text-muted-foreground">{representation.summary}</p>
       {representation.authors.length ? <p className="mt-5 text-sm text-muted-foreground">{representation.language === "zh-CN" ? "作者" : "By"} {representation.authors.join(", ")}</p> : null}
-      {firstUnit ? <Link href={unitPath(representation.slug, firstUnit.slug, representation.language) as Route} className="mt-7 inline-flex min-h-11 items-center rounded-md bg-primary px-5 font-medium text-primary-foreground hover:opacity-90">{representation.language === "zh-CN" ? "开始阅读《麦子落地》" : "Begin reading"} →</Link> : null}
+      {firstUnit ? <Link href={unitPath(representation.slug, firstUnit.slug, representation.language) as Route} className="mt-7 inline-flex min-h-11 items-center rounded-md bg-primary px-5 font-medium text-primary-foreground hover:opacity-90">{representation.language === "zh-CN" ? (work.canonicalId === "work-luke-journey-v1" ? "开始阅读《路加福音》" : "开始阅读《麦子落地》") : "Begin reading"} →</Link> : null}
+      {work.canonicalId === "work-luke-journey-v1" ? <div className="mt-7 space-y-4 text-base leading-8">
+        <p>张崇助（Paul Zhang）牧师于2022年来到印第安纳波利斯，参与印城第一华人循理会牧养事工。本书源于早晨八点的圣经讲解与分享。</p>
+        <p>作者已批准本版公开分享。下载文件保留既有“作者审阅稿／印刷校样”标签，版次为2026.10.28-author-approved。</p>
+        <p className="flex flex-wrap gap-5"><a className="underline" href="/ebooks/luke-journey.pdf">PDF 下载</a><a className="underline" href="/ebooks/luke-journey.epub">EPUB 下载</a></p>
+        <p><Link className="underline" href={"/library/luke-journey" as Route}>书籍介绍与版本说明</Link></p>
+      </div> : null}
       <AlternateWork work={work} representation={representation} repository={repository} />
     </ReadingContainer></Container></Section>
     <Section><Container><ReadingContainer className="px-0">
@@ -48,7 +54,7 @@ export function ContentUnitPage({work, workRepresentation, unit, repository}: {w
       <h1 className="mt-3 font-serif text-4xl leading-tight md:text-5xl">{unit.title}</h1>
       {!alternate.available ? <p data-translation-unavailable className="mt-5 text-sm text-muted-foreground">{unit.language === "zh-CN" ? "英文版本尚未发布。" : "A Chinese edition is not currently available."}</p> : <Link className="mt-5 inline-flex font-medium underline underline-offset-4" href={unitPath(alternate.workRepresentation.slug, alternate.unit.slug, alternate.unit.language) as Route}>{alternate.unit.language === "zh-CN" ? "阅读中文" : "Read in English"}</Link>}
     </ReadingContainer></Container></Section>
-    <Section><Container><ReadingContainer className="px-0"><article className="prose-content"><MDXRemote source={unit.body} /></article></ReadingContainer></Container></Section>
+    <Section><Container><ReadingContainer className="px-0"><article className="prose-content"><MDXRemote source={work.canonicalId === "work-luke-journey-v1" ? unit.body.replace(/^# [^\n]+\n+/, "") : unit.body} /></article></ReadingContainer></Container></Section>
     <Section className="border-t bg-muted/40"><Container><ReadingContainer className="flex flex-col gap-4 px-0 sm:flex-row sm:justify-between">
       {previous ? <Link href={unitPath(workRepresentation.slug, previous.slug, unit.language) as Route}>← {previous.title}</Link> : <span />}
       {next ? <Link href={unitPath(workRepresentation.slug, next.slug, unit.language) as Route}>{next.title} →</Link> : <Link href={workPath(workRepresentation.slug, unit.language) as Route}>{unit.language === "zh-CN" ? "返回目录" : "Back to contents"}</Link>}
