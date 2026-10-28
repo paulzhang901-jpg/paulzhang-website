@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-27T18:34:44.996671+00:00",
+  "canonicalId": "sermon-revelation-10-5-7",
+  "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+  "channelHandle": "@PaulZhang-j2w",
+  "ownerAuthorization": "Current Phase 4 user instruction explicitly authorizes both unchanged MP4 uploads, Public visibility and website integration.",
+  "websiteIntegration": "PRODUCTION_BINDINGS_PREPARED_PENDING_FINAL_HEAD_APPROVAL",
+  "ownerVideoPreviewAcceptance": {
+    "owner": "Paul Zhang",
+    "recordedAt": "2026-10-27T18:43:17.362533+00:00",
+    "previewOrigin": "https://b2e861de.paulzhang-website-preview.pages.dev",
+    "iphoneSafariEvidence": "Owner answered 全部通过 to the explicit actual iPhone Safari protected bilingual video preview test, including activation, playback, pause, fullscreen, locale mapping and original MP3 playback/download.",
+    "finalHeadGithubAcknowledgement": "External mandatory gate; pending human approval of the final 40-character HEAD, not asserted by this file."
+  },
+  "records": [
+    {
+      "locale": "zh-CN",
+      "videoId": "KQ6jdIFjB8c",
+      "watchUrl": "https://www.youtube.com/watch?v=KQ6jdIFjB8c",
+      "visibility": "PUBLIC",
+      "publicPlaybackObservedThroughSeconds": 10,
+      "pause": "PASSED",
+      "subtitles": "No reviewed subtitle track supplied; platform availability only.",
+      "aiDisclosure": true,
+      "iPhoneVideoAcceptance": "OWNER_PASSED_PROTECTED_PREVIEW"
+    },
+    {
+      "locale": "en-US",
+      "videoId": "q8q67bsI3t0",
+      "watchUrl": "https://www.youtube.com/watch?v=q8q67bsI3t0",
+      "visibility": "PUBLIC",
+      "publicPlaybackObservedThroughSeconds": 37,
+      "pause": "PASSED",
+      "subtitles": "No reviewed subtitle track supplied; platform availability only.",
+      "aiDisclosure": true,
+      "iPhoneVideoAcceptance": "OWNER_PASSED_PROTECTED_PREVIEW"
+    }
+  ]
+}
