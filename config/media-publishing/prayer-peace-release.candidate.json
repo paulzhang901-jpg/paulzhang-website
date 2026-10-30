@@ -7,11 +7,43 @@
   "scripture": "腓立比书4:7",
   "intendedRoute": "/videos/peace-after-prayer",
   "websiteMp4Url": null,
-  "mp4": {"fileName": "sermon-cinematic-highlight-v2.mp4", "sha256": "695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8", "bytes": 35985439},
-  "srt": {"fileName": "sermon-cinematic-highlight-v2.zh-CN.srt", "sha256": "cf78a7d367d9fd7d9ce347ab2c8f0c2510caaab95c6d5520714d2fd22097ed87", "bytes": 7745},
+  "mp4": {
+    "fileName": "sermon-cinematic-highlight-v2.mp4",
+    "sha256": "695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8",
+    "bytes": 35985439
+  },
+  "srt": {
+    "fileName": "sermon-cinematic-highlight-v2.zh-CN.srt",
+    "sha256": "cf78a7d367d9fd7d9ce347ab2c8f0c2510caaab95c6d5520714d2fd22097ed87",
+    "bytes": 7745
+  },
   "ownerContentApproval": "Owner explicitly accepted Phase 6.1 in the current session; Phase 6.2 explicitly authorizes website and separate YouTube publication.",
   "websiteIphoneAcceptance": null,
   "finalHeadHumanGithubAcknowledgement": null,
-  "youtube": {"id": "BJK5tloWFUM", "channelId": "UCij02113c9lnl5oZeRKbE6Q", "url": "https://www.youtube.com/watch?v=BJK5tloWFUM", "visibility": "PUBLIC", "websiteSource": false},
-  "blocker": "Cloudflare API 10042: R2 must be enabled by owner in Cloudflare Dashboard before unchanged independent hosting can proceed."
+  "youtube": {
+    "id": "BJK5tloWFUM",
+    "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+    "url": "https://www.youtube.com/watch?v=BJK5tloWFUM",
+    "visibility": "PUBLIC",
+    "websiteSource": false
+  },
+  "blocker": "R2 not enabled (Cloudflare 10042). A 22.80 MiB 1080p derivative preserves exact AAC audio and all frames, but exceeds the remaining 8.13 MiB repository media budget. No silent budget increase or old-media deletion.",
+  "webDerivative": {
+    "webSha256": "10e4c95dfc86d376e8b0e32336c08808d4f5aaa51e4248d01fca0f8a3ff8a645",
+    "bytes": 23907385,
+    "MiB": 22.799859046936035,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24,
+    "durationSeconds": 267.7235,
+    "sameFrameCountAndDurationAsMaster": true,
+    "audioPacketsIdentical": true,
+    "fullFilmSSIM": 0.997243,
+    "humanCloseupSSIM": 0.990811
+  },
+  "existingRepositoryMediaBytes": 259912231,
+  "repositoryMediaBudgetBytes": 268435456,
+  "projectedRepositoryMediaBytes": 283819616
 }

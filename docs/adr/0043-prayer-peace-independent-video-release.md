@@ -38,3 +38,9 @@ Analytics: no new events. Privacy: no YouTube connection on this release's page 
 
 - Pages file limit: https://developers.cloudflare.com/pages/platform/limits/
 - R2 activation/checkout is owner-operated: https://developers.cloudflare.com/r2/get-started/
+
+## Owner-authorized compression follow-up
+
+The owner subsequently explicitly authorized a separate web compression attempt while preserving the approved master. CRF23.5 produces 23,907,385 bytes (22.80 MiB), still 1920×1080/24fps with all 6,425 frames and unchanged 267.7235-second duration; AAC packet hash matches the master exactly. Full-film SSIM 0.997243 and human-closeup SSIM 0.990811, with a representative frame inspected. This is an encoded derivative, not a new scene render or a claim of mathematical losslessness. It has not been uploaded or substituted for the approved original.
+
+The existing checked-out public/media total is 259,912,231 bytes, leaving 8,523,225 bytes under ADR-0037’s 256 MiB limit. Adding the web copy would total 283,819,616 bytes and violate that separate cumulative limit even though the single-file limit is satisfied. Do not silently raise the limit, compress to an unusable bitrate, remove old assets or commit the large file. R2 activation remains the next owner-operated step; the same existing draft PR remains pending.
