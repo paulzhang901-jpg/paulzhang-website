@@ -1,6 +1,6 @@
 # ADR-0042 — David and Goliath: exact bilingual YouTube integration
 
-Status: Accepted for scoped implementation by the owner's Phase 4 instruction. Per-release protected-preview/iPhone acceptance and authenticated exact-head GitHub acknowledgement remain pending and mandatory before production activation.
+Status: Accepted for scoped implementation by the owner's Phase 4 instruction. Owner actual iPhone Safari acceptance is now recorded below. Authenticated exact-final-head GitHub acknowledgement remains mandatory before production merge.
 Date: 2026-10-29
 Owner: Paul Zhang
 Classification: ARCHITECTURE CHANGE
@@ -23,3 +23,10 @@ Public draft PR may contain scoped code, draft manuscripts and pending metadata,
 Acceptance criteria/tests: exact locale/channel/ID mapping; reject swapped locale, arbitrary ID/channel, missing policy/owner acceptance, incomplete pair and stale source; retain activation gate and prior releases; existing source and audio remain unchanged; content validation, required CI/build/export; live bilingual playback and responsive layout after deployment. Archive exact published bodies and final URLs in the existing Paul AI Brain vault without duplicate records. Rollback uses a normal reviewed revert of this integration, preserving public YouTube videos.
 
 Analytics impact: none. Privacy impact: existing disclosed visitor-activated YouTube connection only. ADR impact: two exact additional bindings and new canonical study in existing sections; all ADR-0037/0038/0040 release gates remain in effect. Publication authorization is supplied by Phase 4, but is not evidence of future iPhone acceptance or GitHub human acknowledgement.
+
+
+## Publication activation checkpoint
+
+PR #104 merged as `32be1451d4cfa7d73da82e4e55c1a544dba45d0f` and its main-only production deployment succeeded (Actions run `40996230496`). That preparation tree intentionally retained draft sources and omitted both runtime catalog records, so the study readers returned 404 and the existing listings could not discover the videos. Re-running the same deployment cannot activate absent records.
+
+The owner subsequently answered “已实际检查，两种语言均通过” to the explicit actual iPhone Safari question covering this exact bilingual preview's playback, pause, fullscreen and language switching. Acceptance recorded at 2026-10-30T03:25:10Z for protected preview `41a20f25`. The publication fix changes only both existing draft statuses, registers the two approved catalog tuples, binds exact published source bytes/commit and this actual acceptance, and adds a real-catalog regression test covering public readers, video routes and translation discovery. Existing manuscript bodies, runtime code, prior media and release rules remain unchanged. Final-head authenticated human GitHub acknowledgement, required checks/review, normal protected main merge and live verification remain external requirements, not claims in the metadata.
