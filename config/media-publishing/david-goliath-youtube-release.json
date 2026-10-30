@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "state": "CANDIDATE",
+  "records": [
+    {
+      "canonicalId": "bible-study-david-goliath-faith-over-fear",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "b594ba7df8c625a8eb3da53f9d8cee372f9c590f7e007c75b33aeb8d9ad23af7",
+      "provider": "youtube",
+      "videoId": "j4iVhPwUvK8",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-29T00:00:00Z",
+      "publicationEventId": "owner-david-goliath-youtube-20261029"
+    },
+    {
+      "canonicalId": "bible-study-david-goliath-faith-over-fear",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "9a4d67fca514a3a85db4491c881b5912738ff1a1a58ab316f80bd3466a6ac040",
+      "provider": "youtube",
+      "videoId": "nlt5tOE2AcE",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-29T00:00:00Z",
+      "publicationEventId": "owner-david-goliath-youtube-20261029"
+    }
+  ],
+  "sources": [
+    {
+      "locale": "zh-CN",
+      "sourcePath": "content/zh-CN/library/david-and-goliath-faith-over-fear.mdx",
+      "sourceFileSha256": "6730d955c674a27cb61ea814636ee9a3c7ee7165264ead5c7b5ea4fa14d6b355",
+      "sourceCommit": null
+    },
+    {
+      "locale": "en-US",
+      "sourcePath": "content/en-US/library/david-and-goliath-faith-over-fear.mdx",
+      "sourceFileSha256": "38492834cebcf2ab1a20e150b24298bbf2f7c3aa12bcae6f90f192768dbd6ad9",
+      "sourceCommit": null
+    }
+  ],
+  "ownerAcceptance": null,
+  "pending": [
+    "Protected preview deployment and anonymous Access denial verification",
+    "Owner actual iPhone Safari bilingual playback/pause/fullscreen/navigation acceptance",
+    "Final published-source hashes and immutable source commit",
+    "Authenticated human GitHub acknowledgement of the final PR HEAD",
+    "Required CI/review and normal main production deployment"
+  ]
+}

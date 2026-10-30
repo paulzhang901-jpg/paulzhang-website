@@ -127,3 +127,20 @@ test("ADR-0040 catalog accepts exact bilingual tuples and rejects crossed locale
     for(const patch of [{locale:locale==="zh-CN"?"en-US":"zh-CN"},{channelId:"wrong"},{videoId:"arbitrary"},{canonicalId:"other"},{publicationEventId:"other"}])assert.throws(()=>validateVideoCatalog(catalog({...r,...patch})));
   }
 });
+
+test("David and Goliath resolves each exact language, scripture and counterpart; stale/crossed bindings fail closed", () => {
+  const canonicalId="bible-study-david-goliath-faith-over-fear";
+  const pair = (["zh-CN","en-US"] as const).map(language=>item({id:canonicalId+language,canonicalId,language,slug:"david-and-goliath-faith-over-fear",title:language==="zh-CN"?"大卫与歌利亚：信心胜过恐惧":"David and Goliath: Faith Over Fear",scriptureRefs:[{book:"1 Samuel",chapterStart:17}]}));
+  const records=pair.map(source=>({canonicalId,locale:source.language,state:"PUBLISHED",kind:"production",sourceSha256:videoSourceHash(source),provider:"youtube",videoId:source.language==="zh-CN"?"j4iVhPwUvK8":"nlt5tOE2AcE",channelId:"UCij02113c9lnl5oZeRKbE6Q",publishedAt:"2026-10-29T00:00:00Z",publicationEventId:"owner-david-goliath-youtube-20261029"}));
+  const repository=createContentRepository(pair);
+  for(const r of records){
+    const videos=getPublishedVideos(repository,r.locale,catalog(...records));
+    assert.equal(videos.length,1);
+    assert.equal(videos[0].videoId,r.videoId);
+    assert.equal(videos[0].article,(r.locale==="en-US"?"/en":"")+"/library/david-and-goliath-faith-over-fear");
+    assert.deepEqual(videos[0].scriptureRefs,[{book:"1 Samuel",chapterStart:17}]);
+    assert.equal(videos[0].alternateTitle,pair.find(i=>i.language!==r.locale)?.title);
+    assert.deepEqual(getPublishedVideos(repository,r.locale,catalog({...r,sourceSha256:"0".repeat(64)})),[]);
+    for(const patch of [{locale:r.locale==="zh-CN"?"en-US":"zh-CN"},{videoId:"arbitrary"},{channelId:"wrong"},{publicationEventId:"other"}])assert.throws(()=>validateVideoCatalog(catalog({...r,...patch})));
+  }
+});

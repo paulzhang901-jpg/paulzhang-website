@@ -61,9 +61,34 @@ export function validateNoMoreDelayYoutubeRelease(c,{policyAccepted=false,read}=
  return true;
 }
 
+// ADR-0042 exact bilingual exception. This checks consistency, never human identity.
+export function validateDavidGoliathYoutubeRelease(c,{policyAccepted=false,read}={}) {
+ requireValue(policyAccepted===true,'Accepted ADR-0042 required');
+ const ids={'zh-CN':'j4iVhPwUvK8','en-US':'nlt5tOE2AcE'};
+ const exact=r=>r.canonicalId==='bible-study-david-goliath-faith-over-fear' &&
+  Object.hasOwn(ids,r.locale) && r.videoId===ids[r.locale] && r.channelId==='UCij02113c9lnl5oZeRKbE6Q' &&
+  r.provider==='youtube' && r.state==='PUBLISHED' && r.kind==='production' &&
+  r.publicationEventId==='owner-david-goliath-youtube-20261029';
+ requireValue(exact(c),'Unapproved ADR-0042 YouTube identity');
+ const release=JSON.parse(read('config/media-publishing/david-goliath-youtube-release.json'));
+ requireValue(release.schemaVersion===1 && release.records?.length===2 &&
+  new Set(release.records.map(r=>r.locale)).size===2 && release.records.every(exact) &&
+  release.records.some(r=>catalogHash(r)===catalogHash(c)),'ADR-0042 release binding mismatch');
+ requireValue(release.sources?.length===2 && new Set(release.sources.map(s=>s.locale)).size===2,'Complete ADR-0042 sources required');
+ for(const source of release.sources) requireValue(Object.hasOwn(ids,source.locale) &&
+  source.sourcePath==='content/'+source.locale+'/library/david-and-goliath-faith-over-fear.mdx' &&
+  digest(source.sourceFileSha256) && hash(read(source.sourcePath))===source.sourceFileSha256 &&
+  /^[a-f0-9]{40}$/.test(source.sourceCommit),'Stale ADR-0042 source');
+ const a=release.ownerAcceptance;
+ requireValue(a?.owner==='Paul Zhang' && typeof a.previewOrigin==='string' && /^https:\/\/[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.paulzhang-website-preview\.pages\.dev$/.test(a.previewOrigin) &&
+  typeof a.iphoneSafariEvidence==='string' && a.iphoneSafariEvidence.length>=40 &&
+  Number.isFinite(Date.parse(a.recordedAt)) && Date.parse(a.recordedAt)<=Date.now(),'Missing ADR-0042 owner video acceptance');
+ return true;
+}
+
 // Validates evidence consistency, NOT owner identity or authorization. Authenticated
 // GitHub final-head approval and separate production permission remain external gates.
-export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,noMoreDelayPolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
+export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,noMoreDelayPolicyAccepted=false,davidGoliathPolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
  keys(registry,['schemaVersion','releases'],'registry');
  requireValue(registry.schemaVersion===1 && Array.isArray(registry.releases),'Invalid release registry');
  requireValue(!registry.releases.length || policyAccepted===true,'Accepted ADR-0037 required before registering releases');
@@ -131,6 +156,7 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
   if(c.sourceKind==='standalone'){requireValue(!standaloneDestinations.has(c.primaryPage),'Duplicate standalone presentation destination');standaloneDestinations.add(c.primaryPage);}
   if(c.provider === 'youtube') {
    if(c.canonicalId==='sermon-revelation-10-5-7') validateNoMoreDelayYoutubeRelease(c,{policyAccepted:noMoreDelayPolicyAccepted,read});
+   else if(c.canonicalId==='bible-study-david-goliath-faith-over-fear') validateDavidGoliathYoutubeRelease(c,{policyAccepted:davidGoliathPolicyAccepted,read});
    else validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
   }
   else requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');

@@ -73,3 +73,5 @@ None.
 - [0040 The Day of No More Delay YouTube Release](./0040-no-more-delay-youtube-release.md) — Accepted by owner for two exact bilingual YouTube bindings; existing player and all protected-preview/final-head release gates preserved.
 
 - [0041 Luke Bible Study Book](./0041-luke-bible-study-book.md) — Accepted by the owner in Phase 6; additional work type, existing ordered reader, unchanged approved files.
+
+- [0042 David and Goliath YouTube Integration](./0042-david-goliath-youtube-release.md) — scoped implementation authorized; exact pair only, per-release acceptance and production gates retained.
