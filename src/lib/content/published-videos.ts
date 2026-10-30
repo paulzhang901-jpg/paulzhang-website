@@ -57,7 +57,14 @@ const noMoreDelayYoutubeRecord = youtubeRecord.omit({canonicalId:true,locale:tru
   canonicalId:z.literal("sermon-revelation-10-5-7"),
   publicationEventId:z.literal("owner-no-more-delay-youtube-20261027"),
 });
+// ADR-0042: the existing public David and Goliath pair only.
+const davidGoliathYoutubeRecord = youtubeRecord.omit({canonicalId:true,locale:true,videoId:true,publicationEventId:true}).extend({
+  canonicalId:z.literal("bible-study-david-goliath-faith-over-fear"),
+  publicationEventId:z.literal("owner-david-goliath-youtube-20261029"),
+});
 const record = z.union([directRecord, youtubeRecord, standaloneRecord,
+  davidGoliathYoutubeRecord.extend({locale:z.literal("zh-CN"),videoId:z.literal("j4iVhPwUvK8")}),
+  davidGoliathYoutubeRecord.extend({locale:z.literal("en-US"),videoId:z.literal("nlt5tOE2AcE")}),
   noMoreDelayYoutubeRecord.extend({locale:z.literal("zh-CN"),videoId:z.literal("KQ6jdIFjB8c")}),
   noMoreDelayYoutubeRecord.extend({locale:z.literal("en-US"),videoId:z.literal("q8q67bsI3t0")}),
 ]);

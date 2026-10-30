@@ -15,7 +15,7 @@ export type VideoPresentation = {
   scriptureRefs?: readonly ScriptureReference[];
   publishedAt?: string;
   provider?: "youtube";
-  videoId?: "0J44f6acTeQ" | "KQ6jdIFjB8c" | "q8q67bsI3t0";
+  videoId?: "j4iVhPwUvK8" | "nlt5tOE2AcE" | "0J44f6acTeQ" | "KQ6jdIFjB8c" | "q8q67bsI3t0";
   mp4?: string;
   poster?: string;
   captions?: string;
@@ -39,7 +39,7 @@ export function VideosSection({ locale, items = [], showDetails = true, standalo
 }) {
   const zh = locale === "zh-CN";
   const visible = items.filter(item => item.locale === locale &&
-    (item.provider === "youtube" ? ((item.canonicalId === "sermon-revelation-9-20-21" && item.locale === "zh-CN" && item.videoId === "0J44f6acTeQ") || (item.canonicalId === "sermon-revelation-10-5-7" && ((item.locale === "zh-CN" && item.videoId === "KQ6jdIFjB8c") || (item.locale === "en-US" && item.videoId === "q8q67bsI3t0")))) : (item.sourceKind === "standalone" ? [item.mp4] : [item.mp4, item.poster, item.captions]).every(url => typeof url === "string" && safeUrl(url, true))) &&
+    (item.provider === "youtube" ? ((item.canonicalId === "bible-study-david-goliath-faith-over-fear" && ((item.locale === "zh-CN" && item.videoId === "j4iVhPwUvK8") || (item.locale === "en-US" && item.videoId === "nlt5tOE2AcE"))) || (item.canonicalId === "sermon-revelation-9-20-21" && item.locale === "zh-CN" && item.videoId === "0J44f6acTeQ") || (item.canonicalId === "sermon-revelation-10-5-7" && ((item.locale === "zh-CN" && item.videoId === "KQ6jdIFjB8c") || (item.locale === "en-US" && item.videoId === "q8q67bsI3t0")))) : (item.sourceKind === "standalone" ? [item.mp4] : [item.mp4, item.poster, item.captions]).every(url => typeof url === "string" && safeUrl(url, true))) &&
     (!item.poster || safeUrl(item.poster,true)) && (!item.captions || safeUrl(item.captions,true)) && (!item.srt || safeUrl(item.srt,true)) && safeUrl(item.article) && (!item.audio || safeUrl(item.audio, true)));
   return <Section className="border-t bg-muted/30"><Container>
     <h2 id={standalone ? "approved-standalone-videos" : "videos"} className="font-serif text-3xl">{standalone ? (zh ? "已批准的独立视频" : "Approved Standalone Videos") : (zh ? "视频讲堂" : "Videos")}</h2>

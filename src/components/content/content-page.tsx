@@ -69,8 +69,8 @@ export async function ContentPage({item, repository}: {item: NormalizedContentIt
   );
   const readingBody = headingMatches ? item.body.slice(manuscriptHeading[0].length) : item.body;
   const related = repository.getRelatedContent(item, 3);
-  // ADR-0040: only this existing sermon receives the reviewed locale-matched video.
-  const videos = item.canonicalId === "sermon-revelation-10-5-7"
+  // ADR-0040/0042: only these canonical items receive the exact locale-matched video.
+  const videos = ["sermon-revelation-10-5-7", "bible-study-david-goliath-faith-over-fear"].includes(item.canonicalId)
     ? getPublishedVideos(repository,item.language).filter(video=>video.canonicalId===item.canonicalId && video.provider==="youtube") : [];
   return <>
     <Section className="border-b bg-muted/40">

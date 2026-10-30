@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 
-// ADR-0038/0040: fixed bindings only; no third-party request before activation.
+// ADR-0038/0040/0042: fixed bindings only; no third-party request before activation.
 const bindings = {
+  "j4iVhPwUvK8": {locale:"zh-CN", title:"大卫与歌利亚：信心胜过恐惧", reviewedCaptions:true},
+  "nlt5tOE2AcE": {locale:"en-US", title:"David and Goliath: Faith Over Fear", reviewedCaptions:true},
   "0J44f6acTeQ": {locale:"zh-CN", title:"仍旧不悔改"},
   "KQ6jdIFjB8c": {locale:"zh-CN", title:"不再耽延的日子"},
   "q8q67bsI3t0": {locale:"en-US", title:"The Day of No More Delay"},
@@ -27,7 +29,7 @@ export function ApprovedYoutubePlayer({videoId,locale}:{videoId:keyof typeof bin
         {zh ? "加载 YouTube 视频：" : "Load YouTube video: "}{binding.title}
       </button>
     </div>}
-    <p className="mt-3 text-sm text-muted-foreground">{zh ? "本页未提供经审核的字幕文件。YouTube 播放器中的字幕以平台实际提供为准。" : "No reviewed subtitle file is supplied on this page. Captions depend on what YouTube actually provides."}</p>
+    <p className="mt-3 text-sm text-muted-foreground">{"reviewedCaptions" in binding ? (zh ? "已上传中文字幕；可在 YouTube 播放器的字幕设置中开启。" : "English captions have been uploaded; enable them in the YouTube player settings.") : (zh ? "本页未提供经审核的字幕文件。YouTube 播放器中的字幕以平台实际提供为准。" : "No reviewed subtitle file is supplied on this page. Captions depend on what YouTube actually provides.")}</p>
     <a href={"https://www.youtube.com/watch?v="+videoId}
       className="inline-flex min-h-11 items-center text-primary underline">{zh ? "在 YouTube 上观看" : "Watch on YouTube"}</a>
   </div>;

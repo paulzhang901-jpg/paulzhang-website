@@ -77,3 +77,16 @@ test("ADR-0040 renders only the matching bilingual sermon video with localized a
     assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale={locale} items={[wrong]} />),/watch\?v=/);
   }
 });
+
+test("David pair preserves localized activation and captions without third-party preload or crossed-language video", () => {
+  for(const [locale,videoId] of [["zh-CN","j4iVhPwUvK8"],["en-US","nlt5tOE2AcE"]] as const){
+    const video:VideoPresentation={canonicalId:"bible-study-david-goliath-faith-over-fear",locale,videoId,title:"David and Goliath",provider:"youtube",article:(locale==="en-US"?"/en":"")+"/library/david-and-goliath-faith-over-fear",scriptureRefs:[{book:"1 Samuel",chapterStart:17}]};
+    const html=renderToStaticMarkup(<VideosSection locale={locale} items={[video]} />);
+    assert.ok(html.includes("watch?v="+videoId));
+    assert.match(html,locale==="zh-CN"?/已上传中文字幕/:/English captions have been uploaded/);
+    assert.match(html,/1 Samuel 17/);
+    assert.doesNotMatch(html,/<iframe|<video|youtube-nocookie|autoplay|Download subtitles|未提供经审核/);
+    const wrong={...video,videoId:locale==="zh-CN"?"nlt5tOE2AcE":"j4iVhPwUvK8"} as VideoPresentation;
+    assert.doesNotMatch(renderToStaticMarkup(<VideosSection locale={locale} items={[wrong]} />),/watch\?v=/);
+  }
+});
