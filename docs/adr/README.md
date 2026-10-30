@@ -75,3 +75,5 @@ None.
 - [0041 Luke Bible Study Book](./0041-luke-bible-study-book.md) — Accepted by the owner in Phase 6; additional work type, existing ordered reader, unchanged approved files.
 
 - [0042 David and Goliath YouTube Integration](./0042-david-goliath-youtube-release.md) — scoped implementation authorized; exact pair only, per-release acceptance and production gates retained.
+
+- [ADR-0043: Prayer and peace independent video delivery (Proposed; storage pending)](./0043-prayer-peace-independent-video-release.md)
