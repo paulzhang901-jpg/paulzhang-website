@@ -1,46 +1,52 @@
-# ADR-0043 — Prayer and peace: unchanged independent sermon video delivery
+# ADR-0043 — Prayer and peace: free independent original-video delivery
 
-Status: Proposed — Phase 6.2 authorizes publication of the approved video; storage activation and website-specific release evidence remain pending
+Status: Proposed — free file host verified; per-video player integration/production review pending
 Date: 2026-10-30
 Owner: Paul Zhang
 Classification: ARCHITECTURE EXTENSION
-Version boundary: V1, one Chinese standalone sermon in the existing Videos section
+Version boundary: V1, one approved Chinese standalone sermon in the existing Videos section
 
 ## Goal and exact source
 
-Publish “祷告之后，为什么仍不平安？” (Philippians 4:7), preserving the human-approved Phase 6.1 MP4 byte-for-byte: SHA-256 `695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8`, 35,985,439 bytes. Original recorded speaker/voice; symbolic animation, not a synthetic narrator. Reviewed SRT: `cf78a7d367d9fd7d9ce347ab2c8f0c2510caaab95c6d5520714d2fd22097ed87`, 7,745 bytes. No rendering, recompression, splitting, retranslation, generated article/audio or replacement of existing media.
+Publish “祷告之后，为什么仍不平安？” (Philippians 4:7), preserving the approved Phase 6.1 original MP4: SHA-256 `695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8`, 35,985,439 bytes, 1920×1080, 267.7235 seconds. Original human voice, no synthetic narrator. Approved SRT: `cf78a7d367d9fd7d9ce347ab2c8f0c2510caaab95c6d5520714d2fd22097ed87`, 7,745 bytes. Do not rerender, recompress, alter content or upload YouTube again.
 
-## Proposed bounded integration
+## Owner constraints and rejected paths
 
-Reuse `/videos` and `/videos/[slug]`, canonical video catalog, existing native HTML5 player (`controls`, `playsInline`, responsive aspect ratio), GitHub PR checks and ADR-0021 main-only deployment. Intended existing-route instance: `/videos/peace-after-prayer`; canonical ID `video-sermon-prayer-peace`. Permit this single approved standalone sermon to use that detail projection rather than the current biography anchor constraint. No new section, route family or component.
+The latest owner instruction explicitly refuses R2, billing activation, credit cards, charges and quality reduction. The earlier R2 proposal and next-action instruction are superseded; do not ask for R2 activation again.
 
-Host the exact MP4 in independently served object storage outside Git; keep existing Pages media budgets and existing releases unchanged. Prefer Cloudflare R2 in the existing Cloudflare account. Require an owner-enabled account, known final HTTPS origin, immutable hash-addressed object, `video/mp4`, byte-range/206 support, and CORS allowing the website's exact origins because the existing player uses `crossOrigin=anonymous`. Public access must not require expiring credentials. Confirm storage/billing terms with the owner; do not activate a billing agreement, accept terms, alter DNS/security settings or create an unapproved paid subscription automatically. Do not call an r2.dev development endpoint a verified production host.
+Pages supports multiple files, each <=25 MiB, but stream-copy splitting would preserve approximately 34 MiB total. Existing public/media is 259,912,231 bytes; ADR-0037's 256 MiB ceiling leaves only 8,523,225 bytes. Neither segmentation nor the retained 22.80 MiB compression experiment fits that total budget. Do not delete old media, enlarge budgets silently or introduce an unnecessary segmented player. The compression experiment is not the asset selected here.
 
-The website must contain no YouTube iframe, source, activation button or fallback for this release. Do not remove unrelated previously approved YouTube videos. The independent YouTube publication is separate: `BJK5tloWFUM` on existing channel `UCij02113c9lnl5oZeRKbE6Q`; it is not a website playback source.
+## Free independent file — verified, not website-published
 
-## Current concrete blocker
+The existing public GitHub repository now has a Release media asset outside Git history:
 
-Cloudflare R2 bucket-list API returned code 10042: “Please enable R2 through the Cloudflare Dashboard.” No enabled R2 bucket exists for this account at this checkpoint. The MP4 exceeds both the existing 25 MiB governed local-media ceiling and Pages' direct-file limit. No silent Git/media exception or substitution is permitted. Candidate metadata remains PENDING and no runtime catalog entry is added.
+https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-prayer-peace-20261030/695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8.mp4
 
-## Delivery gates and allowed paths
+GitHub reports `video/mp4`, the exact 35,985,439 bytes and a matching sha256 digest. The release is not marked Latest and does not deploy the website. No new subscription, credit card or R2 was used; existing GitHub Release assets have no storage/bandwidth quota in the cited provider documentation. This is a project media artifact, not a newly committed large Git blob.
 
-Allowed paths for the eventual bounded implementation: this ADR/index and relevant release-boundary reference; exact pending/release metadata; existing published-video resolver/schema, release-policy validator, existing video-detail static params and resource label only as necessary; small existing approved auxiliary files and targeted tests. Keep all unrelated article/audio/player behavior and catalog entries unchanged. Do not grant a generic external-video exception.
+Anonymous requests for an interior byte range returned HTTP206 and the correct Content-Range, served by release-assets.githubusercontent.com. The final CDN response uses application/octet-stream and has no Access-Control-Allow-Origin. Therefore it is incompatible with the current player's crossorigin=anonymous attribute; do not describe it as CORS-enabled or silently register a broken player.
 
-After an independent host is available, bind its exact URL/hash/bytes in reviewed release evidence; prepare and validate the existing protected preview; test audible playback, pause/resume, seek and fullscreen on desktop and iPhone Safari, native playback and CORS/range delivery, captions and old-video regression. Owner's Phase 6.1 content approval is not represented as an actual iPhone website test. Preserve authenticated human exact-final-head GitHub acknowledgement, required reviews/checks and normal protected main merge. No feature-branch production deployment or fabricated approval. Phase 6.2 supplies production intent but does not prove these future gates happened.
+A localhost native HTML5 player WITHOUT crossorigin, with source type video/mp4, successfully decoded 1920×1080, duration267.7235s, played actual images, exposed the full seekable range, sought to163.8s and entered visibly verified native fullscreen. This is desktop embedded-browser evidence, not an actual iPhone hardware test. Pause was not independently confirmed in that run. No official website playback is claimed.
 
-Verify live `/videos` discovery and detail page, direct independent URL and downloaded exact hash, HTTP MIME/CORS/range responses and no YouTube requests from this page. Archive true website/YouTube states and local source pointers in Paul AI Brain; do not label an unpublished website complete.
+## Proposed minimal integration (not implemented)
 
-## Impacts and rollback
+Reuse existing /videos and /videos/[slug], with exact ID video-sermon-prayer-peace and detail /videos/peace-after-prayer. Extend only this exact standalone sermon binding; do not change biography destinations, other videos, manuscripts, narration or taxonomy. Reuse VideosSection's native controls/playsInline player. Only when BOTH the exact canonical ID and immutable Release URL match may crossorigin be omitted; all other players retain their current attributes. No iframe, YouTube URL, canvas extraction, general proxy, Workers service, new dependency or arbitrary no-CORS option. Existing same-origin captions/SRT and any approved small poster may be referenced. Add a localized direct-file host disclosure.
 
-Analytics: no new events. Privacy: no YouTube connection on this release's page and no new personal-data collection; document final independent host. Content: single approved video identity, no duplicate manuscript. Dependencies: none. Hosting: pending scoped external-object decision only; existing website deployment remains unchanged. Rollback by reviewed removal of this exact catalog reference, preserving immutable MP4 and archive. No existing content or media deletion.
+Allowed paths after authorization: this ADR/index/relevant release note; exact candidate/release/catalog metadata; existing resolver/schema, detail static params, resource label and the strictly scoped native-video attribute; existing release policy and focused tests; small caption/poster files only. Full MP4 remains outside Git and Pages.
 
-## Provider references
+## Stop and review boundary
 
-- Pages file limit: https://developers.cloudflare.com/pages/platform/limits/
-- R2 activation/checkout is owner-operated: https://developers.cloudflare.com/r2/get-started/
+The owner expressly said to stop before an authorization or possible website impact. The current change therefore contains only proposed documentation and pending evidence. Runtime catalog, actual player code, articles/audio, website configuration and production deployment are unchanged.
 
-## Owner-authorized compression follow-up
+Required next decision: authorize this single verified free-file integration and exact per-video player adaptation. Then validate the real integrated player, same-origin captions, pause/resume, seeking/fullscreen and mobile layout; obtain actual owner iPhone acceptance without reusing another release's test. Preserve authenticated exact-final-head GitHub acknowledgement, required checks/review and main-only deployment (ADR-0021); never fabricate approval or bypass protection. No production authorization is inferred from passing tests alone.
 
-The owner subsequently explicitly authorized a separate web compression attempt while preserving the approved master. CRF23.5 produces 23,907,385 bytes (22.80 MiB), still 1920×1080/24fps with all 6,425 frames and unchanged 267.7235-second duration; AAC packet hash matches the master exactly. Full-film SSIM 0.997243 and human-closeup SSIM 0.990811, with a representative frame inspected. This is an encoded derivative, not a new scene render or a claim of mathematical losslessness. It has not been uploaded or substituted for the approved original.
+After deployment, verify production discovery/detail routes, original bytes, Range delivery and absence of YouTube requests on this page; update existing Obsidian metadata rather than creating duplicate content.
 
-The existing checked-out public/media total is 259,912,231 bytes, leaving 8,523,225 bytes under ADR-0037’s 256 MiB limit. Adding the web copy would total 283,819,616 bytes and violate that separate cumulative limit even though the single-file limit is satisfied. Do not silently raise the limit, compress to an unusable bitrate, remove old assets or commit the large file. R2 activation remains the next owner-operated step; the same existing draft PR remains pending.
+## Impact and rollback
+
+No analytics or personal-data collection changes. Playing this exact item connects to disclosed GitHub/CDN instead of YouTube. Only public media is used; no credentials or expiring signed URLs are put in catalog data. Runtime uses the stable Release URL and follows platform-managed redirects. Roll back through a reviewed removal of the exact catalog reference, preserving immutable assets and all prior content. Small auxiliary files must remain within the existing media budget.
+
+## References
+
+- https://developers.cloudflare.com/pages/platform/limits/
+- https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
