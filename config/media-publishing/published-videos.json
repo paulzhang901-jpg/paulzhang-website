@@ -148,6 +148,30 @@
       "channelId": "UCij02113c9lnl5oZeRKbE6Q",
       "publishedAt": "2026-10-27T18:30:00Z",
       "publicationEventId": "owner-no-more-delay-youtube-20261027"
+    },
+    {
+      "canonicalId": "bible-study-david-goliath-faith-over-fear",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "b594ba7df8c625a8eb3da53f9d8cee372f9c590f7e007c75b33aeb8d9ad23af7",
+      "provider": "youtube",
+      "videoId": "j4iVhPwUvK8",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-29T00:00:00Z",
+      "publicationEventId": "owner-david-goliath-youtube-20261029"
+    },
+    {
+      "canonicalId": "bible-study-david-goliath-faith-over-fear",
+      "locale": "en-US",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "9a4d67fca514a3a85db4491c881b5912738ff1a1a58ab316f80bd3466a6ac040",
+      "provider": "youtube",
+      "videoId": "nlt5tOE2AcE",
+      "channelId": "UCij02113c9lnl5oZeRKbE6Q",
+      "publishedAt": "2026-10-29T00:00:00Z",
+      "publicationEventId": "owner-david-goliath-youtube-20261029"
     }
   ]
 }

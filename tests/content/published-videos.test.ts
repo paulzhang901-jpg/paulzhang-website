@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createContentRepository } from "../../src/lib/content/repository";
+import { getContentRepository, createContentRepository } from "../../src/lib/content/repository";
 import { item } from "./fixtures";
 import { getPublishedVideos, videoSourceHash, validateVideoCatalog } from "../../src/lib/content/published-videos";
 import { metadataForRoute } from "../../src/lib/seo/metadata";
@@ -142,5 +142,22 @@ test("David and Goliath resolves each exact language, scripture and counterpart;
     assert.equal(videos[0].alternateTitle,pair.find(i=>i.language!==r.locale)?.title);
     assert.deepEqual(getPublishedVideos(repository,r.locale,catalog({...r,sourceSha256:"0".repeat(64)})),[]);
     for(const patch of [{locale:r.locale==="zh-CN"?"en-US":"zh-CN"},{videoId:"arbitrary"},{channelId:"wrong"},{publicationEventId:"other"}])assert.throws(()=>validateVideoCatalog(catalog({...r,...patch})));
+  }
+});
+
+
+test("production discovery exposes both David study readers and locale-matched videos through the real catalog", async () => {
+  const repository = await getContentRepository();
+  const canonicalId = "bible-study-david-goliath-faith-over-fear";
+  for (const [locale, videoId] of [["zh-CN", "j4iVhPwUvK8"], ["en-US", "nlt5tOE2AcE"]] as const) {
+    const sources = repository.getContentByCanonicalId(canonicalId, locale);
+    assert.equal(sources.length, 1, `${locale}: the study must be public, not draft`);
+    const video = getPublishedVideos(repository, locale).find(entry => entry.canonicalId === canonicalId);
+    assert.ok(video, `${locale}: the production catalog must register the video`);
+    assert.equal(video.videoId, videoId);
+    const prefix = locale === "en-US" ? "/en" : "";
+    assert.equal(video.article, prefix + "/library/david-and-goliath-faith-over-fear");
+    assert.equal(video.detail, prefix + "/videos/david-and-goliath-faith-over-fear");
+    assert.equal(repository.resolvePublicTranslation(canonicalId, locale === "zh-CN" ? "en-US" : "zh-CN", sources[0]).available, true);
   }
 });
