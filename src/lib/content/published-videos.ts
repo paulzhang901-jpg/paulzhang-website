@@ -4,6 +4,7 @@ import catalog from "../../../config/media-publishing/published-videos.json";
 import type { ContentLanguage, NormalizedContentItem } from "@/types/content";
 import type { ContentRepository } from "./repository";
 import { contentPath } from "./paths";
+import { isPrayerPeaceDirectVideo, prayerPeaceDirectUrl } from "./prayer-peace-video";
 import { resolvePublishedNarration } from "./published-narrations";
 import type { VideoPresentation } from "@/components/content/videos-section";
 
@@ -52,6 +53,15 @@ const standaloneRecord = directRecord.omit({poster:true,captions:true}).extend({
   captions:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.vtt$/).optional(),
   srt:z.string().regex(/^\/media\/video\/[a-f0-9]{64}\.srt$/).optional(),
 }).strict().refine(v=>new RegExp("^"+(v.locale==="en-US"?"/en":"")+(v.videoType==="reading-notes"?"/videos/[a-z0-9]+(?:-[a-z0-9]+)*":"/about/profile#[a-z0-9]+(?:-[a-z0-9]+)*")+"$").test(v.primaryPage),"Invalid standalone destination or locale");
+// ADR-0043: the original approved Chinese sermon file only, outside Git media storage.
+const prayerPeaceRecord = directRecord.omit({poster:true,captions:true}).extend({
+  canonicalId:z.literal("video-sermon-prayer-peace"), locale:z.literal("zh-CN"),
+  sourceKind:z.literal("standalone"), category:z.literal("approved-standalone-videos"),
+  videoType:z.literal("sermon"),title:z.string().trim().min(1),
+  primaryPage:z.literal("/videos/peace-after-prayer"),mp4:z.literal(prayerPeaceDirectUrl),
+  poster:mediaUrl("jpg|jpeg|png|webp|avif").optional(),captions:mediaUrl("vtt").optional(),
+  publicationEventId:z.literal("owner-prayer-peace-direct-20261030"),
+}).strict();
 // ADR-0040: exact additional tuples; no arbitrary provider or channel support.
 const noMoreDelayYoutubeRecord = youtubeRecord.omit({canonicalId:true,locale:true,videoId:true,publicationEventId:true}).extend({
   canonicalId:z.literal("sermon-revelation-10-5-7"),
@@ -62,7 +72,7 @@ const davidGoliathYoutubeRecord = youtubeRecord.omit({canonicalId:true,locale:tr
   canonicalId:z.literal("bible-study-david-goliath-faith-over-fear"),
   publicationEventId:z.literal("owner-david-goliath-youtube-20261029"),
 });
-const record = z.union([directRecord, youtubeRecord, standaloneRecord,
+const record = z.union([directRecord, youtubeRecord, standaloneRecord, prayerPeaceRecord,
   davidGoliathYoutubeRecord.extend({locale:z.literal("zh-CN"),videoId:z.literal("j4iVhPwUvK8")}),
   davidGoliathYoutubeRecord.extend({locale:z.literal("en-US"),videoId:z.literal("nlt5tOE2AcE")}),
   noMoreDelayYoutubeRecord.extend({locale:z.literal("zh-CN"),videoId:z.literal("KQ6jdIFjB8c")}),
@@ -107,6 +117,7 @@ export function getPublishedVideos(repository: ContentRepository, locale: Conten
       if ("sourceKind" in entry) {
         if (standaloneVideoSourceHash(entry)!==entry.sourceSha256) return [];
         return [{canonicalId:entry.canonicalId,locale,title:entry.title,sourceKind:entry.sourceKind,
+          ...(isPrayerPeaceDirectVideo(entry) ? {scriptureRefs:[{book:"腓立比书",chapterStart:4,verseStart:7}]} : {}),
           publishedAt:entry.publishedAt,mp4:entry.mp4,poster:entry.poster,captions:entry.captions,srt:entry.srt,
           article:entry.primaryPage,detail:entry.primaryPage,videoType:entry.videoType}];
       }

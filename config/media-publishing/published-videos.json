@@ -172,6 +172,24 @@
       "channelId": "UCij02113c9lnl5oZeRKbE6Q",
       "publishedAt": "2026-10-29T00:00:00Z",
       "publicationEventId": "owner-david-goliath-youtube-20261029"
+    },
+    {
+      "canonicalId": "video-sermon-prayer-peace",
+      "locale": "zh-CN",
+      "sourceKind": "standalone",
+      "category": "approved-standalone-videos",
+      "videoType": "sermon",
+      "title": "祷告之后，为什么仍不平安？",
+      "primaryPage": "/videos/peace-after-prayer",
+      "mp4": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-prayer-peace-20261030/695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8.mp4",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "publishedAt": "2026-10-30T23:03:42.015834Z",
+      "publicationEventId": "owner-prayer-peace-direct-20261030",
+      "sourceSha256": "72c3a8e61eb7c3c92ae21bca4437369f945941cf21340f8699b39626ee44f04e",
+      "srt": "/media/video/cf78a7d367d9fd7d9ce347ab2c8f0c2510caaab95c6d5520714d2fd22097ed87.srt",
+      "captions": "/media/video/a0d456b8158404ae410fce81dd89edc48852c6a0031977e826756ea33ee71005.vtt",
+      "poster": "/media/video/67d871e04eb482a4f52730b165c2e6c57741bb97eee5129fbf9c692ec2e447f8.jpg"
     }
   ]
 }

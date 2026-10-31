@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'self'; form-action 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://paulzhang-together.paulzhang901.workers.dev https://www.google-analytics.com https://*.google-analytics.com; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; media-src 'self' https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-prayer-peace-20261030/695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8.mp4 https://release-assets.githubusercontent.com; frame-src https://www.youtube-nocookie.com; frame-ancestors 'self'; form-action 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://paulzhang-together.paulzhang901.workers.dev https://www.google-analytics.com https://*.google-analytics.com; upgrade-insecure-requests
   Permissions-Policy: camera=(), geolocation=(), microphone=()
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
