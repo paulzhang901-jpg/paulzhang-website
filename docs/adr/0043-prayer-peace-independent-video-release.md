@@ -1,6 +1,6 @@
 # ADR-0043 — Prayer and peace: free independent original-video delivery
 
-Status: Proposed — free file host verified; per-video player integration/production review pending
+Status: Accepted for scoped implementation by the owner after PR #106 merged; final-head human approval and normal production merge remain required
 Date: 2026-10-30
 Owner: Paul Zhang
 Classification: ARCHITECTURE EXTENSION
@@ -50,3 +50,9 @@ No analytics or personal-data collection changes. Playing this exact item connec
 
 - https://developers.cloudflare.com/pages/platform/limits/
 - https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
+
+## Owner-authorized implementation checkpoint
+
+After PR #106 merged as 7f89b62ff944985e6376e1cc80a417593c1a9231, the owner explicitly instructed completing this exact free-host/native-player integration. This authorizes implementing the minimal changes proposed above; it does not fabricate final-head GitHub acknowledgement or actual iPhone acceptance. Only this exact external MP4 tuple is excepted from the local-file registry budget rule; its small same-origin caption/SRT/poster files remain checked and counted. No global budget increase, new hosting service, charge or YouTube change. Main-only deployment and all blocking CI/review gates remain.
+
+Production CSP: public/_headers adds media-src self, the one immutable GitHub file URL and its release-assets.githubusercontent.com redirect host. Existing script/connect/frame/object policies are preserved; no wildcard media permission is added. This is necessary for the production page, not a new player or hosting service.

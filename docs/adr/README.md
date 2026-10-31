@@ -76,4 +76,4 @@ None.
 
 - [0042 David and Goliath YouTube Integration](./0042-david-goliath-youtube-release.md) — scoped implementation authorized; exact pair only, per-release acceptance and production gates retained.
 
-- [ADR-0043: Prayer and peace independent video delivery (Proposed; storage pending)](./0043-prayer-peace-independent-video-release.md)
+- [ADR-0043: Prayer and peace independent video delivery (scoped implementation authorized; final publication review pending)](./0043-prayer-peace-independent-video-release.md)

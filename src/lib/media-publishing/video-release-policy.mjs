@@ -86,9 +86,41 @@ export function validateDavidGoliathYoutubeRelease(c,{policyAccepted=false,read}
  return true;
 }
 
+// ADR-0043: only the owner-approved original file hosted outside Git. No generic host exception.
+export function validatePrayerPeaceDirectRelease(c,{policyAccepted=false,read}={}) {
+ requireValue(policyAccepted===true,'Accepted ADR-0043 required');
+ const sha='695e6cec2906c666727bc937da45ecaa84a4a4bb5f61553bd10196ce6f04aca8';
+ const url='https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-prayer-peace-20261030/'+sha+'.mp4';
+ requireValue(c.canonicalId==='video-sermon-prayer-peace' && c.locale==='zh-CN' &&
+  c.sourceKind==='standalone' && c.category==='approved-standalone-videos' && c.videoType==='sermon' &&
+  c.primaryPage==='/videos/peace-after-prayer' && c.mp4===url && !Object.hasOwn(c,'provider') &&
+  c.state==='PUBLISHED' && c.kind==='production' && c.publicationEventId==='owner-prayer-peace-direct-20261030','Unapproved ADR-0043 identity');
+ const release=JSON.parse(read('config/media-publishing/prayer-peace-direct-release.json'));
+ requireValue(release.schemaVersion===1 && release.state==='ACTIVE' && catalogHash(release.record)===catalogHash(c),'ADR-0043 release binding mismatch');
+ requireValue(release.media?.url===url && release.media.sha256===sha && release.media.bytes===35985439 &&
+  release.media.durationSeconds===267.7235,'ADR-0043 master identity mismatch');
+ const a=release.ownerContentAcceptance;
+ requireValue(a?.owner==='Paul Zhang' && a.status==='APPROVED' && typeof a.evidence==='string' && a.evidence.length>=40 &&
+  release.requiresFinalHeadOwnerApproval===true,'Missing ADR-0043 owner content acceptance');
+ requireValue(Array.isArray(release.assets) && release.assets.length===3 &&
+  new Set(release.assets.map(a=>a.kind)).size===3 &&
+  release.assets.every(a=>['srt','captions','poster'].includes(a.kind)),'ADR-0043 auxiliary coverage mismatch');
+ for(const asset of release.assets){
+  keys(asset,['kind','path','sha256','bytes'],'ADR-0043 asset');
+  const ext={srt:'srt',captions:'vtt',poster:'(?:jpg|png|webp)'}[asset.kind];
+  requireValue(digest(asset.sha256) && typeof asset.path==='string' &&
+   new RegExp('^media/video/'+asset.sha256+'\\.'+ext+'$').test(asset.path) &&
+   Number.isSafeInteger(asset.bytes) && asset.bytes>0 && asset.bytes<=VIDEO_LIMITS.auxiliaryBytes &&
+   c[asset.kind]==='/'+asset.path,'ADR-0043 invalid auxiliary asset');
+  const data=read('public/'+asset.path);
+  requireValue(data.length===asset.bytes && hash(data)===asset.sha256,'ADR-0043 auxiliary integrity mismatch');
+ }
+ return true;
+}
+
 // Validates evidence consistency, NOT owner identity or authorization. Authenticated
 // GitHub final-head approval and separate production permission remain external gates.
-export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,noMoreDelayPolicyAccepted=false,davidGoliathPolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
+export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,noMoreDelayPolicyAccepted=false,davidGoliathPolicyAccepted=false,prayerPeacePolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
  keys(registry,['schemaVersion','releases'],'registry');
  requireValue(registry.schemaVersion===1 && Array.isArray(registry.releases),'Invalid release registry');
  requireValue(!registry.releases.length || policyAccepted===true,'Accepted ADR-0037 required before registering releases');
@@ -159,6 +191,7 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
    else if(c.canonicalId==='bible-study-david-goliath-faith-over-fear') validateDavidGoliathYoutubeRelease(c,{policyAccepted:davidGoliathPolicyAccepted,read});
    else validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
   }
+  else if(c.canonicalId==='video-sermon-prayer-peace') validatePrayerPeaceDirectRelease(c,{policyAccepted:prayerPeacePolicyAccepted,read});
   else requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');
  }
  return approved;

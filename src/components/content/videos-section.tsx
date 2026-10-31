@@ -1,3 +1,4 @@
+import { isPrayerPeaceDirectVideo } from "@/lib/content/prayer-peace-video";
 import { ApprovedYoutubePlayer } from "./approved-youtube-player";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -53,19 +54,20 @@ export function VideosSection({ locale, items = [], showDetails = true, standalo
           return end ? start + "–" + end : start;
         }).join("; ")}</p> : null}
         {item.publishedAt ? <p className="mb-4 text-sm text-muted-foreground">{zh ? "视频发布：" : "Video published: "}<time dateTime={item.publishedAt}>{new Intl.DateTimeFormat(locale, {dateStyle: "medium", timeZone: "UTC"}).format(new Date(item.publishedAt))}</time></p> : null}
-        {item.provider === "youtube" ? <ApprovedYoutubePlayer videoId={item.videoId!} locale={locale} /> : <video controls playsInline crossOrigin="anonymous" preload="none" poster={item.poster}
+        {item.provider === "youtube" ? <ApprovedYoutubePlayer videoId={item.videoId!} locale={locale} /> : <video controls playsInline crossOrigin={isPrayerPeaceDirectVideo(item) ? undefined : "anonymous"} preload="none" poster={item.poster}
           aria-label={item.title} className="aspect-video w-full rounded-md bg-black">
           <source src={item.mp4} type="video/mp4" />
           {item.captions ? <track kind="captions" src={item.captions} srcLang={zh ? "zh" : "en"}
             label={zh ? "中文字幕" : "English captions"} /> : null}
           <a href={item.mp4}>{zh ? "下载视频" : "Download video"}</a>
         </video>}
+        {isPrayerPeaceDirectVideo(item) ? <p className="mt-3 text-sm text-muted-foreground">{zh ? "真人讲道原声；视频文件由 GitHub 独立托管，播放时连接 GitHub，不经过 YouTube。" : "Original recorded voice. Video independently hosted on GitHub; playback does not use YouTube."}</p> : null}
         {item.provider === "youtube" || item.sourceKind === "standalone" ? null : <p className="mt-3 text-sm text-muted-foreground">{zh ? "AI 合成旁白，非作者本人录音。" : "AI-generated narration; not a recording of the author."}</p>}
         <nav aria-label={zh ? `与《${item.title}》相关的资源` : `Resources for ${item.title}`}
           className="mt-4 flex flex-wrap gap-5">
           {showDetails && item.detail ? <a href={item.detail} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "视频详情" : "Video details"}</a> : null}
           {item.srt ? <a href={item.srt} download className="inline-flex min-h-11 items-center text-primary underline">{zh ? "下载字幕" : "Download subtitles"}</a> : null}
-          <a href={item.article} className="inline-flex min-h-11 items-center text-primary underline">{item.sourceKind === "standalone" ? (item.videoType === "reading-notes" ? (zh ? "读书笔记视频" : "Reading notes video") : (zh ? "牧师简介" : "Pastor biography")) : (zh ? "阅读原文" : "Read article")}</a>
+          <a href={item.article} className="inline-flex min-h-11 items-center text-primary underline">{item.sourceKind === "standalone" ? (isPrayerPeaceDirectVideo(item) ? (zh ? "讲道精华" : "Sermon highlight") : item.videoType === "reading-notes" ? (zh ? "读书笔记视频" : "Reading notes video") : (zh ? "牧师简介" : "Pastor biography")) : (zh ? "阅读原文" : "Read article")}</a>
           {item.audio ? <a href={item.audio} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "收听音频" : "Listen to audio"}</a> : null}
           {item.mp4 ? <a href={item.mp4} download={item.sourceKind === "standalone" || undefined} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "打开视频文件" : "Open video file"}</a> : null}
         </nav>
