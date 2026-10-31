@@ -1,0 +1,45 @@
+{
+  "canonical_id": "article-importance-of-coworkers-in-ministry-2026-10-26",
+  "scope": "V1",
+  "classification": "ARCHITECTURE-COMPLIANT IMPLEMENTATION",
+  "owner": "Paul Zhang",
+  "goal": "Publish the supplied bilingual article through the existing Library and archive the verified published bodies in the existing Obsidian Articles directory.",
+  "allowed_paths": [
+    "content/zh-CN/library/importance-of-coworkers-in-ministry.mdx",
+    "content/en-US/library/importance-of-coworkers-in-ministry.mdx",
+    "artifacts/content/importance-of-coworkers-in-ministry/"
+  ],
+  "architecture": [
+    "ADR-0003",
+    "ADR-0009",
+    "ADR-0011",
+    "ADR-0012",
+    "ADR-0021"
+  ],
+  "analytics_impact": "None; existing content events only",
+  "privacy_impact": "Author-supplied public article only; no private submissions or local source paths added to runtime",
+  "adr_impact": "None",
+  "body_policy": "English body copied exactly including the supplied NIV quotation and translation note. Chinese text preserved exactly, with Markdown heading markers added to the title, six sections and conclusion. No translation or editorial rewriting.",
+  "acceptance": [
+    "Exact English body and unchanged Chinese text",
+    "Six chapters and all Scripture retained",
+    "One canonical identity, reciprocal locale navigation and SEO",
+    "Existing content/translation/architecture/security tests and static export",
+    "Owner PR merge, successful main production deployment and live routes",
+    "Post-production Obsidian archive with exact body hashes and reciprocal links"
+  ],
+  "records": [
+    {
+      "locale": "zh-CN",
+      "path": "content/zh-CN/library/importance-of-coworkers-in-ministry.mdx",
+      "body_sha256": "8dd94a7662cbe445f9879dc75abf6310615099f372dde99ccda5ba3e0b047b5a",
+      "sections": 6
+    },
+    {
+      "locale": "en-US",
+      "path": "content/en-US/library/importance-of-coworkers-in-ministry.mdx",
+      "body_sha256": "370f6431044b1a6cd919aa8c6aa569d88b5b01a1f1d61659caa9106c3a98f864",
+      "sections": 6
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "rendered_pages": [
+    {
+      "locale": "zh-CN",
+      "source_lines_present": 202,
+      "numbered_sections": 6,
+      "h1_count": 1,
+      "reciprocal_language_link": true,
+      "canonical_and_hreflang": true,
+      "library_and_sitemap": true,
+      "body_sha256": "8dd94a7662cbe445f9879dc75abf6310615099f372dde99ccda5ba3e0b047b5a"
+    },
+    {
+      "locale": "en-US",
+      "source_lines_present": 188,
+      "numbered_sections": 6,
+      "h1_count": 1,
+      "reciprocal_language_link": true,
+      "canonical_and_hreflang": true,
+      "library_and_sitemap": true,
+      "body_sha256": "370f6431044b1a6cd919aa8c6aa569d88b5b01a1f1d61659caa9106c3a98f864"
+    }
+  ],
+  "checks": "Exact source-line presence (including Scripture), six numbered chapters, one H1, reciprocal language links, canonical, hreflang, Library listing and sitemap"
+}
