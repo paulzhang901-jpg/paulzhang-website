@@ -15,7 +15,7 @@
     "test:content": "pnpm run test:content-integrity && pnpm run test:translation",
     "test:content-integrity": "node --import tsx --test tests/content/content-model.test.ts tests/content/repository.test.ts tests/content/article-narration.test.ts tests/content/ai-audio-render.test.ts tests/content/mobile-speech.test.ts tests/content/english-voice-ranking.test.ts tests/content/published-sermon-audio.test.ts tests/content/published-videos.test.ts tests/content/prayer-peace-video.test.tsx tests/content/videos-section.test.tsx tests/content/faith-preparation.test.ts tests/content-work/*.test.ts",
     "test:translation": "node --import tsx --test tests/content/translation-integrity.test.ts",
-    "test:routes": "node --test tests/runtime/*.test.mjs && node --import tsx --test tests/routes/*.test.ts",
+    "test:routes": "node --test tests/runtime/*.test.mjs && node --import tsx --test tests/routes/*.test.ts && pnpm run test:publishing-studio",
     "test:accessibility": "node --test tests/accessibility/*.test.mjs",
     "test:performance": "node --test tests/quality/*.test.mjs",
     "test:product": "node --import tsx --test tests/product/*.test.ts && node --test tests/product/*.test.mjs",
@@ -25,7 +25,9 @@
     "validate:architecture": "node tests/architecture/validate.mjs",
     "validate:content": "node --import tsx src/lib/content/validate-cli.ts",
     "validate:static-export": "node scripts/validate-static-export.mjs",
-    "test:narration-governance": "node --import tsx --test tests/narration-governance/*.test.ts"
+    "test:narration-governance": "node --import tsx --test tests/narration-governance/*.test.ts",
+    "studio": "node --import tsx tools/publishing-studio/start.ts",
+    "test:publishing-studio": "node --import tsx --test tests/publishing-studio/*.test.ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "3.1.1",
