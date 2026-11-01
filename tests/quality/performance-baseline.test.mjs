@@ -60,6 +60,7 @@ test("raw public assets retain the V1 budget except exact owner-approved media",
   };
   const governed = validateVideoReleases(JSON.parse(read("config/media-publishing/governed-video-releases.json")), {
     policyAccepted, read,
+    sweetMouthPolicyAccepted: /^Status: Accepted(?:\s|$)/m.test(fs.readFileSync(path.join(root, "docs/adr/0045-sweet-mouth-sermon-highlight.md"), "utf8")),
     prayerPeacePolicyAccepted: /^Status: Accepted(?:\s|$)/m.test(fs.readFileSync(path.join(root, "docs/adr/0043-prayer-peace-independent-video-release.md"), "utf8")),
     standalonePolicyAccepted: fs.readFileSync(path.join(root,"docs/adr/0037-repeatable-approved-video-releases.md"),"utf8").includes("## Accepted amendment — Approved Standalone Videos"),
     davidGoliathPolicyAccepted: /^Status: Accepted(?:\s|$)/m.test(fs.readFileSync(path.join(root, "docs/adr/0042-david-goliath-youtube-release.md"), "utf8")),

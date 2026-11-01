@@ -79,3 +79,5 @@ None.
 - [ADR-0043: Prayer and peace independent video delivery (scoped implementation authorized; final publication review pending)](./0043-prayer-peace-independent-video-release.md)
 
 - [0044 Local One-Click Publishing Studio](./0044-local-publishing-studio.md) — Accepted by Paul on 2026-10-31, approach B; exact-version finalized-Markdown automatic publication through existing protected main workflow. Architecture decision only; implementation deferred.
+
+- [0045 Sweet in the Mouth sermon highlight](./0045-sweet-mouth-sermon-highlight.md) — Owner-authorized exact Chinese 1080p highlight, existing GitHub Release/native player, unchanged sermon.

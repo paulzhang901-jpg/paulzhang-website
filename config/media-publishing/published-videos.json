@@ -190,6 +190,19 @@
       "srt": "/media/video/cf78a7d367d9fd7d9ce347ab2c8f0c2510caaab95c6d5520714d2fd22097ed87.srt",
       "captions": "/media/video/a0d456b8158404ae410fce81dd89edc48852c6a0031977e826756ea33ee71005.vtt",
       "poster": "/media/video/67d871e04eb482a4f52730b165c2e6c57741bb97eee5129fbf9c692ec2e447f8.jpg"
+    },
+    {
+      "canonicalId": "sermon-revelation-10-8-11",
+      "locale": "zh-CN",
+      "state": "PUBLISHED",
+      "kind": "production",
+      "sourceSha256": "2c5342872059c4f0b5afd403ef71cfcaa40c197dfc7ccb82b0423e0ceae002f9",
+      "mp4": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-sweet-mouth-20261101/4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a.mp4",
+      "publishedAt": "2026-11-01T22:42:38Z",
+      "publicationEventId": "owner-sweet-mouth-highlight-20261101",
+      "srt": "/media/video/c54d72977989e7c8778d741d61833f8500e98eec7b464e2543b68030647775ea.srt",
+      "captions": "/media/video/ded4a9b8075374c0d021e65c1dc8a426a2817b8ee664e159d7dc3a70a15dda54.vtt",
+      "poster": "/media/video/98e199df16808054cd2ea8851ca4146b6a436cfeb5df661187683140e6ad1e00.jpg"
     }
   ]
 }

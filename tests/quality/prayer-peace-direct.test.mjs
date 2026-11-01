@@ -21,10 +21,10 @@ test('small auxiliary assets must match approved bytes and cover the record exac
  assert.throws(()=>run(release.record,{changeRelease:r=>({...r,assets:r.assets.slice(1)})}));
 });
 
-test('production CSP admits only self, the fixed GitHub file and its redirect CDN for media',()=>{
+test('production CSP admits only self, the two fixed GitHub files and their redirect CDN',()=>{
  const header=fs.readFileSync('public/_headers','utf8').split('\n').find(l=>l.trimStart().startsWith('Content-Security-Policy:'));
  const media=header.split(';').map(s=>s.trim()).find(s=>s.startsWith('media-src '));
- assert.equal(media,"media-src 'self' "+release.media.url+' https://release-assets.githubusercontent.com');
+ assert.equal(media,"media-src 'self' "+release.media.url+' https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-sweet-mouth-20261101/4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a.mp4 https://release-assets.githubusercontent.com');
  assert.ok(header.includes("object-src 'none'"));
  assert.ok(header.includes("frame-src https://www.youtube-nocookie.com"));
 });

@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {validateSweetMouthHighlightRelease} from './sweet-mouth-highlight-policy.mjs';
 
 export const VIDEO_LIMITS = Object.freeze({mp4Bytes:25*1024*1024, auxiliaryBytes:1024*1024, releaseBytes:64*1024*1024, repositoryMediaBytes:256*1024*1024});
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -120,7 +121,7 @@ export function validatePrayerPeaceDirectRelease(c,{policyAccepted=false,read}={
 
 // Validates evidence consistency, NOT owner identity or authorization. Authenticated
 // GitHub final-head approval and separate production permission remain external gates.
-export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,noMoreDelayPolicyAccepted=false,davidGoliathPolicyAccepted=false,prayerPeacePolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
+export function validateVideoReleases(registry,{policyAccepted=false,youtubePolicyAccepted=false,noMoreDelayPolicyAccepted=false,davidGoliathPolicyAccepted=false,prayerPeacePolicyAccepted=false,sweetMouthPolicyAccepted=false,standalonePolicyAccepted=false,read,catalog=[],narrations=[]}={}){
  keys(registry,['schemaVersion','releases'],'registry');
  requireValue(registry.schemaVersion===1 && Array.isArray(registry.releases),'Invalid release registry');
  requireValue(!registry.releases.length || policyAccepted===true,'Accepted ADR-0037 required before registering releases');
@@ -192,6 +193,7 @@ export function validateVideoReleases(registry,{policyAccepted=false,youtubePoli
    else validateYoutubeRelease(c,{policyAccepted:youtubePolicyAccepted,read});
   }
   else if(c.canonicalId==='video-sermon-prayer-peace') validatePrayerPeaceDirectRelease(c,{policyAccepted:prayerPeacePolicyAccepted,read});
+  else if(c.canonicalId==='sermon-revelation-10-8-11') validateSweetMouthHighlightRelease(c,{policyAccepted:sweetMouthPolicyAccepted,read});
   else requireValue(LEGACY_CATALOG_HASHES.has(catalogHash(c)) || active.has(identity+':'+c.publicationEventId),'Runtime video lacks active governed release evidence');
  }
  return approved;
