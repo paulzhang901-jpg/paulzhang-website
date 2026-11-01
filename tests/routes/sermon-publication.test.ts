@@ -8,6 +8,24 @@ import {resolveLibrarySlug} from "../../src/lib/routing/resolvers";
 import {parseCanonicalReaderBody} from "../../src/components/content/sermon-preview-presentation";
 import sitemap from "../../src/app/sitemap";
 
+test("November 1 sermon materializes both complete locales through the governed runtime", async () => {
+  const repository = await getContentRepository();
+  const canonicalId = "sermon-revelation-10-8-11";
+  const slug = "sweet-in-the-mouth-bitter-in-the-stomach";
+  for (const locale of ["zh-CN", "en-US"] as const) {
+    const item = repository.getContentBySlug("library", slug, locale)!;
+    assert.equal(item.canonicalId, canonicalId);
+    const sermon = loadPublishedSermon(item.id, locale)!;
+    assert.ok(sermon);
+    assert.equal(sermon.body.trim(), item.body.trim());
+    assert.match(sermon.sermonSeries, /10|十/);
+    assert.match(sermon.scriptureRange, /10:8–11/);
+    assert.ok(repository.resolvePublicTranslation(canonicalId, locale === "zh-CN" ? "en-US" : "zh-CN", item).available);
+    assert.ok(sermon.body.includes(locale === "zh-CN" ? "## 结束祷告" : "## Closing Prayer"));
+    assert.ok(sermon.body.trim().endsWith(locale === "zh-CN" ? "阿们。" : "Amen."));
+  }
+});
+
 test("approved Chinese sermon is byte-identical and uses existing Library/search/sitemap; no protected publication", async () => {
   const id = "sermon-p7c-029-001";
   const url = "https://paulzhang.org/library/tanqin-de-shaonian";

@@ -773,6 +773,40 @@
       "searchEligibility": true,
       "sourceSermonId": "sermon-revelation-10-5-7",
       "sourceCanonicalEditionHash": "4192e690593bffa698329838190e1b22eb5c21d605cba3988392b17900542e78"
+    },
+    {
+      "sermonId": "sermon-revelation-10-8-11",
+      "title": "口中甘甜，腹中发苦",
+      "subtitle": "",
+      "scriptureRange": "启示录 10:8–11",
+      "sermonSeries": "启示录第十章第三讲",
+      "themes": [],
+      "canonicalEditionHash": "463c8380cf8ff5a0edf955c53c1f674f2d660d2c60473c508bae05a311337c37",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/sweet-in-the-mouth-bitter-in-the-stomach.mdx",
+      "publicRoute": "/library/sweet-in-the-mouth-bitter-in-the-stomach",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
+    },
+    {
+      "sermonId": "sermon-revelation-10-8-11-en",
+      "title": "Sweet in the Mouth, Bitter in the Stomach",
+      "subtitle": "",
+      "scriptureRange": "Revelation 10:8–11",
+      "sermonSeries": "Revelation Chapter 10, Sermon 3",
+      "themes": [],
+      "canonicalEditionHash": "840f23187c5f42e8b18f9ff609b37a5c777feb8b09ee11cab8efc4b8b979d608",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/sweet-in-the-mouth-bitter-in-the-stomach.mdx",
+      "publicRoute": "/en/library/sweet-in-the-mouth-bitter-in-the-stomach",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
+      "sourceSermonId": "sermon-revelation-10-8-11",
+      "sourceCanonicalEditionHash": "463c8380cf8ff5a0edf955c53c1f674f2d660d2c60473c508bae05a311337c37"
     }
   ]
 }
