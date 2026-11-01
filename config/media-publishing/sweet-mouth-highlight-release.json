@@ -8,7 +8,7 @@
     "kind": "production",
     "sourceSha256": "2c5342872059c4f0b5afd403ef71cfcaa40c197dfc7ccb82b0423e0ceae002f9",
     "mp4": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-sweet-mouth-20261101/4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a.mp4",
-    "publishedAt": "2026-11-01T22:42:38Z",
+    "publishedAt": "2026-11-01T23:01:22Z",
     "publicationEventId": "owner-sweet-mouth-highlight-20261101",
     "srt": "/media/video/c54d72977989e7c8778d741d61833f8500e98eec7b464e2543b68030647775ea.srt",
     "captions": "/media/video/ded4a9b8075374c0d021e65c1dc8a426a2817b8ee664e159d7dc3a70a15dda54.vtt",
@@ -55,6 +55,49 @@
     "heading": "讲道精华视频｜口中甘甜，腹中发苦",
     "description": "这段讲道精华视频根据2026年11月1日的主日信息制作，以启示录10:8–11为中心，探讨神的话语为什么入口甘甜、腹中发苦，以及基督徒如何在领受真理之后，忠心承担传扬福音的使命。"
   },
-  "uploadVerification": null,
+  "uploadVerification": {
+    "verifiedAt": "2026-11-01T23:02:04Z",
+    "url": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-sweet-mouth-20261101/4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a.mp4",
+    "anonymousGetStatus": 200,
+    "bytes": 21441999,
+    "sha256": "4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a",
+    "cdnContentType": "application/octet-stream",
+    "rangeStatus": 206,
+    "contentRange": "bytes 1048576-1049599/21441999",
+    "originalBytesPreserved": true,
+    "releaseId": 430916036,
+    "publishedAt": "2026-11-01T23:01:22Z",
+    "assetId": 699780226,
+    "releaseUrl": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/tag/sermon-sweet-mouth-20261101",
+    "hostedPlayerVerification": {
+      "status": "HOSTED PLAYER PASS",
+      "remoteHostingVerified": true,
+      "productionVerified": false,
+      "source": "Actual external GitHub Release MP4; no interception or local media substitute",
+      "actualIPhoneHardwareTest": false,
+      "results": [
+        {
+          "viewportWidth": 1440,
+          "width": 1920,
+          "height": 1080,
+          "duration": 277.791667,
+          "playPauseSeekResume": true,
+          "captions": 90,
+          "noYouTubeRequests": true,
+          "EnglishArticleUnchanged": true
+        },
+        {
+          "viewportWidth": 390,
+          "width": 1920,
+          "height": 1080,
+          "duration": 277.791667,
+          "playPauseSeekResume": true,
+          "captions": 90,
+          "noYouTubeRequests": true,
+          "EnglishArticleUnchanged": true
+        }
+      ]
+    }
+  },
   "productionVerification": null
 }
