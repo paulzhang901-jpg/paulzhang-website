@@ -1,4 +1,5 @@
 import { isPrayerPeaceDirectVideo } from "@/lib/content/prayer-peace-video";
+import { isSweetMouthHighlight } from "@/lib/content/sweet-mouth-highlight";
 import { ApprovedYoutubePlayer } from "./approved-youtube-player";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
@@ -35,16 +36,18 @@ function safeUrl(value: string, media = false) {
   } catch { return false; }
 }
 
-export function VideosSection({ locale, items = [], showDetails = true, standalone = false }: {
+export function VideosSection({ locale, items = [], showDetails = true, standalone = false, heading, description, fullWidth = false }: {
   locale: ContentLanguage; items?: readonly VideoPresentation[]; showDetails?: boolean; standalone?: boolean;
+  heading?: string; description?: string; fullWidth?: boolean;
 }) {
   const zh = locale === "zh-CN";
   const visible = items.filter(item => item.locale === locale &&
     (item.provider === "youtube" ? ((item.canonicalId === "bible-study-david-goliath-faith-over-fear" && ((item.locale === "zh-CN" && item.videoId === "j4iVhPwUvK8") || (item.locale === "en-US" && item.videoId === "nlt5tOE2AcE"))) || (item.canonicalId === "sermon-revelation-9-20-21" && item.locale === "zh-CN" && item.videoId === "0J44f6acTeQ") || (item.canonicalId === "sermon-revelation-10-5-7" && ((item.locale === "zh-CN" && item.videoId === "KQ6jdIFjB8c") || (item.locale === "en-US" && item.videoId === "q8q67bsI3t0")))) : (item.sourceKind === "standalone" ? [item.mp4] : [item.mp4, item.poster, item.captions]).every(url => typeof url === "string" && safeUrl(url, true))) &&
     (!item.poster || safeUrl(item.poster,true)) && (!item.captions || safeUrl(item.captions,true)) && (!item.srt || safeUrl(item.srt,true)) && safeUrl(item.article) && (!item.audio || safeUrl(item.audio, true)));
   return <Section className="border-t bg-muted/30"><Container>
-    <h2 id={standalone ? "approved-standalone-videos" : "videos"} className="font-serif text-3xl">{standalone ? (zh ? "已批准的独立视频" : "Approved Standalone Videos") : (zh ? "视频讲堂" : "Videos")}</h2>
-    {visible.length ? <div className="mt-8 grid gap-8 lg:grid-cols-2">
+    <h2 id={standalone ? "approved-standalone-videos" : "videos"} className="font-serif text-3xl">{heading ?? (standalone ? (zh ? "已批准的独立视频" : "Approved Standalone Videos") : (zh ? "视频讲堂" : "Videos"))}</h2>
+    {description ? <p className="mt-5 max-w-4xl leading-8 text-muted-foreground">{description}</p> : null}
+    {visible.length ? <div className={fullWidth ? "mt-8 grid gap-8" : "mt-8 grid gap-8 lg:grid-cols-2"}>
       {visible.map(item => <article key={item.canonicalId} className="min-w-0 rounded-lg border bg-surface p-5">
         <h3 className="mb-4 font-serif text-2xl">{item.title}</h3>
         {item.alternateTitle ? <p className="mb-3 text-muted-foreground" lang={zh ? "en" : "zh"}>{item.alternateTitle}</p> : null}
@@ -54,7 +57,7 @@ export function VideosSection({ locale, items = [], showDetails = true, standalo
           return end ? start + "–" + end : start;
         }).join("; ")}</p> : null}
         {item.publishedAt ? <p className="mb-4 text-sm text-muted-foreground">{zh ? "视频发布：" : "Video published: "}<time dateTime={item.publishedAt}>{new Intl.DateTimeFormat(locale, {dateStyle: "medium", timeZone: "UTC"}).format(new Date(item.publishedAt))}</time></p> : null}
-        {item.provider === "youtube" ? <ApprovedYoutubePlayer videoId={item.videoId!} locale={locale} /> : <video controls playsInline crossOrigin={isPrayerPeaceDirectVideo(item) ? undefined : "anonymous"} preload="none" poster={item.poster}
+        {item.provider === "youtube" ? <ApprovedYoutubePlayer videoId={item.videoId!} locale={locale} /> : <video controls playsInline crossOrigin={isPrayerPeaceDirectVideo(item) || isSweetMouthHighlight(item) ? undefined : "anonymous"} preload="none" poster={item.poster}
           aria-label={item.title} className="aspect-video w-full rounded-md bg-black">
           <source src={item.mp4} type="video/mp4" />
           {item.captions ? <track kind="captions" src={item.captions} srcLang={zh ? "zh" : "en"}

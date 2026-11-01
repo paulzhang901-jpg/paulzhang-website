@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "state": "ACTIVE",
+  "record": {
+    "canonicalId": "sermon-revelation-10-8-11",
+    "locale": "zh-CN",
+    "state": "PUBLISHED",
+    "kind": "production",
+    "sourceSha256": "2c5342872059c4f0b5afd403ef71cfcaa40c197dfc7ccb82b0423e0ceae002f9",
+    "mp4": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-sweet-mouth-20261101/4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a.mp4",
+    "publishedAt": "2026-11-01T22:42:38Z",
+    "publicationEventId": "owner-sweet-mouth-highlight-20261101",
+    "srt": "/media/video/c54d72977989e7c8778d741d61833f8500e98eec7b464e2543b68030647775ea.srt",
+    "captions": "/media/video/ded4a9b8075374c0d021e65c1dc8a426a2817b8ee664e159d7dc3a70a15dda54.vtt",
+    "poster": "/media/video/98e199df16808054cd2ea8851ca4146b6a436cfeb5df661187683140e6ad1e00.jpg"
+  },
+  "sourcePath": "content/zh-CN/library/sweet-in-the-mouth-bitter-in-the-stomach.mdx",
+  "sourceFileSha256": "96fbf814fe4b762b6369d3122cb277fe12fdd3c4485435ff48cf6edc0813603e",
+  "sourceCommit": "43c31fefb0392cf710ee2098912e212de38d3b1f",
+  "media": {
+    "url": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/sermon-sweet-mouth-20261101/4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a.mp4",
+    "sha256": "4cacb571f183ba4d63f27834a3f4cd75bec5d1bb50315d25e7a6e9720b6cbe8a",
+    "bytes": 21441999,
+    "durationSeconds": 277.791667,
+    "width": 1920,
+    "height": 1080
+  },
+  "assets": [
+    {
+      "kind": "srt",
+      "path": "media/video/c54d72977989e7c8778d741d61833f8500e98eec7b464e2543b68030647775ea.srt",
+      "sha256": "c54d72977989e7c8778d741d61833f8500e98eec7b464e2543b68030647775ea",
+      "bytes": 7106
+    },
+    {
+      "kind": "captions",
+      "path": "media/video/ded4a9b8075374c0d021e65c1dc8a426a2817b8ee664e159d7dc3a70a15dda54.vtt",
+      "sha256": "ded4a9b8075374c0d021e65c1dc8a426a2817b8ee664e159d7dc3a70a15dda54",
+      "bytes": 7114
+    },
+    {
+      "kind": "poster",
+      "path": "media/video/98e199df16808054cd2ea8851ca4146b6a436cfeb5df661187683140e6ad1e00.jpg",
+      "sha256": "98e199df16808054cd2ea8851ca4146b6a436cfeb5df661187683140e6ad1e00",
+      "bytes": 232629
+    }
+  ],
+  "ownerAuthorization": {
+    "owner": "Paul Zhang",
+    "scope": "Exact existing Chinese video, original bytes, target article section, normal Git commit and deployment",
+    "evidence": "Owner directly instructed formal video publication: use the just-completed 4m37s 1920x1080 file, add the supplied heading and description below the November 1 sermon, complete necessary Git commits and deployment; do not rerender, recompress, use YouTube or paid services.",
+    "recordedAt": "2026-11-01T22:42:38Z"
+  },
+  "section": {
+    "heading": "讲道精华视频｜口中甘甜，腹中发苦",
+    "description": "这段讲道精华视频根据2026年11月1日的主日信息制作，以启示录10:8–11为中心，探讨神的话语为什么入口甘甜、腹中发苦，以及基督徒如何在领受真理之后，忠心承担传扬福音的使命。"
+  },
+  "uploadVerification": null,
+  "productionVerification": null
+}
