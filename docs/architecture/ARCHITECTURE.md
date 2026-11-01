@@ -69,3 +69,7 @@ Production static-export architecture is governed by [ADR-0015](../adr/0015-prod
 The exact visitor-activated YouTube sermon exception is governed by [ADR-0038](../adr/0038-still-unrepentant-youtube-exception.md). Existing video discovery and independent-media rules are otherwise unchanged.
 
 ADR-0040 authorizes only the two fixed No More Delay YouTube bindings and locale-matched existing article presentation, using ADR-0038 visitor activation/privacy controls. Protected video preview, actual iPhone video acceptance, exact-final-head human GitHub approval and main-only deployment remain required. No manuscript, audio, storage budget or general provider change.
+
+## Local editorial Publishing Studio
+
+[ADR-0044](../adr/0044-local-publishing-studio.md) accepts a local-only V1 editorial operations workspace and bounded Codex worker. Exact-version owner-approved finalized Markdown may proceed through protected PR merge, existing main deployment, production verification and vault archive synchronization without another routine publication confirmation. It adds no public route or reader identity feature. Required independent reviews/checks, exceptional-action stops and vault governance remain binding. Architecture acceptance is separate from implementation and Git integration.

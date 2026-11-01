@@ -19,3 +19,7 @@ Prayer, grief, marriage, family, faith, and accompaniment submissions may be sen
 GA4 is the selected V1 provider for anonymous website analytics only, and it loads only after explicit analytics consent. The consent decision is scoped to analytics and stored first-party; raw sensitive text and identity fields remain excluded. Provider-specific custom events require review against the canonical event registry. See [ADR-0027](../adr/0027-consent-gated-ga4-analytics.md).
 
 No retention duration is selected here. See [ADR-0010](../adr/0010-privacy-and-consent.md), [Events](./EVENT_SCHEMA.md), and [AI Boundaries](./AI_BOUNDARIES.md).
+
+## Local editorial uploads
+
+[ADR-0044](../adr/0044-local-publishing-studio.md) authorizes a loopback-only editorial workspace with same-origin/Host checks and local session/CSRF protection. Original uploads, job history and credentials remain outside public assets and Git; browser responses contain no secrets. Only approved article data needed for the bounded task may reach the authorized Codex executor; unrelated vault material and sensitive ministry submissions are excluded. No generic analytics or raw private logs. Approval records bind article hashes and public destination; upload alone is not publication consent. Retention and owner-controlled cleanup must be specified before implementation acceptance; this decision grants no automatic deletion authority.
