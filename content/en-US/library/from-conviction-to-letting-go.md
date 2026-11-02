@@ -17,6 +17,7 @@ published_at: "2026-11-02T18:27:13+00:00"
 visibility: "public"
 access_level: "public"
 scripture_refs: [{"book": "1 Corinthians", "chapter_start": 13, "verse_start": 12}, {"book": "James", "chapter_start": 1, "verse_start": 19}, {"book": "2 Timothy", "chapter_start": 2, "verse_start": 2}, {"book": "Philippians", "chapter_start": 3, "verse_start": 12}, {"book": "Philippians", "chapter_start": 1, "verse_start": 6}]
+related_content: ["article-second-half-of-life-human-3-guide-2026-11-02"]
 ---
 
 # From Holding Fast to Learning to Let Go: The Journey of My Thinking and Spiritual Growth
