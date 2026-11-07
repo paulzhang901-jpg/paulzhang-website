@@ -12,7 +12,12 @@ test("only the approved playback URL is routed through Pages Functions", () => {
 });
 
 test("forwards the Safari probe and streams the original bytes as inline MP4", async (t) => {
-  globalThis.FixedLengthStream = TransformStream;
+  globalThis.FixedLengthStream = class extends TransformStream {
+    constructor(length) {
+      super();
+      assert.equal(length, 2);
+    }
+  };
   t.after(() => { delete globalThis.FixedLengthStream; });
   t.mock.method(globalThis, "fetch", async (url, options) => {
     assert.equal(url, episode.mp4_url);
