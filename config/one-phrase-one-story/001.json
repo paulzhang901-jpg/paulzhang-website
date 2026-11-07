@@ -1,0 +1,40 @@
+{
+  "series": "one-phrase-one-story",
+  "episode": "001",
+  "part": 1,
+  "title_zh": "禁果为什么最诱人？",
+  "title_en": "Forbidden Fruit",
+  "video_16x9": "episode-001/one-phrase-one-story-ep001-forbidden-fruit.mp4",
+  "video_9x16": "episode-001/one-phrase-one-story-ep001-portrait.mp4",
+  "video_sha256": "cb0e5efe7cc600388f7e7e20f666833b728bb82292b317c125ecd8fae9db5f91",
+  "video_bytes": 45907753,
+  "duration_seconds": 263.8,
+  "thumbnail": "/media/one-phrase-one-story/001.jpg",
+  "subtitles": "episode-001/ep001-subtitles.srt",
+  "script": "episode-001/ep001-script.md",
+  "script_sha256": "f9700adee61bf114c7f5dd68645bf828ac3c70615838d8d16c1495eea89a3e45",
+  "introduction": "从伊甸园的故事认识 forbidden fruit，看看诱惑如何改变判断，以及选择如何带来后果。",
+  "meaning": "在现代英语中，禁果常常用来比喻：因为被禁止，反而显得特别诱人的事物。",
+  "background": "故事出自《创世记》第2至3章。经文没有说明果实的种类。苹果是后来常见的艺术形象。",
+  "examples": [
+    {
+      "en": "Forbidden fruit often seems more attractive.",
+      "zh": "被禁止的东西，往往显得更有吸引力。"
+    },
+    {
+      "en": "For some teenagers, breaking the rules can feel like forbidden fruit.",
+      "zh": "对一些青少年来说，违反规则可能具有一种禁果般的诱惑。"
+    }
+  ],
+  "weixin_url": null,
+  "weixin_published_at": null,
+  "website_url": null,
+  "website_published_at": null,
+  "youtube_url": null,
+  "youtube_published_at": null,
+  "approval_status": "APPROVED",
+  "release_status": "APPROVED",
+  "subtitles_url": "/media/one-phrase-one-story/001.srt",
+  "mp4_url": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/one-phrase-one-story-001/cb0e5efe7cc600388f7e7e20f666833b728bb82292b317c125ecd8fae9db5f91.mp4",
+  "weixin_owner_attestation": "Paul Zhang confirmed Episode 001 was first published on WeChat Channels more than 24 hours before authorizing this public release."
+}

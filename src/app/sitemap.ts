@@ -9,6 +9,8 @@ import { getContentRepository } from "@/lib/content/repository";
 import { contentPath } from "@/lib/content/paths";
 import { getPublishedVideos } from "@/lib/content/published-videos";
 
+import { seriesEpisodes, seriesPath } from "@/lib/content/one-phrase-one-story";
+
 export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -29,5 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const contentRepository = await getContentRepository();
   const contentEntries = contentRepository.getPublishedContent().map((item) => ({url: new URL(contentPath(item), siteUrl).toString()}));
   const videoEntries = (["zh-CN", "en-US"] as const).flatMap(locale => getPublishedVideos(contentRepository, locale).flatMap(video => video.detail ? [{url: new URL(video.detail, siteUrl).toString()}] : []));
-  return [...new Map([...videoEntries, ...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries, ...contentEntries].map((entry) => [entry.url, entry])).values()];
+  const seriesEntries = [seriesPath, ...seriesEpisodes.map(({episode}) => seriesPath + "/" + episode)]
+    .map((route) => ({url: new URL(route, siteUrl).toString()}));
+  return [...new Map([...seriesEntries, ...videoEntries, ...routeEntries, ...journeyEntries, ...workEntries, ...fictionEntries, ...contentEntries].map((entry) => [entry.url, entry])).values()];
 }

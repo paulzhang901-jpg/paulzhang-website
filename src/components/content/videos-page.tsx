@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { seriesPath, seriesTitle } from "@/lib/content/one-phrase-one-story";
 import { Container } from "@/components/layout/container";
 import { Section, SectionHeading } from "@/components/layout/section";
 import { VideosSection } from "./videos-section";
@@ -23,6 +24,9 @@ export function VideosPage({locale, repository}: {locale: ContentLanguage; repos
       </SectionHeading>
       <Link href={localizedPath("library", locale)} className="inline-flex min-h-11 items-center text-primary underline">{zh ? "浏览真理资源库" : "Explore the Truth Library"}</Link>
     </Container></Section>
+    {zh && <Section><Container>
+      <Link href={seriesPath} className="inline-flex min-h-11 items-center font-semibold text-primary underline">{seriesTitle}</Link>
+    </Container></Section>}
     <VideosSection locale={locale} items={videos.filter(v=>v.sourceKind !== "standalone")} />
     {standalone.length ? <VideosSection locale={locale} items={standalone} standalone /> : null}
   </>;
