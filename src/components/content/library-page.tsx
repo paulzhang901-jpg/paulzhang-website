@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {JohnTextbooks} from "@/components/content/john-textbooks";
 import type { Route } from "next";
 import { Container, ReadingContainer } from "@/components/layout/container";
 import { Section, SectionHeading } from "@/components/layout/section";
@@ -65,6 +66,7 @@ function FreeEbooks({locale}: {locale: ContentLanguage}) {
           <p className="mt-3">Commercial publication, sale, paid-course use, repackaging, redistribution for commercial purposes, or other commercial use requires prior written permission from the author.</p>
         </>}
       </div>
+      <JohnTextbooks />
     </Container>
   </Section>;
 }
