@@ -15,3 +15,7 @@ Apply the direct GitHub Release delivery pattern from ADR-0043/0045 only to the 
 ## Acceptance
 
 Confirm unauthenticated download of the original SHA-256 and successful byte ranges before merge. Review through required GitHub checks and protected main; retain normal independent review and the existing Cloudflare Actions production workflow. Verify both public routes, audible playback, seeking, fullscreen and desktop/mobile presentation on the actual production site. Revert the scoped route and delivery binding through a reviewed change if rollback is required.
+
+## Phase 1.2 Safari playback amendment
+
+Native desktop Safari returned MEDIA_ERR_SRC_NOT_SUPPORTED (code 4) for the GitHub Release source, including in an isolated page with no site JavaScript. The same exact local MP4 was accepted with both video and download response headers. GitHub still returns correct bytes to HTTP clients and Chrome. Use the existing Cloudflare Pages Direct Upload project's file-based Function for this exact video path. The page loads the same-origin MP4. The Function streams the fixed Release asset, preserves byte-range semantics and serves inline video/mp4. No other URL invokes the Function. The original MP4 stays outside Git and the existing Pages asset limit still applies. This narrowly extends the static deployment contract for one media route and requires no new project, binding, service subscription or content changes.

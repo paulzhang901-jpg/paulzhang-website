@@ -36,5 +36,6 @@
   "release_status": "APPROVED",
   "subtitles_url": "/media/one-phrase-one-story/001.srt",
   "mp4_url": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/one-phrase-one-story-001/cb0e5efe7cc600388f7e7e20f666833b728bb82292b317c125ecd8fae9db5f91.mp4",
-  "weixin_owner_attestation": "Paul Zhang confirmed Episode 001 was first published on WeChat Channels more than 24 hours before authorizing this public release."
+  "weixin_owner_attestation": "Paul Zhang confirmed Episode 001 was first published on WeChat Channels more than 24 hours before authorizing this public release.",
+  "playback_url": "/media/one-phrase-one-story/001.mp4"
 }

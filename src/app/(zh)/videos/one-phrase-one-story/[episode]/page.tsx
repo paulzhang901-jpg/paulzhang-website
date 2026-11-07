@@ -26,7 +26,7 @@ export default async function EpisodePage({params}: {params: Promise<{episode: s
       <p>{episode.introduction}</p>
     </SectionHeading>
     <video controls playsInline preload="metadata" poster={episode.thumbnail} aria-label={episode.title_zh}
-      className="aspect-video w-full max-w-4xl rounded-xl bg-black" src={episode.mp4_url}>
+      className="aspect-video w-full max-w-4xl rounded-xl bg-black" src={episode.playback_url}>
       字幕已嵌入视频。也可下载下方字幕文件。
     </video>
     <p className="mt-3 text-sm text-muted-foreground">故事与教学旁白使用 Paul Zhang 授权的 AI 声音。欢迎词为真人原声。</p>
