@@ -81,3 +81,4 @@ None.
 - [0044 Local One-Click Publishing Studio](./0044-local-publishing-studio.md) — Accepted by Paul on 2026-10-31, approach B; exact-version finalized-Markdown automatic publication through existing protected main workflow. Architecture decision only; implementation deferred.
 
 - [0045 Sweet in the Mouth sermon highlight](./0045-sweet-mouth-sermon-highlight.md) — Owner-authorized exact Chinese 1080p highlight, existing GitHub Release/native player, unchanged sermon.
+- [0046 One Phrase, One Story and Episode 001](./0046-one-phrase-one-story-001.md) — Existing Video Library entry and exact original direct delivery for Episode 001.
