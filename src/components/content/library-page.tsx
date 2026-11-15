@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {OnePhraseOneStoryEbooks} from "@/components/content/one-phrase-one-story-ebooks";
 import {JohnTextbooks} from "@/components/content/john-textbooks";
 import type { Route } from "next";
 import { Container, ReadingContainer } from "@/components/layout/container";
@@ -31,7 +32,7 @@ function FreeEbooks({locale}: {locale: ContentLanguage}) {
       <header className="mb-8 max-w-3xl">
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary">{chinese ? "Free E-books" : "免费电子书"}</p>
         <h2 className="font-serif text-3xl leading-tight sm:text-4xl">{chinese ? "免费电子书" : "Free E-books"}</h2>
-        <p className="mt-4 leading-7 text-muted-foreground">{chinese ? "《删不掉的光》系列 · 免费 PDF 电子书" : "The Light They Could Not Erase series · Free PDF e-books"}</p>
+        <p className="mt-4 leading-7 text-muted-foreground">{chinese ? "免费阅读与下载 · 中文及英文电子书" : "Read and download free Chinese and English e-books"}</p>
       </header>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {ebooks.map((book) => {
@@ -66,6 +67,7 @@ function FreeEbooks({locale}: {locale: ContentLanguage}) {
           <p className="mt-3">Commercial publication, sale, paid-course use, repackaging, redistribution for commercial purposes, or other commercial use requires prior written permission from the author.</p>
         </>}
       </div>
+      <OnePhraseOneStoryEbooks locale={locale} />
       <JohnTextbooks />
     </Container>
   </Section>;
