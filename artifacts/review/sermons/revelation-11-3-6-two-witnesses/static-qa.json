@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "pages": [
+    {
+      "locale": "zh-CN",
+      "article_route": "/library/two-witnesses-in-the-darkness",
+      "sunday_route": "/community/sunday",
+      "one_h1": true,
+      "all_prose_rendered": true,
+      "canonical_hreflang": "PASS",
+      "reciprocal_link": "PASS",
+      "single_sitemap_entry": true,
+      "markdown_structure": "PASS",
+      "deliverable_matches_repository": true,
+      "body_sha256": "56553f042e2a9d8c8de86835a9792b4ffbff2d4f5311ebc586d3d4cf828e4a69"
+    },
+    {
+      "locale": "en-US",
+      "article_route": "/en/library/two-witnesses-in-the-darkness",
+      "sunday_route": "/en/community/sunday",
+      "one_h1": true,
+      "all_prose_rendered": true,
+      "canonical_hreflang": "PASS",
+      "reciprocal_link": "PASS",
+      "single_sitemap_entry": true,
+      "markdown_structure": "PASS",
+      "deliverable_matches_repository": true,
+      "body_sha256": "42c6e5607bb351cdd4b40acecc1be3925663ce35c117624c7f8f3e4a9aa0ca24"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "canonical_id": "sermon-revelation-11-3-6",
+  "slug": "two-witnesses-in-the-darkness",
+  "sermon_date": "2026-11-15",
+  "speaker": "Rev. Chongzhu Paul Zhang",
+  "content_type": "Sunday Sermon",
+  "series_zh": "启示录释经讲道",
+  "scope": "V1 / ARCHITECTURE-COMPLIANT IMPLEMENTATION",
+  "base_commit": "23c44d28bcbd7e7c973960fcb7f20e6940c4bec4",
+  "sources": [
+    {
+      "name": "黑暗中的两个见证人.pages",
+      "role": "Pastor-reviewed complete manuscript; primary editorial source",
+      "sha256": "91bb07e3c94864a7ea7f4b9e7dfca97844d37f7b5f10b5d3518034cbf7f3af66",
+      "extraction": "Decompressed Index/Document.iwa and extracted UTF-8 prose; retained seven sermon sections."
+    },
+    {
+      "name": "2026-11-15-transcript.txt",
+      "role": "Supplied recording transcript; supplementary source, not independently checked against audio",
+      "sha256": "72cb8549036fac9e402c9b42b5738b56afea629820d97ef98cd48992bdf6d225"
+    }
+  ],
+  "authorization": {
+    "basis": "Explicit user request to edit supplied sources, translate final Chinese, integrate and publish this sermon through repository workflow.",
+    "human_preview_performed": false,
+    "exact_generated_bytes_approved_by_owner": false,
+    "runtime_convention": "Existing AUTHOR_DIRECT_AUTHORIZATION / WAIVED_BY_AUTHOR publication preparation convention; does not assert APPROVED human preview.",
+    "release_boundary": "One PR; owner review/merge remains required under ADR-0021. Do not invoke ADR-0044 exact-finalized-version auto-merge exception."
+  },
+  "editorial_changes": [
+    "Preserved all seven main sections and all substantive reviewed-manuscript teaching; removed duplicate pre-sermon outline and stage directions, normalized paragraphs, headings and 姊妹.",
+    "Restored transcript-supported opening appearance question; church baptism/calling testimony practice; teaching theological students in China; reflection on renovation of a formerly pastored church. No new dates, financial amounts, names or circumstances invented.",
+    "Omitted unverified John Sung/Aquinas anecdotes; excluded transcript assertions that Genesis names a lamb or says weather changed after the Fall; avoided merging Nehemiah wall rebuilding with Zerubbabel temple rebuilding.",
+    "Preserved reviewed-manuscript qualifications concerning literal/symbolic witnesses and 1,260 days, spiritual gifts, authority to judge, olive-press illustration, and grace rather than earned salvation.",
+    "Added cross-references Jonah 3:4–8, Revelation 1:20, Matthew 5:44, Revelation 11:7.",
+    "English translates final Chinese prose faithfully; Scripture quotations use KJV rather than a back-translation of Chinese Union Version. Revelation 11:4 has CUV 世界之主 and KJV God of the earth; underlying sovereign-God argument is preserved."
+  ],
+  "scripture_verification_sources": [
+    "https://www.biblegateway.com/passage/?search=Revelation+11%3A3-6&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Zechariah+4&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Deuteronomy+19%3A15&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Jonah+3&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Matthew+6%3A24&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Revelation+1%3A5&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Acts+1%3A8&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Revelation+11%3A7&version=KJV",
+    "https://www.biblegateway.com/passage/?search=Matthew+5%3A44&version=KJV"
+  ],
+  "validation": {
+    "architecture": {
+      "exit_code": 0,
+      "tests": 13,
+      "failures": 0
+    },
+    "content": {
+      "exit_code": 0,
+      "tests": 81,
+      "failures": 0
+    },
+    "application": {
+      "exit_code": 0,
+      "tests": 187,
+      "failures": 0
+    },
+    "security": {
+      "exit_code": 0,
+      "tests": 2,
+      "failures": 0
+    },
+    "markdown_and_visible_html": "PASS; static-qa.json",
+    "default_build": "BLOCKED LOCALLY: Turbopack port bind Operation not permitted; reproduced with escalation. No repository config change.",
+    "webpack_build": "PASS: pnpm exec next build --webpack; 464 static routes",
+    "static_export": "PASS: 464/464 routes, 0 broken internal links; canonical/hreflang, sitemap/robots, public/private boundary passed",
+    "additional": "Lint, typecheck, content validation, architecture validation, fiction ingestion validation all exit 0. CI default build remains required."
+  },
+  "independent_review": {
+    "performed": true,
+    "method": "Read-only reviewer subagent; source manuscript/transcript, bilingual prose, integration and approval metadata reviewed.",
+    "blocking_findings": 0,
+    "limitation": "Editorial review is not owner approval or a human language/theological certification."
+  },
+  "production_status": "NOT_DEPLOYED; PR preparation only",
+  "archive_status": "LOCAL_SOURCES_AND_DELIVERABLES_PRESERVED / OBSIDIAN_ARCHIVE_INCOMPLETE",
+  "archive_blocker": "Repository-mandated Paul AI Brain vault path is absent on this machine. No replacement vault structure created."
+}

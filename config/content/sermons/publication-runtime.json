@@ -841,6 +841,40 @@
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
       "sourceSermonId": "sermon-revelation-11-1-2",
       "sourceCanonicalEditionHash": "e155bb6feffcb2ad29a23e4c533c26b1c04d5685342ed49112cd182c8aee9194"
+    },
+    {
+      "sermonId": "sermon-revelation-11-3-6",
+      "title": "黑暗中的两个见证人",
+      "subtitle": "",
+      "scriptureRange": "启示录 11:3–6",
+      "sermonSeries": "启示录释经讲道",
+      "themes": [],
+      "canonicalEditionHash": "56553f042e2a9d8c8de86835a9792b4ffbff2d4f5311ebc586d3d4cf828e4a69",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/two-witnesses-in-the-darkness.mdx",
+      "publicRoute": "/library/two-witnesses-in-the-darkness",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
+    },
+    {
+      "sermonId": "sermon-revelation-11-3-6-en",
+      "title": "Two Witnesses in the Darkness",
+      "subtitle": "",
+      "scriptureRange": "Revelation 11:3–6",
+      "sermonSeries": "Expository Sermons on Revelation",
+      "themes": [],
+      "canonicalEditionHash": "42c6e5607bb351cdd4b40acecc1be3925663ce35c117624c7f8f3e4a9aa0ca24",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/two-witnesses-in-the-darkness.mdx",
+      "publicRoute": "/en/library/two-witnesses-in-the-darkness",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
+      "sourceSermonId": "sermon-revelation-11-3-6",
+      "sourceCanonicalEditionHash": "56553f042e2a9d8c8de86835a9792b4ffbff2d4f5311ebc586d3d4cf828e4a69"
     }
   ]
 }
