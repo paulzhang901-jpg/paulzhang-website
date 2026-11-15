@@ -8,7 +8,7 @@ const request = (options) => new Request("https://paulzhang.org" + episode.playb
 
 test("only the approved playback URL is routed through Pages Functions", () => {
   const routes = JSON.parse(readFileSync("public/_routes.json", "utf8"));
-  assert.deepEqual(routes, {version: 1, include: [episode.playback_url], exclude: []});
+  assert.deepEqual(routes, {version: 1, include: [episode.playback_url, "/media/one-phrase-one-story/002.mp4", "/media/one-phrase-one-story/003.mp4"], exclude: []});
 });
 
 test("forwards the Safari probe and streams the original bytes as inline MP4", async (t) => {

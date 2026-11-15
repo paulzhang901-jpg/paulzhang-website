@@ -1,0 +1,41 @@
+{
+  "series": "one-phrase-one-story",
+  "episode": "003",
+  "part": 1,
+  "title_zh": "喉结为什么叫亚当的苹果？",
+  "title_en": "Adam's Apple",
+  "video_16x9": "episode-003/one-phrase-one-story-ep003-landscape.mp4",
+  "video_9x16": "episode-003/one-phrase-one-story-ep003-portrait.mp4",
+  "video_sha256": "d810dba2892e64d02b1a54b1ee64711ad6ba951884365d28c69e88c37d708796",
+  "video_bytes": 31828107,
+  "duration_seconds": 258.566667,
+  "thumbnail": "/media/one-phrase-one-story/003.jpg",
+  "subtitles": "episode-003/ep003-subtitles.srt",
+  "script": "episode-003/ep003-script.md",
+  "script_sha256": "2a2bc83e8161b9efdc3d56e721a5638dfc17c0c95dcebcaac7957aed984ee583",
+  "introduction": "你有没有想过，男人脖子上凸起的喉结，为什么会叫亚当的苹果？一个人体部位，怎么会和伊甸园里的亚当联系起来？难道他当年吃下的果子，真的留在了喉咙里？今天，我们要追踪一个好记的名字，也要分清一个好听的故事和可以查证的事实。",
+  "meaning": "在现代英语里，这个词通常就是喉结的名称，不是在讲一种水果。注意亚当后面的所有格，结尾有一个浊辅音。把两个词自然连起来。先听，再跟读。",
+  "background": "让我们把传说放下，回到《创世记》第二、第三章。经文讲到了树上的果子，却没有说明禁果是苹果；也没有记载果实卡在亚当喉咙里的情节。因此，卡住果子的说法，是后来的民间传说，不能当作圣经原文，更不能当成人体结构形成的科学解释。",
+  "examples": [
+    {
+      "en": "His Adam's apple moved as he swallowed.",
+      "zh": "他吞咽时，喉结动了一下。"
+    },
+    {
+      "en": "He has a prominent Adam's apple.",
+      "zh": "他的喉结很明显。"
+    }
+  ],
+  "weixin_url": null,
+  "weixin_published_at": null,
+  "website_url": null,
+  "website_published_at": null,
+  "youtube_url": null,
+  "youtube_published_at": null,
+  "approval_status": "APPROVED",
+  "release_status": "APPROVED",
+  "weixin_owner_attestation": "Paul Zhang confirmed both Episodes 002 and 003 were first published on WeChat Channels more than 24 hours before this website release.",
+  "mp4_url": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/one-phrase-one-story-002-003/d810dba2892e64d02b1a54b1ee64711ad6ba951884365d28c69e88c37d708796.mp4",
+  "subtitles_url": "/media/one-phrase-one-story/003.srt",
+  "playback_url": "/media/one-phrase-one-story/003.mp4"
+}
