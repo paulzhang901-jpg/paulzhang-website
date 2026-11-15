@@ -1,0 +1,41 @@
+{
+  "series": "one-phrase-one-story",
+  "episode": "002",
+  "part": 1,
+  "title_zh": "失去的伊甸园",
+  "title_en": "The Garden of Eden",
+  "video_16x9": "episode-002/one-phrase-one-story-ep002-landscape.mp4",
+  "video_9x16": "episode-002/one-phrase-one-story-ep002-portrait.mp4",
+  "video_sha256": "fd5e0fbcf20be8b10239c0c00839aa328361ce28e8ed1b88dc17ada4ca054a69",
+  "video_bytes": 48299267,
+  "duration_seconds": 269.0,
+  "thumbnail": "/media/one-phrase-one-story/002.jpg",
+  "subtitles": "episode-002/ep002-subtitles.srt",
+  "script": "episode-002/ep002-script.md",
+  "script_sha256": "e3b7854f8b13d230f6fa5570a60e9254fa0b671e2d42b0834babfb5b04fd969a",
+  "introduction": "如果你已经拥有一个美好的家园，有清新的空气、丰盛的果实，还有可以信赖的关系，你还会失去什么？今天的故事，不只关乎一个地方，更关乎人为什么会失去归属，又为什么始终向往一个可以安心生活的家。",
+  "meaning": "今天的表达，字面意思是伊甸园。在现代英语里，它也可以比喻一个美丽、宁静、令人向往的地方。注意，这是一种带有文学色彩的比喻。说到圣经中的那座园子，我们用定冠词。描述某个像天堂一样的地方时，也可以用不定冠词。听听这两个例句。",
+  "background": "如果你已经拥有一个美好的家园，有清新的空气、丰盛的果实，还有可以信赖的关系，你还会失去什么？今天的故事，不只关乎一个地方，更关乎人为什么会失去归属，又为什么始终向往一个可以安心生活的家。",
+  "examples": [
+    {
+      "en": "The peaceful valley looked like the Garden of Eden.",
+      "zh": "这个宁静的山谷，看起来就像伊甸园。"
+    },
+    {
+      "en": "They dreamed of turning their backyard into a Garden of Eden.",
+      "zh": "他们梦想把自家的后院，变成一个美丽的伊甸园。"
+    }
+  ],
+  "weixin_url": null,
+  "weixin_published_at": null,
+  "website_url": null,
+  "website_published_at": null,
+  "youtube_url": null,
+  "youtube_published_at": null,
+  "approval_status": "APPROVED",
+  "release_status": "APPROVED",
+  "weixin_owner_attestation": "Paul Zhang confirmed both Episodes 002 and 003 were first published on WeChat Channels more than 24 hours before this website release.",
+  "mp4_url": "https://github.com/paulzhang901-jpg/paulzhang-website/releases/download/one-phrase-one-story-002-003/fd5e0fbcf20be8b10239c0c00839aa328361ce28e8ed1b88dc17ada4ca054a69.mp4",
+  "subtitles_url": "/media/one-phrase-one-story/002.srt",
+  "playback_url": "/media/one-phrase-one-story/002.mp4"
+}
