@@ -807,6 +807,40 @@
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
       "sourceSermonId": "sermon-revelation-10-8-11",
       "sourceCanonicalEditionHash": "463c8380cf8ff5a0edf955c53c1f674f2d660d2c60473c508bae05a311337c37"
+    },
+    {
+      "sermonId": "sermon-revelation-11-1-2",
+      "title": "被量度的圣殿：谁真正属于神？",
+      "subtitle": "",
+      "scriptureRange": "启示录 11:1–2",
+      "sermonSeries": "启示录系列讲道",
+      "themes": [],
+      "canonicalEditionHash": "e155bb6feffcb2ad29a23e4c533c26b1c04d5685342ed49112cd182c8aee9194",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/the-measured-temple.mdx",
+      "publicRoute": "/library/the-measured-temple",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
+    },
+    {
+      "sermonId": "sermon-revelation-11-1-2-en",
+      "title": "The Measured Temple: Who Truly Belongs to God?",
+      "subtitle": "",
+      "scriptureRange": "Revelation 11:1–2",
+      "sermonSeries": "Revelation Sermon Series",
+      "themes": [],
+      "canonicalEditionHash": "6513df17b2174429a4b3db354fcea776c8b7bb1e9fa35b02ebcdf0ac50d84735",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/en-US/library/the-measured-temple.mdx",
+      "publicRoute": "/en/library/the-measured-temple",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
+      "sourceSermonId": "sermon-revelation-11-1-2",
+      "sourceCanonicalEditionHash": "e155bb6feffcb2ad29a23e4c533c26b1c04d5685342ed49112cd182c8aee9194"
     }
   ]
 }
