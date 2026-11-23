@@ -65,9 +65,11 @@ test("all published sermon editions share one Hero and retain registered canonic
     assert.ok(!html.includes("##"), record.sermonId);
     assert.ok(!html.includes("Website Canonical Edition"), record.sermonId);
     assert.ok(html.includes("<h2"), record.sermonId);
-    assert.ok(html.includes("data-language-alternate"), record.sermonId);
+    const alternateLocale = locale === "zh-CN" ? "en-US" : "zh-CN";
+    const hasTranslation = repository.resolvePublicTranslation(item.canonicalId, alternateLocale, item).available;
+    assert.equal(html.includes("data-language-alternate"), hasTranslation, record.sermonId);
     assert.ok(html.includes(record.sermonSeries), record.sermonId);
-    assert.ok(html.includes(locale === "zh-CN" ? "阅读 English Edition" : "Read the Chinese edition"));
+    assert.equal(html.includes(locale === "zh-CN" ? "阅读 English Edition" : "Read the Chinese edition"), hasTranslation, record.sermonId);
     assert.ok(bytes.equals(fs.readFileSync(record.runtimeContentPath)));
   }
 });
