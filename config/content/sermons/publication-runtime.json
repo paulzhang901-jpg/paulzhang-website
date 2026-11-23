@@ -875,6 +875,22 @@
       "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION",
       "sourceSermonId": "sermon-revelation-11-3-6",
       "sourceCanonicalEditionHash": "56553f042e2a9d8c8de86835a9792b4ffbff2d4f5311ebc586d3d4cf828e4a69"
+    },
+    {
+      "sermonId": "sermon-revelation-11-7-14",
+      "title": "死亡不是见证的终点",
+      "subtitle": "",
+      "scriptureRange": "启示录 11:7–14",
+      "sermonSeries": "启示录释经讲道",
+      "themes": [],
+      "canonicalEditionHash": "9623718a3e6eeac290adafe91069065db216a84da1d5b678ecbbca5234ecf089",
+      "publicationStatus": "PUBLISHED",
+      "humanPreviewStatus": "WAIVED_BY_AUTHOR",
+      "hashVerification": "VERIFIED",
+      "runtimeContentPath": "content/zh-CN/library/death-is-not-the-end-of-witness.mdx",
+      "publicRoute": "/library/death-is-not-the-end-of-witness",
+      "searchEligibility": true,
+      "publicationApproval": "AUTHOR_DIRECT_AUTHORIZATION"
     }
   ]
 }
