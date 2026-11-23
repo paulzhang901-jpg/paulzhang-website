@@ -3,16 +3,16 @@ import test from "node:test";
 import {getContentRepository} from "../../src/lib/content/repository";
 import {loadPublishedSermon} from "../../src/lib/sermons/published";
 import {metadataForContent} from "../../src/lib/content/metadata";
-import {currentSunday, sundayWeeklyHistory} from "../../src/data/sunday";
+import {sundayWeeklyHistory} from "../../src/data/sunday";
 import sitemap from "../../src/app/sitemap";
 
 test("November 15 has one Sunday entry linked to complete canonical bilingual sermons", async () => {
   const slug = "two-witnesses-in-the-darkness";
   const canonicalId = "sermon-revelation-11-3-6";
-  assert.equal(currentSunday.date, "2026-11-15");
-  assert.equal(sundayWeeklyHistory.filter(entry => entry.date === currentSunday.date).length, 1);
-  assert.equal(currentSunday.sermonUrl, `/library/${slug}`);
-  assert.equal(currentSunday.speakerEn, "Rev. Chongzhu Paul Zhang");
+  const historical = sundayWeeklyHistory.find(entry => entry.date === "2026-11-15")!;
+  assert.equal(sundayWeeklyHistory.filter(entry => entry.date === historical.date).length, 1);
+  assert.equal(historical.sermonUrl, `/library/${slug}`);
+  assert.equal(historical.speakerEn, "Rev. Chongzhu Paul Zhang");
   const repository = await getContentRepository();
   const entries = await sitemap();
   for (const locale of ["zh-CN", "en-US"] as const) {
