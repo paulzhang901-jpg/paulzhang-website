@@ -60,7 +60,11 @@
       "chapter_end": 5,
       "verse_end": 18
     }
-  ]
+  ],
+  "seo": {
+    "title": "Gratitude on Thanksgiving",
+    "description": "A Thanksgiving reflection on seven baptisms, belonging to one family in Christ, passing faith to the next generation, and giving thanks amid challenges."
+  }
 }
 ---
 
